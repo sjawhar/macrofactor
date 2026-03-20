@@ -137,4 +137,14 @@ describe('readInput', () => {
   it('returns null when positional input is not JSON-like', async () => {
     await expect(readInput(['not-json'])).resolves.toBeNull();
   });
+
+  it('returns parsed JSON from positional args (TTY mode)', async () => {
+    // In TTY mode, positional args are checked directly without stdin read
+    await expect(readInput(['{"foo":"bar"}'])).resolves.toEqual({ foo: 'bar' });
+  });
+
+  it('returns null when positional arg is not JSON (TTY mode)', async () => {
+    // In TTY mode, non-JSON positional args return null
+    await expect(readInput(['not json'])).resolves.toBeNull();
+  });
 });

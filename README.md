@@ -31,35 +31,51 @@ npx tsx cli/mf.ts search-food "kale"  # Search the food database
 
 ## CLI commands
 
-| Command                                                       | Description                                   |
-| ------------------------------------------------------------- | --------------------------------------------- |
-| `workouts`                                                    | List recent workouts with exercise/set counts |
-| `workout <uuid>`                                              | Full detail for a specific workout            |
-| `exercises search "query"`                                    | Search the bundled exercise database          |
-| `exercise <hex-id>`                                           | Resolve a hex ID to exercise name + muscles   |
-| `gyms`                                                        | List gym profiles                             |
-| `food-log [YYYY-MM-DD]`                                       | Show food log for a date (default: today)     |
-| `search-food "query"`                                         | Search the food database without logging      |
-| `log-food "query" <amount> [--at time] [--date YYYY-MM-DD]`   | Search and log a food entry                   |
-| `log-workout --name "Name" [--at time] [--duration min]`      | Create a new workout                          |
-| `log-exercise <workout-id> "exercise" <sets>x<reps>@<weight>` | Add an exercise to a workout                  |
-| `profile`                                                     | Show user profile and preferences             |
+| Command                    | Description                                       |
+| -------------------------- | ------------------------------------------------- |
+| `workouts`                 | List recent workouts with exercise/set counts     |
+| `workout <uuid>`           | Full detail for a specific workout                |
+| `exercises search "query"` | Search the bundled exercise database              |
+| `exercise <hex-id>`        | Resolve a hex ID to exercise name + muscles       |
+| `gyms`                     | List gym profiles                                 |
+| `food-log [YYYY-MM-DD]`    | Show food log for a date (default: today)         |
+| `search-food "query"`      | Search the food database without logging          |
+| `log-food '{JSON}'`        | Search and log a food entry (JSON input)          |
+| `log-workout '{JSON}'`     | Create a workout with exercises (JSON input)      |
+| `log-exercise '{JSON}'`    | Add exercises to an existing workout (JSON input) |
+| `log-weight '{JSON}'`      | Log a scale entry (JSON input)                    |
+| `delete-food '{JSON}'`     | Delete a food entry (JSON input)                  |
+| `update-food '{JSON}'`     | Update a food entry quantity (JSON input)         |
+| `profile`                  | Show user profile and preferences                 |
 
 ### Examples
 
 ```bash
-# Log 150g of kale at 7pm
-npx tsx cli/mf.ts log-food "kale raw" 150g --at 7pm
+# Read commands (positional args or JSON via stdin)
+npx tsx cli/mf.ts workouts
+npx tsx cli/mf.ts food-log 2026-03-20
+echo '{"date":"2026-03-20"}' | npx tsx cli/mf.ts food-log
 
-# Log 2 tablespoons of nutritional yeast
-npx tsx cli/mf.ts log-food "nutritional yeast seasoning" 2tbsp --at 7pm
+# Log a food (JSON input — positional arg or stdin)
+npx tsx cli/mf.ts log-food '{"query":"kale raw","grams":150,"loggedAt":"2026-03-20T19:00:00-05:00"}'
+npx tsx cli/mf.ts log-food '{"foodId":"n_2950","grams":100}'  # skip search with direct foodId
 
-# Create an evening workout
-npx tsx cli/mf.ts log-workout --name "PM Session" --at 5pm --duration 45
+# Create a full workout in one call
+npx tsx cli/mf.ts log-workout '{
+  "name": "PM Session",
+  "gym": "Gym",
+  "startTime": "2026-03-20T17:00:00-05:00",
+  "exercises": [
+    {"name": "bench press", "sets": [{"reps": 10, "lbs": 135, "sets": 3}]},
+    {"name": "cable crunch", "sets": [{"reps": 15, "lbs": 120, "sets": 3, "rest": 90}]}
+  ]
+}'
 
-# Add exercises to it
-npx tsx cli/mf.ts log-exercise <workout-id> "bench press" 3x10@135lbs
-npx tsx cli/mf.ts log-exercise <workout-id> "cable crunch" 3x15@120lbs --rest 90
+# Append exercise to existing workout
+npx tsx cli/mf.ts log-exercise '{"workoutId": "<uuid>", "exercises": [{"name": "pullup", "sets": [{"reps": 10, "sets": 3}]}]}'
+
+# Log weight
+npx tsx cli/mf.ts log-weight '{"lbs": 180, "date": "2026-03-20"}'
 ```
 
 ## Programmatic usage
@@ -103,6 +119,8 @@ See [`docs/api-reference.md`](docs/api-reference.md) for the full Firestore sche
 
 ```
 cli/mf.ts              CLI entry point
+  helpers.ts           JSON input parsing, set expansion, weight conversion
+  helpers.test.ts      Tests for CLI helpers
 src/lib/api/
   auth.ts              Firebase auth (sign-in, token refresh)
   client.ts            MacroFactorClient class (all read/write methods)

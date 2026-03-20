@@ -15,6 +15,7 @@
 ### Task 1: Set up vitest
 
 **Files:**
+
 - Modify: `package.json` (add vitest devDep and test script)
 - Create: `vitest.config.ts`
 
@@ -59,6 +60,7 @@ jj new
 Currently all helpers live inside `cli/mf.ts` and aren't importable. Extract new helpers into a separate module so they're testable.
 
 **Files:**
+
 - Create: `cli/helpers.ts`
 - Create: `cli/helpers.test.ts`
 
@@ -262,6 +264,7 @@ jj new
 Replace the current `log-workout` case (flags-based, creates empty workout) with JSON input that supports full workout creation including exercises.
 
 **Files:**
+
 - Modify: `cli/mf.ts` — replace `case 'log-workout'` block
 - Import helpers from `cli/helpers.ts`
 
@@ -376,9 +379,11 @@ case 'log-workout': {
 **Step 3: Test manually**
 
 Run:
+
 ```bash
 npx tsx cli/mf.ts log-workout '{"name":"Test Workout","gym":"Gym","exercises":[{"name":"machine hack squat","sets":[{"reps":10,"lbs":135,"sets":2}]}]}'
 ```
+
 Expected: JSON output with `status: "created"`, resolved exercise name, kg weights
 
 **Step 4: Verify in app, then delete test workout if needed**
@@ -395,6 +400,7 @@ jj new
 ### Task 4: Rewrite `log-exercise` to accept JSON
 
 **Files:**
+
 - Modify: `cli/mf.ts` — replace `case 'log-exercise'` block
 
 **Step 1: Replace `log-exercise` case**
@@ -485,6 +491,7 @@ jj new
 ### Task 5: Rewrite `log-food` to accept JSON (with foodId direct mode)
 
 **Files:**
+
 - Modify: `cli/mf.ts` — replace `case 'log-food'` block
 
 **Step 1: Replace `log-food` case**
@@ -582,6 +589,7 @@ jj new
 ### Task 6: Add `log-weight`, `delete-food`, `update-food` commands
 
 **Files:**
+
 - Modify: `cli/mf.ts` — add 3 new cases + update `ALL_COMMANDS`
 
 **Step 1: Add the three new cases before the `default:` case**
@@ -668,6 +676,7 @@ jj new
 Add optional JSON input to read commands. When JSON is present, it takes precedence over positional args/flags.
 
 **Files:**
+
 - Modify: `cli/mf.ts` — update each read command case
 
 **Step 1: Update each read command to check for JSON input first**
@@ -689,6 +698,7 @@ case 'workouts': {
 ```
 
 Apply the same pattern to all read commands:
+
 - `workout`: `const id = input?.id || positional[0]`
 - `exercises search`: `const query = input?.query || positional.slice(1).join(' ')`
 - `exercise`: `const id = input?.id || positional[0]`
@@ -715,6 +725,7 @@ jj new
 ### Task 8: Remove dead code
 
 **Files:**
+
 - Modify: `cli/mf.ts` — delete unused helpers
 
 **Step 1: Delete these functions/constants from `cli/mf.ts`**
@@ -749,6 +760,7 @@ jj new
 ### Task 9: Update documentation
 
 **Files:**
+
 - Modify: `.opencode/skills/macrofactor-api/SKILL.md`
 - Modify: `README.md`
 
@@ -771,15 +783,15 @@ jj new
 
 ### Summary
 
-| Task | Description | Estimated effort |
-|------|------------|-----------------|
-| 1 | Set up vitest | 5 min |
-| 2 | Extract helpers + tests | 15 min |
-| 3 | Rewrite log-workout | 10 min |
-| 4 | Rewrite log-exercise | 5 min |
-| 5 | Rewrite log-food | 10 min |
-| 6 | Add log-weight, delete-food, update-food | 10 min |
-| 7 | JSON input for read commands | 10 min |
-| 8 | Remove dead code | 5 min |
-| 9 | Update documentation | 10 min |
-| **Total** | | **~80 min** |
+| Task      | Description                              | Estimated effort |
+| --------- | ---------------------------------------- | ---------------- |
+| 1         | Set up vitest                            | 5 min            |
+| 2         | Extract helpers + tests                  | 15 min           |
+| 3         | Rewrite log-workout                      | 10 min           |
+| 4         | Rewrite log-exercise                     | 5 min            |
+| 5         | Rewrite log-food                         | 10 min           |
+| 6         | Add log-weight, delete-food, update-food | 10 min           |
+| 7         | JSON input for read commands             | 10 min           |
+| 8         | Remove dead code                         | 5 min            |
+| 9         | Update documentation                     | 10 min           |
+| **Total** |                                          | **~80 min**      |

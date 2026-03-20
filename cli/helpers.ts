@@ -72,8 +72,9 @@ export async function readInput(positional: string[]): Promise<Record<string, an
   const stdin = (globalThis as any).process.stdin as { isTTY?: boolean };
 
   if (!stdin.isTTY) {
-    const input = await readStdinText();
-    return JSON.parse(input) as Record<string, any>;
+    const input = (await readStdinText()).trim();
+    if (input) return JSON.parse(input) as Record<string, any>;
+    // Empty stdin in non-TTY env — fall through to positional args
   }
 
   const first = positional[0];

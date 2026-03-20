@@ -51,22 +51,23 @@ All write commands require JSON input. Custom parsers (`parseSets`, `parseAmount
 
 ```jsonc
 {
-  "name": "Morning Session",         // required
-  "gym": "Gym",                      // optional, fuzzy-matches gym name
-  "startTime": "2026-03-20T09:00:00-05:00",  // optional, ISO 8601, defaults to now
-  "duration": 45,                    // optional, minutes, defaults to 45
-  "exercises": [                     // optional, can create empty workout
+  "name": "Morning Session", // required
+  "gym": "Gym", // optional, fuzzy-matches gym name
+  "startTime": "2026-03-20T09:00:00-05:00", // optional, ISO 8601, defaults to now
+  "duration": 45, // optional, minutes, defaults to 45
+  "exercises": [
+    // optional, can create empty workout
     {
-      "name": "EZ bar preacher curl",    // fuzzy-searches exercise DB
-      "note": "",                        // optional
+      "name": "EZ bar preacher curl", // fuzzy-searches exercise DB
+      "note": "", // optional
       "sets": [
         { "reps": 15, "lbs": 12.5 },
         { "reps": 12, "lbs": 32.5 },
         { "reps": 10, "lbs": 47.5, "sets": 2 },
-        { "reps": 8, "lbs": 50, "type": "failure", "rir": 0 }
-      ]
-    }
-  ]
+        { "reps": 8, "lbs": 50, "type": "failure", "rir": 0 },
+      ],
+    },
+  ],
 }
 ```
 
@@ -82,6 +83,7 @@ All write commands require JSON input. Custom parsers (`parseSets`, `parseAmount
 | `rest` | no | number | 120 | Rest timer in seconds |
 
 **Output:**
+
 ```jsonc
 {
   "status": "created",
@@ -94,11 +96,9 @@ All write commands require JSON input. Custom parsers (`parseSets`, `parseAmount
     {
       "name": "EZ bar preacher curl",
       "exerciseId": "1a15c6f1...",
-      "sets": [
-        { "reps": 15, "kg": 5.67, "type": "standard" }
-      ]
-    }
-  ]
+      "sets": [{ "reps": 15, "kg": 5.67, "type": "standard" }],
+    },
+  ],
 }
 ```
 
@@ -106,16 +106,17 @@ All write commands require JSON input. Custom parsers (`parseSets`, `parseAmount
 
 ```jsonc
 {
-  "workoutId": "uuid",              // required
-  "exercises": [                    // required, same structure as log-workout
+  "workoutId": "uuid", // required
+  "exercises": [
+    // required, same structure as log-workout
     {
       "name": "cable rope triceps pushdown",
       "sets": [
         { "reps": 15, "lbs": 30, "sets": 2 },
-        { "reps": 12, "lbs": 45, "sets": 3 }
-      ]
-    }
-  ]
+        { "reps": 12, "lbs": 45, "sets": 3 },
+      ],
+    },
+  ],
 }
 ```
 
@@ -124,21 +125,22 @@ All write commands require JSON input. Custom parsers (`parseSets`, `parseAmount
 ```jsonc
 {
   // Food identification — one of:
-  "query": "broccoli raw",          // searches food DB, picks top result
-  "foodId": "n_2950",               // OR direct food ID (skip search)
+  "query": "broccoli raw", // searches food DB, picks top result
+  "foodId": "n_2950", // OR direct food ID (skip search)
 
   // Quantity — one of:
-  "grams": 150,                     // gram mode
+  "grams": 150, // gram mode
   // OR
-  "amount": 2,                      // unit mode
+  "amount": 2, // unit mode
   "unit": "cup",
 
-  "loggedAt": "2026-03-20T11:00:00-05:00",  // optional, ISO 8601, defaults to now
-  "pick": 0                         // optional, search result index, default 0
+  "loggedAt": "2026-03-20T11:00:00-05:00", // optional, ISO 8601, defaults to now
+  "pick": 0, // optional, search result index, default 0
 }
 ```
 
 **Output:**
+
 ```jsonc
 {
   "status": "logged",
@@ -149,37 +151,37 @@ All write commands require JSON input. Custom parsers (`parseSets`, `parseAmount
   "totalGrams": 150,
   "totalCalories": 51,
   "totalProtein": 4.2,
-  "date": "2026-03-20"
+  "date": "2026-03-20",
 }
 ```
 
-### `log-weight` — Log a scale entry *(new)*
+### `log-weight` — Log a scale entry _(new)_
 
 ```jsonc
 {
-  "kg": 81.5,                       // use kg or lbs, not both
+  "kg": 81.5, // use kg or lbs, not both
   "lbs": 179.7,
-  "date": "2026-03-20",             // optional, defaults to today
-  "bodyFat": 15.2                   // optional, percentage
+  "date": "2026-03-20", // optional, defaults to today
+  "bodyFat": 15.2, // optional, percentage
 }
 ```
 
-### `delete-food` — Remove a food entry *(new)*
+### `delete-food` — Remove a food entry _(new)_
 
 ```jsonc
 {
-  "date": "2026-03-20",             // required
-  "entryId": "1710000000000000"     // required
+  "date": "2026-03-20", // required
+  "entryId": "1710000000000000", // required
 }
 ```
 
-### `update-food` — Update quantity on a food entry *(new)*
+### `update-food` — Update quantity on a food entry _(new)_
 
 ```jsonc
 {
-  "date": "2026-03-20",             // required
-  "entryId": "1710000000000000",    // required
-  "quantity": 200                   // required
+  "date": "2026-03-20", // required
+  "entryId": "1710000000000000", // required
+  "quantity": 200, // required
 }
 ```
 
@@ -187,18 +189,18 @@ All write commands require JSON input. Custom parsers (`parseSets`, `parseAmount
 
 Read commands keep their current positional arg / flag syntax. They also accept optional JSON via stdin or positional arg for MCP compatibility.
 
-| Command | Current syntax (stays) | JSON alternative |
-|---------|----------------------|-----------------|
-| `workouts` | `--from <date> --to <date>` | `{"from":"...","to":"..."}` |
-| `workout <uuid>` | positional | `{"id":"uuid"}` |
-| `exercises search <query>` | positional | `{"query":"..."}` |
-| `exercise <hex-id>` | positional | `{"id":"hex"}` |
-| `gyms` | no args | no JSON needed |
-| `profile` | no args | no JSON needed |
-| `food-log [date]` | positional | `{"date":"YYYY-MM-DD"}` |
-| `search-food <query>` | positional | `{"query":"..."}` |
-| `program` | no args | no JSON needed |
-| `next-workout` | no args | no JSON needed |
+| Command                    | Current syntax (stays)      | JSON alternative            |
+| -------------------------- | --------------------------- | --------------------------- |
+| `workouts`                 | `--from <date> --to <date>` | `{"from":"...","to":"..."}` |
+| `workout <uuid>`           | positional                  | `{"id":"uuid"}`             |
+| `exercises search <query>` | positional                  | `{"query":"..."}`           |
+| `exercise <hex-id>`        | positional                  | `{"id":"hex"}`              |
+| `gyms`                     | no args                     | no JSON needed              |
+| `profile`                  | no args                     | no JSON needed              |
+| `food-log [date]`          | positional                  | `{"date":"YYYY-MM-DD"}`     |
+| `search-food <query>`      | positional                  | `{"query":"..."}`           |
+| `program`                  | no args                     | no JSON needed              |
+| `next-workout`             | no args                     | no JSON needed              |
 
 When JSON input is present, it takes precedence over positional args/flags.
 

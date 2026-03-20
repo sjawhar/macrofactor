@@ -202,9 +202,8 @@ async function main() {
         }
 
         const hasQuery = typeof input.query === 'string' && input.query.trim() !== '';
-        const hasFoodId = typeof input.foodId === 'string' && input.foodId.trim() !== '';
-        if (!hasQuery && !hasFoodId) {
-          throw new Error('log-food requires one of "query" or "foodId"');
+        if (!hasQuery) {
+          throw new Error('log-food requires "query"');
         }
 
         const hasGrams = input.grams != null;
@@ -222,17 +221,13 @@ async function main() {
         }
 
         const client = await getClient();
-        const searchQuery = hasQuery ? input.query.trim() : input.foodId.trim();
-        const results = await client.searchFoods(searchQuery);
+        const results = await client.searchFoods(input.query.trim());
         if (results.length === 0) {
-          throw new Error(`No foods found for "${searchQuery}"`);
+          throw new Error(`No foods found for "${input.query.trim()}"`);
         }
 
-        const food = hasFoodId ? results.find((result) => result.foodId === input.foodId.trim()) : results[pickIndex];
+        const food = results[pickIndex];
         if (!food) {
-          if (hasFoodId) {
-            throw new Error(`No food found for foodId "${input.foodId.trim()}"`);
-          }
           throw new Error(`"pick" ${pickIndex} out of range (${results.length} results)`);
         }
 
