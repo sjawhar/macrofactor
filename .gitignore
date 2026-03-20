@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Design reference images (large binaries, not needed for library)
+design-reference/
+
+# Sample data with PII
+data/samples/userProfile.json
+
+# Root-level one-off scripts (debug, fix, test, exploration)
+# The actual library lives in src/ and cli/
+/all_workouts.json
+/check_*.ts
+/cleanup*.ts
+/compare_*.ts
+/create_workout.ts
+/current_workout.json
+/debug_*.ts
+/deep_*.ts
+/dump_*.ts
+/find_*.ts
+/fix_*.ts
+/get_tokens*.ts
+/inject_auth.ts
+/log_*.ts
+/nuke_*.ts
+/parse_*.ts
+/raw_*.json
+/recent_workouts.json
+/search_*.ts
+/test-*.mjs
+/test-*.ts
+/trace_*.ts
+/verify_*.ts

@@ -1,0 +1,7100 @@
+[
+  {
+    "id": "69a92b7e-29f2-455b-97d9-92dfb7110907",
+    "selectedEquipmentIds": [
+      "19e5c6f170d8801cac93cf6853bd86b8",
+      "19e5c6f170d8808593d8ecf408c4f749",
+      "19e5c6f170d880ec8238f837c5284019",
+      "19e5c6f170d880d5bf4ae225c061f55d",
+      "19e5c6f170d88018a872fe18a35ae8aa",
+      "19e5c6f170d880119a7ec9fe338f8fea",
+      "19e5c6f170d880d2a77feb7bbe48974f",
+      "19e5c6f170d88087aac8c3228279ff3a",
+      "19e5c6f170d880eaa88fd25d0a1adf58",
+      "19e5c6f170d88066aafbfbb26a40b48d",
+      "19e5c6f170d880fd9d24d7f1a2bd9ad1",
+      "1a05c6f170d880d8a7efe4721e964f2d",
+      "1a45c6f170d880629cdcc99a2ff615cf",
+      "25a5c6f170d880c1a55ac08cf52671ab",
+      "25a5c6f170d880589ffdf4f627a75b44",
+      "25a5c6f170d880478d81c880d6ee06a0",
+      "25b5c6f170d880619592ca5ba65fc1b3",
+      "25c5c6f170d88024ac71dfa51cae3bc0",
+      "25e5c6f170d8808e8276fa6902887bff",
+      "2605c6f170d8804bb8e0ca7c86ed38d9",
+      "2985c6f170d880c194acfcbd47b89cd8",
+      "2b25c6f170d880edbbdadcfb8841bfd1",
+      "25e5c6f170d880748060de3a655c7b18",
+      "19e5c6f170d88007ba63e3e18e4933f8",
+      "25d5c6f170d88040a3cce7d9aaef353c",
+      "19e5c6f170d880d28b46e9ccddcfba1a",
+      "3015c6f170d880dd9ee2d2147a73e83c"
+    ],
+    "createdAt": "2026-03-05T08:22:30.844757Z",
+    "equipmentConfigById": {
+      "1a45c6f170d880629cdcc99a2ff615cf": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "color": "black",
+            "weight": 0.22679645471781987,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": "silver",
+            "weight": 0.5669911367945497,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 1.1339822735890994,
+            "color": "green",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 2.267964547178199,
+            "color": "blue",
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "lbs",
+            "color": "silver",
+            "weight": 4.535929094356398,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "lbs",
+            "color": "green",
+            "weight": 11.339822735890994,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 15.87575183024739,
+            "color": "yellow",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 20.41168092460379,
+            "color": "blue"
+          },
+          {
+            "quantity": null,
+            "color": "red",
+            "weight": 24.947610018960187,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": "black",
+            "weight": 0.25,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "color": "silver",
+            "weight": 0.5,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "green",
+            "weight": 1.25
+          },
+          {
+            "quantity": null,
+            "color": "blue",
+            "weight": 2.5,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "color": "silver",
+            "weight": 5,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "green",
+            "weight": 10,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "yellow",
+            "weight": 15
+          },
+          {
+            "weightUnit": "kgs",
+            "color": "blue",
+            "weight": 20,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 25,
+            "color": "red",
+            "weightUnit": "kgs"
+          }
+        ]
+      },
+      "19e5c6f170d8801cac93cf6853bd86b8": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 20.41168092460379,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 14.968566011376112,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 6.8038936415345965,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "color": null,
+            "weight": 20,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 15,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 7,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          }
+        ]
+      },
+      "25a5c6f170d880589ffdf4f627a75b44": {
+        "weights": [
+          {
+            "weight": 1,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 1.1339822735890994,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 2,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 2.267964547178199,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 3,
+            "weightUnit": "kgs"
+          },
+          {
+            "color": null,
+            "weight": 3.4019468207672983,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weight": 4,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 4.535929094356398,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 5,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 5.669911367945497,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 6,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 6.8038936415345965,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weight": 7,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 7.937875915123695,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weight": 8,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 9,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 9.071858188712795,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 10,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "color": null,
+            "weight": 10.205840462301895,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 11,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 11.339822735890994
+          },
+          {
+            "color": null,
+            "weight": 12,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 12.5
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 13.607787283069193
+          },
+          {
+            "quantity": null,
+            "weight": 15,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 15.87575183024739,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "kgs",
+            "weight": 17.5,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 18.14371637742559,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 20,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 20.41168092460379,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 22.5,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 22.67964547178199
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 24.947610018960187,
+            "color": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 25,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 27.215574566138386,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 27.5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 29.483539113316585
+          },
+          {
+            "color": null,
+            "weight": 30,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 31.75150366049478,
+            "weightUnit": "lbs"
+          },
+          {
+            "color": null,
+            "weight": 32.5,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 34.01946820767298,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 35,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 36.28743275485118
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 37.5
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 38.55539730202938,
+            "color": null
+          },
+          {
+            "color": null,
+            "weight": 40,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 40.82336184920758,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weight": 42.5,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 43.091326396385774,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 45,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 45.35929094356398,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 47.5,
+            "color": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 47.62725549074217,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 49.895220037920375,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 50,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 52.16318458509857,
+            "weightUnit": "lbs"
+          },
+          {
+            "color": null,
+            "weight": 52.5,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 54.43114913227677,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 55,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 56.69911367945497,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "kgs",
+            "weight": 57.5,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 58.96707822663317,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 60,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 61.235042773811365,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 62.5
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 63.50300732098956,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 65
+          },
+          {
+            "weight": 65.77097186816776,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 67.5
+          },
+          {
+            "color": null,
+            "weight": 68.03893641534596,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 70,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 70.30690096252415,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 72.5,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 72.57486550970236,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 74.84283005688056,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "weight": 75,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          }
+        ],
+        "runtimeType": "weights"
+      }
+    },
+    "alwaysShowExercises": [],
+    "weightUnit": "kgs",
+    "alwaysHideExercises": [],
+    "offsetWeightInPlateCalculator": false,
+    "name": "SLC",
+    "allowMixedUnitsInPlateCalculator": false,
+    "icon": "chalet",
+    "useBumperPlatesInPlateCalculator": null
+  },
+  {
+    "id": "a27f4fc3-0d74-4d0c-8f1d-6b489a51c0c3",
+    "weightUnit": "kgs",
+    "alwaysHideExercises": [],
+    "offsetWeightInPlateCalculator": false,
+    "name": "Gym",
+    "allowMixedUnitsInPlateCalculator": false,
+    "icon": "house",
+    "useBumperPlatesInPlateCalculator": null,
+    "selectedEquipmentIds": [
+      "19e5c6f170d8801cac93cf6853bd86b8",
+      "19e5c6f170d8808593d8ecf408c4f749",
+      "19e5c6f170d880e791c3da3a74828f0e",
+      "19e5c6f170d8802b9d8ed6e425798f6b",
+      "19e5c6f170d880ec8238f837c5284019",
+      "19e5c6f170d880d5bf4ae225c061f55d",
+      "19e5c6f170d88018a872fe18a35ae8aa",
+      "19e5c6f170d880119a7ec9fe338f8fea",
+      "19e5c6f170d880d28b46e9ccddcfba1a",
+      "19e5c6f170d880bba9c9d309f541198d",
+      "19e5c6f170d8806ab6a6cf2efc3266c8",
+      "19e5c6f170d880038662ee8145175f92",
+      "19e5c6f170d880d3914cc4c2631393cd",
+      "19e5c6f170d8808e888ceb1867c89c02",
+      "19e5c6f170d880fba77bca5ee5eccb63",
+      "19e5c6f170d88099b164ca21463037d3",
+      "19e5c6f170d880588002d0b33085acfb",
+      "19e5c6f170d880018ac7fbba68e74a58",
+      "19e5c6f170d8802a89e5c8d58b54c757",
+      "19e5c6f170d880919dfae5a78a8f54d4",
+      "19e5c6f170d8804dbcdcc184be8003fb",
+      "19e5c6f170d880d29affc687810a9a8a",
+      "19e5c6f170d880d2a77feb7bbe48974f",
+      "19e5c6f170d88087aac8c3228279ff3a",
+      "19e5c6f170d880eaa88fd25d0a1adf58",
+      "19e5c6f170d88066aafbfbb26a40b48d",
+      "19e5c6f170d8801b933cdb1b550c038c",
+      "19e5c6f170d88050bdbefcbb91c01f16",
+      "19e5c6f170d88030a20edfabb6d824c4",
+      "19e5c6f170d88074bf1af2264ccaf192",
+      "19e5c6f170d88007ba63e3e18e4933f8",
+      "19e5c6f170d880399eb6e5aeadc4ff8c",
+      "19e5c6f170d880089831e9c1bb4a92d0",
+      "19e5c6f170d880fd9d24d7f1a2bd9ad1",
+      "19f5c6f170d880eea412c7ca7d833844",
+      "1a05c6f170d880d8a7efe4721e964f2d",
+      "1a05c6f170d88000a11ac56d284582a9",
+      "1a05c6f170d880f3888bf7d48719321f",
+      "1a45c6f170d880629cdcc99a2ff615cf",
+      "1a45c6f170d880b08d92f50c0ff2bb76",
+      "25a5c6f170d880c1a55ac08cf52671ab",
+      "25a5c6f170d880589ffdf4f627a75b44",
+      "25a5c6f170d880478d81c880d6ee06a0",
+      "25a5c6f170d880c2be66d2f10537c1c1",
+      "25a5c6f170d8805cb60bd3ee71311ad1",
+      "25a5c6f170d880dc87b4ceacf1c4ebac",
+      "25a5c6f170d880358d45db535ec7dde7",
+      "25a5c6f170d88036b550f25411d5e811",
+      "25a5c6f170d88099ad14f2ed1dc1110d",
+      "25a5c6f170d8801c90d8eb731e97ebac",
+      "25a5c6f170d88015858ecc00db4c9e02",
+      "25a5c6f170d8806bab5fc4e4a9f0b0c4",
+      "25a5c6f170d880abb2c0cc6cd225c6a8",
+      "25a5c6f170d88094bd63d078c1a8bb00",
+      "25a5c6f170d880e49dddca4c658fa51c",
+      "25a5c6f170d880df850bc81bb535117d",
+      "25a5c6f170d880a08163d89c0f571db4",
+      "25a5c6f170d88008aa1effea3e248448",
+      "25a5c6f170d8801faa32cf26ee16c248",
+      "25b5c6f170d8804dbf93f097481f14e3",
+      "25b5c6f170d8805db24ce3ad378a4739",
+      "25b5c6f170d880288aebd865cb540804",
+      "25b5c6f170d880619592ca5ba65fc1b3",
+      "25c5c6f170d880f4b452cfe6feed2d3d",
+      "25c5c6f170d880b0a509d9d5c13748d0",
+      "25c5c6f170d88024ac71dfa51cae3bc0",
+      "25c5c6f170d880f28855f3b2e31ed739",
+      "25c5c6f170d880ad8010e45cf9e63579",
+      "25c5c6f170d880899ce8c47d498c8d9b",
+      "25c5c6f170d88050a23fcf770c34074a",
+      "25c5c6f170d880eaac9ffb6ffdf335f2",
+      "25c5c6f170d880c68c25c5b49f6d0c84",
+      "25c5c6f170d880b98fa0c006c2ac489d",
+      "25c5c6f170d880dbaa7cf68aed332e18",
+      "25d5c6f170d880a286ead7979054a9c0",
+      "25d5c6f170d8803292b1cef9e5e3637c",
+      "25d5c6f170d88040a3cce7d9aaef353c",
+      "25d5c6f170d8803ab92be54326c5f6be",
+      "25d5c6f170d8801bb8daf6e122331357",
+      "25d5c6f170d8808aba23e002b00ce700",
+      "25e5c6f170d8808e8276fa6902887bff",
+      "2605c6f170d880cf825feab5ae68d7a4",
+      "2605c6f170d8804bb8e0ca7c86ed38d9",
+      "2935c6f170d880988f4adef8637e6add",
+      "2985c6f170d88091b56ec5457cde1321",
+      "2b25c6f170d880edbbdadcfb8841bfd1",
+      "2ed5c6f170d88039b833d0a45eec64f5",
+      "2ed5c6f170d88076bfe7ecbf57ff522d",
+      "2ed5c6f170d880558198cc60df067a7d",
+      "2ed5c6f170d88075a734c1593b8e537c",
+      "2ed5c6f170d8801ebb3cea98cb763b8d"
+    ],
+    "createdAt": "2026-03-10T18:47:16.934431Z",
+    "equipmentConfigById": {
+      "25a5c6f170d880589ffdf4f627a75b44": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 1.1339822735890994,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 2.267964547178199,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 3.4019468207672983,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 4.535929094356398,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 5.669911367945497,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 6.8038936415345965,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 7.937875915123695,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 9.071858188712795,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 10.205840462301895,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 11.339822735890994,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 13.607787283069193,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 15.87575183024739,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 18.14371637742559,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 20.41168092460379,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 22.67964547178199,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 24.947610018960187,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 27.215574566138386,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 29.483539113316585,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 31.75150366049478
+          },
+          {
+            "weight": 34.01946820767298,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 36.28743275485118,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 38.55539730202938,
+            "weightUnit": "lbs"
+          },
+          {
+            "weight": 40.82336184920758,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 43.091326396385774,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 45.35929094356398,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 47.62725549074217,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 49.895220037920375,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 52.16318458509857,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 54.43114913227677,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 56.69911367945497,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 58.96707822663317,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weight": 61.235042773811365,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 63.50300732098956,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 65.77097186816776,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 68.03893641534596,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 70.30690096252415,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 72.57486550970236,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 74.84283005688056,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 1,
+            "weightUnit": "kgs"
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 2,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 3,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 4,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 6
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 7,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 8,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 9,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weight": 10,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 11,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 12,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 12.5,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 15,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 17.5,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 20,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 22.5,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 25,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 27.5,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 30,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 32.5,
+            "color": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 35,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 37.5,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "weight": 40,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 42.5,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 45
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 47.5,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 50,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 52.5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 55,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 57.5,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 60,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "color": null,
+            "weight": 62.5,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 65,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 67.5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weight": 70,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 72.5,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weight": 75,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ]
+      },
+      "19e5c6f170d880d28b46e9ccddcfba1a": {
+        "weightRanges": [
+          {
+            "enabled": true,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2f25c6f170d880db9805f9f55974b934": null,
+      "19e5c6f170d8804dbcdcc184be8003fb": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": true,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d88050a23fcf770c34074a": {
+        "weights": [
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 9.071858188712795,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 13.607787283069193,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 18.14371637742559,
+            "color": null
+          },
+          {
+            "color": null,
+            "weight": 22.67964547178199,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 27.215574566138386,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 31.75150366049478,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 36.28743275485118
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 40.82336184920758,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 45.35929094356398,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 49.895220037920375,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 10,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weight": 15,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 20,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 25,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 30,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 35,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "color": null,
+            "weight": 40,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 45,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 50,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "19e5c6f170d8801cac93cf6853bd86b8": {
+        "weights": [
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 20.41168092460379
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 14.968566011376112,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 6.8038936415345965
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 20,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 15,
+            "weightUnit": "kgs"
+          },
+          {
+            "color": null,
+            "weight": 7,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "3015c6f170d880dd9ee2d2147a73e83c": null,
+      "2705c6f170d88022be5ace8690f76858": null,
+      "19e5c6f170d88074bf1af2264ccaf192": {
+        "weights": [
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 9.071858188712795,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 13.607787283069193,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 9,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 13.5,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "19e5c6f170d88099b164ca21463037d3": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": true
+          },
+          {
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d880dc87b4ceacf1c4ebac": {
+        "weightRanges": [
+          {
+            "enabled": true,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d8805cb60bd3ee71311ad1": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": true,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d8802a89e5c8d58b54c757": {
+        "weights": [
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 1.814371637742559,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 2.7215574566138385,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weight": 3.628743275485118,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 4.535929094356398,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "color": null,
+            "weight": 5.443114913227677,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "color": null,
+            "weight": 6.350300732098956,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 7.257486550970236,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 8.164672369841515,
+            "color": null
+          },
+          {
+            "color": null,
+            "weight": 9.071858188712795,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 11.339822735890994,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 13.607787283069193,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 1,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 2,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 3,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 4,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 5,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 6,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 7,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weight": 8,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 9,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 10,
+            "color": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 11,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 12,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "weight": 13,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weight": 14,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "1a45c6f170d880629cdcc99a2ff615cf": {
+        "weights": [
+          {
+            "weightUnit": "lbs",
+            "weight": 0.22679645471781987,
+            "color": "black",
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 0.5669911367945497,
+            "color": "silver"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": "green",
+            "weight": 1.1339822735890994,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": "blue",
+            "weight": 2.267964547178199,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "color": "silver",
+            "weight": 4.535929094356398,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 11.339822735890994,
+            "color": "green"
+          },
+          {
+            "weight": 15.87575183024739,
+            "color": "yellow",
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 20.41168092460379,
+            "color": "blue",
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 24.947610018960187,
+            "color": "red"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "black",
+            "weight": 0.25
+          },
+          {
+            "weight": 0.5,
+            "color": "silver",
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": "green",
+            "weight": 1.25,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 2.5,
+            "color": "blue",
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": "silver",
+            "weight": 5,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "green",
+            "weight": 10
+          },
+          {
+            "weight": 15,
+            "color": "yellow",
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "blue",
+            "weight": 20,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": "red",
+            "weight": 25,
+            "weightUnit": "kgs",
+            "quantity": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "25c5c6f170d880f4b452cfe6feed2d3d": {
+        "weightRanges": [
+          {
+            "enabled": true,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880b0a509d9d5c13748d0": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d880e791c3da3a74828f0e": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 2.267964547178199,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 4.082336184920758,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 4.535929094356398,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 5.896707822663316,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 6.8038936415345965
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 8.164672369841515,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 9.071858188712795,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 11.339822735890994,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 11.793415645326633,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 13.607787283069193,
+            "quantity": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 15.87575183024739,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 18.14371637742559
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 19.958088015168148,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 20.41168092460379,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 22.67964547178199,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 24.040424200088907,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 28.122760385009663,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 31.75150366049478,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 36.28743275485118,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 39.916176030336295
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 43.99851221525706,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 48.080848400177814,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 56.245520770019326,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 68.03893641534596,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weight": 79.83235206067259,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 92.07936061543487,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 4
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 6
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 8,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 10,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 12,
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": null,
+            "weight": 14,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 16,
+            "weightUnit": "kgs"
+          },
+          {
+            "weight": 18,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 20,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 22,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 24,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 26,
+            "weightUnit": "kgs"
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 28,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weight": 30,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 32
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 36,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weight": 40,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 44,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 48,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 52,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 56,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 60,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 64,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 68,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 72,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 76,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 80,
+            "color": null
+          },
+          {
+            "weight": 84,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 88,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 92,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ]
+      }
+    },
+    "alwaysShowExercises": []
+  },
+  {
+    "id": "blankSlate",
+    "offsetWeightInPlateCalculator": false,
+    "weightUnit": null,
+    "alwaysHideExercises": [],
+    "icon": "apartment",
+    "allowMixedUnitsInPlateCalculator": false,
+    "name": "Constellation ",
+    "useBumperPlatesInPlateCalculator": null,
+    "selectedEquipmentIds": [
+      "25d5c6f170d880eba241c26f8f426024",
+      "19e5c6f170d8801cac93cf6853bd86b8",
+      "19e5c6f170d88074bf1af2264ccaf192",
+      "19e5c6f170d880d5bf4ae225c061f55d",
+      "25a5c6f170d880c2be66d2f10537c1c1",
+      "1a05c6f170d880d8a7efe4721e964f2d",
+      "19e5c6f170d880119a7ec9fe338f8fea",
+      "25c5c6f170d880eaac9ffb6ffdf335f2",
+      "1a05c6f170d88000a11ac56d284582a9",
+      "25a5c6f170d8801c90d8eb731e97ebac",
+      "19e5c6f170d88066aafbfbb26a40b48d",
+      "25c5c6f170d88024ac71dfa51cae3bc0",
+      "25d5c6f170d8802b9040cbb72e8db6d3",
+      "27d5c6f170d880138553d4c610c9ddc8",
+      "19e5c6f170d880d2a77feb7bbe48974f",
+      "19e5c6f170d88018a872fe18a35ae8aa",
+      "25a5c6f170d8806cbce3cdb9f00dbfc1",
+      "19e5c6f170d880eaa88fd25d0a1adf58",
+      "19f5c6f170d880eea412c7ca7d833844",
+      "19e5c6f170d88087aac8c3228279ff3a",
+      "19e5c6f170d880d28b46e9ccddcfba1a",
+      "19e5c6f170d88007ba63e3e18e4933f8",
+      "25a5c6f170d880589ffdf4f627a75b44",
+      "19e5c6f170d880e791c3da3a74828f0e",
+      "1a45c6f170d880629cdcc99a2ff615cf",
+      "25d5c6f170d88040a3cce7d9aaef353c"
+    ],
+    "equipmentConfigById": {
+      "25a5c6f170d880d89494eedb31bcb223": null,
+      "19e5c6f170d880bba9c9d309f541198d": null,
+      "19e5c6f170d88007ba63e3e18e4933f8": {
+        "runtimeType": "ranges",
+        "weightRanges": [
+          {
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          },
+          {
+            "minimum": 13.607787283069193,
+            "weightUnit": "lbs",
+            "increment": 1.1339822735890994,
+            "maximum": 136.07787283069192,
+            "enabled": true
+          }
+        ]
+      },
+      "25d5c6f170d880ab94bafb6d8142ce57": null,
+      "19e5c6f170d8808e888ceb1867c89c02": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 22.7
+      },
+      "25e5c6f170d880ce83f4c60b3f512a17": null,
+      "26a5c6f170d880ba9239dd418aa3578c": {
+        "weightRanges": [
+          {
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2685c6f170d880648f67d1ece3a70bb2": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d8806ab6a6cf2efc3266c8": null,
+      "25b5c6f170d8804dbf93f097481f14e3": null,
+      "25d5c6f170d8809bb07bf9a9c6f331eb": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880f4b452cfe6feed2d3d": {
+        "weightRanges": [
+          {
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d880f596abc08924a614f9": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 29.483539113316585
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 24.947610018960187,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 27.215574566138386,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 31.75150366049478,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 29.5,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 25,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 27.5,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 32,
+            "weightUnit": "kgs"
+          }
+        ]
+      },
+      "25a5c6f170d880dd8002d5ad9670ad2c": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "25a5c6f170d880abb2c0cc6cd225c6a8": {
+        "weightUnit": "kgs",
+        "weight": 22.7,
+        "runtimeType": "base"
+      },
+      "25c5c6f170d88050a23fcf770c34074a": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 9.071858188712795,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 13.607787283069193,
+            "color": null
+          },
+          {
+            "color": null,
+            "weight": 18.14371637742559,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 22.67964547178199,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 27.215574566138386,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "weight": 31.75150366049478,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 36.28743275485118,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 40.82336184920758,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 45.35929094356398,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 49.895220037920375,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "weight": 10,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 15,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 20
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 25,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weight": 30,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 35,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 40,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 45,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 50,
+            "weightUnit": "kgs"
+          }
+        ]
+      },
+      "25d5c6f170d8803292b1cef9e5e3637c": {
+        "weightRanges": [
+          {
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2905c6f170d880bc9e8ce4b473f9f4cd": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d8806bab5fc4e4a9f0b0c4": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2985c6f170d880c194acfcbd47b89cd8": null,
+      "25d5c6f170d8800e9a3df1f9e9d9cfb7": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "19e5c6f170d880d2a77feb7bbe48974f": null,
+      "25d5c6f170d88043bc4cd1dbbd52db51": null,
+      "25c5c6f170d880f28855f3b2e31ed739": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880eaac9ffb6ffdf335f2": null,
+      "25d5c6f170d880e681e3c818577f8603": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "25d5c6f170d8803ab92be54326c5f6be": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25d5c6f170d880a286ead7979054a9c0": null,
+      "19e5c6f170d880698de5f4e4df7781a9": {
+        "runtimeType": "base",
+        "weight": 0,
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d88066aafbfbb26a40b48d": null,
+      "25a5c6f170d88015858ecc00db4c9e02": null,
+      "25d5c6f170d880b19945cc719226fd3d": null,
+      "25a5c6f170d88070960ec16cf3b0083e": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "quantity": null,
+            "weight": 11.339822735890994,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 7.711079460405876
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 14.968566011376112,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weight": 11.5,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 7.5,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 15,
+            "quantity": null
+          }
+        ]
+      },
+      "25c5c6f170d880b0a509d9d5c13748d0": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25d5c6f170d880b793cef90680f4df4c": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987
+          },
+          {
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d880adb2cac693d9eceb51": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "1a45c6f170d880b08d92f50c0ff2bb76": null,
+      "19e5c6f170d880038662ee8145175f92": {
+        "weight": 53.5,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d8804781f8f6869059bba0": {
+        "runtimeType": "base",
+        "weight": 30.4,
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d8801c90d8eb731e97ebac": null,
+      "25b5c6f170d8805db24ce3ad378a4739": null,
+      "19e5c6f170d8801b933cdb1b550c038c": null,
+      "25d5c6f170d880b9a6faec1e7e4b9f5e": null,
+      "28c5c6f170d88079a2c1e6f85986c2c3": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987
+          },
+          {
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25e5c6f170d880f5a8a8dedd9e550c40": null,
+      "25d5c6f170d8802b9040cbb72e8db6d3": null,
+      "19e5c6f170d88099b164ca21463037d3": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398
+          },
+          {
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880088415f31db00a6e55": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2b25c6f170d880149addda11de15db13": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2695c6f170d88065af07cbb8c9f26d73": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25b5c6f170d880619592ca5ba65fc1b3": {
+        "runtimeType": "weights",
+        "weights": []
+      },
+      "25d5c6f170d8808aba23e002b00ce700": null,
+      "1a45c6f170d88022ab7bcf17649e3d7c": {
+        "runtimeType": "base",
+        "weight": 40.8,
+        "weightUnit": "kgs"
+      },
+      "25e5c6f170d8808e8276fa6902887bff": null,
+      "19e5c6f170d88050bdbefcbb91c01f16": null,
+      "2705c6f170d880b3a3ffd8e87f127077": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d880ec8238f837c5284019": null,
+      "25d5c6f170d880a6977afc47422a6cf7": {
+        "weightRanges": [
+          {
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2705c6f170d88056950affcfc6e72475": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25c5c6f170d880e88a88e19b0209324c": {
+        "weightRanges": [
+          {
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2705c6f170d88022be5ace8690f76858": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25d5c6f170d88040a3cce7d9aaef353c": {
+        "weightRanges": [
+          {
+            "minimum": 13.607787283069193,
+            "weightUnit": "lbs",
+            "maximum": 136.07787283069192,
+            "increment": 1.2700601464197911,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": false,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880f6bd7ecb941663f615": null,
+      "19e5c6f170d880018ac7fbba68e74a58": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d880a190dac9cd24968c46": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "19e5c6f170d880149b59e93abb37a378": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d88016bae1fef84faef0f8": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 60.78144986437572,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 22.67964547178199,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 31.75150366049478,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 61,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 22.5,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 32,
+            "color": null,
+            "quantity": null
+          }
+        ]
+      },
+      "25a5c6f170d88099ad14f2ed1dc1110d": null,
+      "25a5c6f170d880e49dddca4c658fa51c": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "2985c6f170d880aca70ac2eac7aa460e": {
+        "runtimeType": "base",
+        "weight": 0,
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d88013aacef00e7b0303b6": null,
+      "28b5c6f170d880319249e0b7e5d8423c": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2a45c6f170d880d7a3f8f4b12c3b2e85": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d880c1a55ac08cf52671ab": {
+        "runtimeType": "weights",
+        "weights": []
+      },
+      "29a5c6f170d880b5911cc71b399e7ff3": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "2b25c6f170d8808c902ad0bc95551783": {
+        "runtimeType": "base",
+        "weight": 0,
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d880eaa88fd25d0a1adf58": null,
+      "19e5c6f170d880eabe60fdd5f6cdc3df": {
+        "weightRanges": [
+          {
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880899ce8c47d498c8d9b": {
+        "weights": [
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 9.071858188712795,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 13.607787283069193
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 18.14371637742559,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 22.67964547178199,
+            "color": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 27.215574566138386,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 31.75150366049478,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 36.28743275485118,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 40.82336184920758,
+            "color": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 45.35929094356398,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "weight": 49.895220037920375,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 10,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "color": null,
+            "weight": 15,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 20,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weight": 25,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 30,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 35,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 40,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 45,
+            "color": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 50,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "2725c6f170d8800ea9b4ca6d54b70862": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 9
+      },
+      "2695c6f170d8802d82f1c198701b01b3": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "19e5c6f170d880fba77bca5ee5eccb63": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987
+          },
+          {
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d880d29affc687810a9a8a": {
+        "weight": 20,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "2b25c6f170d880548e61e0d03ea6ce1d": {
+        "runtimeType": "base",
+        "weight": 0,
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d880478d81c880d6ee06a0": {
+        "runtimeType": "weights",
+        "weights": []
+      },
+      "2985c6f170d8808a8580c289a9844905": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d8801c97d2da626ba64553": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d8801cac93cf6853bd86b8": {
+        "weights": [
+          {
+            "weightUnit": "lbs",
+            "weight": 6.8038936415345965,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 7,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 14.968566011376112,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 15,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 20,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 20.41168092460379,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "19e5c6f170d880d28b46e9ccddcfba1a": {
+        "runtimeType": "ranges",
+        "weightRanges": [
+          {
+            "maximum": 136.07787283069192,
+            "increment": 1.1339822735890994,
+            "enabled": true,
+            "minimum": 13.607787283069193,
+            "weightUnit": "lbs"
+          },
+          {
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ]
+      },
+      "25d5c6f170d8804497e6f73ddb189528": {
+        "weight": 22.7,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d8803d843fec1ad71d3acb": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 20.4
+      },
+      "2605c6f170d880cf825feab5ae68d7a4": null,
+      "19e5c6f170d880c391f7e87ab1a231e2": null,
+      "19e5c6f170d8808593d8ecf408c4f749": {
+        "runtimeType": "weights",
+        "weights": []
+      },
+      "28a5c6f170d880dcbd8ad6a43b56a31c": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "25a5c6f170d8806cbce3cdb9f00dbfc1": null,
+      "25d5c6f170d8802392cee06116c0c1a5": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "19e5c6f170d880089831e9c1bb4a92d0": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "1a05c6f170d880f3888bf7d48719321f": null,
+      "2705c6f170d88045ba68f87bff516399": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "25c5c6f170d8800da116eb279df1e8e9": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "1a45c6f170d880629cdcc99a2ff615cf": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 0.22679645471781987,
+            "color": "black",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 0.25,
+            "color": "black",
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 0.5,
+            "color": "silver",
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": 2,
+            "weightUnit": "lbs",
+            "color": "silver",
+            "weight": 0.5669911367945497,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 1.1339822735890994,
+            "color": "green",
+            "quantity": 4
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": "green",
+            "weight": 1.25,
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": 4,
+            "weight": 2.267964547178199,
+            "color": "blue",
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 2.5,
+            "color": "blue"
+          },
+          {
+            "quantity": 4,
+            "weightUnit": "lbs",
+            "weight": 4.535929094356398,
+            "color": "silver",
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "silver",
+            "weight": 5
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 10,
+            "color": "green",
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": 2,
+            "weight": 11.339822735890994,
+            "color": "green",
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 15,
+            "color": "yellow",
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": "yellow",
+            "weight": 15.87575183024739,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 20,
+            "color": "blue"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": "blue",
+            "weight": 20.41168092460379,
+            "weightUnit": "lbs",
+            "quantity": 4
+          },
+          {
+            "quantity": null,
+            "color": "red",
+            "weight": 24.947610018960187,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 25,
+            "color": "red"
+          }
+        ]
+      },
+      "25e5c6f170d88093a05dd2c58983b8f4": null,
+      "2b25c6f170d8801a96ffd0ed372d7422": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d880b4af58db6178249ca1": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "19f5c6f170d880e4844df905ecfc5c3a": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 36.3
+      },
+      "2625c6f170d880788ea1cb74ceda4648": null,
+      "25d5c6f170d880b6974fe98ac99f24f1": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "27d5c6f170d880fe8252ef81ddca8307": null,
+      "25d5c6f170d8801bb8daf6e122331357": null,
+      "2b25c6f170d8809e8304ed80a0eb7a3b": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "25e5c6f170d88024bcb8c5a4f2d78842": null,
+      "19e5c6f170d880d3914cc4c2631393cd": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 45.4
+      },
+      "25a5c6f170d88008aa1effea3e248448": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "2725c6f170d88049aa6bccdfef0f341f": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d88036b550f25411d5e811": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "weightUnit": "lbs",
+            "weight": 20.41168092460379,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weight": 24.947610018960187,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 27.215574566138386,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 20,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 25,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 27,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          }
+        ]
+      },
+      "2985c6f170d88090a434efdbdab506ca": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d8804894dddc6a13865035": {
+        "weights": [
+          {
+            "quantity": null,
+            "weight": 17.69012346798995,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 20.41168092460379,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 17.5,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 20,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "25c5c6f170d8808e9f87fc4a815d8ba5": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d880348277fddad52b52b0": {
+        "runtimeType": "base",
+        "weight": 7,
+        "weightUnit": "kgs"
+      },
+      "25b5c6f170d880288aebd865cb540804": null,
+      "25a5c6f170d880adb79afbd373c30d6c": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2705c6f170d880429bddd8a58b4d3e8f": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19f5c6f170d880eea412c7ca7d833844": null,
+      "25a5c6f170d880dc87b4ceacf1c4ebac": {
+        "weightRanges": [
+          {
+            "weightUnit": "lbs",
+            "minimum": 0,
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398
+          },
+          {
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "27d5c6f170d880138553d4c610c9ddc8": null,
+      "25c5c6f170d880dbaa7cf68aed332e18": {
+        "weightRanges": [
+          {
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880c68c25c5b49f6d0c84": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "minimum": 0,
+            "weightUnit": "kgs",
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2985c6f170d88091b56ec5457cde1321": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "increment": 5,
+            "maximum": 250,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d880fd8cf7fe6ce4b39aec": {
+        "weights": [
+          {
+            "weight": 38.55539730202938,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 29.483539113316585,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 20.41168092460379,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 38.5,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 29.5,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "weight": 20,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "19e5c6f170d88074bf1af2264ccaf192": {
+        "weights": [
+          {
+            "weight": 9,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 9.071858188712795,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 13.5,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 13.607787283069193,
+            "color": null,
+            "quantity": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "25c5c6f170d88024ac71dfa51cae3bc0": null,
+      "19e5c6f170d880b398fdd9757e5186f4": {
+        "weights": [],
+        "runtimeType": "weights"
+      },
+      "2935c6f170d880988f4adef8637e6add": {
+        "weight": 7,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d8804dbcdcc184be8003fb": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d88087aac8c3228279ff3a": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "25a5c6f170d880df850bc81bb535117d": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d8805cb5d2e965003ea174": {
+        "weightRanges": [
+          {
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "increment": 5,
+            "maximum": 250
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d880e791c3da3a74828f0e": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "quantity": null,
+            "weight": 2.267964547178199,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 4,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 4.082336184920758,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 4.535929094356398,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weight": 5.896707822663316,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 6
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 6.8038936415345965,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "color": null,
+            "weight": 8,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 8.164672369841515,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 9.071858188712795,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 10,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 11.339822735890994,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 11.793415645326633
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 12,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 13.607787283069193,
+            "weightUnit": "lbs"
+          },
+          {
+            "color": null,
+            "weight": 14,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 15.87575183024739,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 16,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 18,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 18.14371637742559,
+            "quantity": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 19.958088015168148,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 20,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weight": 20.41168092460379,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 22,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 22.67964547178199,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 24,
+            "weightUnit": "kgs"
+          },
+          {
+            "weight": 24.040424200088907,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 26,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 28,
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": null,
+            "weight": 28.122760385009663,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 30,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 31.75150366049478,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 32,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 36,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 36.28743275485118,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 39.916176030336295
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 40,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 43.99851221525706,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 44,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 48,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weight": 48.080848400177814,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 52,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 56,
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": null,
+            "weight": 56.245520770019326,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 60,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 64,
+            "color": null
+          },
+          {
+            "color": null,
+            "weight": 68,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 68.03893641534596,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 72,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 76,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 79.83235206067259,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 80,
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": null,
+            "weight": 84,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 88,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 92,
+            "weightUnit": "kgs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 92.07936061543487,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          }
+        ]
+      },
+      "25a5c6f170d8802e877ffd049e87dc5a": {
+        "weights": [
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 20.41168092460379,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 20,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "19e5c6f170d8802a89e5c8d58b54c757": {
+        "weights": [
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 1.814371637742559,
+            "color": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 2.7215574566138385,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "weight": 3.628743275485118,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 4.535929094356398,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weight": 5.443114913227677,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 6.350300732098956,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 7.257486550970236,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 8.164672369841515,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 9.071858188712795,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 11.339822735890994,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 13.607787283069193,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 1,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 2,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 3,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 4,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 6,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 7,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 8,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 9,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 10,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 11,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 12,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 13,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 14,
+            "color": null,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "19e5c6f170d880919dfae5a78a8f54d4": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25d5c6f170d88049899df888a3a24c2c": null,
+      "2935c6f170d88021a233ffed036154f3": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d880119a7ec9fe338f8fea": null,
+      "2605c6f170d8804bb8e0ca7c86ed38d9": null,
+      "19e5c6f170d880409921fedcd08c091b": null,
+      "29a5c6f170d880a98b36f624790cc5f8": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "19e5c6f170d88018a872fe18a35ae8aa": null,
+      "19e5c6f170d880c7b6ddfac365a5ddf6": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "19e5c6f170d880fd9d24d7f1a2bd9ad1": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "2905c6f170d88081bcbff94b66fef25e": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "1b85c6f170d880359c75c07ec198c05c": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d8803a9288c01c665db7f2": {
+        "weights": [
+          {
+            "weight": 2.267964547178199,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 3.4019468207672983,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 4.535929094356398,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 6.350300732098956,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 9.071858188712795,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 18.14371637742559,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 27.215574566138386,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 5,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weight": 6,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 7,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 8
+          },
+          {
+            "color": null,
+            "weight": 9,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 10,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 20,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": null,
+            "weight": 30,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "2855c6f170d880d58346f130edb1cb13": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d8805cb60bd3ee71311ad1": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5,
+            "weightUnit": "kgs",
+            "minimum": 0
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25c5c6f170d880b98fa0c006c2ac489d": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2b25c6f170d880edbbdadcfb8841bfd1": null,
+      "25d5c6f170d880d183d3d48e4b7f106e": null,
+      "25a5c6f170d8805b8c95e7e5b4e8a989": {
+        "runtimeType": "weights",
+        "weights": []
+      },
+      "19e5c6f170d880ee9089e447b5f8f9e6": null,
+      "25c5c6f170d8808ba5d6db95f0fa3ba6": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "25c5c6f170d88064b8d6e03f2a66cbcf": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "2855c6f170d880f0b296c789944c1250": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "1a05c6f170d88000a11ac56d284582a9": null,
+      "26a5c6f170d8808387e7ee831c3dfa97": {
+        "runtimeType": "base",
+        "weight": 0,
+        "weightUnit": "kgs"
+      },
+      "25e5c6f170d880748060de3a655c7b18": null,
+      "25a5c6f170d880589ffdf4f627a75b44": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "weight": 1,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 1.1339822735890994,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weight": 2,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": 2,
+            "weight": 2.267964547178199,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 3,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": 2,
+            "weight": 3.4019468207672983,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 4,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": 2,
+            "color": null,
+            "weight": 4.535929094356398,
+            "weightUnit": "lbs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 5,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "weight": 5.669911367945497,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": 2,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 6,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 6.8038936415345965,
+            "color": null,
+            "quantity": 2
+          },
+          {
+            "color": null,
+            "weight": 7,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 7.937875915123695,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": 2
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 8,
+            "color": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 9,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": 2,
+            "color": null,
+            "weight": 9.071858188712795,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 10,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 10.205840462301895,
+            "quantity": 2,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 11,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": 2,
+            "color": null,
+            "weight": 11.339822735890994,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 12,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 12.5,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": 2,
+            "weightUnit": "lbs",
+            "weight": 13.607787283069193,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 15,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 15.87575183024739,
+            "weightUnit": "lbs",
+            "quantity": 2
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 17.5,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 18.14371637742559,
+            "quantity": 2,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 20,
+            "quantity": null
+          },
+          {
+            "color": null,
+            "weight": 20.41168092460379,
+            "weightUnit": "lbs",
+            "quantity": 2,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "color": null,
+            "weight": 22.5,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 22.67964547178199,
+            "color": null,
+            "quantity": 1,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "color": null,
+            "weight": 24.947610018960187,
+            "weightUnit": "lbs",
+            "quantity": 2,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 25,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 27.215574566138386,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 27.5,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 29.483539113316585,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 30,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 31.75150366049478,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 32.5,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 34.01946820767298,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "color": null,
+            "weight": 35,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 36.28743275485118,
+            "color": null
+          },
+          {
+            "color": null,
+            "weight": 37.5,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 38.55539730202938,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 40,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weight": 40.82336184920758,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 42.5,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 43.091326396385774,
+            "weightUnit": "lbs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 45,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 45.35929094356398
+          },
+          {
+            "color": null,
+            "weight": 47.5,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 47.62725549074217,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 49.895220037920375,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 50,
+            "color": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 52.16318458509857,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 52.5,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "color": null,
+            "weight": 54.43114913227677,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 55,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 56.69911367945497,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 57.5,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 58.96707822663317,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 60,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 61.235042773811365
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 62.5,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 63.50300732098956,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "color": null,
+            "weight": 65,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 65.77097186816776,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 67.5,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "weight": 68.03893641534596,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weight": 70,
+            "color": null,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 70.30690096252415,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 72.5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 72.57486550970236,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 74.84283005688056,
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 75,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          }
+        ]
+      },
+      "25c5c6f170d880a5bafdeaf2cec1a53c": {
+        "weightRanges": [
+          {
+            "enabled": false,
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "weightUnit": "lbs",
+            "minimum": 0
+          },
+          {
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "19e5c6f170d8802b9d8ed6e425798f6b": null,
+      "25d5c6f170d8803398e5da18a015f6c3": null,
+      "28a5c6f170d880a4a660d9f4be43d3f4": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "25d5c6f170d880eba241c26f8f426024": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "weightUnit": "lbs",
+            "color": "silver",
+            "weight": 4.535929094356398,
+            "quantity": 2,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weightUnit": "kgs",
+            "color": "silver",
+            "weight": 5,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "quantity": 2,
+            "weightUnit": "lbs",
+            "color": "orange",
+            "weight": 6.8038936415345965,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 10,
+            "color": "green",
+            "weightUnit": "kgs"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": "green",
+            "weight": 11.339822735890994,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 15,
+            "color": "yellow",
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "lbs",
+            "weight": 15.87575183024739,
+            "color": "yellow",
+            "quantity": 2
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": "blue",
+            "weight": 20,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 20.41168092460379,
+            "color": "blue",
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "lbs",
+            "color": "red",
+            "weight": 24.947610018960187,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 25,
+            "color": "red",
+            "weightUnit": "kgs",
+            "quantity": null
+          }
+        ]
+      },
+      "27d5c6f170d88038bfd6c19bad6929de": null,
+      "27d5c6f170d880a1ba5dc4c39d525c0a": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d880399eb6e5aeadc4ff8c": {
+        "weightRanges": [
+          {
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "2905c6f170d88088bca4cbac466a8903": {
+        "weightUnit": "kgs",
+        "weight": 0,
+        "runtimeType": "base"
+      },
+      "19e5c6f170d88030a20edfabb6d824c4": null,
+      "2a45c6f170d880b597d5da0f28326105": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25c5c6f170d880ad8010e45cf9e63579": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "25c5c6f170d88096bb47f121d44f241e": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "25a5c6f170d880c2be66d2f10537c1c1": {
+        "weights": [
+          {
+            "weightUnit": "lbs",
+            "weight": 4.082336184920758,
+            "color": "orange",
+            "quantity": null,
+            "resistanceLabel": "extraLight",
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 8.164672369841515,
+            "color": "red",
+            "resistanceLabel": "light",
+            "enabled": false
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": "medium",
+            "color": "blue",
+            "weight": 13.607787283069193,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 18.14371637742559,
+            "color": "green",
+            "quantity": null,
+            "resistanceLabel": "mediumHeavy",
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 29.483539113316585,
+            "color": "black",
+            "resistanceLabel": "heavy",
+            "enabled": false
+          },
+          {
+            "resistanceLabel": "extraHeavy",
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 43.091326396385774,
+            "color": "purple",
+            "quantity": null
+          },
+          {
+            "weight": 4,
+            "color": "orange",
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": "extraLight"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": "light",
+            "quantity": null,
+            "weight": 8,
+            "color": "red",
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": "medium",
+            "quantity": null,
+            "color": "blue",
+            "weight": 14,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": "mediumHeavy",
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "green",
+            "weight": 18
+          },
+          {
+            "quantity": null,
+            "color": "black",
+            "weight": 30,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": "heavy"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 43,
+            "color": "purple",
+            "resistanceLabel": "extraHeavy",
+            "enabled": true
+          }
+        ],
+        "runtimeType": "weights"
+      },
+      "25a5c6f170d8801faa32cf26ee16c248": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 18
+      },
+      "19e5c6f170d880b1a9f1e87cad9330d1": null,
+      "19e5c6f170d8809584ffea2b5b9f1eb2": {
+        "weight": 24.5,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d880588002d0b33085acfb": {
+        "weightRanges": [
+          {
+            "increment": 4.535929094356398,
+            "maximum": 226.79645471781987,
+            "enabled": false,
+            "minimum": 0,
+            "weightUnit": "lbs"
+          },
+          {
+            "maximum": 250,
+            "increment": 5,
+            "enabled": true,
+            "minimum": 0,
+            "weightUnit": "kgs"
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d880358d45db535ec7dde7": {
+        "weightRanges": [
+          {
+            "minimum": 0,
+            "weightUnit": "lbs",
+            "maximum": 226.79645471781987,
+            "increment": 4.535929094356398,
+            "enabled": false
+          },
+          {
+            "weightUnit": "kgs",
+            "minimum": 0,
+            "enabled": true,
+            "maximum": 250,
+            "increment": 5
+          }
+        ],
+        "runtimeType": "ranges"
+      },
+      "25a5c6f170d880a08163d89c0f571db4": {
+        "weight": 0,
+        "runtimeType": "base",
+        "weightUnit": "kgs"
+      },
+      "19e5c6f170d880d5bf4ae225c061f55d": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "weightUnit": "lbs",
+            "color": "orange",
+            "weight": 4.082336184920758,
+            "quantity": null,
+            "resistanceLabel": "extraLight",
+            "enabled": false
+          },
+          {
+            "color": "red",
+            "weight": 8.164672369841515,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": "light"
+          },
+          {
+            "weightUnit": "lbs",
+            "color": "blue",
+            "weight": 13.607787283069193,
+            "quantity": null,
+            "resistanceLabel": "medium",
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "color": "green",
+            "weight": 18.14371637742559,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": "mediumHeavy"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": "black",
+            "weight": 29.483539113316585,
+            "resistanceLabel": "heavy",
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": "purple",
+            "weight": 43.091326396385774,
+            "resistanceLabel": "extraHeavy",
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 52.16318458509857,
+            "color": "red",
+            "resistanceLabel": "superHeavy",
+            "enabled": false
+          },
+          {
+            "weight": 102.05840462301894,
+            "color": "silver",
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": "heaviest"
+          },
+          {
+            "resistanceLabel": "extraLight",
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 4,
+            "color": "orange",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "color": "red",
+            "weight": 8,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": "light"
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 14,
+            "color": "blue",
+            "quantity": null,
+            "resistanceLabel": "medium",
+            "enabled": true
+          },
+          {
+            "resistanceLabel": "mediumHeavy",
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 18,
+            "color": "green"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": "black",
+            "weight": 30,
+            "resistanceLabel": "heavy",
+            "enabled": true
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": "extraHeavy",
+            "color": "purple",
+            "weight": 43,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weight": 52,
+            "color": "red",
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": "superHeavy"
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 102,
+            "color": "silver",
+            "resistanceLabel": "heaviest",
+            "enabled": true
+          }
+        ]
+      },
+      "25c5c6f170d88078a9acf581484a67c0": {
+        "weightUnit": "kgs",
+        "weight": 9,
+        "runtimeType": "base"
+      },
+      "25e5c6f170d880498ea9caa3ae8b0eda": null,
+      "25a5c6f170d88094bd63d078c1a8bb00": {
+        "weightUnit": "kgs",
+        "runtimeType": "base",
+        "weight": 0
+      },
+      "1a05c6f170d880d8a7efe4721e964f2d": null,
+      "27d5c6f170d88080824fd33a69c6300b": {
+        "runtimeType": "weights",
+        "weights": [
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 2.267964547178199,
+            "color": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "weight": 2.5,
+            "color": null,
+            "weightUnit": "kgs",
+            "quantity": null
+          },
+          {
+            "quantity": null,
+            "weight": 4.535929094356398,
+            "color": null,
+            "weightUnit": "lbs",
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 5,
+            "weightUnit": "kgs"
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 6.8038936415345965,
+            "weightUnit": "lbs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 7.5,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 9.071858188712795
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 10,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 11.339822735890994
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 12.5,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 13.607787283069193,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 15,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "weight": 15.87575183024739,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 17.5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 18.14371637742559,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 20,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 20.41168092460379,
+            "color": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 22.5,
+            "quantity": null
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "color": null,
+            "weight": 22.67964547178199,
+            "weightUnit": "lbs"
+          },
+          {
+            "weightUnit": "lbs",
+            "weight": 24.947610018960187,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": false
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 25,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 27.215574566138386,
+            "color": null,
+            "weightUnit": "lbs"
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 27.5,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "weight": 29.483539113316585,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 30,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "color": null,
+            "weight": 31.75150366049478,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 32.5,
+            "color": null
+          },
+          {
+            "color": null,
+            "weight": 34.01946820767298,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 35,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 36.28743275485118,
+            "color": null
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 37.5,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "weight": 38.55539730202938,
+            "color": null,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "color": null,
+            "weight": 40,
+            "weightUnit": "kgs",
+            "quantity": null,
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 40.82336184920758,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "weightUnit": "kgs",
+            "weight": 42.5,
+            "color": null,
+            "resistanceLabel": null,
+            "enabled": true
+          },
+          {
+            "enabled": false,
+            "resistanceLabel": null,
+            "color": null,
+            "weight": 43.091326396385774,
+            "weightUnit": "lbs",
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "color": null,
+            "weight": 45,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 45.35929094356398,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "enabled": true,
+            "resistanceLabel": null,
+            "quantity": null,
+            "weight": 47.5,
+            "color": null,
+            "weightUnit": "kgs"
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "weightUnit": "lbs",
+            "weight": 47.62725549074217,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "weight": 49.895220037920375,
+            "color": null
+          },
+          {
+            "quantity": null,
+            "color": null,
+            "weight": 50,
+            "weightUnit": "kgs",
+            "enabled": true,
+            "resistanceLabel": null
+          },
+          {
+            "color": null,
+            "weight": 52.16318458509857,
+            "weightUnit": "lbs",
+            "quantity": null,
+            "enabled": false,
+            "resistanceLabel": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": true,
+            "weightUnit": "kgs",
+            "weight": 52.5,
+            "color": null,
+            "quantity": null
+          },
+          {
+            "resistanceLabel": null,
+            "enabled": false,
+            "quantity": null,
+            "weightUnit": "lbs",
+            "color": null,
+            "weight": 54.43114913227677
+          },
+          {
+            "weightUnit": "kgs",
+            "weight": 55,
+            "color": null,
+            "quantity": null,
+            "resistanceLabel": null,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "createdAt": "2026-01-23T21:11:34.077011Z",
+    "alwaysShowExercises": []
+  }
+]
