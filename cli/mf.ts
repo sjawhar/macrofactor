@@ -139,7 +139,7 @@ function parseSets(s: string): { reps: number; weightKg: number | null }[] {
 const ALL_COMMANDS = [
   'login', 'workouts', 'workout', 'exercises search', 'exercise',
   'gyms', 'profile', 'food-log', 'search-food', 'log-food',
-  'log-workout', 'log-exercise',
+  'log-workout', 'log-exercise', 'program', 'next-workout',
 ];
 
 async function main() {
@@ -413,6 +413,62 @@ async function main() {
             weightKg: s.weightKg ? Math.round(s.weightKg * 100) / 100 : null,
           })),
           restSeconds,
+        }, null, 2));
+        break;
+      }
+
+
+      // -----------------------------------------------------------------------
+      // program — Show active training program with all days and exercises
+      // -----------------------------------------------------------------------
+      case 'program': {
+        const client = await getClient();
+        const programs = await client.getTrainingPrograms();
+        const active = programs.find(p => p.isActive) || programs[0];
+        if (!active) { console.log('No training programs found.'); break; }
+
+        console.log(JSON.stringify({
+          name: active.name,
+          id: active.id,
+          numCycles: active.numCycles,
+          runIndefinitely: active.runIndefinitely,
+          isPeriodized: active.isPeriodized,
+          deload: active.deload,
+          days: active.days.map((d, i) => ({
+            day: i + 1,
+            name: d.name,
+            isRestDay: d.isRestDay,
+            exercises: d.isRestDay ? [] : d.exercises.map(e => {
+              const info = resolveExercise(e.exerciseId);
+              return { name: info?.name || e.exerciseId, exerciseId: e.exerciseId };
+            }),
+          })),
+        }, null, 2));
+        break;
+      }
+
+      // -----------------------------------------------------------------------
+      // next-workout — Show what's next in the training cycle
+      // -----------------------------------------------------------------------
+      case 'next-workout': {
+        const client = await getClient();
+        const next = await client.getNextWorkout();
+        if (!next) { console.log('No active program found.'); break; }
+
+        const exercises = next.exercises.map(e => {
+          const info = resolveExercise(e.exerciseId);
+          return { name: info?.name || e.exerciseId, exerciseId: e.exerciseId };
+        });
+
+        console.log(JSON.stringify({
+          program: next.program.name,
+          day: next.dayName,
+          dayIndex: next.dayIndex + 1,
+          totalDays: next.program.days.length,
+          cycle: next.cycleIndex + 1,
+          totalCycles: next.totalCycles,
+          isRestDay: next.isRestDay,
+          exercises: next.isRestDay ? [] : exercises,
         }, null, 2));
         break;
       }

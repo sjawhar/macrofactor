@@ -186,3 +186,66 @@ All user data is stored under the `users/{uid}/` prefix.
 **Type:** Collection of user-created exercises.
 
 Follows the same schema as built-in exercises in `app_file.json`, but stored under the user's document tree. Includes fields like `primaryFeatureMuscle`, `resistanceEquipmentGroups`, `laterality`, etc.
+
+
+### Training Programs
+
+**Path:** `users/{uid}/trainingProgram/{programId}`
+**Type:** Collection of program definitions
+
+Each document represents a complete training program with its full cycle structure.
+
+```typescript
+{
+  id: string,                    // UUID
+  name: string,                  // e.g., "Advanced Full Body"
+  color: string,                 // e.g., "red"
+  icon: string,                  // e.g., "rocket"
+  numCycles: number,             // Total cycles in the program
+  runIndefinitely: boolean,      // Whether to loop after numCycles
+  isPeriodized: boolean,         // Whether sets change across cycles
+  deload: string,                // "lastCycle" | "none"
+  expanded: boolean,
+  programExerciseIdToNote: {},
+  days: ProgramDay[],            // Full cycle definition (see below)
+}
+
+// ProgramDay — one day in the cycle
+{
+  id: string,                    // UUID — matches workoutSource.dayId in workout history
+  name: string,                  // e.g., "Workout A" or "---" for rest days
+  gymId: string,                 // UUID — "blankSlate" for rest days
+  blocks: ProgramBlock[],        // Empty array for rest days
+}
+
+// ProgramBlock.exercises[]
+{
+  id: string,                    // UUID — exercise instance within this program
+  exerciseId: string,            // 32-char hex ID — resolve via exercises.ts
+  periodizedTargets: {           // Set/rep targets that vary by cycle
+    runtimeType: "periodized",
+    values: CycleTargets[],      // One entry per cycle
+    deload: CycleTargets | null,
+  }
+}
+```
+
+**Rest days**: Identified by `blocks.length === 0` (or all blocks having no exercises). Typically named `"---"` with `gymId: "blankSlate"`.
+
+### Workout Profile
+
+**Path:** `users/{uid}/profiles/workout`
+**Type:** Single document with workout app settings
+
+Key fields:
+- `activeProgramId` — UUID of the currently active training program
+- `gymIds` — Array of gym UUIDs
+- `workoutLibraryIds` — Array of custom workout template IDs
+- `userExerciseConfigs` — Per-exercise settings (weight unit, bar weight, notes)
+- `addSmartWarmUps`, `useDeload`, `rirTracking` — Program execution settings
+
+### Diet Profile
+
+**Path:** `users/{uid}/profiles/diet`
+**Type:** Single document with diet app toolbar/shortcut config
+

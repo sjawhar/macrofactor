@@ -174,6 +174,55 @@ The `gramMode` parameter on `logSearchedFood()` controls this distinction.
 
 **Never use `patchFoodDocument()` for partial updates** — it replaces the entire entry, wiping all fields not included in the patch.
 
+
+## Training Programs
+
+### Discovering Program Structure
+
+Program data lives in `users/{uid}/trainingProgram/{programId}`. This collection is NOT documented in any Firebase docs — it was found by reverse-engineering the SBS Train APK binary (`com.sbs.train`). The active program ID comes from `users/{uid}/profiles/workout` → `activeProgramId`.
+
+Each program has a `days` array defining the full cycle. Rest days have empty `blocks` arrays and typically use `name: "---"` and `gymId: "blankSlate"`.
+
+### CLI Commands
+
+| Action | Command |
+|---|---|
+| Show active program with all days | `npx tsx cli/mf.ts program` |
+| Show next workout in cycle | `npx tsx cli/mf.ts next-workout` |
+
+### Key Firestore Paths (Workout App)
+
+| Path | Contents |
+|---|---|
+| `users/{uid}/profiles/workout` | Workout settings, `activeProgramId`, gym IDs, exercise configs |
+| `users/{uid}/profiles/diet` | Diet app shortcuts/toolbar config |
+| `users/{uid}/trainingProgram/{id}` | Full program definition: days, exercises, periodization targets |
+| `users/{uid}/workoutHistory/{id}` | Completed workout sessions (with `workoutSource.dayId` linking to program day) |
+| `users/{uid}/customExercises/{id}` | User-created exercises |
+| `users/{uid}/gym/{id}` | Gym profiles with equipment configs |
+
+### Programmatic Usage
+
+```typescript
+// Get all programs (with active flag)
+const programs = await client.getTrainingPrograms();
+const active = programs.find(p => p.isActive);
+
+// Inspect the cycle
+for (const day of active.days) {
+  if (day.isRestDay) {
+    console.log(`${day.name}: REST`);
+  } else {
+    const names = day.exercises.map(e => resolveExercise(e.exerciseId)?.name);
+    console.log(`${day.name}: ${names.join(", ")}`);
+  }
+}
+
+// What's next?
+const next = await client.getNextWorkout();
+console.log(next.dayName, next.isRestDay ? "REST" : next.exercises.length + " exercises");
+```
+
 ## Common Mistakes & Red Flags
 | Red Flag / Error | Reality / Fix |
 |---|---|
@@ -187,6 +236,7 @@ The `gramMode` parameter on `logSearchedFood()` controls this distinction.
 | Food entry crashes Android app | ALL food numeric values must be Firestore `stringValue`. Using `integerValue`/`doubleValue` causes a blank timeline for that day. Use `sfv()` helper, never raw numbers. |
 | `deleteFoodEntry` wipes entry data | Use `updateFoodEntryFields()` (per-subfield masks), not `patchFoodDocument()` (whole-entry replace). The latter replaces the entire entry with just `{d: true, ua: "..."}`, creating ghost stubs that crash the app. |
 | `w` and `q` field values wrong | For gram tracking: `w=1, q=1, y=grams`. For unit tracking: `w=servingGrams, q=1, y=count`. Getting this wrong makes calorie/macro totals display incorrectly in the app. |
+| Can't find program/schedule data | Program definitions are in `users/{uid}/trainingProgram/{id}`, NOT under `programs/` or `activeProgram/`. The active program ID is in `users/{uid}/profiles/workout` → `activeProgramId`. Rest days have empty `blocks` arrays. |
 
 ## Key Client Methods
 

@@ -21,6 +21,39 @@ import type {
 } from './workout-types';
 import { resolveName } from './exercises';
 
+// Training Program types
+interface TrainingProgramDay {
+  id: string;
+  name: string;
+  gymId: string;
+  isRestDay: boolean;
+  exercises: { exerciseId: string; id: string }[];
+}
+
+interface TrainingProgram {
+  id: string;
+  name: string;
+  color: string;
+  icon: string;
+  numCycles: number;
+  runIndefinitely: boolean;
+  isPeriodized: boolean;
+  deload: string;
+  isActive: boolean;
+  days: TrainingProgramDay[];
+}
+
+interface NextWorkoutDay {
+  program: TrainingProgram;
+  dayIndex: number;
+  dayName: string;
+  isRestDay: boolean;
+  exercises: { exerciseId: string; id: string }[];
+  cycleIndex: number;
+  totalCycles: number;
+}
+
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -520,6 +553,113 @@ export class MacroFactorClient {
       token
     );
   }
+
+  // -------------------------------------------------------------------------
+  // Training Programs
+  // -------------------------------------------------------------------------
+
+  /**
+   * Get the workout profile, which includes activeProgramId and settings.
+   */
+  async getWorkoutProfile(): Promise<Record<string, any>> {
+    const token = await this.ensureToken();
+    const doc = await getDocument(`users/${this.uid}/profiles/workout`, token);
+    return parseDocument(doc);
+  }
+
+  /**
+   * Get all training programs (from the trainingProgram collection).
+   * Each program contains a `days` array with the full cycle definition,
+   * including rest days (days with empty blocks array).
+   */
+  async getTrainingPrograms(): Promise<TrainingProgram[]> {
+    const token = await this.ensureToken();
+    const profile = await this.getWorkoutProfile();
+    const activeProgramId = profile.activeProgramId || null;
+    const docs = await listDocuments(`users/${this.uid}/trainingProgram`, token);
+    return docs.map((doc: any) => {
+      const p = parseDocument(doc);
+      const days = (p.days as any[]) || [];
+      return {
+        id: p.id as string,
+        name: p.name as string,
+        color: p.color as string,
+        icon: p.icon as string,
+        numCycles: (p.numCycles as number) || 1,
+        runIndefinitely: (p.runIndefinitely as boolean) || false,
+        isPeriodized: (p.isPeriodized as boolean) || false,
+        deload: (p.deload as string) || 'none',
+        isActive: p.id === activeProgramId,
+        days: days.map((d: any) => ({
+          id: d.id as string,
+          name: d.name as string,
+          gymId: d.gymId as string,
+          isRestDay: !d.blocks || d.blocks.length === 0 || d.blocks.every((b: any) => !b.exercises || b.exercises.length === 0),
+          exercises: (d.blocks || []).flatMap((b: any) =>
+            (b.exercises || []).map((e: any) => ({
+              exerciseId: e.exerciseId as string,
+              id: e.id as string,
+            }))
+          ),
+        })),
+      };
+    });
+  }
+
+  /**
+   * Determine the next workout day based on workout history and active program.
+   * Returns the next day in the cycle (could be a rest day or workout).
+   */
+  async getNextWorkout(): Promise<NextWorkoutDay | null> {
+    const programs = await this.getTrainingPrograms();
+    const active = programs.find(p => p.isActive);
+    if (!active) return null;
+
+    // Find the most recent workout to determine position in cycle
+    const token = await this.ensureToken();
+    const history = await this.getWorkoutHistory();
+    const lastProgramWorkout = history.find(
+      w => w.programName === active.name
+    );
+
+    if (!lastProgramWorkout) {
+      // No history — start at day 1
+      return {
+        program: active,
+        dayIndex: 0,
+        dayName: active.days[0].name,
+        isRestDay: active.days[0].isRestDay,
+        exercises: active.days[0].exercises,
+        cycleIndex: 0,
+        totalCycles: active.numCycles,
+      };
+    }
+
+    // Find which day the last workout was
+    const lastDetail = await this.getWorkout(lastProgramWorkout.id);
+    const lastDayId = lastDetail.workoutSource?.dayId;
+    const lastCycleIndex = lastDetail.workoutSource?.cycleIndex ?? 0;
+    const lastDayIndex = active.days.findIndex(d => d.id === lastDayId);
+
+    // Next day in cycle
+    let nextDayIndex = (lastDayIndex + 1) % active.days.length;
+    let nextCycleIndex = lastCycleIndex;
+    if (nextDayIndex === 0) {
+      nextCycleIndex += 1;
+    }
+
+    const nextDay = active.days[nextDayIndex];
+    return {
+      program: active,
+      dayIndex: nextDayIndex,
+      dayName: nextDay.name,
+      isRestDay: nextDay.isRestDay,
+      exercises: nextDay.exercises,
+      cycleIndex: nextCycleIndex,
+      totalCycles: active.numCycles,
+    };
+  }
+
 
   // -------------------------------------------------------------------------
   // Workouts
