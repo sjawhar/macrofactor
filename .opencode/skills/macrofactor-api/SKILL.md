@@ -23,18 +23,22 @@ This skill guides you in using the reverse-engineered MacroFactor (Stronger By S
 
 The fastest way to explore data is the CLI tool. Output is JSON, perfect for piping to `jq`.
 
-| Action                  | Command                                                                 |
-| ----------------------- | ----------------------------------------------------------------------- |
-| List recent workouts    | `npx tsx cli/mf.ts workouts`                                            |
-| Specific workout detail | `npx tsx cli/mf.ts workout <uuid>`                                      |
-| Search exercise DB      | `npx tsx cli/mf.ts exercises search "bench press"`                      |
-| Resolve hex ID          | `npx tsx cli/mf.ts exercise <hex-id>`                                   |
-| Get today's food log    | `npx tsx cli/mf.ts food-log [YYYY-MM-DD]`                               |
-| List gym profiles       | `npx tsx cli/mf.ts gyms`                                                |
-| Search foods            | `npx tsx cli/mf.ts search-food "nutritional yeast"`                     |
-| Log a food              | `npx tsx cli/mf.ts log-food "kale raw" 150g --at 7pm`                   |
-| Create a workout        | `npx tsx cli/mf.ts log-workout --name "PM Session" --at 5pm`            |
-| Add exercise to workout | `npx tsx cli/mf.ts log-exercise <workout-id> "bench press" 3x10@135lbs` |
+| Action                  | Command                                                                                                                                |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| List recent workouts    | `npx tsx cli/mf.ts workouts`                                                                                                           |
+| Specific workout detail | `npx tsx cli/mf.ts workout <uuid>`                                                                                                     |
+| Search exercise DB      | `npx tsx cli/mf.ts exercises search "bench press"`                                                                                     |
+| Resolve hex ID          | `npx tsx cli/mf.ts exercise <hex-id>`                                                                                                  |
+| Get today's food log    | `npx tsx cli/mf.ts food-log [YYYY-MM-DD]`                                                                                              |
+| List gym profiles       | `npx tsx cli/mf.ts gyms`                                                                                                               |
+| Search foods            | `npx tsx cli/mf.ts search-food "nutritional yeast"`                                                                                    |
+| Log a food              | `npx tsx cli/mf.ts log-food '{"query":"kale raw","grams":150,"loggedAt":"2026-03-20T19:00:00-05:00"}'`                                 |
+| Create a workout        | `npx tsx cli/mf.ts log-workout '{"name":"PM Session","startTime":"2026-03-20T17:00:00-05:00","exercises":[...]}'`                      |
+| Add exercise to workout | `npx tsx cli/mf.ts log-exercise '{"workoutId":"<uuid>","exercises":[{"name":"bench press","sets":[{"reps":10,"lbs":135,"sets":3}]}]}'` |
+| Log a food (stdin)      | `echo '{"query":"kale raw","grams":150}' \| npx tsx cli/mf.ts log-food`                                                                |
+| Log weight              | `npx tsx cli/mf.ts log-weight '{"lbs":180,"date":"2026-03-20"}'`                                                                       |
+| Delete food entry       | `npx tsx cli/mf.ts delete-food '{"date":"2026-03-20","entryId":"..."}'`                                                                |
+| Update food quantity    | `npx tsx cli/mf.ts update-food '{"date":"2026-03-20","entryId":"...","quantity":200}'`                                                 |
 
 _Auth note:_ The CLI has a built-in `.env` parser. Do **NOT** use `source .env` — the password contains backticks and special characters that break bash sourcing. Just run commands directly; the CLI loads credentials automatically.
 
