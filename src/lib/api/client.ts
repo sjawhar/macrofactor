@@ -288,7 +288,8 @@ export class MacroFactorClient {
   ): Promise<void> {
     const token = await this.ensureToken();
     const dateStr = fmtDate(loggedAt);
-    const entryId = String(loggedAt.getTime());
+    // Use current wall-clock time for unique IDs (not meal time — that goes in h/mi)
+    const entryId = String(Date.now() * 1000);
     const entry = {
       t: name,
       c: calories,
@@ -330,7 +331,8 @@ export class MacroFactorClient {
     const token = await this.ensureToken();
     const dateStr = fmtDate(loggedAt);
     // App uses 16-digit microsecond timestamps as entry IDs
-    const entryId = String(loggedAt.getTime() * 1000);
+    // Use current wall-clock time for unique IDs (not meal time — that goes in h/mi)
+    const entryId = String(Date.now() * 1000);
     const sg = serving.gramWeight;
     const nowMicros = String(Date.now() * 1000);
 

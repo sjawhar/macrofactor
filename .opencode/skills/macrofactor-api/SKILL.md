@@ -127,6 +127,53 @@ The parsed TypeScript types differ from raw Firestore fields. When writing, use 
 ### Gym Profile References
 New workouts need a `gymId`. Fetch available gyms with `client.getGymProfiles()` or `npx tsx cli/mf.ts gyms`. Use the `id`, `name`, and `icon` fields from the result.
 
+## Writing Food Entries
+
+### Entry IDs Must Be Unique
+
+Food entries are keyed by a 16-digit microsecond timestamp within a per-day Firestore document (`users/{uid}/food/YYYY-MM-DD`). Each entry ID must be unique **within that day's document**.
+
+**Use `Date.now() * 1000` (current wall-clock microseconds) — NOT the meal time.**
+
+The meal time is stored separately in `h` (hour) and `mi` (minute) fields. If you log multiple foods "at 7am", each still needs a distinct entry ID. Using the meal time as the ID causes later entries to silently overwrite earlier ones — Firestore PATCH with the same field path replaces the value.
+
+When logging multiple items for the same meal, either add a small delay between calls or add a random offset to the timestamp.
+
+### Firestore Type Safety (CRITICAL)
+
+The MacroFactor Android app stores ALL food entry numeric values as Firestore `stringValue` — never `integerValue` or `doubleValue`. Writing a food entry with native numeric types will **crash the Android app** for that entire day, rendering the food log blank.
+
+The client enforces this via the `FoodFieldValue` type system and helper functions:
+- `sfv(value)` — string-typed field (integers get `.0` suffix: `1` → `"1.0"`)
+- `bfv(value)` — boolean field
+- `nfv()` — null field
+- `servingsArray(servings)` — the `m` (measurements) array
+
+**Always use `logSearchedFood()` or `logFood()` — never call `patchDocument()` directly for food entries.**
+
+### Field Semantics for Food Entries
+
+The app computes total nutrients via: `total = macro × w × y / (g × q)`
+
+| Field | Gram tracking (`150g`) | Unit tracking (`2 tbsp`) |
+|-------|----------------------|------------------------|
+| `g` | serving gram weight | serving gram weight |
+| `w` | `1` | serving gram weight |
+| `y` | raw grams wanted | unit count |
+| `q` | `1` (always) | `1` (always) |
+| `u` | `"g"` | serving description |
+| `k` | `"t"` | `"t"` |
+
+The `gramMode` parameter on `logSearchedFood()` controls this distinction.
+
+### Updating vs Creating Food Entries
+
+- **Creating**: `patchFoodDocument()` — replaces the entire entry map (correct for new entries)
+- **Updating fields**: `updateFoodEntryFields()` — per-subfield update masks, preserves all other fields
+- **Deleting**: `deleteFoodEntry()` — adds `d: true` flag via `updateFoodEntryFields()` (preserves entry data)
+
+**Never use `patchFoodDocument()` for partial updates** — it replaces the entire entry, wiping all fields not included in the patch.
+
 ## Common Mistakes & Red Flags
 | Red Flag / Error | Reality / Fix |
 |---|---|
@@ -136,6 +183,10 @@ New workouts need a `gymId`. Fetch available gyms with `client.getGymProfiles()`
 | Parsed types vs raw types for writes | The client's `getWorkout()` returns parsed types (seconds, clean nesting). Writes require **raw** Firestore structure (`log.value.weight`, microseconds). Use `getRawWorkout()` for the write-compatible format. |
 | "Weight is wrong unit" | Weight is ALWAYS stored as **kg** internally, regardless of the user's `weightUnit` preference. Convert lbs to kg with `lbs / 2.2046226218`. |
 | Confusion over ID formats | Workouts/blocks use standard **UUIDs**. Reference data (exercises) uses **32-char hex IDs** containing `c6f170d880`. |
+| Food entries overwriting each other | Entry IDs must be unique per day. Use `Date.now() * 1000` (wall clock), NOT the meal time. Logging 3 foods "at 7am" with the same timestamp silently overwrites to just the last one. |
+| Food entry crashes Android app | ALL food numeric values must be Firestore `stringValue`. Using `integerValue`/`doubleValue` causes a blank timeline for that day. Use `sfv()` helper, never raw numbers. |
+| `deleteFoodEntry` wipes entry data | Use `updateFoodEntryFields()` (per-subfield masks), not `patchFoodDocument()` (whole-entry replace). The latter replaces the entire entry with just `{d: true, ua: "..."}`, creating ghost stubs that crash the app. |
+| `w` and `q` field values wrong | For gram tracking: `w=1, q=1, y=grams`. For unit tracking: `w=servingGrams, q=1, y=count`. Getting this wrong makes calorie/macro totals display incorrectly in the app. |
 
 ## Key Client Methods
 
