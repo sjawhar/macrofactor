@@ -167,6 +167,9 @@ const ALL_COMMANDS = [
   'food-log',
   'search-food',
   'log-food',
+  'log-weight',
+  'delete-food',
+  'update-food',
   'log-workout',
   'log-exercise',
   'program',
@@ -266,50 +269,91 @@ async function main() {
         break;
       }
 
-      // -----------------------------------------------------------------------
-      // log-food <query> <amount> [--at <time>] [--date <YYYY-MM-DD>] [--pick <index>]
-      //
-      // Examples:
-      //   mf.ts log-food "kale raw" 150g --at 7pm
-      //   mf.ts log-food "nutritional yeast seasoning" 2tbsp --at 7pm --date 2026-03-19
-      //   mf.ts log-food "broccoli raw" 150g --pick 1
-      // -----------------------------------------------------------------------
       case 'log-food': {
-        if (positional.length < 2) {
-          throw new Error(
-            'Usage: mf.ts log-food <query> <amount> [--at <time>] [--date <YYYY-MM-DD>] [--pick <index>]'
-          );
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts log-food <json> or pipe JSON via stdin');
         }
-        const query = positional[0];
-        const amountStr = positional[1];
-        const pickIndex = parseInt(opts.pick || '0', 10);
+
+        const hasQuery = typeof input.query === 'string' && input.query.trim() !== '';
+        const hasFoodId = typeof input.foodId === 'string' && input.foodId.trim() !== '';
+        if (!hasQuery && !hasFoodId) {
+          throw new Error('log-food requires one of "query" or "foodId"');
+        }
+
+        const hasGrams = input.grams != null;
+        const hasAmountUnit = input.amount != null || input.unit != null;
+        if (hasGrams && hasAmountUnit) {
+          throw new Error('log-food accepts either "grams" or "amount"+"unit", not both');
+        }
+        if (!hasGrams && !hasAmountUnit) {
+          throw new Error('log-food requires either "grams" or "amount"+"unit"');
+        }
+
+        const pickIndex = input.pick == null ? 0 : Number(input.pick);
+        if (!Number.isInteger(pickIndex) || pickIndex < 0) {
+          throw new Error('"pick" must be a non-negative integer when provided');
+        }
 
         const client = await getClient();
-        const results = await client.searchFoods(query);
-        if (results.length === 0) throw new Error(`No foods found for "${query}"`);
-        if (pickIndex >= results.length)
-          throw new Error(`--pick ${pickIndex} out of range (${results.length} results)`);
-
-        const food = results[pickIndex];
-        const { value, unit } = parseAmount(amountStr);
-
-        // Find serving that matches the unit
-        const serving = findServing(food.servings, unit);
-        if (!serving) {
-          const available = food.servings.map((s) => s.description).join(', ');
-          throw new Error(`No serving matching "${unit}" for ${food.name}. Available: ${available}`);
+        const searchQuery = hasQuery ? input.query.trim() : input.foodId.trim();
+        const results = await client.searchFoods(searchQuery);
+        if (results.length === 0) {
+          throw new Error(`No foods found for "${searchQuery}"`);
         }
 
-        // For gram-based units, pass the raw grams.
-        // For named units (tbsp, cup), pass the unit count.
-        // logSearchedFood uses gramMode to set w/y/q correctly.
-        const isGramUnit = ['g', 'gram', 'grams'].includes(unit.toLowerCase());
-        const quantity = isGramUnit ? value : value;
+        const food = hasFoodId ? results.find((result) => result.foodId === input.foodId.trim()) : results[pickIndex];
+        if (!food) {
+          if (hasFoodId) {
+            throw new Error(`No food found for foodId "${input.foodId.trim()}"`);
+          }
+          throw new Error(`"pick" ${pickIndex} out of range (${results.length} results)`);
+        }
 
-        const logTime = buildDate(opts);
+        const grams = Number(input.grams);
+        const amount = Number(input.amount);
+        const unit = typeof input.unit === 'string' ? input.unit.trim() : '';
+
+        if (hasGrams) {
+          if (!Number.isFinite(grams) || grams <= 0) {
+            throw new Error('"grams" must be a positive number');
+          }
+        } else {
+          if (!Number.isFinite(amount) || amount <= 0) {
+            throw new Error('"amount" must be a positive number');
+          }
+          if (unit === '') {
+            throw new Error('"unit" is required when using "amount"');
+          }
+        }
+
+        const servingUnit = hasGrams ? 'g' : unit;
+        const serving = findServing(food.servings, servingUnit);
+        if (!serving) {
+          const available = food.servings.map((s) => s.description).join(', ');
+          throw new Error(`No serving matching "${servingUnit}" for ${food.name}. Available: ${available}`);
+        }
+
+        const isGramUnit = hasGrams;
+        const quantity = isGramUnit ? grams : amount;
+
+        let logTime = new Date();
+        if (input.loggedAt != null) {
+          if (typeof input.loggedAt !== 'string') {
+            throw new Error('"loggedAt" must be an ISO 8601 string when provided');
+          }
+          const parsed = parseISO(input.loggedAt);
+          if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
+            throw new Error(`Invalid "loggedAt": ${input.loggedAt}`);
+          }
+          logTime = new Date(
+            `${parsed.date}T${String(parsed.hours).padStart(2, '0')}:${String(parsed.minutes).padStart(2, '0')}:00.000Z`
+          );
+        }
+
         await client.logSearchedFood(logTime, food, serving, quantity, isGramUnit);
 
-        const totalGrams = isGramUnit ? value : serving.gramWeight * quantity;
+        const totalGrams = isGramUnit ? quantity : serving.gramWeight * quantity;
         const totalCal = Math.round((food.caloriesPer100g * totalGrams) / 100);
         const totalProt = Math.round(((food.proteinPer100g * totalGrams) / 100) * 10) / 10;
 
@@ -324,12 +368,101 @@ async function main() {
               totalGrams: Math.round(totalGrams),
               totalCalories: totalCal,
               totalProtein: totalProt,
-              date: opts.date || new Date().toISOString().split('T')[0],
+              date: logTime.toISOString().split('T')[0],
             },
             null,
             2
           )
         );
+        break;
+      }
+
+      case 'log-weight': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts log-weight <json> or pipe JSON via stdin');
+        }
+
+        const date =
+          input.date == null
+            ? new Date().toISOString().split('T')[0]
+            : typeof input.date === 'string' && input.date.trim() !== ''
+              ? input.date.trim()
+              : null;
+        if (!date) {
+          throw new Error('"date" must be a non-empty YYYY-MM-DD string when provided');
+        }
+
+        const hasKg = input.kg != null;
+        const hasLbs = input.lbs != null;
+        if (hasKg === hasLbs) {
+          throw new Error('log-weight requires exactly one of "kg" or "lbs"');
+        }
+
+        const weightKg = hasKg ? Number(input.kg) : resolveWeight({ lbs: Number(input.lbs) });
+        if (!Number.isFinite(weightKg) || weightKg <= 0) {
+          throw new Error('Weight must be a positive number');
+        }
+
+        const bodyFat = input.bodyFat == null ? undefined : Number(input.bodyFat);
+        if (bodyFat != null && !Number.isFinite(bodyFat)) {
+          throw new Error('"bodyFat" must be a number when provided');
+        }
+
+        const client = await getClient();
+        await client.logWeight(date, weightKg, bodyFat);
+
+        console.log(
+          JSON.stringify(
+            {
+              status: 'logged',
+              date,
+              kg: Math.round(weightKg * 1000) / 1000,
+              bodyFat,
+            },
+            null,
+            2
+          )
+        );
+        break;
+      }
+
+      case 'delete-food': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts delete-food <json> or pipe JSON via stdin');
+        }
+
+        const date = typeof input.date === 'string' ? input.date.trim() : '';
+        const entryId = typeof input.entryId === 'string' ? input.entryId.trim() : '';
+        if (!date || !entryId) {
+          throw new Error('delete-food requires "date" and "entryId"');
+        }
+
+        const client = await getClient();
+        await client.deleteFoodEntry(date, entryId);
+
+        console.log(JSON.stringify({ status: 'deleted', date, entryId }, null, 2));
+        break;
+      }
+
+      case 'update-food': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts update-food <json> or pipe JSON via stdin');
+        }
+
+        const date = typeof input.date === 'string' ? input.date.trim() : '';
+        const entryId = typeof input.entryId === 'string' ? input.entryId.trim() : '';
+        const quantity = Number(input.quantity);
+        if (!date || !entryId || !Number.isFinite(quantity)) {
+          throw new Error('update-food requires "date", "entryId", and numeric "quantity"');
+        }
+
+        const client = await getClient();
+        await client.updateFoodEntry(date, entryId, quantity);
+
+        console.log(JSON.stringify({ status: 'updated', date, entryId, quantity }, null, 2));
         break;
       }
 
