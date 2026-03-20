@@ -3,7 +3,8 @@
 // Usage: node scripts/extract-exercises.mjs <path-to-app_file.json>
 import { readFileSync, writeFileSync } from 'fs';
 
-const inputPath = process.argv[2] ?? '/tmp/mf-apk/assets/flutter_assets/packages/macrofactor/assets/import/app_file.json';
+const inputPath =
+  process.argv[2] ?? '/tmp/mf-apk/assets/flutter_assets/packages/macrofactor/assets/import/app_file.json';
 const raw = JSON.parse(readFileSync(inputPath, 'utf8'));
 
 const output = {

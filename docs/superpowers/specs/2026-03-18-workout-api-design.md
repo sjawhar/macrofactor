@@ -7,6 +7,7 @@ Document the full MacroFactor API (nutrition + workout), extend the TypeScript c
 ## Background
 
 MacroFactor has two apps sharing the same Firebase backend (`sbs-diet-app`):
+
 - **Nutrition** (`com.sbs.diet`) — food logging, weight, nutrition summaries, steps
 - **Workouts** (`com.sbs.train`) — workout tracking, programs, exercise library, gym profiles
 
@@ -30,27 +31,28 @@ The entire MacroFactor data model uses a universal hex ID scheme. Every entity (
 
 Entity types in the database:
 
-| Type | Count | Example |
-|---|---|---|
-| alternativeName | 1,307 | Alternative exercise names |
-| exercise | 1,122 | "Barbell bench press" |
-| exerciseGroup | 309 | Exercise groupings |
-| exclusionGroupings | 292 | Mutual exclusion sets |
-| equipment | 262 | "Barbell" (with weight data, gym availability) |
-| exerciseNote | 245 | Technique notes |
-| muscle | 232 | Individual muscles |
-| jointAction | 148 | Joint movement patterns |
-| featureMuscleGroup | 23 | "Quads", "Chest", etc. |
-| exerciseMetric | 11 | "Weight", "Reps", "Duration" |
-| exerciseType | 3 | "Single joint (isolation)", etc. |
-| laterality | 3 | "Bilateral", "Unilateral", etc. |
-| regionTrained | 4 | "Upper body", "Lower body", etc. |
-| stability | 5 | Stability classifications |
-| rom | 5 | Range of motion classifications |
+| Type               | Count | Example                                        |
+| ------------------ | ----- | ---------------------------------------------- |
+| alternativeName    | 1,307 | Alternative exercise names                     |
+| exercise           | 1,122 | "Barbell bench press"                          |
+| exerciseGroup      | 309   | Exercise groupings                             |
+| exclusionGroupings | 292   | Mutual exclusion sets                          |
+| equipment          | 262   | "Barbell" (with weight data, gym availability) |
+| exerciseNote       | 245   | Technique notes                                |
+| muscle             | 232   | Individual muscles                             |
+| jointAction        | 148   | Joint movement patterns                        |
+| featureMuscleGroup | 23    | "Quads", "Chest", etc.                         |
+| exerciseMetric     | 11    | "Weight", "Reps", "Duration"                   |
+| exerciseType       | 3     | "Single joint (isolation)", etc.               |
+| laterality         | 3     | "Bilateral", "Unilateral", etc.                |
+| regionTrained      | 4     | "Upper body", "Lower body", etc.               |
+| stability          | 5     | Stability classifications                      |
+| rom                | 5     | Range of motion classifications                |
 
 ### Firestore Collections
 
 #### Auth
+
 - Firebase project: `sbs-diet-app`
 - API key: `AIzaSyA17Uwy37irVEQSwz6PIyX3wnkHrDBeleA`
 - Sign-in: `POST identitytoolkit.googleapis.com/v1/accounts:signInWithPassword`
@@ -61,33 +63,33 @@ Entity types in the database:
 
 **Nutrition (existing in web app):**
 
-| Collection | Key Format | Description |
-|---|---|---|
-| `food/{YYYY-MM-DD}` | timestamp entry ID | Food log entries |
-| `scale/{year}` | MMDD | Weight/body fat entries |
-| `nutrition/{year}` | MMDD | Daily macro summaries |
-| `micro/{year}` | MMDD | Micronutrient daily totals |
-| `steps/{year}` | MMDD | Step counts |
-| `body/{year}` | MMDD | Body measurements |
-| `customFoods/{id}` | food ID | User-created foods |
-| `history/fh{N}` | mixed keys | Food log history/search index |
+| Collection          | Key Format         | Description                   |
+| ------------------- | ------------------ | ----------------------------- |
+| `food/{YYYY-MM-DD}` | timestamp entry ID | Food log entries              |
+| `scale/{year}`      | MMDD               | Weight/body fat entries       |
+| `nutrition/{year}`  | MMDD               | Daily macro summaries         |
+| `micro/{year}`      | MMDD               | Micronutrient daily totals    |
+| `steps/{year}`      | MMDD               | Step counts                   |
+| `body/{year}`       | MMDD               | Body measurements             |
+| `customFoods/{id}`  | food ID            | User-created foods            |
+| `history/fh{N}`     | mixed keys         | Food log history/search index |
 
 **Workout (new):**
 
-| Collection | Key Format | Description |
-|---|---|---|
-| `workoutHistory/{uuid}` | UUID | Completed workout logs |
-| `gym/{uuid}` | UUID | Gym/equipment profiles |
-| `customExercises/{uuid}` | UUID | User-created exercises |
+| Collection               | Key Format | Description            |
+| ------------------------ | ---------- | ---------------------- |
+| `workoutHistory/{uuid}`  | UUID       | Completed workout logs |
+| `gym/{uuid}`             | UUID       | Gym/equipment profiles |
+| `customExercises/{uuid}` | UUID       | User-created exercises |
 
 **Profile documents (exist as documents, not collections):**
 
-| Document | Description |
-|---|---|
-| `users/{uid}` | Main profile (75 fields, includes planner, workout prefs) |
-| `users/{uid}/workoutProfile` | Workout profile (empty in test account) |
-| `users/{uid}/trainingProfile` | Training profile (empty in test account) |
-| `users/{uid}/gymProfile` | Gym profile (empty in test account) |
+| Document                      | Description                                               |
+| ----------------------------- | --------------------------------------------------------- |
+| `users/{uid}`                 | Main profile (75 fields, includes planner, workout prefs) |
+| `users/{uid}/workoutProfile`  | Workout profile (empty in test account)                   |
+| `users/{uid}/trainingProfile` | Training profile (empty in test account)                  |
+| `users/{uid}/gymProfile`      | Gym profile (empty in test account)                       |
 
 **Global collections (403 — behind App Check):**
 
@@ -238,8 +240,8 @@ macro-factor/
 interface WorkoutSummary {
   id: string;
   name: string;
-  startTime: string;       // ISO timestamp
-  durationSeconds: number;  // converted from microseconds
+  startTime: string; // ISO timestamp
+  durationSeconds: number; // converted from microseconds
   gymName: string;
   programName?: string;
   exerciseCount: number;
@@ -266,8 +268,8 @@ interface WorkoutBlock {
 
 interface WorkoutExercise {
   id: string;
-  exerciseId: string;       // hex ID — resolve via exercises.ts
-  exerciseName?: string;     // resolved from exercise DB
+  exerciseId: string; // hex ID — resolve via exercises.ts
+  exerciseName?: string; // resolved from exercise DB
   baseWeight: number | null;
   note: string;
   sets: WorkoutSet[];
@@ -286,7 +288,7 @@ interface SetTarget {
 }
 
 interface SetValue {
-  weight: number;           // kg
+  weight: number; // kg
   fullReps: number;
   partialReps?: number;
   rir?: number;
@@ -302,7 +304,7 @@ interface GymProfile {
   icon: string;
   weightUnit: 'kgs' | 'lbs';
   equipmentIds: string[];
-  equipmentNames?: string[];  // resolved from exercise DB
+  equipmentNames?: string[]; // resolved from exercise DB
 }
 ```
 
@@ -322,10 +324,10 @@ getCustomExercises(): Promise<Exercise[]>
 ```typescript
 import exerciseData from '../../../data/exercises.json';
 
-function lookupEntity(hexId: string): { type: string; name: string; [key: string]: any } | null
-function lookupExercise(hexId: string): Exercise | null
-function searchExercises(query: string): Exercise[]
-function resolveExerciseId(hexId: string): string  // returns name
+function lookupEntity(hexId: string): { type: string; name: string; [key: string]: any } | null;
+function lookupExercise(hexId: string): Exercise | null;
+function searchExercises(query: string): Exercise[];
+function resolveExerciseId(hexId: string): string; // returns name
 ```
 
 ## CLI Design (Bonus)
@@ -350,6 +352,7 @@ All commands output JSON by default. Add `--pretty` for formatted output.
 ## Skill Design
 
 The skill teaches Claude how to:
+
 1. Use the TypeScript client or CLI to query data
 2. Understand the data model (workouts, exercises, nutrition)
 3. Resolve hex IDs to human-readable names
@@ -358,6 +361,7 @@ The skill teaches Claude how to:
 ## Unit Conversions
 
 Key unit conversions to handle in the client:
+
 - **Duration**: Firestore stores microseconds → client returns seconds
 - **Rest timers**: Firestore stores microseconds → client returns seconds
 - **Weight**: Always stored in kg in Firestore (regardless of user's weightUnit preference)

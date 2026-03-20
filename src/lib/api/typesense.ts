@@ -46,7 +46,7 @@ export async function searchFoods(query: string): Promise<SearchFoodResult[]> {
     }
   }
   scored.sort((a, b) => b.score - a.score);
-  const results = scored.map(s => s.result);
+  const results = scored.map((s) => s.result);
 
   return results;
 }
@@ -112,7 +112,7 @@ function parseHit(doc: Record<string, unknown>, branded: boolean): SearchFoodRes
   }
 
   // Always include a 100g option
-  if (!servings.some(s => s.gramWeight === 100)) {
+  if (!servings.some((s) => s.gramWeight === 100)) {
     servings.push({ description: '100 g', amount: 1, gramWeight: 100 });
   }
 

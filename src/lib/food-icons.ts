@@ -166,7 +166,8 @@ export function foodIconFromName(name?: string): string {
   if (lower.includes('pea')) return '🫛';
   if (lower.includes('salad')) return '🥗';
 
-  if (lower.includes('nut') || lower.includes('almond') || lower.includes('cashew') || lower.includes('walnut')) return '🥜';
+  if (lower.includes('nut') || lower.includes('almond') || lower.includes('cashew') || lower.includes('walnut'))
+    return '🥜';
   if (lower.includes('peanut butter')) return '🥜';
   if (lower.includes('seed') || lower.includes('chia') || lower.includes('flax')) return '🌰';
 

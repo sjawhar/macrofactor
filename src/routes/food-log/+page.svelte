@@ -24,10 +24,7 @@
     if (!auth.client) return;
     loading = true;
     try {
-      const [raw, g] = await Promise.all([
-        auth.client.getFoodLog(selectedDate),
-        auth.client.getGoals(),
-      ]);
+      const [raw, g] = await Promise.all([auth.client.getFoodLog(selectedDate), auth.client.getGoals()]);
       entries = raw
         .filter((e) => !e.deleted)
         .sort((a, b) => {
@@ -57,10 +54,10 @@
   let totalCarb = $derived(entries.reduce((s, e) => s + e.carbs(), 0));
   let totalFat = $derived(entries.reduce((s, e) => s + e.fat(), 0));
 
-  let calTarget = $derived(goals ? goals.calories[goals.calories.length - 1] ?? 0 : 0);
-  let proTarget = $derived(goals ? goals.protein[goals.protein.length - 1] ?? 0 : 0);
-  let carbTarget = $derived(goals ? goals.carbs[goals.carbs.length - 1] ?? 0 : 0);
-  let fatTarget = $derived(goals ? goals.fat[goals.fat.length - 1] ?? 0 : 0);
+  let calTarget = $derived(goals ? (goals.calories[goals.calories.length - 1] ?? 0) : 0);
+  let proTarget = $derived(goals ? (goals.protein[goals.protein.length - 1] ?? 0) : 0);
+  let carbTarget = $derived(goals ? (goals.carbs[goals.carbs.length - 1] ?? 0) : 0);
+  let fatTarget = $derived(goals ? (goals.fat[goals.fat.length - 1] ?? 0) : 0);
 
   // ---------------------------------------------------------------------------
   // Timeline grouping — group entries into "plates" by hour:minute
@@ -185,12 +182,20 @@
     if (name.includes('potato') || name.includes('fries')) return '🥔';
     if (name.includes('carrot')) return '🥕';
     if (name.includes('broccoli')) return '🥦';
-    if (name.includes('spinach') || name.includes('lettuce') || name.includes('salad') || name.includes('kale')) return '🥗';
+    if (name.includes('spinach') || name.includes('lettuce') || name.includes('salad') || name.includes('kale'))
+      return '🥗';
     if (name.includes('corn')) return '🌽';
     if (name.includes('pepper')) return '🌶️';
     if (name.includes('onion') || name.includes('garlic')) return '🧅';
     if (name.includes('mushroom')) return '🍄';
-    if (name.includes('berry') || name.includes('blueberr') || name.includes('strawberr') || name.includes('raspberry') || name.includes('blackberr')) return '🫐';
+    if (
+      name.includes('berry') ||
+      name.includes('blueberr') ||
+      name.includes('strawberr') ||
+      name.includes('raspberry') ||
+      name.includes('blackberr')
+    )
+      return '🫐';
     if (name.includes('orange') || name.includes('tangerine') || name.includes('clementine')) return '🍊';
     if (name.includes('lemon') || name.includes('lime')) return '🍋';
     if (name.includes('grape')) return '🍇';
@@ -202,7 +207,14 @@
     if (name.includes('pineapple')) return '🍍';
     if (name.includes('coconut')) return '🥥';
     if (name.includes('pomegranate')) return '🫐';
-    if (name.includes('nut') || name.includes('almond') || name.includes('peanut') || name.includes('cashew') || name.includes('walnut')) return '🥜';
+    if (
+      name.includes('nut') ||
+      name.includes('almond') ||
+      name.includes('peanut') ||
+      name.includes('cashew') ||
+      name.includes('walnut')
+    )
+      return '🥜';
     if (name.includes('oat') || name.includes('cereal') || name.includes('granola')) return '🥣';
     if (name.includes('pasta') || name.includes('noodle') || name.includes('spaghetti')) return '🍝';
     if (name.includes('pizza')) return '🍕';
@@ -217,23 +229,34 @@
     if (name.includes('ice cream') || name.includes('gelato')) return '🍦';
     if (name.includes('honey')) return '🍯';
     if (name.includes('sugar')) return '🍬';
-    if (name.includes('coffee') || name.includes('espresso') || name.includes('latte') || name.includes('cappuccino')) return '☕';
+    if (name.includes('coffee') || name.includes('espresso') || name.includes('latte') || name.includes('cappuccino'))
+      return '☕';
     if (name.includes('tea')) return '🍵';
     if (name.includes('juice') || name.includes('smoothie')) return '🧃';
     if (name.includes('beer') || name.includes('ale')) return '🍺';
     if (name.includes('wine')) return '🍷';
     if (name.includes('water') || name.includes('seltzer') || name.includes('sparkling')) return '💧';
     if (name.includes('soda') || name.includes('cola') || name.includes('pop')) return '🥤';
-    if (name.includes('protein') && (name.includes('shake') || name.includes('powder') || name.includes('bar'))) return '💪';
+    if (name.includes('protein') && (name.includes('shake') || name.includes('powder') || name.includes('bar')))
+      return '💪';
     if (name.includes('butter') || name.includes('oil') || name.includes('margarine')) return '🧈';
     if (name.includes('cream')) return '🍦';
     if (name.includes('salt')) return '🧂';
-    if (name.includes('sauce') || name.includes('ketchup') || name.includes('mayo') || name.includes('mustard') || name.includes('dressing')) return '🫗';
+    if (
+      name.includes('sauce') ||
+      name.includes('ketchup') ||
+      name.includes('mayo') ||
+      name.includes('mustard') ||
+      name.includes('dressing')
+    )
+      return '🫗';
     if (name.includes('pancake') || name.includes('waffle') || name.includes('crepe')) return '🥞';
-    if (name.includes('croissant') || name.includes('pastry') || name.includes('donut') || name.includes('doughnut')) return '🥐';
+    if (name.includes('croissant') || name.includes('pastry') || name.includes('donut') || name.includes('doughnut'))
+      return '🥐';
     if (name.includes('turkey')) return '🦃';
     if (name.includes('lamb')) return '🍖';
-    if (name.includes('bean') || name.includes('lentil') || name.includes('chickpea') || name.includes('hummus')) return '🫘';
+    if (name.includes('bean') || name.includes('lentil') || name.includes('chickpea') || name.includes('hummus'))
+      return '🫘';
     if (name.includes('tofu') || name.includes('tempeh') || name.includes('seitan')) return '🧊';
     if (name.includes('cucumber') || name.includes('pickle') || name.includes('zucchini')) return '🥒';
     if (name.includes('pea') || name.includes('edamame')) return '🫛';
@@ -390,9 +413,15 @@
     return (qty * uw) / sg;
   }
 
-  let previewCal = $derived(editingEntry ? (editingEntry.caloriesRaw ?? 0) * previewMultiplier(editingEntry, editQty) : 0);
-  let previewPro = $derived(editingEntry ? (editingEntry.proteinRaw ?? 0) * previewMultiplier(editingEntry, editQty) : 0);
-  let previewCarb = $derived(editingEntry ? (editingEntry.carbsRaw ?? 0) * previewMultiplier(editingEntry, editQty) : 0);
+  let previewCal = $derived(
+    editingEntry ? (editingEntry.caloriesRaw ?? 0) * previewMultiplier(editingEntry, editQty) : 0
+  );
+  let previewPro = $derived(
+    editingEntry ? (editingEntry.proteinRaw ?? 0) * previewMultiplier(editingEntry, editQty) : 0
+  );
+  let previewCarb = $derived(
+    editingEntry ? (editingEntry.carbsRaw ?? 0) * previewMultiplier(editingEntry, editQty) : 0
+  );
   let previewFat = $derived(editingEntry ? (editingEntry.fatRaw ?? 0) * previewMultiplier(editingEntry, editQty) : 0);
 
   async function saveDetails() {
@@ -470,17 +499,45 @@
 <!-- ======================================================================= -->
 <header class="date-header">
   <button class="nav-arrow" onclick={prevDay} aria-label="Previous day">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg
+    >
   </button>
 
   <div class="date-picker-wrapper">
     <input type="date" bind:value={selectedDate} class="date-input-hidden" />
     <span class="date-label-text">{displayDate}</span>
-    <svg class="date-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <svg
+      class="date-caret"
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg
+    >
   </div>
 
   <button class="nav-arrow" onclick={nextDay} aria-label="Next day">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg
+    >
   </button>
 </header>
 
@@ -492,7 +549,8 @@
     <div class="macro-values">
       <span class="macro-icon">🔥</span>
       <span class="macro-consumed">{Math.round(totalCal)}</span>
-      {#if calTarget > 0}<span class="macro-separator">/</span><span class="macro-target">{Math.round(calTarget)}</span>{/if}
+      {#if calTarget > 0}<span class="macro-separator">/</span><span class="macro-target">{Math.round(calTarget)}</span
+        >{/if}
     </div>
     <div class="macro-bar-track">
       <div class="macro-bar-fill cal-fill" style="width:{progressPct(totalCal, calTarget)}%"></div>
@@ -503,7 +561,8 @@
     <div class="macro-values">
       <span class="macro-label-letter" style="color:var(--color-protein)">P</span>
       <span class="macro-consumed">{Math.round(totalPro)}</span>
-      {#if proTarget > 0}<span class="macro-separator">/</span><span class="macro-target">{Math.round(proTarget)}</span>{/if}
+      {#if proTarget > 0}<span class="macro-separator">/</span><span class="macro-target">{Math.round(proTarget)}</span
+        >{/if}
     </div>
     <div class="macro-bar-track">
       <div class="macro-bar-fill pro-fill" style="width:{progressPct(totalPro, proTarget)}%"></div>
@@ -514,7 +573,8 @@
     <div class="macro-values">
       <span class="macro-label-letter" style="color:var(--color-fat)">F</span>
       <span class="macro-consumed">{Math.round(totalFat)}</span>
-      {#if fatTarget > 0}<span class="macro-separator">/</span><span class="macro-target">{Math.round(fatTarget)}</span>{/if}
+      {#if fatTarget > 0}<span class="macro-separator">/</span><span class="macro-target">{Math.round(fatTarget)}</span
+        >{/if}
     </div>
     <div class="macro-bar-track">
       <div class="macro-bar-fill fat-fill" style="width:{progressPct(totalFat, fatTarget)}%"></div>
@@ -525,7 +585,9 @@
     <div class="macro-values">
       <span class="macro-label-letter" style="color:var(--color-carbs)">C</span>
       <span class="macro-consumed">{Math.round(totalCarb)}</span>
-      {#if carbTarget > 0}<span class="macro-separator">/</span><span class="macro-target">{Math.round(carbTarget)}</span>{/if}
+      {#if carbTarget > 0}<span class="macro-separator">/</span><span class="macro-target"
+          >{Math.round(carbTarget)}</span
+        >{/if}
     </div>
     <div class="macro-bar-track">
       <div class="macro-bar-fill carb-fill" style="width:{progressPct(totalCarb, carbTarget)}%"></div>
@@ -557,7 +619,13 @@
           <span class="hour-text">{formatHourLabel(hour)}</span>
         </div>
         <!-- Content area -->
-        <div class="timeline-content" role="button" tabindex="0" onclick={() => goto(`/search?date=${selectedDate}&hour=${hour}`)} onkeydown={(e) => e.key === 'Enter' && goto(`/search?date=${selectedDate}&hour=${hour}`)}>
+        <div
+          class="timeline-content"
+          role="button"
+          tabindex="0"
+          onclick={() => goto(`/search?date=${selectedDate}&hour=${hour}`)}
+          onkeydown={(e) => e.key === 'Enter' && goto(`/search?date=${selectedDate}&hour=${hour}`)}
+        >
           {#if hourPlates.length > 0}
             <div class="track-line-extended"></div>
             {#each hourPlates as plate (plate.timeLabel)}
@@ -576,7 +644,19 @@
                     {/if}
                   </div>
                   <button class="plate-copy-btn" onclick={() => openCopyModal(plate)} aria-label="Copy plate">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <svg
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      /></svg
+                    >
                     Copy
                   </button>
                 </div>
@@ -601,16 +681,65 @@
                         <span class="fm carb">C{Math.round(entry.carbs())}</span>
                       </div>
                       <div class="food-actions">
-                        <button class="action-link details-link" onclick={() => openDetails(entry)} aria-label="View details">
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        <button
+                          class="action-link details-link"
+                          onclick={() => openDetails(entry)}
+                          aria-label="View details"
+                        >
+                          <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line
+                              x1="12"
+                              y1="8"
+                              x2="12.01"
+                              y2="8"
+                            /></svg
+                          >
                           Details
                         </button>
-                        <button class="action-link copy-link" onclick={() => openEntryAction(entry, 'copy')} aria-label="Copy entry">
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <button
+                          class="action-link copy-link"
+                          onclick={() => openEntryAction(entry, 'copy')}
+                          aria-label="Copy entry"
+                        >
+                          <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path
+                              d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                            /></svg
+                          >
                           Copy
                         </button>
-                        <button class="action-link move-link" onclick={() => openEntryAction(entry, 'move')} aria-label="Move entry">
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        <button
+                          class="action-link move-link"
+                          onclick={() => openEntryAction(entry, 'move')}
+                          aria-label="Move entry"
+                        >
+                          <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg
+                          >
                           Move
                         </button>
                         <button
@@ -622,7 +751,22 @@
                           {#if deletingId === entry.entryId}
                             <div class="spinner" style="width:12px;height:12px;border-width:1.5px;"></div>
                           {:else}
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            <svg
+                              width="13"
+                              height="13"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              ><circle cx="12" cy="12" r="10" /><line x1="15" y1="9" x2="9" y2="15" /><line
+                                x1="9"
+                                y1="9"
+                                x2="15"
+                                y2="15"
+                              /></svg
+                            >
                           {/if}
                           Remove
                         </button>
@@ -640,7 +784,17 @@
             {/each}
           {:else}
             <div class="add-at-time-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg
+              >
               Add food at {formatHourLabel(hour)}
             </div>
           {/if}
@@ -669,7 +823,16 @@
           </div>
         </div>
         <button class="modal-close" onclick={closeDetails} aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg
+          >
         </button>
       </header>
 
@@ -699,33 +862,109 @@
         <div class="impact-targets">
           <div class="impact-ring-item">
             <svg viewBox="0 0 48 48" width="52" height="52">
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4"/>
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-calories)" stroke-width="4" stroke-dasharray="{RING_C} {RING_C}" stroke-dashoffset={ringOffset(impactCalPct)} stroke-linecap="round" transform="rotate(-90 24 24)"/>
-              <text x="24" y="24" text-anchor="middle" dominant-baseline="central" fill="var(--color-text)" font-size="10" font-weight="700">{impactCalPct}%</text>
+              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4" />
+              <circle
+                cx="24"
+                cy="24"
+                r={RING_R}
+                fill="none"
+                stroke="var(--color-calories)"
+                stroke-width="4"
+                stroke-dasharray="{RING_C} {RING_C}"
+                stroke-dashoffset={ringOffset(impactCalPct)}
+                stroke-linecap="round"
+                transform="rotate(-90 24 24)"
+              />
+              <text
+                x="24"
+                y="24"
+                text-anchor="middle"
+                dominant-baseline="central"
+                fill="var(--color-text)"
+                font-size="10"
+                font-weight="700">{impactCalPct}%</text
+              >
             </svg>
             <span class="impact-label">Calories</span>
           </div>
           <div class="impact-ring-item">
             <svg viewBox="0 0 48 48" width="52" height="52">
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4"/>
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-protein)" stroke-width="4" stroke-dasharray="{RING_C} {RING_C}" stroke-dashoffset={ringOffset(impactProPct)} stroke-linecap="round" transform="rotate(-90 24 24)"/>
-              <text x="24" y="24" text-anchor="middle" dominant-baseline="central" fill="var(--color-text)" font-size="10" font-weight="700">{impactProPct}%</text>
+              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4" />
+              <circle
+                cx="24"
+                cy="24"
+                r={RING_R}
+                fill="none"
+                stroke="var(--color-protein)"
+                stroke-width="4"
+                stroke-dasharray="{RING_C} {RING_C}"
+                stroke-dashoffset={ringOffset(impactProPct)}
+                stroke-linecap="round"
+                transform="rotate(-90 24 24)"
+              />
+              <text
+                x="24"
+                y="24"
+                text-anchor="middle"
+                dominant-baseline="central"
+                fill="var(--color-text)"
+                font-size="10"
+                font-weight="700">{impactProPct}%</text
+              >
             </svg>
             <span class="impact-label">Protein</span>
           </div>
           <div class="impact-ring-item">
             <svg viewBox="0 0 48 48" width="52" height="52">
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4"/>
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-fat)" stroke-width="4" stroke-dasharray="{RING_C} {RING_C}" stroke-dashoffset={ringOffset(impactFatPct)} stroke-linecap="round" transform="rotate(-90 24 24)"/>
-              <text x="24" y="24" text-anchor="middle" dominant-baseline="central" fill="var(--color-text)" font-size="10" font-weight="700">{impactFatPct}%</text>
+              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4" />
+              <circle
+                cx="24"
+                cy="24"
+                r={RING_R}
+                fill="none"
+                stroke="var(--color-fat)"
+                stroke-width="4"
+                stroke-dasharray="{RING_C} {RING_C}"
+                stroke-dashoffset={ringOffset(impactFatPct)}
+                stroke-linecap="round"
+                transform="rotate(-90 24 24)"
+              />
+              <text
+                x="24"
+                y="24"
+                text-anchor="middle"
+                dominant-baseline="central"
+                fill="var(--color-text)"
+                font-size="10"
+                font-weight="700">{impactFatPct}%</text
+              >
             </svg>
             <span class="impact-label">Fat</span>
           </div>
           <div class="impact-ring-item">
             <svg viewBox="0 0 48 48" width="52" height="52">
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4"/>
-              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-carbs)" stroke-width="4" stroke-dasharray="{RING_C} {RING_C}" stroke-dashoffset={ringOffset(impactCarbPct)} stroke-linecap="round" transform="rotate(-90 24 24)"/>
-              <text x="24" y="24" text-anchor="middle" dominant-baseline="central" fill="var(--color-text)" font-size="10" font-weight="700">{impactCarbPct}%</text>
+              <circle cx="24" cy="24" r={RING_R} fill="none" stroke="var(--color-surface-elevated)" stroke-width="4" />
+              <circle
+                cx="24"
+                cy="24"
+                r={RING_R}
+                fill="none"
+                stroke="var(--color-carbs)"
+                stroke-width="4"
+                stroke-dasharray="{RING_C} {RING_C}"
+                stroke-dashoffset={ringOffset(impactCarbPct)}
+                stroke-linecap="round"
+                transform="rotate(-90 24 24)"
+              />
+              <text
+                x="24"
+                y="24"
+                text-anchor="middle"
+                dominant-baseline="central"
+                fill="var(--color-text)"
+                font-size="10"
+                font-weight="700">{impactCarbPct}%</text
+              >
             </svg>
             <span class="impact-label">Carbs</span>
           </div>
@@ -734,15 +973,43 @@
 
       <!-- Food Actions -->
       <div class="modal-food-actions">
-        <button class="modal-action-btn delete-action" onclick={deleteFromModal} disabled={deletingId === editingEntry.entryId}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        <button
+          class="modal-action-btn delete-action"
+          onclick={deleteFromModal}
+          disabled={deletingId === editingEntry.entryId}
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polyline points="3 6 5 6 21 6" /><path
+              d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+            /></svg
+          >
           Delete
         </button>
         <button class="modal-action-btn" onclick={duplicateEntry} disabled={duplicating}>
           {#if duplicating}
             <div class="spinner" style="width:14px;height:14px;border-width:1.5px;"></div>
           {:else}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              /></svg
+            >
           {/if}
           Duplicate
         </button>
@@ -805,14 +1072,7 @@
       <div class="modal-qty-section">
         <label class="modal-qty-label" for="edit-qty">Quantity</label>
         <div class="modal-qty-row">
-          <input
-            id="edit-qty"
-            type="number"
-            class="modal-qty-input"
-            min="0.1"
-            step="0.1"
-            bind:value={editQty}
-          />
+          <input id="edit-qty" type="number" class="modal-qty-input" min="0.1" step="0.1" bind:value={editQty} />
           <span class="modal-qty-unit">{editingEntry.servingUnit ?? 'serving'}</span>
         </div>
       </div>
@@ -843,7 +1103,16 @@
       <header class="modal-header">
         <h2 class="modal-title">Copy Plate</h2>
         <button class="modal-close" onclick={closeCopyModal} aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg
+          >
         </button>
       </header>
 
@@ -873,11 +1142,7 @@
         {#if copySuccess}
           <div class="copy-success">✅ Copied!</div>
         {:else}
-          <button
-            class="btn btn-primary copy-confirm-btn"
-            onclick={confirmCopyPlate}
-            disabled={copyInProgress}
-          >
+          <button class="btn btn-primary copy-confirm-btn" onclick={confirmCopyPlate} disabled={copyInProgress}>
             {#if copyInProgress}
               <div class="spinner" style="width:16px;height:16px;border-width:2px;"></div>
               Copying…
@@ -902,7 +1167,16 @@
       <header class="modal-header">
         <h2 class="modal-title">{entryAction === 'copy' ? 'Copy' : 'Move'} Entry</h2>
         <button class="modal-close" onclick={closeEntryAction} aria-label="Close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg
+          >
         </button>
       </header>
 
@@ -921,7 +1195,7 @@
         <label class="copy-date-label">
           Hour
           <select bind:value={entryTargetHour} class="copy-date-input">
-            {#each Array.from({length: 24}, (_, i) => i) as h}
+            {#each Array.from({ length: 24 }, (_, i) => i) as h}
               <option value={h}>{formatHourLabel(h)}</option>
             {/each}
           </select>
@@ -951,7 +1225,7 @@
 <!-- FAB -->
 <a href="/search" class="fab" aria-label="Add food">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24">
-    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+    <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
   </svg>
 </a>
 
@@ -1082,10 +1356,18 @@
     transition: width 0.4s ease;
   }
 
-  .cal-fill  { background: var(--color-calories); }
-  .pro-fill  { background: var(--color-protein); }
-  .fat-fill  { background: var(--color-fat); }
-  .carb-fill { background: var(--color-carbs); }
+  .cal-fill {
+    background: var(--color-calories);
+  }
+  .pro-fill {
+    background: var(--color-protein);
+  }
+  .fat-fill {
+    background: var(--color-fat);
+  }
+  .carb-fill {
+    background: var(--color-carbs);
+  }
 
   /* ===== LOADING / EMPTY ===== */
   .loading-center {
@@ -1171,7 +1453,7 @@
     cursor: pointer;
   }
   .timeline-row:not(.has-entries):hover .timeline-content {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     border-radius: var(--radius-sm);
   }
   .add-at-time-btn {
@@ -1254,10 +1536,18 @@
     white-space: nowrap;
   }
 
-  .plate-macro.cal { color: var(--color-text-secondary); }
-  .plate-macro.pro { color: var(--color-protein); }
-  .plate-macro.fat { color: var(--color-fat); }
-  .plate-macro.carb { color: var(--color-carbs); }
+  .plate-macro.cal {
+    color: var(--color-text-secondary);
+  }
+  .plate-macro.pro {
+    color: var(--color-protein);
+  }
+  .plate-macro.fat {
+    color: var(--color-fat);
+  }
+  .plate-macro.carb {
+    color: var(--color-carbs);
+  }
 
   .plate-macro-sep {
     font-size: var(--font-size-xs);
@@ -1279,7 +1569,9 @@
     color: var(--color-text-tertiary);
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
-    transition: color var(--transition-fast), background var(--transition-fast);
+    transition:
+      color var(--transition-fast),
+      background var(--transition-fast);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -1300,7 +1592,9 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     margin-bottom: var(--space-2);
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
   }
 
   .food-card:hover {
@@ -1366,10 +1660,18 @@
     font-weight: var(--font-medium);
   }
 
-  .fm.cal  { color: var(--color-text-secondary); }
-  .fm.pro  { color: var(--color-protein); }
-  .fm.fat  { color: var(--color-fat); }
-  .fm.carb { color: var(--color-carbs); }
+  .fm.cal {
+    color: var(--color-text-secondary);
+  }
+  .fm.pro {
+    color: var(--color-protein);
+  }
+  .fm.fat {
+    color: var(--color-fat);
+  }
+  .fm.carb {
+    color: var(--color-carbs);
+  }
 
   .food-actions {
     display: flex;
@@ -1468,13 +1770,21 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 
   .modal-panel {
@@ -1530,7 +1840,9 @@
     border-radius: 50%;
     color: var(--color-text-tertiary);
     flex-shrink: 0;
-    transition: background var(--transition-fast), color var(--transition-fast);
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
   }
 
   .modal-close:hover {
@@ -1566,10 +1878,18 @@
     margin-top: 2px;
   }
 
-  .modal-macro-item.cal .modal-macro-value { color: var(--color-text); }
-  .modal-macro-item.pro .modal-macro-value { color: var(--color-protein); }
-  .modal-macro-item.carb .modal-macro-value { color: var(--color-carbs); }
-  .modal-macro-item.fat .modal-macro-value { color: var(--color-fat); }
+  .modal-macro-item.cal .modal-macro-value {
+    color: var(--color-text);
+  }
+  .modal-macro-item.pro .modal-macro-value {
+    color: var(--color-protein);
+  }
+  .modal-macro-item.carb .modal-macro-value {
+    color: var(--color-carbs);
+  }
+  .modal-macro-item.fat .modal-macro-value {
+    color: var(--color-fat);
+  }
 
   .modal-qty-section {
     margin-bottom: var(--space-4);
@@ -1820,7 +2140,10 @@
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      background var(--transition-fast);
     cursor: pointer;
   }
 
@@ -1871,5 +2194,4 @@
   .nutrient-na {
     color: var(--color-text-tertiary);
   }
-
 </style>

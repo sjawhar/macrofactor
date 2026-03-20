@@ -43,10 +43,10 @@
 <div class="page-header">
   <h1 class="page-title">Micronutrients</h1>
   <div class="range-toggle">
-    <button class="pill-btn" class:active={rangeLabel === '1'} onclick={() => rangeLabel = '1'}>Today</button>
-    <button class="pill-btn" class:active={rangeLabel === '7'} onclick={() => rangeLabel = '7'}>1 Week</button>
-    <button class="pill-btn" class:active={rangeLabel === '30'} onclick={() => rangeLabel = '30'}>1 Month</button>
-    <button class="pill-btn" class:active={rangeLabel === '90'} onclick={() => rangeLabel = '90'}>3 Months</button>
+    <button class="pill-btn" class:active={rangeLabel === '1'} onclick={() => (rangeLabel = '1')}>Today</button>
+    <button class="pill-btn" class:active={rangeLabel === '7'} onclick={() => (rangeLabel = '7')}>1 Week</button>
+    <button class="pill-btn" class:active={rangeLabel === '30'} onclick={() => (rangeLabel = '30')}>1 Month</button>
+    <button class="pill-btn" class:active={rangeLabel === '90'} onclick={() => (rangeLabel = '90')}>3 Months</button>
   </div>
 </div>
 
@@ -71,35 +71,108 @@
               </div>
             </div>
             <div class="micro-bar-track">
-              <div class="micro-bar-fill" style="width: {m.target ? Math.min(m.val/m.target*100, 100) : 0}%"></div>
+              <div
+                class="micro-bar-fill"
+                style="width: {m.target ? Math.min((m.val / m.target) * 100, 100) : 0}%"
+              ></div>
             </div>
           </div>
         {/each}
       </div>
-      <p class="note">Note: MacroFactor API currently only exposes Sugar and Fiber in the nutrition summary endpoint.</p>
+      <p class="note">
+        Note: MacroFactor API currently only exposes Sugar and Fiber in the nutrition summary endpoint.
+      </p>
     {/if}
   </div>
 {/if}
 
 <style>
-  .loading-center { display:flex; justify-content:center; padding:var(--space-12); }
-  .section-title { font-size:var(--font-size-sm); font-weight:var(--font-semibold); color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-4); }
+  .loading-center {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-12);
+  }
+  .section-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-4);
+  }
 
-  .range-toggle { display:flex; gap:var(--space-2); margin-top:var(--space-3); }
-  .pill-btn { padding:var(--space-2) var(--space-4); border-radius:var(--radius-full); font-size:var(--font-size-sm); font-weight:var(--font-medium); background:var(--color-surface); color:var(--color-text-secondary); border:1px solid var(--color-border); transition:all var(--transition-fast); }
-  .pill-btn.active { background:var(--color-text); color:var(--color-bg); border-color:var(--color-text); }
+  .range-toggle {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .pill-btn {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-medium);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+  }
+  .pill-btn.active {
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+  }
 
-  .micro-card { margin-bottom:var(--space-4); }
-  .micro-list { display:flex; flex-direction:column; gap:var(--space-5); }
-  .micro-item { display:flex; flex-direction:column; gap:var(--space-2); }
-  .micro-header { display:flex; justify-content:space-between; align-items:baseline; }
-  .micro-label { font-size:var(--font-size-base); font-weight:var(--font-medium); }
-  .micro-values { display:flex; gap:var(--space-3); font-size:var(--font-size-sm); }
-  .micro-val { font-weight:var(--font-bold); }
-  .micro-target { color:var(--color-text-secondary); }
-  
-  .micro-bar-track { height:8px; background:var(--color-surface-elevated); border-radius:4px; overflow:hidden; }
-  .micro-bar-fill { height:100%; background:var(--color-accent); border-radius:4px; transition:width 0.3s ease; }
-  
-  .note { margin-top:var(--space-6); font-size:var(--font-size-xs); color:var(--color-text-tertiary); text-align:center; }
+  .micro-card {
+    margin-bottom: var(--space-4);
+  }
+  .micro-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+  .micro-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .micro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .micro-label {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-medium);
+  }
+  .micro-values {
+    display: flex;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  .micro-val {
+    font-weight: var(--font-bold);
+  }
+  .micro-target {
+    color: var(--color-text-secondary);
+  }
+
+  .micro-bar-track {
+    height: 8px;
+    background: var(--color-surface-elevated);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .micro-bar-fill {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+
+  .note {
+    margin-top: var(--space-6);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    text-align: center;
+  }
 </style>

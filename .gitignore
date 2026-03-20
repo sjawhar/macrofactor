@@ -53,4 +53,3 @@ data/samples/userProfile.json
 /test-*.ts
 /trace_*.ts
 /verify_*.ts
-package-lock.json

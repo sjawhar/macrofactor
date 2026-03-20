@@ -23,11 +23,16 @@
     loading = true;
     try {
       allEntries = await auth.client.getWeightEntries(daysAgo(1095), today());
-    } catch { allEntries = []; }
-    finally { loading = false; }
+    } catch {
+      allEntries = [];
+    } finally {
+      loading = false;
+    }
   }
 
-  $effect(() => { if (auth.client) loadEntries(); });
+  $effect(() => {
+    if (auth.client) loadEntries();
+  });
 
   // ---------------------------------------------------------------------------
   // Time range
@@ -37,13 +42,18 @@
   let selectedRange = $state<TimeRange>('1M');
 
   const rangeDays: Record<TimeRange, number> = {
-    '1W': 7, '1M': 30, '3M': 90, '6M': 180, '1Y': 365, 'All': 1095,
+    '1W': 7,
+    '1M': 30,
+    '3M': 90,
+    '6M': 180,
+    '1Y': 365,
+    All: 1095,
   };
 
   let entries = $derived.by(() => {
     if (selectedRange === 'All') return allEntries;
     const cutoff = daysAgo(rangeDays[selectedRange]);
-    return allEntries.filter(e => e.date >= cutoff);
+    return allEntries.filter((e) => e.date >= cutoff);
   });
 
   // ---------------------------------------------------------------------------
@@ -68,17 +78,9 @@
   // ---------------------------------------------------------------------------
   // Statistics
   // ---------------------------------------------------------------------------
-  let avgWeight = $derived(
-    entries.length > 0
-      ? entries.reduce((s, e) => s + e.weight, 0) / entries.length
-      : 0,
-  );
+  let avgWeight = $derived(entries.length > 0 ? entries.reduce((s, e) => s + e.weight, 0) / entries.length : 0);
 
-  let weightDiff = $derived(
-    entries.length >= 2
-      ? entries[entries.length - 1].weight - entries[0].weight
-      : 0,
-  );
+  let weightDiff = $derived(entries.length >= 2 ? entries[entries.length - 1].weight - entries[0].weight : 0);
 
   let dateRangeStr = $derived.by(() => {
     if (entries.length === 0) return '';
@@ -104,13 +106,13 @@
   // ---------------------------------------------------------------------------
   let chartMin = $derived.by(() => {
     if (entries.length === 0) return 0;
-    const vals = [...entries.map(e => e.weight), ...trendWeights];
+    const vals = [...entries.map((e) => e.weight), ...trendWeights];
     return Math.floor(Math.min(...vals) * 2) / 2 - 0.5;
   });
 
   let chartMax = $derived.by(() => {
     if (entries.length === 0) return 1;
-    const vals = [...entries.map(e => e.weight), ...trendWeights];
+    const vals = [...entries.map((e) => e.weight), ...trendWeights];
     return Math.ceil(Math.max(...vals) * 2) / 2 + 0.5;
   });
 
@@ -153,16 +155,12 @@
   // ---------------------------------------------------------------------------
   let scalePath = $derived.by(() => {
     if (entries.length < 2) return '';
-    return entries
-      .map((e, i) => `${i === 0 ? 'M' : 'L'}${xAt(i).toFixed(1)},${yAt(e.weight).toFixed(1)}`)
-      .join(' ');
+    return entries.map((e, i) => `${i === 0 ? 'M' : 'L'}${xAt(i).toFixed(1)},${yAt(e.weight).toFixed(1)}`).join(' ');
   });
 
   let trendPath = $derived.by(() => {
     if (trendWeights.length < 2) return '';
-    return trendWeights
-      .map((w, i) => `${i === 0 ? 'M' : 'L'}${xAt(i).toFixed(1)},${yAt(w).toFixed(1)}`)
-      .join(' ');
+    return trendWeights.map((w, i) => `${i === 0 ? 'M' : 'L'}${xAt(i).toFixed(1)},${yAt(w).toFixed(1)}`).join(' ');
   });
 
   // ---------------------------------------------------------------------------
@@ -263,13 +261,15 @@
       weightInput = undefined;
       bodyFatInput = undefined;
       await loadEntries();
-    } finally { saving = false; }
+    } finally {
+      saving = false;
+    }
   }
 
   async function deleteEntry(date: string) {
     if (!auth.client || !confirm(`Delete weight entry for ${date}?`)) return;
     await auth.client.deleteWeightEntry(date);
-    allEntries = allEntries.filter(e => e.date !== date);
+    allEntries = allEntries.filter((e) => e.date !== date);
   }
 
   let sorted = $derived([...allEntries].reverse());
@@ -359,7 +359,7 @@
           <button
             class="toggle-btn"
             class:toggle-active={showScaleWeight}
-            onclick={() => showScaleWeight = !showScaleWeight}
+            onclick={() => (showScaleWeight = !showScaleWeight)}
           >
             <span class="toggle-dot toggle-dot-scale"></span>
             Scale Weight
@@ -367,7 +367,7 @@
           <button
             class="toggle-btn"
             class:toggle-active={showTrendWeight}
-            onclick={() => showTrendWeight = !showTrendWeight}
+            onclick={() => (showTrendWeight = !showTrendWeight)}
           >
             <span class="toggle-dot toggle-dot-trend"></span>
             Trend Weight
@@ -376,12 +376,7 @@
       </div>
 
       <!-- svelte-ignore a11y_no_static_element_interactions -->
-      <svg
-        viewBox="0 0 {CW} {CH}"
-        class="weight-chart"
-        onmousemove={handleChartHover}
-        onmouseleave={handleChartLeave}
-      >
+      <svg viewBox="0 0 {CW} {CH}" class="weight-chart" onmousemove={handleChartHover} onmouseleave={handleChartLeave}>
         <!-- Grid lines -->
         {#each yTicks as tick}
           {@const y = yAt(tick)}
@@ -392,7 +387,7 @@
         <!-- X axis labels -->
         {#each xTickIndices as idx}
           {@const x = xAt(idx)}
-          <text x={x} y={PT + PH + 20} class="axis-label axis-label-x">{fmtShortDate(entries[idx].date)}</text>
+          <text {x} y={PT + PH + 20} class="axis-label axis-label-x">{fmtShortDate(entries[idx].date)}</text>
         {/each}
 
         <!-- Trend weight line (drawn first, behind scale) -->
@@ -427,10 +422,10 @@
 
           <!-- Highlighted dots -->
           {#if showScaleWeight}
-            <circle cx={cx} cy={yAt(e.weight)} r="5" class="scale-dot-highlight" />
+            <circle {cx} cy={yAt(e.weight)} r="5" class="scale-dot-highlight" />
           {/if}
           {#if showTrendWeight}
-            <circle cx={cx} cy={yAt(tw)} r="5" class="trend-dot-highlight" />
+            <circle {cx} cy={yAt(tw)} r="5" class="trend-dot-highlight" />
           {/if}
 
           <!-- Tooltip -->
@@ -446,11 +441,7 @@
       <!-- Range selector -->
       <div class="range-selector">
         {#each ranges as r}
-          <button
-            class="range-btn"
-            class:range-active={selectedRange === r}
-            onclick={() => selectedRange = r}
-          >
+          <button class="range-btn" class:range-active={selectedRange === r} onclick={() => (selectedRange = r)}>
             {r}
           </button>
         {/each}
@@ -467,10 +458,19 @@
         {#each insights as ins}
           <div class="insight-item">
             <div class="insight-label">{ins.label}</div>
-            <div class="insight-value" class:direction-increase={ins.direction === 'Increase'} class:direction-decrease={ins.direction === 'Decrease'}>
+            <div
+              class="insight-value"
+              class:direction-increase={ins.direction === 'Increase'}
+              class:direction-decrease={ins.direction === 'Decrease'}
+            >
               {signedNum(ins.change)} kg
             </div>
-            <div class="insight-direction" class:direction-increase={ins.direction === 'Increase'} class:direction-decrease={ins.direction === 'Decrease'} class:direction-neutral={ins.direction === 'No Change'}>
+            <div
+              class="insight-direction"
+              class:direction-increase={ins.direction === 'Increase'}
+              class:direction-decrease={ins.direction === 'Decrease'}
+              class:direction-neutral={ins.direction === 'No Change'}
+            >
               {ins.direction}
             </div>
             <div class="insight-rate">{signedNum(ins.rate)} kg/week</div>
@@ -498,7 +498,11 @@
               <td>{entry.bodyFat != null ? entry.bodyFat.toFixed(1) + '%' : '—'}</td>
               <td>
                 <button class="delete-btn-sm" onclick={() => deleteEntry(entry.date)} title="Delete">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"
+                    ><polyline points="3 6 5 6 21 6" /><path
+                      d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"
+                    /></svg
+                  >
                 </button>
               </td>
             </tr>
@@ -511,7 +515,11 @@
 
 <style>
   /* Layout */
-  .loading-center { display: flex; justify-content: center; padding: var(--space-12); }
+  .loading-center {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-12);
+  }
 
   .section-title {
     font-size: var(--font-size-sm);
@@ -530,14 +538,35 @@
   }
 
   /* Log card (existing) */
-  .log-card { margin-bottom: var(--space-4); }
-  .log-row { display: flex; gap: var(--space-4); align-items: flex-end; flex-wrap: wrap; }
-  .log-row .field { flex: 1; min-width: 140px; }
-  .log-row .field label { display: block; font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-2); }
-  .log-btn { align-self: flex-end; margin-bottom: 0; height: 44px; }
+  .log-card {
+    margin-bottom: var(--space-4);
+  }
+  .log-row {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  .log-row .field {
+    flex: 1;
+    min-width: 140px;
+  }
+  .log-row .field label {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+  }
+  .log-btn {
+    align-self: flex-end;
+    margin-bottom: 0;
+    height: 44px;
+  }
 
   /* Stats card */
-  .stats-card { margin-bottom: var(--space-4); }
+  .stats-card {
+    margin-bottom: var(--space-4);
+  }
 
   .stats-row {
     display: flex;
@@ -545,7 +574,10 @@
     margin-bottom: var(--space-2);
   }
 
-  .stat-block { display: flex; flex-direction: column; }
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+  }
 
   .stat-label {
     font-size: var(--font-size-xs);
@@ -568,8 +600,12 @@
     color: var(--color-text-secondary);
   }
 
-  .stat-positive { color: var(--color-protein); }
-  .stat-negative { color: var(--color-calories); }
+  .stat-positive {
+    color: var(--color-protein);
+  }
+  .stat-negative {
+    color: var(--color-calories);
+  }
 
   .date-range {
     font-size: var(--font-size-sm);
@@ -577,7 +613,9 @@
   }
 
   /* Chart card */
-  .chart-card { margin-bottom: var(--space-4); }
+  .chart-card {
+    margin-bottom: var(--space-4);
+  }
 
   .chart-controls {
     display: flex;
@@ -586,7 +624,10 @@
     margin-bottom: var(--space-3);
   }
 
-  .chart-toggles { display: flex; gap: var(--space-3); }
+  .chart-toggles {
+    display: flex;
+    gap: var(--space-3);
+  }
 
   .toggle-btn {
     display: flex;
@@ -602,7 +643,9 @@
     opacity: 0.4;
   }
 
-  .toggle-btn.toggle-active { opacity: 1; }
+  .toggle-btn.toggle-active {
+    opacity: 1;
+  }
 
   .toggle-dot {
     display: inline-block;
@@ -611,11 +654,20 @@
     border-radius: 50%;
   }
 
-  .toggle-dot-scale { background: var(--color-carbs); }
-  .toggle-dot-trend { background: var(--color-calories); }
+  .toggle-dot-scale {
+    background: var(--color-carbs);
+  }
+  .toggle-dot-trend {
+    background: var(--color-calories);
+  }
 
   /* SVG chart */
-  .weight-chart { width: 100%; height: auto; display: block; cursor: crosshair; }
+  .weight-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: crosshair;
+  }
 
   .weight-chart .grid-line {
     stroke: var(--color-border);
@@ -629,8 +681,12 @@
     font-family: inherit;
   }
 
-  .weight-chart .axis-label-y { text-anchor: end; }
-  .weight-chart .axis-label-x { text-anchor: middle; }
+  .weight-chart .axis-label-y {
+    text-anchor: end;
+  }
+  .weight-chart .axis-label-x {
+    text-anchor: middle;
+  }
 
   .weight-chart .scale-line {
     fill: none;
@@ -639,7 +695,9 @@
     stroke-linejoin: round;
   }
 
-  .weight-chart .scale-dot { fill: var(--color-carbs); }
+  .weight-chart .scale-dot {
+    fill: var(--color-carbs);
+  }
   .weight-chart .scale-dot-highlight {
     fill: var(--color-carbs);
     stroke: var(--color-surface);
@@ -654,7 +712,9 @@
     stroke-linecap: round;
   }
 
-  .weight-chart .trend-dot-inline { fill: var(--color-calories); }
+  .weight-chart .trend-dot-inline {
+    fill: var(--color-calories);
+  }
   .weight-chart .trend-dot-highlight {
     fill: var(--color-calories);
     stroke: var(--color-surface);
@@ -710,7 +770,9 @@
     transition: all var(--transition-fast);
   }
 
-  .range-btn:hover { color: var(--color-text-secondary); }
+  .range-btn:hover {
+    color: var(--color-text-secondary);
+  }
 
   .range-btn.range-active {
     background: var(--color-surface-elevated);
@@ -718,7 +780,9 @@
   }
 
   /* Insights */
-  .insights-card { margin-bottom: var(--space-4); }
+  .insights-card {
+    margin-bottom: var(--space-4);
+  }
 
   .insights-grid {
     display: grid;
@@ -758,17 +822,50 @@
     color: var(--color-text-secondary);
   }
 
-  .direction-increase { color: var(--color-protein); }
-  .direction-decrease { color: var(--color-calories); }
-  .direction-neutral { color: var(--color-text-secondary); }
+  .direction-increase {
+    color: var(--color-protein);
+  }
+  .direction-decrease {
+    color: var(--color-calories);
+  }
+  .direction-neutral {
+    color: var(--color-text-secondary);
+  }
 
   /* History (existing) */
-  .history-card { margin-bottom: var(--space-4); }
-  .weight-table { width: 100%; border-collapse: collapse; }
-  .weight-table th { text-align: left; font-size: var(--font-size-xs); color: var(--color-text-tertiary); text-transform: uppercase; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); }
-  .weight-table td { padding: var(--space-3); border-bottom: 1px solid var(--color-border); font-size: var(--font-size-sm); }
-  .weight-table tr:nth-child(even) td { background: rgba(255, 255, 255, 0.02); }
-  .weight-cell { font-weight: var(--font-semibold); }
-  .delete-btn-sm { padding: var(--space-1); color: var(--color-text-tertiary); border-radius: var(--radius-sm); }
-  .delete-btn-sm:hover { color: var(--color-error); background: rgba(255, 59, 48, 0.1); }
+  .history-card {
+    margin-bottom: var(--space-4);
+  }
+  .weight-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .weight-table th {
+    text-align: left;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .weight-table td {
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-sm);
+  }
+  .weight-table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .weight-cell {
+    font-weight: var(--font-semibold);
+  }
+  .delete-btn-sm {
+    padding: var(--space-1);
+    color: var(--color-text-tertiary);
+    border-radius: var(--radius-sm);
+  }
+  .delete-btn-sm:hover {
+    color: var(--color-error);
+    background: rgba(255, 59, 48, 0.1);
+  }
 </style>

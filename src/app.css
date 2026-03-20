@@ -3,26 +3,26 @@
 :root {
   /* Brand colors */
   --color-bg: #000000;
-  --color-surface: #1C1C1E;
-  --color-surface-elevated: #2C2C2E;
-  --color-border: #38383A;
-  --color-text: #FFFFFF;
-  --color-text-secondary: #ABABAB;
+  --color-surface: #1c1c1e;
+  --color-surface-elevated: #2c2c2e;
+  --color-border: #38383a;
+  --color-text: #ffffff;
+  --color-text-secondary: #ababab;
   --color-text-tertiary: #636366;
 
   /* Primary / accent — MacroFactor is monochrome (white on black) */
-  --color-primary: #FFFFFF;
-  --color-primary-hover: #E5E5E5;
-  --color-accent: #ABABAB;
-  --color-success: #34C759;
-  --color-warning: #FF9500;
-  --color-error: #FF3B30;
+  --color-primary: #ffffff;
+  --color-primary-hover: #e5e5e5;
+  --color-accent: #ababab;
+  --color-success: #34c759;
+  --color-warning: #ff9500;
+  --color-error: #ff3b30;
 
   /* Macro colors (from actual MacroFactor app) */
-  --color-protein: #EF6C5E;
-  --color-fat: #F0C040;
-  --color-carbs: #34C759;
-  --color-calories: #5A9CEC;
+  --color-protein: #ef6c5e;
+  --color-fat: #f0c040;
+  --color-carbs: #34c759;
+  --color-calories: #5a9cec;
 
   /* Typography */
   --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -172,7 +172,9 @@ input::placeholder {
   border-radius: var(--radius-full);
   font-weight: var(--font-semibold);
   font-size: var(--font-size-sm);
-  transition: background var(--transition-fast), opacity var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    opacity var(--transition-fast);
   white-space: nowrap;
 }
 
@@ -215,10 +217,18 @@ input::placeholder {
 }
 
 /* Utility — macro colors */
-.macro-protein { color: var(--color-protein); }
-.macro-fat { color: var(--color-fat); }
-.macro-carbs { color: var(--color-carbs); }
-.macro-calories { color: var(--color-calories); }
+.macro-protein {
+  color: var(--color-protein);
+}
+.macro-fat {
+  color: var(--color-fat);
+}
+.macro-carbs {
+  color: var(--color-carbs);
+}
+.macro-calories {
+  color: var(--color-calories);
+}
 
 /* Utility — pill badges */
 .pill {
@@ -269,7 +279,9 @@ input::placeholder {
 
 /* Loading spinner */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner {

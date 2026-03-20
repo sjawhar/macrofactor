@@ -15,6 +15,7 @@
 ### Task 1: Extract and commit exercise database
 
 **Files:**
+
 - Create: `data/exercises.json`
 - Create: `scripts/extract-exercises.mjs`
 
@@ -28,7 +29,8 @@ This task extracts the exercise database from the already-unzipped APK at `/tmp/
 // Usage: node scripts/extract-exercises.mjs <path-to-app_file.json>
 import { readFileSync, writeFileSync } from 'fs';
 
-const inputPath = process.argv[2] ?? '/tmp/mf-apk/assets/flutter_assets/packages/macrofactor/assets/import/app_file.json';
+const inputPath =
+  process.argv[2] ?? '/tmp/mf-apk/assets/flutter_assets/packages/macrofactor/assets/import/app_file.json';
 const raw = JSON.parse(readFileSync(inputPath, 'utf8'));
 
 const output = {
@@ -60,6 +62,7 @@ jj new
 ### Task 2: Exercise lookup module
 
 **Files:**
+
 - Create: `src/lib/api/exercises.ts`
 
 Provides functions to resolve hex IDs to names and metadata, and to search exercises by name. Uses the static `data/exercises.json`.
@@ -167,6 +170,7 @@ jj new
 ### Task 3: Workout type definitions
 
 **Files:**
+
 - Create: `src/lib/api/workout-types.ts`
 
 - [ ] **Step 1: Create workout-types.ts**
@@ -203,7 +207,7 @@ export interface SetValue {
   rir?: number | null;
   distance?: number | null;
   durationSeconds?: number | null;
-  restTimerSeconds: number;  // converted from microseconds
+  restTimerSeconds: number; // converted from microseconds
   isSkipped: boolean;
 }
 
@@ -216,7 +220,7 @@ export interface WorkoutSet {
 export interface WorkoutExercise {
   id: string;
   exerciseId: string;
-  exerciseName?: string;     // resolved from exercise DB
+  exerciseName?: string; // resolved from exercise DB
   baseWeight: number | null;
   note: string;
   sets: WorkoutSet[];
@@ -293,6 +297,7 @@ jj new
 ### Task 4: Add workout methods to MacroFactorClient
 
 **Files:**
+
 - Modify: `src/lib/api/client.ts` — add workout section
 - Modify: `src/lib/api/firestore.ts` — add `listDocuments` function
 - Modify: `src/lib/api/index.ts` — re-export new modules
@@ -531,6 +536,7 @@ jj new
 ### Task 5: Write integration test script
 
 **Files:**
+
 - Create: `test-workouts.mjs`
 
 Follow the pattern of existing `test-foodlog.mjs` and `test-search.mjs`.
@@ -559,7 +565,9 @@ const workouts = await client.getWorkoutHistory();
 console.log(`Total workouts: ${workouts.length}`);
 for (const w of workouts.slice(0, 5)) {
   const mins = Math.round(w.durationSeconds / 60);
-  console.log(`  ${w.startTime.substring(0, 10)} | ${w.name} | ${mins}min | ${w.exerciseCount} exercises, ${w.setCount} sets | ${w.programName ?? 'no program'}`);
+  console.log(
+    `  ${w.startTime.substring(0, 10)} | ${w.name} | ${mins}min | ${w.exerciseCount} exercises, ${w.setCount} sets | ${w.programName ?? 'no program'}`
+  );
 }
 
 // 2. Workout detail (most recent)
@@ -624,6 +632,7 @@ jj new
 ### Task 6: Schema discovery and type generation
 
 **Files:**
+
 - Create: `scripts/discover-schema.mjs`
 - Create: `data/samples/` (directory for JSON samples)
 
@@ -653,6 +662,7 @@ Test: `npx quicktype --help`
 ```
 
 The script should:
+
 - Import `signIn` from `src/lib/api/auth.ts`
 - Import `getDocument`, `listDocuments`, `parseDocument` from `src/lib/api/firestore.ts`
 - Define the known collections list:
@@ -693,11 +703,13 @@ jj new
 ### Task 7: Write comprehensive API reference
 
 **Files:**
+
 - Create: `docs/api-reference.md`
 
 - [ ] **Step 1: Write the API reference document**
 
 Structure:
+
 1. **Overview** — Firebase project, auth flow, both apps
 2. **Authentication** — sign-in endpoint, token refresh, bundle IDs
 3. **Firestore REST API** — base URL, how document paths work
@@ -740,6 +752,7 @@ jj new
 ### Task 8: CLI tool
 
 **Files:**
+
 - Create: `cli/mf.mjs`
 
 Single-file CLI that imports from `src/lib/api/`. Uses raw Node.js arg parsing (no framework — keep it simple).
@@ -768,6 +781,7 @@ Single-file CLI that imports from `src/lib/api/`. Uses raw Node.js arg parsing (
 ```
 
 Implementation approach:
+
 - Parse `process.argv` manually
 - Create client via `MacroFactorClient.login()` or `.fromRefreshToken()`
 - Switch on command, call appropriate client method
@@ -777,6 +791,7 @@ Implementation approach:
 - [ ] **Step 2: Test each command**
 
 Run each command and verify output:
+
 ```bash
 source .env
 node cli/mf.mjs workouts | head -20
@@ -800,6 +815,7 @@ jj new
 ### Task 9: Write Claude skill for MacroFactor API
 
 **Files:**
+
 - Create: `skills/macrofactor-api/SKILL.md`
 
 - [ ] **Step 1: Write the skill**

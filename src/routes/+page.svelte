@@ -25,10 +25,28 @@
   const DAY_FULL = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as const;
 
   const MACROS = [
-    { name: 'Calories', color: 'var(--color-calories)', unit: 'kcal', val: (d: DayData) => d.calories, goal: (d: DayData) => d.goalCal },
-    { name: 'Protein', color: 'var(--color-protein)', unit: 'g', val: (d: DayData) => d.protein, goal: (d: DayData) => d.goalPro },
+    {
+      name: 'Calories',
+      color: 'var(--color-calories)',
+      unit: 'kcal',
+      val: (d: DayData) => d.calories,
+      goal: (d: DayData) => d.goalCal,
+    },
+    {
+      name: 'Protein',
+      color: 'var(--color-protein)',
+      unit: 'g',
+      val: (d: DayData) => d.protein,
+      goal: (d: DayData) => d.goalPro,
+    },
     { name: 'Fat', color: 'var(--color-fat)', unit: 'g', val: (d: DayData) => d.fat, goal: (d: DayData) => d.goalFat },
-    { name: 'Carbs', color: 'var(--color-carbs)', unit: 'g', val: (d: DayData) => d.carbs, goal: (d: DayData) => d.goalCarb },
+    {
+      name: 'Carbs',
+      color: 'var(--color-carbs)',
+      unit: 'g',
+      val: (d: DayData) => d.carbs,
+      goal: (d: DayData) => d.goalCarb,
+    },
   ] as const;
 
   // --- Week calculation ---
@@ -73,33 +91,40 @@
       auth.client.getGoals(),
       auth.client.getNutrition(weekStart, weekEnd),
       auth.client.getWeightEntries(daysAgo(30), todayStr),
-    ]).then(([g, n, w]) => {
-      goals = g;
-      weekNutrition = n;
-      weights = w;
-    }).catch(() => {}).finally(() => { loading = false; });
+    ])
+      .then(([g, n, w]) => {
+        goals = g;
+        weekNutrition = n;
+        weights = w;
+      })
+      .catch(() => {})
+      .finally(() => {
+        loading = false;
+      });
   });
 
   // --- Derived ---
-  let days = $derived(weekDates.map((date, i): DayData => {
-    const nutr = weekNutrition.find(n => n.date === date);
-    const gi = goalDayIndex(date);
-    return {
-      date,
-      dayLabel: DAY_LABELS[i],
-      dayName: DAY_FULL[i],
-      dayNum: new Date(date + 'T12:00:00').getDate(),
-      isToday: date === todayStr,
-      calories: nutr?.calories ?? 0,
-      protein: nutr?.protein ?? 0,
-      fat: nutr?.fat ?? 0,
-      carbs: nutr?.carbs ?? 0,
-      goalCal: goals?.calories[gi] ?? 0,
-      goalPro: goals?.protein[gi] ?? 0,
-      goalFat: goals?.fat[gi] ?? 0,
-      goalCarb: goals?.carbs[gi] ?? 0,
-    };
-  }));
+  let days = $derived(
+    weekDates.map((date, i): DayData => {
+      const nutr = weekNutrition.find((n) => n.date === date);
+      const gi = goalDayIndex(date);
+      return {
+        date,
+        dayLabel: DAY_LABELS[i],
+        dayName: DAY_FULL[i],
+        dayNum: new Date(date + 'T12:00:00').getDate(),
+        isToday: date === todayStr,
+        calories: nutr?.calories ?? 0,
+        protein: nutr?.protein ?? 0,
+        fat: nutr?.fat ?? 0,
+        carbs: nutr?.carbs ?? 0,
+        goalCal: goals?.calories[gi] ?? 0,
+        goalPro: goals?.protein[gi] ?? 0,
+        goalFat: goals?.fat[gi] ?? 0,
+        goalCarb: goals?.carbs[gi] ?? 0,
+      };
+    })
+  );
 
   let sel = $derived(days[selectedIdx] ?? days[0]);
   let latestWeight = $derived(weights.length > 0 ? weights[weights.length - 1] : null);
@@ -165,7 +190,7 @@
         class="day-btn"
         class:selected={i === selectedIdx}
         class:is-today={day.isToday}
-        onclick={() => selectedIdx = i}
+        onclick={() => (selectedIdx = i)}
       >
         <span class="day-btn-label">{day.dayLabel}</span>
         <span class="day-btn-num">{day.dayNum}</span>
@@ -177,7 +202,7 @@
   <div class="card daily-card">
     <div class="daily-header">
       <span class="daily-date">{selDateFormatted}</span>
-      <button class="toggle-pill" onclick={() => showRemaining = !showRemaining}>
+      <button class="toggle-pill" onclick={() => (showRemaining = !showRemaining)}>
         <span class:active={!showRemaining}>Consumed</span>
         <span class:active={showRemaining}>Remaining</span>
       </button>
@@ -230,11 +255,7 @@
             {#each days as day, di}
               {@const consumed = macro.val(day)}
               {@const target = macro.goal(day)}
-              <button
-                class="bar-cell"
-                class:selected={di === selectedIdx}
-                onclick={() => selectedIdx = di}
-              >
+              <button class="bar-cell" class:selected={di === selectedIdx} onclick={() => (selectedIdx = di)}>
                 <div class="bar-slot">
                   {#if consumed > 0}
                     <div
@@ -276,8 +297,29 @@
       </div>
       <div class="insight-sparkline" style="color:var(--color-calories)">
         <svg viewBox="0 0 120 40" preserveAspectRatio="none" width="100%" height="40">
-          <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            points="{days.map((d, i) => `${i * 20},${40 - (d.goalCal > 0 ? d.goalCal / macroMax(m => m.goalCal, m => m.goalCal) * 36 : 20)}`).join(' ')}" />
+          <polyline
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            points={days
+              .map(
+                (d, i) =>
+                  `${i * 20},${
+                    40 -
+                    (d.goalCal > 0
+                      ? (d.goalCal /
+                          macroMax(
+                            (m) => m.goalCal,
+                            (m) => m.goalCal
+                          )) *
+                        36
+                      : 20)
+                  }`
+              )
+              .join(' ')}
+          />
         </svg>
       </div>
       <div class="insight-footer">
@@ -294,11 +336,22 @@
       <div class="insight-sparkline" style="color:var(--color-primary)">
         <svg viewBox="0 0 120 40" preserveAspectRatio="none" width="100%" height="40">
           {#if weights.length >= 2}
-            {@const minW = Math.min(...weights.slice(-7).map(w => w.weight))}
-            {@const maxW = Math.max(...weights.slice(-7).map(w => w.weight))}
+            {@const minW = Math.min(...weights.slice(-7).map((w) => w.weight))}
+            {@const maxW = Math.max(...weights.slice(-7).map((w) => w.weight))}
             {@const range = maxW - minW || 1}
-            <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              points="{weights.slice(-7).map((w, i, a) => `${i * (120 / Math.max(a.length - 1, 1))},${40 - ((w.weight - minW) / range * 36 + 2)}`).join(' ')}" />
+            <polyline
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              points={weights
+                .slice(-7)
+                .map(
+                  (w, i, a) => `${i * (120 / Math.max(a.length - 1, 1))},${40 - (((w.weight - minW) / range) * 36 + 2)}`
+                )
+                .join(' ')}
+            />
           {/if}
         </svg>
       </div>
@@ -338,7 +391,11 @@
 
 <style>
   /* Loading */
-  .loading-center { display: flex; justify-content: center; padding: var(--space-12); }
+  .loading-center {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-12);
+  }
 
   /* Header */
   .header-row {
@@ -371,7 +428,9 @@
     cursor: pointer;
     transition: all var(--transition-fast);
   }
-  .day-btn:hover { background: var(--color-surface-elevated); }
+  .day-btn:hover {
+    background: var(--color-surface-elevated);
+  }
   .day-btn.selected {
     border-color: var(--color-text-secondary);
     background: var(--color-surface-elevated);
@@ -400,7 +459,9 @@
   }
 
   /* Daily summary card */
-  .daily-card { margin-bottom: var(--space-6); }
+  .daily-card {
+    margin-bottom: var(--space-6);
+  }
   .daily-header {
     display: flex;
     justify-content: space-between;
@@ -443,7 +504,9 @@
     margin-bottom: var(--space-3);
     flex-wrap: wrap;
   }
-  .cal-icon { font-size: var(--font-size-xl); }
+  .cal-icon {
+    font-size: var(--font-size-xl);
+  }
   .cal-value {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-bold);
@@ -533,7 +596,9 @@
   }
 
   /* Weekly chart */
-  .weekly-card { margin-bottom: var(--space-6); }
+  .weekly-card {
+    margin-bottom: var(--space-6);
+  }
   .section-title {
     font-size: var(--font-size-sm);
     font-weight: var(--font-semibold);
@@ -582,7 +647,9 @@
     border: 1px solid transparent;
     transition: all var(--transition-fast);
   }
-  .bar-cell:hover { background: rgba(255, 255, 255, 0.03); }
+  .bar-cell:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
   .bar-cell.selected {
     background: rgba(255, 255, 255, 0.06);
     border-color: var(--color-border);
@@ -594,12 +661,18 @@
     height: 72px;
     position: relative;
   }
-  .chart-row-cal .bar-slot { height: 96px; }
+  .chart-row-cal .bar-slot {
+    height: 96px;
+  }
 
   /* Bar fill */
   @keyframes grow-up {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
   }
   .bar-fill {
     position: absolute;
@@ -611,7 +684,9 @@
     animation: grow-up 0.4s ease-out;
     transform-origin: bottom;
   }
-  .bar-over { filter: brightness(1.2); }
+  .bar-over {
+    filter: brightness(1.2);
+  }
 
   /* Target marker */
   .bar-target {
@@ -634,7 +709,10 @@
   }
 
   /* Day labels row */
-  .chart-labels-row { align-items: center; margin-top: var(--space-1); }
+  .chart-labels-row {
+    align-items: center;
+    margin-top: var(--space-1);
+  }
   .bar-day-label {
     text-align: center;
     font-size: var(--font-size-xs);
@@ -706,7 +784,9 @@
     gap: var(--space-2);
     text-decoration: none;
     color: inherit;
-    transition: transform var(--transition-fast), border-color var(--transition-fast);
+    transition:
+      transform var(--transition-fast),
+      border-color var(--transition-fast);
   }
   .insight-card:hover {
     transform: translateY(-2px);

@@ -29,11 +29,14 @@ const PROJECT_ID = 'sbs-diet-app';
 const BASE_URL = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents`;
 
 async function signIn(email, password) {
-  const resp = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_WEB_API_KEY}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'X-Ios-Bundle-Identifier': 'com.sbs.diet' },
-    body: JSON.stringify({ email, password, returnSecureToken: true }),
-  });
+  const resp = await fetch(
+    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_WEB_API_KEY}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Ios-Bundle-Identifier': 'com.sbs.diet' },
+      body: JSON.stringify({ email, password, returnSecureToken: true }),
+    }
+  );
   if (!resp.ok) throw new Error(`Sign-in failed`);
   return resp.json();
 }
@@ -70,13 +73,15 @@ async function getDocument(path, idToken) {
 }
 
 async function listDocuments(path, idToken, limit = 5) {
-  const resp = await fetch(`${BASE_URL}/${path}?pageSize=${limit}`, { headers: { Authorization: `Bearer ${idToken}` } });
+  const resp = await fetch(`${BASE_URL}/${path}?pageSize=${limit}`, {
+    headers: { Authorization: `Bearer ${idToken}` },
+  });
   if (resp.status === 404) return [];
   if (!resp.ok) throw new Error(`LIST ${path} failed: ${resp.status}`);
   const data = await resp.json();
-  return (data.documents ?? []).map(d => ({
+  return (data.documents ?? []).map((d) => ({
     id: d.name?.split('/').pop(),
-    ...parseFields(d.fields)
+    ...parseFields(d.fields),
   }));
 }
 
@@ -99,7 +104,7 @@ async function main() {
   for (const col of COLLECTIONS) {
     const fullPath = `users/${localId}${col.path ? '/' + col.path : ''}`;
     console.log(`\nFetching ${fullPath}...`);
-    
+
     let data;
     if (col.type === 'list') {
       data = await listDocuments(fullPath, idToken);
@@ -112,7 +117,7 @@ async function main() {
       const outPath = `data/samples/${col.name}.json`;
       await writeFile(outPath, JSON.stringify(data, null, 2));
       console.log(`✅ Saved ${data.length} records to ${outPath}`);
-      
+
       // Print high-level schema of first record
       const first = data[0];
       const keys = Object.keys(first);

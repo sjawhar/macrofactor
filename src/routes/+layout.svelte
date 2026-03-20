@@ -60,29 +60,45 @@
       <ul class="nav-list">
         {#each navItems as item}
           <li>
-            <a
-              href={item.href}
-              class="nav-item"
-              class:active={isActive(item.href)}
-            >
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <a href={item.href} class="nav-item" class:active={isActive(item.href)}>
+              <svg
+                class="nav-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 {#if item.icon === 'home'}
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
                 {:else if item.icon === 'utensils'}
-                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2" /><path d="M7 2v20" /><path
+                    d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"
+                  />
                 {:else if item.icon === 'search'}
-                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
                 {:else if item.icon === 'scale'}
-                  <path d="M16.5 2H7.5a2 2 0 00-2 2v1H2v3h3v1a7 7 0 1014 0V8h3V5h-3.5V4a2 2 0 00-2-2z"/>
+                  <path d="M16.5 2H7.5a2 2 0 00-2 2v1H2v3h3v1a7 7 0 1014 0V8h3V5h-3.5V4a2 2 0 00-2-2z" />
                 {:else if item.icon === 'target'}
-                  <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                  <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
                 {:else if item.icon === 'bar-chart'}
-                  <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+                  <line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line
+                    x1="6"
+                    y1="20"
+                    x2="6"
+                    y2="16"
+                  />
                 {:else if item.icon === 'activity'}
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                 {:else if item.icon === 'zap'}
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  <line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line
+                    x1="6"
+                    y1="20"
+                    x2="6"
+                    y2="16"
+                  />
                 {/if}
               </svg>
               <span>{item.label}</span>
@@ -93,8 +109,21 @@
 
       <div class="sidebar-footer">
         <button class="nav-item logout-btn" onclick={handleLogout}>
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+          <svg
+            class="nav-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" /><polyline points="16 17 21 12 16 7" /><line
+              x1="21"
+              y1="12"
+              x2="9"
+              y2="12"
+            />
           </svg>
           <span>Log Out</span>
         </button>
@@ -169,7 +198,9 @@
     text-decoration: none;
     font-size: var(--font-size-sm);
     font-weight: var(--font-medium);
-    transition: background var(--transition-fast), color var(--transition-fast);
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
   }
 
   .nav-item:hover {

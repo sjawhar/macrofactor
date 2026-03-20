@@ -15,13 +15,15 @@
   $effect(() => {
     if (!auth.client) return;
     loading = true;
-    Promise.all([
-      auth.client.getGoals(),
-      auth.client.getProfile(),
-    ]).then(([g, p]) => {
-      goals = g;
-      profile = p;
-    }).catch(() => {}).finally(() => { loading = false; });
+    Promise.all([auth.client.getGoals(), auth.client.getProfile()])
+      .then(([g, p]) => {
+        goals = g;
+        profile = p;
+      })
+      .catch(() => {})
+      .finally(() => {
+        loading = false;
+      });
   });
 
   // --- Check-in countdown ---
@@ -69,13 +71,13 @@
     if (arr.length === 0) return Array(7).fill(0) as number[];
     if (arr.length >= 7) return arr.slice(0, 7);
     const last = arr[arr.length - 1];
-    return [...arr, ...Array(7 - arr.length).fill(last) as number[]];
+    return [...arr, ...(Array(7 - arr.length).fill(last) as number[])];
   }
 
-  let weekCalories = $derived(goals ? padToWeek(goals.calories) : Array(7).fill(0) as number[]);
-  let weekProtein = $derived(goals ? padToWeek(goals.protein) : Array(7).fill(0) as number[]);
-  let weekFat = $derived(goals ? padToWeek(goals.fat) : Array(7).fill(0) as number[]);
-  let weekCarbs = $derived(goals ? padToWeek(goals.carbs) : Array(7).fill(0) as number[]);
+  let weekCalories = $derived(goals ? padToWeek(goals.calories) : (Array(7).fill(0) as number[]));
+  let weekProtein = $derived(goals ? padToWeek(goals.protein) : (Array(7).fill(0) as number[]));
+  let weekFat = $derived(goals ? padToWeek(goals.fat) : (Array(7).fill(0) as number[]));
+  let weekCarbs = $derived(goals ? padToWeek(goals.carbs) : (Array(7).fill(0) as number[]));
 
   interface MacroRow {
     values: number[];
@@ -101,20 +103,46 @@
   <!-- Action buttons -->
   <div class="action-row">
     <button class="action-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
       </svg>
       Check In Early
     </button>
     <button class="action-btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      >
+        <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
       </svg>
       New Goal
     </button>
     <button class="action-btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
       </svg>
       Edit Goal
     </button>
@@ -132,7 +160,9 @@
       </defs>
       <!-- Track -->
       <circle
-        cx="100" cy="100" r={RING_RADIUS}
+        cx="100"
+        cy="100"
+        r={RING_RADIUS}
         fill="none"
         stroke="var(--color-surface-elevated)"
         stroke-width={RING_STROKE}
@@ -140,7 +170,9 @@
       <!-- Progress arc -->
       {#if arcLength > 0}
         <circle
-          cx="100" cy="100" r={RING_RADIUS}
+          cx="100"
+          cy="100"
+          r={RING_RADIUS}
           fill="none"
           stroke="url(#ring-grad)"
           stroke-width={RING_STROKE}
@@ -161,20 +193,47 @@
     <button
       class="tab-btn"
       class:tab-active={activeTab === 'goal'}
-      onclick={() => { activeTab = 'goal'; }}
+      onclick={() => {
+        activeTab = 'goal';
+      }}
     >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
       </svg>
       Goal
     </button>
     <button
       class="tab-btn"
       class:tab-active={activeTab === 'checkin'}
-      onclick={() => { activeTab = 'checkin'; }}
+      onclick={() => {
+        activeTab = 'checkin';
+      }}
     >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect width="18" height="18" x="3" y="4" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line
+          x1="8"
+          y1="2"
+          x2="8"
+          y2="6"
+        /><line x1="3" y1="10" x2="21" y2="10" />
       </svg>
       Check-In
     </button>
@@ -263,7 +322,11 @@
 
 <style>
   /* Layout */
-  .loading-center { display: flex; justify-content: center; padding: var(--space-12); }
+  .loading-center {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-12);
+  }
 
   /* Action buttons row */
   .action-row {
@@ -274,7 +337,9 @@
     margin-bottom: var(--space-6);
     scrollbar-width: none;
   }
-  .action-row::-webkit-scrollbar { display: none; }
+  .action-row::-webkit-scrollbar {
+    display: none;
+  }
 
   .action-btn {
     display: inline-flex;
@@ -288,7 +353,9 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-medium);
     white-space: nowrap;
-    transition: background var(--transition-fast), border-color var(--transition-fast);
+    transition:
+      background var(--transition-fast),
+      border-color var(--transition-fast);
     cursor: pointer;
   }
   .action-btn:hover {
@@ -440,10 +507,18 @@
     min-height: 34px;
   }
 
-  .cal-cell  { background: rgba(90, 156, 236, 0.7); }
-  .pro-cell  { background: rgba(239, 108, 94, 0.7); }
-  .fat-cell  { background: rgba(240, 192, 64, 0.7); }
-  .carb-cell { background: rgba(52, 199, 89, 0.7); }
+  .cal-cell {
+    background: rgba(90, 156, 236, 0.7);
+  }
+  .pro-cell {
+    background: rgba(239, 108, 94, 0.7);
+  }
+  .fat-cell {
+    background: rgba(240, 192, 64, 0.7);
+  }
+  .carb-cell {
+    background: rgba(52, 199, 89, 0.7);
+  }
 
   /* Info card (TDEE) */
   .info-card {

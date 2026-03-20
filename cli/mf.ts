@@ -21,7 +21,9 @@ const password = process.env.MACROFACTOR_PASSWORD;
 
 async function getClient() {
   if (!email || !password) {
-    console.error(JSON.stringify({ error: 'Set MACROFACTOR_USERNAME and MACROFACTOR_PASSWORD in .env or environment' }));
+    console.error(
+      JSON.stringify({ error: 'Set MACROFACTOR_USERNAME and MACROFACTOR_PASSWORD in .env or environment' })
+    );
     process.exit(1);
   }
   return MacroFactorClient.login(email, password);
@@ -82,7 +84,9 @@ function parseTime(s: string): { hours: number; minutes: number } {
 /** Build a Date from --date and --at options in the user's local timezone. */
 function buildDate(opts: Record<string, string>): Date {
   const dateStr = opts.date || new Date().toISOString().split('T')[0];
-  const { hours, minutes } = opts.at ? parseTime(opts.at) : { hours: new Date().getHours(), minutes: new Date().getMinutes() };
+  const { hours, minutes } = opts.at
+    ? parseTime(opts.at)
+    : { hours: new Date().getHours(), minutes: new Date().getMinutes() };
   // Build UTC date from local time
   const utcHours = hours - TIMEZONE_OFFSET_HOURS;
   return new Date(`${dateStr}T${String(utcHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00.000Z`);
@@ -92,9 +96,11 @@ function buildDate(opts: Record<string, string>): Date {
 function findServing(servings: { description: string; gramWeight: number; amount: number }[], unit: string) {
   // For gram-based amounts, prefer the 1g serving so qty = grams directly
   if (['g', 'gram', 'grams'].includes(unit.toLowerCase())) {
-    return servings.find(s => s.gramWeight === 1 && s.description.toLowerCase().includes('gram'))
-      || servings.find(s => s.gramWeight === 1)
-      || servings.find(s => s.description === '100 g');
+    return (
+      servings.find((s) => s.gramWeight === 1 && s.description.toLowerCase().includes('gram')) ||
+      servings.find((s) => s.gramWeight === 1) ||
+      servings.find((s) => s.description === '100 g')
+    );
   }
   const aliases: Record<string, string[]> = {
     tbsp: ['tbsp', 'tablespoon'],
@@ -106,7 +112,7 @@ function findServing(servings: { description: string; gramWeight: number; amount
     serving: ['serving'],
   };
   const targets = aliases[unit.toLowerCase()] || [unit.toLowerCase()];
-  return servings.find(s => targets.some(t => s.description.toLowerCase().includes(t)));
+  return servings.find((s) => targets.some((t) => s.description.toLowerCase().includes(t)));
 }
 
 /**
@@ -137,9 +143,20 @@ function parseSets(s: string): { reps: number; weightKg: number | null }[] {
 // ---------------------------------------------------------------------------
 
 const ALL_COMMANDS = [
-  'login', 'workouts', 'workout', 'exercises search', 'exercise',
-  'gyms', 'profile', 'food-log', 'search-food', 'log-food',
-  'log-workout', 'log-exercise', 'program', 'next-workout',
+  'login',
+  'workouts',
+  'workout',
+  'exercises search',
+  'exercise',
+  'gyms',
+  'profile',
+  'food-log',
+  'search-food',
+  'log-food',
+  'log-workout',
+  'log-exercise',
+  'program',
+  'next-workout',
 ];
 
 async function main() {
@@ -152,12 +169,12 @@ async function main() {
         console.log(JSON.stringify({ status: 'success', uid: await client.getUserId() }, null, 2));
         break;
       }
-      
+
       case 'workouts': {
         const client = await getClient();
         let workouts = await client.getWorkoutHistory();
-        if (opts.from) workouts = workouts.filter(w => w.startTime >= opts.from!);
-        if (opts.to) workouts = workouts.filter(w => w.startTime <= opts.to!);
+        if (opts.from) workouts = workouts.filter((w) => w.startTime >= opts.from!);
+        if (opts.to) workouts = workouts.filter((w) => w.startTime <= opts.to!);
         console.log(JSON.stringify(workouts, null, 2));
         break;
       }
@@ -229,7 +246,7 @@ async function main() {
           brand: r.brand || null,
           caloriesPer100g: r.caloriesPer100g,
           proteinPer100g: r.proteinPer100g,
-          servings: r.servings.map(s => `${s.description} (${s.gramWeight}g)`),
+          servings: r.servings.map((s) => `${s.description} (${s.gramWeight}g)`),
         }));
         console.log(JSON.stringify(summary, null, 2));
         break;
@@ -245,7 +262,9 @@ async function main() {
       // -----------------------------------------------------------------------
       case 'log-food': {
         if (positional.length < 2) {
-          throw new Error('Usage: mf.ts log-food <query> <amount> [--at <time>] [--date <YYYY-MM-DD>] [--pick <index>]');
+          throw new Error(
+            'Usage: mf.ts log-food <query> <amount> [--at <time>] [--date <YYYY-MM-DD>] [--pick <index>]'
+          );
         }
         const query = positional[0];
         const amountStr = positional[1];
@@ -254,7 +273,8 @@ async function main() {
         const client = await getClient();
         const results = await client.searchFoods(query);
         if (results.length === 0) throw new Error(`No foods found for "${query}"`);
-        if (pickIndex >= results.length) throw new Error(`--pick ${pickIndex} out of range (${results.length} results)`);
+        if (pickIndex >= results.length)
+          throw new Error(`--pick ${pickIndex} out of range (${results.length} results)`);
 
         const food = results[pickIndex];
         const { value, unit } = parseAmount(amountStr);
@@ -262,7 +282,7 @@ async function main() {
         // Find serving that matches the unit
         const serving = findServing(food.servings, unit);
         if (!serving) {
-          const available = food.servings.map(s => s.description).join(', ');
+          const available = food.servings.map((s) => s.description).join(', ');
           throw new Error(`No serving matching "${unit}" for ${food.name}. Available: ${available}`);
         }
 
@@ -276,20 +296,26 @@ async function main() {
         await client.logSearchedFood(logTime, food, serving, quantity, isGramUnit);
 
         const totalGrams = isGramUnit ? value : serving.gramWeight * quantity;
-        const totalCal = Math.round(food.caloriesPer100g * totalGrams / 100);
-        const totalProt = Math.round(food.proteinPer100g * totalGrams / 100 * 10) / 10;
+        const totalCal = Math.round((food.caloriesPer100g * totalGrams) / 100);
+        const totalProt = Math.round(((food.proteinPer100g * totalGrams) / 100) * 10) / 10;
 
-        console.log(JSON.stringify({
-          status: 'logged',
-          food: food.name,
-          foodId: food.foodId,
-          serving: serving.description,
-          quantity,
-          totalGrams: Math.round(totalGrams),
-          totalCalories: totalCal,
-          totalProtein: totalProt,
-          date: opts.date || new Date().toISOString().split('T')[0],
-        }, null, 2));
+        console.log(
+          JSON.stringify(
+            {
+              status: 'logged',
+              food: food.name,
+              foodId: food.foodId,
+              serving: serving.description,
+              quantity,
+              totalGrams: Math.round(totalGrams),
+              totalCalories: totalCal,
+              totalProtein: totalProt,
+              date: opts.date || new Date().toISOString().split('T')[0],
+            },
+            null,
+            2
+          )
+        );
         break;
       }
 
@@ -301,7 +327,10 @@ async function main() {
       //   mf.ts log-workout --name "Morning Workout" --gym "Home" --date 2026-03-19 --duration 45
       // -----------------------------------------------------------------------
       case 'log-workout': {
-        if (!opts.name) throw new Error('Usage: mf.ts log-workout --name <name> [--gym <name>] [--at <time>] [--date <YYYY-MM-DD>] [--duration <minutes>]');
+        if (!opts.name)
+          throw new Error(
+            'Usage: mf.ts log-workout --name <name> [--gym <name>] [--at <time>] [--date <YYYY-MM-DD>] [--duration <minutes>]'
+          );
 
         const client = await getClient();
         const logTime = buildDate(opts);
@@ -311,7 +340,7 @@ async function main() {
         const gyms = await client.getGymProfiles();
         let gym = gyms[0];
         if (opts.gym) {
-          const match = gyms.find(g => g.name.toLowerCase().includes(opts.gym.toLowerCase()));
+          const match = gyms.find((g) => g.name.toLowerCase().includes(opts.gym.toLowerCase()));
           if (match) gym = match;
         }
 
@@ -327,17 +356,29 @@ async function main() {
         };
 
         await client.updateRawWorkout(workoutId, workout, [
-          'name', 'startTime', 'duration', 'gymId', 'gymName', 'gymIcon', 'blocks',
+          'name',
+          'startTime',
+          'duration',
+          'gymId',
+          'gymName',
+          'gymIcon',
+          'blocks',
         ]);
 
-        console.log(JSON.stringify({
-          status: 'created',
-          workoutId,
-          name: opts.name,
-          gym: gym?.name || 'Gym',
-          startTime: logTime.toISOString(),
-          durationMinutes,
-        }, null, 2));
+        console.log(
+          JSON.stringify(
+            {
+              status: 'created',
+              workoutId,
+              name: opts.name,
+              gym: gym?.name || 'Gym',
+              startTime: logTime.toISOString(),
+              durationMinutes,
+            },
+            null,
+            2
+          )
+        );
         break;
       }
 
@@ -378,7 +419,7 @@ async function main() {
           exerciseId: exercise.id,
           note: '',
           baseWeight: null,
-          sets: sets.map(s => ({
+          sets: sets.map((s) => ({
             setType: 'standard',
             segments: [],
             log: {
@@ -403,20 +444,25 @@ async function main() {
         blocks.push({ exercises: [newExercise] });
         await client.updateRawWorkout(workoutId, { blocks }, ['blocks']);
 
-        console.log(JSON.stringify({
-          status: 'added',
-          workoutId,
-          exercise: exercise.name,
-          exerciseId: exercise.id,
-          sets: sets.map(s => ({
-            reps: s.reps,
-            weightKg: s.weightKg ? Math.round(s.weightKg * 100) / 100 : null,
-          })),
-          restSeconds,
-        }, null, 2));
+        console.log(
+          JSON.stringify(
+            {
+              status: 'added',
+              workoutId,
+              exercise: exercise.name,
+              exerciseId: exercise.id,
+              sets: sets.map((s) => ({
+                reps: s.reps,
+                weightKg: s.weightKg ? Math.round(s.weightKg * 100) / 100 : null,
+              })),
+              restSeconds,
+            },
+            null,
+            2
+          )
+        );
         break;
       }
-
 
       // -----------------------------------------------------------------------
       // program — Show active training program with all days and exercises
@@ -424,26 +470,37 @@ async function main() {
       case 'program': {
         const client = await getClient();
         const programs = await client.getTrainingPrograms();
-        const active = programs.find(p => p.isActive) || programs[0];
-        if (!active) { console.log('No training programs found.'); break; }
+        const active = programs.find((p) => p.isActive) || programs[0];
+        if (!active) {
+          console.log('No training programs found.');
+          break;
+        }
 
-        console.log(JSON.stringify({
-          name: active.name,
-          id: active.id,
-          numCycles: active.numCycles,
-          runIndefinitely: active.runIndefinitely,
-          isPeriodized: active.isPeriodized,
-          deload: active.deload,
-          days: active.days.map((d, i) => ({
-            day: i + 1,
-            name: d.name,
-            isRestDay: d.isRestDay,
-            exercises: d.isRestDay ? [] : d.exercises.map(e => {
-              const info = resolveExercise(e.exerciseId);
-              return { name: info?.name || e.exerciseId, exerciseId: e.exerciseId };
-            }),
-          })),
-        }, null, 2));
+        console.log(
+          JSON.stringify(
+            {
+              name: active.name,
+              id: active.id,
+              numCycles: active.numCycles,
+              runIndefinitely: active.runIndefinitely,
+              isPeriodized: active.isPeriodized,
+              deload: active.deload,
+              days: active.days.map((d, i) => ({
+                day: i + 1,
+                name: d.name,
+                isRestDay: d.isRestDay,
+                exercises: d.isRestDay
+                  ? []
+                  : d.exercises.map((e) => {
+                      const info = resolveExercise(e.exerciseId);
+                      return { name: info?.name || e.exerciseId, exerciseId: e.exerciseId };
+                    }),
+              })),
+            },
+            null,
+            2
+          )
+        );
         break;
       }
 
@@ -453,31 +510,46 @@ async function main() {
       case 'next-workout': {
         const client = await getClient();
         const next = await client.getNextWorkout();
-        if (!next) { console.log('No active program found.'); break; }
+        if (!next) {
+          console.log('No active program found.');
+          break;
+        }
 
-        const exercises = next.exercises.map(e => {
+        const exercises = next.exercises.map((e) => {
           const info = resolveExercise(e.exerciseId);
           return { name: info?.name || e.exerciseId, exerciseId: e.exerciseId };
         });
 
-        console.log(JSON.stringify({
-          program: next.program.name,
-          day: next.dayName,
-          dayIndex: next.dayIndex + 1,
-          totalDays: next.program.days.length,
-          cycle: next.cycleIndex + 1,
-          totalCycles: next.totalCycles,
-          isRestDay: next.isRestDay,
-          exercises: next.isRestDay ? [] : exercises,
-        }, null, 2));
+        console.log(
+          JSON.stringify(
+            {
+              program: next.program.name,
+              day: next.dayName,
+              dayIndex: next.dayIndex + 1,
+              totalDays: next.program.days.length,
+              cycle: next.cycleIndex + 1,
+              totalCycles: next.totalCycles,
+              isRestDay: next.isRestDay,
+              exercises: next.isRestDay ? [] : exercises,
+            },
+            null,
+            2
+          )
+        );
         break;
       }
 
       default:
-        console.error(JSON.stringify({
-          error: `Unknown command: ${command}`,
-          commands: ALL_COMMANDS,
-        }, null, 2));
+        console.error(
+          JSON.stringify(
+            {
+              error: `Unknown command: ${command}`,
+              commands: ALL_COMMANDS,
+            },
+            null,
+            2
+          )
+        );
         process.exit(1);
     }
   } catch (err: any) {

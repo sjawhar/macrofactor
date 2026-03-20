@@ -47,8 +47,8 @@ All user data is stored under the `users/{uid}/` prefix.
   startTime: string,        // ISO 8601 timestamp
   duration: number,         // Microseconds
   gymId?: string,           // UUID reference
-  gymName?: string,         
-  gymIcon?: string,         
+  gymName?: string,
+  gymIcon?: string,
   workoutSource?: {         // Information about the source program
     runtimeType: "program",
     programId: string,
@@ -121,24 +121,24 @@ All user data is stored under the `users/{uid}/` prefix.
 **Type:** Document containing all food entries for a specific day.
 **Structure:** A map where keys are timestamp-based entry IDs.
 
-| Field | Type | Description |
-|---|---|---|
-| `t` | string | Name / Title |
-| `b` | string | Brand |
-| `c` | number | Calories (per `g` amount) |
-| `p` | number | Protein (per `g` amount) |
-| `e` | number | Carbs (per `g` amount) |
-| `f` | number | Fat (per `g` amount) |
-| `g` | number | Serving size in grams |
-| `w` | number | Unit weight |
-| `y` | number | User quantity |
-| `q` | number | Computed quantity |
-| `s` | string | Serving unit string |
-| `id` | string | Global food ID (if from search) |
-| `h` / `mi` | string | Hour and minute (e.g., "14", "30") |
-| `k` | string | Source type ("search", "manual", etc.) |
-| `d` | boolean | True if deleted (soft delete) |
-| `x` | string | Image ID / Barcode |
+| Field      | Type    | Description                            |
+| ---------- | ------- | -------------------------------------- |
+| `t`        | string  | Name / Title                           |
+| `b`        | string  | Brand                                  |
+| `c`        | number  | Calories (per `g` amount)              |
+| `p`        | number  | Protein (per `g` amount)               |
+| `e`        | number  | Carbs (per `g` amount)                 |
+| `f`        | number  | Fat (per `g` amount)                   |
+| `g`        | number  | Serving size in grams                  |
+| `w`        | number  | Unit weight                            |
+| `y`        | number  | User quantity                          |
+| `q`        | number  | Computed quantity                      |
+| `s`        | string  | Serving unit string                    |
+| `id`       | string  | Global food ID (if from search)        |
+| `h` / `mi` | string  | Hour and minute (e.g., "14", "30")     |
+| `k`        | string  | Source type ("search", "manual", etc.) |
+| `d`        | boolean | True if deleted (soft delete)          |
+| `x`        | string  | Image ID / Barcode                     |
 
 > **Computing true calories:** `(calories_raw * (userQty * (unitWeight ?? servingGrams)) / servingGrams)`
 
@@ -148,14 +148,14 @@ All user data is stored under the `users/{uid}/` prefix.
 **Type:** Document containing daily summaries for an entire year.
 **Structure:** Map where keys are `MMDD`.
 
-| Field | Type | Description |
-|---|---|---|
-| `k` | number | Total Calories (kcal) |
-| `p` | number | Total Protein (g) |
-| `c` | number | Total Carbs (g) |
-| `f` | number | Total Fat (g) |
+| Field | Type   | Description           |
+| ----- | ------ | --------------------- |
+| `k`   | number | Total Calories (kcal) |
+| `p`   | number | Total Protein (g)     |
+| `c`   | number | Total Carbs (g)       |
+| `f`   | number | Total Fat (g)         |
 
-*Note: MacroFactor computes these dynamically. The client API auto-computes missing days from the Food Log.*
+_Note: MacroFactor computes these dynamically. The client API auto-computes missing days from the Food Log._
 
 ### Scale / Weight Entries
 
@@ -163,11 +163,11 @@ All user data is stored under the `users/{uid}/` prefix.
 **Type:** Document containing daily weight entries for a year.
 **Structure:** Map where keys are `MMDD`.
 
-| Field | Type | Description |
-|---|---|---|
-| `w` | number | Weight (in preferred unit, usually kg) |
-| `f` | number | Body fat percentage |
-| `s` | string | Source |
+| Field | Type   | Description                            |
+| ----- | ------ | -------------------------------------- |
+| `w`   | number | Weight (in preferred unit, usually kg) |
+| `f`   | number | Body fat percentage                    |
+| `s`   | string | Source                                 |
 
 ### Step Counts
 
@@ -175,10 +175,10 @@ All user data is stored under the `users/{uid}/` prefix.
 **Type:** Document containing daily step counts.
 **Structure:** Map where keys are `MMDD`.
 
-| Field | Type | Description |
-|---|---|---|
-| `st` | number | Steps taken |
-| `s` | string | Source |
+| Field | Type   | Description |
+| ----- | ------ | ----------- |
+| `st`  | number | Steps taken |
+| `s`   | string | Source      |
 
 ### Custom Exercises
 
@@ -186,7 +186,6 @@ All user data is stored under the `users/{uid}/` prefix.
 **Type:** Collection of user-created exercises.
 
 Follows the same schema as built-in exercises in `app_file.json`, but stored under the user's document tree. Includes fields like `primaryFeatureMuscle`, `resistanceEquipmentGroups`, `laterality`, etc.
-
 
 ### Training Programs
 
@@ -238,6 +237,7 @@ Each document represents a complete training program with its full cycle structu
 **Type:** Single document with workout app settings
 
 Key fields:
+
 - `activeProgramId` — UUID of the currently active training program
 - `gymIds` — Array of gym UUIDs
 - `workoutLibraryIds` — Array of custom workout template IDs
@@ -248,4 +248,3 @@ Key fields:
 
 **Path:** `users/{uid}/profiles/diet`
 **Type:** Single document with diet app toolbar/shortcut config
-

@@ -10,7 +10,7 @@
     '3M': 90,
     '6M': 180,
     '1Y': 365,
-    'All': 730,
+    All: 730,
   };
   const RANGE_KEYS: RangeKey[] = ['1W', '1M', '3M', '6M', '1Y', 'All'];
 
@@ -40,8 +40,13 @@
     }
   }
 
-  $effect(() => { if (auth.client) loadData(); });
-  $effect(() => { rangeKey; if (auth.client) loadData(); });
+  $effect(() => {
+    if (auth.client) loadData();
+  });
+  $effect(() => {
+    rangeKey;
+    if (auth.client) loadData();
+  });
 
   // ---- TDEE computation ----
 
@@ -57,9 +62,7 @@
   const PAD = { top: 20, right: 20, bottom: 36, left: 54 };
 
   // Weight lookup for regression
-  let sortedWeights = $derived(
-    [...weightEntries].sort((a, b) => a.date.localeCompare(b.date))
-  );
+  let sortedWeights = $derived([...weightEntries].sort((a, b) => a.date.localeCompare(b.date)));
 
   // Raw TDEE per nutrition day
   let rawExpenditure = $derived.by(() => {
@@ -74,10 +77,7 @@
 
       const rate = weightChangeRate(entry.date);
       // TDEE = intake - (kg/day × 7700 kcal/kg)
-      const expenditure =
-        rate !== null
-          ? Math.max(500, Math.min(8000, intake - rate * 7700))
-          : intake;
+      const expenditure = rate !== null ? Math.max(500, Math.min(8000, intake - rate * 7700)) : intake;
 
       points.push({ date: entry.date, expenditure, intake });
     }
@@ -97,7 +97,10 @@
 
     // Linear regression: slope = kg per day
     const n = nearby.length;
-    let sx = 0, sy = 0, sxy = 0, sxx = 0;
+    let sx = 0,
+      sy = 0,
+      sxy = 0,
+      sxx = 0;
     for (const w of nearby) {
       const x = (new Date(w.date + 'T12:00:00').getTime() - targetMs) / 86_400_000;
       sx += x;
@@ -128,15 +131,11 @@
 
   // Statistics
   let avgExpenditure = $derived(
-    smoothedData.length > 0
-      ? smoothedData.reduce((s, p) => s + p.expenditure, 0) / smoothedData.length
-      : 0
+    smoothedData.length > 0 ? smoothedData.reduce((s, p) => s + p.expenditure, 0) / smoothedData.length : 0
   );
 
   let avgIntake = $derived(
-    smoothedData.length > 0
-      ? smoothedData.reduce((s, p) => s + p.intake, 0) / smoothedData.length
-      : 0
+    smoothedData.length > 0 ? smoothedData.reduce((s, p) => s + p.intake, 0) / smoothedData.length : 0
   );
 
   let difference = $derived(Math.round(avgExpenditure - avgIntake));
@@ -273,23 +272,15 @@
       <svg viewBox="0 0 {CHART_W} {CHART_H}" preserveAspectRatio="xMidYMid meet" class="expenditure-chart">
         <!-- Grid lines -->
         {#each yTicks as tick}
-          <line
-            x1={PAD.left}
-            y1={yPos(tick)}
-            x2={CHART_W - PAD.right}
-            y2={yPos(tick)}
-            class="grid-line"
-          />
+          <line x1={PAD.left} y1={yPos(tick)} x2={CHART_W - PAD.right} y2={yPos(tick)} class="grid-line" />
           <text x={PAD.left - 8} y={yPos(tick) + 4} class="axis-label y-label">{tick}</text>
         {/each}
 
         <!-- X-axis labels -->
         {#each xTicks as tick}
-          <text
-            x={xPos(tick.i, smoothedData.length)}
-            y={CHART_H - PAD.bottom + 20}
-            class="axis-label x-label"
-          >{tick.label}</text>
+          <text x={xPos(tick.i, smoothedData.length)} y={CHART_H - PAD.bottom + 20} class="axis-label x-label"
+            >{tick.label}</text
+          >
         {/each}
 
         <!-- Flux range shaded area -->
@@ -301,12 +292,7 @@
         <!-- Data points (only show for small datasets) -->
         {#if smoothedData.length <= 30}
           {#each smoothedData as point, i}
-            <circle
-              cx={xPos(i, smoothedData.length)}
-              cy={yPos(point.expenditure)}
-              r="3"
-              class="data-dot"
-            />
+            <circle cx={xPos(i, smoothedData.length)} cy={yPos(point.expenditure)} r="3" class="data-dot" />
           {/each}
         {/if}
       </svg>
@@ -323,11 +309,7 @@
   <!-- Time range toggles -->
   <div class="range-toggle">
     {#each RANGE_KEYS as key}
-      <button
-        class="range-btn"
-        class:active={rangeKey === key}
-        onclick={() => rangeKey = key}
-      >{key}</button>
+      <button class="range-btn" class:active={rangeKey === key} onclick={() => (rangeKey = key)}>{key}</button>
     {/each}
   </div>
 {/if}

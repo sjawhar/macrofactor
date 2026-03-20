@@ -56,9 +56,7 @@ export async function patchDocument(
   fieldPaths: string[],
   idToken: string
 ): Promise<FirestoreDocument> {
-  const mask = fieldPaths
-    .map((fp) => `updateMask.fieldPaths=${encodeURIComponent(fp)}`)
-    .join('&');
+  const mask = fieldPaths.map((fp) => `updateMask.fieldPaths=${encodeURIComponent(fp)}`).join('&');
   const url = `${BASE_URL}/${path}?${mask}`;
   const resp = await fetch(url, {
     method: 'PATCH',
@@ -74,10 +72,7 @@ export async function patchDocument(
   return resp.json();
 }
 
-export async function listCollectionIds(
-  parentPath: string | null,
-  idToken: string
-): Promise<string[]> {
+export async function listCollectionIds(parentPath: string | null, idToken: string): Promise<string[]> {
   const parent = parentPath ? `${BASE_URL}/${parentPath}` : BASE_URL;
   const resp = await fetch(`${parent}:listCollectionIds`, {
     method: 'POST',
@@ -88,9 +83,7 @@ export async function listCollectionIds(
     body: JSON.stringify({}),
   });
   if (!resp.ok) {
-    throw new Error(
-      `Firestore listCollectionIds failed (${resp.status}): ${await resp.text()}`
-    );
+    throw new Error(`Firestore listCollectionIds failed (${resp.status}): ${await resp.text()}`);
   }
   const data = await resp.json();
   return data.collectionIds ?? [];
@@ -100,14 +93,13 @@ export async function listCollectionIds(
 // JS → Firestore value conversion (generic — uses native numeric types)
 // ---------------------------------------------------------------------------
 
-export function toFirestoreValue(val: any): any { // eslint-disable-line @typescript-eslint/no-explicit-any
+export function toFirestoreValue(val: any): any {
+  // eslint-disable-line @typescript-eslint/no-explicit-any
   if (val === null || val === undefined) return { nullValue: null };
   if (typeof val === 'boolean') return { booleanValue: val };
   if (typeof val === 'string') return { stringValue: val };
   if (typeof val === 'number') {
-    return Number.isInteger(val)
-      ? { integerValue: String(val) }
-      : { doubleValue: val };
+    return Number.isInteger(val) ? { integerValue: String(val) } : { doubleValue: val };
   }
   if (val instanceof Date) return { timestampValue: val.toISOString() };
   if (Array.isArray(val)) {
@@ -121,7 +113,8 @@ export function toFirestoreValue(val: any): any { // eslint-disable-line @typesc
 
 export function toFirestoreFields(
   obj: Record<string, any> // eslint-disable-line @typescript-eslint/no-explicit-any
-): Record<string, any> { // eslint-disable-line @typescript-eslint/no-explicit-any
+): Record<string, any> {
+  // eslint-disable-line @typescript-eslint/no-explicit-any
   const fields: Record<string, any> = {}; // eslint-disable-line @typescript-eslint/no-explicit-any
   for (const [key, val] of Object.entries(obj)) {
     if (val !== undefined) fields[key] = toFirestoreValue(val);
@@ -167,9 +160,7 @@ export function nfv(): FoodFieldValue {
 }
 
 /** Build the `m` (measurements/servings) array in the format the app expects. */
-export function servingsArray(
-  servings: { description: string; gramWeight: number; amount: number }[]
-): FoodFieldValue {
+export function servingsArray(servings: { description: string; gramWeight: number; amount: number }[]): FoodFieldValue {
   return {
     arrayValue: {
       values: servings.map((s) => ({
@@ -255,7 +246,8 @@ export async function updateFoodEntryFields(
 // Firestore value → JS conversion
 // ---------------------------------------------------------------------------
 
-export function parseFirestoreValue(val: any): any { // eslint-disable-line @typescript-eslint/no-explicit-any
+export function parseFirestoreValue(val: any): any {
+  // eslint-disable-line @typescript-eslint/no-explicit-any
   if (val == null) return null;
   if ('stringValue' in val) return val.stringValue as string;
   if ('integerValue' in val) return Number(val.integerValue);
@@ -273,7 +265,8 @@ export function parseFirestoreValue(val: any): any { // eslint-disable-line @typ
 
 export function parseFirestoreFields(
   fields: Record<string, any> // eslint-disable-line @typescript-eslint/no-explicit-any
-): Record<string, any> { // eslint-disable-line @typescript-eslint/no-explicit-any
+): Record<string, any> {
+  // eslint-disable-line @typescript-eslint/no-explicit-any
   const result: Record<string, any> = {}; // eslint-disable-line @typescript-eslint/no-explicit-any
   if (!fields) return result;
   for (const [key, val] of Object.entries(fields)) {
@@ -282,7 +275,8 @@ export function parseFirestoreFields(
   return result;
 }
 
-export function parseDocument(doc: FirestoreDocument): Record<string, any> { // eslint-disable-line @typescript-eslint/no-explicit-any
+export function parseDocument(doc: FirestoreDocument): Record<string, any> {
+  // eslint-disable-line @typescript-eslint/no-explicit-any
   if (!doc.fields) return {};
   return parseFirestoreFields(doc.fields);
 }

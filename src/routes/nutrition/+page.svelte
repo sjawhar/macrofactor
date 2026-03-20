@@ -13,21 +13,26 @@
     loading = true;
     const days = parseInt(rangeLabel, 10);
     try {
-      const [n, g] = await Promise.all([
-        auth.client.getNutrition(daysAgo(days), today()),
-        auth.client.getGoals(),
-      ]);
+      const [n, g] = await Promise.all([auth.client.getNutrition(daysAgo(days), today()), auth.client.getGoals()]);
       entries = n;
       goals = g;
-    } catch { entries = []; }
-    finally { loading = false; }
+    } catch {
+      entries = [];
+    } finally {
+      loading = false;
+    }
   }
 
-  $effect(() => { if (auth.client) loadData(); });
-  $effect(() => { rangeLabel; if (auth.client) loadData(); });
+  $effect(() => {
+    if (auth.client) loadData();
+  });
+  $effect(() => {
+    rangeLabel;
+    if (auth.client) loadData();
+  });
 
   let sorted = $derived([...entries].reverse());
-  let calTarget = $derived(goals ? goals.calories[goals.calories.length - 1] ?? 0 : 0);
+  let calTarget = $derived(goals ? (goals.calories[goals.calories.length - 1] ?? 0) : 0);
 
   // Averages
   let avgCal = $derived(entries.length > 0 ? entries.reduce((s, e) => s + (e.calories ?? 0), 0) / entries.length : 0);
@@ -36,7 +41,9 @@
   let avgFat = $derived(entries.length > 0 ? entries.reduce((s, e) => s + (e.fat ?? 0), 0) / entries.length : 0);
 
   // Bar chart
-  let maxCal = $derived(entries.length > 0 ? Math.max(...entries.map(e => e.calories ?? 0), calTarget) : calTarget || 2500);
+  let maxCal = $derived(
+    entries.length > 0 ? Math.max(...entries.map((e) => e.calories ?? 0), calTarget) : calTarget || 2500
+  );
 
   function fmtShort(d: string): string {
     return new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
@@ -46,9 +53,9 @@
 <div class="page-header">
   <h1 class="page-title">Nutrition History</h1>
   <div class="range-toggle">
-    <button class="pill-btn" class:active={rangeLabel === '7'} onclick={() => rangeLabel = '7'}>7 days</button>
-    <button class="pill-btn" class:active={rangeLabel === '30'} onclick={() => rangeLabel = '30'}>30 days</button>
-    <button class="pill-btn" class:active={rangeLabel === '90'} onclick={() => rangeLabel = '90'}>90 days</button>
+    <button class="pill-btn" class:active={rangeLabel === '7'} onclick={() => (rangeLabel = '7')}>7 days</button>
+    <button class="pill-btn" class:active={rangeLabel === '30'} onclick={() => (rangeLabel = '30')}>30 days</button>
+    <button class="pill-btn" class:active={rangeLabel === '90'} onclick={() => (rangeLabel = '90')}>90 days</button>
   </div>
 </div>
 
@@ -135,29 +142,123 @@
 {/if}
 
 <style>
-  .loading-center { display:flex; justify-content:center; padding:var(--space-12); }
-  .section-title { font-size:var(--font-size-sm); font-weight:var(--font-semibold); color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:var(--space-4); }
+  .loading-center {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-12);
+  }
+  .section-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-4);
+  }
 
-  .range-toggle { display:flex; gap:var(--space-2); margin-top:var(--space-3); }
-  .pill-btn { padding:var(--space-2) var(--space-4); border-radius:var(--radius-full); font-size:var(--font-size-sm); font-weight:var(--font-medium); background:var(--color-surface); color:var(--color-text-secondary); border:1px solid var(--color-border); transition:all var(--transition-fast); }
-  .pill-btn.active { background:var(--color-text); color:var(--color-bg); border-color:var(--color-text); }
+  .range-toggle {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .pill-btn {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-medium);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+  }
+  .pill-btn.active {
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+  }
 
-  .avg-row { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-4); margin-bottom:var(--space-4); }
-  .avg-card { text-align:center; }
-  .avg-label { display:block; font-size:var(--font-size-xs); color:var(--color-text-secondary); text-transform:uppercase; margin-bottom:var(--space-2); }
-  .avg-value { font-size:var(--font-size-2xl); font-weight:var(--font-bold); }
+  .avg-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+  .avg-card {
+    text-align: center;
+  }
+  .avg-label {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+  .avg-value {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-bold);
+  }
 
-  .chart-card { margin-bottom:var(--space-4); }
-  .bar-chart { position:relative; height:200px; }
-  .bars { display:flex; align-items:flex-end; height:100%; gap:2px; }
-  .bar-col { flex:1; display:flex; align-items:flex-end; height:100%; }
-  .bar { width:100%; border-radius:2px 2px 0 0; min-height:2px; transition:height 0.3s ease; }
-  .target-line { position:absolute; left:0; right:0; border-top:2px dashed var(--color-text-tertiary); z-index:1; }
-  .target-line-label { position:absolute; right:0; top:-18px; font-size:var(--font-size-xs); color:var(--color-text-tertiary); }
+  .chart-card {
+    margin-bottom: var(--space-4);
+  }
+  .bar-chart {
+    position: relative;
+    height: 200px;
+  }
+  .bars {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    gap: 2px;
+  }
+  .bar-col {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+  }
+  .bar {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+    min-height: 2px;
+    transition: height 0.3s ease;
+  }
+  .target-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 2px dashed var(--color-text-tertiary);
+    z-index: 1;
+  }
+  .target-line-label {
+    position: absolute;
+    right: 0;
+    top: -18px;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+  }
 
-  .table-card { margin-bottom:var(--space-4); }
-  .nut-table { width:100%; border-collapse:collapse; }
-  .nut-table th { text-align:left; font-size:var(--font-size-xs); color:var(--color-text-tertiary); text-transform:uppercase; padding:var(--space-2) var(--space-3); border-bottom:1px solid var(--color-border); }
-  .nut-table td { padding:var(--space-3); border-bottom:1px solid var(--color-border); font-size:var(--font-size-sm); }
-  .nut-table tr:nth-child(even) td { background:rgba(255,255,255,0.02); }
+  .table-card {
+    margin-bottom: var(--space-4);
+  }
+  .nut-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .nut-table th {
+    text-align: left;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nut-table td {
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-sm);
+  }
+  .nut-table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.02);
+  }
 </style>

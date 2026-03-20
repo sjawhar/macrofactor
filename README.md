@@ -31,19 +31,19 @@ npx tsx cli/mf.ts search-food "kale"  # Search the food database
 
 ## CLI commands
 
-| Command | Description |
-|---------|-------------|
-| `workouts` | List recent workouts with exercise/set counts |
-| `workout <uuid>` | Full detail for a specific workout |
-| `exercises search "query"` | Search the bundled exercise database |
-| `exercise <hex-id>` | Resolve a hex ID to exercise name + muscles |
-| `gyms` | List gym profiles |
-| `food-log [YYYY-MM-DD]` | Show food log for a date (default: today) |
-| `search-food "query"` | Search the food database without logging |
-| `log-food "query" <amount> [--at time] [--date YYYY-MM-DD]` | Search and log a food entry |
-| `log-workout --name "Name" [--at time] [--duration min]` | Create a new workout |
-| `log-exercise <workout-id> "exercise" <sets>x<reps>@<weight>` | Add an exercise to a workout |
-| `profile` | Show user profile and preferences |
+| Command                                                       | Description                                   |
+| ------------------------------------------------------------- | --------------------------------------------- |
+| `workouts`                                                    | List recent workouts with exercise/set counts |
+| `workout <uuid>`                                              | Full detail for a specific workout            |
+| `exercises search "query"`                                    | Search the bundled exercise database          |
+| `exercise <hex-id>`                                           | Resolve a hex ID to exercise name + muscles   |
+| `gyms`                                                        | List gym profiles                             |
+| `food-log [YYYY-MM-DD]`                                       | Show food log for a date (default: today)     |
+| `search-food "query"`                                         | Search the food database without logging      |
+| `log-food "query" <amount> [--at time] [--date YYYY-MM-DD]`   | Search and log a food entry                   |
+| `log-workout --name "Name" [--at time] [--duration min]`      | Create a new workout                          |
+| `log-exercise <workout-id> "exercise" <sets>x<reps>@<weight>` | Add an exercise to a workout                  |
+| `profile`                                                     | Show user profile and preferences             |
 
 ### Examples
 
@@ -83,7 +83,7 @@ const food = await client.getFoodLog('2026-03-19');
 
 // Search and log food
 const results = await client.searchFoods('broccoli raw');
-const serving = results[0].servings.find(s => s.description === 'baby leaf');
+const serving = results[0].servings.find((s) => s.description === 'baby leaf');
 await client.logSearchedFood(new Date(), results[0], serving, 150, true);
 ```
 

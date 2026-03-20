@@ -36,14 +36,7 @@
 
     <div class="field">
       <label for="email">Email</label>
-      <input
-        id="email"
-        type="email"
-        bind:value={email}
-        placeholder="you@example.com"
-        autocomplete="email"
-        required
-      />
+      <input id="email" type="email" bind:value={email} placeholder="you@example.com" autocomplete="email" required />
     </div>
 
     <div class="field">

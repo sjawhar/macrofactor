@@ -1,14 +1,18 @@
-import type {
-  Goals,
-  ScaleEntry,
-  NutritionSummary,
-  StepEntry,
-  SearchFoodResult,
-  FoodServing,
-} from './types';
+import type { Goals, ScaleEntry, NutritionSummary, StepEntry, SearchFoodResult, FoodServing } from './types';
 import { FoodEntry } from './types';
 import { signIn, refreshIdToken, getUserIdFromToken } from './auth';
-import { getDocument, patchDocument, patchFoodDocument, updateFoodEntryFields, parseDocument, listDocuments, sfv, bfv, nfv, servingsArray } from './firestore';
+import {
+  getDocument,
+  patchDocument,
+  patchFoodDocument,
+  updateFoodEntryFields,
+  parseDocument,
+  listDocuments,
+  sfv,
+  bfv,
+  nfv,
+  servingsArray,
+} from './firestore';
 import { searchFoods as typesenseSearch } from './typesense';
 import type {
   WorkoutSummary,
@@ -52,7 +56,6 @@ interface NextWorkoutDay {
   cycleIndex: number;
   totalCycles: number;
 }
-
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -106,12 +109,7 @@ export class MacroFactorClient {
   private uid: string;
   private tokenExpiresAt: number;
 
-  private constructor(
-    idToken: string,
-    refreshToken: string,
-    uid: string,
-    tokenExpiresAt: number
-  ) {
+  private constructor(idToken: string, refreshToken: string, uid: string, tokenExpiresAt: number) {
     this.idToken = idToken;
     this.refreshToken = refreshToken;
     this.uid = uid;
@@ -124,24 +122,14 @@ export class MacroFactorClient {
 
   static async login(email: string, password: string): Promise<MacroFactorClient> {
     const res = await signIn(email, password);
-    return new MacroFactorClient(
-      res.idToken,
-      res.refreshToken,
-      res.uid,
-      Date.now() + res.expiresIn * 1000
-    );
+    return new MacroFactorClient(res.idToken, res.refreshToken, res.uid, Date.now() + res.expiresIn * 1000);
   }
 
   /** Restore a session from a stored refresh token. */
   static async fromRefreshToken(storedRefreshToken: string): Promise<MacroFactorClient> {
     const res = await refreshIdToken(storedRefreshToken);
     const uid = getUserIdFromToken(res.idToken);
-    return new MacroFactorClient(
-      res.idToken,
-      res.refreshToken,
-      uid,
-      Date.now() + res.expiresIn * 1000
-    );
+    return new MacroFactorClient(res.idToken, res.refreshToken, uid, Date.now() + res.expiresIn * 1000);
   }
 
   getRefreshToken(): string {
@@ -221,24 +209,14 @@ export class MacroFactorClient {
     const key = mmdd(date);
     const entry: { w: number; f?: number; s: string } = { w: weightKg, s: 'macro_factor' };
     if (bodyFat !== undefined) entry.f = bodyFat;
-    await patchDocument(
-      `users/${this.uid}/scale/${yearOf(date)}`,
-      { [key]: entry },
-      [esc(key)],
-      token
-    );
+    await patchDocument(`users/${this.uid}/scale/${yearOf(date)}`, { [key]: entry }, [esc(key)], token);
   }
 
   async deleteWeightEntry(date: string): Promise<void> {
     const token = await this.ensureToken();
     const key = mmdd(date);
     // Including key in updateMask but omitting it from fields deletes the field.
-    await patchDocument(
-      `users/${this.uid}/scale/${yearOf(date)}`,
-      {},
-      [esc(key)],
-      token
-    );
+    await patchDocument(`users/${this.uid}/scale/${yearOf(date)}`, {}, [esc(key)], token);
   }
 
   // -------------------------------------------------------------------------
@@ -255,7 +233,7 @@ export class MacroFactorClient {
       const dateStr = fmtDate(d);
       try {
         const food = await this.getFoodLog(dateStr);
-        const active = food.filter(e => !e.deleted);
+        const active = food.filter((e) => !e.deleted);
         if (active.length > 0) {
           entries.push({
             date: dateStr,
@@ -265,7 +243,9 @@ export class MacroFactorClient {
             fat: active.reduce((s, e) => s + e.fat(), 0),
           });
         }
-      } catch { /* no food log for this day */ }
+      } catch {
+        /* no food log for this day */
+      }
       d.setDate(d.getDate() + 1);
     }
     return entries.sort((a, b) => a.date.localeCompare(b.date));
@@ -338,12 +318,7 @@ export class MacroFactorClient {
       ca: Date.now(),
       ua: Date.now(),
     };
-    await patchDocument(
-      `users/${this.uid}/food/${dateStr}`,
-      { [entryId]: entry },
-      [esc(entryId)],
-      token
-    );
+    await patchDocument(`users/${this.uid}/food/${dateStr}`, { [entryId]: entry }, [esc(entryId)], token);
   }
 
   /**
@@ -376,10 +351,10 @@ export class MacroFactorClient {
       t: sfv(food.name),
       b: sfv(food.brand || food.name),
       id: sfv(food.foodId),
-      c: sfv(food.caloriesPer100g * sg / 100),
-      p: sfv(food.proteinPer100g * sg / 100),
-      e: sfv(food.carbsPer100g * sg / 100),
-      f: sfv(food.fatPer100g * sg / 100),
+      c: sfv((food.caloriesPer100g * sg) / 100),
+      p: sfv((food.proteinPer100g * sg) / 100),
+      e: sfv((food.carbsPer100g * sg) / 100),
+      f: sfv((food.fatPer100g * sg) / 100),
       g: sfv(sg),
       w: sfv(gramMode ? 1 : sg),
       y: sfv(quantity),
@@ -405,18 +380,13 @@ export class MacroFactorClient {
     for (const [nutrientId, valuePer100g] of Object.entries(food.nutrientsPer100g)) {
       // Skip the 4 macros we already set as c/p/e/f (208=cal, 203=prot, 204=fat, 205=carb)
       if (['203', '204', '205', '208'].includes(nutrientId)) continue;
-      const perServing = valuePer100g * sg / 100;
+      const perServing = (valuePer100g * sg) / 100;
       if (perServing !== 0) {
         fields[nutrientId] = sfv(perServing);
       }
     }
 
-    await patchFoodDocument(
-      `users/${this.uid}/food/${dateStr}`,
-      entryId,
-      fields,
-      token
-    );
+    await patchFoodDocument(`users/${this.uid}/food/${dateStr}`, entryId, fields, token);
   }
 
   async deleteFoodEntry(date: string, entryId: string): Promise<void> {
@@ -424,12 +394,7 @@ export class MacroFactorClient {
     const nowMicros = String(Date.now() * 1000);
     // Use updateFoodEntryFields (per-subfield mask) instead of patchFoodDocument
     // (whole-entry replace) so we ADD the d flag without wiping the entry data.
-    await updateFoodEntryFields(
-      `users/${this.uid}/food/${date}`,
-      entryId,
-      { d: bfv(true), ua: sfv(nowMicros) },
-      token
-    );
+    await updateFoodEntryFields(`users/${this.uid}/food/${date}`, entryId, { d: bfv(true), ua: sfv(nowMicros) }, token);
   }
 
   async updateFoodEntry(date: string, entryId: string, qty: number): Promise<void> {
@@ -437,12 +402,7 @@ export class MacroFactorClient {
     const nowMicros = String(Date.now() * 1000);
     // Use per-subfield update to avoid wiping the entry.
     // q is always 1 (serving count); y is the user quantity.
-    await updateFoodEntryFields(
-      `users/${this.uid}/food/${date}`,
-      entryId,
-      { y: sfv(qty), ua: sfv(nowMicros) },
-      token
-    );
+    await updateFoodEntryFields(`users/${this.uid}/food/${date}`, entryId, { y: sfv(qty), ua: sfv(nowMicros) }, token);
   }
 
   /**
@@ -480,12 +440,7 @@ export class MacroFactorClient {
 
     if (fieldPaths.length === 0) return;
 
-    await patchDocument(
-      `users/${this.uid}/food/${targetDate}`,
-      fields,
-      fieldPaths,
-      token
-    );
+    await patchDocument(`users/${this.uid}/food/${targetDate}`, fields, fieldPaths, token);
   }
 
   // -------------------------------------------------------------------------
@@ -546,12 +501,7 @@ export class MacroFactorClient {
       f: Math.round(totalFat * 10) / 10,
       s: 'macro_factor',
     };
-    await patchDocument(
-      `users/${this.uid}/nutrition/${yearOf(date)}`,
-      { [key]: summary },
-      [esc(key)],
-      token
-    );
+    await patchDocument(`users/${this.uid}/nutrition/${yearOf(date)}`, { [key]: summary }, [esc(key)], token);
   }
 
   // -------------------------------------------------------------------------
@@ -594,7 +544,8 @@ export class MacroFactorClient {
           id: d.id as string,
           name: d.name as string,
           gymId: d.gymId as string,
-          isRestDay: !d.blocks || d.blocks.length === 0 || d.blocks.every((b: any) => !b.exercises || b.exercises.length === 0),
+          isRestDay:
+            !d.blocks || d.blocks.length === 0 || d.blocks.every((b: any) => !b.exercises || b.exercises.length === 0),
           exercises: (d.blocks || []).flatMap((b: any) =>
             (b.exercises || []).map((e: any) => ({
               exerciseId: e.exerciseId as string,
@@ -612,15 +563,13 @@ export class MacroFactorClient {
    */
   async getNextWorkout(): Promise<NextWorkoutDay | null> {
     const programs = await this.getTrainingPrograms();
-    const active = programs.find(p => p.isActive);
+    const active = programs.find((p) => p.isActive);
     if (!active) return null;
 
     // Find the most recent workout to determine position in cycle
     const token = await this.ensureToken();
     const history = await this.getWorkoutHistory();
-    const lastProgramWorkout = history.find(
-      w => w.programName === active.name
-    );
+    const lastProgramWorkout = history.find((w) => w.programName === active.name);
 
     if (!lastProgramWorkout) {
       // No history — start at day 1
@@ -639,7 +588,7 @@ export class MacroFactorClient {
     const lastDetail = await this.getWorkout(lastProgramWorkout.id);
     const lastDayId = lastDetail.workoutSource?.dayId;
     const lastCycleIndex = lastDetail.workoutSource?.cycleIndex ?? 0;
-    const lastDayIndex = active.days.findIndex(d => d.id === lastDayId);
+    const lastDayIndex = active.days.findIndex((d) => d.id === lastDayId);
 
     // Next day in cycle
     let nextDayIndex = (lastDayIndex + 1) % active.days.length;
@@ -660,7 +609,6 @@ export class MacroFactorClient {
     };
   }
 
-
   // -------------------------------------------------------------------------
   // Workouts
   // -------------------------------------------------------------------------
@@ -673,42 +621,39 @@ export class MacroFactorClient {
 
   async updateRawWorkout(id: string, fields: Record<string, any>, fieldPaths: string[]): Promise<void> {
     const token = await this.ensureToken();
-    await patchDocument(
-      `users/${this.uid}/workoutHistory/${id}`,
-      fields,
-      fieldPaths,
-      token
-    );
+    await patchDocument(`users/${this.uid}/workoutHistory/${id}`, fields, fieldPaths, token);
   }
 
   async getWorkoutHistory(): Promise<WorkoutSummary[]> {
     const token = await this.ensureToken();
     const docs = await listDocuments(`users/${this.uid}/workoutHistory`, token);
-    return docs.map((doc) => {
-      const d = parseDocument(doc);
-      const blocks = (d.blocks ?? []) as any[];
-      let exerciseCount = 0;
-      let setCount = 0;
-      for (const block of blocks) {
-        const exercises = block.exercises ?? [];
-        exerciseCount += exercises.length;
-        for (const ex of exercises) {
-          setCount += (ex.sets ?? []).length;
+    return docs
+      .map((doc) => {
+        const d = parseDocument(doc);
+        const blocks = (d.blocks ?? []) as any[];
+        let exerciseCount = 0;
+        let setCount = 0;
+        for (const block of blocks) {
+          const exercises = block.exercises ?? [];
+          exerciseCount += exercises.length;
+          for (const ex of exercises) {
+            setCount += (ex.sets ?? []).length;
+          }
         }
-      }
-      return {
-        id: d.id as string,
-        name: d.name as string,
-        startTime: d.startTime as string,
-        durationSeconds: (d.duration as number) / 1_000_000,
-        gymId: d.gymId as string | undefined,
-        gymName: d.gymName as string | undefined,
-        gymIcon: d.gymIcon as string | undefined,
-        programName: (d.workoutSource as any)?.programName as string | undefined,
-        exerciseCount,
-        setCount,
-      };
-    }).sort((a, b) => b.startTime.localeCompare(a.startTime));
+        return {
+          id: d.id as string,
+          name: d.name as string,
+          startTime: d.startTime as string,
+          durationSeconds: (d.duration as number) / 1_000_000,
+          gymId: d.gymId as string | undefined,
+          gymName: d.gymName as string | undefined,
+          gymIcon: d.gymIcon as string | undefined,
+          programName: (d.workoutSource as any)?.programName as string | undefined,
+          exerciseCount,
+          setCount,
+        };
+      })
+      .sort((a, b) => b.startTime.localeCompare(a.startTime));
   }
 
   async getWorkout(id: string): Promise<WorkoutDetail> {
@@ -720,36 +665,41 @@ export class MacroFactorClient {
 
   private parseWorkoutDetail(d: Record<string, any>): WorkoutDetail {
     const blocks: WorkoutBlock[] = ((d.blocks ?? []) as any[]).map((block: any) => ({
-      exercises: ((block.exercises ?? []) as any[]).map((ex: any): WorkoutExercise => ({
-        id: ex.id,
-        exerciseId: ex.exerciseId,
-        exerciseName: resolveName(ex.exerciseId),
-        baseWeight: ex.baseWeight ?? null,
-        note: ex.note ?? '',
-        sets: ((ex.sets ?? []) as any[]).map((s: any): WorkoutSet => ({
-          setType: s.setType,
-          target: s.log?.target ? {
-            id: s.log.target.id,
-            minFullReps: s.log.target.minFullReps ?? null,
-            maxFullReps: s.log.target.maxFullReps ?? null,
-            rir: s.log.target.rir ?? null,
-            distance: s.log.target.distance ?? null,
-            durationSeconds: s.log.target.durationSeconds ?? null,
-            restTimer: s.log.target.restTimer != null
-              ? s.log.target.restTimer / 1_000_000 : null,
-          } : null,
-          value: {
-            weight: s.log?.value?.weight ?? 0,
-            fullReps: s.log?.value?.fullReps ?? 0,
-            partialReps: s.log?.value?.partialReps ?? null,
-            rir: s.log?.value?.rir ?? null,
-            distance: s.log?.value?.distance ?? null,
-            durationSeconds: s.log?.value?.durationSeconds ?? null,
-            restTimerSeconds: (s.log?.value?.restTimer ?? 0) / 1_000_000,
-            isSkipped: s.log?.value?.isSkipped ?? false,
-          },
-        })),
-      })),
+      exercises: ((block.exercises ?? []) as any[]).map(
+        (ex: any): WorkoutExercise => ({
+          id: ex.id,
+          exerciseId: ex.exerciseId,
+          exerciseName: resolveName(ex.exerciseId),
+          baseWeight: ex.baseWeight ?? null,
+          note: ex.note ?? '',
+          sets: ((ex.sets ?? []) as any[]).map(
+            (s: any): WorkoutSet => ({
+              setType: s.setType,
+              target: s.log?.target
+                ? {
+                    id: s.log.target.id,
+                    minFullReps: s.log.target.minFullReps ?? null,
+                    maxFullReps: s.log.target.maxFullReps ?? null,
+                    rir: s.log.target.rir ?? null,
+                    distance: s.log.target.distance ?? null,
+                    durationSeconds: s.log.target.durationSeconds ?? null,
+                    restTimer: s.log.target.restTimer != null ? s.log.target.restTimer / 1_000_000 : null,
+                  }
+                : null,
+              value: {
+                weight: s.log?.value?.weight ?? 0,
+                fullReps: s.log?.value?.fullReps ?? 0,
+                partialReps: s.log?.value?.partialReps ?? null,
+                rir: s.log?.value?.rir ?? null,
+                distance: s.log?.value?.distance ?? null,
+                durationSeconds: s.log?.value?.durationSeconds ?? null,
+                restTimerSeconds: (s.log?.value?.restTimer ?? 0) / 1_000_000,
+                isSkipped: s.log?.value?.isSkipped ?? false,
+              },
+            })
+          ),
+        })
+      ),
     }));
 
     let exerciseCount = 0;
@@ -773,15 +723,17 @@ export class MacroFactorClient {
       programName: ws?.programName as string | undefined,
       exerciseCount,
       setCount,
-      workoutSource: ws ? {
-        runtimeType: ws.runtimeType,
-        programId: ws.programId,
-        programName: ws.programName,
-        dayId: ws.dayId,
-        cycleIndex: ws.cycleIndex,
-        programColor: ws.programColor,
-        programIcon: ws.programIcon,
-      } : undefined,
+      workoutSource: ws
+        ? {
+            runtimeType: ws.runtimeType,
+            programId: ws.programId,
+            programName: ws.programName,
+            dayId: ws.dayId,
+            cycleIndex: ws.cycleIndex,
+            programColor: ws.programColor,
+            programIcon: ws.programIcon,
+          }
+        : undefined,
       blocks,
     };
   }

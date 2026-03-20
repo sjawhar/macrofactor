@@ -85,22 +85,22 @@
 
   function itemCalories(item: StagedFood): number {
     if (item.kind === 'quickadd') return item.calories;
-    return item.food.caloriesPer100g * item.serving.gramWeight * item.quantity / 100;
+    return (item.food.caloriesPer100g * item.serving.gramWeight * item.quantity) / 100;
   }
 
   function itemProtein(item: StagedFood): number {
     if (item.kind === 'quickadd') return item.protein;
-    return item.food.proteinPer100g * item.serving.gramWeight * item.quantity / 100;
+    return (item.food.proteinPer100g * item.serving.gramWeight * item.quantity) / 100;
   }
 
   function itemCarbs(item: StagedFood): number {
     if (item.kind === 'quickadd') return item.carbs;
-    return item.food.carbsPer100g * item.serving.gramWeight * item.quantity / 100;
+    return (item.food.carbsPer100g * item.serving.gramWeight * item.quantity) / 100;
   }
 
   function itemFat(item: StagedFood): number {
     if (item.kind === 'quickadd') return item.fat;
-    return item.food.fatPer100g * item.serving.gramWeight * item.quantity / 100;
+    return (item.food.fatPer100g * item.serving.gramWeight * item.quantity) / 100;
   }
 
   let totalCal = $derived(stagedFoods.reduce((s, f) => s + itemCalories(f), 0));
@@ -152,14 +152,17 @@
 
   function stageQuickAdd() {
     if (!qaName || qaCal === undefined) return;
-    stagedFoods = [...stagedFoods, {
-      kind: 'quickadd',
-      name: qaName,
-      calories: qaCal,
-      protein: qaPro ?? 0,
-      carbs: qaCarb ?? 0,
-      fat: qaFat ?? 0,
-    }];
+    stagedFoods = [
+      ...stagedFoods,
+      {
+        kind: 'quickadd',
+        name: qaName,
+        calories: qaCal,
+        protein: qaPro ?? 0,
+        carbs: qaCarb ?? 0,
+        fat: qaFat ?? 0,
+      },
+    ];
     qaName = '';
     qaCal = undefined;
     qaPro = undefined;
@@ -186,9 +189,7 @@
     if (item.kind !== 'search') return;
     const newServing = item.food.servings[servingIdx];
     if (!newServing) return;
-    stagedFoods = stagedFoods.map((f, i) =>
-      i === index && f.kind === 'search' ? { ...f, serving: newServing } : f
-    );
+    stagedFoods = stagedFoods.map((f, i) => (i === index && f.kind === 'search' ? { ...f, serving: newServing } : f));
   }
 
   function handleStagedQtyChange(index: number, e: Event) {
@@ -211,16 +212,18 @@
     try {
       const baseDate = new Date(`${targetDate}T12:00:00`);
       baseDate.setHours(targetHour, 0, 0, 0);
-      await Promise.all(stagedFoods.map((staged, i) => {
-        // Offset by i milliseconds to ensure unique Firestore entry IDs
-        // but same hour/minute grouping so they appear as a single plate
-        const d = new Date(baseDate.getTime() + i);
-        if (staged.kind === 'search') {
-          return auth.client!.logSearchedFood(d, staged.food, staged.serving, staged.quantity);
-        } else {
-          return auth.client!.logFood(d, staged.name, staged.calories, staged.protein, staged.carbs, staged.fat);
-        }
-      }));
+      await Promise.all(
+        stagedFoods.map((staged, i) => {
+          // Offset by i milliseconds to ensure unique Firestore entry IDs
+          // but same hour/minute grouping so they appear as a single plate
+          const d = new Date(baseDate.getTime() + i);
+          if (staged.kind === 'search') {
+            return auth.client!.logSearchedFood(d, staged.food, staged.serving, staged.quantity);
+          } else {
+            return auth.client!.logFood(d, staged.name, staged.calories, staged.protein, staged.carbs, staged.fat);
+          }
+        })
+      );
       const count = stagedFoods.length;
       successMsg = `Logged ${count} item${count === 1 ? '' : 's'}!`;
       stagedFoods = [];
@@ -253,19 +256,18 @@
   }
 </script>
 
-
 <div class="page-header">
   <h1 class="page-title">Search Foods</h1>
   {#if hasTimeContext}
-    <button class="back-to-log" onclick={() => goto(`/food-log?date=${targetDate}`)}>
-      ← Back to Food Log
-    </button>
+    <button class="back-to-log" onclick={() => goto(`/food-log?date=${targetDate}`)}> ← Back to Food Log </button>
   {/if}
 </div>
 
 {#if hasTimeContext}
   <div class="time-context-pill">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      ><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg
+    >
     Logging to <strong>{formatContextDate(targetDate)}</strong> at <strong>{formatHour(targetHour)}</strong>
   </div>
 {/if}
@@ -279,17 +281,23 @@
   <div class="search-side">
     <!-- Search Input -->
     <div class="search-box">
-      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <svg
+        class="search-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        width="20"
+        height="20"
+      >
+        <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
-      <input
-        type="text"
-        class="search-input"
-        bind:value={query}
-        placeholder="Search foods…"
-      />
+      <input type="text" class="search-input" bind:value={query} placeholder="Search foods…" />
       {#if searching}
-        <div class="spinner" style="width:18px;height:18px;border-width:2px;position:absolute;right:16px;top:50%;margin-top:-9px;"></div>
+        <div
+          class="spinner"
+          style="width:18px;height:18px;border-width:2px;position:absolute;right:16px;top:50%;margin-top:-9px;"
+        ></div>
       {/if}
     </div>
 
@@ -326,7 +334,7 @@
 
     <!-- Quick Add -->
     <div class="quick-add-section">
-      <button class="quick-add-toggle" onclick={() => quickAdd = !quickAdd}>
+      <button class="quick-add-toggle" onclick={() => (quickAdd = !quickAdd)}>
         {quickAdd ? '▾' : '▸'} Quick Add (manual entry)
       </button>
       {#if quickAdd}
@@ -466,7 +474,9 @@
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
   }
-  .back-to-log:hover { text-decoration: underline; }
+  .back-to-log:hover {
+    text-decoration: underline;
+  }
   .time-context-pill {
     display: inline-flex;
     align-items: center;
@@ -479,7 +489,9 @@
     color: var(--color-text-secondary);
     margin-bottom: var(--space-4);
   }
-  .time-context-pill svg { color: var(--color-primary); }
+  .time-context-pill svg {
+    color: var(--color-primary);
+  }
 
   /* ===== Layout ===== */
   .search-layout {

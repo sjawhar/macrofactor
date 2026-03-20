@@ -27,7 +27,7 @@ export interface SetValue {
   rir?: number | null;
   distance?: number | null;
   durationSeconds?: number | null;
-  restTimerSeconds: number;  // converted from microseconds
+  restTimerSeconds: number; // converted from microseconds
   isSkipped: boolean;
 }
 
@@ -40,7 +40,7 @@ export interface WorkoutSet {
 export interface WorkoutExercise {
   id: string;
   exerciseId: string;
-  exerciseName?: string;     // resolved from exercise DB
+  exerciseName?: string; // resolved from exercise DB
   baseWeight: number | null;
   note: string;
   sets: WorkoutSet[];
