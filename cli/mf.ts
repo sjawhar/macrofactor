@@ -4,6 +4,7 @@
 
 import { MacroFactorClient } from '../src/lib/api/index';
 import { searchExercises, resolveExercise, resolveName } from '../src/lib/api/exercises';
+import { readInput, parseISO, expandSets, resolveWeight } from './helpers';
 import { readFileSync } from 'fs';
 import { randomUUID } from 'crypto';
 
@@ -120,11 +121,24 @@ function findServing(servings: { description: string; gramWeight: number; amount
  * Returns array of { reps, weightKg }.
  */
 function parseSets(s: string): { reps: number; weightKg: number | null }[] {
-  // "3x10@135lbs" → 3 sets of 10 reps at 135 lbs
-  // "3x10@60kg"   → 3 sets of 10 reps at 60 kg
-  // "3x10"        → 3 sets of 10 reps, bodyweight
+  // JSON array for varying weights:
+  //   '[{"reps":15,"lbs":12.5},{"reps":12,"lbs":32.5},{"reps":10,"lbs":47.5,"sets":2}]'
+  // Compact format for uniform sets:
+  //   "3x10@135lbs"  →  3 sets of 10 @ 135 lbs
+  //   "3x10@60kg"    →  3 sets of 10 @ 60 kg
+  //   "3x10"         →  3 sets of 10, bodyweight
+
+  if (s.trimStart().startsWith('[')) {
+    const arr = JSON.parse(s) as { reps: number; sets?: number; lbs?: number; kg?: number }[];
+    return arr.flatMap((entry) => {
+      const count = entry.sets ?? 1;
+      const weightKg = entry.kg ?? (entry.lbs != null ? entry.lbs / 2.2046226218 : null);
+      return Array.from({ length: count }, () => ({ reps: entry.reps, weightKg }));
+    });
+  }
+
   const m = s.match(/^(\d+)x(\d+)(?:@([\d.]+)(lbs?|kg))?$/i);
-  if (!m) throw new Error(`Cannot parse sets: "${s}". Expected e.g. "3x10@135lbs", "3x12@60kg", "2x20"`);
+  if (!m) throw new Error(`Cannot parse sets: "${s}". Expected e.g. "3x10@135lbs", "3x12@60kg", or JSON array`);
 
   const setCount = parseInt(m[1], 10);
   const reps = parseInt(m[2], 10);
@@ -319,40 +333,136 @@ async function main() {
         break;
       }
 
-      // -----------------------------------------------------------------------
-      // log-workout --name <name> [--gym <name>] [--at <time>] [--date <YYYY-MM-DD>] [--duration <minutes>]
-      //
-      // Examples:
-      //   mf.ts log-workout --name "PM Session" --at 5pm
-      //   mf.ts log-workout --name "Morning Workout" --gym "Home" --date 2026-03-19 --duration 45
-      // -----------------------------------------------------------------------
       case 'log-workout': {
-        if (!opts.name)
-          throw new Error(
-            'Usage: mf.ts log-workout --name <name> [--gym <name>] [--at <time>] [--date <YYYY-MM-DD>] [--duration <minutes>]'
-          );
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts log-workout <json> or pipe JSON via stdin');
+        }
+
+        if (typeof input.name !== 'string' || input.name.trim() === '') {
+          throw new Error('log-workout requires "name" (string)');
+        }
+
+        const durationMinutes =
+          input.duration == null ? 45 : Number.isFinite(Number(input.duration)) ? Number(input.duration) : NaN;
+        if (!Number.isFinite(durationMinutes) || durationMinutes <= 0) {
+          throw new Error('"duration" must be a positive number of minutes');
+        }
+
+        const exercisesInput = input.exercises == null ? [] : input.exercises;
+        if (!Array.isArray(exercisesInput)) {
+          throw new Error('"exercises" must be an array when provided');
+        }
 
         const client = await getClient();
-        const logTime = buildDate(opts);
-        const durationMinutes = parseInt(opts.duration || '45', 10);
-
-        // Resolve gym — use first match by name, or first gym if not specified
         const gyms = await client.getGymProfiles();
-        let gym = gyms[0];
-        if (opts.gym) {
-          const match = gyms.find((g) => g.name.toLowerCase().includes(opts.gym.toLowerCase()));
-          if (match) gym = match;
+        const gymQuery = typeof input.gym === 'string' ? input.gym.trim().toLowerCase() : '';
+        const gym = gymQuery ? gyms.find((g) => g.name.toLowerCase().includes(gymQuery)) || gyms[0] : gyms[0];
+
+        let startTime = new Date().toISOString();
+        if (input.startTime != null) {
+          if (typeof input.startTime !== 'string') {
+            throw new Error('"startTime" must be an ISO 8601 string when provided');
+          }
+          const parsed = parseISO(input.startTime);
+          if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
+            throw new Error(`Invalid "startTime": ${input.startTime}`);
+          }
+          startTime = `${parsed.date}T${String(parsed.hours).padStart(2, '0')}:${String(parsed.minutes).padStart(2, '0')}:00.000Z`;
+        }
+
+        const blocks: any[] = [];
+        const exerciseSummary: any[] = [];
+
+        for (const exerciseInput of exercisesInput) {
+          if (!exerciseInput || typeof exerciseInput !== 'object') {
+            throw new Error('Each exercise must be an object');
+          }
+
+          if (typeof exerciseInput.name !== 'string' || exerciseInput.name.trim() === '') {
+            throw new Error('Each exercise requires "name" (string)');
+          }
+
+          if (!Array.isArray(exerciseInput.sets)) {
+            throw new Error(`Exercise "${exerciseInput.name}" requires "sets" (array)`);
+          }
+
+          for (const setInput of exerciseInput.sets) {
+            if (!setInput || typeof setInput !== 'object' || !Number.isFinite(Number(setInput.reps))) {
+              throw new Error(`Each set for "${exerciseInput.name}" requires numeric "reps"`);
+            }
+            if (setInput.type != null && !['standard', 'warmUp', 'failure'].includes(setInput.type)) {
+              throw new Error(`Invalid set type for "${exerciseInput.name}": ${setInput.type}`);
+            }
+            if (setInput.lbs != null && setInput.kg != null) {
+              throw new Error(`Set for "${exerciseInput.name}" cannot include both "lbs" and "kg"`);
+            }
+          }
+
+          const matches = searchExercises(exerciseInput.name);
+          if (matches.length === 0) {
+            throw new Error(`No exercise found for "${exerciseInput.name}"`);
+          }
+          const exercise = matches[0];
+
+          const normalizedSets = exerciseInput.sets.map((setInput: any) => {
+            if (setInput.kg != null || setInput.lbs != null) {
+              return { ...setInput, kg: resolveWeight(setInput), lbs: undefined };
+            }
+            return setInput;
+          });
+
+          const expanded = expandSets(normalizedSets);
+          blocks.push({
+            exercises: [
+              {
+                id: randomUUID(),
+                exerciseId: exercise.id,
+                note: typeof exerciseInput.note === 'string' ? exerciseInput.note : '',
+                baseWeight: null,
+                sets: expanded.map((set) => ({
+                  setType: set.setType,
+                  segments: [],
+                  log: {
+                    id: randomUUID(),
+                    runtimeType: 'single',
+                    target: null,
+                    value: {
+                      weight: set.weightKg,
+                      fullReps: set.fullReps,
+                      partialReps: null,
+                      rir: set.rir,
+                      distance: null,
+                      durationSeconds: null,
+                      restTimer: set.restMicros,
+                      isSkipped: false,
+                    },
+                  },
+                })),
+              },
+            ],
+          });
+
+          exerciseSummary.push({
+            name: exercise.name,
+            exerciseId: exercise.id,
+            sets: expanded.map((set) => ({
+              reps: set.fullReps,
+              kg: Math.round(set.weightKg * 1000) / 1000,
+              type: set.setType,
+            })),
+          });
         }
 
         const workoutId = randomUUID();
         const workout = {
-          name: opts.name,
-          startTime: logTime.toISOString(),
+          name: input.name,
+          startTime,
           duration: durationMinutes * 60 * 1_000_000, // microseconds
           gymId: gym?.id || '',
           gymName: gym?.name || 'Gym',
           gymIcon: gym?.icon || 'house',
-          blocks: [],
+          blocks,
         };
 
         await client.updateRawWorkout(workoutId, workout, [
@@ -370,10 +480,11 @@ async function main() {
             {
               status: 'created',
               workoutId,
-              name: opts.name,
+              name: input.name,
               gym: gym?.name || 'Gym',
-              startTime: logTime.toISOString(),
+              startTime,
               durationMinutes,
+              exercises: exerciseSummary,
             },
             null,
             2
@@ -382,66 +493,100 @@ async function main() {
         break;
       }
 
-      // -----------------------------------------------------------------------
-      // log-exercise <workout-id> <exercise-query> <sets> [--rest <seconds>]
-      //
-      // Sets format: NxR@Wunit  (e.g., "3x10@135lbs", "3x12@60kg", "2x20")
-      //
-      // Examples:
-      //   mf.ts log-exercise abc-123 "bench press" 3x10@135lbs
-      //   mf.ts log-exercise abc-123 "cable crunch" 3x15@120lbs --rest 90
-      //   mf.ts log-exercise abc-123 "pullup" 3x10
-      // -----------------------------------------------------------------------
       case 'log-exercise': {
-        if (positional.length < 3) {
-          throw new Error('Usage: mf.ts log-exercise <workout-id> <exercise-query> <sets> [--rest <seconds>]');
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts log-exercise <json> or pipe JSON via stdin');
         }
-        const workoutId = positional[0];
-        const exerciseQuery = positional[1];
-        const setsStr = positional[2];
-        const restSeconds = parseInt(opts.rest || '120', 10);
 
-        // Find exercise in local DB
-        const matches = searchExercises(exerciseQuery);
-        if (matches.length === 0) throw new Error(`No exercise found for "${exerciseQuery}"`);
-        const exercise = matches[0];
+        if (typeof input.workoutId !== 'string' || input.workoutId.trim() === '') {
+          throw new Error('log-exercise requires "workoutId" (string)');
+        }
+        if (!Array.isArray(input.exercises)) {
+          throw new Error('log-exercise requires "exercises" (array)');
+        }
 
-        // Parse sets
-        const sets = parseSets(setsStr);
-
-        // Read existing workout, add a new block with this exercise
+        const workoutId = input.workoutId;
         const client = await getClient();
         const raw = await client.getRawWorkout(workoutId);
         const blocks = (raw.blocks as any[]) || [];
+        const exerciseSummary: any[] = [];
 
-        const newExercise = {
-          id: randomUUID(),
-          exerciseId: exercise.id,
-          note: '',
-          baseWeight: null,
-          sets: sets.map((s) => ({
-            setType: 'standard',
-            segments: [],
-            log: {
-              id: randomUUID(),
-              runtimeType: 'single',
-              target: null,
-              value: {
-                weight: s.weightKg ?? 0,
-                fullReps: s.reps,
-                partialReps: null,
-                rir: null,
-                distance: null,
-                durationSeconds: null,
-                restTimer: restSeconds * 1_000_000, // microseconds
-                isSkipped: false,
+        for (const exerciseInput of input.exercises) {
+          if (!exerciseInput || typeof exerciseInput !== 'object') {
+            throw new Error('Each exercise must be an object');
+          }
+          if (typeof exerciseInput.name !== 'string' || exerciseInput.name.trim() === '') {
+            throw new Error('Each exercise requires "name" (string)');
+          }
+          if (!Array.isArray(exerciseInput.sets)) {
+            throw new Error(`Exercise "${exerciseInput.name}" requires "sets" (array)`);
+          }
+
+          for (const setInput of exerciseInput.sets) {
+            if (!setInput || typeof setInput !== 'object' || !Number.isFinite(Number(setInput.reps))) {
+              throw new Error(`Each set for "${exerciseInput.name}" requires numeric "reps"`);
+            }
+            if (setInput.type != null && !['standard', 'warmUp', 'failure'].includes(setInput.type)) {
+              throw new Error(`Invalid set type for "${exerciseInput.name}": ${setInput.type}`);
+            }
+            if (setInput.lbs != null && setInput.kg != null) {
+              throw new Error(`Set for "${exerciseInput.name}" cannot include both "lbs" and "kg"`);
+            }
+          }
+
+          const matches = searchExercises(exerciseInput.name);
+          if (matches.length === 0) {
+            throw new Error(`No exercise found for "${exerciseInput.name}"`);
+          }
+          const exercise = matches[0];
+          const normalizedSets = exerciseInput.sets.map((setInput: any) => {
+            if (setInput.kg != null || setInput.lbs != null) {
+              return { ...setInput, kg: resolveWeight(setInput), lbs: undefined };
+            }
+            return setInput;
+          });
+
+          const expanded = expandSets(normalizedSets);
+
+          const newExercise = {
+            id: randomUUID(),
+            exerciseId: exercise.id,
+            note: typeof exerciseInput.note === 'string' ? exerciseInput.note : '',
+            baseWeight: null,
+            sets: expanded.map((set) => ({
+              setType: set.setType,
+              segments: [],
+              log: {
+                id: randomUUID(),
+                runtimeType: 'single',
+                target: null,
+                value: {
+                  weight: set.weightKg,
+                  fullReps: set.fullReps,
+                  partialReps: null,
+                  rir: set.rir,
+                  distance: null,
+                  durationSeconds: null,
+                  restTimer: set.restMicros,
+                  isSkipped: false,
+                },
               },
-            },
-          })),
-        };
+            })),
+          };
 
-        // Add as a new block (each exercise in its own block)
-        blocks.push({ exercises: [newExercise] });
+          blocks.push({ exercises: [newExercise] });
+          exerciseSummary.push({
+            name: exercise.name,
+            exerciseId: exercise.id,
+            sets: expanded.map((set) => ({
+              reps: set.fullReps,
+              kg: Math.round(set.weightKg * 1000) / 1000,
+              type: set.setType,
+            })),
+          });
+        }
+
         await client.updateRawWorkout(workoutId, { blocks }, ['blocks']);
 
         console.log(
@@ -449,13 +594,7 @@ async function main() {
             {
               status: 'added',
               workoutId,
-              exercise: exercise.name,
-              exerciseId: exercise.id,
-              sets: sets.map((s) => ({
-                reps: s.reps,
-                weightKg: s.weightKg ? Math.round(s.weightKg * 100) / 100 : null,
-              })),
-              restSeconds,
+              exercises: exerciseSummary,
             },
             null,
             2
