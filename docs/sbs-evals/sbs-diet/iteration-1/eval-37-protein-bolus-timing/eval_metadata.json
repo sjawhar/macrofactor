@@ -1,0 +1,13 @@
+{
+  "eval_id": 37,
+  "eval_name": "eval-37-protein-bolus-timing",
+  "prompt": "For a protein shake, does drinking speed matter (chugging vs sipping)?",
+  "expected_output": "SBS said speed of shake consumption is not a key lever in real-world mixed-meal contexts. Fiber, fat, meal composition, and GI transit all affect amino-acid appearance more than sip speed precision. The practical target remained daily distribution: roughly 3-5 protein feedings/boluses across the day. So lifters should focus on total intake and broad meal spacing, not micromanaging shake-drinking pace.",
+  "topic": "protein bolus timing",
+  "episode": 46,
+  "assertions": [
+    "Answer states drinking speed of protein shakes is not a key lever in mixed-meal contexts",
+    "Answer mentions fiber, fat, meal composition affect amino acid appearance more than sip speed",
+    "Answer recommends focusing on daily distribution of roughly 3-5 protein feedings"
+  ]
+}

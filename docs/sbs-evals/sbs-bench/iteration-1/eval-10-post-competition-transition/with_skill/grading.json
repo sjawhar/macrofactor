@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Presents the answer as context-dependent",
+      "passed": true,
+      "evidence": "Structures answer as three scenarios based on recovery status."
+    },
+    {
+      "text": "If recovered and motivated, can return quickly",
+      "passed": true,
+      "evidence": "Scenario 1: 'Jump into the next block immediately.'"
+    },
+    {
+      "text": "If beat up, use an easier week with reduced loading (~70-80%) and reduced volume",
+      "passed": true,
+      "evidence": "Scenario 2: 'Reduce bench volume 30-50% for the first 1-2 weeks.'"
+    },
+    {
+      "text": "Notes complete time off is acceptable when needed",
+      "passed": true,
+      "evidence": "States: 'Take 3-7 days off, then restart with reduced volume.'"
+    },
+    {
+      "text": "Preference: keep intensity present while temporarily reducing volume",
+      "passed": true,
+      "evidence": "Maintains pressing at reduced volume but keeps heavy exposure. Decision tree recommends volume reduction not intensity reduction."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer prioritizes lean protein first with strategic micronutrient-contributing sources",
+      "passed": true,
+      "evidence": "Found 'micronutrient' in: ...ror, and shredded chicken alone will leave you deficient in micronutrients, fiber, and variety. The goal is to pack maximum nutrition..."
+    },
+    {
+      "text": "Answer recommends broad rotation of fibrous vegetables for satiety and micronutrients",
+      "passed": true,
+      "evidence": "Found 'vegetable' in: ...ents without adding calories.\n\n### 2. **Micronutrient-Dense Vegetables** (High Volume, Low Calorie)\n\nVegetables are your calorie-..."
+    },
+    {
+      "text": "Answer mentions a basic multivitamin as insurance",
+      "passed": true,
+      "evidence": "Found 'multivitamin' in: ...n:** Vitamin D (especially if limited sun), B12 (if vegan), multivitamin (if gaps remain after food optimization)\n\n---\n\n## Adherence..."
+    },
+    {
+      "text": "Answer suggests fish oil or omega-3 source when fats are very low",
+      "passed": true,
+      "evidence": "Found 'omega-3' in: ...nned tuna (water) | 100       | 23g     | Selenium, iodine, omega-3 |\n| Lean beef (90/10)   | 180       | 24g     | Iron, B12,..."
+    },
+    {
+      "text": "Answer gives a concrete practical meal example (like lentil soup)",
+      "passed": true,
+      "evidence": "Found 'lentil' in: ...z almonds           | 164          | 3.5g  |\n| 1 cup cooked lentils   | 230          | 15.6g |\n| 1 medium sweet potato  | 103..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

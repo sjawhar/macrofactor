@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer frames mass gainers as a convenience tool, not uniquely superior",
+      "passed": true,
+      "evidence": "Found 'convenience' in: ...alories becomes genuinely difficult.\n\n### Key Advantages\n\n**Convenience & Consistency**\n\n- Portable powder that requires only water..."
+    },
+    {
+      "text": "Answer notes most are basically protein plus simple carbohydrates",
+      "passed": true,
+      "evidence": "Found 'protein' in: ...y travel stress or jet lag\n\n**Muscle Preservation**\n\n- High protein content (25-50g per serving) supports muscle retention duri..."
+    },
+    {
+      "text": "Answer states the key criterion is adherence and total intake, not marketing claims",
+      "passed": false,
+      "evidence": "Missing any of: ['adherence', 'total intake']"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 1,
+    "total": 3,
+    "pass_rate": 0.6667
+  }
+}

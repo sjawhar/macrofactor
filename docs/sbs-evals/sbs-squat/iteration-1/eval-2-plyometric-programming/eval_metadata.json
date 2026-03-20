@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "plyometric-programming",
+  "prompt": "For basketball athletes in the offseason, how should plyometrics be integrated with hypertrophy and strength training?",
+  "assertions": [
+    "Recommends placing plyometrics early in training sessions while athletes are fresh",
+    "Suggests approximately 1-2 focused plyo sessions per week",
+    "Warns against putting hard plyometric sessions on 'off days' or recovery days",
+    "Distinguishes quality high-intent plyometrics from high-rep fatigue jumping",
+    "Recommends keeping plyo volume low-to-moderate with high quality"
+  ]
+}

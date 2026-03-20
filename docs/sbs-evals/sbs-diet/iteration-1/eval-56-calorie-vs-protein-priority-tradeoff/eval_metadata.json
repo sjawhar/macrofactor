@@ -1,0 +1,14 @@
+{
+  "eval_id": 56,
+  "eval_name": "eval-56-calorie-vs-protein-priority-tradeoff",
+  "prompt": "If I hit my calorie target but I\u2019m under my protein target, should I go over calories to hit protein? What if this happens often?",
+  "expected_output": "They agreed the first fix is upstream: if this is frequent, adjust calorie targets, protein targets, meal planning, or food environment so targets are realistically compatible. Eric gave a common baseline of about 1.6 g/kg/day protein as a practical middle target (with higher needs in some deficits) and suggested lowering unrealistic protein goals when needed. For rare misses, both said the difference is usually negligible either way. In deficits, Eric leaned toward prioritizing protein and accepting a small calorie overshoot (for example +200 kcal once in a while), while Greg often prioritizes preserving the planned deficit depending on phase priority. For recomp/lean-bulk contexts they suggested splitting the difference (e.g., hit ~85-90% of protein target without overshooting calories as much).",
+  "topic": "calorie vs protein priority tradeoff",
+  "episode": 58,
+  "assertions": [
+    "Answer recommends adjusting meal planning upstream if calorie/protein conflicts are frequent",
+    "Answer gives a baseline of about 1.6 g/kg/day protein as a practical middle target",
+    "Answer leans toward prioritizing protein in deficits and accepting small calorie overshoot if rare",
+    "Answer suggests splitting the difference in recomp/lean-bulk contexts"
+  ]
+}

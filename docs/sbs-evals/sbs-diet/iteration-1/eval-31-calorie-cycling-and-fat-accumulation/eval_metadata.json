@@ -1,0 +1,14 @@
+{
+  "eval_id": 31,
+  "eval_name": "eval-31-calorie-cycling-and-fat-accumulation",
+  "prompt": "Does calorie cycling (higher calories on training days, lower on rest days) meaningfully reduce fat gain compared to flat daily calories?",
+  "expected_output": "Eric said he hasn\u2019t seen compelling direct evidence that matching calories to training/rest days is inherently superior for body-composition outcomes when weekly intake is equated. His main point was that energy balance is a longer-game variable; micromanaging hour-by-hour or day-by-day intake/expenditure matching is usually unnecessary. He referenced related literature and argued that total intake/adherence across the dieting window (for example, over many weeks) is the dominant driver. He specifically said not to feel forced to cut intake on rest days just because you burned ~200 fewer calories that day. Nonlinear intake can still be useful for preference, adherence, or workout-quality targeting (for example, placing higher carbs before key sessions). He also said refeed/diet-break strategies are promising but not yet conclusive, including uncertainty about whether 2-day, 3-day, or multi-week structures are best.",
+  "topic": "calorie cycling and fat accumulation",
+  "episode": 39,
+  "assertions": [
+    "Answer states no compelling evidence that calorie cycling is superior when weekly intake is equated",
+    "Answer frames energy balance as a longer-game variable",
+    "Answer says not to feel forced to cut intake on rest days for small calorie differences",
+    "Answer acknowledges nonlinear intake can be useful for adherence or workout quality"
+  ]
+}

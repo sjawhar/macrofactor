@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states no meaningful body-composition advantage of interval vs steady-state cardio",
+      "passed": true,
+      "evidence": "Found 'no' in: ...lic demand during and after exercise\n4. **Variety**: Less monotonous for many people\n5. **Preserves strength**: High-inten..."
+    },
+    {
+      "text": "Answer cites or references a meta-analysis showing both produced small similar changes",
+      "passed": true,
+      "evidence": "Found 'both' in: ...e Short Answer\n\nNeither is inherently \"better\" for fat loss\u2014both work. The choice depends on your preferences, time availabi..."
+    },
+    {
+      "text": "Answer gives concrete interval options (30s hard/90s easy, 1min/1min, 2min/2min)",
+      "passed": true,
+      "evidence": "Found '30' in: ...tolerance\n- **Frequency**: 1-2x per week maximum\n\n### 2. **30/30 Intervals (30 seconds work / 30 seconds rest)**\n\n- 10-15..."
+    },
+    {
+      "text": "Answer recommends choosing the modality you can adhere to safely",
+      "passed": true,
+      "evidence": "Found 'adhere' in: ...gen consumption (EPOC), though this is often overstated\n- **Adherence**: Steady-state is easier to sustain and recover from fo..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-maintenance-phases-between-bulk-and-cut",
+  "prompt": "Do I need a maintenance phase after a bulk or cut, or can I go straight from bulking to cutting and back again?",
+  "expected_output": "They said there is no clear physiological requirement to insert maintenance phases between bulking and cutting. In their view, you can alternate bulk and cut phases directly if that fits your goals. They framed maintenance phases as mainly practical or preference-based rather than biologically mandatory. For example, maintenance can help with adherence, comfort at a body weight, or reducing misleading scale swings before starting an aggressive cut. But they did not present a physiological downside to skipping maintenance if transitions are well managed. The key point was that maintenance is optional strategy, not a required step.",
+  "topic": "maintenance phases between bulk and cut",
+  "episode": 104,
+  "assertions": [
+    "Answer states maintenance phases are NOT physiologically required between bulk and cut",
+    "Answer frames maintenance as optional/preference-based rather than biologically mandatory",
+    "Answer acknowledges practical benefits of maintenance (adherence, comfort, scale stability)",
+    "Answer does NOT claim maintenance is always necessary or always recommended"
+  ]
+}

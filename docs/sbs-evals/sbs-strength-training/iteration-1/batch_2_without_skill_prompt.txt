@@ -1,0 +1,68 @@
+TASK: Answer 15 listener questions about strength training and fitness using ONLY your general knowledge. Do NOT read any special skill files.
+
+EXPECTED OUTCOME: 15 individual answer.md files, each 200-500 words, evidence-based and practical.
+
+REQUIRED TOOLS: Write
+
+MUST DO:
+1. For each question below, write a thorough answer (200-500 words) to the specified file path
+2. Use your general training and fitness knowledge — answer as an informed fitness enthusiast/coach would
+3. Be evidence-based, nuanced, and practical
+4. Include specific numbers, mechanisms, and caveats where appropriate
+5. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT read any skill files, training guides, or reference documents
+- Do NOT use the Read tool to read anything in .opencode/skills/
+- Do NOT give generic/vague answers — be specific
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions about fitness and training. Answer from your general knowledge of exercise science.
+
+QUESTIONS:
+31. Question: "As my lifts get stronger, my rest periods keep getting longer. What causes that, and what does the literature say about rest intervals for hypertrophy vs strength?"
+   Topic: rest intervals for strength and hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-31-rest-intervals-for-strength-and-hypertrophy/without_skill/outputs/answer.md
+32. Question: "Can you rank these sports by difficulty/competitiveness: natural bodybuilding, natural classic physique, baseball, basketball, and football?"
+   Topic: sport competitiveness ranking
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-32-sport-competitiveness-ranking/without_skill/outputs/answer.md
+33. Question: "From a bodybuilding standpoint, can I completely remove deadlifts and all deadlift variations? Can other posterior-chain exercises fully replace them?"
+   Topic: deadlift necessity for bodybuilding
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-33-deadlift-necessity-for-bodybuilding/without_skill/outputs/answer.md
+34. Question: "I usually get 7-8 hours of sleep, but when I try to force 8-9+ hours my sleep quality gets worse. Should I stop trying to force extra sleep?"
+   Topic: sleep extension and recovery
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-34-sleep-extension-and-recovery/without_skill/outputs/answer.md
+35. Question: "Greg mentioned avoiding anabolic steroids partly due to possible cognitive effects. What evidence is there for that?"
+   Topic: anabolics and cognition risk
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-35-anabolics-and-cognition-risk/without_skill/outputs/answer.md
+36. Question: "How can students improve writing skills for science-based fitness articles, and how do you get published on larger websites?"
+   Topic: science writing and publication strategy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-36-science-writing-and-publication-strategy/without_skill/outputs/answer.md
+37. Question: "When will Greg become a permanent host of the show?"
+   Topic: podcast host status
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-37-podcast-host-status/without_skill/outputs/answer.md
+38. Question: "Any advice on easing into a high-volume hypertrophy-focused mesocycle after a powerlifting meet without losing my strength gains?"
+   Topic: post-meet hypertrophy without strength loss
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-38-post-meet-hypertrophy-without-strength-loss/without_skill/outputs/answer.md
+39. Question: "What do you personally do right after a meet—jump into the next block immediately or take time off?"
+   Topic: post-competition transition week
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-39-post-competition-transition-week/without_skill/outputs/answer.md
+40. Question: "How should I tweak a program that mostly works before deciding to switch programs entirely?"
+   Topic: program troubleshooting and plateaus
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-40-program-troubleshooting-and-plateaus/without_skill/outputs/answer.md
+41. Question: "For pull-ups, do I need to get my chin over the bar for strength or hypertrophy benefits?"
+   Topic: pull-up range of motion standards
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-41-pull-up-range-of-motion-standards/without_skill/outputs/answer.md
+42. Question: "What do you think about bands and chains for building absolute strength? The logic sounds good—do they actually work?"
+   Topic: accommodating resistance effectiveness
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-42-accommodating-resistance-effectiveness/without_skill/outputs/answer.md
+43. Question: "Which supplements are actually useful in an evidence-based sense, and which are mostly hype?"
+   Topic: evidence-based supplement priorities
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-43-evidence-based-supplement-priorities/without_skill/outputs/answer.md
+44. Question: "Are there downsides to eating a lot of protein, and is the common target of about 1 gram per pound enough for building muscle? Should someone aiming to maximize gains go even higher?"
+   Topic: protein upper-limit concerns
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-44-protein-upper-limit-concerns/without_skill/outputs/answer.md
+45. Question: "Instead of doing many sets of the same exercise, could rotating through multiple exercises for the same muscle reduce diminishing returns and improve hypertrophy?"
+   Topic: exercise variety and hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-45-exercise-variety-and-hypertrophy/without_skill/outputs/answer.md

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer recommends controlling food environment when sleep deprived due to appetite effects",
+      "passed": true,
+      "evidence": "Found 'appetite' in: ...**Check recovery markers**: soreness, mood, sleep quality, appetite\n- [ ] **Adjust calories only if trend misses target** after..."
+    },
+    {
+      "text": "Answer suggests biasing toward safer training options (machines, controlled movements) when fatigued",
+      "passed": false,
+      "evidence": "Missing any of: ['machine', 'controlled', 'safer']"
+    },
+    {
+      "text": "Answer mentions short naps of 20-30 minutes as useful",
+      "passed": true,
+      "evidence": "Found 'nap' in: ...icits** (500-750 kcal/day) if fat loss is the goal\n\n---\n\n## Naps: Useful or Counterproductive?\n\n### SBS Position: Context-D..."
+    },
+    {
+      "text": "Answer advises keeping resistance training in place but with safety adjustments",
+      "passed": true,
+      "evidence": "Found 'keep' in: ...tes lose volume tolerance faster than intensity tolerance\n- Keep intensity moderate; cut sets/reps\n\n**2. Avoid high-frequenc..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

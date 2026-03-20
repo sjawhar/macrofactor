@@ -1,0 +1,15 @@
+{
+  "eval_id": 89,
+  "eval_name": "eval-89-dream-research-studies",
+  "prompt": "If ethics and money were no concern, what study would you most want to run?",
+  "expected_output": "Greg's provocative example was a definitive human hyperplasia study, since counting muscle fibers directly is ethically infeasible in normal research. His realistic preference was a massive mechanistic and responder-variability project with very large samples, rich omics data, and multiple training programs to map why individuals respond differently. Eric added several high-priority practical trials: a properly powered creatine-caffeine interaction trial, well-designed nitrate plus citrulline hypertrophy studies with adequate doses, and better protein-dose scaling studies across body compositions and energy states. They also called out a major gap on how to train during caloric deficits (maintain volume vs maintain intensity), noting there is strong opinion but little direct data.",
+  "topic": "dream research studies",
+  "episode": 58,
+  "assertions": [
+    "Answer captures the core SBS position on dream research studies",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

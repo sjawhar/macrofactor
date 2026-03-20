@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer argues fitness misinformation is NOT improving and may be worsening",
+      "passed": true,
+      "evidence": "Found 'not improving' in: ...or embedded in legacy coaching frameworks. The problem is **not improving**\u2014it is **persisting and evolving** into new forms as old m..."
+    },
+    {
+      "text": "Answer mentions structural incentives in academia and industry that reward overstatement",
+      "passed": true,
+      "evidence": "Found 'incentive' in: ...ements, and programs based on outdated or false claims. The incentive structure rewards sensationalism, not accuracy.\n\n3. **Fragm..."
+    },
+    {
+      "text": "Answer discusses social media amplification and commercial incentives as force multipliers",
+      "passed": true,
+      "evidence": "Found 'social media' in: ...rend: Worse, Not Better**\n\n**Evidence of Worsening:**\n\n1. **Social Media Amplification:** Misinformation spreads faster and reaches..."
+    },
+    {
+      "text": "Answer recommends prioritizing evidence quality and skepticism",
+      "passed": true,
+      "evidence": "Found 'evidence' in: ...Outdated Fitness Advice Still Spread by Experts: Trends and Evidence\n\n## The Core Problem\n\nFitness experts continue to promote c..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

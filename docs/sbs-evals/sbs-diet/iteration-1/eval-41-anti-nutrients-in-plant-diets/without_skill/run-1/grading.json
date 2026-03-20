@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms anti-nutrients are real (phytates, tannins, lectins, oxalates)",
+      "passed": true,
+      "evidence": "Found 'real' in: ...d diets with adequate total nutrient intake. The concern is real in theory but overstated in practice for most people.\n\n## W..."
+    },
+    {
+      "text": "Answer states the risk is often overstated",
+      "passed": true,
+      "evidence": "Found 'overstated' in: ...te total nutrient intake. The concern is real in theory but overstated in practice for most people.\n\n## What Are Anti-Nutrients?..."
+    },
+    {
+      "text": "Answer mentions cooking/processing methods reduce many anti-nutrient effects",
+      "passed": true,
+      "evidence": "Found 'cooking' in: ...es by 20-50%\n- **Sprouting** reduces phytates by 50-80%\n- **Cooking** reduces oxalates and lectins significantly\n- **Fermentati..."
+    },
+    {
+      "text": "Answer advises against avoiding plant foods wholesale",
+      "passed": true,
+      "evidence": "Found 'not' in: ...hey serve protective functions for the plant itself\u2014they're not there to harm humans.\n\n## Is the Concern Valid?\n\n**Partiall..."
+    },
+    {
+      "text": "Answer recommends eating a varied diet with diverse food sources and preparation methods",
+      "passed": true,
+      "evidence": "Found 'varied' in: ...sorption. But this is largely a non-issue for people eating varied plant-based diets with adequate total nutrient intake. The..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

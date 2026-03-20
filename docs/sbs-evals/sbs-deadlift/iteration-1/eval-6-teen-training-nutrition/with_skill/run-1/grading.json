@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends building around major compound movement patterns (squat, press, hinge, row or similar)",
+      "passed": true,
+      "evidence": "Section 1 lists 'The Big Three Patterns': Squat Pattern, Horizontal Press Pattern, Hinge Pattern. Secondary patterns include Vertical Press, Horizontal Pull (rows), and Vertical Pull."
+    },
+    {
+      "text": "Provides a starting volume recommendation (roughly 8-12 sets per muscle per week or similar concrete range)",
+      "passed": true,
+      "evidence": "Volume table shows MEV ranges of 8-12 sets for major muscle groups. Text states: 'For a 15-year-old beginner: Start at the MEV (Minimum Effective Volume) end.' Sample week totals ~8-12 sets per muscle group."
+    },
+    {
+      "text": "Addresses proximity to failure with specific guidance (e.g., 0-2 RIR, most sets near but not at failure)",
+      "passed": true,
+      "evidence": "Main lifts: '2-3 RIR' (2-3 reps short of failure). Accessories: '0-2 RIR'. Table shows RIR ranges for each goal. States 'Training to failure is not necessary for muscle growth.'"
+    },
+    {
+      "text": "Provides protein guidance (approximately 1.5-2.0 g/kg/day or equivalent range)",
+      "passed": true,
+      "evidence": "States: 'Target: 1.6-2.2 g of protein per kg of body weight per day' which encompasses the expected 1.5-2.0 g/kg range."
+    },
+    {
+      "text": "Mentions that beginners benefit from bodyweight/calisthenic practice for movement quality before heavy loading",
+      "passed": false,
+      "evidence": "Recommends 'Prioritize movement quality over load' and light weight for first 2-4 weeks, but does not specifically recommend bodyweight/calisthenic exercises (push-ups, lunges, step-ups) before barbell loading as Greg specifically suggested."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

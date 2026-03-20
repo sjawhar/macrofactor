@@ -1,0 +1,12 @@
+{
+  "eval_id": 15,
+  "eval_name": "bands-and-chains-for-hypertrophy",
+  "prompt": "You previously discussed chains and bands for strength. What about using accommodating resistance for hypertrophy specifically?",
+  "assertions": [
+    "States the likely effect is neutral-to-positive if used intelligently",
+    "Warns against adding so much band/chain tension that lockout becomes the limiter",
+    "Notes that excessive accommodating resistance can reduce meaningful loading in stretched positions",
+    "Acknowledges direct hypertrophy data are sparse",
+    "Recommends moderate accommodating resistance with meaningful full-ROM challenge"
+  ]
+}

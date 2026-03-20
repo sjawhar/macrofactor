@@ -1,0 +1,14 @@
+{
+  "eval_id": 6,
+  "eval_name": "teen-training-and-nutrition",
+  "prompt": "What should a 15-year-old do to gain muscle and strength: exercise selection, weekly volume, reps/intensity/failure, and calories/macros?",
+  "assertions": [
+    "Recommends compound movement patterns (squat, press, hinge, row variants)",
+    "Provides a starting volume recommendation (approximately 8-12 sets per muscle per week)",
+    "Recommends training mostly in the 5-12 rep range",
+    "Addresses proximity to failure (most work at 0-2 RIR or close to failure)",
+    "Provides nutrition guidance: slow gain target (~1% bodyweight per month) and protein target (~1.5-2.0 g/kg/day)",
+    "Recommends 3-5 training sessions per week (or mentions 2 can work for beginners)",
+    "Mentions importance of bodyweight/movement competency before heavy barbell loading"
+  ]
+}

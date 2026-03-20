@@ -1,0 +1,15 @@
+{
+  "eval_id": 45,
+  "eval_name": "eval-45-exercise-variety-and-hypertrophy",
+  "prompt": "Instead of doing many sets of the same exercise, could rotating through multiple exercises for the same muscle reduce diminishing returns and improve hypertrophy?",
+  "expected_output": "Greg said he does not see strong downside to exercise variation when total hard sets are matched, and it may be modestly beneficial. They discussed the Fonseca-style finding where total quad growth was similar across conditions, but the varied-exercise groups showed more balanced growth across different quad regions. The practical takeaway was that variety can help distribute stimulus and may improve regional hypertrophy without necessarily changing overall growth dramatically. Eric added that variation can also improve enjoyment and adherence, which matters for long-term outcomes. They did not present this as a magic trick, but as a reasonable programming option.",
+  "topic": "exercise variety and hypertrophy",
+  "episode": 29,
+  "assertions": [
+    "Answer captures the core SBS position on exercise variety and hypertrophy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

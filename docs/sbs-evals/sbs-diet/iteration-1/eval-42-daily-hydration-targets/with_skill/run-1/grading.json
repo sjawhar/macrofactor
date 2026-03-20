@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer cites DRI targets of about 3.7 L/day for men and 2.7 L/day for women",
+      "passed": true,
+      "evidence": "Found '3.7' in: ...ne\n\n- **Women: ~2.7 L/day** (Adequate Intake, AI)\n- **Men: ~3.7 L/day** (Adequate Intake, AI)\n- **Practical range for most..."
+    },
+    {
+      "text": "Answer notes these totals include water from food (~20%)",
+      "passed": true,
+      "evidence": "Found 'food' in: ...fic basis. It originated from a misinterpretation of a 1945 Food and Nutrition Board recommendation that suggested **1 mL of..."
+    },
+    {
+      "text": "Answer mentions hyponatremia as a risk of extreme water-chugging",
+      "passed": false,
+      "evidence": "Missing any of: ['hyponatremia']"
+    },
+    {
+      "text": "Answer recommends hydrating across the day rather than backloading",
+      "passed": false,
+      "evidence": "Missing any of: ['across the day', 'throughout', 'spread']"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

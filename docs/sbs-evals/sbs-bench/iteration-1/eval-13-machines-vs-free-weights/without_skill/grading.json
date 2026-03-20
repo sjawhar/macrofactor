@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States neither modality is universally superior for hypertrophy",
+      "passed": true,
+      "evidence": "States: 'Neither is universally better\u2014both drive hypertrophy effectively.'"
+    },
+    {
+      "text": "Notes machines are useful for variation, reducing technical constraints, and targeting volume",
+      "passed": true,
+      "evidence": "Discusses isolation, joint safety, consistency, and metabolic stress advantages of machines."
+    },
+    {
+      "text": "Recommends keeping a base of compound free-weight work",
+      "passed": true,
+      "evidence": "States: 'Build your program around compound free-weight movements.'"
+    },
+    {
+      "text": "Practical takeaway: use both, pick the tool that best fits the muscle/movement/fatigue profile",
+      "passed": true,
+      "evidence": "States: 'A well-designed program uses both, with free weights as the foundation and machines as specialized tools.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

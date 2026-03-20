@@ -1,0 +1,15 @@
+{
+  "eval_id": 71,
+  "eval_name": "eval-71-deadlift-vs-squat-fatigue",
+  "prompt": "Why are deadlifts considered more fatiguing than squats, and should deadlift volume usually be lower?",
+  "expected_output": "Greg pushed back on the blanket claim that deadlifts are inherently more fatiguing, noting data (including work from Zourdos' lab context) showing similar fatigue outcomes after squat vs deadlift sessions. He proposed several practical contributors: hand/forearm stress from heavy pulling, greater tolerance in sumo versus conventional for some lifters, and the ability to complete deadlifts with more spinal flexion than squats, which may create deeper low-back fatigue. He also highlighted path dependency: many lifters build years of higher squat exposure and lower deadlift exposure, so deadlift tolerance starts lower and appears more fatiguing by history rather than biology. He compared Olympic pulling variants too, where athletes often tolerate relatively high pulling frequency/volume. Recommendation was not to assume universal deadlift fragility, but to program based on individual recovery patterns and technical style.",
+  "topic": "deadlift vs squat fatigue",
+  "episode": 50,
+  "assertions": [
+    "Answer captures the core SBS position on deadlift vs squat fatigue",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

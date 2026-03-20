@@ -1,0 +1,15 @@
+{
+  "eval_id": 23,
+  "eval_name": "eval-23-strength-metrics-and-longevity",
+  "prompt": "Strength seems to predict lifespan better than muscle size, but most studies use grip strength. Is there a better way to assess real-world strength for longevity (for example lower-body and pushing strength percentiles), and should people chase higher strength percentiles to live longer?",
+  "expected_output": "The hosts said additional strength metrics (like knee extension or pressing) could improve population-level prediction a bit, but individual-level prediction would still be too noisy to be very actionable. They emphasized that grip strength is practical partly because most people do not train it directly, so it captures general physical robustness rather than a highly trained sport-specific metric. Their practical recommendation was simple: resistance train consistently (roughly 90-120 minutes/week, around 2-3 sessions) instead of chasing a specific percentile score. They argued the strength-longevity link is likely not purely causal from training volume alone, and there are diminishing returns once you are already clearly above average. They also discussed that resilience after major health setbacks (illness/hospitalization) may explain part of the association, not just maximizing gym performance forever. Net guidance: keep lifting and stay active, but do not obsess over moving from, say, 80th to 99th percentile on a single lift.",
+  "topic": "Strength metrics and longevity",
+  "episode": 144,
+  "assertions": [
+    "Answer captures the core SBS position on Strength metrics and longevity",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

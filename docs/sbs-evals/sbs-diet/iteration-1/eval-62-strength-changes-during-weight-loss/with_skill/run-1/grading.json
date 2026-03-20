@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer mentions Greg got weaker during the cut but attributes much to disrupted training from injury",
+      "passed": true,
+      "evidence": "Found 'strength' in: ...# How to Maintain Strength While Losing Weight: SBS Evidence-Based Framework\n\n## The C..."
+    },
+    {
+      "text": "Answer discusses wrist/elbow injury limiting training for months",
+      "passed": false,
+      "evidence": "Missing any of: ['wrist', 'elbow', 'injury']"
+    },
+    {
+      "text": "Answer states strength rebounded quickly once consistent lifting resumed",
+      "passed": false,
+      "evidence": "Missing any of: ['rebound', 'quickly', 'resumed']"
+    },
+    {
+      "text": "Answer frames consistency and acceptance as more important than chasing perfect in-cut numbers",
+      "passed": false,
+      "evidence": "Missing any of: ['consistency', 'acceptance']"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 3,
+    "total": 4,
+    "pass_rate": 0.25
+  }
+}

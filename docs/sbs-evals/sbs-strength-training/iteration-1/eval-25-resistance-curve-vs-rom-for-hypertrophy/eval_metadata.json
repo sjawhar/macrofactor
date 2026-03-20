@@ -1,0 +1,15 @@
+{
+  "eval_id": 25,
+  "eval_name": "eval-25-resistance-curve-vs-rom-for-hypertrophy",
+  "prompt": "For hypertrophy, what matters more: resistance curve or range of motion? Do lengthened partials/full-ROM results depend on whether an exercise truly loads the long-muscle-length position enough?",
+  "expected_output": "The hosts said evidence is still limited and mixed, so strong one-size-fits-all claims are premature. They reviewed examples where studies point in different directions (some favoring more stretch-position loading, some not), and highlighted that multi-variable exercise comparisons are hard to interpret cleanly. Their current view was that both factors likely matter: training at meaningful long muscle lengths seems useful, and having at least some substantial tension there is probably important. They doubted that you must perfectly maximize long-length tension in every movement, but also doubted extreme setups with almost no challenge in stretched positions would be ideal for growth. Practically, they recommended not overfitting to social-media certainty and instead training hard with exercises that provide solid tension through useful ranges. Bottom line: the field is promising but not settled enough to justify dogmatic prescriptions.",
+  "topic": "Resistance curve vs ROM for hypertrophy",
+  "episode": 144,
+  "assertions": [
+    "Answer captures the core SBS position on Resistance curve vs ROM for hypertrophy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

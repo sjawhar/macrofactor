@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States neither modality is universally superior for hypertrophy",
+      "passed": true,
+      "evidence": "Found matching content: ...and free weights can deliver all three. Neither modality has a monopoly on hypertrophy...."
+    },
+    {
+      "text": "Acknowledges machines are useful for adding variation and reducing technical constraints",
+      "passed": true,
+      "evidence": "Found matching content: ...# Machines vs. Free Weights for Hypertrophy\n\nGrea..."
+    },
+    {
+      "text": "Favors keeping a base of compound free-weight work",
+      "passed": true,
+      "evidence": "Found matching content: ...# Machines vs. Free Weights for Hypertrophy\n\nGreat question, and t..."
+    },
+    {
+      "text": "Recommends using both modalities (mixed approach)",
+      "passed": true,
+      "evidence": "Found matching content: ...cifically**, the practical answer is to use both strategically. Lead your sessions with..."
+    },
+    {
+      "text": "Notes specificity principle: if performance in a specific lift matters, include that lift",
+      "passed": true,
+      "evidence": "Found matching content: ...ronments.\n\n**For maximizing hypertrophy specifically**, the practical answer is to use b..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

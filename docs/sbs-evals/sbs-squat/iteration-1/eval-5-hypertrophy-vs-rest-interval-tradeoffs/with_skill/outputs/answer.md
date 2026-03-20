@@ -1,0 +1,19 @@
+# Rest Intervals for Squat Hypertrophy: Are 6-7 Minute Rests Leaving Gains on the Table?
+
+The short answer is: probably not — and for a powerlifter doing hard squat volume, long rests may actually be the smarter choice. The "short rests are best for hypertrophy" idea has been popular, but it doesn't hold up well when you look at what actually drives muscle growth from squats, especially at the intensities and volumes powerlifters typically train at.
+
+## What Actually Drives Hypertrophy from Squats
+
+Hypertrophy is primarily driven by mechanical tension — specifically, how much tension you can generate across a long, controlled range of motion, set after set. The squat is a technically demanding, full-body movement that requires high-quality bracing, stable foot pressure, controlled descent, and an aggressive concentric drive through the sticking point. When fatigue accumulates too quickly between sets — as it does with strict 2-minute rests under heavy loads — rep quality degrades: depth gets shallower, bracing gets sloppy, the ascent turns into a good-morning pattern with hips shooting up and knees drifting back. That degraded rep quality means less mechanical tension on the quads, less controlled ROM, and ultimately less hypertrophic stimulus — even if the metabolic "pump" feels more intense. The quality of each rep matters enormously for squats in a way that doesn't apply as cleanly to isolation exercises.
+
+## The Powerlifter Context Changes the Calculus
+
+For a powerlifter doing hard squat volume — think working sets at 75-85%+ of 1RM, or sets taken close to failure — the systemic fatigue from each set is substantial. The nervous system, the spinal erectors, the hips, and the quads are all being taxed heavily. Cutting rest to 2 minutes in this context doesn't just reduce metabolic recovery; it compromises the ability to maintain the technical standards that make each set productive. If your goal is to accumulate high-quality volume with good depth and controlled positions — which is exactly what builds both strength and hypertrophy in the squat — then resting long enough to actually execute those reps well is not optional. A set of 4 reps with full depth, solid bracing, and maximal concentric intent is worth far more than a set of 4 reps with a half-inch short depth, a collapsing brace, and a good-morning finish.
+
+## When Shorter Rests Make Sense
+
+Shorter rest intervals (2-3 minutes) are more appropriate for lighter accessory work — leg press, hack squat, split squats, or other knee-dominant accessories used to build quad volume without the same systemic demand. These movements don't require the same bracing complexity or full-body coordination, so metabolic recovery is the primary limiting factor, and shorter rests are fine. If you're doing front squats or high-bar squats as a secondary movement at moderate intensity to expose quad and upper-back weak links, you might also tolerate shorter rests. But for your primary squat work at powerlifting intensities, 4-7 minutes between sets is entirely reasonable and well-supported by the logic of maintaining rep quality across the session.
+
+## The Bottom Line
+
+Resting 6-7 minutes between hard squat sets is not leaving hypertrophy gains on the table — it's protecting them. The gains come from the quality and depth of each rep, the mechanical tension generated through a full range of motion, and the ability to sustain that quality across multiple sets. If shorter rests are causing you to cut depth, lose your brace, or turn sets into good-morning squats, you're trading real hypertrophic stimulus for the illusion of productive fatigue. Rest as long as you need to execute each set well. Use shorter rests strategically for lighter accessory work where rep quality is less sensitive to fatigue. That's the approach that actually builds both size and strength over time.

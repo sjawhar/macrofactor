@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States there is no universal cap - depends on goals, recovery, and time",
+      "passed": true,
+      "evidence": "Discusses optimal ranges varying by training level and lagging areas."
+    },
+    {
+      "text": "Notes that many muscles are only partially covered by compounds",
+      "passed": true,
+      "evidence": "Section on 'Compound Carryover' explains what compounds cover and what needs isolation."
+    },
+    {
+      "text": "Provides a concrete baseline recommendation (roughly 2-4 challenging sets once or twice per week per muscle group)",
+      "passed": false,
+      "evidence": "Recommends higher volumes: delts 6-12 sets, biceps 4-8, forearms 3-6, calves 6-12, core 3-6. Does not match the expected ~2-4 sets baseline."
+    },
+    {
+      "text": "Warns that global/systemic recovery can become limiting",
+      "passed": true,
+      "evidence": "States: 'Isolation work should not compromise recovery from compounds.'"
+    },
+    {
+      "text": "Recommends starting conservative and scaling up based on outcomes",
+      "passed": true,
+      "evidence": "Gives beginner/intermediate/advanced scaling and red flags for overdoing it."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

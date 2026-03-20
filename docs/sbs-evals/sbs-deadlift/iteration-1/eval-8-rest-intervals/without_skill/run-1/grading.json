@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Explains that heavier loads increase metabolic/oxygen cost per set, requiring longer recovery — this is a normal progression",
+      "passed": true,
+      "evidence": "Section 1 explains 'Increased Metabolic Demand and ATP-PC System Recovery' and 'CNS Fatigue.' Concludes: 'As your lifts increase in absolute weight, your rest periods naturally extend.'"
+    },
+    {
+      "text": "Notes research on rest intervals for hypertrophy is mixed (some favor longer, some shorter, some no difference)",
+      "passed": true,
+      "evidence": "'The literature is more nuanced' for hypertrophy. Notes '1.5–2 minutes is often sufficient' but also 'longer rest (2–3 min) still produces slightly better hypertrophy outcomes.' Schoenfeld's meta-analyses show 'rest period length has a smaller effect on hypertrophy than on strength when volume is equated.' Captures the mixed nature."
+    },
+    {
+      "text": "For strength, leans toward longer rest periods, especially for strong lifters on compound lifts",
+      "passed": true,
+      "evidence": "'3–5 minutes is optimal for maintaining performance and strength gains.' Cites studies showing shorter rest reduces performance by 10-20%."
+    },
+    {
+      "text": "Provides concrete rest period ranges (e.g., ~90s-2min for isolation/upper, ~3min common, ~5min+ for heavy compounds)",
+      "passed": true,
+      "evidence": "Practical recommendations: 'Strength: 3–5 minutes,' 'Hypertrophy: 2–3 minutes,' 'Mixed: 2–3 minutes for compounds, 1.5-2 min for isolation,' 'Accessory Work: 1–2 minutes.'"
+    },
+    {
+      "text": "Suggests non-interfering supersets as a time-saving strategy",
+      "passed": false,
+      "evidence": "No mention of supersets. The answer focuses solely on rest period recommendations without suggesting supersets as a time-saving alternative."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

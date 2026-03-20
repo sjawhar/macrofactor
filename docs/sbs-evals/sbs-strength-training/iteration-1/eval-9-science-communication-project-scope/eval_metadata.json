@@ -1,0 +1,14 @@
+{
+  "eval_id": 9,
+  "eval_name": "eval-9-science-communication-project-scope",
+  "prompt": "Have you considered writing a book or long-form resource on stats, methods, and research interpretation?",
+  "expected_output": "The host said he has worked on this idea but repeatedly paused it. The main barrier is scope creep: as he learns more, the target keeps expanding and feels harder to finish. He described perfectionism and boundary-setting as the core publication bottlenecks, rather than lack of interest. So the implied takeaway is that technical writing often requires deciding what to exclude in order to ship something useful. No firm publication timeline was given.",
+  "topic": "science communication project scope",
+  "episode": 105,
+  "assertions": [
+    "Answer captures the core SBS position on science communication project scope",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

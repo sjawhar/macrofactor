@@ -1,0 +1,14 @@
+{
+  "eval_id": 29,
+  "eval_name": "eval-29-caffeine-and-sweeteners-while-dieting",
+  "prompt": "Do I need to limit caffeine, diet soda, or artificial sweeteners during a cut or in the offseason? I\u2019m worried I might be over-focusing on things that don\u2019t matter.",
+  "expected_output": "Eric said common non-nutritive sweeteners generally look fine in the evidence, even at fairly liberal intakes, and he isn\u2019t strongly concerned about them for health or physique outcomes. For caffeine, he noted common review-paper ranges of roughly 400-600 mg/day as a practical default, while acknowledging that exact cutoffs are somewhat fuzzy. His practical test is symptom-based: if you\u2019re jittery, sleeping worse, getting headaches, or no longer getting useful effects, you\u2019re likely pushing too high. He emphasized that caffeine tolerance/metabolism varies a lot between people, so personalization matters more than a single universal cap. In dieting specifically, he recommends not burning every easy strategy in the offseason; heavy caffeine/sweetener use year-round can reduce their usefulness later in a hard prep. So the key is less fear of sweeteners and more strategic use plus symptom-guided caffeine management.",
+  "topic": "caffeine and sweeteners while dieting",
+  "episode": 39,
+  "assertions": [
+    "Answer states non-nutritive sweeteners generally look fine in the evidence",
+    "Answer gives a caffeine practical range of roughly 400-600 mg/day",
+    "Answer recommends symptom-based caffeine management (jitters, sleep, headaches)",
+    "Answer advises not burning every easy strategy in the offseason for use during hard prep"
+  ]
+}

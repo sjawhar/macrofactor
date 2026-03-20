@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Proposes covering multiple fitness capacities, not just barbell strength",
+      "passed": true,
+      "evidence": "Covers Strength, Power, Speed/Agility, Muscular Endurance, Aerobic Capacity, and Movement Quality."
+    },
+    {
+      "text": "Includes an aerobic capacity test",
+      "passed": true,
+      "evidence": "Includes '2-Mile Run (or 3K run)' and rowing alternative."
+    },
+    {
+      "text": "Includes an anaerobic/short running test",
+      "passed": true,
+      "evidence": "Includes '40-Yard Dash' and '5-10-5 Shuttle' for speed and agility."
+    },
+    {
+      "text": "Includes an explosive power test",
+      "passed": true,
+      "evidence": "Includes Vertical Jump, Broad Jump, and Medicine Ball Chest Pass."
+    },
+    {
+      "text": "Includes a barbell strength test",
+      "passed": true,
+      "evidence": "Includes Squat, Bench, Deadlift 1RM tests."
+    },
+    {
+      "text": "Mentions flexibility or mobility screening",
+      "passed": true,
+      "evidence": "Includes Overhead Squat Assessment for mobility/stability."
+    },
+    {
+      "text": "Suggests this full battery may be better as a less frequent check rather than every 12 weeks",
+      "passed": false,
+      "evidence": "Recommends quarterly (12-week) testing throughout. Does not suggest less frequent scheduling."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 1,
+    "total": 7,
+    "pass_rate": 0.86
+  }
+}

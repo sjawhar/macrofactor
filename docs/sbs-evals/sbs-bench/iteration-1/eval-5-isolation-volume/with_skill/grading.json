@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States there is no universal cap - depends on goals, recovery, and time",
+      "passed": true,
+      "evidence": "States isolation is 'supportive, not primary' and asks 'how much isolation do I need to support compound progress without creating recovery debt?'"
+    },
+    {
+      "text": "Notes that many muscles are only partially covered by compounds",
+      "passed": true,
+      "evidence": "For each muscle group, explains what compound coverage they get and what isolation addresses."
+    },
+    {
+      "text": "Provides a concrete baseline recommendation (roughly 2-4 challenging sets once or twice per week per muscle group)",
+      "passed": true,
+      "evidence": "Gives specific per-muscle recommendations: forearms 2-4, calves 2-3, delts 4-8, biceps 3-6, core 2-4 sets/week."
+    },
+    {
+      "text": "Warns that global/systemic recovery can become limiting",
+      "passed": true,
+      "evidence": "Includes section on 'When to Reduce Isolation Volume' noting recovery is poor, fatigue accumulates."
+    },
+    {
+      "text": "Recommends starting conservative and scaling up based on outcomes",
+      "passed": true,
+      "evidence": "Includes scaling by training age: beginner 6-10 sets, intermediate 12-20, advanced 20-30."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 49,
+  "eval_name": "eval-49-beginner-training-philosophy",
+  "prompt": "For new lifters, is there any case for starting less evidence-based with things like bro splits, dreamer bulks, and even some ego lifting because they might build useful physical or psychological adaptations?",
+  "expected_output": "They argued that evidence-based training does not mean overcomplicated or joyless training. They noted that bro splits can still work well, and that pushing hard in the gym can build confidence and effort tolerance when technique is acceptable. On dreamer bulks, they acknowledged these are often not physiologically optimal, but said aggressive phases can help some lifters stop under-eating and unlock progress. They emphasized that beginners often leave gains on the table by being too afraid of gaining fat. They also pushed back on the idea that beginner gains are only tied to a short timeline, suggesting big progress can occur whenever stimulus and adherence improve. The recommendation was to keep core principles intact while allowing a style that helps consistency and buy-in.",
+  "topic": "Beginner training philosophy",
+  "episode": 54,
+  "assertions": [
+    "Answer states evidence-based training does NOT mean overcomplicated or joyless training",
+    "Answer acknowledges bro splits can still work well",
+    "Answer says aggressive eating phases can help some lifters stop under-eating",
+    "Answer pushes back on the idea that beginner gains are only tied to a short timeline"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer recommends major compound movements (squat/press/hinge/row variants)",
+      "passed": true,
+      "evidence": "Found 'compound' in: ...on for Muscle and Strength Gain\n\n## Exercise Selection\n\n### Compound Movement Foundation\n\nA 15-year-old should prioritize compou..."
+    },
+    {
+      "text": "Answer suggests starting around 8-12 sets per muscle per week",
+      "passed": true,
+      "evidence": "Found '8' in: ..., leg curls) after compound work\n- Rotate exercises every 4-8 weeks to prevent adaptation plateaus and maintain engagemen..."
+    },
+    {
+      "text": "Answer recommends protein roughly 1.5-2.0 g/kg/day for a 15-year-old",
+      "passed": true,
+      "evidence": "Found '1.5' in: ...bread, pasta, fruits, vegetables\n\n### Fats\n\n- **Target: 0.5-1.5 grams per kilogram of body weight** (or 0.23-0.68 g/lb)\n- F..."
+    },
+    {
+      "text": "Answer suggests a slow gain target around 1% body weight per month",
+      "passed": true,
+      "evidence": "Found 'body weight' in: ...r week\n\n### Protein\n\n- **Target: 0.7-1.0 grams per pound of body weight** (or 1.6-2.2 g/kg)\n- For a 150 lb teen: 105-150g protein d..."
+    },
+    {
+      "text": "Answer mentions building bodyweight/calisthenic competence before heavy barbell loading",
+      "passed": true,
+      "evidence": "Found 'bodyweight' in: ...nd joints:\n\n- **Lower Body**: Squats (barbell, dumbbell, or bodyweight), deadlifts (conventional or trap bar), lunges, leg press\n-..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

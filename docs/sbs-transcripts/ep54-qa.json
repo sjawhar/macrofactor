@@ -1,0 +1,23 @@
+{
+  "episode": 54,
+  "pairs": [
+    {
+      "question": "Can you gain muscle while eating around maintenance calories if protein is high and you still have body fat to spare?",
+      "answer_summary": "They said yes, this can happen via body recomposition in the right context. The key qualifiers were training status, current body composition, the quality of training stimulus, and adequate protein intake. People with more fat mass to spare are generally better candidates for gaining lean mass without a clear surplus. They framed this as possible rather than guaranteed, and highly individual. The practical takeaway was that a large caloric surplus is not always required to add muscle, especially early in training or when retraining.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "Recomp at maintenance calories"
+    },
+    {
+      "question": "For new lifters, is there any case for starting less evidence-based with things like bro splits, dreamer bulks, and even some ego lifting because they might build useful physical or psychological adaptations?",
+      "answer_summary": "They argued that evidence-based training does not mean overcomplicated or joyless training. They noted that bro splits can still work well, and that pushing hard in the gym can build confidence and effort tolerance when technique is acceptable. On dreamer bulks, they acknowledged these are often not physiologically optimal, but said aggressive phases can help some lifters stop under-eating and unlock progress. They emphasized that beginners often leave gains on the table by being too afraid of gaining fat. They also pushed back on the idea that beginner gains are only tied to a short timeline, suggesting big progress can occur whenever stimulus and adherence improve. The recommendation was to keep core principles intact while allowing a style that helps consistency and buy-in.",
+      "skills": ["sbs-strength-training", "sbs-diet"],
+      "topic": "Beginner training philosophy"
+    },
+    {
+      "question": "What are some practical high-volume, low-calorie meals or food combinations to stay full while cutting and trying to get very lean?",
+      "answer_summary": "They gave a long list of concrete options centered on lean protein plus very high-volume vegetables. Examples included burrito bowls built on cauliflower rice, shredded chicken with yogurt-based sauces, egg-white omelets with vegetables, lean beef and broccoli, and Greek-yogurt desserts with low-calorie flavor add-ins. They also recommended bulking up ground-beef meals with shredded cabbage, including roughly a 1:1 beef-to-cabbage ratio to substantially increase food volume. Another tip was low-calorie slaw variants using yogurt, mustard, and non-caloric sweetener to keep calories down while improving satiety. The overall strategy was to maximize fiber/water volume and protein density, not just rely on tiny portions of calorie-dense foods. The guidance was very meal-prep oriented and meant to improve adherence in deeper cuts.",
+      "skills": ["sbs-diet"],
+      "topic": "High-volume cutting meals"
+    }
+  ]
+}

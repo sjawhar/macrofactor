@@ -1,0 +1,44 @@
+TASK: Answer 7 listener questions about strength training and fitness using ONLY your general knowledge. Do NOT read any special skill files.
+
+EXPECTED OUTCOME: 7 individual answer.md files, each 200-500 words, evidence-based and practical.
+
+REQUIRED TOOLS: Write
+
+MUST DO:
+1. For each question below, write a thorough answer (200-500 words) to the specified file path
+2. Use your general training and fitness knowledge — answer as an informed fitness enthusiast/coach would
+3. Be evidence-based, nuanced, and practical
+4. Include specific numbers, mechanisms, and caveats where appropriate
+5. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT read any skill files, training guides, or reference documents
+- Do NOT use the Read tool to read anything in .opencode/skills/
+- Do NOT give generic/vague answers — be specific
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions about fitness and training. Answer from your general knowledge of exercise science.
+
+QUESTIONS:
+91. Question: "What fitness beliefs are you most against, relative to common wisdom?"
+   Topic: contrarian fitness views
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-91-contrarian-fitness-views/without_skill/outputs/answer.md
+92. Question: "If I train in the morning (often fasted) and perform a bit worse, how much does that matter for non-competitive goals like health or hypertrophy?"
+   Topic: fasted morning training performance
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-92-fasted-morning-training-performance/without_skill/outputs/answer.md
+93. Question: "Why do I sometimes ache more during a deload week than during hard training weeks?"
+   Topic: deload soreness and pain perception
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-93-deload-soreness-and-pain-perception/without_skill/outputs/answer.md
+94. Question: "What do you think about ashwagandha for performance and strength? A meta-analysis says it helps."
+   Topic: ashwagandha ergogenic evidence
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-94-ashwagandha-ergogenic-evidence/without_skill/outputs/answer.md
+95. Question: "How have your lifts changed during your cut, and what helped you maintain strength while losing weight?"
+   Topic: strength changes during weight loss
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-95-strength-changes-during-weight-loss/without_skill/outputs/answer.md
+96. Question: "For body composition, is HIIT better than moderate steady-state cardio? And what interval setups do you recommend?"
+   Topic: HIIT vs steady-state for fat loss
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-96-hiit-vs-steady-state-for-fat-loss/without_skill/outputs/answer.md
+97. Question: "How much benefit do you get from individualized training or coaching versus a general program, and when does personalization matter most?"
+   Topic: individualizing training programs
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-97-individualizing-training-programs/without_skill/outputs/answer.md

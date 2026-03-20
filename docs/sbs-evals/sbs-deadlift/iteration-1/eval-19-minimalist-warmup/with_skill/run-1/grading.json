@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer is conditional: minimalist warm-ups are fine IF they reliably prepare you for the session",
+      "passed": true,
+      "evidence": "'Minimalist warm-ups can absolutely work for deadlifting, especially if you're technically sound and have good movement quality. However...' Clear conditional framing with situations where more is needed."
+    },
+    {
+      "text": "Frames as cost-benefit, especially for time-limited lifters (cutting 30min to 5-10min adds productive training time)",
+      "passed": false,
+      "evidence": "Does not frame as a cost-benefit analysis for time-limited lifters. Does not mention the time savings (30min to 5-10min) or that shorter warm-ups free up productive training time, which was Greg's specific framing."
+    },
+    {
+      "text": "Warns against making minimalism the goal itself — under-warming can reduce readiness or increase risk",
+      "passed": true,
+      "evidence": "'Don't confuse \"minimalist\" with \"thoughtless.\"' Lists scenarios where minimalist warm-ups fall short: learning technique, fatigued/stiff, addressing specific weaknesses."
+    },
+    {
+      "text": "Recommends iterative troubleshooting: remove elements one at a time, keep only what clearly helps session quality",
+      "passed": false,
+      "evidence": "Does not recommend the iterative approach of removing warm-up elements one at a time. Greg's specific method was: remove one element at a time, keep only what clearly helps. The answer takes a different approach (categorize by lifter type)."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

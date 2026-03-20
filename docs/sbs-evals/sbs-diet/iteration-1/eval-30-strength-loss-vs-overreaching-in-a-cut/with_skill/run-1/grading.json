@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer recommends deloading as a diagnostic tool to distinguish overreaching from normal deficit-related loss",
+      "passed": true,
+      "evidence": "Found 'deload' in: ...oads and rep ranges similar; just do fewer sets.\n3. **Add a deload week** \u2014 Take 1 week at 40\u201350% normal volume to allow recov..."
+    },
+    {
+      "text": "Answer states if strength rebounds after deload, fatigue/overreaching was likely a contributor",
+      "passed": true,
+      "evidence": "Found 'rebound' in: ...*Plan a maintenance or surplus phase** \u2014 Strength typically rebounds quickly (within 2\u20134 weeks) when you return to maintenance..."
+    },
+    {
+      "text": "Answer mentions tracking bodyweight pull-up/dip rep maxes as a practical check",
+      "passed": true,
+      "evidence": "Found 'bodyweight' in: ...uring moderate cuts, and up to 20%+ in aggressive cuts (>1% bodyweight/week).\n\n---\n\n## How to Tell If It's Normal Deficit-Related..."
+    },
+    {
+      "text": "Answer recommends using deload response and relative-performance context before assuming the cut is failing",
+      "passed": true,
+      "evidence": "Found 'performance' in: ...** \u2014 Carbohydrate stores are lower, limiting high-intensity performance and power output.\n2. **Lower total energy** \u2014 Fewer calorie..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

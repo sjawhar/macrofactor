@@ -1,0 +1,15 @@
+{
+  "eval_id": 32,
+  "eval_name": "eval-32-nutritionally-complete-very-low-calorie-dieting",
+  "prompt": "If calories are very low (around 1,500), what should a nutritionally complete approach look like besides just eating shredded chicken?",
+  "expected_output": "Eric\u2019s framework was to prioritize lean protein first, but choose sources strategically so they also contribute micronutrients where possible. He emphasized a broad rotation of fibrous vegetables (not just a couple defaults) to improve vitamin/mineral coverage and satiety under tight calorie constraints. He recommended treating a basic multivitamin as insurance, not as a replacement for food quality. He also said that when fats get very low, adding fish oil or another high-quality omega-3 source can help cover essential fatty acid needs. For practical adherence, he highlighted low-effort, high-shelf-life options that are easy to keep available. His concrete example was a simple lentil soup build (lentils, canned tomatoes, vegetable stock, and frozen soup vegetables), which he described as convenient, macro-friendly, and sustainable during hard low-calorie phases.",
+  "topic": "nutritionally complete very-low-calorie dieting",
+  "episode": 39,
+  "assertions": [
+    "Answer prioritizes lean protein first with strategic micronutrient-contributing sources",
+    "Answer recommends broad rotation of fibrous vegetables for satiety and micronutrients",
+    "Answer mentions a basic multivitamin as insurance",
+    "Answer suggests fish oil or omega-3 source when fats are very low",
+    "Answer gives a concrete practical meal example (like lentil soup)"
+  ]
+}

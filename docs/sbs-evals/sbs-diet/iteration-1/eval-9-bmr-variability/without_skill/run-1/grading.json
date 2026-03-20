@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer gives a clear yes: meaningful BMR differences between same-size people are real",
+      "passed": true,
+      "evidence": "Found 'yes' in: ...of the Same Size and Activity Level?\n\n## The Short Answer\n\nYes, metabolic variation between people of similar size and act..."
+    },
+    {
+      "text": "Answer mentions a spread on the order of hundreds of kcal/day between individuals",
+      "passed": true,
+      "evidence": "Found 'calorie' in: ...eople have more metabolically active brown fat, which burns calories for heat\n\n### 2. **Hormonal Differences**\n\n- **Thyroid hor..."
+    },
+    {
+      "text": "Answer cites organ-size variability (liver, kidneys, heart) as a major reason",
+      "passed": false,
+      "evidence": "Missing any of: ['organ', 'liver', 'kidney']"
+    },
+    {
+      "text": "Answer frames fast/slow metabolism as legitimate biological phenomena, not just tracking error",
+      "passed": true,
+      "evidence": "Found 'not' in: ...realistic variation**: 15-25% between similar individuals, not the 2-3x differences people sometimes claim.\n\n## What's Def..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

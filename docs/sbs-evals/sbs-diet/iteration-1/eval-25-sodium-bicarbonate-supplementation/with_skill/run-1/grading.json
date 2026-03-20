@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer describes sodium bicarbonate as one of the better-supported ergogenic supplements for high-intensity work",
+      "passed": true,
+      "evidence": "Found 'evidence' in: ...## Short Answer\n\n**Yes, sodium bicarbonate has legitimate evidence for reducing fatigue in high-intensity interval and lactate..."
+    },
+    {
+      "text": "Answer mentions extracellular buffering mechanism",
+      "passed": true,
+      "evidence": "Found 'buffer' in: ...he Mechanism\n\nSodium bicarbonate (baking soda) works as a **buffer** for lactate and hydrogen ions produced during high-intens..."
+    },
+    {
+      "text": "Answer warns about GI distress as the main downside",
+      "passed": true,
+      "evidence": "Found 'GI' in: ...Workouts\n\n## Short Answer\n\n**Yes, sodium bicarbonate has legitimate evidence for reducing fatigue in high-intensity inter..."
+    },
+    {
+      "text": "Answer mentions a staged-loading protocol to reduce GI issues",
+      "passed": true,
+      "evidence": "Found 'protocol' in: ...t sizes** are small but real, especially in repeated-effort protocols (multiple sets/rounds of HIIT, lactate-threshold intervals..."
+    },
+    {
+      "text": "Answer cautions that chronic use may not improve long-term training adaptations",
+      "passed": true,
+      "evidence": "Found 'chronic' in: ...: Acute use (single dose before a session) is most studied; chronic daily use is less common\n\n**Example**: A 70 kg person would..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

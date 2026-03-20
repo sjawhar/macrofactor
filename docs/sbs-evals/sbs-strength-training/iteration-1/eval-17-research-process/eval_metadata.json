@@ -1,0 +1,14 @@
+{
+  "eval_id": 17,
+  "eval_name": "eval-17-research-process",
+  "prompt": "When researching a topic you don\u2019t know well (for example collagen and skin aging or air pollution and health), what framework do you use to get up to speed?",
+  "expected_output": "Greg said he first scopes how deeply he actually needs to understand the topic and whether that depth is worth the time. For deep understanding, he starts with textbooks (sometimes both undergraduate and graduate-level), then moves to reviews: outcomes first, mechanisms second, so plausible mechanisms don\u2019t bias interpretation of real-world results. He then fills physiology gaps (often with biochemistry references), reads key individual studies in target populations, and finally emails domain experts when unresolved contradictions remain. He estimated this process generally takes around 10-40 hours for solid competence. He also noted that true expertise still takes years; this process can get you to roughly an advanced non-expert level quickly, not instant mastery.",
+  "topic": "research process",
+  "episode": 126,
+  "assertions": [
+    "Answer captures the core SBS position on research process",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

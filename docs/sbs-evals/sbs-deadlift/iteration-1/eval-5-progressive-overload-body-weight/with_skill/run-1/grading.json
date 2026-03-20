@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Clarifies that heavy lifting itself is unlikely to directly prevent fat loss — energy balance is the main driver",
+      "passed": false,
+      "evidence": "The answer argues the opposite direction: 'frequent heavy deadlifting could be defending your body weight' through fatigue, hunger signals, and recovery demands. While it mentions energy intake matters, it doesn't clearly state that heavy lifting is 'unlikely to directly prevent fat loss' as the SBS hosts said."
+    },
+    {
+      "text": "Notes that switching from volume work to frequent 1RM attempts doesn't substantially change calorie expenditure",
+      "passed": false,
+      "evidence": "No discussion of calorie expenditure differences between volume work and 1RM testing. The expected output specifically noted this point from the hosts."
+    },
+    {
+      "text": "Suggests or implies the coaching setup may be suboptimal (years of training with limited progress)",
+      "passed": true,
+      "evidence": "'The Trainer's Role' section states: 'If your trainer has emphasized \"you need to stay heavy to stay strong,\" that's reinforcing the body-weight defense. This is not malicious, but it's potentially harmful.' Implicitly questions the coaching quality."
+    },
+    {
+      "text": "Mentions bodyweight performance targets (push-ups, pull-ups, dips) as a motivational strategy during weight loss",
+      "passed": false,
+      "evidence": "No mention of bodyweight performance targets (push-ups, pull-ups, dips) as motivational tools. The hosts specifically suggested these as targets that improve as body weight drops."
+    },
+    {
+      "text": "Recommends professional clinical support (dietitian or similar) for binge-eating concerns rather than just programming changes",
+      "passed": true,
+      "evidence": "'Talk to a therapist or eating disorder specialist who understands strength athletes. This is not optional if you're binge eating regularly.' Also recommends a 'sports nutritionist.'"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Explains the force-curve matching rationale (increasing load where leverage improves)",
+      "passed": true,
+      "evidence": "Found matching content: ...u're stalling on your squat, the higher-leverage interventions are almost always technic..."
+    },
+    {
+      "text": "Cites or references research/meta-analysis showing little to no clear strength advantage over conventional loading",
+      "passed": true,
+      "evidence": "Found matching content: ...tionale is sound.\n\nOn the evidence: the meta-analytic picture is more modest than the theoret..."
+    },
+    {
+      "text": "States bands/chains are acceptable as variation tools",
+      "passed": true,
+      "evidence": "Found matching content: ...advanced programming contexts - adding variety, training bar speed and intent, or prov..."
+    },
+    {
+      "text": "Concludes they are not a reliably superior method for maximal strength gains",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

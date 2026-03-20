@@ -1,0 +1,14 @@
+{
+  "eval_id": 4,
+  "eval_name": "eval-4-ashwagandha-for-strength-and-hypertrophy",
+  "prompt": "Is ashwagandha actually useful for strength and muscle gain, or is it overhyped?",
+  "expected_output": "Their answer for hypertrophy/strength was mostly nay. They said discussion often hinges on one famous study with very large effects that they found implausible and in need of strong replication before taking at face value. They did not find the mechanistic case for major strength/hypertrophy effects very compelling. However, they noted ashwagandha may still have other potential uses, including mild anxiety support, sleep-related outcomes, and modest testosterone changes in some studies. They emphasized that any testosterone increase from supplements is small in magnitude versus TRT and unlikely to create dramatic muscle or strength changes. So it might be useful in some non-hypertrophy contexts, but not a reliable mass/strength ergogenic.",
+  "topic": "ashwagandha for strength and hypertrophy",
+  "episode": 104,
+  "assertions": [
+    "Answer captures the core SBS position on ashwagandha for strength and hypertrophy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

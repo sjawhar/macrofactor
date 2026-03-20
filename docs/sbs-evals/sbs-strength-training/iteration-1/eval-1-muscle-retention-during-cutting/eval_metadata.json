@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-1-muscle-retention-during-cutting",
+  "prompt": "If I\u2019m just a casual lifter cutting body fat, how hard do I really need to fight to preserve every bit of muscle?",
+  "expected_output": "They framed this as mostly a preference question, not a single objective rule. Eric said muscle retention matters to the extent that maintaining muscularity matters to you at that time. He still recommended doing the basics to avoid unnecessary loss: avoid extreme deficits, keep protein reasonable, and continue resistance training (even with reduced volume/effort). He also noted many lifters overestimate muscle loss during cuts because they underestimate starting fat mass and catastrophize scale changes. In practice, some fat-free mass drops during weight loss are expected, but lifters often interpret normal visual/scale changes as dramatic muscle wasting. So optimize if you care, but don\u2019t panic.",
+  "topic": "muscle retention during cutting",
+  "episode": 104,
+  "assertions": [
+    "Answer captures the core SBS position on muscle retention during cutting",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

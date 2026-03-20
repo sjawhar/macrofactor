@@ -1,0 +1,15 @@
+{
+  "eval_id": 66,
+  "eval_name": "eval-66-trainer-readiness",
+  "prompt": "When are you ready to start taking clients as a personal trainer?",
+  "expected_output": "Both hosts said formal certification alone rarely means full practical readiness. They argued coaching is highly applied, so observation, supervised reps, and mentorship/apprenticeship are ideal for skill development (cueing, troubleshooting, rapport, session adjustments). Greg suggested that if mentorship is possible, even a short period can speed competency. In real-world gyms, many trainers begin before feeling fully ready and improve through deliberate practice. Their practical advice was to seek shadowing/internship opportunities and use low-client-load periods to learn from experienced coaches.",
+  "topic": "trainer readiness",
+  "episode": 46,
+  "assertions": [
+    "Answer captures the core SBS position on trainer readiness",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

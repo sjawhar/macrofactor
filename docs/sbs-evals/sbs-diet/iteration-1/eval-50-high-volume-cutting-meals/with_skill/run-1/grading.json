@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer gives concrete high-volume low-calorie food examples (cauliflower rice, shredded chicken, egg whites, etc.)",
+      "passed": true,
+      "evidence": "Found 'cauliflower' in: ...34              | 2.4g  | Roasted, steamed, raw        |\n| Cauliflower         | 25              | 2.4g  | Roasted, riced, mashed..."
+    },
+    {
+      "text": "Answer recommends maximizing fiber/water volume and protein density",
+      "passed": true,
+      "evidence": "Found 'fiber' in: ...satiety signals more reliably than calorie count alone\n- **Fiber** and **water content** in foods expand stomach volume with..."
+    },
+    {
+      "text": "Answer mentions bulking up ground-beef meals with shredded cabbage (~1:1 ratio)",
+      "passed": false,
+      "evidence": "Missing any of: ['cabbage', 'beef', '1:1']"
+    },
+    {
+      "text": "Answer is practical and meal-prep oriented for deep cutting phases",
+      "passed": true,
+      "evidence": "Found 'practical' in: ...r and fullness signals become more pronounced. Research and practical experience show that:\n\n- **Portion size** and **meal volume..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

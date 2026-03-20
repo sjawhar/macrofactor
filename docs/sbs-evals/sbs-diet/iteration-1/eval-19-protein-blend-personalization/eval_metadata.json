@@ -1,0 +1,14 @@
+{
+  "eval_id": 19,
+  "eval_name": "eval-19-protein-blend-personalization",
+  "prompt": "Do personalized protein blends actually help, or are they mostly a way to charge more?",
+  "expected_output": "They describe most personalization claims as low-impact for typical lifters. For most people, standard whey or a basic blend is already effective, affordable, and practical. Personalized blends may matter more for specific constraints like vegan preferences, lactose intolerance, or digestive issues. The broad recommendation is to avoid overcomplicating protein powder selection.",
+  "topic": "protein blend personalization",
+  "episode": 27,
+  "assertions": [
+    "Answer describes most personalization claims as low-impact for typical lifters",
+    "Answer states standard whey or a basic blend is already effective and practical",
+    "Answer mentions personalized blends may matter for specific constraints (vegan, lactose intolerance)",
+    "Answer recommends against overcomplicating protein powder selection"
+  ]
+}

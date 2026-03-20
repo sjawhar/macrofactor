@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends placing plyometrics early in training sessions while athletes are fresh",
+      "passed": true,
+      "evidence": "Found matching content: ...d block. Instead, break it into phases. Early offseason (first 4-6 weeks) should prio..."
+    },
+    {
+      "text": "Suggests approximately 1-2 focused plyo sessions per week",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Warns against putting hard plyometric sessions on 'off days' or recovery days",
+      "passed": true,
+      "evidence": "Found matching content: ...trength work in the same session, or on separate days entirely. The reason: plyos require a..."
+    },
+    {
+      "text": "Distinguishes quality high-intent plyometrics from high-rep fatigue jumping",
+      "passed": true,
+      "evidence": "Found matching content: ...single-leg work). This keeps plyometric quality high, avoids stacking lower body fatigu..."
+    },
+    {
+      "text": "Recommends keeping plyo volume low-to-moderate with high quality",
+      "passed": true,
+      "evidence": "Found matching content: ...d-offseason shifts toward max strength (lower reps, heavier loads) with plyometric..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

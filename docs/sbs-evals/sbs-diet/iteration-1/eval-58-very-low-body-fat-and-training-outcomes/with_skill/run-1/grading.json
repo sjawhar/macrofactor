@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states very low body fat makes performance and hypertrophy progress much harder",
+      "passed": true,
+      "evidence": "Found 'harder' in: ...e aggressively than predicted by body mass alone, making it harder to maintain a true surplus for gains.\n3. **Impaired recover..."
+    },
+    {
+      "text": "Answer mentions practical signs: worse training quality, slower recovery, higher hunger, system slowdown",
+      "passed": true,
+      "evidence": "Found 'training quality' in: ...recomp** \u2014 Eat at maintenance (15 kcal/lb/day) and focus on training quality and protein sufficiency. You may lose a small amount of fat..."
+    },
+    {
+      "text": "Answer notes lean-mass gains are uncommon below roughly 8% body fat in men",
+      "passed": true,
+      "evidence": "Found '8%' in: ...Matters\n\nWhen body fat drops below ~8-10% for men (or ~15-18% for women), several physiological shifts occur:\n\n1. **Reduc..."
+    },
+    {
+      "text": "Answer recommends symptom-based and performance-based monitoring over chasing exact body-fat numbers",
+      "passed": true,
+      "evidence": "Found 'performance' in: ...fragile.\n4. **Reduced training capacity** \u2014 High-intensity performance drops; volume tolerance decreases; perceived exertion rises..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

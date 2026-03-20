@@ -1,0 +1,15 @@
+{
+  "eval_id": 80,
+  "eval_name": "eval-80-muscle-specific-hypertrophy-skepticism",
+  "prompt": "Are some muscles resistant to hypertrophy? Could you actually build a bigger tongue with enough loading, and are calves somehow different?",
+  "expected_output": "Greg\u2019s answer was that tongues are normal skeletal muscle and likely not uniquely resistant to growth. He discussed sleep-apnea literature showing tongue size varies and can increase with fat deposition, which supports that tongues are modifiable tissue rather than fixed-size structures. He speculated that if a muscle responds to anabolic stimuli (including steroid exposure), it is plausible it would also respond to mechanical loading, though he noted direct progressive-overload tongue studies are lacking. He repeatedly framed parts of this as informed speculation, not clinical advice. His practical conclusion was that calves are not made of some fundamentally different non-growable tissue. In short: no strong evidence for a special hypertrophy-resistant class here, just a weird example with limited direct training data.",
+  "topic": "muscle-specific hypertrophy skepticism",
+  "episode": 57,
+  "assertions": [
+    "Answer captures the core SBS position on muscle-specific hypertrophy skepticism",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

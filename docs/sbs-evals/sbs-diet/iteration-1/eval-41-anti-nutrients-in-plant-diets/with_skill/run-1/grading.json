@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms anti-nutrients are real (phytates, tannins, lectins, oxalates)",
+      "passed": true,
+      "evidence": "Found 'real' in: ...some contexts. But the evidence shows:\n\n1. **The effect is real but modest** \u2014 not a dealbreaker for nutrient status\n2. **F..."
+    },
+    {
+      "text": "Answer states the risk is often overstated",
+      "passed": false,
+      "evidence": "Missing any of: ['overstated']"
+    },
+    {
+      "text": "Answer mentions cooking/processing methods reduce many anti-nutrient effects",
+      "passed": true,
+      "evidence": "Found 'cooking' in: ...variety and preparation mitigate most concerns** \u2014 soaking, cooking, sprouting, and fermenting reduce anti-nutrient content\n3...."
+    },
+    {
+      "text": "Answer advises against avoiding plant foods wholesale",
+      "passed": true,
+      "evidence": "Found 'not' in: ...er\n\n**Yes, anti-nutrients exist in plant foods. No, this is not a reason to avoid plant-based diets.**\n\nPlant foods contain..."
+    },
+    {
+      "text": "Answer recommends eating a varied diet with diverse food sources and preparation methods",
+      "passed": true,
+      "evidence": "Found 'diet' in: ...# Anti-Nutrients in Plant-Based Diets: What the Evidence Actually Shows\n\n## The Short Answer\n\n**..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer mentions Greg's interest in a definitive human hyperplasia study",
+      "passed": false,
+      "evidence": "Missing any of: ['hyperplasia', 'muscle fiber']"
+    },
+    {
+      "text": "Answer discusses a massive responder-variability project with rich omics data",
+      "passed": false,
+      "evidence": "Missing any of: ['responder', 'variability', 'omics']"
+    },
+    {
+      "text": "Answer mentions Eric wanting a creatine-caffeine interaction trial and nitrate/citrulline hypertrophy studies",
+      "passed": false,
+      "evidence": "Missing any of: ['creatine', 'caffeine', 'nitrate', 'citrulline']"
+    },
+    {
+      "text": "Answer identifies training during caloric deficits (maintain volume vs intensity) as a major gap",
+      "passed": true,
+      "evidence": "Found 'deficit' in: ...et skill establishes clear protein targets:\n\n- **Lifters in deficit: 1.6\u20132.2 g/kg/day** (or 2.0\u20132.75 g/kg FFM for very lean ind..."
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 3,
+    "total": 4,
+    "pass_rate": 0.25
+  }
+}

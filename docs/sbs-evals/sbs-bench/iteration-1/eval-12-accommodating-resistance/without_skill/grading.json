@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Explains the rationale for accommodating resistance (matching the force/strength curve)",
+      "passed": true,
+      "evidence": "Explains: 'resistance increases as you move into your stronger range.'"
+    },
+    {
+      "text": "Provides a concrete example (lighter at bottom, heavier near lockout)",
+      "passed": true,
+      "evidence": "Example: '250 lbs of bar weight plus 50 lbs of band tension at the top.'"
+    },
+    {
+      "text": "Cites research or meta-analytic evidence showing little to no clear advantage",
+      "passed": true,
+      "evidence": "States: 'no significant difference in strength development when total training volume is equated.'"
+    },
+    {
+      "text": "Concludes bands/chains are fine as variation tools but not reliably superior",
+      "passed": true,
+      "evidence": "States: 'roughly equivalent to straight weight for building absolute strength when volume is controlled.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

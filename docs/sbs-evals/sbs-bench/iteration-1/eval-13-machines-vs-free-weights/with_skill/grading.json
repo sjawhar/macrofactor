@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States neither modality is universally superior for hypertrophy",
+      "passed": false,
+      "evidence": "Actually claims 'Free weights are superior for hypertrophy in most contexts.' This contradicts the expected answer that neither is universally superior."
+    },
+    {
+      "text": "Notes machines are useful for variation, reducing technical constraints, and targeting volume",
+      "passed": true,
+      "evidence": "Section on 'When Machines Are Useful' covers accessory work, joint management, beginners, and deload phases."
+    },
+    {
+      "text": "Recommends keeping a base of compound free-weight work",
+      "passed": true,
+      "evidence": "States: 'Anchor with free weights. Make barbell bench your primary pressing movement.'"
+    },
+    {
+      "text": "Practical takeaway: use both, pick the tool that best fits the muscle/movement/fatigue profile",
+      "passed": true,
+      "evidence": "Recommends using machines as accessories after free-weight anchors. Lists specific use cases for each."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

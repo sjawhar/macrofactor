@@ -1,0 +1,14 @@
+{
+  "eval_id": 6,
+  "eval_name": "eval-6-vegan-transition-and-supplementation",
+  "prompt": "A listener asked whether Eric\u2019s switch to a fully vegan diet changed his training, performance, recovery, or supplementation approach.",
+  "expected_output": "Eric said he noticed no meaningful performance or recovery change after going vegan. Training remained broadly the same, with recent increases in training effort due to feeling good overall. His main nutrition adjustment was paying more attention to protein-source diversity (pea, rice, and soy) to improve amino acid coverage. He continued algae oil (EPA/DHA source) and a multivitamin, with B12 coverage noted as important. Greg added that iron deficiency is generally less common in men, while still acknowledging context can matter (e.g., high running volume).",
+  "topic": "vegan transition and supplementation",
+  "episode": 106,
+  "assertions": [
+    "Answer states Eric noticed no meaningful performance or recovery change after going vegan",
+    "Answer mentions protein-source diversity (pea, rice, soy) for amino acid coverage",
+    "Answer includes algae oil for EPA/DHA and B12 as important supplements",
+    "Answer does NOT claim vegan diet is superior or inferior for performance"
+  ]
+}

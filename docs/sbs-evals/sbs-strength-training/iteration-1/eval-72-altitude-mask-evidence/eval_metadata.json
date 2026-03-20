@@ -1,0 +1,14 @@
+{
+  "eval_id": 72,
+  "eval_name": "eval-72-altitude-mask-evidence",
+  "prompt": "Do gym altitude masks actually work, and do any gains fade if you're not living at altitude?",
+  "expected_output": "Eric explained true altitude adaptation is driven by lower oxygen partial pressure over long exposures, often best approached as live high, train low in endurance contexts. He said marketed altitude masks do not replicate altitude physiology because they do not change oxygen partial pressure; they mainly make breathing feel harder. He summarized that controlled studies generally do not show meaningful improvements in VO2max, peak power, or broad aerobic/anaerobic performance outcomes from those masks. A recurring effect is higher perceived exertion/discomfort at the same workload. He noted a narrow possible use case for respiratory muscle training (for specific contexts like high-altitude mountaineering), but that's different from claiming generalized performance benefits. For most lifters and general trainees, these masks are unnecessary.",
+  "topic": "altitude mask evidence",
+  "episode": 50,
+  "assertions": [
+    "Answer captures the core SBS position on altitude mask evidence",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

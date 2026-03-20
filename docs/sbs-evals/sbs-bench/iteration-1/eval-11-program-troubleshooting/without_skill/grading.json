@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Advises not to change things while progress is still happening",
+      "passed": true,
+      "evidence": "States: 'a program that works is better than a perfect program you haven't tested yet.'"
+    },
+    {
+      "text": "At plateau: first determine whether more stress or less stress is needed",
+      "passed": true,
+      "evidence": "Hierarchy of changes starts with adherence/consistency audit before program changes."
+    },
+    {
+      "text": "Recommends small, targeted changes (volume, intensity, frequency, or exercise selection)",
+      "passed": true,
+      "evidence": "Lists: adherence, intensity, exercise selection, volume, frequency as ordered changes."
+    },
+    {
+      "text": "Evaluate each change for a few weeks before making another",
+      "passed": true,
+      "evidence": "States: 'Give it 3-4 weeks minimum' and 'change one variable at a time.'"
+    },
+    {
+      "text": "If serial tweaks fail, then moving to a new program is reasonable",
+      "passed": true,
+      "evidence": "Lists red flags warranting a switch: 12+ weeks no progress, structural conflicts, persistent pain."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

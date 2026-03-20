@@ -1,0 +1,105 @@
+[
+  {
+    "id": "7ed42f50-bb84-4262-b2d3-9cc415cb3e6d",
+    "exerciseGroup": [],
+    "emphasizedAgonist": [],
+    "archived": false,
+    "primaryJointAction": [],
+    "movementPattern": [],
+    "exerciseClassificationStrength": null,
+    "name": "Cable Leg Extension ",
+    "bodyweight": 0,
+    "regionTrained": "2095c6f170d8807c86e8d22127eaa410",
+    "alternativeName": [],
+    "exerciseType": "2095c6f170d880798c80daebcf85afd5",
+    "supportEquipmentGroups": [],
+    "primaryMuscle": [],
+    "alternativeNames": [],
+    "recommendationLevelStrength": null,
+    "preconditions": [],
+    "stability": null,
+    "secondaryMuscle": [],
+    "exerciseMetrics": [
+      "2555c6f170d8805cafa6d16d3fdddbaa",
+      "2555c6f170d88072bbf6d9ad3f16ea86"
+    ],
+    "exerciseClassificationHypertrophy": null,
+    "resistanceEquipmentGroups": [
+      {
+        "equipmentIds": [
+          "19e5c6f170d880d28b46e9ccddcfba1a"
+        ]
+      }
+    ],
+    "laterality": [
+      "1a45c6f170d8808e8340d9a8d0f06f9d"
+    ],
+    "recommendationLevelHypertrophy": null,
+    "rom": null,
+    "secondaryJointAction": [],
+    "deemphasizedAgonist": [],
+    "primaryFeatureMuscle": [
+      "2545c6f170d88084b35affb3c3375aa6"
+    ],
+    "secondaryFeatureMuscle": [],
+    "exclusionGroupings": [],
+    "description": ""
+  },
+  {
+    "id": "d8995fb6-1c96-4b24-a69b-ae2ecd8b7297",
+    "secondaryMuscle": [],
+    "stability": "2095c6f170d88094bf1ac2c1a63e6ce7",
+    "preconditions": [],
+    "primaryFeatureMuscle": [
+      "2545c6f170d880bbb34fc724d677176f"
+    ],
+    "secondaryFeatureMuscle": [],
+    "exclusionGroupings": [],
+    "description": "",
+    "deemphasizedAgonist": [],
+    "recommendationLevelHypertrophy": null,
+    "rom": "2095c6f170d880bc88ebfd11e773a10f",
+    "secondaryJointAction": [],
+    "exerciseMetrics": [
+      "2555c6f170d88072bbf6d9ad3f16ea86",
+      "2555c6f170d8805cafa6d16d3fdddbaa"
+    ],
+    "laterality": [
+      "1a45c6f170d8808e8340d9a8d0f06f9d"
+    ],
+    "resistanceEquipmentGroups": [
+      {
+        "equipmentIds": [
+          "19e5c6f170d8801cac93cf6853bd86b8",
+          "25a5c6f170d880c1a55ac08cf52671ab"
+        ]
+      }
+    ],
+    "exerciseClassificationHypertrophy": null,
+    "name": "Seated Barbell Calf Raise",
+    "bodyweight": 0,
+    "exerciseClassificationStrength": null,
+    "movementPattern": [],
+    "name_jp": null,
+    "primaryJointAction": [],
+    "archived": false,
+    "exerciseGroup": [],
+    "emphasizedAgonist": [],
+    "recommendationLevelStrength": null,
+    "alternativeNames": [],
+    "primaryMuscle": [],
+    "supportEquipmentGroups": [
+      {
+        "equipmentIds": [
+          "1a05c6f170d880d8a7efe4721e964f2d",
+          "19e5c6f170d8802b9d8ed6e425798f6b",
+          "1a05c6f170d880f3888bf7d48719321f",
+          "25d5c6f170d880b9a6faec1e7e4b9f5e"
+        ]
+      }
+    ],
+    "regionTrained": "2095c6f170d8807c86e8d22127eaa410",
+    "exerciseType": "2095c6f170d880798c80daebcf85afd5",
+    "alternativeName": []
+  }
+]

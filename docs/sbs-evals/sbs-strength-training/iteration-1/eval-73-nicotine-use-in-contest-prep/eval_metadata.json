@@ -1,0 +1,15 @@
+{
+  "eval_id": 73,
+  "eval_name": "eval-73-nicotine-use-in-contest-prep",
+  "prompt": "Bodybuilders use nicotine gum in prep for appetite and energy. What are the benefits and risks?",
+  "expected_output": "Greg confirmed nicotine can suppress appetite, but warned this effect habituates, so it is better viewed as a short-term tool rather than a months-long fix. He discussed that evidence in nicotine-naive performance studies does not show robust ergogenic effects, especially compared with caffeine, which does reliably improve strength/power outcomes. He suggested caffeine is usually the better pre-workout stimulant when performance is the goal. On safety, he said data are much stronger for harms of tobacco products than isolated nicotine gum/patch use, though nicotine still behaves as a stimulant and can worsen concerns like hypertension in susceptible people. He also mentioned nicotine's shorter half-life versus caffeine, which can matter for late-day focus with less sleep disruption in some users. Practical framing: non-essential stimulant use carries dependence tradeoffs, and nicotine is not a magic contest-prep performance enhancer.",
+  "topic": "nicotine use in contest prep",
+  "episode": 50,
+  "assertions": [
+    "Answer captures the core SBS position on nicotine use in contest prep",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

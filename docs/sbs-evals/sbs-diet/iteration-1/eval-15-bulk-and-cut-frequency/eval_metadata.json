@@ -1,0 +1,15 @@
+{
+  "eval_id": 15,
+  "eval_name": "eval-15-bulk-and-cut-frequency",
+  "prompt": "How often should someone bulk and cut in practice? Is there a point where bulking stops helping strength or muscle and becomes harmful?",
+  "expected_output": "Eric said not to treat bulking as a simple on/off category and not to schedule it by calendar alone. Instead, set a specific endpoint: how much lean mass you want, how much fat gain you accept, and by what date. Larger surpluses should be shorter and used less often; smaller surpluses can run longer. He gave a practical minimum of about one month for a bulk, noting that two-week bulks are usually not productive for real tissue gain. If you are in surplus but not gaining muscle or strength, the bulk may no longer be effective and training structure should be reassessed. He also noted there can be health downsides if surplus continues without productive outcomes.",
+  "topic": "bulk and cut frequency",
+  "episode": 25,
+  "assertions": [
+    "Answer advises not treating bulking as a simple on/off category or scheduling by calendar",
+    "Answer recommends setting specific endpoints (lean mass goal, fat gain limit, timeline)",
+    "Answer states larger surpluses should be shorter and used less often",
+    "Answer gives a practical minimum bulk duration of about one month",
+    "Answer notes that if surplus isn't producing muscle/strength gains, the bulk may no longer be effective"
+  ]
+}

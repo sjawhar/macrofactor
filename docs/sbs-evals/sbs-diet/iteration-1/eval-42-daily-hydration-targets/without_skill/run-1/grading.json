@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer cites DRI targets of about 3.7 L/day for men and 2.7 L/day for women",
+      "passed": true,
+      "evidence": "Found 'DRI' in: ...ver, vomiting, or diarrhea increase losses\n\n## Signs You're Drinking Enough\n\n- **Urine color**: Pale yellow indicates adequ..."
+    },
+    {
+      "text": "Answer notes these totals include water from food (~20%)",
+      "passed": false,
+      "evidence": "Missing any of: ['food', '20%']"
+    },
+    {
+      "text": "Answer mentions hyponatremia as a risk of extreme water-chugging",
+      "passed": false,
+      "evidence": "Missing any of: ['hyponatremia']"
+    },
+    {
+      "text": "Answer recommends hydrating across the day rather than backloading",
+      "passed": false,
+      "evidence": "Missing any of: ['across the day', 'throughout', 'spread']"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 3,
+    "total": 4,
+    "pass_rate": 0.25
+  }
+}

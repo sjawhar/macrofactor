@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer draws a three-part distinction: normal fluctuations, severe chronic stress, and true endocrine pathology",
+      "passed": false,
+      "evidence": "Missing any of: ['normal', 'severe', 'pathology', 'three']"
+    },
+    {
+      "text": "Answer states intervention target for persistent high stress is stress management, not cortisol supplements",
+      "passed": true,
+      "evidence": "Found 'not' in: ...ent Practical Takeaway\n\n## The Core Position\n\n**Cortisol is not a primary driver of fat gain in people who think they're \"h..."
+    },
+    {
+      "text": "Answer notes cortisol follows diurnal rhythms so single snapshots can be misleading",
+      "passed": false,
+      "evidence": "Missing any of: ['diurnal', 'rhythm', 'snapshot']"
+    },
+    {
+      "text": "Answer provides a practical decision tree: don't panic about ordinary fluctuations, address persistent symptoms",
+      "passed": true,
+      "evidence": "Found 'practical' in: ...# Cortisol and Fat Gain: Current Practical Takeaway\n\n## The Core Position\n\n**Cortisol is not a primary..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says calorie reduction needed may be smaller than expected due to constrained energy expenditure",
+      "passed": true,
+      "evidence": "Found 'not' in: ...rgy Balance Considerations\n\n## The Short Answer\n\nNo, you cannot keep calories the same without affecting your energy balanc..."
+    },
+    {
+      "text": "Answer mentions appetite tends to downshift alongside activity reduction",
+      "passed": true,
+      "evidence": "Found 'decrease' in: ...le reducing steps:\n\n1. **Reduce calories proportionally** \u2014 decrease intake by roughly the calories you're no longer burning (50..."
+    },
+    {
+      "text": "Answer recommends gradual step reduction with monitoring rather than one huge calorie cut",
+      "passed": true,
+      "evidence": "Found 'gradual' in: ...matched your new TDEE; if it's rising, reduce further\n3. **Gradual transition** \u2014 if tapering steps over weeks, adjust calorie..."
+    },
+    {
+      "text": "Answer warns that dropping to fully sedentary can create worse appetite-expenditure mismatch",
+      "passed": false,
+      "evidence": "Missing any of: ['sedentary', 'mismatch']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

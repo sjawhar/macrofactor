@@ -1,0 +1,14 @@
+{
+  "eval_id": 34,
+  "eval_name": "eval-34-hypothalamic-amenorrhea",
+  "prompt": "How does hypothalamic amenorrhea affect hypertrophy and performance, especially if someone is eating at maintenance or surplus?",
+  "expected_output": "Eric emphasized that the \"hypothalamic\" piece matters because low energy availability can disrupt multiple hormones (e.g., estrogen, testosterone, thyroid, IGF-1 signaling environment). In that state, hypertrophy and performance are likely impaired. He also stressed recovery is not all-or-none: improvements in energy availability and training load can restore parts of performance/hypertrophy before full cycle normalization returns. Full menstrual restoration can be highly variable even in intensive interventions, so progress may occur on different timelines. Practical recommendation: address energy availability and training stress first, then expect gradual restoration of training response.",
+  "topic": "hypothalamic amenorrhea",
+  "episode": 46,
+  "assertions": [
+    "Answer explains low energy availability disrupts multiple hormones (estrogen, testosterone, thyroid, IGF-1)",
+    "Answer states hypertrophy and performance are likely impaired in that state",
+    "Answer notes recovery is not all-or-none and can improve before full cycle restoration",
+    "Answer recommends addressing energy availability and training stress first"
+  ]
+}

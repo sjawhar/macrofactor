@@ -1,0 +1,14 @@
+{
+  "eval_id": 50,
+  "eval_name": "eval-50-high-volume-cutting-meals",
+  "prompt": "What are some practical high-volume, low-calorie meals or food combinations to stay full while cutting and trying to get very lean?",
+  "expected_output": "They gave a long list of concrete options centered on lean protein plus very high-volume vegetables. Examples included burrito bowls built on cauliflower rice, shredded chicken with yogurt-based sauces, egg-white omelets with vegetables, lean beef and broccoli, and Greek-yogurt desserts with low-calorie flavor add-ins. They also recommended bulking up ground-beef meals with shredded cabbage, including roughly a 1:1 beef-to-cabbage ratio to substantially increase food volume. Another tip was low-calorie slaw variants using yogurt, mustard, and non-caloric sweetener to keep calories down while improving satiety. The overall strategy was to maximize fiber/water volume and protein density, not just rely on tiny portions of calorie-dense foods. The guidance was very meal-prep oriented and meant to improve adherence in deeper cuts.",
+  "topic": "High-volume cutting meals",
+  "episode": 54,
+  "assertions": [
+    "Answer gives concrete high-volume low-calorie food examples (cauliflower rice, shredded chicken, egg whites, etc.)",
+    "Answer recommends maximizing fiber/water volume and protein density",
+    "Answer mentions bulking up ground-beef meals with shredded cabbage (~1:1 ratio)",
+    "Answer is practical and meal-prep oriented for deep cutting phases"
+  ]
+}

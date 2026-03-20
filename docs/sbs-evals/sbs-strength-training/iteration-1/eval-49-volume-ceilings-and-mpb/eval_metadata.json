@@ -1,0 +1,15 @@
+{
+  "eval_id": 49,
+  "eval_name": "eval-49-volume-ceilings-and-mpb",
+  "prompt": "Could the diminishing returns from very high session volume be partly explained by increased muscle protein breakdown from accumulating damage?",
+  "expected_output": "Eric said yes, muscle protein breakdown can contribute, but likely does not fully explain the whole diminishing-returns story except at very high, often unrealistic, volumes. He described the issue as multi-factorial, with systemic stress signals also becoming important as volume climbs. They mentioned broader overreaching/overtraining markers (e.g., inflammatory and hormonal shifts) as additional plausible mechanisms reducing net adaptation. So MPB is part of the picture, but not the only bottleneck. Practical implication: more volume is not always better once recovery costs start outpacing adaptive benefit.",
+  "topic": "volume ceilings and MPB",
+  "episode": 29,
+  "assertions": [
+    "Answer captures the core SBS position on volume ceilings and MPB",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

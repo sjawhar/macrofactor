@@ -1,0 +1,12 @@
+{
+  "eval_id": 14,
+  "eval_name": "machines-vs-free-weights",
+  "prompt": "For hypertrophy, are machines better than free weights, and which one lets you do more useful volume and make better gains?",
+  "assertions": [
+    "States neither modality is universally superior for hypertrophy",
+    "Acknowledges machines are useful for adding variation and reducing technical constraints",
+    "Favors keeping a base of compound free-weight work",
+    "Recommends using both modalities (mixed approach)",
+    "Notes specificity principle: if performance in a specific lift matters, include that lift"
+  ]
+}

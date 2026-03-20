@@ -1,0 +1,12 @@
+{
+  "eval_id": 16,
+  "eval_name": "squat-frequency-reduction",
+  "prompt": "If I've been squatting 2-3 times per week, can I still progress on just 1 squat day per week, and how should I set it up?",
+  "assertions": [
+    "Confirms progression on once-weekly squatting is absolutely possible",
+    "Notes the main tradeoff is usually slower rate of progress, not zero progress",
+    "Warns against collapsing all prior weekly volume into one massive session",
+    "Suggests avoiding a drop of more than about 50% in total weekly squat volume",
+    "Provides a practical starting heuristic (previous per-session dose plus ~1-2 sets, then adjust)"
+  ]
+}

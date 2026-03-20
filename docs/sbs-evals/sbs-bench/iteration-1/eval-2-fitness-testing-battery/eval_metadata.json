@@ -1,0 +1,14 @@
+{
+  "eval_id": 2,
+  "eval_name": "fitness-testing-battery",
+  "prompt": "The same listener asked for a hypothetical 'SBS combine': what tests should a generally strong/fit/athletic person repeat every ~12 weeks to track progress?",
+  "assertions": [
+    "Proposes covering multiple fitness capacities, not just barbell strength",
+    "Includes an aerobic capacity test (e.g., 2-mile run, 5K, or similar distance event)",
+    "Includes an anaerobic/short running test (e.g., 400m, 800m, or sprint)",
+    "Includes an explosive power test (e.g., vertical jump, broad jump, or medicine ball throw)",
+    "Includes a barbell strength test (e.g., squat/bench/deadlift RM test)",
+    "Mentions flexibility or mobility screening",
+    "Suggests this full battery may be better as a less frequent check (e.g., annual) rather than every 12 weeks"
+  ]
+}

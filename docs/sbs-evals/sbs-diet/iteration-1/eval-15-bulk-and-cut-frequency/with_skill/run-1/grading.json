@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer advises not treating bulking as a simple on/off category or scheduling by calendar",
+      "passed": true,
+      "evidence": "Found 'not' in: ...his threshold convert primarily to fat.\n- **Evidence:** SBS notes that aggressive gains (>0.25%/week) increase fat gain sub..."
+    },
+    {
+      "text": "Answer recommends setting specific endpoints (lean mass goal, fat gain limit, timeline)",
+      "passed": true,
+      "evidence": "Found 'goal' in: ...rs. The answer depends on training status, body composition goals, timeline, and individual tolerance. However, SBS provides..."
+    },
+    {
+      "text": "Answer states larger surpluses should be shorter and used less often",
+      "passed": true,
+      "evidence": "Found 'surplus' in: .... **Metabolic adaptation takes time.** In both deficits and surpluses, energy expenditure shifts over weeks. Static calorie tar..."
+    },
+    {
+      "text": "Answer gives a practical minimum bulk duration of about one month",
+      "passed": false,
+      "evidence": "Missing any of: ['one month', 'minimum', 'two-week']"
+    },
+    {
+      "text": "Answer notes that if surplus isn't producing muscle/strength gains, the bulk may no longer be effective",
+      "passed": true,
+      "evidence": "Found 'not' in: ...his threshold convert primarily to fat.\n- **Evidence:** SBS notes that aggressive gains (>0.25%/week) increase fat gain sub..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

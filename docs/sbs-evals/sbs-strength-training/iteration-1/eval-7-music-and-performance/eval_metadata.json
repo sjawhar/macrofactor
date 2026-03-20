@@ -1,0 +1,15 @@
+{
+  "eval_id": 7,
+  "eval_name": "eval-7-music-and-performance",
+  "prompt": "Does listening to music actually improve training performance, and what kind of music works best?",
+  "expected_output": "Their answer was yes, music can improve performance. Preferred music and appropriate tempo can increase arousal, motivation, and effort tolerance, partly by shifting attention away from fatigue sensations. They also highlighted an inverted-U idea: too little arousal may underperform, but too much can hurt technical execution. That means the best playlist depends on the task and your own response profile. The practical advice was to use music you personally like and tune intensity to the lift or workout demands.",
+  "topic": "music and performance",
+  "episode": 105,
+  "assertions": [
+    "Answer captures the core SBS position on music and performance",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

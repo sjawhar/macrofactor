@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer recommends controlling food environment when sleep deprived due to appetite effects",
+      "passed": false,
+      "evidence": "Missing any of: ['food environment', 'appetite']"
+    },
+    {
+      "text": "Answer suggests biasing toward safer training options (machines, controlled movements) when fatigued",
+      "passed": true,
+      "evidence": "Found 'safer' in: ...sleep-deprived\n- **Familiar, well-practiced movements** are safer than learning new techniques\n- **Lower volume sessions** (f..."
+    },
+    {
+      "text": "Answer mentions short naps of 20-30 minutes as useful",
+      "passed": true,
+      "evidence": "Found 'nap' in: ...y**\u2014if strength drops >5-10%, reduce volume further\n\n## Are Naps Useful?\n\n**Yes, but with caveats:**\n\n- **20-30 minute naps..."
+    },
+    {
+      "text": "Answer advises keeping resistance training in place but with safety adjustments",
+      "passed": true,
+      "evidence": "Found 'training' in: ...# Training and Body Composition with Sporadic Sleep\n\n## Sleep's Role i..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

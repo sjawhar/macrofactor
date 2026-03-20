@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer recommends adjusting meal planning upstream if calorie/protein conflicts are frequent",
+      "passed": true,
+      "evidence": "Found 'adjust' in: ...em with your calorie or protein targets\u2014not your adherence. Adjust your targets instead of repeatedly choosing between them...."
+    },
+    {
+      "text": "Answer gives a baseline of about 1.6 g/kg/day protein as a practical middle target",
+      "passed": true,
+      "evidence": "Found '1.6' in: ...**Solution**:\n\n- Lower your protein target slightly (e.g., 1.6 g/kg instead of 1.8 g/kg), OR\n- Raise your calorie target,..."
+    },
+    {
+      "text": "Answer leans toward prioritizing protein in deficits and accepting small calorie overshoot if rare",
+      "passed": true,
+      "evidence": "Found 'protein' in: ...# Calorie vs. Protein Priority: When to Go Over Calories for Protein\n\n## Short An..."
+    },
+    {
+      "text": "Answer suggests splitting the difference in recomp/lean-bulk contexts",
+      "passed": true,
+      "evidence": "Found 'lean' in: ...l body composition change)\n2. **Protein** (preserves/builds lean mass, supports recovery, improves satiety)\n3. **Fat** (with..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

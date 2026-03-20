@@ -1,0 +1,89 @@
+{
+  "episode": 46,
+  "pairs": [
+    {
+      "question": "I eat a lot of canned tuna because it’s cheap and convenient. How much tuna is safe to eat weekly given mercury concerns?",
+      "answer_summary": "Eric leaned on FDA fish guidance rather than trying to improvise toxicity advice. He noted the FDA uses serving-based categories (4 oz per serving for adults): \"best choices\" at 2-3 servings/week, \"good choices\" at ~1 serving/week, and \"choices to avoid\" for highest-mercury fish. In their examples, canned light tuna was framed as a lower-mercury option, while albacore/white and yellowfin were more limited, and bigeye was in the avoid tier. The practical SBS takeaway was that many lifters likely overdo tuna by a wide margin, and a few servings per week is a much safer target than multiple cans per day.",
+      "skills": ["sbs-diet"],
+      "topic": "tuna mercury limits"
+    },
+    {
+      "question": "Can I split my workout across the day (like a set every 30 minutes) instead of doing one continuous session?",
+      "answer_summary": "Greg said splitting sessions is generally fine and likely neutral-to-positive for outcomes. He referenced older and newer literature suggesting similar or slightly better results when volume is matched across one vs multiple sessions. The key caveat was recovery management: don’t use split sessions as an excuse to massively increase total volume. If workload is controlled, he didn’t expect negative effects and said performance or hypertrophy may be similar or modestly better in some cases.",
+      "skills": ["sbs-strength-training"],
+      "topic": "split sessions"
+    },
+    {
+      "question": "How does hypothalamic amenorrhea affect hypertrophy and performance, especially if someone is eating at maintenance or surplus?",
+      "answer_summary": "Eric emphasized that the \"hypothalamic\" piece matters because low energy availability can disrupt multiple hormones (e.g., estrogen, testosterone, thyroid, IGF-1 signaling environment). In that state, hypertrophy and performance are likely impaired. He also stressed recovery is not all-or-none: improvements in energy availability and training load can restore parts of performance/hypertrophy before full cycle normalization returns. Full menstrual restoration can be highly variable even in intensive interventions, so progress may occur on different timelines. Practical recommendation: address energy availability and training stress first, then expect gradual restoration of training response.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "hypothalamic amenorrhea"
+    },
+    {
+      "question": "How should kids and adolescents train with weights? Is there a growth-plate risk, and should heavy singles be avoided?",
+      "answer_summary": "Greg’s take was that current evidence does not show lifting stunts growth, but truly definitive long-term trials are scarce. Mechanistically, he viewed typical resistance-training loads as less concerning for growth plates than everyday running/jumping exposures in kids. He recommended close supervision, strict technique emphasis, and minimizing preventable gym-floor injuries from inattention. Before/during early puberty, priority should be movement skill development rather than chasing failure or maximal loads. As puberty progresses, training stress can be scaled up because strength and hypertrophy responsiveness generally improves.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "youth resistance training"
+    },
+    {
+      "question": "Can nitrate-rich foods (like beets and leafy greens) work as well as nitrate supplements for performance?",
+      "answer_summary": "Eric said yes, food-based nitrate intake can absolutely produce ergogenic benefits and may be preferable in some cases. He mentioned quality-control variability in some commercial beet supplements and argued whole-food/juice strategies can reliably raise intake. He also referenced studies where beetroot preparations performed at least as well as nitrate-matched sodium nitrate, suggesting possible synergy from other compounds in the food matrix. Practical recommendation was to keep nitrate-rich produce in the diet rather than relying solely on pills/powders.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "dietary nitrate"
+    },
+    {
+      "question": "Should I take L-citrulline, how much should I use, and when should I take it?",
+      "answer_summary": "Eric’s dosing guidance was roughly 3-6 g/day for pure L-citrulline, with 6 g as a practical target. For citrulline malate, he suggested 6-8 g total (often labeled around 2:1 citrulline:malate, though label accuracy can vary). Timing recommendation was a single pre-workout dose, generally about 1 hour before training (with 1-2 hours viewed as reasonable). He did not recommend splitting it throughout the day for performance purposes. He also cautioned expectations should stay modest because observed effects are typically small, not transformative.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "citrulline dosing"
+    },
+    {
+      "question": "For a protein shake, does drinking speed matter (chugging vs sipping)?",
+      "answer_summary": "SBS said speed of shake consumption is not a key lever in real-world mixed-meal contexts. Fiber, fat, meal composition, and GI transit all affect amino-acid appearance more than sip speed precision. The practical target remained daily distribution: roughly 3-5 protein feedings/boluses across the day. So lifters should focus on total intake and broad meal spacing, not micromanaging shake-drinking pace.",
+      "skills": ["sbs-diet"],
+      "topic": "protein bolus timing"
+    },
+    {
+      "question": "Do high-protein diets increase kidney stone risk?",
+      "answer_summary": "Eric distinguished healthy people from those with pre-existing kidney disease or stone predisposition. For healthy kidneys, he said current evidence does not strongly support the idea that high-protein diets cause kidney disease or clearly elevate stones by themselves. He acknowledged plausible mechanisms exist for some stone pathways, but emphasized that population risk appears most relevant for people already predisposed. Practical advice was to individualize if someone has kidney-stone history, but not to assume high protein is inherently dangerous for everyone.",
+      "skills": ["sbs-diet"],
+      "topic": "protein and kidney stones"
+    },
+    {
+      "question": "How should I use L-theanine with caffeine?",
+      "answer_summary": "Eric framed L-theanine as useful for reducing caffeine jitters/anxiety without strong sedative effects. He suggested a common practical range of about 100-200 mg with caffeine. Individual response still matters, and some people may subjectively feel too relaxed or sleepy. The recommendation was to test tolerance and keep it as an optional complement rather than a mandatory stack.",
+      "skills": ["sbs-diet"],
+      "topic": "theanine with caffeine"
+    },
+    {
+      "question": "It’s been years since the Belt Bible. Has the powerlifting belt evidence changed enough to require a rewrite?",
+      "answer_summary": "Greg said the core belt conclusions are largely unchanged and he did not think a full rewrite was urgently needed. He cited limited major new evidence, but noted at least one mechanistic study supporting the idea that higher intra-abdominal pressure can increase hip extension torque. That mechanism is consistent with belts helping force output in practice. Bottom line: belts still make sense for many lifters, and the old guidance is mostly still intact.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-deadlift"],
+      "topic": "powerlifting belt evidence"
+    },
+    {
+      "question": "Could aspirin blunt hypertrophy or strength gains?",
+      "answer_summary": "Greg said the direct aspirin-specific hypertrophy evidence is limited, so certainty is low. However, because aspirin overlaps with anti-inflammatory pathways relevant to adaptation, he considered blunting effects plausible at higher doses in young healthy lifters. He contrasted this with context-dependent findings where anti-inflammatory effects may differ by baseline inflammation status (e.g., older vs younger populations). Practical takeaway: avoid assuming chronic high-dose aspirin is adaptation-neutral when hypertrophy is a priority.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "aspirin and hypertrophy"
+    },
+    {
+      "question": "I’m 16-19 and couldn’t reach a 405 deadlift on linear progression. Does being younger hurt strength progress?",
+      "answer_summary": "Greg said age can matter pre-puberty, but by the later teen years most lifters should be capable of solid strength and muscle gains. He emphasized huge individual variability in where linear progression stalls, so a specific benchmark (like 405) is not a reliable readiness cutoff. His recommendation was to stop obsessing over category labels tied to absolute load and instead use progression timescale (weekly/biweekly, monthly, etc.) to classify training stage. Practical message: if progress is occurring, the program is working, even if numbers differ from internet expectations.",
+      "skills": ["sbs-strength-training", "sbs-deadlift"],
+      "topic": "teen strength expectations"
+    },
+    {
+      "question": "When are you ready to start taking clients as a personal trainer?",
+      "answer_summary": "Both hosts said formal certification alone rarely means full practical readiness. They argued coaching is highly applied, so observation, supervised reps, and mentorship/apprenticeship are ideal for skill development (cueing, troubleshooting, rapport, session adjustments). Greg suggested that if mentorship is possible, even a short period can speed competency. In real-world gyms, many trainers begin before feeling fully ready and improve through deliberate practice. Their practical advice was to seek shadowing/internship opportunities and use low-client-load periods to learn from experienced coaches.",
+      "skills": ["sbs-strength-training"],
+      "topic": "trainer readiness"
+    },
+    {
+      "question": "What’s the best way to read and interpret research papers, and why can one paper take 5-6 hours?",
+      "answer_summary": "They said 5-6 hours can be normal when aiming for deep, critical understanding, especially in unfamiliar domains. In familiar domains, review time can drop substantially because methods, stats, and prior literature are already in your working set. Their workflow included: skim abstract for orientation, identify actual hypotheses, scrutinize methods/statistics, and then contextualize findings against prior studies. A strong practical recommendation was to form your own interpretation first, then compare with higher-experience analysts to calibrate mistakes. Over time, accumulated error-correction is what makes reading both faster and better.",
+      "skills": ["sbs-strength-training"],
+      "topic": "reading research"
+    }
+  ]
+}

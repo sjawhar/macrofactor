@@ -1,0 +1,14 @@
+{
+  "eval_id": 36,
+  "eval_name": "eval-36-citrulline-dosing",
+  "prompt": "Should I take L-citrulline, how much should I use, and when should I take it?",
+  "expected_output": "Eric\u2019s dosing guidance was roughly 3-6 g/day for pure L-citrulline, with 6 g as a practical target. For citrulline malate, he suggested 6-8 g total (often labeled around 2:1 citrulline:malate, though label accuracy can vary). Timing recommendation was a single pre-workout dose, generally about 1 hour before training (with 1-2 hours viewed as reasonable). He did not recommend splitting it throughout the day for performance purposes. He also cautioned expectations should stay modest because observed effects are typically small, not transformative.",
+  "topic": "citrulline dosing",
+  "episode": 46,
+  "assertions": [
+    "Answer gives dosing of roughly 3-6 g/day for pure L-citrulline, with 6 g as practical target",
+    "Answer mentions 6-8 g for citrulline malate",
+    "Answer recommends timing about 1 hour pre-workout",
+    "Answer cautions that effects are typically small, not transformative"
+  ]
+}

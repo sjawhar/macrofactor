@@ -1,0 +1,11 @@
+{
+  "eval_id": 11,
+  "eval_name": "post-competition-transition",
+  "prompt": "What do you personally do right after a meet\u2014jump into the next block immediately or take time off?",
+  "assertions": [
+    "Frames the answer as context-dependent based on athlete motivation and recovery state",
+    "If beat up, suggests an easier first week with reduced loading (roughly 70-80% range) and reduced volume",
+    "Notes that complete time off is acceptable and one week off per year is trivial in the long run",
+    "General preference: keep intensity present while temporarily reducing volume"
+  ]
+}

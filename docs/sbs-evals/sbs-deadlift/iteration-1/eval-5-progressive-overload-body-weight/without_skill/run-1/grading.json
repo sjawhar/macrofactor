@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Clarifies that heavy lifting itself is unlikely to directly prevent fat loss — energy balance is the main driver",
+      "passed": false,
+      "evidence": "The answer argues heavy lifting creates conditions that defend body weight through 'Elevated Metabolic Demand & Adaptive Thermogenesis,' elevated hunger hormones, and cortisol. Does not clearly state the hosts' position that heavy lifting itself is unlikely to directly prevent fat loss."
+    },
+    {
+      "text": "Notes that switching from volume work to frequent 1RM attempts doesn't substantially change calorie expenditure",
+      "passed": false,
+      "evidence": "No discussion of calorie expenditure differences between volume and 1RM training approaches."
+    },
+    {
+      "text": "Suggests or implies the coaching setup may be suboptimal (years of training with limited progress)",
+      "passed": false,
+      "evidence": "Does not question the coaching setup or suggest the trainer may be poor. The answer addresses the listener's situation without critiquing the coaching arrangement."
+    },
+    {
+      "text": "Mentions bodyweight performance targets (push-ups, pull-ups, dips) as a motivational strategy during weight loss",
+      "passed": false,
+      "evidence": "No mention of bodyweight performance targets as motivational tools during weight loss."
+    },
+    {
+      "text": "Recommends professional clinical support (dietitian or similar) for binge-eating concerns rather than just programming changes",
+      "passed": true,
+      "evidence": "'Consider working with a therapist or eating disorder specialist' under point 4 of the recommendations."
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 4,
+    "total": 5,
+    "pass_rate": 0.2
+  }
+}

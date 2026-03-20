@@ -1,0 +1,15 @@
+{
+  "eval_id": 63,
+  "eval_name": "eval-63-powerlifting-belt-evidence",
+  "prompt": "It\u2019s been years since the Belt Bible. Has the powerlifting belt evidence changed enough to require a rewrite?",
+  "expected_output": "Greg said the core belt conclusions are largely unchanged and he did not think a full rewrite was urgently needed. He cited limited major new evidence, but noted at least one mechanistic study supporting the idea that higher intra-abdominal pressure can increase hip extension torque. That mechanism is consistent with belts helping force output in practice. Bottom line: belts still make sense for many lifters, and the old guidance is mostly still intact.",
+  "topic": "powerlifting belt evidence",
+  "episode": 46,
+  "assertions": [
+    "Answer captures the core SBS position on powerlifting belt evidence",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

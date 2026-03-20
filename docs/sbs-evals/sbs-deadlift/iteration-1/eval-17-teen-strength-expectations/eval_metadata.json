@@ -1,0 +1,11 @@
+{
+  "eval_id": 17,
+  "eval_name": "teen-strength-expectations",
+  "prompt": "I'm 16-19 and couldn't reach a 405 deadlift on linear progression. Does being younger hurt strength progress?",
+  "assertions": [
+    "Notes that by late teens, most lifters should be capable of solid strength gains (age is not the main limiter)",
+    "Emphasizes huge individual variability in where linear progression stalls",
+    "States a specific benchmark (like 405) is not a reliable readiness cutoff",
+    "Recommends using progression timescale (weekly, monthly, etc.) rather than absolute load to classify training stage"
+  ]
+}

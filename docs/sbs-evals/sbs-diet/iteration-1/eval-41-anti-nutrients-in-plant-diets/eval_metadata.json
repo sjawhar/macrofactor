@@ -1,0 +1,15 @@
+{
+  "eval_id": 41,
+  "eval_name": "eval-41-anti-nutrients-in-plant-diets",
+  "prompt": "I've seen carnivore/keto/paleo people say vegan and plant-heavy diets are full of anti-nutrients. Is that actually true, and if so how worried should people be?",
+  "expected_output": "Eric said anti-nutrients are real (for example phytates, tannins, lectins, and oxalates), and they can reduce absorption of some nutrients in some meal contexts. But he emphasized that this risk is often overstated because many objectively healthy foods contain anti-nutrients, and regular cooking/processing methods reduce many of their effects. He advised against avoiding plant foods wholesale, since that would throw away a lot of high-quality micronutrient sources. Practical guidance was to eat a varied diet with diverse food sources and preparation methods, and if someone is fully plant-based, aim above bare-minimum micronutrient targets as a buffer. He also noted that population data in vegetarians/vegans does not show catastrophic anti-nutrient-driven deficiency patterns. Bottom line: anti-nutrients exist, but for most people they are not something to lose sleep over.",
+  "topic": "anti-nutrients in plant diets",
+  "episode": 50,
+  "assertions": [
+    "Answer confirms anti-nutrients are real (phytates, tannins, lectins, oxalates)",
+    "Answer states the risk is often overstated",
+    "Answer mentions cooking/processing methods reduce many anti-nutrient effects",
+    "Answer advises against avoiding plant foods wholesale",
+    "Answer recommends eating a varied diet with diverse food sources and preparation methods"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends placing plyometrics early in training sessions while athletes are fresh",
+      "passed": true,
+      "evidence": "Found matching content: ...trol degrades fast under fatigue. Plyos first preserves that quality standard.\n\nFor b..."
+    },
+    {
+      "text": "Suggests approximately 1-2 focused plyo sessions per week",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Warns against putting hard plyometric sessions on 'off days' or recovery days",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Distinguishes quality high-intent plyometrics from high-rep fatigue jumping",
+      "passed": true,
+      "evidence": "Found matching content: ...ting, Not After\n\nThe cardinal rule is **quality over quantity**, and plyometrics demand..."
+    },
+    {
+      "text": "Recommends keeping plyo volume low-to-moderate with high quality",
+      "passed": true,
+      "evidence": "Found matching content: ...ty - all of which require high-quality, low-fatigue execution to actually develop...."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

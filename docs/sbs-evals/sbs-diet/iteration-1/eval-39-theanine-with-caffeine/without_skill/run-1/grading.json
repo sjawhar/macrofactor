@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer frames L-theanine as useful for reducing caffeine jitters/anxiety",
+      "passed": true,
+      "evidence": "Found 'jitter' in: ...o provide the alertness benefits of caffeine while reducing jitteriness and anxiety.\n\n## Basic Dosing\n\n**Caffeine:** 100-200 m..."
+    },
+    {
+      "text": "Answer suggests a common range of about 100-200 mg with caffeine",
+      "passed": true,
+      "evidence": "Found '100' in: ...ng jitteriness and anxiety.\n\n## Basic Dosing\n\n**Caffeine:** 100-200 mg (typical dose)\n**L-theanine:** 100-200 mg (typically..."
+    },
+    {
+      "text": "Answer notes individual response varies",
+      "passed": true,
+      "evidence": "Found 'individual' in: ...ess\" or \"focused energy.\"\n\n## Practical Considerations\n\n### Individual Variation\n\n- Sensitivity to caffeine varies significantly b..."
+    },
+    {
+      "text": "Answer recommends it as an optional complement rather than mandatory",
+      "passed": false,
+      "evidence": "Missing any of: ['optional', 'complement']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

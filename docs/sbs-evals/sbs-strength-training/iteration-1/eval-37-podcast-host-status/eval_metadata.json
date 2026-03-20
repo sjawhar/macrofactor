@@ -1,0 +1,14 @@
+{
+  "eval_id": 37,
+  "eval_name": "eval-37-podcast-host-status",
+  "prompt": "When will Greg become a permanent host of the show?",
+  "expected_output": "Eric said they were not committing to Greg as a permanent host. He did announce Greg was invited back as special guest co-host for episode 26, airing one week later. So the answer was no to permanence, yes to near-term continuation.",
+  "topic": "podcast host status",
+  "episode": 25,
+  "assertions": [
+    "Answer captures the core SBS position on podcast host status",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

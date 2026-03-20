@@ -1,0 +1,15 @@
+{
+  "eval_id": 58,
+  "eval_name": "eval-58-split-sessions",
+  "prompt": "Can I split my workout across the day (like a set every 30 minutes) instead of doing one continuous session?",
+  "expected_output": "Greg said splitting sessions is generally fine and likely neutral-to-positive for outcomes. He referenced older and newer literature suggesting similar or slightly better results when volume is matched across one vs multiple sessions. The key caveat was recovery management: don\u2019t use split sessions as an excuse to massively increase total volume. If workload is controlled, he didn\u2019t expect negative effects and said performance or hypertrophy may be similar or modestly better in some cases.",
+  "topic": "split sessions",
+  "episode": 46,
+  "assertions": [
+    "Answer captures the core SBS position on split sessions",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

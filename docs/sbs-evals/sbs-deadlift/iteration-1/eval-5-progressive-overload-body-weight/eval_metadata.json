@@ -1,0 +1,12 @@
+{
+  "eval_id": 5,
+  "eval_name": "progressive-overload-body-weight",
+  "prompt": "I have deadlifted with a trainer for years and often test very heavy/1RM work. My body weight tends to stay close to my deadlift max, and I developed binge-eating/body-image struggles. Could weekly near-max lifting be defending my body weight and making intentional weight loss much harder?",
+  "assertions": [
+    "Clarifies that heavy lifting itself is unlikely to directly prevent fat loss \u2014 energy balance is the main driver",
+    "Notes that switching from volume work to frequent 1RM attempts doesn't substantially change calorie expenditure",
+    "Suggests or implies the coaching setup may be suboptimal (years of training with limited progress)",
+    "Mentions bodyweight performance targets (push-ups, pull-ups, dips) as a motivational strategy during weight loss",
+    "Recommends professional clinical support (dietitian or similar) for binge-eating concerns rather than just programming changes"
+  ]
+}

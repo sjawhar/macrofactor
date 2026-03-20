@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Explains the theoretical rationale: accommodating resistance matches the lift's force curve (lighter at bottom, heavier at lockout)",
+      "passed": true,
+      "evidence": "'Bands and chains increase load toward lockout, where you're mechanically strongest and can handle more force. This allows overload exposure in the range where you're most capable of producing force.'"
+    },
+    {
+      "text": "Cites research evidence (including meta-analytic or review-level) showing little to no clear strength advantage over conventional loading",
+      "passed": false,
+      "evidence": "States 'Transfer to raw deadlift strength is modest and indirect' and 'They don't build absolute strength as efficiently as heavy barbell work' but does not cite specific research, meta-analyses, or review-level evidence. The expected output referenced meta-analytic evidence specifically."
+    },
+    {
+      "text": "Concludes they are fine as variation tools but not reliably superior for maximal strength",
+      "passed": true,
+      "evidence": "'They're a specialized accessory for specific problems, not a replacement for heavy barbell training.' Hierarchy places accommodating resistance 4th behind barbell deadlifts, hinge accessories, and lockout-specific work."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 1,
+    "total": 3,
+    "pass_rate": 0.67
+  }
+}

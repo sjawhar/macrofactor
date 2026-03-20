@@ -1,0 +1,15 @@
+{
+  "eval_id": 15,
+  "eval_name": "eval-15-deadlift-on-sloped-platform",
+  "prompt": "A listener asked whether deadlifting on a garage platform with about a 5% incline could meaningfully hurt performance compared to deadlifting on a flat gym floor.",
+  "expected_output": "Greg said yes, the incline could matter, but first check confounders: plate calibration differences and training temperature (especially cold garages) can noticeably affect output. He explained platform orientation changes mechanics: depending on bar position relative to slope, it can act like slight heel elevation plus deficit, or like toe elevation/low block pull. He recommended testing these setups deliberately on a flat platform to see whether they reproduce the same performance feel. Eric added that bar roll itself can be disruptive and suggested experimenting with orientation and potentially using lifting shoes with a small heel to improve comfort. Net answer: not just \u2018in your head\u2019\u2014the incline is a plausible contributor, and it can be tested directly.",
+  "topic": "deadlift on sloped platform",
+  "episode": 106,
+  "assertions": [
+    "Answer captures the core SBS position on deadlift on sloped platform",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

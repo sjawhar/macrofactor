@@ -1,0 +1,41 @@
+{
+  "episode": 105,
+  "pairs": [
+    {
+      "question": "Is it okay to treat minimum fat intake as a weekly target instead of hitting a minimum every single day?",
+      "answer_summary": "They said weekly averaging is generally fine. The practical goal is still to cover essential fatty acids, hormone support, and absorption of fat-soluble vitamins. So if one day is lower fat, you can make that up across the rest of the week. They noted this is less concerning than missing day-to-day intake for nutrients that are not stored the same way. In short: keep weekly intake adequate rather than obsessing over identical daily fat numbers.",
+      "skills": ["sbs-diet"],
+      "topic": "minimum fat intake frequency"
+    },
+    {
+      "question": "Do you plan to compete again (powerlifting, bodybuilding, marathon, etc.), and how are you approaching that right now?",
+      "answer_summary": "Both hosts said they do not currently have immediate competition plans. They described themselves as very competitive and said contest prep tends to require an all-consuming focus for them. At this stage, that level of narrow commitment does not fit their broader life priorities. They still expect to compete again at some point, but only when timing and life context make that commitment worthwhile. So the recommendation was essentially to align competition goals with life bandwidth, not just motivation.",
+      "skills": ["sbs-strength-training"],
+      "topic": "future competition planning"
+    },
+    {
+      "question": "Does listening to music actually improve training performance, and what kind of music works best?",
+      "answer_summary": "Their answer was yes, music can improve performance. Preferred music and appropriate tempo can increase arousal, motivation, and effort tolerance, partly by shifting attention away from fatigue sensations. They also highlighted an inverted-U idea: too little arousal may underperform, but too much can hurt technical execution. That means the best playlist depends on the task and your own response profile. The practical advice was to use music you personally like and tune intensity to the lift or workout demands.",
+      "skills": ["sbs-strength-training"],
+      "topic": "music and performance"
+    },
+    {
+      "question": "How might TRT change nutrition and training recommendations for someone focused on physique progress?",
+      "answer_summary": "They framed TRT as a medical decision that must be handled with physician oversight, not casual optimization. In the context discussed, moving from very low testosterone (around 200 ng/dL) to normal physiologic levels (around 900 ng/dL) can increase hypertrophy potential. With that, some people may tolerate or benefit from more training volume and frequency than before. Nutrition may also need to scale to support higher training output and recovery demands. They emphasized individual variability based on baseline status and current training history.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "TRT and programming implications"
+    },
+    {
+      "question": "Have you considered writing a book or long-form resource on stats, methods, and research interpretation?",
+      "answer_summary": "The host said he has worked on this idea but repeatedly paused it. The main barrier is scope creep: as he learns more, the target keeps expanding and feels harder to finish. He described perfectionism and boundary-setting as the core publication bottlenecks, rather than lack of interest. So the implied takeaway is that technical writing often requires deciding what to exclude in order to ship something useful. No firm publication timeline was given.",
+      "skills": ["sbs-strength-training"],
+      "topic": "science communication project scope"
+    },
+    {
+      "question": "What bad or outdated advice do fitness experts still spread, and is that problem getting better or worse?",
+      "answer_summary": "They argued the misinformation problem is not improving and may be getting worse. They contrasted older myths (like frequent meals meaningfully boosting metabolism) with newer, potentially more harmful misinformation patterns. They discussed structural incentives in academia and industry that can reward overstatement, selective framing, and low-quality translation of evidence. Social media amplification and commercial incentives were presented as force multipliers for bad takes. Overall, their message was to prioritize evidence quality and skepticism, because confident but weak claims remain common.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "fitness misinformation trends"
+    }
+  ]
+}

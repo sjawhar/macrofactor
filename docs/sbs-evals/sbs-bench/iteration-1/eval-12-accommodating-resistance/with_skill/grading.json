@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Explains the rationale for accommodating resistance (matching the force/strength curve)",
+      "passed": true,
+      "evidence": "States: 'resistance increases as you press upward, forcing you to overcome greater load at the top.'"
+    },
+    {
+      "text": "Provides a concrete example (lighter at bottom, heavier near lockout)",
+      "passed": true,
+      "evidence": "Describes lighter bottom / heavier lockout load curve."
+    },
+    {
+      "text": "Cites research or meta-analytic evidence showing little to no clear advantage",
+      "passed": true,
+      "evidence": "States: 'effect sizes are typically small\u2014often in the 2-5% range' and 'not consistently superior.'"
+    },
+    {
+      "text": "Concludes bands/chains are fine as variation tools but not reliably superior",
+      "passed": true,
+      "evidence": "Concludes: 'The best tool is the one you'll use correctly and consistently.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

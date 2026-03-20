@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Starts from or recommends empathy for the clinician's context and perspective",
+      "passed": true,
+      "evidence": "Found matching content: ...Squatting\n\nFirst, it's worth genuinely understanding where that advice is coming from. Mo..."
+    },
+    {
+      "text": "Notes that GPs typically prioritize reducing symptoms and preserving daily living, not maximizing athletic performance",
+      "passed": true,
+      "evidence": "Found matching content: ...hey can also identify whether your knee symptoms are coming from a structural issue tha..."
+    },
+    {
+      "text": "Recommends seeking second opinions from sports medicine professionals or PTs experienced with athletes",
+      "passed": true,
+      "evidence": "Found matching content: ...step is to seek a second opinion from a sports medicine physician or a physical therapist who w..."
+    },
+    {
+      "text": "Frames the situation as a cost-benefit decision where personal risk tolerance and priorities matter",
+      "passed": true,
+      "evidence": "Found matching content: ...bandon the lift.\n\nUltimately, this is a cost-benefit decision that only you can make based o..."
+    },
+    {
+      "text": "Advises not automatically dismissing medical advice",
+      "passed": true,
+      "evidence": "Found matching content: ...rt version: take the concern seriously, don't dismiss it, but also don't treat one general pr..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

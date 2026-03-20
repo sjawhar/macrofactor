@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States the likely effect is neutral-to-positive if used intelligently",
+      "passed": true,
+      "evidence": "Found matching content: ...onable mechanistic case that's probably neutral to mildly positive for most lifters. Ac..."
+    },
+    {
+      "text": "Warns against adding so much band/chain tension that lockout becomes the limiter",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Notes that excessive accommodating resistance can reduce meaningful loading in stretched positions",
+      "passed": true,
+      "evidence": "Found matching content: ...rtrophy, there's a strong case that the stretched position - the bottom of the squat -..."
+    },
+    {
+      "text": "Acknowledges direct hypertrophy data are sparse",
+      "passed": true,
+      "evidence": "Found matching content: ...phy data on accommodating resistance is sparse. We don't have a robust body of researc..."
+    },
+    {
+      "text": "Recommends moderate accommodating resistance with meaningful full-ROM challenge",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

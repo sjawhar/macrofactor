@@ -1,0 +1,14 @@
+{
+  "eval_id": 18,
+  "eval_name": "eval-18-plant-based-vs-omnivorous-for-body-composition",
+  "prompt": "Do plant-based diets lead to better gains or fat loss than diets that include animal products?",
+  "expected_output": "Eric pushed back on a blanket claim that plant-based diets are categorically healthier, noting observational comparisons are heavily confounded by broader health behaviors. For physique outcomes, he said calories and macronutrient setup drive weight gain/loss outcomes more than dietary label. With matched protein and macros, performance/body-composition outcomes should be similar or only slightly favor omnivorous diets due to protein-quality differences. He added that good planning of essential amino acid intake can neutralize much of that gap in vegan diets. His bottom line: both vegan and omnivorous diets can work very well when thoughtfully structured.",
+  "topic": "plant-based vs omnivorous for body composition",
+  "episode": 25,
+  "assertions": [
+    "Answer pushes back on blanket claims that plant-based diets are categorically healthier",
+    "Answer notes observational comparisons are heavily confounded by broader health behaviors",
+    "Answer states calories and macronutrient setup drive body composition more than dietary label",
+    "Answer says both vegan and omnivorous diets can work well when thoughtfully structured"
+  ]
+}

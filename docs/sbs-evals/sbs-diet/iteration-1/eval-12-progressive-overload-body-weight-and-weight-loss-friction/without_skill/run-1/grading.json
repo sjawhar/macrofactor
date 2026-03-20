@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states heavy lifting itself is unlikely to directly prevent fat loss",
+      "passed": true,
+      "evidence": "Found 'unlikely' in: ...ty/performance\n- Both\n\nPushing harder on willpower alone is unlikely to work.\n\n### 3. **Stress accumulation**\n\nWeekly near-max l..."
+    },
+    {
+      "text": "Answer mentions energy intake and total expenditure as the main drivers",
+      "passed": true,
+      "evidence": "Found 'energy' in: ...d\n\nHeavy lifting (especially 1RM testing) creates immediate energy demands:\n\n- **Mechanical work**: Moving heavy loads require..."
+    },
+    {
+      "text": "Answer suggests bodyweight performance targets (push-ups, pull-ups, dips) as motivation during weight loss",
+      "passed": false,
+      "evidence": "Missing any of: ['bodyweight', 'push-up', 'pull-up', 'dip']"
+    },
+    {
+      "text": "Answer recommends involving qualified dietitian/clinical support for binge-eating concerns",
+      "passed": true,
+      "evidence": "Found 'binge' in: ...intentional weight loss harder, especially in someone with binge-eating and body-image struggles?\n\n## Short Answer\n\n**Yes, t..."
+    },
+    {
+      "text": "Answer is critical of the described coaching setup with limited progress over years",
+      "passed": true,
+      "evidence": "Found 'trainer' in: ...with a therapist or eating disorder specialist, not just a trainer\n   - Binge eating is a symptom of dysregulation, not a will..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

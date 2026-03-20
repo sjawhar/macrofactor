@@ -1,0 +1,14 @@
+{
+  "eval_id": 10,
+  "eval_name": "eval-10-steps-and-calorie-adjustment",
+  "prompt": "If I\u2019m doing 25k+ steps now and need to taper down, can I keep calories the same without messing up my energy balance?",
+  "expected_output": "Greg said probably not exactly, but calorie reduction may be smaller than expected because energy expenditure is constrained at very high activity levels. He used a practical example: dropping several thousand steps may not reduce total daily expenditure one-for-one with the raw activity cost. He also noted appetite tends to downshift alongside activity as long as you stay reasonably active, so a moderate calorie reduction often feels easier than people fear. In contrast, dropping all the way into sedentary territory can create worse appetite-expenditure mismatch. Practical approach: reduce steps gradually, monitor body weight/trends, and adjust intake in smaller increments rather than making one huge cut.",
+  "topic": "steps and calorie adjustment",
+  "episode": 126,
+  "assertions": [
+    "Answer says calorie reduction needed may be smaller than expected due to constrained energy expenditure",
+    "Answer mentions appetite tends to downshift alongside activity reduction",
+    "Answer recommends gradual step reduction with monitoring rather than one huge calorie cut",
+    "Answer warns that dropping to fully sedentary can create worse appetite-expenditure mismatch"
+  ]
+}

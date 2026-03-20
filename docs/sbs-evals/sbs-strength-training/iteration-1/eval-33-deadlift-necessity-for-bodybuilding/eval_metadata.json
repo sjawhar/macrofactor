@@ -1,0 +1,14 @@
+{
+  "eval_id": 33,
+  "eval_name": "eval-33-deadlift-necessity-for-bodybuilding",
+  "prompt": "From a bodybuilding standpoint, can I completely remove deadlifts and all deadlift variations? Can other posterior-chain exercises fully replace them?",
+  "expected_output": "Eric's answer was an unequivocal yes for bodybuilding: you can build a great physique without deadlifts. He listed alternatives across target areas: hamstring curls and glute-ham raises for hamstrings, hip thrusts and squat/lunge/back-extension variants for glutes and posterior chain, rows/pull-ups for back thickness, and shrugs/farmer's walks for traps. He added that forearm isolation is optional for bodybuilding judging, though it can be trained if desired. He still likes deadlifts in many programs because they are highly time-efficient for loading many posterior muscles at once. But when lifters have injuries, poor tolerance, or strong preference against deadlifts, replacing them is fully viable.",
+  "topic": "deadlift necessity for bodybuilding",
+  "episode": 25,
+  "assertions": [
+    "Answer captures the core SBS position on deadlift necessity for bodybuilding",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

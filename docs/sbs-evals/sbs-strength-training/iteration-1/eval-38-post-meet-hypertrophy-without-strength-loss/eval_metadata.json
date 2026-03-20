@@ -1,0 +1,15 @@
+{
+  "eval_id": 38,
+  "eval_name": "eval-38-post-meet-hypertrophy-without-strength-loss",
+  "prompt": "Any advice on easing into a high-volume hypertrophy-focused mesocycle after a powerlifting meet without losing my strength gains?",
+  "expected_output": "They recommend keeping the competition lifts in moderate strength-relevant ranges instead of shifting entirely to high reps. A practical template is three weeks mostly in the 5-10 rep range, then one week including heavier triples to keep top-end strength exposure. They also suggest an over-warm single around RPE 8 before volume work to preserve neural readiness with limited fatigue. The core point is to keep at least some heavy practice while accumulating hypertrophy volume.",
+  "topic": "post-meet hypertrophy without strength loss",
+  "episode": 27,
+  "assertions": [
+    "Answer captures the core SBS position on post-meet hypertrophy without strength loss",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

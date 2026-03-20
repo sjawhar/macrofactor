@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States the likely effect is neutral-to-positive if used intelligently",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Warns against adding so much band/chain tension that lockout becomes the limiter",
+      "passed": true,
+      "evidence": "Found matching content: ...cal work done per set. It also lets you overload the top portion of a lift, which can be..."
+    },
+    {
+      "text": "Notes that excessive accommodating resistance can reduce meaningful loading in stretched positions",
+      "passed": true,
+      "evidence": "Found matching content: ...at loading muscles in their lengthened (stretched) position produces a strong growth st..."
+    },
+    {
+      "text": "Acknowledges direct hypertrophy data are sparse",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Recommends moderate accommodating resistance with meaningful full-ROM challenge",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

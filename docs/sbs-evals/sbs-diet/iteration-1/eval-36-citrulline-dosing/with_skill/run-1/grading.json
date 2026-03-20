@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer gives dosing of roughly 3-6 g/day for pure L-citrulline, with 6 g as practical target",
+      "passed": true,
+      "evidence": "Found '3' in: ...sing:** 6\u20138 g per day (typical range: 6\u201310 g).\n\n**Timing:** 30\u201360 minutes before training for acute performance benefits;..."
+    },
+    {
+      "text": "Answer mentions 6-8 g for citrulline malate",
+      "passed": true,
+      "evidence": "Found '6' in: ...than nailing calories, protein, and training.\n\n**Dosing:** 6\u20138 g per day (typical range: 6\u201310 g).\n\n**Timing:** 30\u201360 min..."
+    },
+    {
+      "text": "Answer recommends timing about 1 hour pre-workout",
+      "passed": true,
+      "evidence": "Found 'pre-workout' in: ...ional benefit; wasteful\n\n### Timing Options\n\n#### Option 1: Pre-Workout (Acute Benefit)\n\n- **30\u201360 minutes before training**\n- Dose..."
+    },
+    {
+      "text": "Answer cautions that effects are typically small, not transformative",
+      "passed": true,
+      "evidence": "Found 'small' in: ...etter pump, possibly faster recovery\n- **Comparison**: Much smaller ROI than fixing diet, sleep, or training consistency\n\n---..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

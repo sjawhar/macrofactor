@@ -1,0 +1,15 @@
+{
+  "eval_id": 57,
+  "eval_name": "eval-57-isometric-strength-training",
+  "prompt": "What\u2019s the current take on isometric training for maintaining strength on squat, bench, and deadlift when equipment is limited?",
+  "expected_output": "Greg said isometrics can work, but the most effective style appears to be high-intent, ballistic maximal contractions (trying to hit max force as fast as possible), which can be hard to set up in lockdown conditions. A gym example he gave was pulling maximally into safety pins at a chosen deadlift height. He noted strong angle specificity: gains transfer most to roughly the trained joint position, about 15-30 degrees in either direction. That means isometric quarter-squat work won\u2019t strongly improve bottom-position squat strength, while isometrics near a sticking point are more likely to help there. He also mentioned isometrics can be a useful complement since they avoid eccentric loading and can carry a different fatigue profile. But he cautioned that practical programming prescriptions (optimal set duration, frequency, and weekly dose) are still less standardized than conventional training.",
+  "topic": "isometric strength training",
+  "episode": 39,
+  "assertions": [
+    "Answer captures the core SBS position on isometric strength training",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

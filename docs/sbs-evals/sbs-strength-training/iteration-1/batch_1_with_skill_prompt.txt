@@ -1,0 +1,74 @@
+TASK: Answer 15 listener questions about strength training and fitness, using the SBS strength training skill for guidance.
+
+EXPECTED OUTCOME: 15 individual answer.md files, each 200-500 words, evidence-based and practical, drawing on the skill content.
+
+REQUIRED TOOLS: Read, Write
+
+MUST DO:
+1. FIRST: Read the SKILL.md at /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/SKILL.md — read it completely
+2. THEN: Read ALL 5 reference files in /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/ — read each one completely:
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/01-progressive-overload-and-phase-progression.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/02-volume-landmarks-and-weekly-set-targets.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/03-frequency-splits-and-weekly-structure.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/04-intensity-reps-and-exercise-selection.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/05-fatigue-deloads-and-level-specific-decisions.md
+3. For each question below, write a thorough answer (200-500 words) to the specified file path
+4. When a question is directly relevant to the skill content, draw on specific recommendations, numbers, and frameworks from the skill
+5. When a question is outside the skill's scope (e.g., supplements, lifestyle), still answer using general evidence-based knowledge
+6. Be nuanced — include caveats, individual variability, and practical recommendations
+7. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT answer from memory/training data alone for topics the skill covers — USE the skill content
+- Do NOT give generic/vague answers — be specific with numbers and mechanisms
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions from the Stronger By Science podcast. The SBS skill encodes evidence-based strength training knowledge from Greg Nuckols' guides. Your answers should reflect the SBS approach: evidence-based, nuanced, practical, with appropriate caveats.
+
+QUESTIONS:
+16. Question: "A listener asked how Greg and Eric manage work-life balance across research, coaching, podcasting, MacroFactor, and other responsibilities."
+   Topic: work-life balance in fitness careers
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-16-work-life-balance-in-fitness-careers/with_skill/outputs/answer.md
+17. Question: "When researching a topic you don’t know well (for example collagen and skin aging or air pollution and health), what framework do you use to get up to speed?"
+   Topic: research process
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-17-research-process/with_skill/outputs/answer.md
+18. Question: "How much do insulin resistance and type 2 diabetes reduce muscle growth, and does metformin make hypertrophy worse?"
+   Topic: diabetes and hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-18-diabetes-and-hypertrophy/with_skill/outputs/answer.md
+19. Question: "If bigger muscles can improve leverage through internal moment arms, could getting a big pump acutely boost strength the same way?"
+   Topic: pump vs strength
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-19-pump-vs-strength/with_skill/outputs/answer.md
+20. Question: "For basketball athletes in the offseason, how should plyometrics be integrated with hypertrophy and strength training?"
+   Topic: plyometric programming
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-20-plyometric-programming/with_skill/outputs/answer.md
+21. Question: "Is there evidence that long-term bracing/Val Salva in lifting damages blood vessels because of repeated blood pressure spikes?"
+   Topic: bracing and vascular risk
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-21-bracing-and-vascular-risk/with_skill/outputs/answer.md
+22. Question: "After compounds, how much isolation work is enough for areas like forearms, calves, delts, biceps, and core without overdoing it?"
+   Topic: isolation volume
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-22-isolation-volume/with_skill/outputs/answer.md
+23. Question: "Strength seems to predict lifespan better than muscle size, but most studies use grip strength. Is there a better way to assess real-world strength for longevity (for example lower-body and pushing strength percentiles), and should people chase higher strength percentiles to live longer?"
+   Topic: Strength metrics and longevity
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-23-strength-metrics-and-longevity/with_skill/outputs/answer.md
+24. Question: "I have deadlifted with a trainer for years and often test very heavy/1RM work. My body weight tends to stay close to my deadlift max, and I developed binge-eating/body-image struggles. Could weekly near-max lifting be defending my body weight and making intentional weight loss much harder?"
+   Topic: Progressive overload, body weight, and weight-loss friction
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-24-progressive-overload-body-weight-and-weight-loss-f/with_skill/outputs/answer.md
+25. Question: "For hypertrophy, what matters more: resistance curve or range of motion? Do lengthened partials/full-ROM results depend on whether an exercise truly loads the long-muscle-length position enough?"
+   Topic: Resistance curve vs ROM for hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-25-resistance-curve-vs-rom-for-hypertrophy/with_skill/outputs/answer.md
+26. Question: "For hypertrophy, are very short rests best even for powerlifters doing hard squat volume? If someone rests 6-7 minutes between squat sets, are they leaving gains on the table versus strict 2-minute rests?"
+   Topic: Hypertrophy vs rest-interval tradeoffs
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-26-hypertrophy-vs-rest-interval-tradeoffs/with_skill/outputs/answer.md
+27. Question: "In pro sports, are there likely hidden super-drugs that athletes use, or is the claim that "everyone is on PEDs" overstated?"
+   Topic: PED plausibility and testing systems
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-27-ped-plausibility-and-testing-systems/with_skill/outputs/answer.md
+28. Question: "What should a 15-year-old do to gain muscle and strength: exercise selection, weekly volume, reps/intensity/failure, and calories/macros?"
+   Topic: Teen training and nutrition fundamentals
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-28-teen-training-and-nutrition-fundamentals/with_skill/outputs/answer.md
+29. Question: "In a good powerlifting program, how much training time should be hypertrophy-focused, and how should that change with training age and in-season vs off-season? Also, when is someone strong enough to start bodybuilding-style accessory work?"
+   Topic: hypertrophy vs strength periodization
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-29-hypertrophy-vs-strength-periodization/with_skill/outputs/answer.md
+30. Question: "How often should someone bulk and cut in practice? Is there a point where bulking stops helping strength or muscle and becomes harmful?"
+   Topic: bulk and cut frequency
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-30-bulk-and-cut-frequency/with_skill/outputs/answer.md

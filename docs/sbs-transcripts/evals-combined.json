@@ -1,0 +1,1567 @@
+{
+  "skill_name": "sbs-all",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "If someone uses insulin for diabetes treatment, does that also help with muscle growth or strength? And what about bodybuilders using high-dose insulin for size?",
+      "expected_output": "They distinguished medical insulin replacement from bodybuilding-style supraphysiological insulin use. Greg and Eric said very high insulin doses can increase hypertrophy in untested bodybuilding contexts, but they emphasized this is extremely dangerous and easy to misuse. They gave cautionary examples of severe hypoglycemia and even death risk from small dosing or fueling mistakes. For diabetes treatment, they said doses are meant to restore normal physiology (or compensate for insulin resistance), not create an anabolic edge, so they would not expect meaningful strength or hypertrophy benefits beyond normal function. They also compared this with TRT and argued insulin is more tightly coupled to food intake, so it does not create the same ergogenic loophole people sometimes assume. Their practical recommendation was to follow medical guidance strictly and never experiment with insulin for performance.",
+      "topic": "insulin and performance enhancement",
+      "skills": [],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Do I need a maintenance phase after a bulk or cut, or can I go straight from bulking to cutting and back again?",
+      "expected_output": "They said there is no clear physiological requirement to insert maintenance phases between bulking and cutting. In their view, you can alternate bulk and cut phases directly if that fits your goals. They framed maintenance phases as mainly practical or preference-based rather than biologically mandatory. For example, maintenance can help with adherence, comfort at a body weight, or reducing misleading scale swings before starting an aggressive cut. But they did not present a physiological downside to skipping maintenance if transitions are well managed. The key point was that maintenance is optional strategy, not a required step.",
+      "topic": "maintenance phases between bulk and cut",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "What are your most controversial evidence-based fitness takes right now?",
+      "expected_output": "Their responses were a set of personal hot takes rather than one prescriptive recommendation. Eric said protein targets are often treated too rigidly in evidence-based circles, mindful eating has helped his intake more than literature averages would suggest, sauna seems to suppress his appetite acutely without rebound, and he personally grows well with higher-volume push-pull-legs phases. Greg argued that saying BCAAs are categorically useless is too strong because placebo-controlled meta-analyses suggest some recovery benefits in specific contexts, especially when protein timing is poor (for example fasted morning training). He also said failure training may be less catastrophically unrecoverable than some claim and that people may over-interpret acute recovery studies. Finally, he cautioned against tension reductionism in hypertrophy theory (treating mechanical tension as the only meaningful variable with a simple linear dose-response).",
+      "topic": "controversial fitness opinions",
+      "skills": [],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "If I’m just a casual lifter cutting body fat, how hard do I really need to fight to preserve every bit of muscle?",
+      "expected_output": "They framed this as mostly a preference question, not a single objective rule. Eric said muscle retention matters to the extent that maintaining muscularity matters to you at that time. He still recommended doing the basics to avoid unnecessary loss: avoid extreme deficits, keep protein reasonable, and continue resistance training (even with reduced volume/effort). He also noted many lifters overestimate muscle loss during cuts because they underestimate starting fat mass and catastrophize scale changes. In practice, some fat-free mass drops during weight loss are expected, but lifters often interpret normal visual/scale changes as dramatic muscle wasting. So optimize if you care, but don’t panic.",
+      "topic": "muscle retention during cutting",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "How should I think about NSAID use (like ibuprofen) around training, especially if I’m younger versus older?",
+      "expected_output": "They highlighted two major modifiers: age and dose. Their summary of the literature was that higher-dose ibuprofen may blunt hypertrophy in younger adults, while in older adults with higher background inflammation there are cases where NSAID use could be neutral or even helpful. They emphasized that much of the concern comes from repeated high-dose use after every workout across weeks, not occasional use for illness or headaches. Occasional lower-dose use was described as unlikely to create a large practical hypertrophy penalty. They also said that if someone feels they need NSAIDs after every session, the bigger problem is probably training design or unresolved pain and should be addressed directly (for example adjusting programming and/or consulting a clinician).",
+      "topic": "NSAIDs and hypertrophy",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Are lateral raises alone enough to build side delts, or do I need overhead pressing/upright rows too?",
+      "expected_output": "Their practical answer was that lateral raises plus other pressing/rowing work can be sufficient, and overhead pressing is not mandatory for everyone. Eric said he currently gets good shoulder development without relying on overhead press or upright rows, prioritizing varied presses/rows and lots of lateral raise variants while avoiding accessory movements that irritate joints. Greg said his front delts tend to dominate overhead pressing, so he also leans heavily on delt raises and rows for shoulder hypertrophy. They treated exercise selection as individual and comfort-driven when multiple viable hypertrophy options exist. The main recommendation was to use movements you can load and recover from consistently rather than forcing one required shoulder exercise.",
+      "topic": "side delt exercise selection",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Is ashwagandha actually useful for strength and muscle gain, or is it overhyped?",
+      "expected_output": "Their answer for hypertrophy/strength was mostly nay. They said discussion often hinges on one famous study with very large effects that they found implausible and in need of strong replication before taking at face value. They did not find the mechanistic case for major strength/hypertrophy effects very compelling. However, they noted ashwagandha may still have other potential uses, including mild anxiety support, sleep-related outcomes, and modest testosterone changes in some studies. They emphasized that any testosterone increase from supplements is small in magnitude versus TRT and unlikely to create dramatic muscle or strength changes. So it might be useful in some non-hypertrophy contexts, but not a reliable mass/strength ergogenic.",
+      "topic": "ashwagandha for strength and hypertrophy",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Do you cringe at your old content, and does that make you worry your current content will look bad in a few years too?",
+      "expected_output": "Both answered yes to both parts. They said looking back at old work is a reminder that everyone updates beliefs over time as evidence and understanding improve. Greg emphasized that he now tries to communicate uncertainty more explicitly rather than sounding overly certain from limited evidence. Eric said even when old claims are directionally true, framing and contextualization can improve a lot with better methods knowledge and new data. They discussed the tension between nuanced communication and audience incentives for oversimplified certainty. Overall, their recommendation was to treat current conclusions as provisional and keep updating.",
+      "topic": "updating beliefs over time",
+      "skills": [],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "How do you manage social media time without letting it take over your work and life?",
+      "expected_output": "Greg described intentionally reducing DM/reply volume after years of trying to answer everyone, because it became incompatible with sleep, training, relationships, and higher-leverage work. He now responds far less often and focuses effort where content can help more people at once. Eric described a different strategy: monitor how each platform affects mood and attention, then curate toward channels/interactions that stay neutral-to-positive. Both emphasized being strategic rather than reactive, and accepting limits on one-to-one interaction. The practical takeaway was to align social media behavior with long-term priorities instead of letting platform dynamics dictate your day.",
+      "topic": "social media workload management",
+      "skills": [],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "Is the bench press the best measure of raw physical strength? If not, what is?",
+      "expected_output": "They said bench is not the best gauge of raw strength. Both favored strongman-style odd-object lifting/carrying (for example Husafell-style stone carry or irregular stone lifting) as a better test of broad physical strength. Their reasoning was that odd objects are awkward and hard to game with technique compared with highly standardized barbell lifts. That makes the task feel closer to general real-world force application rather than a specific trained movement skill. So while bench is useful for upper-body strength tracking, they did not treat it as the top global strength proxy.",
+      "topic": "best test of raw strength",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-bench"
+      ],
+      "episode": 104,
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "Is it okay to treat minimum fat intake as a weekly target instead of hitting a minimum every single day?",
+      "expected_output": "They said weekly averaging is generally fine. The practical goal is still to cover essential fatty acids, hormone support, and absorption of fat-soluble vitamins. So if one day is lower fat, you can make that up across the rest of the week. They noted this is less concerning than missing day-to-day intake for nutrients that are not stored the same way. In short: keep weekly intake adequate rather than obsessing over identical daily fat numbers.",
+      "topic": "minimum fat intake frequency",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 105,
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "Do you plan to compete again (powerlifting, bodybuilding, marathon, etc.), and how are you approaching that right now?",
+      "expected_output": "Both hosts said they do not currently have immediate competition plans. They described themselves as very competitive and said contest prep tends to require an all-consuming focus for them. At this stage, that level of narrow commitment does not fit their broader life priorities. They still expect to compete again at some point, but only when timing and life context make that commitment worthwhile. So the recommendation was essentially to align competition goals with life bandwidth, not just motivation.",
+      "topic": "future competition planning",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 105,
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "Does listening to music actually improve training performance, and what kind of music works best?",
+      "expected_output": "Their answer was yes, music can improve performance. Preferred music and appropriate tempo can increase arousal, motivation, and effort tolerance, partly by shifting attention away from fatigue sensations. They also highlighted an inverted-U idea: too little arousal may underperform, but too much can hurt technical execution. That means the best playlist depends on the task and your own response profile. The practical advice was to use music you personally like and tune intensity to the lift or workout demands.",
+      "topic": "music and performance",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 105,
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "How might TRT change nutrition and training recommendations for someone focused on physique progress?",
+      "expected_output": "They framed TRT as a medical decision that must be handled with physician oversight, not casual optimization. In the context discussed, moving from very low testosterone (around 200 ng/dL) to normal physiologic levels (around 900 ng/dL) can increase hypertrophy potential. With that, some people may tolerate or benefit from more training volume and frequency than before. Nutrition may also need to scale to support higher training output and recovery demands. They emphasized individual variability based on baseline status and current training history.",
+      "topic": "TRT and programming implications",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 105,
+      "files": []
+    },
+    {
+      "id": 15,
+      "prompt": "Have you considered writing a book or long-form resource on stats, methods, and research interpretation?",
+      "expected_output": "The host said he has worked on this idea but repeatedly paused it. The main barrier is scope creep: as he learns more, the target keeps expanding and feels harder to finish. He described perfectionism and boundary-setting as the core publication bottlenecks, rather than lack of interest. So the implied takeaway is that technical writing often requires deciding what to exclude in order to ship something useful. No firm publication timeline was given.",
+      "topic": "science communication project scope",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 105,
+      "files": []
+    },
+    {
+      "id": 16,
+      "prompt": "What bad or outdated advice do fitness experts still spread, and is that problem getting better or worse?",
+      "expected_output": "They argued the misinformation problem is not improving and may be getting worse. They contrasted older myths (like frequent meals meaningfully boosting metabolism) with newer, potentially more harmful misinformation patterns. They discussed structural incentives in academia and industry that can reward overstatement, selective framing, and low-quality translation of evidence. Social media amplification and commercial incentives were presented as force multipliers for bad takes. Overall, their message was to prioritize evidence quality and skepticism, because confident but weak claims remain common.",
+      "topic": "fitness misinformation trends",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 105,
+      "files": []
+    },
+    {
+      "id": 17,
+      "prompt": "A listener asked: if someone wants to get bigger and stronger for general health/recreation (not powerlifting or bodybuilding competition), what specific core exercises should they prioritize?",
+      "expected_output": "Greg recommended a 6-pattern base: weighted (optionally hand-elevated) push-ups, single-arm dumbbell overhead press (or push press), neutral-grip pull-ups/pulldowns, single-arm dumbbell rows, trap-bar deadlifts, and rear-foot-elevated split squats. He emphasized these as practical defaults for most people because they are easier to learn, joint-friendly, and broadly effective. Eric largely agreed, and added alternatives like low-incline dumbbell press, chin-ups, walking lunges, and single-leg RDLs. Both stressed using movement categories first (horizontal/vertical push-pull, knee/hip dominant lower body), then customizing. They also noted overhead pressing is optional for some trainees and shouldn’t be included just out of obligation.",
+      "topic": "general-purpose exercise selection",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 18,
+      "prompt": "The same listener asked for a hypothetical ‘SBS combine’: what tests should a generally strong/fit/athletic person repeat every ~12 weeks to track progress?",
+      "expected_output": "They proposed covering multiple capacities instead of only barbell strength. Suggested tests included an aerobic event (2-mile run, possibly 5K or 5-mile), anaerobic running (400–800 m), and short sprint speed (40 m or 100 m). For explosiveness they suggested vertical jump or broad jump, plus max-distance medicine ball throws (chest pass and overhead). For strength they suggested something like a 3RM squat/bench/deadlift, and for strength endurance max-rep pull-ups or even a 20RM squat. They also mentioned adding flexibility screening, and said this full battery is probably better as a longer periodic check (e.g., annual) than trying to run all of it every 12 weeks.",
+      "topic": "fitness testing battery",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 19,
+      "prompt": "A listener asked whether Eric’s switch to a fully vegan diet changed his training, performance, recovery, or supplementation approach.",
+      "expected_output": "Eric said he noticed no meaningful performance or recovery change after going vegan. Training remained broadly the same, with recent increases in training effort due to feeling good overall. His main nutrition adjustment was paying more attention to protein-source diversity (pea, rice, and soy) to improve amino acid coverage. He continued algae oil (EPA/DHA source) and a multivitamin, with B12 coverage noted as important. Greg added that iron deficiency is generally less common in men, while still acknowledging context can matter (e.g., high running volume).",
+      "topic": "vegan transition and supplementation",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 20,
+      "prompt": "A listener asked about the trend of ‘optimizing’ exercises based on anatomy and whether these highly specific modifications are actually better.",
+      "expected_output": "Greg said the basic concept is reasonable as hypothesis-generation, but criticized overconfident claims that tiny tweaks are universally superior. He noted there is often little or no longitudinal hypertrophy evidence for many of these specific comparisons, and warned that absolutist messaging can create anxiety/nocebo effects for people without specialized equipment. Eric agreed that anatomy should guide training in broad categories first, then individualization should come from practical feedback (comfort, soreness pattern, pump, and performance over time). Both emphasized meaningful inter-individual differences, so one ‘optimal’ setup is unlikely to generalize perfectly to everyone. Their practical recommendation was to use evidence-informed defaults, then personalize based on outcomes and tolerability.",
+      "topic": "exercise optimization claims",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 21,
+      "prompt": "A listener asked whether using a low incline instead of flat bench might improve hypertrophy, especially considering arching/retraction and shoulder comfort.",
+      "expected_output": "Greg said shoulder-safety claims about one setup being clearly safer are not strongly established, but low incline is a plausible hypertrophy option. He suggested any advantage may come less from ‘angle magic’ and more from slightly longer range of motion, since low incline typically changes touch point upward and can increase pec/triceps excursion. He personally prefers low incline and suspects it may be modestly better than flat for many lifters, though not with high certainty. Eric agreed and reported that low incline often feels better for his shoulder than repeated flat pressing, especially with his injury history. Practical takeaway: use the pressing angle(s) that let you train hard through good ROM with manageable discomfort.",
+      "topic": "low incline vs flat bench hypertrophy",
+      "skills": [
+        "sbs-bench",
+        "sbs-strength-training"
+      ],
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 22,
+      "prompt": "A listener asked whether deadlifting on a garage platform with about a 5% incline could meaningfully hurt performance compared to deadlifting on a flat gym floor.",
+      "expected_output": "Greg said yes, the incline could matter, but first check confounders: plate calibration differences and training temperature (especially cold garages) can noticeably affect output. He explained platform orientation changes mechanics: depending on bar position relative to slope, it can act like slight heel elevation plus deficit, or like toe elevation/low block pull. He recommended testing these setups deliberately on a flat platform to see whether they reproduce the same performance feel. Eric added that bar roll itself can be disruptive and suggested experimenting with orientation and potentially using lifting shoes with a small heel to improve comfort. Net answer: not just ‘in your head’—the incline is a plausible contributor, and it can be tested directly.",
+      "topic": "deadlift on sloped platform",
+      "skills": [
+        "sbs-deadlift",
+        "sbs-strength-training"
+      ],
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 23,
+      "prompt": "A listener asked how Greg and Eric manage work-life balance across research, coaching, podcasting, MacroFactor, and other responsibilities.",
+      "expected_output": "Eric separated the problem into coping and proactive structure. For coping, he emphasized passion, curiosity, and focus on impact; for proactive balance, he emphasized trimming low-quality ‘wasted’ time, protecting genuinely restorative rest, scheduling family/social time deliberately, and saying no more often. Greg reframed his answer using self-determination theory: autonomy, competence, and relatedness are all strongly present in his current work, which is why high work hours feel sustainable and meaningful. Both acknowledged they are unusually fortunate in their setup, and that this context matters. Greg also distinguished legitimate attempts to improve one’s work situation from shallow hustle-culture messaging.",
+      "topic": "work-life balance in fitness careers",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 24,
+      "prompt": "When researching a topic you don’t know well (for example collagen and skin aging or air pollution and health), what framework do you use to get up to speed?",
+      "expected_output": "Greg said he first scopes how deeply he actually needs to understand the topic and whether that depth is worth the time. For deep understanding, he starts with textbooks (sometimes both undergraduate and graduate-level), then moves to reviews: outcomes first, mechanisms second, so plausible mechanisms don’t bias interpretation of real-world results. He then fills physiology gaps (often with biochemistry references), reads key individual studies in target populations, and finally emails domain experts when unresolved contradictions remain. He estimated this process generally takes around 10-40 hours for solid competence. He also noted that true expertise still takes years; this process can get you to roughly an advanced non-expert level quickly, not instant mastery.",
+      "topic": "research process",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 25,
+      "prompt": "How much do insulin resistance and type 2 diabetes reduce muscle growth, and does metformin make hypertrophy worse?",
+      "expected_output": "Greg reviewed diabetes-specific resistance training data and noted hypertrophy is clearly still possible, not 'off the table.' In one 2020 diabetes-focused synthesis, lean mass increased about 0.71 kg; a separate male non-diabetic meta-analysis showed about 1.5 kg over ~10 weeks, suggesting at most a moderate reduction rather than zero growth. He emphasized those comparisons are imperfect because diabetic cohorts were often older and used lower-volume/lower-intensity training, which can depress gains independently. On metformin, he said current evidence (including the MASTERS trial) suggests a possible small negative hypertrophy effect, potentially via AMPK/MTOR-related signaling, but the evidence base is still small. Practical takeaway: type 2 diabetes may reduce growth rate somewhat, but it does not make hypertrophy impossible.",
+      "topic": "diabetes and hypertrophy",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 26,
+      "prompt": "If bigger muscles can improve leverage through internal moment arms, could getting a big pump acutely boost strength the same way?",
+      "expected_output": "Greg said the mechanism is plausible in principle: a pump increases muscle size transiently, so it could slightly alter leverage. However, he stressed that fatigue from the work used to get the pump often masks or outweighs any leverage benefit. He also noted the effect would vary by muscle architecture and joint angle, so it won’t apply equally across all lifts or ranges of motion. In some positions it might help, while in others the benefit is negligible or even reversed. Practical recommendation: don’t count on pumps as a reliable standalone strategy for immediate strength expression.",
+      "topic": "pump vs strength",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-bench"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 27,
+      "prompt": "Do caffeine and nicotine slow each other’s clearance, and is this true for other stimulants like ADHD meds too?",
+      "expected_output": "Greg said stimulant interactions depend on enzyme pathways, not just whether both compounds are 'stimulants.' Caffeine is largely metabolized through CYP1A2, while nicotine is mainly metabolized via CYP2A6/CYP2B6, so direct competitive slowing is unlikely. He added that smoking/combustion products can induce CYP1A2, which may shorten caffeine half-life in smokers. More broadly, interactions can lengthen, shorten, or not affect half-life depending on induction/inhibition patterns, so no blanket rule applies. His practical recommendation was to treat this as a pharmacist-level medication interaction problem when multiple compounds are involved.",
+      "topic": "stimulant metabolism",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 28,
+      "prompt": "Can 'fast metabolism' actually be real between people of the same size and activity level, or is that a myth?",
+      "expected_output": "Greg gave a clear yes: meaningful between-person BMR differences are real even after accounting for common predictors. He described prediction error ranges where people with similar body size/composition/activity can still differ by large amounts, with rough spreads on the order of hundreds of kcal/day (he discussed ranges around ~800 kcal across typical confidence intervals). He highlighted organ-size variability (liver, kidneys, heart, etc.) as a major reason, since those tissues are metabolically expensive relative to their mass. So while not everyone is an extreme outlier, 'fast' and 'slow' metabolism are legitimate phenomena at the individual level. The key point is that this variability is biological, not just tracking error or character flaws.",
+      "topic": "bmr variability",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 29,
+      "prompt": "If I’m doing 25k+ steps now and need to taper down, can I keep calories the same without messing up my energy balance?",
+      "expected_output": "Greg said probably not exactly, but calorie reduction may be smaller than expected because energy expenditure is constrained at very high activity levels. He used a practical example: dropping several thousand steps may not reduce total daily expenditure one-for-one with the raw activity cost. He also noted appetite tends to downshift alongside activity as long as you stay reasonably active, so a moderate calorie reduction often feels easier than people fear. In contrast, dropping all the way into sedentary territory can create worse appetite-expenditure mismatch. Practical approach: reduce steps gradually, monitor body weight/trends, and adjust intake in smaller increments rather than making one huge cut.",
+      "topic": "steps and calorie adjustment",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 30,
+      "prompt": "For basketball athletes in the offseason, how should plyometrics be integrated with hypertrophy and strength training?",
+      "expected_output": "Greg said context drives programming: current sport workload, conditioning priorities, and athlete needs all matter. His default setup is to place plyometrics early in training sessions while athletes are fresh, typically 1-2 focused plyo exposures per week for most realistic schedules. He warned against a common mistake of putting hard plyo sessions on 'off days,' because that can overload joints/tendons and reduce recovery quality. He also distinguished true high-quality plyometrics from fatigue cardio-jumping; once reps get very high and intent drops, it’s no longer quality plyometric work. Practical recommendation: keep plyos high-quality, low-to-moderate volume, and integrated before main lifting in sessions.",
+      "topic": "plyometric programming",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 31,
+      "prompt": "Is there evidence that long-term bracing/Val Salva in lifting damages blood vessels because of repeated blood pressure spikes?",
+      "expected_output": "Greg said direct long-term causal data in lifters is very limited and no ideal decades-long controlled dataset exists. He distinguished two issues: maneuvers that can acutely worsen pre-existing vascular conditions versus maneuvers that cause those conditions in healthy people. He noted there is indirect occupational lifting epidemiology, but it differs substantially from strength training in dose, context, and confounding factors, so transfer is uncertain. Bottom line: the strongest direct evidence specifically linking normal lifting-related bracing to long-term vascular damage is currently sparse. Practical implication is individualized caution for people with known medical risk, rather than broad claims from weak analogies.",
+      "topic": "bracing and vascular risk",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-deadlift"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 32,
+      "prompt": "After compounds, how much isolation work is enough for areas like forearms, calves, delts, biceps, and core without overdoing it?",
+      "expected_output": "Greg said there isn’t a universal cap because optimal isolation volume depends on goals, recovery capacity, and time constraints. He emphasized many muscles are only partially covered by compounds, so some targeted work is often useful. As a broad practical baseline, he suggested roughly 2-4 challenging sets once or twice per week per under-targeted muscle group for many lifters. He also cautioned that global recovery can become limiting even when local muscle stress seems modest, so outcomes and fatigue trends should guide progression. Recommendation: start conservative, monitor performance/recovery, and scale up only if adaptation justifies it.",
+      "topic": "isolation volume",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-bench",
+        "sbs-squat",
+        "sbs-deadlift"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 33,
+      "prompt": "What are your favorite and least favorite things Greg has cooked?",
+      "expected_output": "Lindsay said many of Greg’s meals were excellent, with favorites including simple but well-executed dishes (pizza, breads, biryani/chicken-and-rice, and other staples). Greg highlighted chicken shawarma as one of his own favorite dishes Lindsay makes or requests as well, and both agreed most outcomes are consistently good when following solid recipes. Neither identified a major recurring failure, just occasional underbaked or texture-mismatch one-offs. This segment was more personal/fun than technical coaching. It closed Lindsay’s final co-host episode before the incoming host transition.",
+      "topic": "personal cooking preferences",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 34,
+      "prompt": "Strength seems to predict lifespan better than muscle size, but most studies use grip strength. Is there a better way to assess real-world strength for longevity (for example lower-body and pushing strength percentiles), and should people chase higher strength percentiles to live longer?",
+      "expected_output": "The hosts said additional strength metrics (like knee extension or pressing) could improve population-level prediction a bit, but individual-level prediction would still be too noisy to be very actionable. They emphasized that grip strength is practical partly because most people do not train it directly, so it captures general physical robustness rather than a highly trained sport-specific metric. Their practical recommendation was simple: resistance train consistently (roughly 90-120 minutes/week, around 2-3 sessions) instead of chasing a specific percentile score. They argued the strength-longevity link is likely not purely causal from training volume alone, and there are diminishing returns once you are already clearly above average. They also discussed that resilience after major health setbacks (illness/hospitalization) may explain part of the association, not just maximizing gym performance forever. Net guidance: keep lifting and stay active, but do not obsess over moving from, say, 80th to 99th percentile on a single lift.",
+      "topic": "Strength metrics and longevity",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 35,
+      "prompt": "I have deadlifted with a trainer for years and often test very heavy/1RM work. My body weight tends to stay close to my deadlift max, and I developed binge-eating/body-image struggles. Could weekly near-max lifting be defending my body weight and making intentional weight loss much harder?",
+      "expected_output": "The hosts said heavy lifting itself is unlikely to directly prevent fat loss; energy intake and total expenditure are the main drivers. They noted that switching from higher-volume work to frequent 1RM attempts might only change calorie burn modestly (not enough to explain major weight trends). Greg was blunt that the coaching setup sounded poor and suggested considering a better trainer, especially given years of training with limited progress. They acknowledged psychological friction during weight loss for strength-focused lifters: absolute gym numbers may stall or drop in a deficit even when relative strength improves. A practical strategy they offered was using more bodyweight performance targets (push-ups, pull-ups, dips, step-ups), which often improve as body weight drops and can preserve motivation. For binge-eating concerns specifically, they advised involving a qualified dietitian/clinical support rather than trying to solve that part with programming tweaks alone.",
+      "topic": "Progressive overload, body weight, and weight-loss friction",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training",
+        "sbs-deadlift"
+      ],
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 36,
+      "prompt": "For hypertrophy, what matters more: resistance curve or range of motion? Do lengthened partials/full-ROM results depend on whether an exercise truly loads the long-muscle-length position enough?",
+      "expected_output": "The hosts said evidence is still limited and mixed, so strong one-size-fits-all claims are premature. They reviewed examples where studies point in different directions (some favoring more stretch-position loading, some not), and highlighted that multi-variable exercise comparisons are hard to interpret cleanly. Their current view was that both factors likely matter: training at meaningful long muscle lengths seems useful, and having at least some substantial tension there is probably important. They doubted that you must perfectly maximize long-length tension in every movement, but also doubted extreme setups with almost no challenge in stretched positions would be ideal for growth. Practically, they recommended not overfitting to social-media certainty and instead training hard with exercises that provide solid tension through useful ranges. Bottom line: the field is promising but not settled enough to justify dogmatic prescriptions.",
+      "topic": "Resistance curve vs ROM for hypertrophy",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 37,
+      "prompt": "I want to bulk, but I worry that repeated yo-yo dieting and incomplete metabolic recovery have left me regaining fat faster, with old deficits no longer working. Should I hold my current weight until metabolism catches up, or is there a direct fix?",
+      "expected_output": "Greg explained that after weight regain, many metabolic adaptations from dieting tend to reverse as fat mass, lean mass, leptin, and organ/muscle mass come back up. He also noted a plausible (but not fully settled) yo-yo mechanism: repeated cycles may restore fat faster than lean tissue, potentially leaving lower metabolic rate relative to body mass over time. He suspected part of the issue is often behavioral/NEAT-related (less spontaneous movement, greater movement efficiency, lingering fatigue after very lean phases), not just resting metabolism. Their practical recommendation was to avoid another aggressive cut immediately, spend time maintaining, and let maintenance become easier before dieting again. If dieting again, go slower and/or avoid pushing as lean as before. They stressed broad principles over rigid \"maintenance phase formulas\": energy state over time and adherence matter most.",
+      "topic": "Bulking after dieting and metabolic adaptation concerns",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 38,
+      "prompt": "For hypertrophy, are very short rests best even for powerlifters doing hard squat volume? If someone rests 6-7 minutes between squat sets, are they leaving gains on the table versus strict 2-minute rests?",
+      "expected_output": "The hosts said context matters more than a simplistic universal rest rule. They argued that long, taxing compound sets (especially squats/deadlifts in stronger lifters) likely require more recovery than small-muscle isolation work, and preserving set quality can justify longer rests. Greg said that for powerlifters, performance on main lifts should usually come first; hypertrophy-focused accessories can use shorter rests if desired. Milo added that existing evidence suggests 1-2 minute rests can be close to optimal for many hypertrophy contexts, but it does not prove that all advanced squat work should be capped at 2 minutes. They also noted practical constraints: with limited session time, very long rests reduce total work opportunities. Net take: 6-7 minutes is not automatically wrong for heavy volume squat sets, especially when sport performance quality is a priority.",
+      "topic": "Hypertrophy vs rest-interval tradeoffs",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat"
+      ],
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 39,
+      "prompt": "In pro sports, are there likely hidden super-drugs that athletes use, or is the claim that \"everyone is on PEDs\" overstated?",
+      "expected_output": "The hosts said blanket claims that all pros are on PEDs are usually too broad. Greg emphasized that modern, well-funded anti-doping (random unannounced testing, strong assays, isotope-ratio methods, sample storage for retesting, and strict whereabouts rules) can be very effective. In his view, successful cheating is often more about exploiting testing gaps/logistics and lax league protocols than using mysterious undetectable compounds. They discussed how rules differ by sport/league (offseason windows, test-frequency caps, and enforcement quality), which changes risk-reward and likely prevalence. Their estimate was that use is probably a sizable minority in some contexts, not universal 100%. Practical takeaway: evaluate each sport’s testing architecture before making sweeping conclusions about \"super drugs\" or universal doping.",
+      "topic": "PED plausibility and testing systems",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 40,
+      "prompt": "What should a 15-year-old do to gain muscle and strength: exercise selection, weekly volume, reps/intensity/failure, and calories/macros?",
+      "expected_output": "Pack recommended building around major compound patterns (squat/press/hinge/row variants), optionally with machines, and generally using 2-3 exercises per major muscle group. He suggested starting around 8-12 fractional sets per muscle per week and mostly training in about the 5-12 rep range. Effort guidance was to keep most work close to failure (roughly 0-2 RIR), with many sets around 1-2 RIR and some sets to failure to calibrate effort. For nutrition, he suggested a slow gain target around 1% body weight per month and protein roughly 1.5-2.0 g/kg/day, without overcomplicating supplements (creatine aside, whole-food habits first). Frequency guidance was about 3-5 sessions/week (with even 2 able to work for beginners). Greg added that beginners benefit from substantial bodyweight/calisthenic practice first (e.g., competent push-ups/lunges/step-ups) to build control and movement awareness before aggressively loading barbells.",
+      "topic": "Teen training and nutrition fundamentals",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 41,
+      "prompt": "In a good powerlifting program, how much training time should be hypertrophy-focused, and how should that change with training age and in-season vs off-season? Also, when is someone strong enough to start bodybuilding-style accessory work?",
+      "expected_output": "Greg said newer lifters generally need more hypertrophy work, not less. Early on, he recommended learning the lifts for the first few months, then spending the next couple of years building muscle and filling out a weight class while keeping some heavier work in. As lifters get more advanced and hypertrophy slows, the tradeoff shifts toward more specific strength work. Near meets, hypertrophy emphasis should drop, and he specifically noted that high-rep bodybuilding-style work (e.g., 10-15 rep focus) is usually a poor fit close to competition (around the last ~4 weeks). In true off-seasons, especially when moving up or filling out a class, hypertrophy blocks make more sense. They also emphasized adherence: a slightly suboptimal but enjoyable approach done consistently for years still works very well.",
+      "topic": "hypertrophy vs strength periodization",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 42,
+      "prompt": "How often should someone bulk and cut in practice? Is there a point where bulking stops helping strength or muscle and becomes harmful?",
+      "expected_output": "Eric said not to treat bulking as a simple on/off category and not to schedule it by calendar alone. Instead, set a specific endpoint: how much lean mass you want, how much fat gain you accept, and by what date. Larger surpluses should be shorter and used less often; smaller surpluses can run longer. He gave a practical minimum of about one month for a bulk, noting that two-week bulks are usually not productive for real tissue gain. If you are in surplus but not gaining muscle or strength, the bulk may no longer be effective and training structure should be reassessed. He also noted there can be health downsides if surplus continues without productive outcomes.",
+      "topic": "bulk and cut frequency",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 43,
+      "prompt": "As my lifts get stronger, my rest periods keep getting longer. What causes that, and what does the literature say about rest intervals for hypertrophy vs strength?",
+      "expected_output": "Greg explained that heavier loads increase total work and oxygen/anaerobic cost per set, so stronger lifters naturally need longer recovery between sets. He used examples showing a very heavy set of 10 squats can create enormous fatigue, making short rests unrealistic for maintaining performance. On research, he said hypertrophy findings are mixed: some studies favor longer rests, some shorter, and some show no difference. For strength development, he leaned clearly toward longer rests, especially for strong lifters on compound lifts. His practical guidance was roughly 90 seconds to 2 minutes minimum for upper-body/single-joint work, around 3 minutes commonly, and about 5 minutes (or more) for heavy lower-body compounds. They also suggested non-interfering supersets to save time without sacrificing key lift performance.",
+      "topic": "rest intervals for strength and hypertrophy",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 44,
+      "prompt": "Can you rank these sports by difficulty/competitiveness: natural bodybuilding, natural classic physique, baseball, basketball, and football?",
+      "expected_output": "Eric gave a direct ranking: baseball #5, basketball #4, football #3, classic physique #2, and natural bodybuilding #1. His rationale centered on competitive depth, physical demands, and how hard final prep is in physique sport. He argued natural bodybuilding edges classic physique because achieving the final stage-lean condition (including glute conditioning) is especially punishing. The response was partly humorous but still gave a clear ordered answer.",
+      "topic": "sport competitiveness ranking",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 45,
+      "prompt": "At 6'7\" and 250 lb, BMI puts me near overweight. Is BMI biased for very tall people?",
+      "expected_output": "Greg said yes: BMI can misclassify very tall people because the traditional formula uses height squared, which is an imperfect scaling exponent. He noted this was a historical simplification from the 1800s and suggested scaling closer to height^2.5 is often more appropriate. Using the asker's approximate stats (2.0 m and 115 kg), standard BMI gives about 28.75, but with a 2.5 exponent it drops near 20.3. That illustrates how extreme height can distort interpretation. He also noted similar edge-case distortion can happen on the very short end.",
+      "topic": "BMI interpretation in tall lifters",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 46,
+      "prompt": "From a bodybuilding standpoint, can I completely remove deadlifts and all deadlift variations? Can other posterior-chain exercises fully replace them?",
+      "expected_output": "Eric's answer was an unequivocal yes for bodybuilding: you can build a great physique without deadlifts. He listed alternatives across target areas: hamstring curls and glute-ham raises for hamstrings, hip thrusts and squat/lunge/back-extension variants for glutes and posterior chain, rows/pull-ups for back thickness, and shrugs/farmer's walks for traps. He added that forearm isolation is optional for bodybuilding judging, though it can be trained if desired. He still likes deadlifts in many programs because they are highly time-efficient for loading many posterior muscles at once. But when lifters have injuries, poor tolerance, or strong preference against deadlifts, replacing them is fully viable.",
+      "topic": "deadlift necessity for bodybuilding",
+      "skills": [
+        "sbs-deadlift",
+        "sbs-strength-training"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 47,
+      "prompt": "I usually get 7-8 hours of sleep, but when I try to force 8-9+ hours my sleep quality gets worse. Should I stop trying to force extra sleep?",
+      "expected_output": "Greg said yes, avoid forcing sleep if it is creating stress and fragmented sleep. He noted sleep-extension studies in high-level athletes often increased sleep from roughly 6-8 hours to 9-10+ hours and showed performance benefits, but that may not generalize perfectly to older or less heavily trained populations. He recommended a practical trial: shift bedtime earlier by about 30-60 minutes and see what your body does naturally. A useful marker is waking without an alarm; if that happens consistently, you are likely near your current sleep need. For many adults, especially past their 30s, very long nightly sleep durations may simply be harder to sustain. In that case, modest extension may be realistic while forced extension is counterproductive.",
+      "topic": "sleep extension and recovery",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 48,
+      "prompt": "My doctor said my levels were high and told me to stop creatine. Should elevated creatinine in a creatine user be a concern?",
+      "expected_output": "Eric interpreted this as elevated creatinine (not creatine) and said creatine supplementation commonly raises creatinine because creatinine is a breakdown product. He contrasted typical dietary creatine (~1-2 g/day) with common supplemental intake (often ~5 g/day), which can make the standard creatinine marker less informative on its own. His practical recommendation was not to panic but to discuss context with the physician and request follow-up kidney-function assessment using additional tests. In other words, elevated creatinine in a creatine user can be expected, but kidney health should still be checked with appropriate interpretation rather than ignored.",
+      "topic": "creatine and creatinine labs",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 49,
+      "prompt": "Greg mentioned avoiding anabolic steroids partly due to possible cognitive effects. What evidence is there for that?",
+      "expected_output": "Greg cited a 2017 structural brain imaging paper on long-term anabolic-androgenic steroid users versus non-users reporting smaller values in some brain-structure measures and lower verbal IQ in users. He repeatedly emphasized the key caveat: the human evidence is largely cross-sectional, so causality cannot be confirmed. He also mentioned mechanistic evidence suggesting neurotoxicity at high androgen exposure, with trenbolone called out as particularly concerning in preclinical contexts. His take was that evidence is less definitive than classic side effects (e.g., lipid changes), but concerning enough to influence personal risk decisions. He also suggested dose likely matters, with higher exposures plausibly carrying greater risk.",
+      "topic": "anabolics and cognition risk",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 50,
+      "prompt": "Do plant-based diets lead to better gains or fat loss than diets that include animal products?",
+      "expected_output": "Eric pushed back on a blanket claim that plant-based diets are categorically healthier, noting observational comparisons are heavily confounded by broader health behaviors. For physique outcomes, he said calories and macronutrient setup drive weight gain/loss outcomes more than dietary label. With matched protein and macros, performance/body-composition outcomes should be similar or only slightly favor omnivorous diets due to protein-quality differences. He added that good planning of essential amino acid intake can neutralize much of that gap in vegan diets. His bottom line: both vegan and omnivorous diets can work very well when thoughtfully structured.",
+      "topic": "plant-based vs omnivorous for body composition",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 51,
+      "prompt": "How can students improve writing skills for science-based fitness articles, and how do you get published on larger websites?",
+      "expected_output": "Greg recommended deliberate repetition (he used a past target of writing ~1,000 words daily) plus strong editorial feedback. He advised getting an editor if possible, or at least reliable critique from capable peers in your target audience. He also emphasized publishing publicly to get real-world feedback while still maintaining quality standards and purposeful improvement. For getting published, he said to proactively pitch editors (don't wait to be discovered), match the site's audience and style, and read the site's style guidelines first. He specifically advised having drafts ready before pitching and making every step easier for the editor to increase acceptance odds.",
+      "topic": "science writing and publication strategy",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 52,
+      "prompt": "When will Greg become a permanent host of the show?",
+      "expected_output": "Eric said they were not committing to Greg as a permanent host. He did announce Greg was invited back as special guest co-host for episode 26, airing one week later. So the answer was no to permanence, yes to near-term continuation.",
+      "topic": "podcast host status",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 53,
+      "prompt": "Any advice on easing into a high-volume hypertrophy-focused mesocycle after a powerlifting meet without losing my strength gains?",
+      "expected_output": "They recommend keeping the competition lifts in moderate strength-relevant ranges instead of shifting entirely to high reps. A practical template is three weeks mostly in the 5-10 rep range, then one week including heavier triples to keep top-end strength exposure. They also suggest an over-warm single around RPE 8 before volume work to preserve neural readiness with limited fatigue. The core point is to keep at least some heavy practice while accumulating hypertrophy volume.",
+      "topic": "post-meet hypertrophy without strength loss",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 54,
+      "prompt": "What do you personally do right after a meet—jump into the next block immediately or take time off?",
+      "expected_output": "The answer is context-dependent. If an athlete is motivated and recovered, they can return quickly; if beat up, use an easier first week with roughly 70-80% loading and reduced volume. They frame complete time off as acceptable when needed, since one week in a year is trivial. Their preference is usually to keep intensity present while temporarily pulling back volume.",
+      "topic": "post-competition transition week",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 55,
+      "prompt": "Do personalized protein blends actually help, or are they mostly a way to charge more?",
+      "expected_output": "They describe most personalization claims as low-impact for typical lifters. For most people, standard whey or a basic blend is already effective, affordable, and practical. Personalized blends may matter more for specific constraints like vegan preferences, lactose intolerance, or digestive issues. The broad recommendation is to avoid overcomplicating protein powder selection.",
+      "topic": "protein blend personalization",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 56,
+      "prompt": "How should I tweak a program that mostly works before deciding to switch programs entirely?",
+      "expected_output": "They advise not changing things while progress is still happening, because the optimal plan is a moving target. Once a plateau appears, first decide whether the relevant lift likely needs more stress or less stress. Then make small, targeted changes—like volume, intensity, frequency, or exercise selection—and evaluate each change for a few weeks instead of overhauling everything at once. If serial tweaks fail, then moving to a new program is reasonable.",
+      "topic": "program troubleshooting and plateaus",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 57,
+      "prompt": "What’s your take on mass gainers for people who travel a lot and need easy calories?",
+      "expected_output": "They consider mass gainers acceptable as a convenience tool, not a uniquely superior product. Most are basically protein plus simple carbohydrate sources, so they can be replicated with regular whey and food choices. If the product helps someone consistently hit calorie targets, it can be useful in practice. The key criterion is adherence and total intake, not marketing claims.",
+      "topic": "mass gainers and calorie adherence",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 58,
+      "prompt": "For pull-ups, do I need to get my chin over the bar for strength or hypertrophy benefits?",
+      "expected_output": "They note pull-ups have a different strength curve from many barbell lifts: the top range is often the weakest position. Because of that, they do not treat strict chin-over-bar as a hard requirement for productive training adaptations in all contexts. Full range can still be useful when available, but partial ranges can produce meaningful strength and hypertrophy stimulus. So the recommendation is pragmatic rather than dogmatic.",
+      "topic": "pull-up range of motion standards",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 59,
+      "prompt": "How should we interpret older intermittent-vs-daily calorie restriction research, and what makes a study useful today?",
+      "expected_output": "They emphasize that older papers are not automatically invalid, but should be interpreted in the context of newer evidence. They recommend evaluating the broader body of literature rather than anchoring conclusions to a single 2011-era review. They also point out that research definitions of intermittent fasting vary (alternate-day fasting, 5:2, and time-restricted eating), which affects applicability. Their practical takeaway remains that total energy intake is generally the dominant driver for fat loss outcomes.",
+      "topic": "interpreting fasting research",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 60,
+      "prompt": "What do you think about bands and chains for building absolute strength? The logic sounds good—do they actually work?",
+      "expected_output": "They explain the rationale: accommodating resistance can better match the lift’s force curve by increasing load where leverage improves. A concrete example discussed is bar weight plus chain load that is lighter near the bottom and heavier near lockout. Despite plausible theory, they cite research (including meta-analytic evidence) showing little to no clear strength advantage versus conventional loading for most lifters. Their bottom line is that bands/chains can be fine as variation tools, but not a reliably superior method for maximal strength gains.",
+      "topic": "accommodating resistance effectiveness",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 61,
+      "prompt": "Which supplements are actually useful in an evidence-based sense, and which are mostly hype?",
+      "expected_output": "Creatine is presented as the strongest general-purpose option for performance and muscle outcomes, with especially strong relevance for people with low dietary creatine intake (for example many vegetarians/vegans). They also discuss conditional value for supplements like vitamin D (particularly when deficient), fish oil, magnesium, and ashwagandha depending on context and goals. The consistent theme is to prioritize proven basics over proprietary blends or kitchen-sink formulas. Supplement value is framed as incremental compared with training and nutrition fundamentals.",
+      "topic": "evidence-based supplement priorities",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 62,
+      "prompt": "Are there downsides to eating a lot of protein, and is the common target of about 1 gram per pound enough for building muscle? Should someone aiming to maximize gains go even higher?",
+      "expected_output": "Eric said concerns about high-protein harms are often overstated in healthy people, noting that common internet claims about kidney or bone damage are not well-supported in lifters without pre-existing disease. He framed practical intake around evidence-based ranges rather than extreme intakes. His recommended target for most people was roughly 1.6-2.2 g/kg/day, which already covers most muscle-building needs. He noted that going far beyond that range usually gives little added hypertrophy benefit unless total diet context requires it. The key was hitting a sufficient intake consistently, then focusing on total calories and training quality.",
+      "topic": "protein upper-limit concerns",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 63,
+      "prompt": "Instead of doing many sets of the same exercise, could rotating through multiple exercises for the same muscle reduce diminishing returns and improve hypertrophy?",
+      "expected_output": "Greg said he does not see strong downside to exercise variation when total hard sets are matched, and it may be modestly beneficial. They discussed the Fonseca-style finding where total quad growth was similar across conditions, but the varied-exercise groups showed more balanced growth across different quad regions. The practical takeaway was that variety can help distribute stimulus and may improve regional hypertrophy without necessarily changing overall growth dramatically. Eric added that variation can also improve enjoyment and adherence, which matters for long-term outcomes. They did not present this as a magic trick, but as a reasonable programming option.",
+      "topic": "exercise variety and hypertrophy",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat"
+      ],
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 64,
+      "prompt": "For hypertrophy, are machines better than free weights, and which one lets you do more useful volume and make better gains?",
+      "expected_output": "Eric's answer was that neither modality is universally superior for hypertrophy. He emphasized that machines can be very useful for adding variation, reducing some technical constraints, and accumulating targeted volume. He still favored keeping a base of compound free-weight work when skill and injury status allow, while using machines to complement that base. Both hosts stressed specificity: if performance in a lift matters, include that lift; if the goal is hypertrophy, a mixed approach is usually strong. Net recommendation: use both, and pick the tool that best fits the muscle, movement, and fatigue profile.",
+      "topic": "machines vs free weights",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench"
+      ],
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 65,
+      "prompt": "Since lifting can increase bone mineral density, could improving bone mass also feed back to improve strength or muscle gain? If so, how would you try to prioritize bone gains?",
+      "expected_output": "Eric said the two-way relationship is plausible, while also noting the evidence is still emerging. He referenced mechanistic ideas like bone-derived signaling factors and acknowledged this area is active research rather than settled doctrine. For practical bone-focused strategies, he highlighted continued heavy resistance training as the foundation. He also suggested carefully introducing high-load partials to increase skeletal loading and considering impact-oriented work where appropriate and tolerated. The tone was cautiously optimistic: likely real, but not yet pinned down with definitive prescriptions.",
+      "topic": "bone-muscle crosstalk",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 66,
+      "prompt": "Do hardgainers benefit from exceeding typical protein targets (the listener phrased it as over 1 g/kg), and is there meaningful evidence about hardgainers who are female?",
+      "expected_output": "Eric reframed this as mostly a hardgainer problem, not a protein problem. He said that if someone is already in a sufficient intake range (about 1.6-2.2 g/kg/day), simply pushing protein higher usually won't fix poor gain rates. If the issue is adaptive increases in energy expenditure, the main solution is higher total calories, not just more protein. They also discussed that perceived sex differences in hardgainer reports may partly reflect who talks about it online rather than a clear biological split. Greg and Eric agreed that if intake is truly low, raising protein helps, but beyond sufficiency, energy balance and training response dominate.",
+      "topic": "hardgainers and protein dosing",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 67,
+      "prompt": "Could the diminishing returns from very high session volume be partly explained by increased muscle protein breakdown from accumulating damage?",
+      "expected_output": "Eric said yes, muscle protein breakdown can contribute, but likely does not fully explain the whole diminishing-returns story except at very high, often unrealistic, volumes. He described the issue as multi-factorial, with systemic stress signals also becoming important as volume climbs. They mentioned broader overreaching/overtraining markers (e.g., inflammatory and hormonal shifts) as additional plausible mechanisms reducing net adaptation. So MPB is part of the picture, but not the only bottleneck. Practical implication: more volume is not always better once recovery costs start outpacing adaptive benefit.",
+      "topic": "volume ceilings and MPB",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 68,
+      "prompt": "If you're several years removed from undergrad and need academic references for a master's application, how can you request letters without being rude, and what can you do if those relationships are stale?",
+      "expected_output": "Eric recommended two routes: re-activate prior professor relationships or build new ones through nearby labs. For old contacts, he suggested a concise email that quickly refreshes who you are, includes concrete context (course, performance, resume), and asks whether they can provide a strong letter. He advised checking each program's letter requirements first, since some specify exactly which referee types they accept. If prior contacts are weak, volunteering in a research lab is a practical way to build credible new references while gaining research experience. Greg added that most letters are not make-or-break unless they are exceptionally negative, so a clear and professional request is usually sufficient.",
+      "topic": "graduate application references",
+      "skills": [],
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 69,
+      "prompt": "What's your updated take on the myonuclear domain theory for hypertrophy, and does your 2015 \"Grow Like a New Lifter\" advice still hold up? It seems like newer evidence suggests myonuclear accretion may not always come before hypertrophy.",
+      "expected_output": "Greg said he still views the original article as a hypothesis-driven piece, but his confidence dropped from about 80% in 2015 to roughly 60% now. He still thinks the central idea is plausible: early growth is helped by adding myonuclei from satellite cells, while advanced lifters may hit slower progress when that process plateaus. He emphasized newer studies have made the picture more equivocal, especially in untrained models, so certainty is lower than before. He also noted this newer work may not directly answer his original advanced-lifter plateau question. Practically, his old recommendations are now \"possibly useful but less certain,\" not a guaranteed workaround.",
+      "topic": "myonuclear domain theory",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 31,
+      "files": []
+    },
+    {
+      "id": 70,
+      "prompt": "Sodium bicarbonate has gotten a lot of attention for reducing fatigue in high-intensity interval work. Do you think it's useful for HIIT and lactate-threshold style workouts?",
+      "expected_output": "Eric said sodium bicarbonate is one of the better-supported ergogenic supplements for sprint-like high-intensity performance, though evidence is much weaker for resistance training. The mechanism is extracellular buffering: it raises blood bicarbonate and helps manage exercise-induced acidosis, often allowing slightly more acute work output. He cautioned that chronic use may not improve long-term training adaptations, citing a 2018 study by Siegler et al. where repeated use did not clearly enhance adaptation outcomes. Main downside is GI distress at higher doses. He highlighted a newer staged-loading protocol beginning about 19.5 hours pre-test (progressing around 110, 130, 160, and 200 mg/kg doses) to reduce GI issues while still elevating bicarbonate. He also mentioned pairing with beta-alanine may help somewhat, but returns are diminishing and logistics are cumbersome.",
+      "topic": "sodium bicarbonate supplementation",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 31,
+      "files": []
+    },
+    {
+      "id": 71,
+      "prompt": "You previously discussed chains and bands for strength. What about using accommodating resistance for hypertrophy specifically?",
+      "expected_output": "Greg said the likely effect is neutral-to-positive if used intelligently, but potentially negative if overdone. His main warning was not to add so much band/chain tension that lockout becomes the limiter, because that can reduce meaningful loading in stretched positions where hypertrophy may be especially stimulated. He gave examples showing how matching a resistance curve can be sensible (e.g., bottom challenge still high while top load rises), but \"crazy\" tension setups can undermine training quality. He noted direct hypertrophy data are sparse, and available isotonic-vs-isokinetic comparisons don't clearly show superior growth from perfectly matched resistance. He also discussed a possible constant-tension/deoxygenation benefit, but treated that as speculative and secondary to existing direct evidence. Bottom line: use moderate accommodating resistance, keep full-ROM challenge meaningful, and don't expect magic.",
+      "topic": "bands and chains for hypertrophy",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-bench",
+        "sbs-squat"
+      ],
+      "episode": 31,
+      "files": []
+    },
+    {
+      "id": 72,
+      "prompt": "A listener said the \"Game Changers\" rebuttal video is back and asked if you could break down the main claims they call scientific consensus. Can you revisit your take?",
+      "expected_output": "Eric declined a full point-by-point debate format, saying it is high time-cost and low value compared with reading primary literature. He reiterated his practical stance: well-designed omnivorous and vegan diets can both support performance and gains, and switching between well-constructed versions is usually not a dramatic \"game changer.\" For deeper rebuttals he pointed listeners to external detailed writeups (e.g., Lane Norton and Menno Henselmans). He criticized the documentary's use of tiny demonstrations and rhetorical framing versus robust controlled evidence. His recommendation was to evaluate claims via higher-quality research methods and transparent conflicts of interest, not cinematic anecdotes.",
+      "topic": "game changers follow-up",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 31,
+      "files": []
+    },
+    {
+      "id": 73,
+      "prompt": "After watching \"Game Changers,\" I thought your earlier review misrepresented it—especially claims about meat hurting fighting performance and the cows-vs-humans muscularity argument. Did you misremember or intentionally distort the film?",
+      "expected_output": "Eric strongly rejected intentional misrepresentation and then defended his interpretation with specific film examples and quotes. He argued the movie repeatedly implies plant-based eating improves fighting outcomes via narrative sequencing (including the McGregor/Diaz framing), mentioning timestamps around ~9 and ~20 minutes and the \"two steaks a day\" line. He also highlighted quote-level rhetoric like comparisons involving gorillas and the statement about men losing \"manly manhood\" with more meat, which he said reflects weak logic rather than robust scientific argumentation. Greg generally agreed those implications were a fair read, while both acknowledged interpretation can differ. Net answer: he stood by the core critique but welcomed correction attempts and listener scrutiny.",
+      "topic": "game changers criticism response",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 31,
+      "files": []
+    },
+    {
+      "id": 74,
+      "prompt": "Can low VO2 max or poor aerobic conditioning hold back strength progress? I'm stuck, my VO2 max is around 25, and I also have mild asthma.",
+      "expected_output": "Greg said yes, poor conditioning can limit lifting progress in some cases, and this sounds like one of them. He advised medical clearance first for asthma, then noted that a VO2 max around 25 ml/kg/min is low relative to typical sedentary averages (~35 women, ~40 men), with many trained athletes around 45-50+ and elite endurance athletes often 70-90+. He explained that hard resistance training still carries substantial systemic energy demand, especially with large compound movements and heavier loads. His practical recommendations were to add dedicated aerobic work, consider longer rest periods, and temporarily bias lower-body work toward machine/single-joint exercises to keep local muscle stimulus high while reducing systemic fatigue burden. He added that very strong lifters can also run into conditioning bottlenecks due to sheer workload, where longer rests and some cardio may help manage performance capacity.",
+      "topic": "aerobic conditioning and strength plateaus",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-diet"
+      ],
+      "episode": 31,
+      "files": []
+    },
+    {
+      "id": 75,
+      "prompt": "Do I need to limit caffeine, diet soda, or artificial sweeteners during a cut or in the offseason? I’m worried I might be over-focusing on things that don’t matter.",
+      "expected_output": "Eric said common non-nutritive sweeteners generally look fine in the evidence, even at fairly liberal intakes, and he isn’t strongly concerned about them for health or physique outcomes. For caffeine, he noted common review-paper ranges of roughly 400-600 mg/day as a practical default, while acknowledging that exact cutoffs are somewhat fuzzy. His practical test is symptom-based: if you’re jittery, sleeping worse, getting headaches, or no longer getting useful effects, you’re likely pushing too high. He emphasized that caffeine tolerance/metabolism varies a lot between people, so personalization matters more than a single universal cap. In dieting specifically, he recommends not burning every easy strategy in the offseason; heavy caffeine/sweetener use year-round can reduce their usefulness later in a hard prep. So the key is less fear of sweeteners and more strategic use plus symptom-guided caffeine management.",
+      "topic": "caffeine and sweeteners while dieting",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 76,
+      "prompt": "How much of a difference do steroids make for muscle growth?",
+      "expected_output": "Greg framed the answer as highly dependent on what is used (for example, a mild protocol versus a full bodybuilding stack), so any number is only a ballpark. Using FFMI examples, he described untrained men around FFMI ~20, recreational trained natural lifters around ~23, and enhanced lifters around ~26, implying roughly +3 points natural versus +6 enhanced from a similar starting point. At the extreme end, he cited roughly FFMI ~30 for the largest drug-free physiques versus ~40 for top enhanced physiques, again suggesting about a twofold difference in gain magnitude. His headline takeaway was not that enhanced lifters end up exactly twice as big, but that the additional muscle accrued over a career can be around 2x in broad terms. He also noted that this larger muscle gain should materially affect strength outcomes, which he covered in his related strength-model article.",
+      "topic": "steroids and muscle growth magnitude",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 77,
+      "prompt": "When strength drops during a cut, how can I tell whether it’s normal from the deficit or a sign I’m overreaching?",
+      "expected_output": "Eric said some strength loss during aggressive leanness phases can be normal, especially deep in prep, but overreaching can mask performance and make losses look worse. His diagnostic move is to actually deload instead of pushing through: if bodyweight drops rapidly and strength rebounds after deloading, fatigue/overreaching was likely a major contributor. If nothing improves across a normal deload window, the drop may be more expected from the cut itself or from broader programming/nutrition issues that need adjustment. Greg added that strength athletes often catastrophize small losses while cutting to a lower class; relative metrics can give better context. One practical check he gave was tracking bodyweight pull-up/dip rep maxes over time: if bodyweight falls and reps are stable or rising, losses are likely proportionate; if both bodyweight and reps are dropping, losses may be disproportionately large. Overall, they recommended using deload response and relative-performance context before assuming the cut is failing.",
+      "topic": "strength loss vs overreaching in a cut",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 78,
+      "prompt": "If I’ve been squatting 2-3 times per week, can I still progress on just 1 squat day per week, and how should I set it up?",
+      "expected_output": "Greg said progressing on once-weekly squatting is absolutely possible; the main tradeoff is usually slower rate of progress, not zero progress. He described the evidence trend as: >1 session/week tends to beat exactly 1 session/week on average, but very high frequencies are not magic by default. For setup, he advised against collapsing all prior weekly squat volume into one huge session (for example, don’t blindly turn 15 weekly sets into 15 sets in one day). Instead, make that single session larger than your old per-session average, then titrate up gradually based on recovery and performance. As a rough starting heuristic, he suggested avoiding a drop of more than about 50% in total weekly squat volume when switching structures. Practical implementation: start with your previous per-session dose plus ~1-2 sets, then adjust upward only if progress stalls and recovery allows.",
+      "topic": "squat frequency reduction",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat"
+      ],
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 79,
+      "prompt": "Does calorie cycling (higher calories on training days, lower on rest days) meaningfully reduce fat gain compared to flat daily calories?",
+      "expected_output": "Eric said he hasn’t seen compelling direct evidence that matching calories to training/rest days is inherently superior for body-composition outcomes when weekly intake is equated. His main point was that energy balance is a longer-game variable; micromanaging hour-by-hour or day-by-day intake/expenditure matching is usually unnecessary. He referenced related literature and argued that total intake/adherence across the dieting window (for example, over many weeks) is the dominant driver. He specifically said not to feel forced to cut intake on rest days just because you burned ~200 fewer calories that day. Nonlinear intake can still be useful for preference, adherence, or workout-quality targeting (for example, placing higher carbs before key sessions). He also said refeed/diet-break strategies are promising but not yet conclusive, including uncertainty about whether 2-day, 3-day, or multi-week structures are best.",
+      "topic": "calorie cycling and fat accumulation",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 80,
+      "prompt": "What’s the current take on isometric training for maintaining strength on squat, bench, and deadlift when equipment is limited?",
+      "expected_output": "Greg said isometrics can work, but the most effective style appears to be high-intent, ballistic maximal contractions (trying to hit max force as fast as possible), which can be hard to set up in lockdown conditions. A gym example he gave was pulling maximally into safety pins at a chosen deadlift height. He noted strong angle specificity: gains transfer most to roughly the trained joint position, about 15-30 degrees in either direction. That means isometric quarter-squat work won’t strongly improve bottom-position squat strength, while isometrics near a sticking point are more likely to help there. He also mentioned isometrics can be a useful complement since they avoid eccentric loading and can carry a different fatigue profile. But he cautioned that practical programming prescriptions (optimal set duration, frequency, and weekly dose) are still less standardized than conventional training.",
+      "topic": "isometric strength training",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 81,
+      "prompt": "If calories are very low (around 1,500), what should a nutritionally complete approach look like besides just eating shredded chicken?",
+      "expected_output": "Eric’s framework was to prioritize lean protein first, but choose sources strategically so they also contribute micronutrients where possible. He emphasized a broad rotation of fibrous vegetables (not just a couple defaults) to improve vitamin/mineral coverage and satiety under tight calorie constraints. He recommended treating a basic multivitamin as insurance, not as a replacement for food quality. He also said that when fats get very low, adding fish oil or another high-quality omega-3 source can help cover essential fatty acid needs. For practical adherence, he highlighted low-effort, high-shelf-life options that are easy to keep available. His concrete example was a simple lentil soup build (lentils, canned tomatoes, vegetable stock, and frozen soup vegetables), which he described as convenient, macro-friendly, and sustainable during hard low-calorie phases.",
+      "topic": "nutritionally complete very-low-calorie dieting",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 82,
+      "prompt": "I eat a lot of canned tuna because it’s cheap and convenient. How much tuna is safe to eat weekly given mercury concerns?",
+      "expected_output": "Eric leaned on FDA fish guidance rather than trying to improvise toxicity advice. He noted the FDA uses serving-based categories (4 oz per serving for adults): \"best choices\" at 2-3 servings/week, \"good choices\" at ~1 serving/week, and \"choices to avoid\" for highest-mercury fish. In their examples, canned light tuna was framed as a lower-mercury option, while albacore/white and yellowfin were more limited, and bigeye was in the avoid tier. The practical SBS takeaway was that many lifters likely overdo tuna by a wide margin, and a few servings per week is a much safer target than multiple cans per day.",
+      "topic": "tuna mercury limits",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 83,
+      "prompt": "Can I split my workout across the day (like a set every 30 minutes) instead of doing one continuous session?",
+      "expected_output": "Greg said splitting sessions is generally fine and likely neutral-to-positive for outcomes. He referenced older and newer literature suggesting similar or slightly better results when volume is matched across one vs multiple sessions. The key caveat was recovery management: don’t use split sessions as an excuse to massively increase total volume. If workload is controlled, he didn’t expect negative effects and said performance or hypertrophy may be similar or modestly better in some cases.",
+      "topic": "split sessions",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 84,
+      "prompt": "How does hypothalamic amenorrhea affect hypertrophy and performance, especially if someone is eating at maintenance or surplus?",
+      "expected_output": "Eric emphasized that the \"hypothalamic\" piece matters because low energy availability can disrupt multiple hormones (e.g., estrogen, testosterone, thyroid, IGF-1 signaling environment). In that state, hypertrophy and performance are likely impaired. He also stressed recovery is not all-or-none: improvements in energy availability and training load can restore parts of performance/hypertrophy before full cycle normalization returns. Full menstrual restoration can be highly variable even in intensive interventions, so progress may occur on different timelines. Practical recommendation: address energy availability and training stress first, then expect gradual restoration of training response.",
+      "topic": "hypothalamic amenorrhea",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 85,
+      "prompt": "How should kids and adolescents train with weights? Is there a growth-plate risk, and should heavy singles be avoided?",
+      "expected_output": "Greg’s take was that current evidence does not show lifting stunts growth, but truly definitive long-term trials are scarce. Mechanistically, he viewed typical resistance-training loads as less concerning for growth plates than everyday running/jumping exposures in kids. He recommended close supervision, strict technique emphasis, and minimizing preventable gym-floor injuries from inattention. Before/during early puberty, priority should be movement skill development rather than chasing failure or maximal loads. As puberty progresses, training stress can be scaled up because strength and hypertrophy responsiveness generally improves.",
+      "topic": "youth resistance training",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 86,
+      "prompt": "Can nitrate-rich foods (like beets and leafy greens) work as well as nitrate supplements for performance?",
+      "expected_output": "Eric said yes, food-based nitrate intake can absolutely produce ergogenic benefits and may be preferable in some cases. He mentioned quality-control variability in some commercial beet supplements and argued whole-food/juice strategies can reliably raise intake. He also referenced studies where beetroot preparations performed at least as well as nitrate-matched sodium nitrate, suggesting possible synergy from other compounds in the food matrix. Practical recommendation was to keep nitrate-rich produce in the diet rather than relying solely on pills/powders.",
+      "topic": "dietary nitrate",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 87,
+      "prompt": "Should I take L-citrulline, how much should I use, and when should I take it?",
+      "expected_output": "Eric’s dosing guidance was roughly 3-6 g/day for pure L-citrulline, with 6 g as a practical target. For citrulline malate, he suggested 6-8 g total (often labeled around 2:1 citrulline:malate, though label accuracy can vary). Timing recommendation was a single pre-workout dose, generally about 1 hour before training (with 1-2 hours viewed as reasonable). He did not recommend splitting it throughout the day for performance purposes. He also cautioned expectations should stay modest because observed effects are typically small, not transformative.",
+      "topic": "citrulline dosing",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 88,
+      "prompt": "For a protein shake, does drinking speed matter (chugging vs sipping)?",
+      "expected_output": "SBS said speed of shake consumption is not a key lever in real-world mixed-meal contexts. Fiber, fat, meal composition, and GI transit all affect amino-acid appearance more than sip speed precision. The practical target remained daily distribution: roughly 3-5 protein feedings/boluses across the day. So lifters should focus on total intake and broad meal spacing, not micromanaging shake-drinking pace.",
+      "topic": "protein bolus timing",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 89,
+      "prompt": "Do high-protein diets increase kidney stone risk?",
+      "expected_output": "Eric distinguished healthy people from those with pre-existing kidney disease or stone predisposition. For healthy kidneys, he said current evidence does not strongly support the idea that high-protein diets cause kidney disease or clearly elevate stones by themselves. He acknowledged plausible mechanisms exist for some stone pathways, but emphasized that population risk appears most relevant for people already predisposed. Practical advice was to individualize if someone has kidney-stone history, but not to assume high protein is inherently dangerous for everyone.",
+      "topic": "protein and kidney stones",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 90,
+      "prompt": "How should I use L-theanine with caffeine?",
+      "expected_output": "Eric framed L-theanine as useful for reducing caffeine jitters/anxiety without strong sedative effects. He suggested a common practical range of about 100-200 mg with caffeine. Individual response still matters, and some people may subjectively feel too relaxed or sleepy. The recommendation was to test tolerance and keep it as an optional complement rather than a mandatory stack.",
+      "topic": "theanine with caffeine",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 91,
+      "prompt": "It’s been years since the Belt Bible. Has the powerlifting belt evidence changed enough to require a rewrite?",
+      "expected_output": "Greg said the core belt conclusions are largely unchanged and he did not think a full rewrite was urgently needed. He cited limited major new evidence, but noted at least one mechanistic study supporting the idea that higher intra-abdominal pressure can increase hip extension torque. That mechanism is consistent with belts helping force output in practice. Bottom line: belts still make sense for many lifters, and the old guidance is mostly still intact.",
+      "topic": "powerlifting belt evidence",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-deadlift"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 92,
+      "prompt": "Could aspirin blunt hypertrophy or strength gains?",
+      "expected_output": "Greg said the direct aspirin-specific hypertrophy evidence is limited, so certainty is low. However, because aspirin overlaps with anti-inflammatory pathways relevant to adaptation, he considered blunting effects plausible at higher doses in young healthy lifters. He contrasted this with context-dependent findings where anti-inflammatory effects may differ by baseline inflammation status (e.g., older vs younger populations). Practical takeaway: avoid assuming chronic high-dose aspirin is adaptation-neutral when hypertrophy is a priority.",
+      "topic": "aspirin and hypertrophy",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 93,
+      "prompt": "I’m 16-19 and couldn’t reach a 405 deadlift on linear progression. Does being younger hurt strength progress?",
+      "expected_output": "Greg said age can matter pre-puberty, but by the later teen years most lifters should be capable of solid strength and muscle gains. He emphasized huge individual variability in where linear progression stalls, so a specific benchmark (like 405) is not a reliable readiness cutoff. His recommendation was to stop obsessing over category labels tied to absolute load and instead use progression timescale (weekly/biweekly, monthly, etc.) to classify training stage. Practical message: if progress is occurring, the program is working, even if numbers differ from internet expectations.",
+      "topic": "teen strength expectations",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-deadlift"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 94,
+      "prompt": "When are you ready to start taking clients as a personal trainer?",
+      "expected_output": "Both hosts said formal certification alone rarely means full practical readiness. They argued coaching is highly applied, so observation, supervised reps, and mentorship/apprenticeship are ideal for skill development (cueing, troubleshooting, rapport, session adjustments). Greg suggested that if mentorship is possible, even a short period can speed competency. In real-world gyms, many trainers begin before feeling fully ready and improve through deliberate practice. Their practical advice was to seek shadowing/internship opportunities and use low-client-load periods to learn from experienced coaches.",
+      "topic": "trainer readiness",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 95,
+      "prompt": "What’s the best way to read and interpret research papers, and why can one paper take 5-6 hours?",
+      "expected_output": "They said 5-6 hours can be normal when aiming for deep, critical understanding, especially in unfamiliar domains. In familiar domains, review time can drop substantially because methods, stats, and prior literature are already in your working set. Their workflow included: skim abstract for orientation, identify actual hypotheses, scrutinize methods/statistics, and then contextualize findings against prior studies. A strong practical recommendation was to form your own interpretation first, then compare with higher-experience analysts to calibrate mistakes. Over time, accumulated error-correction is what makes reading both faster and better.",
+      "topic": "reading research",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 96,
+      "prompt": "I've seen carnivore/keto/paleo people say vegan and plant-heavy diets are full of anti-nutrients. Is that actually true, and if so how worried should people be?",
+      "expected_output": "Eric said anti-nutrients are real (for example phytates, tannins, lectins, and oxalates), and they can reduce absorption of some nutrients in some meal contexts. But he emphasized that this risk is often overstated because many objectively healthy foods contain anti-nutrients, and regular cooking/processing methods reduce many of their effects. He advised against avoiding plant foods wholesale, since that would throw away a lot of high-quality micronutrient sources. Practical guidance was to eat a varied diet with diverse food sources and preparation methods, and if someone is fully plant-based, aim above bare-minimum micronutrient targets as a buffer. He also noted that population data in vegetarians/vegans does not show catastrophic anti-nutrient-driven deficiency patterns. Bottom line: anti-nutrients exist, but for most people they are not something to lose sleep over.",
+      "topic": "anti-nutrients in plant diets",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 97,
+      "prompt": "If I've been training hypertrophy for months, should I re-sensitize my muscles by taking 1-2 weeks off or by doing a 4-5 week strength-focused block?",
+      "expected_output": "Greg said the best direct evidence comes from Aguiar/Ogasawara-style periodic detraining studies in untrained lifters, where continuous training and repeated 6-weeks-on/3-weeks-off approaches ended up in roughly similar places over the study window. He emphasized that these data are limited, somewhat equivocal, and not strong enough to justify broad long-term prescriptions for trained lifters. His practical recommendation was to periodize within the hypertrophy-relevant rep range instead of full layoffs: for example, move from roughly 12-15 reps toward ~5-6 reps across months, then cycle back up. That creates a novel stimulus shift without abandoning training. He also pointed out that soreness after a layoff does not prove superior long-term hypertrophy. Net takeaway: don't assume you must fully de-train to keep gaining.",
+      "topic": "hypertrophy re-sensitization",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 98,
+      "prompt": "I started drinking a gallon of water per day and now I'm peeing constantly. How much water do I actually need?",
+      "expected_output": "Eric cited DRI targets of about 3.7 L/day for men and 2.7 L/day for women, and noted these totals include water from beverages plus food (roughly ~80% beverages, ~20% food on typical diets). He said being slightly over target is usually low-risk for healthy people because excess water is excreted, while being meaningfully under-hydrated can impair performance as dehydration approaches ~2%+ body mass loss. He cautioned against extreme water-chugging challenges because hyponatremia is a real risk in extreme scenarios. For most lifters, a rough target around three-quarters to one gallon can be reasonable, adjusted upward if sweat losses are high. Core recommendation: hydrate across the day rather than trying to backload intake late.",
+      "topic": "daily hydration targets",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 99,
+      "prompt": "Is it better to sip water all day versus chugging, and can reducing fluids before bed help me stop waking up to pee?",
+      "expected_output": "Eric said the key issue is hydration timing, not magical differences in absorption from sipping versus chugging. Chugging large amounts in a short window tends to produce rapid clear-urine losses and can leave you under-hydrated for much of the day. His practical rule was to get hydrated and stay hydrated by starting early and maintaining intake steadily. For nighttime urination, he recommended tapering fluids in the final 2-3 hours before bed if nocturia is disrupting sleep, while still avoiding going to bed dehydrated. He also suggested monitoring urine color as a simple day-to-day hydration heuristic (with caveats, since things like vitamins or beets can alter color). This frames hydration as a balance between daytime status and sleep quality.",
+      "topic": "hydration timing and nocturia",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 100,
+      "prompt": "Why are deadlifts considered more fatiguing than squats, and should deadlift volume usually be lower?",
+      "expected_output": "Greg pushed back on the blanket claim that deadlifts are inherently more fatiguing, noting data (including work from Zourdos' lab context) showing similar fatigue outcomes after squat vs deadlift sessions. He proposed several practical contributors: hand/forearm stress from heavy pulling, greater tolerance in sumo versus conventional for some lifters, and the ability to complete deadlifts with more spinal flexion than squats, which may create deeper low-back fatigue. He also highlighted path dependency: many lifters build years of higher squat exposure and lower deadlift exposure, so deadlift tolerance starts lower and appears more fatiguing by history rather than biology. He compared Olympic pulling variants too, where athletes often tolerate relatively high pulling frequency/volume. Recommendation was not to assume universal deadlift fragility, but to program based on individual recovery patterns and technical style.",
+      "topic": "deadlift vs squat fatigue",
+      "skills": [
+        "sbs-deadlift",
+        "sbs-squat",
+        "sbs-strength-training"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 101,
+      "prompt": "Do gym altitude masks actually work, and do any gains fade if you're not living at altitude?",
+      "expected_output": "Eric explained true altitude adaptation is driven by lower oxygen partial pressure over long exposures, often best approached as live high, train low in endurance contexts. He said marketed altitude masks do not replicate altitude physiology because they do not change oxygen partial pressure; they mainly make breathing feel harder. He summarized that controlled studies generally do not show meaningful improvements in VO2max, peak power, or broad aerobic/anaerobic performance outcomes from those masks. A recurring effect is higher perceived exertion/discomfort at the same workload. He noted a narrow possible use case for respiratory muscle training (for specific contexts like high-altitude mountaineering), but that's different from claiming generalized performance benefits. For most lifters and general trainees, these masks are unnecessary.",
+      "topic": "altitude mask evidence",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 102,
+      "prompt": "Bodybuilders use nicotine gum in prep for appetite and energy. What are the benefits and risks?",
+      "expected_output": "Greg confirmed nicotine can suppress appetite, but warned this effect habituates, so it is better viewed as a short-term tool rather than a months-long fix. He discussed that evidence in nicotine-naive performance studies does not show robust ergogenic effects, especially compared with caffeine, which does reliably improve strength/power outcomes. He suggested caffeine is usually the better pre-workout stimulant when performance is the goal. On safety, he said data are much stronger for harms of tobacco products than isolated nicotine gum/patch use, though nicotine still behaves as a stimulant and can worsen concerns like hypertension in susceptible people. He also mentioned nicotine's shorter half-life versus caffeine, which can matter for late-day focus with less sleep disruption in some users. Practical framing: non-essential stimulant use carries dependence tradeoffs, and nicotine is not a magic contest-prep performance enhancer.",
+      "topic": "nicotine use in contest prep",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 103,
+      "prompt": "Is there really an evidence-based link between cortisol and fat storage (especially belly fat), or is that mostly internet myth?",
+      "expected_output": "Eric said cortisol is a real and important hormone, and in extreme chronic elevations it can strongly influence body composition (for example Cushing's syndrome patterns like central adiposity with relatively thinner extremities). He explained cortisol can be catabolic in many tissues and has context-dependent effects on fat metabolism, so the mechanism is plausible and real. However, he stressed that common fitness-level fluctuations from normal daily stress or hard training are usually overinterpreted. Most acute within-range changes do not require direct intervention. The practical mistake is treating normal cortisol variability like a pathology. So the relationship exists, but cortisol-belly-fat claims are often oversimplified outside clinical extremes.",
+      "topic": "cortisol and fat storage",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 104,
+      "prompt": "What's the current practical takeaway on cortisol and fat gain if people think they're high-cortisol all the time?",
+      "expected_output": "Eric drew a three-part distinction: normal acute fluctuations (no action needed), severe chronic psychological stress (address the stressor and recovery environment), and true endocrine pathology (medical management). He said if someone lives in persistent high stress, the intervention target is stress management/life stress reduction, not random cortisol-lowering supplements. If cortisol appears chronically outside reference ranges, that is doctor/endocrinologist territory. He also noted cortisol follows diurnal rhythms, so single snapshots can be misleading without context. This gives a practical decision tree: don't panic about ordinary fluctuations, but don't ignore persistent severe symptoms either. In short, solve the cause, not just the label.",
+      "topic": "cortisol practical action steps",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 105,
+      "prompt": "What do you think about minimalist warm-ups (mostly just barbell warm-up sets) instead of long activation/mobility routines?",
+      "expected_output": "Greg's answer was conditional: minimalist warm-ups are fine if they reliably prepare you for the session. He framed it as a cost-benefit issue, especially for people with limited gym time, where cutting warm-up from ~30 minutes to ~5-10 minutes can materially increase productive training time. But he warned against making minimalism the goal itself; under-warming can reduce readiness and potentially increase risk if needed mobility/positioning work is removed. His practical method was iterative troubleshooting: remove one warm-up element at a time and keep only what clearly helps session quality. That approach preserves performance while trimming wasted time. So the best warm-up is the minimum effective warm-up for your body and your session demands.",
+      "topic": "minimalist warm-up strategy",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-squat",
+        "sbs-bench",
+        "sbs-deadlift"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 106,
+      "prompt": "Are abnormal blood markers expected in natural bodybuilders, especially during overreaching blocks or contest prep (RBC/WBC/testosterone/iron, etc.)?",
+      "expected_output": "Eric said yes—contextual abnormalities are common and often expected in trained lifters and especially in prep. He noted lifters can show elevated creatinine (muscle mass, diet, creatine use), elevated creatine kinase and related muscle-damage enzymes after hard training, and altered endocrine markers during aggressive phases. In overreaching contexts, cortisol:testosterone ratio shifts and inflammatory markers can move, while contest prep often shows low testosterone/thyroid and additional immune-related changes. He referenced physique-athlete literature showing hormonal suppression during prep with substantial recovery over following months post-show. He also noted that prep's low calories, food monotony, and heavy training can create short-term insufficiency patterns in some nutrients. Main takeaway: interpret labs through the lens of training phase, diet, and body composition status rather than isolated reference ranges alone.",
+      "topic": "bodybuilding prep bloodwork",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 107,
+      "prompt": "Can you gain muscle while eating around maintenance calories if protein is high and you still have body fat to spare?",
+      "expected_output": "They said yes, this can happen via body recomposition in the right context. The key qualifiers were training status, current body composition, the quality of training stimulus, and adequate protein intake. People with more fat mass to spare are generally better candidates for gaining lean mass without a clear surplus. They framed this as possible rather than guaranteed, and highly individual. The practical takeaway was that a large caloric surplus is not always required to add muscle, especially early in training or when retraining.",
+      "topic": "Recomp at maintenance calories",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 54,
+      "files": []
+    },
+    {
+      "id": 108,
+      "prompt": "For new lifters, is there any case for starting less evidence-based with things like bro splits, dreamer bulks, and even some ego lifting because they might build useful physical or psychological adaptations?",
+      "expected_output": "They argued that evidence-based training does not mean overcomplicated or joyless training. They noted that bro splits can still work well, and that pushing hard in the gym can build confidence and effort tolerance when technique is acceptable. On dreamer bulks, they acknowledged these are often not physiologically optimal, but said aggressive phases can help some lifters stop under-eating and unlock progress. They emphasized that beginners often leave gains on the table by being too afraid of gaining fat. They also pushed back on the idea that beginner gains are only tied to a short timeline, suggesting big progress can occur whenever stimulus and adherence improve. The recommendation was to keep core principles intact while allowing a style that helps consistency and buy-in.",
+      "topic": "Beginner training philosophy",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-diet"
+      ],
+      "episode": 54,
+      "files": []
+    },
+    {
+      "id": 109,
+      "prompt": "What are some practical high-volume, low-calorie meals or food combinations to stay full while cutting and trying to get very lean?",
+      "expected_output": "They gave a long list of concrete options centered on lean protein plus very high-volume vegetables. Examples included burrito bowls built on cauliflower rice, shredded chicken with yogurt-based sauces, egg-white omelets with vegetables, lean beef and broccoli, and Greek-yogurt desserts with low-calorie flavor add-ins. They also recommended bulking up ground-beef meals with shredded cabbage, including roughly a 1:1 beef-to-cabbage ratio to substantially increase food volume. Another tip was low-calorie slaw variants using yogurt, mustard, and non-caloric sweetener to keep calories down while improving satiety. The overall strategy was to maximize fiber/water volume and protein density, not just rely on tiny portions of calorie-dense foods. The guidance was very meal-prep oriented and meant to improve adherence in deeper cuts.",
+      "topic": "High-volume cutting meals",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 54,
+      "files": []
+    },
+    {
+      "id": 110,
+      "prompt": "Is trying to train for strength and hypertrophy at the same time basically useless for recreational intermediate lifters? Does it make sense to mix goals by body part or day?",
+      "expected_output": "Greg said that framing is wrong: concurrent strength and hypertrophy work is usually effective for most non-elite lifters. He suggested two practical templates: (1) mostly hypertrophy work while sprinkling in occasional heavy singles around ~90-92% to keep high-load skill sharp, or (2) block-style programming with about 75% of blocks focused on hypertrophy and every fourth block more strength-specific. He noted that near-max, low-volume peaking work can temporarily limit hypertrophy if done constantly, but you only need short doses of it (e.g., a few weeks every 4-6 months for many lifters). For long-term strength, he emphasized that adding muscle is foundational, so hypertrophy training should be a major part of the year. Bottom line: build size most of the time, keep some heavy practice in, and both outcomes can improve together.",
+      "topic": "concurrent strength and hypertrophy training",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 57,
+      "files": []
+    },
+    {
+      "id": 111,
+      "prompt": "Do triceps become the prime mover near max bench loads, and does that mean I should prioritize triceps accessories over pec-focused work?",
+      "expected_output": "Greg argued the claim is overstated and mostly a measurement artifact from looking at the long head of the triceps. He explained that long-head triceps is biarticular and can be de-emphasized at lower loads because one of its joint actions conflicts with the bench movement, then appears to ramp up disproportionately at max loads. He contrasted this with evidence showing benching tends to grow lateral triceps more than long-head triceps, citing a study where long-head growth was minimal. He also referenced Duffy's dissertation data suggesting pecs, delts, and lateral triceps all increase activation similarly as load rises. So he rejected the idea that triceps suddenly become the prime mover at max loads. Practical takeaway: don’t abandon pec work based on that interpretation; train bench-relevant musculature broadly.",
+      "topic": "bench prime mover interpretation",
+      "skills": [
+        "sbs-bench",
+        "sbs-strength-training"
+      ],
+      "episode": 57,
+      "files": []
+    },
+    {
+      "id": 112,
+      "prompt": "Are some muscles resistant to hypertrophy? Could you actually build a bigger tongue with enough loading, and are calves somehow different?",
+      "expected_output": "Greg’s answer was that tongues are normal skeletal muscle and likely not uniquely resistant to growth. He discussed sleep-apnea literature showing tongue size varies and can increase with fat deposition, which supports that tongues are modifiable tissue rather than fixed-size structures. He speculated that if a muscle responds to anabolic stimuli (including steroid exposure), it is plausible it would also respond to mechanical loading, though he noted direct progressive-overload tongue studies are lacking. He repeatedly framed parts of this as informed speculation, not clinical advice. His practical conclusion was that calves are not made of some fundamentally different non-growable tissue. In short: no strong evidence for a special hypertrophy-resistant class here, just a weird example with limited direct training data.",
+      "topic": "muscle-specific hypertrophy skepticism",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 57,
+      "files": []
+    },
+    {
+      "id": 113,
+      "prompt": "For older lifters, are glucosamine and chondroitin useful for preventing or repairing joint wear and tear?",
+      "expected_output": "Greg said older evidence (2010 meta-analysis) was largely negative, but newer evidence (2018 meta-analysis covering 26 articles/30 trials) suggested small benefits in osteoarthritis populations. Specifically, he summarized that glucosamine showed a small effect on stiffness, while chondroitin showed small effects on pain and physical function. He emphasized these are modest effects, not dramatic improvements, and combination evidence is less clear. He also highlighted that the better evidence is mostly in osteoarthritis patients, so generalizing to everyone without OA is shaky. Safety looked generally acceptable with mostly mild GI side effects at higher doses. Practical advice: manage expectations and coordinate with a clinician/PT if pain and function are the main concern.",
+      "topic": "joint supplements in older lifters",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 57,
+      "files": []
+    },
+    {
+      "id": 114,
+      "prompt": "What signs suggest I need extra conditioning to keep progressing in strength or hypertrophy? What type of conditioning should I do?",
+      "expected_output": "Greg said the key sign is when required training volume for progress outpaces your ability to complete sessions or recover from them. Instead of defaulting to separate cardio blocks, he now prefers specific conditioning by stepping down the intensity ladder within your lifting. For strength-focused lifters struggling with triples, he suggested spending time in higher-rep sets (roughly 5-8) to build work capacity, then returning to lower reps. For hypertrophy work (e.g., 8-12), he suggested phases with higher reps (12-15 or even 20-25) to raise metabolic tolerance and session capacity. He still likes low-intensity cardio like walking for general health, but not as the first lever for this specific problem. Core recommendation: keep the movement patterns similar and condition yourself via higher-rep versions of your main training.",
+      "topic": "conditioning for lifting work capacity",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 57,
+      "files": []
+    },
+    {
+      "id": 115,
+      "prompt": "How much does food quality really matter for strength and hypertrophy if calories and protein are already decent? Am I losing meaningful gains by eating more fun foods?",
+      "expected_output": "Their answer was that it depends, with big modifiers: overall health status, age/body composition, and whether your diet creates real nutrient deficiencies. Greg said if someone is young, generally healthy, active, meeting calories/protein, and not deficient, the direct strength/hypertrophy penalty from imperfect food quality is probably small. He thought improving diet quality in that case may matter more for feeling better and long-term health than for huge short-term gains differences. They both emphasized that many concerns are about missing beneficial foods/nutrients rather than the mere presence of enjoyable calorie-dense foods. They also noted context where less nutrient-dense additions can be useful, like helping athletes meet high energy demands. Practical takeaway: secure essentials (energy, protein, micronutrient adequacy), then treat food-quality upgrades as an important but context-dependent performance and health lever.",
+      "topic": "diet quality vs performance outcomes",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 57,
+      "files": []
+    },
+    {
+      "id": 116,
+      "prompt": "How much does protein feeding increase muscle protein synthesis compared with resistance training itself? Are we over-focusing on protein source and timing details?",
+      "expected_output": "They said lifting is the dominant driver of muscle protein synthesis, while protein strategy is more of a permissive support factor. Eric used examples from androgen-deprivation and immobilization research to show how large the training effect can be relative to nutrition tweaks. During layoffs, they noted that even very reduced training volume (roughly 10-15% of normal, i.e., an 85-90% cut) can still help preserve muscle and strength. By contrast, protein-only interventions during immobilization are usually underwhelming, with mixed small benefits in some higher-dose amino acid/leucine studies. Their practical hierarchy was to keep some safe muscle loading whenever possible, then optimize protein amount/distribution/timing on top of that.",
+      "topic": "lifting stimulus vs protein optimization",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 117,
+      "prompt": "Why don’t exercise studies routinely track and report participant sleep? Even imperfect app data seems better than nothing.",
+      "expected_output": "They argued the main issue is evidence and feasibility, not ignorance. Eric said there is surprisingly limited long-duration resistance-training evidence directly showing that chronic short sleep changes hypertrophy/strength outcomes, so sleep is not always treated as a must-control covariate yet. He also emphasized measurement quality: self-report and many consumer trackers are noisy versus gold-standard sleep methods. With small sample sizes common in exercise science, adding many weak covariates can worsen analyses rather than improve them. So their view was that better longitudinal data and better measurement pipelines are needed before sleep can be consistently modeled in these trials.",
+      "topic": "sleep variables in exercise research",
+      "skills": [],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 118,
+      "prompt": "How should I respond when a doctor tells me to stop squatting because it’s bad for my knees?",
+      "expected_output": "They recommended starting from empathy for the clinician’s context: general practitioners usually prioritize reducing symptoms and preserving activities of daily living, not maximizing squat performance. In that framework, conservative advice to stop a painful non-essential activity can be expected. But they also said lifters should seek second opinions from sports medicine professionals or PTs who understand training goals. They framed this as a cost-benefit decision where your risk tolerance and priorities matter. The practical message was: don’t automatically dismiss medical advice, but get context-specific guidance from providers experienced with athletes.",
+      "topic": "medical advice vs lifting goals",
+      "skills": [
+        "sbs-squat",
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 119,
+      "prompt": "After hernia surgery with temporary lifting restrictions, how can I minimize muscle loss and when should I return to training?",
+      "expected_output": "They said nutrition alone is usually weak for preventing detraining losses compared with actual loading. Eric noted that studies using very high leucine intakes (about 15-19 g/day extra) sometimes show partial benefit, while lower doses (around 10 g/day or less extra) are often not very effective. Even then, he emphasized that safe tissue loading is still the key if medically allowed. For return-to-training timing, they refused to give a universal timeline and said to work closely with your surgeon/clinical team, even if that means asking very specific follow-up questions. They also stressed that regaining lost strength is typically faster than building it the first time, so being conservative short-term is usually the better long-term play.",
+      "topic": "post-surgery detraining and return",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 120,
+      "prompt": "If my sleep schedule is sporadic, what should I do for body composition, recovery, and training? Are naps useful, and should I ever train sleep deprived?",
+      "expected_output": "They said poor sleep often worsens body composition via appetite/self-control effects, so controlling food environment becomes extra important when sleep deprived. For training, they advised keeping resistance training in place but biasing toward safer options (machines, dumbbells, controlled bodybuilding-style work) when motor control is compromised. They cautioned against high-risk sessions like max free-weight attempts or hard heat-exposed conditioning when severely sleep deprived. On naps, they said short naps around 20-30 minutes are often useful, while some people tolerate longer ~90-minute naps if nighttime sleep is not disrupted. Overall guidance: keep training, prioritize safety, and manage sleep-driven behavior drift rather than abandoning training.",
+      "topic": "training with chronic sleep disruption",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 121,
+      "prompt": "How do we define training hard enough for typical lifters trying to get stronger or improve physique?",
+      "expected_output": "They framed this around progressive overload and recoverability, not constant all-out effort. Eric said many productive sets can live around 0-4 reps in reserve (RIR), often starting farther from failure and moving closer across a block. They also discussed volume as a lever: if progress stalls and deloads are almost never needed, you may be under-dosing training stress. Greg added practical heuristics that repeatedly needing deloads every ~4-8 weeks can indicate productive difficulty, whereas crashing every 1-2 weeks suggests too much. Their short version was 'harder than last time,' while still preserving safety and long-term consistency.",
+      "topic": "how hard to train",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 122,
+      "prompt": "If I hit my calorie target but I’m under my protein target, should I go over calories to hit protein? What if this happens often?",
+      "expected_output": "They agreed the first fix is upstream: if this is frequent, adjust calorie targets, protein targets, meal planning, or food environment so targets are realistically compatible. Eric gave a common baseline of about 1.6 g/kg/day protein as a practical middle target (with higher needs in some deficits) and suggested lowering unrealistic protein goals when needed. For rare misses, both said the difference is usually negligible either way. In deficits, Eric leaned toward prioritizing protein and accepting a small calorie overshoot (for example +200 kcal once in a while), while Greg often prioritizes preserving the planned deficit depending on phase priority. For recomp/lean-bulk contexts they suggested splitting the difference (e.g., hit ~85-90% of protein target without overshooting calories as much).",
+      "topic": "calorie vs protein priority tradeoff",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 123,
+      "prompt": "How should bodybuilders periodize compound lifts to improve hypertrophy? Do they need sophisticated periodization blocks?",
+      "expected_output": "They said bodybuilding generally does not require elaborate multi-capacity periodization because the main objective is hypertrophy almost year-round. Instead, they favored simple block management: control RIR, accumulate enough volume, deload when fatigue warrants, and rotate emphasis as weak points change. Eric said some variation is still useful for enjoyment, staleness management, and practical recovery. He also highlighted that prep phases can justify shifts toward somewhat higher intensity/lower volume as cardio increases and glycogen/energy availability drops. Bottom line: use practical autoregulated programming adjustments rather than forcing overly complex periodization models.",
+      "topic": "bodybuilding periodization",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 124,
+      "prompt": "If ethics and money were no concern, what study would you most want to run?",
+      "expected_output": "Greg's provocative example was a definitive human hyperplasia study, since counting muscle fibers directly is ethically infeasible in normal research. His realistic preference was a massive mechanistic and responder-variability project with very large samples, rich omics data, and multiple training programs to map why individuals respond differently. Eric added several high-priority practical trials: a properly powered creatine-caffeine interaction trial, well-designed nitrate plus citrulline hypertrophy studies with adequate doses, and better protein-dose scaling studies across body compositions and energy states. They also called out a major gap on how to train during caloric deficits (maintain volume vs maintain intensity), noting there is strong opinion but little direct data.",
+      "topic": "dream research studies",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 125,
+      "prompt": "How does very low body fat affect strength and hypertrophy progress, and how can someone know if they’re too lean given poor body-fat measurement tools?",
+      "expected_output": "They said very low body fat generally makes both performance and hypertrophy progress much harder due to reduced energy availability and impaired recovery. Eric described practical signs during contest-level leanness: worse training quality, slower recovery, colder body temperature, higher hunger, and broad 'system slowdown' effects. He also noted that in their p-ratio review, substantial lean-mass gains were uncommon below roughly 8% body fat in men. For monitoring, they advised against over-relying on imperfect body-fat devices and instead emphasized symptom-based and performance-based feedback. In other words, individual functional signs of low energy availability are more actionable than chasing one exact body-fat number.",
+      "topic": "very low body fat and training outcomes",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 126,
+      "prompt": "What fitness beliefs are you most against, relative to common wisdom?",
+      "expected_output": "Greg pushed back on the premise that one unified 'common wisdom' exists across all fitness subcultures. His main concrete example was stretching: he argued static stretching is often unfairly maligned in lifting circles, despite strong evidence that chronic stretching can improve flexibility. He acknowledged acute pre-performance reductions can occur with very long/intense stretching immediately before maximal tests, but said those effects often dissipate after normal warm-up. He also used training frequency as an example of shifting consensus over time, showing how 'common wisdom' can reverse within a decade. So their broader answer was that context and subcommunity matter more than any single universal orthodoxy.",
+      "topic": "contrarian fitness views",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 127,
+      "prompt": "If I train in the morning (often fasted) and perform a bit worse, how much does that matter for non-competitive goals like health or hypertrophy?",
+      "expected_output": "They said the impact depends on goal hierarchy: for health-focused training, there is lots of wiggle room, while performance-specific goals require tighter optimization. For hypertrophy, they still view session performance as meaningful because mechanical tension and productive reps matter, even if perfection is unnecessary. On fasted training specifically, they highlighted mixed evidence and said hunger itself may hurt performance even when meal energy content differences are less clear. Their conservative recommendation was a small pre-workout feeding if tolerated (for example at least ~20 g carbohydrate, optionally with protein, and usually low fat). If food before training causes GI distress, they advised adapting timing/form (including liquid options) rather than forcing a strategy that worsens the session.",
+      "topic": "fasted morning training performance",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 128,
+      "prompt": "From a statistics perspective, what actually supports causal claims? Which analyses imply causation?",
+      "expected_output": "They said causation comes primarily from study design, not from picking a 'causal' statistical test. Eric emphasized that observational correlations alone usually cannot establish cause, while well-controlled randomized trials can support causal inference because of randomization and control, not because of t-tests/ANOVA themselves. He also warned that advanced modeling (like SEM) does not magically convert weak observational data into definitive causal proof. They referenced Bradford Hill criteria as one framework for weighing causal evidence in epidemiology. Greg added that in human in-vivo work, causal claims are usually partial/probabilistic causes rather than strict one-to-one deterministic causation.",
+      "topic": "causation vs correlation",
+      "skills": [],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 129,
+      "prompt": "Is cereal a soup?",
+      "expected_output": "Both hosts said yes, with surprising conviction. Their argument was that soup does not need to be hot and can include sweet forms, including cold dessert soups in multiple cuisines. They treated cereal-plus-milk as fitting the broad structure of solids in a liquid base. They also joked that broad soup taxonomy supports other contentious food classifications. Net conclusion: cereal qualifies as soup in their framework.",
+      "topic": "cereal soup debate",
+      "skills": [],
+      "episode": 58,
+      "files": []
+    },
+    {
+      "id": 130,
+      "prompt": "I saw protein overfeeding studies where people ate around 800 extra calories but didn’t gain fat. Can amino acids actually be converted and stored as body fat, or are those calories somehow not usable?",
+      "expected_output": "Eric said the mechanistic answer is yes: excess protein calories can be oxidized for energy and can ultimately contribute to fat storage. He emphasized that thermic effect differs by macro (protein highest, fat lowest), so storage efficiency differs, but that does not make protein calories 'free.' He was skeptical of interpreting the Antonio-style free-living overfeeding papers literally because they rely on self-reported intake. He cited overfeeding work (including Han et al.) showing people often fail to truly hit prescribed protein surpluses, and a controlled metabolic-ward trial by Bray et al. where intake was supervised and overfeeding behaved as expected. In that ward study, protein ranged roughly from ~0.7-0.8 g/kg to ~3 g/kg and participants still gained fat mass under sustained caloric surplus. Practical takeaway: high protein can make overfeeding harder because of satiety, but it does not bypass energy balance.",
+      "topic": "protein overfeeding and fat gain",
+      "skills": [
+        "sbs-diet"
+      ],
+      "episode": 73,
+      "files": []
+    },
+    {
+      "id": 131,
+      "prompt": "Why do I sometimes ache more during a deload week than during hard training weeks?",
+      "expected_output": "Eric said there is not solid direct human evidence here, so explanations are tentative rather than definitive. One possibility is that hard training acutely elevates sympathetic output/catecholamines (adrenaline-related) that can transiently blunt pain perception. Another is that general movement itself has an analgesic effect, so when total activity drops during deloads, discomfort can feel more noticeable. A third possibility is attentional: during hard training you are focused on performance, while during deloads you may notice background aches more. His bottom line was that several mechanisms are plausible, none are proven, and high-confidence single-cause explanations are overstated.",
+      "topic": "deload soreness and pain perception",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 73,
+      "files": []
+    },
+    {
+      "id": 132,
+      "prompt": "What do you think about ashwagandha for performance and strength? A meta-analysis says it helps.",
+      "expected_output": "Greg said the meta-analysis itself looked competently done, but he does not think the underlying evidence base is consistent enough to strongly recommend ashwagandha as an ergogenic aid. He highlighted very large, hard-to-generalize effect sizes in some studies (for example, an ~8-week trial reporting about +46 kg bench gain in the ashwagandha group, with very large placebo gains too), which suggests high noise and limited external validity rather than a reliable expected effect. He also noted weak mechanistic coherence across studies. His practical recommendation was cautious: if someone is very interested, uses a reputable product, and stays within labeled dosing, trying it is reasonable, but expectations should be modest. He does not view current evidence as strong enough for confident performance claims.",
+      "topic": "ashwagandha ergogenic evidence",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 73,
+      "files": []
+    },
+    {
+      "id": 133,
+      "prompt": "How have your lifts changed during your cut, and what helped you maintain strength while losing weight?",
+      "expected_output": "Greg said he did get weaker over the cut, but he attributed much of that to disrupted training rather than fat loss itself. He started cutting around February and, in April/May, injured his wrist/elbow, which limited gripping, squatting setups, and pressing and led to a few months of minimal training. He said this break helped him psychologically accept temporary strength loss so the diet could continue. Once he resumed consistent lifting, strength rebounded quickly (for example, returning to a hard 315 single, then a relatively comfortable 315 triple on low incline within a few sessions). His framing was that consistency and acceptance mattered more than chasing perfect in-cut peak numbers, and that retraining restored performance rapidly.",
+      "topic": "strength changes during weight loss",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training",
+        "sbs-bench"
+      ],
+      "episode": 73,
+      "files": []
+    },
+    {
+      "id": 134,
+      "prompt": "For body composition, is HIIT better than moderate steady-state cardio? And what interval setups do you recommend?",
+      "expected_output": "Eric summarized a meta-analysis (Steele et al.) finding no meaningful body-composition advantage of interval vs steady-state cardio: both produced small average changes (about -0.25 kg fat and +0.1 kg fat-free mass). He noted cardio is great for health and can help, but as a standalone fat-loss tool it is usually modest, so pairing with diet is more effective. For intervals, he gave concrete options: 30 s all-out (RPE 10) + 90 s easy recovery for 10-15 rounds; or 1 min hard / 1 min easy around RPE 9-10; or 2 min hard / 2 min easy at slightly lower intensity (about RPE 8-9.5) for fewer rounds. He also said interference with lifting is usually small if total stress is managed and sessions are programmed sensibly. Practical takeaway: choose the modality/protocol you can perform safely and adhere to.",
+      "topic": "HIIT vs steady-state for fat loss",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "episode": 73,
+      "files": []
+    },
+    {
+      "id": 135,
+      "prompt": "How much benefit do you get from individualized training or coaching versus a general program, and when does personalization matter most?",
+      "expected_output": "Greg said direct resistance-training evidence is limited, but conceptually supportive findings exist. He cited a force-velocity-profile jump study where individualized programming outperformed a generalized approach for jump outcomes, while acknowledging this is proof-of-concept rather than direct maximal-strength evidence. He also pointed out supervision research showing that even on the same program, more direct coaching tends to improve strength outcomes. From within-subject unilateral studies, he suggested individual differences appear most meaningful for volume/frequency tolerance; in one frequency-volume design (e.g., 2x vs 3x vs 5x), higher frequency won on average but some individuals did better at lower frequencies. His applied recommendation was to individualize volume and frequency first, since other variables likely matter less for most people.",
+      "topic": "individualizing training programs",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "episode": 73,
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 32,
+  "eval_name": "eval-32-sport-competitiveness-ranking",
+  "prompt": "Can you rank these sports by difficulty/competitiveness: natural bodybuilding, natural classic physique, baseball, basketball, and football?",
+  "expected_output": "Eric gave a direct ranking: baseball #5, basketball #4, football #3, classic physique #2, and natural bodybuilding #1. His rationale centered on competitive depth, physical demands, and how hard final prep is in physique sport. He argued natural bodybuilding edges classic physique because achieving the final stage-lean condition (including glute conditioning) is especially punishing. The response was partly humorous but still gave a clear ordered answer.",
+  "topic": "sport competitiveness ranking",
+  "episode": 25,
+  "assertions": [
+    "Answer captures the core SBS position on sport competitiveness ranking",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

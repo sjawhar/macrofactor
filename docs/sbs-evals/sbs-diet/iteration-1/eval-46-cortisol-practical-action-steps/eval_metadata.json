@@ -1,0 +1,14 @@
+{
+  "eval_id": 46,
+  "eval_name": "eval-46-cortisol-practical-action-steps",
+  "prompt": "What's the current practical takeaway on cortisol and fat gain if people think they're high-cortisol all the time?",
+  "expected_output": "Eric drew a three-part distinction: normal acute fluctuations (no action needed), severe chronic psychological stress (address the stressor and recovery environment), and true endocrine pathology (medical management). He said if someone lives in persistent high stress, the intervention target is stress management/life stress reduction, not random cortisol-lowering supplements. If cortisol appears chronically outside reference ranges, that is doctor/endocrinologist territory. He also noted cortisol follows diurnal rhythms, so single snapshots can be misleading without context. This gives a practical decision tree: don't panic about ordinary fluctuations, but don't ignore persistent severe symptoms either. In short, solve the cause, not just the label.",
+  "topic": "cortisol practical action steps",
+  "episode": 50,
+  "assertions": [
+    "Answer draws a three-part distinction: normal fluctuations, severe chronic stress, and true endocrine pathology",
+    "Answer states intervention target for persistent high stress is stress management, not cortisol supplements",
+    "Answer notes cortisol follows diurnal rhythms so single snapshots can be misleading",
+    "Answer provides a practical decision tree: don't panic about ordinary fluctuations, address persistent symptoms"
+  ]
+}

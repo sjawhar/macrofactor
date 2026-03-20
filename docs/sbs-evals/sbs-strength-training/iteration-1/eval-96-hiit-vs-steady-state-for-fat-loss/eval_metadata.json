@@ -1,0 +1,15 @@
+{
+  "eval_id": 96,
+  "eval_name": "eval-96-hiit-vs-steady-state-for-fat-loss",
+  "prompt": "For body composition, is HIIT better than moderate steady-state cardio? And what interval setups do you recommend?",
+  "expected_output": "Eric summarized a meta-analysis (Steele et al.) finding no meaningful body-composition advantage of interval vs steady-state cardio: both produced small average changes (about -0.25 kg fat and +0.1 kg fat-free mass). He noted cardio is great for health and can help, but as a standalone fat-loss tool it is usually modest, so pairing with diet is more effective. For intervals, he gave concrete options: 30 s all-out (RPE 10) + 90 s easy recovery for 10-15 rounds; or 1 min hard / 1 min easy around RPE 9-10; or 2 min hard / 2 min easy at slightly lower intensity (about RPE 8-9.5) for fewer rounds. He also said interference with lifting is usually small if total stress is managed and sessions are programmed sensibly. Practical takeaway: choose the modality/protocol you can perform safely and adhere to.",
+  "topic": "HIIT vs steady-state for fat loss",
+  "episode": 73,
+  "assertions": [
+    "Answer captures the core SBS position on HIIT vs steady-state for fat loss",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

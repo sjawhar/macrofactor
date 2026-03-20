@@ -1,0 +1,65 @@
+{
+  "episode": 126,
+  "pairs": [
+    {
+      "question": "When researching a topic you don’t know well (for example collagen and skin aging or air pollution and health), what framework do you use to get up to speed?",
+      "answer_summary": "Greg said he first scopes how deeply he actually needs to understand the topic and whether that depth is worth the time. For deep understanding, he starts with textbooks (sometimes both undergraduate and graduate-level), then moves to reviews: outcomes first, mechanisms second, so plausible mechanisms don’t bias interpretation of real-world results. He then fills physiology gaps (often with biochemistry references), reads key individual studies in target populations, and finally emails domain experts when unresolved contradictions remain. He estimated this process generally takes around 10-40 hours for solid competence. He also noted that true expertise still takes years; this process can get you to roughly an advanced non-expert level quickly, not instant mastery.",
+      "skills": ["sbs-strength-training"],
+      "topic": "research process"
+    },
+    {
+      "question": "How much do insulin resistance and type 2 diabetes reduce muscle growth, and does metformin make hypertrophy worse?",
+      "answer_summary": "Greg reviewed diabetes-specific resistance training data and noted hypertrophy is clearly still possible, not 'off the table.' In one 2020 diabetes-focused synthesis, lean mass increased about 0.71 kg; a separate male non-diabetic meta-analysis showed about 1.5 kg over ~10 weeks, suggesting at most a moderate reduction rather than zero growth. He emphasized those comparisons are imperfect because diabetic cohorts were often older and used lower-volume/lower-intensity training, which can depress gains independently. On metformin, he said current evidence (including the MASTERS trial) suggests a possible small negative hypertrophy effect, potentially via AMPK/MTOR-related signaling, but the evidence base is still small. Practical takeaway: type 2 diabetes may reduce growth rate somewhat, but it does not make hypertrophy impossible.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "diabetes and hypertrophy"
+    },
+    {
+      "question": "If bigger muscles can improve leverage through internal moment arms, could getting a big pump acutely boost strength the same way?",
+      "answer_summary": "Greg said the mechanism is plausible in principle: a pump increases muscle size transiently, so it could slightly alter leverage. However, he stressed that fatigue from the work used to get the pump often masks or outweighs any leverage benefit. He also noted the effect would vary by muscle architecture and joint angle, so it won’t apply equally across all lifts or ranges of motion. In some positions it might help, while in others the benefit is negligible or even reversed. Practical recommendation: don’t count on pumps as a reliable standalone strategy for immediate strength expression.",
+      "skills": ["sbs-strength-training", "sbs-bench"],
+      "topic": "pump vs strength"
+    },
+    {
+      "question": "Do caffeine and nicotine slow each other’s clearance, and is this true for other stimulants like ADHD meds too?",
+      "answer_summary": "Greg said stimulant interactions depend on enzyme pathways, not just whether both compounds are 'stimulants.' Caffeine is largely metabolized through CYP1A2, while nicotine is mainly metabolized via CYP2A6/CYP2B6, so direct competitive slowing is unlikely. He added that smoking/combustion products can induce CYP1A2, which may shorten caffeine half-life in smokers. More broadly, interactions can lengthen, shorten, or not affect half-life depending on induction/inhibition patterns, so no blanket rule applies. His practical recommendation was to treat this as a pharmacist-level medication interaction problem when multiple compounds are involved.",
+      "skills": ["sbs-diet"],
+      "topic": "stimulant metabolism"
+    },
+    {
+      "question": "Can 'fast metabolism' actually be real between people of the same size and activity level, or is that a myth?",
+      "answer_summary": "Greg gave a clear yes: meaningful between-person BMR differences are real even after accounting for common predictors. He described prediction error ranges where people with similar body size/composition/activity can still differ by large amounts, with rough spreads on the order of hundreds of kcal/day (he discussed ranges around ~800 kcal across typical confidence intervals). He highlighted organ-size variability (liver, kidneys, heart, etc.) as a major reason, since those tissues are metabolically expensive relative to their mass. So while not everyone is an extreme outlier, 'fast' and 'slow' metabolism are legitimate phenomena at the individual level. The key point is that this variability is biological, not just tracking error or character flaws.",
+      "skills": ["sbs-diet"],
+      "topic": "bmr variability"
+    },
+    {
+      "question": "If I’m doing 25k+ steps now and need to taper down, can I keep calories the same without messing up my energy balance?",
+      "answer_summary": "Greg said probably not exactly, but calorie reduction may be smaller than expected because energy expenditure is constrained at very high activity levels. He used a practical example: dropping several thousand steps may not reduce total daily expenditure one-for-one with the raw activity cost. He also noted appetite tends to downshift alongside activity as long as you stay reasonably active, so a moderate calorie reduction often feels easier than people fear. In contrast, dropping all the way into sedentary territory can create worse appetite-expenditure mismatch. Practical approach: reduce steps gradually, monitor body weight/trends, and adjust intake in smaller increments rather than making one huge cut.",
+      "skills": ["sbs-diet"],
+      "topic": "steps and calorie adjustment"
+    },
+    {
+      "question": "For basketball athletes in the offseason, how should plyometrics be integrated with hypertrophy and strength training?",
+      "answer_summary": "Greg said context drives programming: current sport workload, conditioning priorities, and athlete needs all matter. His default setup is to place plyometrics early in training sessions while athletes are fresh, typically 1-2 focused plyo exposures per week for most realistic schedules. He warned against a common mistake of putting hard plyo sessions on 'off days,' because that can overload joints/tendons and reduce recovery quality. He also distinguished true high-quality plyometrics from fatigue cardio-jumping; once reps get very high and intent drops, it’s no longer quality plyometric work. Practical recommendation: keep plyos high-quality, low-to-moderate volume, and integrated before main lifting in sessions.",
+      "skills": ["sbs-strength-training", "sbs-squat"],
+      "topic": "plyometric programming"
+    },
+    {
+      "question": "Is there evidence that long-term bracing/Val Salva in lifting damages blood vessels because of repeated blood pressure spikes?",
+      "answer_summary": "Greg said direct long-term causal data in lifters is very limited and no ideal decades-long controlled dataset exists. He distinguished two issues: maneuvers that can acutely worsen pre-existing vascular conditions versus maneuvers that cause those conditions in healthy people. He noted there is indirect occupational lifting epidemiology, but it differs substantially from strength training in dose, context, and confounding factors, so transfer is uncertain. Bottom line: the strongest direct evidence specifically linking normal lifting-related bracing to long-term vascular damage is currently sparse. Practical implication is individualized caution for people with known medical risk, rather than broad claims from weak analogies.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-deadlift"],
+      "topic": "bracing and vascular risk"
+    },
+    {
+      "question": "After compounds, how much isolation work is enough for areas like forearms, calves, delts, biceps, and core without overdoing it?",
+      "answer_summary": "Greg said there isn’t a universal cap because optimal isolation volume depends on goals, recovery capacity, and time constraints. He emphasized many muscles are only partially covered by compounds, so some targeted work is often useful. As a broad practical baseline, he suggested roughly 2-4 challenging sets once or twice per week per under-targeted muscle group for many lifters. He also cautioned that global recovery can become limiting even when local muscle stress seems modest, so outcomes and fatigue trends should guide progression. Recommendation: start conservative, monitor performance/recovery, and scale up only if adaptation justifies it.",
+      "skills": ["sbs-strength-training", "sbs-bench", "sbs-squat", "sbs-deadlift"],
+      "topic": "isolation volume"
+    },
+    {
+      "question": "What are your favorite and least favorite things Greg has cooked?",
+      "answer_summary": "Lindsay said many of Greg’s meals were excellent, with favorites including simple but well-executed dishes (pizza, breads, biryani/chicken-and-rice, and other staples). Greg highlighted chicken shawarma as one of his own favorite dishes Lindsay makes or requests as well, and both agreed most outcomes are consistently good when following solid recipes. Neither identified a major recurring failure, just occasional underbaked or texture-mismatch one-offs. This segment was more personal/fun than technical coaching. It closed Lindsay’s final co-host episode before the incoming host transition.",
+      "skills": ["sbs-diet"],
+      "topic": "personal cooking preferences"
+    }
+  ]
+}

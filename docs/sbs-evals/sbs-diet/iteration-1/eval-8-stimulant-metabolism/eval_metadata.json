@@ -1,0 +1,14 @@
+{
+  "eval_id": 8,
+  "eval_name": "eval-8-stimulant-metabolism",
+  "prompt": "Do caffeine and nicotine slow each other\u2019s clearance, and is this true for other stimulants like ADHD meds too?",
+  "expected_output": "Greg said stimulant interactions depend on enzyme pathways, not just whether both compounds are 'stimulants.' Caffeine is largely metabolized through CYP1A2, while nicotine is mainly metabolized via CYP2A6/CYP2B6, so direct competitive slowing is unlikely. He added that smoking/combustion products can induce CYP1A2, which may shorten caffeine half-life in smokers. More broadly, interactions can lengthen, shorten, or not affect half-life depending on induction/inhibition patterns, so no blanket rule applies. His practical recommendation was to treat this as a pharmacist-level medication interaction problem when multiple compounds are involved.",
+  "topic": "stimulant metabolism",
+  "episode": 126,
+  "assertions": [
+    "Answer explains stimulant interactions depend on enzyme pathways, not just both being stimulants",
+    "Answer mentions caffeine is metabolized through CYP1A2 and nicotine through CYP2A6/CYP2B6",
+    "Answer notes smoking can induce CYP1A2, potentially shortening caffeine half-life",
+    "Answer recommends treating multi-compound interactions as a pharmacist-level problem"
+  ]
+}

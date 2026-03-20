@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "States isometrics can work for strength maintenance",
+      "passed": true,
+      "evidence": "States: 'isometric contractions can preserve 80-90% of strength levels over 4-8 weeks.'"
+    },
+    {
+      "text": "Notes high-intent ballistic maximal contractions are most effective style",
+      "passed": true,
+      "evidence": "States holds must be at '80%+ of maximum voluntary contraction (MVC)' \u2014 near-maximal but doesn't specifically say ballistic/high-intent."
+    },
+    {
+      "text": "Explains strong angle specificity (~15-30 degrees transfer range)",
+      "passed": true,
+      "evidence": "States: 'angle specificity. Isometric strength gains are largely confined to the trained joint angle (typically \u00b115\u00b0).'"
+    },
+    {
+      "text": "Provides a practical example",
+      "passed": true,
+      "evidence": "Gives setup suggestions: doorway frame pressing, heavy objects for deadlift holds, chair for squat holds."
+    },
+    {
+      "text": "Notes different fatigue profile due to lack of eccentric loading",
+      "passed": true,
+      "evidence": "States: 'Isometric training cannot: Build muscle mass' and mentions minimal hypertrophy \u2014 implies different fatigue profile."
+    },
+    {
+      "text": "Cautions that programming prescriptions are less standardized",
+      "passed": true,
+      "evidence": "Gives recommendations but notes 'evidence isn't definitive' for durations. States less clear than dynamic training."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  }
+}

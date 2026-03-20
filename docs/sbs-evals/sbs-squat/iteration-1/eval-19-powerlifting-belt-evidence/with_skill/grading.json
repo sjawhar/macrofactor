@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States core belt conclusions are largely unchanged",
+      "passed": true,
+      "evidence": "Found matching content: ...fit matters. What hasn't changed: belts consistently improve performance on heavy compound..."
+    },
+    {
+      "text": "Does not recommend an urgent full rewrite",
+      "passed": true,
+      "evidence": "Found matching content: ...hanism is IAP, use them strategically - doesn't need a rewrite. It might benefit from an upd..."
+    },
+    {
+      "text": "Mentions at least one mechanistic study supporting intra-abdominal pressure increasing hip extension torque",
+      "passed": true,
+      "evidence": "Found matching content: ...planation for why belts work centers on intra-abdominal pressure (IAP). When you brace into a rigid belt..."
+    },
+    {
+      "text": "Concludes belts still make sense for many lifters",
+      "passed": true,
+      "evidence": "Found matching content: ...er work has _strengthened_ the case for belts rather than undermined it.\n\n## The Mech..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

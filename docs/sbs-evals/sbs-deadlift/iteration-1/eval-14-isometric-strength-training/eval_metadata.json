@@ -1,0 +1,11 @@
+{
+  "eval_id": 14,
+  "eval_name": "isometric-strength-training",
+  "prompt": "What's the current take on isometric training for maintaining strength on squat, bench, and deadlift when equipment is limited?",
+  "assertions": [
+    "States isometrics can work but the most effective style is high-intent ballistic maximal contractions (max force as fast as possible)",
+    "Mentions strong angle specificity: gains transfer mostly to the trained joint angle, roughly 15-30 degrees in either direction",
+    "Provides a practical example (e.g., pulling into safety pins at a chosen deadlift height)",
+    "Notes that programming prescriptions (duration, frequency, weekly dose) are less standardized than conventional training"
+  ]
+}

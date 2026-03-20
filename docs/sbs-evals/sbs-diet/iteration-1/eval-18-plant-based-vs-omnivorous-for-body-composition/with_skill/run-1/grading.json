@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer pushes back on blanket claims that plant-based diets are categorically healthier",
+      "passed": true,
+      "evidence": "Found 'not' in: ...otein, and training are matched. The diet pattern itself is not the driver\u2014energy balance and protein sufficiency are.\n\n---..."
+    },
+    {
+      "text": "Answer notes observational comparisons are heavily confounded by broader health behaviors",
+      "passed": false,
+      "evidence": "Missing any of: ['confound', 'health behavior']"
+    },
+    {
+      "text": "Answer states calories and macronutrient setup drive body composition more than dietary label",
+      "passed": true,
+      "evidence": "Found 'calorie' in: ...ous diets produce equivalent body composition outcomes when calories, protein, and training are matched. The diet pattern itsel..."
+    },
+    {
+      "text": "Answer says both vegan and omnivorous diets can work well when thoughtfully structured",
+      "passed": true,
+      "evidence": "Found 'work' in: ...d protein sufficiency are.\n\n---\n\n## The Evidence-Based Framework\n\n### What Actually Drives Body Composition Change\n\nAccordin..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

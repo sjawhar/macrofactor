@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States current evidence does not show that lifting stunts growth",
+      "passed": true,
+      "evidence": "'Growth plate injuries from resistance training are rare when programming is sensible. The risk is not zero, but it's dramatically overstated in popular fitness culture.' Addresses the myth directly."
+    },
+    {
+      "text": "Notes that typical training loads are likely less concerning for growth plates than everyday running/jumping impact forces",
+      "passed": false,
+      "evidence": "Does not compare resistance training loads to running/jumping impact forces. Greg specifically made this comparison, noting everyday activities expose growth plates to similar or greater forces."
+    },
+    {
+      "text": "Emphasizes close supervision, strict technique, and minimizing preventable injuries",
+      "passed": true,
+      "evidence": "'Supervision and coaching: A coach or experienced lifter should monitor form.' 'Technique quality under load — This is the primary safety factor.' Red Flags section addresses form breakdown, pain, and fatigue."
+    },
+    {
+      "text": "Recommends movement skill development before/during early puberty rather than chasing failure or maximal loads",
+      "passed": true,
+      "evidence": "Ages 12-14 Foundation Phase: 'Movement quality, work capacity, basic strength, habit formation.' 'Focus on 8–15 rep ranges. Avoid heavy singles; max out at ~80% perceived effort. No maxing out attempts.'"
+    },
+    {
+      "text": "Notes training stress can be scaled up as puberty progresses",
+      "passed": true,
+      "evidence": "Clear progression: Ages 12-14 (foundation, light loads) → Ages 15-17 (progressive strength, 60-85% 1RM, occasional heavy singles) → Ages 18+ (full range of intensities)."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

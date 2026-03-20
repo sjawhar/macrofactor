@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States no strong downside to exercise variation when total hard sets are matched",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "References a finding where varied-exercise groups showed more balanced regional muscle growth",
+      "passed": true,
+      "evidence": "Found matching content: ...hat different squat variations produce _regionally distinct_ hypertrophy patterns even w..."
+    },
+    {
+      "text": "Notes that variety can improve enjoyment and adherence for long-term outcomes",
+      "passed": true,
+      "evidence": "Found matching content: ...There's also a meaningful adherence and enjoyment benefit worth naming directly. Training..."
+    },
+    {
+      "text": "Presents exercise variety as a reasonable option, not a magic trick",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

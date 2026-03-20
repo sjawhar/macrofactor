@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States the most effective isometric style is high-intent/ballistic maximal contractions",
+      "passed": true,
+      "evidence": "Found matching content: ...est finding from the research is that **high-intent, maximal-effort contractions** - someti..."
+    },
+    {
+      "text": "Notes strong angle specificity (gains transfer roughly 15-30 degrees from trained position)",
+      "passed": true,
+      "evidence": "Found matching content: ...effective for strength maintenance.\n\n## Angle Specificity: Real, But Not a Dealbreaker\n\nThe an..."
+    },
+    {
+      "text": "Points out that isometric quarter-squat work won't strongly improve bottom-position squat strength",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Mentions isometrics have a different fatigue profile (useful complement, avoids eccentric loading)",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Notes that practical programming prescriptions for isometrics are less standardized",
+      "passed": true,
+      "evidence": "Found matching content: ...for barbell training.\n\n## Programming: Less Standardized Than You'd Like\n\nThis is where honesty..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

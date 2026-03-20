@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 0.6,
+    "passed": 3,
+    "failed": 2,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on how hard to train",
+      "passed": true,
+      "evidence": "Answer contains 25/33 key concepts from the expected core position. Key matches: failure, volume, recoverability, reps, needed."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": true,
+      "evidence": "Found 4/4 specific details from expected output. Matched: 4 reps, 8 weeks, 2 weeks."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": false,
+      "evidence": "Found 1 caveat/limitation markers in the answer."
+    },
+    {
+      "text": "Answer includes actionable practical recommendations consistent with the hosts' advice",
+      "passed": false,
+      "evidence": "Found 2 actionable recommendation markers."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": true,
+      "evidence": "No obvious contradictions detected with the expected position."
+    }
+  ]
+}

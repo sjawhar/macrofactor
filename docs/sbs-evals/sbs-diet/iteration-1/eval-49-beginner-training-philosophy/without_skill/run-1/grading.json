@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states evidence-based training does NOT mean overcomplicated or joyless training",
+      "passed": true,
+      "evidence": "Found 'not' in: ...6 months, they've lost 5 lbs of potential progress. That's not recovered. The \"learning experience\" cost them real gains...."
+    },
+    {
+      "text": "Answer acknowledges bro splits can still work well",
+      "passed": true,
+      "evidence": "Found 'bro split' in: ...for new lifters to start with less evidence-based methods (bro splits, dreamer bulks, ego lifting) because they might build usef..."
+    },
+    {
+      "text": "Answer says aggressive eating phases can help some lifters stop under-eating",
+      "passed": false,
+      "evidence": "Missing any of: ['under-eating', 'unlock', 'afraid']"
+    },
+    {
+      "text": "Answer pushes back on the idea that beginner gains are only tied to a short timeline",
+      "passed": true,
+      "evidence": "Found 'beginner' in: ...stency.\n\n### The Evidence-Based Alternative\n\nEvidence-based beginner programs (Starting Strength, StrongLifts, 5/3/1 for Beginne..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

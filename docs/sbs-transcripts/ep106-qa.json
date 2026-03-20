@@ -1,0 +1,52 @@
+{
+	"episode": 106,
+	"pairs": [
+		{
+			"question": "A listener asked: if someone wants to get bigger and stronger for general health/recreation (not powerlifting or bodybuilding competition), what specific core exercises should they prioritize?",
+			"answer_summary": "Greg recommended a 6-pattern base: weighted (optionally hand-elevated) push-ups, single-arm dumbbell overhead press (or push press), neutral-grip pull-ups/pulldowns, single-arm dumbbell rows, trap-bar deadlifts, and rear-foot-elevated split squats. He emphasized these as practical defaults for most people because they are easier to learn, joint-friendly, and broadly effective. Eric largely agreed, and added alternatives like low-incline dumbbell press, chin-ups, walking lunges, and single-leg RDLs. Both stressed using movement categories first (horizontal/vertical push-pull, knee/hip dominant lower body), then customizing. They also noted overhead pressing is optional for some trainees and shouldn’t be included just out of obligation.",
+			"skills": ["sbs-strength-training"],
+			"topic": "general-purpose exercise selection"
+		},
+		{
+			"question": "The same listener asked for a hypothetical ‘SBS combine’: what tests should a generally strong/fit/athletic person repeat every ~12 weeks to track progress?",
+			"answer_summary": "They proposed covering multiple capacities instead of only barbell strength. Suggested tests included an aerobic event (2-mile run, possibly 5K or 5-mile), anaerobic running (400–800 m), and short sprint speed (40 m or 100 m). For explosiveness they suggested vertical jump or broad jump, plus max-distance medicine ball throws (chest pass and overhead). For strength they suggested something like a 3RM squat/bench/deadlift, and for strength endurance max-rep pull-ups or even a 20RM squat. They also mentioned adding flexibility screening, and said this full battery is probably better as a longer periodic check (e.g., annual) than trying to run all of it every 12 weeks.",
+			"skills": [
+				"sbs-strength-training",
+				"sbs-squat",
+				"sbs-bench",
+				"sbs-deadlift"
+			],
+			"topic": "fitness testing battery"
+		},
+		{
+			"question": "A listener asked whether Eric’s switch to a fully vegan diet changed his training, performance, recovery, or supplementation approach.",
+			"answer_summary": "Eric said he noticed no meaningful performance or recovery change after going vegan. Training remained broadly the same, with recent increases in training effort due to feeling good overall. His main nutrition adjustment was paying more attention to protein-source diversity (pea, rice, and soy) to improve amino acid coverage. He continued algae oil (EPA/DHA source) and a multivitamin, with B12 coverage noted as important. Greg added that iron deficiency is generally less common in men, while still acknowledging context can matter (e.g., high running volume).",
+			"skills": ["sbs-diet"],
+			"topic": "vegan transition and supplementation"
+		},
+		{
+			"question": "A listener asked about the trend of ‘optimizing’ exercises based on anatomy and whether these highly specific modifications are actually better.",
+			"answer_summary": "Greg said the basic concept is reasonable as hypothesis-generation, but criticized overconfident claims that tiny tweaks are universally superior. He noted there is often little or no longitudinal hypertrophy evidence for many of these specific comparisons, and warned that absolutist messaging can create anxiety/nocebo effects for people without specialized equipment. Eric agreed that anatomy should guide training in broad categories first, then individualization should come from practical feedback (comfort, soreness pattern, pump, and performance over time). Both emphasized meaningful inter-individual differences, so one ‘optimal’ setup is unlikely to generalize perfectly to everyone. Their practical recommendation was to use evidence-informed defaults, then personalize based on outcomes and tolerability.",
+			"skills": ["sbs-strength-training"],
+			"topic": "exercise optimization claims"
+		},
+		{
+			"question": "A listener asked whether using a low incline instead of flat bench might improve hypertrophy, especially considering arching/retraction and shoulder comfort.",
+			"answer_summary": "Greg said shoulder-safety claims about one setup being clearly safer are not strongly established, but low incline is a plausible hypertrophy option. He suggested any advantage may come less from ‘angle magic’ and more from slightly longer range of motion, since low incline typically changes touch point upward and can increase pec/triceps excursion. He personally prefers low incline and suspects it may be modestly better than flat for many lifters, though not with high certainty. Eric agreed and reported that low incline often feels better for his shoulder than repeated flat pressing, especially with his injury history. Practical takeaway: use the pressing angle(s) that let you train hard through good ROM with manageable discomfort.",
+			"skills": ["sbs-bench", "sbs-strength-training"],
+			"topic": "low incline vs flat bench hypertrophy"
+		},
+		{
+			"question": "A listener asked whether deadlifting on a garage platform with about a 5% incline could meaningfully hurt performance compared to deadlifting on a flat gym floor.",
+			"answer_summary": "Greg said yes, the incline could matter, but first check confounders: plate calibration differences and training temperature (especially cold garages) can noticeably affect output. He explained platform orientation changes mechanics: depending on bar position relative to slope, it can act like slight heel elevation plus deficit, or like toe elevation/low block pull. He recommended testing these setups deliberately on a flat platform to see whether they reproduce the same performance feel. Eric added that bar roll itself can be disruptive and suggested experimenting with orientation and potentially using lifting shoes with a small heel to improve comfort. Net answer: not just ‘in your head’—the incline is a plausible contributor, and it can be tested directly.",
+			"skills": ["sbs-deadlift", "sbs-strength-training"],
+			"topic": "deadlift on sloped platform"
+		},
+		{
+			"question": "A listener asked how Greg and Eric manage work-life balance across research, coaching, podcasting, MacroFactor, and other responsibilities.",
+			"answer_summary": "Eric separated the problem into coping and proactive structure. For coping, he emphasized passion, curiosity, and focus on impact; for proactive balance, he emphasized trimming low-quality ‘wasted’ time, protecting genuinely restorative rest, scheduling family/social time deliberately, and saying no more often. Greg reframed his answer using self-determination theory: autonomy, competence, and relatedness are all strongly present in his current work, which is why high work hours feel sustainable and meaningful. Both acknowledged they are unusually fortunate in their setup, and that this context matters. Greg also distinguished legitimate attempts to improve one’s work situation from shallow hustle-culture messaging.",
+			"skills": ["sbs-strength-training"],
+			"topic": "work-life balance in fitness careers"
+		}
+	]
+}

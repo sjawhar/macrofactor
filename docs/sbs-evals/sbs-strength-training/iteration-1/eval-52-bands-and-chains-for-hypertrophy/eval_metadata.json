@@ -1,0 +1,14 @@
+{
+  "eval_id": 52,
+  "eval_name": "eval-52-bands-and-chains-for-hypertrophy",
+  "prompt": "You previously discussed chains and bands for strength. What about using accommodating resistance for hypertrophy specifically?",
+  "expected_output": "Greg said the likely effect is neutral-to-positive if used intelligently, but potentially negative if overdone. His main warning was not to add so much band/chain tension that lockout becomes the limiter, because that can reduce meaningful loading in stretched positions where hypertrophy may be especially stimulated. He gave examples showing how matching a resistance curve can be sensible (e.g., bottom challenge still high while top load rises), but \"crazy\" tension setups can undermine training quality. He noted direct hypertrophy data are sparse, and available isotonic-vs-isokinetic comparisons don't clearly show superior growth from perfectly matched resistance. He also discussed a possible constant-tension/deoxygenation benefit, but treated that as speculative and secondary to existing direct evidence. Bottom line: use moderate accommodating resistance, keep full-ROM challenge meaningful, and don't expect magic.",
+  "topic": "bands and chains for hypertrophy",
+  "episode": 31,
+  "assertions": [
+    "Answer captures the core SBS position on bands and chains for hypertrophy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

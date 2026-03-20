@@ -1,0 +1,15 @@
+{
+  "eval_id": 74,
+  "eval_name": "eval-74-minimalist-warm-up-strategy",
+  "prompt": "What do you think about minimalist warm-ups (mostly just barbell warm-up sets) instead of long activation/mobility routines?",
+  "expected_output": "Greg's answer was conditional: minimalist warm-ups are fine if they reliably prepare you for the session. He framed it as a cost-benefit issue, especially for people with limited gym time, where cutting warm-up from ~30 minutes to ~5-10 minutes can materially increase productive training time. But he warned against making minimalism the goal itself; under-warming can reduce readiness and potentially increase risk if needed mobility/positioning work is removed. His practical method was iterative troubleshooting: remove one warm-up element at a time and keep only what clearly helps session quality. That approach preserves performance while trimming wasted time. So the best warm-up is the minimum effective warm-up for your body and your session demands.",
+  "topic": "minimalist warm-up strategy",
+  "episode": 50,
+  "assertions": [
+    "Answer captures the core SBS position on minimalist warm-up strategy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Advises not to change things while progress is still happening",
+      "passed": true,
+      "evidence": "States: 'A program that's mostly working often means you're making progress but hitting a specific wall.'"
+    },
+    {
+      "text": "At plateau: first determine whether more stress or less stress is needed",
+      "passed": true,
+      "evidence": "Diagnostic approach: identify sticking point first, then determine if it's technique, weak-link, volume, or recovery issue."
+    },
+    {
+      "text": "Recommends small, targeted changes (volume, intensity, frequency, or exercise selection)",
+      "passed": true,
+      "evidence": "Ordered list: fix technique, adjust weak-link accessories, manage volume/pulling, adjust intensity/density."
+    },
+    {
+      "text": "Evaluate each change for a few weeks before making another",
+      "passed": true,
+      "evidence": "States: 'You've diagnosed the bottleneck and applied targeted fixes for 4-6 weeks with no improvement.'"
+    },
+    {
+      "text": "If serial tweaks fail, then moving to a new program is reasonable",
+      "passed": true,
+      "evidence": "Section 'When to Actually Switch Programs' with 5 specific criteria."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states heavy lifting itself is unlikely to directly prevent fat loss",
+      "passed": true,
+      "evidence": "Found 'not' in: ...rt Answer\n\n**Yes, there is a plausible mechanism, but it is not the primary driver of weight-loss friction.** Weekly near-m..."
+    },
+    {
+      "text": "Answer mentions energy intake and total expenditure as the main drivers",
+      "passed": true,
+      "evidence": "Found 'energy' in: ...eight-loss friction.** Weekly near-max lifting can increase energy expenditure and create a stronger adaptive appetite/metabol..."
+    },
+    {
+      "text": "Answer suggests bodyweight performance targets (push-ups, pull-ups, dips) as motivation during weight loss",
+      "passed": true,
+      "evidence": "Found 'bodyweight' in: ...** (conservative pace) will produce fat loss at **0.25\u20131.0% bodyweight/week**\u2014the SBS target range.\n\n**The math**: If weekly near-..."
+    },
+    {
+      "text": "Answer recommends involving qualified dietitian/clinical support for binge-eating concerns",
+      "passed": true,
+      "evidence": "Found 'dietitian' in: ...g persists, consider working with a therapist or registered dietitian who specializes in eating behavior.\n\n---\n\n## Practical Reco..."
+    },
+    {
+      "text": "Answer is critical of the described coaching setup with limited progress over years",
+      "passed": false,
+      "evidence": "Missing any of: ['coach', 'trainer', 'poor']"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Distinguishes between acute risk in people with pre-existing vascular conditions vs. long-term causation in healthy lifters",
+      "passed": true,
+      "evidence": "'What Could Be Problematic' section addresses pre-existing hypertension and cardiovascular disease. The rest of the answer is clear that healthy lifters face no evidence of harm. The distinction is well-drawn."
+    },
+    {
+      "text": "States that direct long-term causal evidence specifically linking normal lifting bracing to vascular damage is sparse or limited",
+      "passed": true,
+      "evidence": "States: 'There is no evidence that long-term bracing and Valsalva in healthy lifters causes vascular damage.' While stronger than 'sparse,' it addresses the same point — no direct evidence exists."
+    },
+    {
+      "text": "Mentions occupational lifting epidemiology but notes it differs substantially from strength training",
+      "passed": false,
+      "evidence": "No mention of occupational lifting epidemiology anywhere. Greg specifically noted 'indirect occupational lifting epidemiology, but it differs substantially from strength training in dose, context, and confounding factors.'"
+    },
+    {
+      "text": "Recommends individualized caution for those with known medical risk rather than broad fear-based avoidance",
+      "passed": true,
+      "evidence": "Dedicated section 'For Lifters with Hypertension or Cardiovascular Risk' recommends medical clearance and modified approach for at-risk individuals, while 'For Healthy Lifters' section says 'Bracing is safe and necessary.'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

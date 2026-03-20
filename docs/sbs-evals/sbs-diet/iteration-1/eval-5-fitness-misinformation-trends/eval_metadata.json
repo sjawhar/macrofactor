@@ -1,0 +1,14 @@
+{
+  "eval_id": 5,
+  "eval_name": "eval-5-fitness-misinformation-trends",
+  "prompt": "What bad or outdated advice do fitness experts still spread, and is that problem getting better or worse?",
+  "expected_output": "They argued the misinformation problem is not improving and may be getting worse. They contrasted older myths (like frequent meals meaningfully boosting metabolism) with newer, potentially more harmful misinformation patterns. They discussed structural incentives in academia and industry that can reward overstatement, selective framing, and low-quality translation of evidence. Social media amplification and commercial incentives were presented as force multipliers for bad takes. Overall, their message was to prioritize evidence quality and skepticism, because confident but weak claims remain common.",
+  "topic": "fitness misinformation trends",
+  "episode": 105,
+  "assertions": [
+    "Answer argues fitness misinformation is NOT improving and may be worsening",
+    "Answer mentions structural incentives in academia and industry that reward overstatement",
+    "Answer discusses social media amplification and commercial incentives as force multipliers",
+    "Answer recommends prioritizing evidence quality and skepticism"
+  ]
+}

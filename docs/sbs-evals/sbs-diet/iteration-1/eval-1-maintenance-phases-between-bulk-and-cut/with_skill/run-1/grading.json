@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states maintenance phases are NOT physiologically required between bulk and cut",
+      "passed": true,
+      "evidence": "Found 'not' in: ...Between Bulking and Cutting?\n\n## Short Answer\n\n**No, you do not strictly need a maintenance phase.** You can transition dir...; Found 'not' in: ...Between Bulking and Cutting?\n\n## Short Answer\n\n**No, you do not strictly need a maintenance phase.** You can transition dir..."
+    },
+    {
+      "text": "Answer frames maintenance as optional/preference-based rather than biologically mandatory",
+      "passed": true,
+      "evidence": "Found 'optional' in: ...ly you've been dieting.\n\n---\n\n## Why Maintenance Phases Are Optional\n\nThe SBS framework treats diet phases as **calorie and macr..."
+    },
+    {
+      "text": "Answer acknowledges practical benefits of maintenance (adherence, comfort, scale stability)",
+      "passed": true,
+      "evidence": "Found 'adherence' in: ...l value of a brief maintenance phase depends on your goals, adherence, and how aggressively you've been dieting.\n\n---\n\n## Why Mai..."
+    },
+    {
+      "text": "Answer does NOT claim maintenance is always necessary or always recommended",
+      "passed": true,
+      "evidence": "Found 'not' in: ...Between Bulking and Cutting?\n\n## Short Answer\n\n**No, you do not strictly need a maintenance phase.** You can transition dir..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

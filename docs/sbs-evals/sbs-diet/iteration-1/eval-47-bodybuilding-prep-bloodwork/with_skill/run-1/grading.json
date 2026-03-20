@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms contextual lab abnormalities are common and expected in trained lifters and contest prep",
+      "passed": true,
+      "evidence": "Found 'common' in: ...hort Answer\n\n**Yes, abnormal blood markers are expected and common in natural bodybuilders during aggressive contest prep and..."
+    },
+    {
+      "text": "Answer mentions elevated creatinine from muscle mass/diet/creatine use",
+      "passed": true,
+      "evidence": "Found 'creatinine' in: ...s:**\n\n- Mildly elevated liver enzymes (ALT, AST)\n- Elevated creatinine (from high protein intake and dehydration)\n- Elevated urea/..."
+    },
+    {
+      "text": "Answer discusses hormonal suppression during prep with recovery post-show",
+      "passed": true,
+      "evidence": "Found 'hormonal' in: ...increase muscle protein breakdown and systemic stress.\n- **Hormonal suppression**: Prolonged deficits suppress anabolic hormone..."
+    },
+    {
+      "text": "Answer recommends interpreting labs through the lens of training phase and body composition status",
+      "passed": true,
+      "evidence": "Found 'context' in: ...n planning.\n\n---\n\n## Why Abnormalities Occur: The Metabolic Context\n\n### 1. **Aggressive Caloric Deficit**\n\nContest prep typica..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

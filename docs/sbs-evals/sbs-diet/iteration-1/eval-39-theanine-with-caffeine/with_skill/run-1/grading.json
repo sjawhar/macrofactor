@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer frames L-theanine as useful for reducing caffeine jitters/anxiety",
+      "passed": true,
+      "evidence": "Found 'reduce' in: ...structure for adherence. If appetite is still problematic, reduce calories gradually rather than relying on stimulants.\n\n---..."
+    },
+    {
+      "text": "Answer suggests a common range of about 100-200 mg with caffeine",
+      "passed": true,
+      "evidence": "Found '100' in: ...rients, fiber, and hydration** (RDA targets, 14 g fiber per 1000 kcal, 3\u20134 L water/day)\n\n---\n\n## What L-Theanine and Caffei..."
+    },
+    {
+      "text": "Answer notes individual response varies",
+      "passed": true,
+      "evidence": "Found 'response' in: ...ould I Use L-Theanine with Caffeine?\n\n## SBS Diet Framework Response\n\nThe SBS Diet skill focuses on **energy balance, macronutri..."
+    },
+    {
+      "text": "Answer recommends it as an optional complement rather than mandatory",
+      "passed": false,
+      "evidence": "Missing any of: ['optional', 'complement']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

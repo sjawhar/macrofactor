@@ -1,0 +1,14 @@
+{
+  "eval_id": 40,
+  "eval_name": "eval-40-aspirin-and-hypertrophy",
+  "prompt": "Could aspirin blunt hypertrophy or strength gains?",
+  "expected_output": "Greg said the direct aspirin-specific hypertrophy evidence is limited, so certainty is low. However, because aspirin overlaps with anti-inflammatory pathways relevant to adaptation, he considered blunting effects plausible at higher doses in young healthy lifters. He contrasted this with context-dependent findings where anti-inflammatory effects may differ by baseline inflammation status (e.g., older vs younger populations). Practical takeaway: avoid assuming chronic high-dose aspirin is adaptation-neutral when hypertrophy is a priority.",
+  "topic": "aspirin and hypertrophy",
+  "episode": 46,
+  "assertions": [
+    "Answer states direct aspirin-specific hypertrophy evidence is limited",
+    "Answer considers blunting effects plausible via anti-inflammatory pathways at higher doses",
+    "Answer discusses context-dependent findings (older vs younger populations)",
+    "Answer advises against assuming chronic high-dose aspirin is adaptation-neutral"
+  ]
+}

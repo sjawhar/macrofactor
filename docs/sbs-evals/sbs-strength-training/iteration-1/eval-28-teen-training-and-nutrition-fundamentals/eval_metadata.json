@@ -1,0 +1,15 @@
+{
+  "eval_id": 28,
+  "eval_name": "eval-28-teen-training-and-nutrition-fundamentals",
+  "prompt": "What should a 15-year-old do to gain muscle and strength: exercise selection, weekly volume, reps/intensity/failure, and calories/macros?",
+  "expected_output": "Pack recommended building around major compound patterns (squat/press/hinge/row variants), optionally with machines, and generally using 2-3 exercises per major muscle group. He suggested starting around 8-12 fractional sets per muscle per week and mostly training in about the 5-12 rep range. Effort guidance was to keep most work close to failure (roughly 0-2 RIR), with many sets around 1-2 RIR and some sets to failure to calibrate effort. For nutrition, he suggested a slow gain target around 1% body weight per month and protein roughly 1.5-2.0 g/kg/day, without overcomplicating supplements (creatine aside, whole-food habits first). Frequency guidance was about 3-5 sessions/week (with even 2 able to work for beginners). Greg added that beginners benefit from substantial bodyweight/calisthenic practice first (e.g., competent push-ups/lunges/step-ups) to build control and movement awareness before aggressively loading barbells.",
+  "topic": "Teen training and nutrition fundamentals",
+  "episode": 144,
+  "assertions": [
+    "Answer captures the core SBS position on Teen training and nutrition fundamentals",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

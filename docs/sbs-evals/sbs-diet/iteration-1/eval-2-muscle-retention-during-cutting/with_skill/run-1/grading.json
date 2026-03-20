@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer frames muscle retention priority as preference-dependent, not a universal rule",
+      "passed": false,
+      "evidence": "Missing any of: ['preference', 'depends', 'personal', 'individual']"
+    },
+    {
+      "text": "Answer recommends basics: avoid extreme deficits, keep protein reasonable, continue resistance training",
+      "passed": true,
+      "evidence": "Found 'extreme' in: ...n, and consistent training**\u2014without obsessive precision or extreme measures.\n\n---\n\n## Why Casual Lifters Have an Advantage\n\n**...; Found 'protein' in: ...e preserving most muscle with **moderate deficits, adequate protein, and consistent training**\u2014without obsessive precision or e..."
+    },
+    {
+      "text": "Answer mentions that lifters often overestimate muscle loss during cuts",
+      "passed": false,
+      "evidence": "Missing any of: ['overestimate', 'exaggerate', 'catastrophi']"
+    },
+    {
+      "text": "Answer does NOT present muscle loss during cutting as catastrophic or inevitable",
+      "passed": true,
+      "evidence": "Found 'not' in: ...al built-in advantages:\n\n1. **Recomp potential**: If you're not already very lean, your body can simultaneously lose fat an..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States neither modality is universally superior for hypertrophy",
+      "passed": true,
+      "evidence": "Found matching content: ...volume and make better gains?\"**\n\n---\n\nNeither machines nor free weights are universal..."
+    },
+    {
+      "text": "Acknowledges machines are useful for adding variation and reducing technical constraints",
+      "passed": true,
+      "evidence": "Found matching content: ...# Machines vs. Free Weights for Hypertrophy\n\n**Q:..."
+    },
+    {
+      "text": "Favors keeping a base of compound free-weight work",
+      "passed": true,
+      "evidence": "Found matching content: ...# Machines vs. Free Weights for Hypertrophy\n\n**Q: \"For hypertrophy..."
+    },
+    {
+      "text": "Recommends using both modalities (mixed approach)",
+      "passed": true,
+      "evidence": "Found matching content: ...nsistent. For most people, that means a mix - free weights for the big compound pat..."
+    },
+    {
+      "text": "Notes specificity principle: if performance in a specific lift matters, include that lift",
+      "passed": true,
+      "evidence": "Found matching content: ...anian deadlifts, rows, presses - have a specificity advantage that machines can't fully..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

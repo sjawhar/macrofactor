@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer recommends deloading as a diagnostic tool to distinguish overreaching from normal deficit-related loss",
+      "passed": true,
+      "evidence": "Found 'deload' in: ...training**: Stop 1-2 reps short of failure during cuts\n- **Deload every 4-6 weeks**: Reduce volume by 40-50% for one week\n- *..."
+    },
+    {
+      "text": "Answer states if strength rebounds after deload, fatigue/overreaching was likely a contributor",
+      "passed": true,
+      "evidence": "Found 'recover' in: ...l strength loss during a cut** is expected, manageable, and recovers quickly when you return to maintenance calories. **Overrea..."
+    },
+    {
+      "text": "Answer mentions tracking bodyweight pull-up/dip rep maxes as a practical check",
+      "passed": true,
+      "evidence": "Found 'rep' in: ...= more loss)\n- You can still complete your planned sets and reps, even if weights feel heavier\n- Fatigue is localized to th..."
+    },
+    {
+      "text": "Answer recommends using deload response and relative-performance context before assuming the cut is failing",
+      "passed": true,
+      "evidence": "Found 'relative' in: ...over time rather than plateauing\n- Strength loss is severe relative to the deficit size (e.g., 15% strength loss on a 300 cal/d..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

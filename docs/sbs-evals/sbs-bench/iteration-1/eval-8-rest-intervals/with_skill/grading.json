@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Explains that heavier loads increase fatigue per set, so stronger lifters naturally need longer recovery",
+      "passed": true,
+      "evidence": "Explains ATP-PC depletion, CNS fatigue, and metabolic byproducts from heavier loads."
+    },
+    {
+      "text": "States hypertrophy research findings are mixed",
+      "passed": true,
+      "evidence": "States: 'some research suggests metabolic stress from shorter rest aids hypertrophy, total mechanical tension and volume are more important.'"
+    },
+    {
+      "text": "For strength, leans toward longer rests especially for strong lifters on compounds",
+      "passed": true,
+      "evidence": "States: 'Research and SBS guidance consistently support longer rest for heavy compound lifts: 3-4 minutes typical, 4-5 for advanced.'"
+    },
+    {
+      "text": "Provides concrete rest period guidelines",
+      "passed": true,
+      "evidence": "Gives 3-5 min for strength, 60-120s for hypertrophy, 2-3 min for bridge work."
+    },
+    {
+      "text": "Mentions supersets as a time-saving strategy",
+      "passed": false,
+      "evidence": "Does not mention supersets or non-interfering supersets for time savings."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

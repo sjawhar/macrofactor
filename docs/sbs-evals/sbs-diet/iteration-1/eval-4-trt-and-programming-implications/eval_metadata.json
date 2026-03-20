@@ -1,0 +1,14 @@
+{
+  "eval_id": 4,
+  "eval_name": "eval-4-trt-and-programming-implications",
+  "prompt": "How might TRT change nutrition and training recommendations for someone focused on physique progress?",
+  "expected_output": "They framed TRT as a medical decision that must be handled with physician oversight, not casual optimization. In the context discussed, moving from very low testosterone (around 200 ng/dL) to normal physiologic levels (around 900 ng/dL) can increase hypertrophy potential. With that, some people may tolerate or benefit from more training volume and frequency than before. Nutrition may also need to scale to support higher training output and recovery demands. They emphasized individual variability based on baseline status and current training history.",
+  "topic": "TRT and programming implications",
+  "episode": 105,
+  "assertions": [
+    "Answer frames TRT as a medical decision requiring physician oversight",
+    "Answer mentions that normalizing testosterone from very low levels can increase hypertrophy potential",
+    "Answer suggests higher training volume/frequency may be tolerated with TRT",
+    "Answer emphasizes individual variability based on baseline status"
+  ]
+}

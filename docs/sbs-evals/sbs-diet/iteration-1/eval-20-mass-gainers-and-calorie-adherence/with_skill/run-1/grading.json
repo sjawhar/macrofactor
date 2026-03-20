@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer frames mass gainers as a convenience tool, not uniquely superior",
+      "passed": true,
+      "evidence": "Found 'convenience' in: ...xactly what you're consuming (unlike restaurant food)  \n\u2705 **Convenience** \u2014 mix with water, drink, move on  \n\u2705 **Shelf stability**..."
+    },
+    {
+      "text": "Answer notes most are basically protein plus simple carbohydrates",
+      "passed": true,
+      "evidence": "Found 'protein' in: ...u're already committed to the fundamentals: total calories, protein, and consistency. The product itself is irrelevant if you c..."
+    },
+    {
+      "text": "Answer states the key criterion is adherence and total intake, not marketing claims",
+      "passed": true,
+      "evidence": "Found 'adherence' in: ...ed Take\n\n## The Bottom Line\n\nMass gainers are a **practical adherence tool** for travelers, not a magic bullet. They solve a real..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

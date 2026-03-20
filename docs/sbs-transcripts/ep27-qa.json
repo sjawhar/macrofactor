@@ -1,0 +1,59 @@
+{
+  "episode": 27,
+  "pairs": [
+    {
+      "question": "Any advice on easing into a high-volume hypertrophy-focused mesocycle after a powerlifting meet without losing my strength gains?",
+      "answer_summary": "They recommend keeping the competition lifts in moderate strength-relevant ranges instead of shifting entirely to high reps. A practical template is three weeks mostly in the 5-10 rep range, then one week including heavier triples to keep top-end strength exposure. They also suggest an over-warm single around RPE 8 before volume work to preserve neural readiness with limited fatigue. The core point is to keep at least some heavy practice while accumulating hypertrophy volume.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "post-meet hypertrophy without strength loss"
+    },
+    {
+      "question": "What do you personally do right after a meet—jump into the next block immediately or take time off?",
+      "answer_summary": "The answer is context-dependent. If an athlete is motivated and recovered, they can return quickly; if beat up, use an easier first week with roughly 70-80% loading and reduced volume. They frame complete time off as acceptable when needed, since one week in a year is trivial. Their preference is usually to keep intensity present while temporarily pulling back volume.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "post-competition transition week"
+    },
+    {
+      "question": "Do personalized protein blends actually help, or are they mostly a way to charge more?",
+      "answer_summary": "They describe most personalization claims as low-impact for typical lifters. For most people, standard whey or a basic blend is already effective, affordable, and practical. Personalized blends may matter more for specific constraints like vegan preferences, lactose intolerance, or digestive issues. The broad recommendation is to avoid overcomplicating protein powder selection.",
+      "skills": ["sbs-diet"],
+      "topic": "protein blend personalization"
+    },
+    {
+      "question": "How should I tweak a program that mostly works before deciding to switch programs entirely?",
+      "answer_summary": "They advise not changing things while progress is still happening, because the optimal plan is a moving target. Once a plateau appears, first decide whether the relevant lift likely needs more stress or less stress. Then make small, targeted changes—like volume, intensity, frequency, or exercise selection—and evaluate each change for a few weeks instead of overhauling everything at once. If serial tweaks fail, then moving to a new program is reasonable.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "program troubleshooting and plateaus"
+    },
+    {
+      "question": "What’s your take on mass gainers for people who travel a lot and need easy calories?",
+      "answer_summary": "They consider mass gainers acceptable as a convenience tool, not a uniquely superior product. Most are basically protein plus simple carbohydrate sources, so they can be replicated with regular whey and food choices. If the product helps someone consistently hit calorie targets, it can be useful in practice. The key criterion is adherence and total intake, not marketing claims.",
+      "skills": ["sbs-diet"],
+      "topic": "mass gainers and calorie adherence"
+    },
+    {
+      "question": "For pull-ups, do I need to get my chin over the bar for strength or hypertrophy benefits?",
+      "answer_summary": "They note pull-ups have a different strength curve from many barbell lifts: the top range is often the weakest position. Because of that, they do not treat strict chin-over-bar as a hard requirement for productive training adaptations in all contexts. Full range can still be useful when available, but partial ranges can produce meaningful strength and hypertrophy stimulus. So the recommendation is pragmatic rather than dogmatic.",
+      "skills": ["sbs-strength-training"],
+      "topic": "pull-up range of motion standards"
+    },
+    {
+      "question": "How should we interpret older intermittent-vs-daily calorie restriction research, and what makes a study useful today?",
+      "answer_summary": "They emphasize that older papers are not automatically invalid, but should be interpreted in the context of newer evidence. They recommend evaluating the broader body of literature rather than anchoring conclusions to a single 2011-era review. They also point out that research definitions of intermittent fasting vary (alternate-day fasting, 5:2, and time-restricted eating), which affects applicability. Their practical takeaway remains that total energy intake is generally the dominant driver for fat loss outcomes.",
+      "skills": ["sbs-diet"],
+      "topic": "interpreting fasting research"
+    },
+    {
+      "question": "What do you think about bands and chains for building absolute strength? The logic sounds good—do they actually work?",
+      "answer_summary": "They explain the rationale: accommodating resistance can better match the lift’s force curve by increasing load where leverage improves. A concrete example discussed is bar weight plus chain load that is lighter near the bottom and heavier near lockout. Despite plausible theory, they cite research (including meta-analytic evidence) showing little to no clear strength advantage versus conventional loading for most lifters. Their bottom line is that bands/chains can be fine as variation tools, but not a reliably superior method for maximal strength gains.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "accommodating resistance effectiveness"
+    },
+    {
+      "question": "Which supplements are actually useful in an evidence-based sense, and which are mostly hype?",
+      "answer_summary": "Creatine is presented as the strongest general-purpose option for performance and muscle outcomes, with especially strong relevance for people with low dietary creatine intake (for example many vegetarians/vegans). They also discuss conditional value for supplements like vitamin D (particularly when deficient), fish oil, magnesium, and ashwagandha depending on context and goals. The consistent theme is to prioritize proven basics over proprietary blends or kitchen-sink formulas. Supplement value is framed as incremental compared with training and nutrition fundamentals.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "evidence-based supplement priorities"
+    }
+  ]
+}

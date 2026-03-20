@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states nutrition alone is usually weak for preventing detraining losses compared with loading",
+      "passed": true,
+      "evidence": "Found 'loading' in: ...arms, chest\u2014if cleared)\n- **Lower body work** with no core loading (leg extensions, leg curls, hamstring curls)\n- **Isometric..."
+    },
+    {
+      "text": "Answer mentions very high leucine intakes (15-19 g/day) sometimes show partial benefit",
+      "passed": true,
+      "evidence": "Found '15' in: ...sits for quads, if approved)\n- **High-rep, low-load work** (15-25 reps) to maintain neuromuscular connection without heavy..."
+    },
+    {
+      "text": "Answer recommends working closely with surgeon/clinical team for return-to-training timing",
+      "passed": true,
+      "evidence": "Found 'surgeon' in: ...**Focus on mobility and light movement** as cleared by your surgeon\n- Gentle walking, breathing exercises, and range-of-motion..."
+    },
+    {
+      "text": "Answer notes regaining lost strength is typically faster than building it the first time",
+      "passed": true,
+      "evidence": "Found 'regain' in: ...Loss can be reduced to 2-5%\n- **Recovery timeline**: Muscle regains faster than it was lost (muscle memory effect)\u2014expect to r..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}
