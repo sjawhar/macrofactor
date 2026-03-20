@@ -3,7 +3,7 @@
 // Usage: npx tsx cli/mf.ts <command> [options]
 
 import { MacroFactorClient } from '../src/lib/api/index';
-import { searchExercises, resolveExercise, resolveName } from '../src/lib/api/exercises';
+import { searchExercises, resolveExercise } from '../src/lib/api/exercises';
 import { readInput, parseISO, expandSets, resolveWeight } from './helpers';
 import { readFileSync } from 'fs';
 import { randomUUID } from 'crypto';
@@ -47,52 +47,6 @@ function parseArgs() {
   return { command, opts, positional };
 }
 
-// ---------------------------------------------------------------------------
-// Parsing helpers for write commands
-// ---------------------------------------------------------------------------
-
-const TIMEZONE_OFFSET_HOURS = -6; // MDT = UTC-6
-
-/** Parse amount string like "150g", "2tbsp", "1cup" into { value, unit }. */
-function parseAmount(s: string): { value: number; unit: string } {
-  const m = s.match(/^([\d.]+)\s*(.+)$/);
-  if (!m) throw new Error(`Cannot parse amount: "${s}". Expected e.g. "150g", "2tbsp"`);
-  return { value: parseFloat(m[1]), unit: m[2].toLowerCase().trim() };
-}
-
-/** Parse time like "7pm", "19:00", "7:30am" into { hours, minutes }. */
-function parseTime(s: string): { hours: number; minutes: number } {
-  // "19:00" or "7:30"
-  const colonMatch = s.match(/^(\d{1,2}):(\d{2})(am|pm)?$/i);
-  if (colonMatch) {
-    let h = parseInt(colonMatch[1], 10);
-    const min = parseInt(colonMatch[2], 10);
-    if (colonMatch[3]?.toLowerCase() === 'pm' && h < 12) h += 12;
-    if (colonMatch[3]?.toLowerCase() === 'am' && h === 12) h = 0;
-    return { hours: h, minutes: min };
-  }
-  // "7pm", "7am", "12pm"
-  const shortMatch = s.match(/^(\d{1,2})(am|pm)$/i);
-  if (shortMatch) {
-    let h = parseInt(shortMatch[1], 10);
-    if (shortMatch[2].toLowerCase() === 'pm' && h < 12) h += 12;
-    if (shortMatch[2].toLowerCase() === 'am' && h === 12) h = 0;
-    return { hours: h, minutes: 0 };
-  }
-  throw new Error(`Cannot parse time: "${s}". Expected e.g. "7pm", "19:00", "7:30am"`);
-}
-
-/** Build a Date from --date and --at options in the user's local timezone. */
-function buildDate(opts: Record<string, string>): Date {
-  const dateStr = opts.date || new Date().toISOString().split('T')[0];
-  const { hours, minutes } = opts.at
-    ? parseTime(opts.at)
-    : { hours: new Date().getHours(), minutes: new Date().getMinutes() };
-  // Build UTC date from local time
-  const utcHours = hours - TIMEZONE_OFFSET_HOURS;
-  return new Date(`${dateStr}T${String(utcHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00.000Z`);
-}
-
 /** Match a serving by unit alias (e.g., "g" → "gram", "tbsp" → "tbsp"). */
 function findServing(servings: { description: string; gramWeight: number; amount: number }[], unit: string) {
   // For gram-based amounts, prefer the 1g serving so qty = grams directly
@@ -114,42 +68,6 @@ function findServing(servings: { description: string; gramWeight: number; amount
   };
   const targets = aliases[unit.toLowerCase()] || [unit.toLowerCase()];
   return servings.find((s) => targets.some((t) => s.description.toLowerCase().includes(t)));
-}
-
-/**
- * Parse sets string like "3x10@135lbs", "3x12@25lbs", "2x20".
- * Returns array of { reps, weightKg }.
- */
-function parseSets(s: string): { reps: number; weightKg: number | null }[] {
-  // JSON array for varying weights:
-  //   '[{"reps":15,"lbs":12.5},{"reps":12,"lbs":32.5},{"reps":10,"lbs":47.5,"sets":2}]'
-  // Compact format for uniform sets:
-  //   "3x10@135lbs"  →  3 sets of 10 @ 135 lbs
-  //   "3x10@60kg"    →  3 sets of 10 @ 60 kg
-  //   "3x10"         →  3 sets of 10, bodyweight
-
-  if (s.trimStart().startsWith('[')) {
-    const arr = JSON.parse(s) as { reps: number; sets?: number; lbs?: number; kg?: number }[];
-    return arr.flatMap((entry) => {
-      const count = entry.sets ?? 1;
-      const weightKg = entry.kg ?? (entry.lbs != null ? entry.lbs / 2.2046226218 : null);
-      return Array.from({ length: count }, () => ({ reps: entry.reps, weightKg }));
-    });
-  }
-
-  const m = s.match(/^(\d+)x(\d+)(?:@([\d.]+)(lbs?|kg))?$/i);
-  if (!m) throw new Error(`Cannot parse sets: "${s}". Expected e.g. "3x10@135lbs", "3x12@60kg", or JSON array`);
-
-  const setCount = parseInt(m[1], 10);
-  const reps = parseInt(m[2], 10);
-  let weightKg: number | null = null;
-
-  if (m[3]) {
-    const raw = parseFloat(m[3]);
-    weightKg = m[4].toLowerCase().startsWith('lb') ? raw / 2.2046226218 : raw;
-  }
-
-  return Array.from({ length: setCount }, () => ({ reps, weightKg }));
 }
 
 // ---------------------------------------------------------------------------
@@ -188,16 +106,20 @@ async function main() {
       }
 
       case 'workouts': {
+        const input = await readInput(positional);
         const client = await getClient();
         let workouts = await client.getWorkoutHistory();
-        if (opts.from) workouts = workouts.filter((w) => w.startTime >= opts.from!);
-        if (opts.to) workouts = workouts.filter((w) => w.startTime <= opts.to!);
+        const from = input?.from || opts.from;
+        const to = input?.to || opts.to;
+        if (from) workouts = workouts.filter((w) => w.startTime >= from);
+        if (to) workouts = workouts.filter((w) => w.startTime <= to);
         console.log(JSON.stringify(workouts, null, 2));
         break;
       }
 
       case 'workout': {
-        const id = positional[0];
+        const input = await readInput(positional);
+        const id = input?.id || positional[0];
         if (!id) throw new Error('Usage: mf.ts workout <uuid>');
         const client = await getClient();
         const detail = await client.getWorkout(id);
@@ -213,8 +135,9 @@ async function main() {
       }
 
       case 'exercises': {
+        const input = await readInput(positional);
         if (positional[0] === 'search') {
-          const query = positional.slice(1).join(' ');
+          const query = input?.query || positional.slice(1).join(' ');
           if (!query) throw new Error('Usage: mf.ts exercises search <query>');
           const results = searchExercises(query);
           console.log(JSON.stringify(results, null, 2));
@@ -225,7 +148,8 @@ async function main() {
       }
 
       case 'exercise': {
-        const id = positional[0];
+        const input = await readInput(positional);
+        const id = input?.id || positional[0];
         if (!id) throw new Error('Usage: mf.ts exercise <hex-id>');
         const resolved = resolveExercise(id);
         if (!resolved) throw new Error(`Exercise ${id} not found`);
@@ -241,7 +165,8 @@ async function main() {
       }
 
       case 'food-log': {
-        const date = positional[0] || new Date().toISOString().split('T')[0];
+        const input = await readInput(positional);
+        const date = input?.date || positional[0] || new Date().toISOString().split('T')[0];
         const client = await getClient();
         const log = await client.getFoodLog(date);
         console.log(JSON.stringify(log, null, 2));
@@ -252,7 +177,8 @@ async function main() {
       // search-food <query>
       // -----------------------------------------------------------------------
       case 'search-food': {
-        const query = positional.join(' ');
+        const input = await readInput(positional);
+        const query = input?.query || positional.join(' ');
         if (!query) throw new Error('Usage: mf.ts search-food <query>');
         const client = await getClient();
         const results = await client.searchFoods(query);
