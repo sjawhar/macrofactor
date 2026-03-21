@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import type { LogTime } from '../src/lib/api/index';
 
 import { expandSets, parseISO, readInput, resolveWeight, type SetInput } from './helpers';
 
@@ -33,6 +34,49 @@ describe('parseISO', () => {
       hours: 0,
       minutes: 0,
     });
+  });
+
+  it('preserves local hour/minute from offset-aware ISO (timezone-safe)', () => {
+    // Bug: wrapping parseISO output in new Date(`...Z`) converts to UTC,
+    // then getHours() returns system-local time — wrong for food log h/mi.
+    // Fix: construct LogTime directly from parseISO output.
+    const iso = '2026-03-21T13:30:00-05:00';
+    const parsed = parseISO(iso);
+    const logTime: LogTime = { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+
+    expect(logTime).toEqual({ date: '2026-03-21', hour: 13, minute: 30 });
+  });
+
+  it('preserves local time for positive UTC offsets', () => {
+    const parsed = parseISO('2026-03-21T08:15:00+09:00');
+    const logTime: LogTime = { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+
+    expect(logTime).toEqual({ date: '2026-03-21', hour: 8, minute: 15 });
+  });
+
+  it('handles midnight correctly', () => {
+    const parsed = parseISO('2026-03-21T00:00:00-05:00');
+    const logTime: LogTime = { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+
+    expect(logTime).toEqual({ date: '2026-03-21', hour: 0, minute: 0 });
+  });
+
+  it('demonstrates the old bug: Date wrapping shifts hours', () => {
+    // This test documents the bug that was fixed.
+    // Wrapping parsed output back into a UTC Date then calling getHours()
+    // gives a DIFFERENT hour depending on system timezone.
+    const parsed = parseISO('2026-03-21T13:00:00-05:00');
+    const brokenDate = new Date(
+      `${parsed.date}T${String(parsed.hours).padStart(2, '0')}:${String(parsed.minutes).padStart(2, '0')}:00.000Z`
+    );
+    // brokenDate is 13:00 UTC — getHours() returns system-local, NOT 13
+    // In UTC: getHours()=13. In UTC-5: getHours()=8. In UTC+9: getHours()=22.
+    // The only reliable approach is to never round-trip through Date.
+    const utcHour = brokenDate.getUTCHours(); // always 13 (UTC)
+    const localHour = brokenDate.getHours(); // varies by system TZ
+    expect(utcHour).toBe(13);
+    // localHour !== 13 when system TZ ≠ UTC — that was the bug
+    expect(parsed.hours).toBe(13); // parseISO always gives the right answer
   });
 });
 

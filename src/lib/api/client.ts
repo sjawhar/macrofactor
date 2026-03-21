@@ -88,6 +88,16 @@ function fmtDate(d: Date): string {
   return `${y}-${m}-${day}`;
 }
 
+/** Timezone-safe local time for food logging. */
+export interface LogTime {
+  /** YYYY-MM-DD */
+  date: string;
+  /** 0-23 */
+  hour: number;
+  /** 0-59 */
+  minute: number;
+}
+
 /** Wrap a numeric-looking field name in backticks for Firestore field paths. */
 function esc(field: string): string {
   return `\`${field}\``;
@@ -292,7 +302,7 @@ export class MacroFactorClient {
   }
 
   async logFood(
-    loggedAt: Date,
+    loggedAt: LogTime,
     name: string,
     calories: number,
     protein: number,
@@ -300,7 +310,7 @@ export class MacroFactorClient {
     fat: number
   ): Promise<void> {
     const token = await this.ensureToken();
-    const dateStr = fmtDate(loggedAt);
+    const dateStr = loggedAt.date;
     // Use current wall-clock time for unique IDs (not meal time — that goes in h/mi)
     const entryId = String(Date.now() * 1000);
     const entry = {
@@ -312,8 +322,8 @@ export class MacroFactorClient {
       g: 1,
       w: 1,
       y: 1,
-      h: String(loggedAt.getHours()).padStart(2, '0'),
-      mi: String(loggedAt.getMinutes()).padStart(2, '0'),
+      h: String(loggedAt.hour).padStart(2, '0'),
+      mi: String(loggedAt.minute).padStart(2, '0'),
       k: 'manual',
       ca: Date.now(),
       ua: Date.now(),
@@ -330,14 +340,14 @@ export class MacroFactorClient {
    *   In unit mode:  w=servingGrams, y=unit count, q=1, u=serving name
    */
   async logSearchedFood(
-    loggedAt: Date,
+    loggedAt: LogTime,
     food: SearchFoodResult,
     serving: FoodServing,
     quantity: number,
     gramMode: boolean = true
   ): Promise<void> {
     const token = await this.ensureToken();
-    const dateStr = fmtDate(loggedAt);
+    const dateStr = loggedAt.date;
     // App uses 16-digit microsecond timestamps as entry IDs
     // Use current wall-clock time for unique IDs (not meal time — that goes in h/mi)
     const entryId = String(Date.now() * 1000);
@@ -361,8 +371,8 @@ export class MacroFactorClient {
       q: sfv(1),
       s: sfv(serving.description),
       u: sfv(gramMode ? 'g' : serving.description),
-      h: sfv(String(loggedAt.getHours())),
-      mi: sfv(String(loggedAt.getMinutes())),
+      h: sfv(String(loggedAt.hour)),
+      mi: sfv(String(loggedAt.minute)),
       k: sfv('t'),
       x: sfv(food.imageId || ''),
       ca: sfv(nowMicros),
