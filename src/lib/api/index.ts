@@ -1,4 +1,4 @@
-export { MacroFactorClient } from './client';
+export { MacroFactorClient, type LogTime } from './client';
 export * from './types';
 export * from './workout-types';
 export { searchFoods } from './typesense';

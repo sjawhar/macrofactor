@@ -2,7 +2,7 @@
 // cli/mf.ts
 // Usage: npx tsx cli/mf.ts <command> [options]
 
-import { MacroFactorClient } from '../src/lib/api/index';
+import { MacroFactorClient, LogTime } from '../src/lib/api/index';
 import { searchExercises, resolveExercise } from '../src/lib/api/exercises';
 import { readInput, parseISO, expandSets, resolveWeight } from './helpers';
 import { readFileSync } from 'fs';
@@ -258,7 +258,7 @@ async function main() {
         const isGramUnit = hasGrams;
         const quantity = isGramUnit ? grams : amount;
 
-        let logTime = new Date();
+        let logTime: LogTime;
         if (input.loggedAt != null) {
           if (typeof input.loggedAt !== 'string') {
             throw new Error('"loggedAt" must be an ISO 8601 string when provided');
@@ -267,9 +267,14 @@ async function main() {
           if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
             throw new Error(`Invalid "loggedAt": ${input.loggedAt}`);
           }
-          logTime = new Date(
-            `${parsed.date}T${String(parsed.hours).padStart(2, '0')}:${String(parsed.minutes).padStart(2, '0')}:00.000Z`
-          );
+          logTime = { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+        } else {
+          const now = new Date();
+          logTime = {
+            date: `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`,
+            hour: now.getHours(),
+            minute: now.getMinutes(),
+          };
         }
 
         await client.logSearchedFood(logTime, food, serving, quantity, isGramUnit);
@@ -289,7 +294,7 @@ async function main() {
               totalGrams: Math.round(totalGrams),
               totalCalories: totalCal,
               totalProtein: totalProt,
-              date: logTime.toISOString().split('T')[0],
+              date: logTime.date,
             },
             null,
             2

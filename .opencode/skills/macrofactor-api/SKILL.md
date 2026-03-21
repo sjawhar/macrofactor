@@ -160,6 +160,19 @@ The meal time is stored separately in `h` (hour) and `mi` (minute) fields. If yo
 
 When logging multiple items for the same meal, either add a small delay between calls or add a random offset to the timestamp.
 
+### Meal Time is Local Time (LogTime)
+
+`logFood()` and `logSearchedFood()` accept a `LogTime` object — **not** a JS `Date`:
+
+```typescript
+import type { LogTime } from './src/lib/api/index';
+
+const logTime: LogTime = { date: '2026-03-21', hour: 13, minute: 30 };
+await client.logSearchedFood(logTime, food, serving, quantity, gramMode);
+```
+
+The `h` and `mi` fields in Firestore represent the user's **local wall-clock time** (no timezone). Never round-trip through a JS `Date` object — `Date.getHours()` converts to the system's timezone, silently shifting the hour.
+
 ### Firestore Type Safety (CRITICAL)
 
 The MacroFactor Android app stores ALL food entry numeric values as Firestore `stringValue` — never `integerValue` or `doubleValue`. Writing a food entry with native numeric types will **crash the Android app** for that entire day, rendering the food log blank.
@@ -259,6 +272,7 @@ console.log(next.dayName, next.isRestDay ? 'REST' : next.exercises.length + ' ex
 | `deleteFoodEntry` wipes entry data   | Use `updateFoodEntryFields()` (per-subfield masks), not `patchFoodDocument()` (whole-entry replace). The latter replaces the entire entry with just `{d: true, ua: "..."}`, creating ghost stubs that crash the app.            |
 | `w` and `q` field values wrong       | For gram tracking: `w=1, q=1, y=grams`. For unit tracking: `w=servingGrams, q=1, y=count`. Getting this wrong makes calorie/macro totals display incorrectly in the app.                                                        |
 | Can't find program/schedule data     | Program definitions are in `users/{uid}/trainingProgram/{id}`, NOT under `programs/` or `activeProgram/`. The active program ID is in `users/{uid}/profiles/workout` → `activeProgramId`. Rest days have empty `blocks` arrays. |
+| Food logged at wrong hour            | `logFood`/`logSearchedFood` accept `LogTime` (`{ date, hour, minute }`) — NOT a JS `Date`. The `h`/`mi` fields are local wall-clock time. Never pass a `Date` object and call `getHours()` — that converts to system timezone.  |
 
 ## Key Client Methods
 
@@ -282,8 +296,8 @@ console.log(next.dayName, next.isRestDay ? 'REST' : next.exercises.length + ' ex
 | ------------------------------------------ | ------------------------ | ------------------------------------------------- |
 | `updateRawWorkout(id, fields, fieldPaths)` | Update or create workout | Upserts — new UUID creates, existing UUID patches |
 | `logWeight(date, kg, bodyFat?)`            | Log scale entry          | Date format: `YYYY-MM-DD`                         |
-| `logFood(...)`                             | Log a food entry         |                                                   |
-| `logSearchedFood(...)`                     | Log from search result   |                                                   |
+| `logFood(logTime, ...)`                    | Log a food entry         | `logTime` is `LogTime` (`{ date, hour, minute }`) |
+| `logSearchedFood(logTime, ...)`            | Log from search result   | `logTime` is `LogTime` (`{ date, hour, minute }`) |
 | `deleteFoodEntry(date, entryId)`           | Remove food entry        |                                                   |
 | `updateFoodEntry(date, entryId, qty)`      | Update quantity          |                                                   |
 | `deleteWeightEntry(date)`                  | Remove scale entry       |                                                   |

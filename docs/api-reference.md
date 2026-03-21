@@ -121,24 +121,24 @@ All user data is stored under the `users/{uid}/` prefix.
 **Type:** Document containing all food entries for a specific day.
 **Structure:** A map where keys are timestamp-based entry IDs.
 
-| Field      | Type    | Description                            |
-| ---------- | ------- | -------------------------------------- |
-| `t`        | string  | Name / Title                           |
-| `b`        | string  | Brand                                  |
-| `c`        | number  | Calories (per `g` amount)              |
-| `p`        | number  | Protein (per `g` amount)               |
-| `e`        | number  | Carbs (per `g` amount)                 |
-| `f`        | number  | Fat (per `g` amount)                   |
-| `g`        | number  | Serving size in grams                  |
-| `w`        | number  | Unit weight                            |
-| `y`        | number  | User quantity                          |
-| `q`        | number  | Computed quantity                      |
-| `s`        | string  | Serving unit string                    |
-| `id`       | string  | Global food ID (if from search)        |
-| `h` / `mi` | string  | Hour and minute (e.g., "14", "30")     |
-| `k`        | string  | Source type ("search", "manual", etc.) |
-| `d`        | boolean | True if deleted (soft delete)          |
-| `x`        | string  | Image ID / Barcode                     |
+| Field      | Type    | Description                                                                                                                                                                                                                                        |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `t`        | string  | Name / Title                                                                                                                                                                                                                                       |
+| `b`        | string  | Brand                                                                                                                                                                                                                                              |
+| `c`        | number  | Calories (per `g` amount)                                                                                                                                                                                                                          |
+| `p`        | number  | Protein (per `g` amount)                                                                                                                                                                                                                           |
+| `e`        | number  | Carbs (per `g` amount)                                                                                                                                                                                                                             |
+| `f`        | number  | Fat (per `g` amount)                                                                                                                                                                                                                               |
+| `g`        | number  | Serving size in grams                                                                                                                                                                                                                              |
+| `w`        | number  | Unit weight                                                                                                                                                                                                                                        |
+| `y`        | number  | User quantity                                                                                                                                                                                                                                      |
+| `q`        | number  | Computed quantity                                                                                                                                                                                                                                  |
+| `s`        | string  | Serving unit string                                                                                                                                                                                                                                |
+| `id`       | string  | Global food ID (if from search)                                                                                                                                                                                                                    |
+| `h` / `mi` | string  | Hour and minute of meal in user's **local time** (e.g., `"14"`, `"30"`). These are plain integers as strings — NOT zero-padded, NOT suffixed with `.0`. The app does not store timezone info; `h`/`mi` represent the wall-clock time the user ate. |
+| `k`        | string  | Source type ("search", "manual", etc.)                                                                                                                                                                                                             |
+| `d`        | boolean | True if deleted (soft delete)                                                                                                                                                                                                                      |
+| `x`        | string  | Image ID / Barcode                                                                                                                                                                                                                                 |
 
 > **Computing true calories:** `(calories_raw * (userQty * (unitWeight ?? servingGrams)) / servingGrams)`
 

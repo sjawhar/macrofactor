@@ -2,7 +2,7 @@
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { auth } from '$lib/stores/auth.svelte';
-  import type { SearchFoodResult, FoodServing } from '$lib/api';
+  import type { SearchFoodResult, FoodServing, LogTime } from '$lib/api';
   import { foodIcon } from '$lib/food-icons';
   import { today } from '$lib/date';
 
@@ -210,17 +210,20 @@
     if (!auth.client || stagedFoods.length === 0) return;
     logging = true;
     try {
-      const baseDate = new Date(`${targetDate}T12:00:00`);
-      baseDate.setHours(targetHour, 0, 0, 0);
+      const logTime: LogTime = { date: targetDate, hour: targetHour, minute: 0 };
       await Promise.all(
-        stagedFoods.map((staged, i) => {
-          // Offset by i milliseconds to ensure unique Firestore entry IDs
-          // but same hour/minute grouping so they appear as a single plate
-          const d = new Date(baseDate.getTime() + i);
+        stagedFoods.map((staged) => {
           if (staged.kind === 'search') {
-            return auth.client!.logSearchedFood(d, staged.food, staged.serving, staged.quantity);
+            return auth.client!.logSearchedFood(logTime, staged.food, staged.serving, staged.quantity);
           } else {
-            return auth.client!.logFood(d, staged.name, staged.calories, staged.protein, staged.carbs, staged.fat);
+            return auth.client!.logFood(
+              logTime,
+              staged.name,
+              staged.calories,
+              staged.protein,
+              staged.carbs,
+              staged.fat
+            );
           }
         })
       );
