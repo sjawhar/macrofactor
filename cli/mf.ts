@@ -2,9 +2,16 @@
 // cli/mf.ts
 // Usage: npx tsx cli/mf.ts <command> [options]
 
-import { MacroFactorClient, LogTime } from '../src/lib/api/index';
-import { searchExercises, resolveExercise } from '../src/lib/api/exercises';
-import { readInput, parseISO, expandSets, resolveWeight } from './helpers';
+import {
+  MacroFactorClient,
+  LogTime,
+  getFoodById,
+  type FoodEntry,
+  type Goals,
+  type SearchFoodResult,
+} from '../src/lib/api/index';
+import { searchExercises, resolveExercise, lookupExercise } from '../src/lib/api/exercises';
+import { readInput, parseISO, expandSets, resolveWeight, type SetInput } from './helpers';
 import { readFileSync } from 'fs';
 import { randomUUID } from 'crypto';
 
@@ -70,28 +77,268 @@ function findServing(servings: { description: string; gramWeight: number; amount
   return servings.find((s) => targets.some((t) => s.description.toLowerCase().includes(t)));
 }
 
+function isGramServing(serving: { description: string; gramWeight: number; amount: number }) {
+  const description = serving.description.toLowerCase();
+  return (
+    description === 'g' ||
+    description === 'gram' ||
+    description === 'grams' ||
+    (serving.gramWeight === 1 && serving.amount === 1)
+  );
+}
+
+function todayDate(): string {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+}
+
+function daysAgoDate(days: number): string {
+  const date = new Date();
+  date.setDate(date.getDate() - days);
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+}
+
+function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
+  if (value == null) {
+    const now = new Date();
+    return {
+      date: todayDate(),
+      hour: now.getHours(),
+      minute: now.getMinutes(),
+    };
+  }
+  if (typeof value !== 'string') {
+    throw new Error(`"${fieldName}" must be an ISO 8601 string when provided`);
+  }
+  const parsed = parseISO(value);
+  if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
+    throw new Error(`Invalid "${fieldName}": ${value}`);
+  }
+  return { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+}
+
+function parseWorkoutStartTime(value: unknown): string {
+  if (value == null) return new Date().toISOString();
+  if (typeof value !== 'string') {
+    throw new Error('"startTime" must be an ISO 8601 string when provided');
+  }
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    throw new Error(`Invalid "startTime": ${value}`);
+  }
+  return parsed.toISOString();
+}
+
+function weekdayIndex(date: string): number {
+  const [year, month, day] = date.split('-').map((part) => Number(part));
+  const jsDay = new Date(Date.UTC(year, month - 1, day, 12)).getUTCDay();
+  return (jsDay + 6) % 7;
+}
+
+function goalForDate(values: number[], date: string): number {
+  return values[weekdayIndex(date)] ?? values[values.length - 1] ?? 0;
+}
+
+function parseRange(input: Record<string, unknown> | null, opts: Record<string, string>, fallbackDays: number) {
+  const to = typeof input?.to === 'string' ? input.to : opts.to || todayDate();
+  const from = typeof input?.from === 'string' ? input.from : opts.from || daysAgoDate(fallbackDays);
+  return { from, to };
+}
+
+function parseDurationMinutes(value: unknown, fallbackMinutes = 45): number {
+  if (value == null) return fallbackMinutes;
+  const minutes = Number(value);
+  if (!Number.isFinite(minutes) || minutes <= 0) {
+    throw new Error('"duration" must be a positive number of minutes');
+  }
+  return minutes;
+}
+
+function normalizeSetInputs(exerciseId: string, setsValue: unknown) {
+  if (!Array.isArray(setsValue)) {
+    throw new Error(`Exercise "${exerciseId}" requires "sets" (array)`);
+  }
+  for (const setInput of setsValue) {
+    if (
+      !setInput ||
+      typeof setInput !== 'object' ||
+      !Number.isFinite(Number((setInput as Record<string, unknown>).reps))
+    ) {
+      throw new Error(`Each set for "${exerciseId}" requires numeric "reps"`);
+    }
+    const record = setInput as Record<string, unknown>;
+    if (record.type != null && !['standard', 'warmUp', 'failure'].includes(String(record.type))) {
+      throw new Error(`Invalid set type for "${exerciseId}": ${String(record.type)}`);
+    }
+    if (record.lbs != null && record.kg != null) {
+      throw new Error(`Set for "${exerciseId}" cannot include both "lbs" and "kg"`);
+    }
+  }
+  const normalizedSets: SetInput[] = setsValue.map((setInput) => {
+    const record = setInput as Record<string, unknown>;
+    return {
+      reps: Number(record.reps),
+      kg:
+        record.kg != null || record.lbs != null
+          ? resolveWeight({
+              kg: record.kg != null ? Number(record.kg) : undefined,
+              lbs: record.lbs != null ? Number(record.lbs) : undefined,
+            })
+          : undefined,
+      sets: record.sets != null ? Number(record.sets) : undefined,
+      type:
+        record.type === 'standard' || record.type === 'warmUp' || record.type === 'failure' ? record.type : undefined,
+      rir: record.rir != null ? Number(record.rir) : undefined,
+      rest: record.rest != null ? Number(record.rest) : undefined,
+    };
+  });
+  return expandSets(normalizedSets);
+}
+
+function buildWorkoutExercise(exerciseInput: Record<string, unknown>) {
+  if (typeof exerciseInput.exerciseId !== 'string' || exerciseInput.exerciseId.trim() === '') {
+    throw new Error('Each exercise requires "exerciseId" (string)');
+  }
+  const exerciseId = exerciseInput.exerciseId.trim();
+  const exercise = lookupExercise(exerciseId);
+  if (!exercise) {
+    throw new Error(`Exercise "${exerciseId}" not found`);
+  }
+  const expanded = normalizeSetInputs(exerciseId, exerciseInput.sets);
+  const rawExercise = {
+    id: randomUUID(),
+    exerciseId: exercise.id,
+    note: typeof exerciseInput.note === 'string' ? exerciseInput.note : '',
+    baseWeight: null,
+    sets: expanded.map((set) => ({
+      setType: set.setType,
+      segments: [],
+      log: {
+        id: randomUUID(),
+        runtimeType: 'single',
+        target: null,
+        value: {
+          weight: set.weightKg,
+          fullReps: set.fullReps,
+          partialReps: null,
+          rir: set.rir,
+          distance: null,
+          durationSeconds: null,
+          restTimer: set.restMicros,
+          isSkipped: false,
+        },
+      },
+    })),
+  };
+  const summary = {
+    name: exercise.name,
+    exerciseId: exercise.id,
+    sets: expanded.map((set) => ({
+      reps: set.fullReps,
+      kg: Math.round(set.weightKg * 1000) / 1000,
+      type: set.setType,
+    })),
+  };
+  return { rawExercise, summary };
+}
+
+function summarizeLastMeal(entries: FoodEntry[]) {
+  const active = entries.filter((entry) => !entry.deleted && entry.hour != null && entry.minute != null);
+  if (active.length === 0) return null;
+  const mealTimes = active
+    .map((entry) => `${String(entry.hour).padStart(2, '0')}:${String(entry.minute).padStart(2, '0')}`)
+    .sort();
+  const latestTime = mealTimes[mealTimes.length - 1];
+  if (!latestTime) return null;
+  const mealEntries = active.filter(
+    (entry) => `${String(entry.hour).padStart(2, '0')}:${String(entry.minute).padStart(2, '0')}` === latestTime
+  );
+  return {
+    time: latestTime,
+    items: mealEntries.length,
+    calories: Math.round(mealEntries.reduce((sum, entry) => sum + entry.calories(), 0)),
+  };
+}
+
+function buildTodayContext(goals: Goals, entries: FoodEntry[], date: string) {
+  const active = entries.filter((entry) => !entry.deleted);
+  const calories = Math.round(active.reduce((sum, entry) => sum + entry.calories(), 0));
+  const protein = Math.round(active.reduce((sum, entry) => sum + entry.protein(), 0) * 10) / 10;
+  const carbs = Math.round(active.reduce((sum, entry) => sum + entry.carbs(), 0) * 10) / 10;
+  const fat = Math.round(active.reduce((sum, entry) => sum + entry.fat(), 0) * 10) / 10;
+  const uniqueMeals = new Set(
+    active
+      .filter((entry) => entry.hour != null && entry.minute != null)
+      .map((entry) => `${String(entry.hour).padStart(2, '0')}:${String(entry.minute).padStart(2, '0')}`)
+  );
+  const calorieTarget = goalForDate(goals.calories, date);
+  const proteinTarget = goalForDate(goals.protein, date);
+  const carbTarget = goalForDate(goals.carbs, date);
+  const fatTarget = goalForDate(goals.fat, date);
+  return {
+    logged: calories,
+    protein,
+    carbs,
+    fat,
+    meals: uniqueMeals.size,
+    targets: {
+      calories: calorieTarget,
+      protein: proteinTarget,
+      carbs: carbTarget,
+      fat: fatTarget,
+    },
+    remaining: calorieTarget - calories,
+  };
+}
+
+function buildRecentWeight(entries: Awaited<ReturnType<MacroFactorClient['getWeightEntries']>>) {
+  if (entries.length === 0) {
+    return { latest: null, trend7d: null };
+  }
+  const latest = entries[entries.length - 1];
+  const start = daysAgoDate(7);
+  const window = entries.filter((entry) => entry.date >= start);
+  const baseline = window[0] ?? latest;
+  return {
+    latest: latest.weight,
+    trend7d: Math.round((latest.weight - baseline.weight) * 1000) / 1000,
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
 const ALL_COMMANDS = [
+  'context',
+  'copy-food',
+  'custom-exercises',
+  'delete-weight',
+  'hard-delete-food',
   'login',
+  'goals',
   'workouts',
   'workout',
   'exercises search',
   'exercise',
   'gyms',
+  'delete-workout',
+  'update-workout',
   'profile',
   'food-log',
   'search-food',
   'log-food',
+  'log-manual-food',
   'log-weight',
   'delete-food',
   'update-food',
   'log-workout',
   'log-exercise',
+  'nutrition',
   'program',
   'next-workout',
+  'steps',
+  'weight-history',
 ];
 
 async function main() {
@@ -102,6 +349,12 @@ async function main() {
       case 'login': {
         const client = await getClient();
         console.log(JSON.stringify({ status: 'success', uid: await client.getUserId() }, null, 2));
+        break;
+      }
+
+      case 'goals': {
+        const client = await getClient();
+        console.log(JSON.stringify(await client.getGoals(), null, 2));
         break;
       }
 
@@ -135,9 +388,11 @@ async function main() {
       }
 
       case 'exercises': {
-        const input = await readInput(positional);
-        if (positional[0] === 'search') {
-          const query = input?.query || positional.slice(1).join(' ');
+        const subcommand = positional[0];
+        const subcommandArgs = positional.slice(1);
+        const input = await readInput(subcommandArgs);
+        if (subcommand === 'search') {
+          const query = input?.query || subcommandArgs.join(' ');
           if (!query) throw new Error('Usage: mf.ts exercises search <query>');
           const results = searchExercises(query);
           console.log(JSON.stringify(results, null, 2));
@@ -164,9 +419,39 @@ async function main() {
         break;
       }
 
+      case 'nutrition': {
+        const input = await readInput(positional);
+        const { from, to } = parseRange(input, opts, 30);
+        const client = await getClient();
+        console.log(JSON.stringify(await client.getNutrition(from, to), null, 2));
+        break;
+      }
+
+      case 'weight-history': {
+        const input = await readInput(positional);
+        const { from, to } = parseRange(input, opts, 30);
+        const client = await getClient();
+        console.log(JSON.stringify(await client.getWeightEntries(from, to), null, 2));
+        break;
+      }
+
+      case 'steps': {
+        const input = await readInput(positional);
+        const { from, to } = parseRange(input, opts, 30);
+        const client = await getClient();
+        console.log(JSON.stringify(await client.getSteps(from, to), null, 2));
+        break;
+      }
+
+      case 'custom-exercises': {
+        const client = await getClient();
+        console.log(JSON.stringify(await client.getCustomExercises(), null, 2));
+        break;
+      }
+
       case 'food-log': {
         const input = await readInput(positional);
-        const date = input?.date || positional[0] || new Date().toISOString().split('T')[0];
+        const date = input?.date || positional[0] || todayDate();
         const client = await getClient();
         const log = await client.getFoodLog(date);
         console.log(JSON.stringify(log, null, 2));
@@ -189,7 +474,12 @@ async function main() {
           brand: r.brand || null,
           caloriesPer100g: r.caloriesPer100g,
           proteinPer100g: r.proteinPer100g,
-          servings: r.servings.map((s) => `${s.description} (${s.gramWeight}g)`),
+          servings: r.servings.map((s, servingIndex) => ({
+            index: servingIndex,
+            description: s.description,
+            amount: s.amount,
+            gramWeight: s.gramWeight,
+          })),
         }));
         console.log(JSON.stringify(summary, null, 2));
         break;
@@ -201,85 +491,36 @@ async function main() {
           throw new Error('Usage: mf.ts log-food <json> or pipe JSON via stdin');
         }
 
-        const hasQuery = typeof input.query === 'string' && input.query.trim() !== '';
-        if (!hasQuery) {
-          throw new Error('log-food requires "query"');
+        const foodId = typeof input.foodId === 'string' ? input.foodId.trim() : '';
+        if (!foodId) {
+          throw new Error('log-food requires "foodId"');
         }
 
-        const hasGrams = input.grams != null;
-        const hasAmountUnit = input.amount != null || input.unit != null;
-        if (hasGrams && hasAmountUnit) {
-          throw new Error('log-food accepts either "grams" or "amount"+"unit", not both');
-        }
-        if (!hasGrams && !hasAmountUnit) {
-          throw new Error('log-food requires either "grams" or "amount"+"unit"');
+        const servingIndex = Number(input.servingIndex);
+        if (!Number.isInteger(servingIndex) || servingIndex < 0) {
+          throw new Error('log-food requires non-negative integer "servingIndex"');
         }
 
-        const pickIndex = input.pick == null ? 0 : Number(input.pick);
-        if (!Number.isInteger(pickIndex) || pickIndex < 0) {
-          throw new Error('"pick" must be a non-negative integer when provided');
+        const quantity = Number(input.quantity);
+        if (!Number.isFinite(quantity) || quantity <= 0) {
+          throw new Error('log-food requires positive numeric "quantity"');
         }
 
         const client = await getClient();
-        const results = await client.searchFoods(input.query.trim());
-        if (results.length === 0) {
-          throw new Error(`No foods found for "${input.query.trim()}"`);
-        }
-
-        const food = results[pickIndex];
+        const food = await getFoodById(foodId);
         if (!food) {
-          throw new Error(`"pick" ${pickIndex} out of range (${results.length} results)`);
+          throw new Error(`Food "${foodId}" not found`);
         }
-
-        const grams = Number(input.grams);
-        const amount = Number(input.amount);
-        const unit = typeof input.unit === 'string' ? input.unit.trim() : '';
-
-        if (hasGrams) {
-          if (!Number.isFinite(grams) || grams <= 0) {
-            throw new Error('"grams" must be a positive number');
-          }
-        } else {
-          if (!Number.isFinite(amount) || amount <= 0) {
-            throw new Error('"amount" must be a positive number');
-          }
-          if (unit === '') {
-            throw new Error('"unit" is required when using "amount"');
-          }
-        }
-
-        const servingUnit = hasGrams ? 'g' : unit;
-        const serving = findServing(food.servings, servingUnit);
+        const serving = food.servings[servingIndex];
         if (!serving) {
-          const available = food.servings.map((s) => s.description).join(', ');
-          throw new Error(`No serving matching "${servingUnit}" for ${food.name}. Available: ${available}`);
+          throw new Error(`"servingIndex" ${servingIndex} out of range (${food.servings.length} servings)`);
         }
 
-        const isGramUnit = hasGrams;
-        const quantity = isGramUnit ? grams : amount;
+        const logTime = parseLogTime(input.loggedAt);
+        const gramMode = isGramServing(serving);
+        await client.logSearchedFood(logTime, food, serving, quantity, gramMode);
 
-        let logTime: LogTime;
-        if (input.loggedAt != null) {
-          if (typeof input.loggedAt !== 'string') {
-            throw new Error('"loggedAt" must be an ISO 8601 string when provided');
-          }
-          const parsed = parseISO(input.loggedAt);
-          if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
-            throw new Error(`Invalid "loggedAt": ${input.loggedAt}`);
-          }
-          logTime = { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
-        } else {
-          const now = new Date();
-          logTime = {
-            date: `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`,
-            hour: now.getHours(),
-            minute: now.getMinutes(),
-          };
-        }
-
-        await client.logSearchedFood(logTime, food, serving, quantity, isGramUnit);
-
-        const totalGrams = isGramUnit ? quantity : serving.gramWeight * quantity;
+        const totalGrams = serving.gramWeight * quantity;
         const totalCal = Math.round((food.caloriesPer100g * totalGrams) / 100);
         const totalProt = Math.round(((food.proteinPer100g * totalGrams) / 100) * 10) / 10;
 
@@ -303,6 +544,29 @@ async function main() {
         break;
       }
 
+      case 'log-manual-food': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts log-manual-food <json> or pipe JSON via stdin');
+        }
+        const name = typeof input.name === 'string' ? input.name.trim() : '';
+        if (!name) {
+          throw new Error('log-manual-food requires "name"');
+        }
+        const calories = Number(input.calories);
+        const protein = Number(input.protein);
+        const carbs = Number(input.carbs);
+        const fat = Number(input.fat);
+        if (![calories, protein, carbs, fat].every((value) => Number.isFinite(value) && value >= 0)) {
+          throw new Error('log-manual-food requires non-negative numeric calories/protein/carbs/fat');
+        }
+        const logTime = parseLogTime(input.loggedAt);
+        const client = await getClient();
+        await client.logFood(logTime, name, calories, protein, carbs, fat);
+        console.log(JSON.stringify({ status: 'logged', name, date: logTime.date }, null, 2));
+        break;
+      }
+
       case 'log-weight': {
         const input = await readInput(positional);
         if (!input || typeof input !== 'object') {
@@ -311,7 +575,7 @@ async function main() {
 
         const date =
           input.date == null
-            ? new Date().toISOString().split('T')[0]
+            ? todayDate()
             : typeof input.date === 'string' && input.date.trim() !== ''
               ? input.date.trim()
               : null;
@@ -353,6 +617,21 @@ async function main() {
         break;
       }
 
+      case 'delete-weight': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts delete-weight <json> or pipe JSON via stdin');
+        }
+        const date = typeof input.date === 'string' ? input.date.trim() : '';
+        if (!date) {
+          throw new Error('delete-weight requires "date"');
+        }
+        const client = await getClient();
+        await client.deleteWeightEntry(date);
+        console.log(JSON.stringify({ status: 'deleted', date }, null, 2));
+        break;
+      }
+
       case 'delete-food': {
         const input = await readInput(positional);
         if (!input || typeof input !== 'object') {
@@ -369,6 +648,22 @@ async function main() {
         await client.deleteFoodEntry(date, entryId);
 
         console.log(JSON.stringify({ status: 'deleted', date, entryId }, null, 2));
+        break;
+      }
+
+      case 'hard-delete-food': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts hard-delete-food <json> or pipe JSON via stdin');
+        }
+        const date = typeof input.date === 'string' ? input.date.trim() : '';
+        const entryId = typeof input.entryId === 'string' ? input.entryId.trim() : '';
+        if (!date || !entryId) {
+          throw new Error('hard-delete-food requires "date" and "entryId"');
+        }
+        const client = await getClient();
+        await client.hardDeleteFoodEntry(date, entryId);
+        console.log(JSON.stringify({ status: 'hard-deleted', date, entryId }, null, 2));
         break;
       }
 
@@ -392,6 +687,30 @@ async function main() {
         break;
       }
 
+      case 'copy-food': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts copy-food <json> or pipe JSON via stdin');
+        }
+        const sourceDate = typeof input.sourceDate === 'string' ? input.sourceDate.trim() : '';
+        const targetDate = typeof input.targetDate === 'string' ? input.targetDate.trim() : '';
+        const entryIds = Array.isArray(input.entryIds)
+          ? input.entryIds.filter((value): value is string => typeof value === 'string')
+          : [];
+        if (!sourceDate || !targetDate || entryIds.length === 0) {
+          throw new Error('copy-food requires "sourceDate", "targetDate", and non-empty string "entryIds" array');
+        }
+        const client = await getClient();
+        const log = await client.getFoodLog(sourceDate);
+        const entries = log.filter((entry) => entryIds.includes(entry.entryId));
+        if (entries.length === 0) {
+          throw new Error('copy-food found no matching source entries');
+        }
+        await client.copyEntries(targetDate, entries);
+        console.log(JSON.stringify({ status: 'copied', sourceDate, targetDate, count: entries.length }, null, 2));
+        break;
+      }
+
       case 'log-workout': {
         const input = await readInput(positional);
         if (!input || typeof input !== 'object') {
@@ -402,11 +721,7 @@ async function main() {
           throw new Error('log-workout requires "name" (string)');
         }
 
-        const durationMinutes =
-          input.duration == null ? 45 : Number.isFinite(Number(input.duration)) ? Number(input.duration) : NaN;
-        if (!Number.isFinite(durationMinutes) || durationMinutes <= 0) {
-          throw new Error('"duration" must be a positive number of minutes');
-        }
+        const durationMinutes = parseDurationMinutes(input.duration);
 
         const exercisesInput = input.exercises == null ? [] : input.exercises;
         if (!Array.isArray(exercisesInput)) {
@@ -415,20 +730,15 @@ async function main() {
 
         const client = await getClient();
         const gyms = await client.getGymProfiles();
-        const gymQuery = typeof input.gym === 'string' ? input.gym.trim().toLowerCase() : '';
-        const gym = gymQuery ? gyms.find((g) => g.name.toLowerCase().includes(gymQuery)) || gyms[0] : gyms[0];
-
-        let startTime = new Date().toISOString();
-        if (input.startTime != null) {
-          if (typeof input.startTime !== 'string') {
-            throw new Error('"startTime" must be an ISO 8601 string when provided');
-          }
-          const parsed = parseISO(input.startTime);
-          if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
-            throw new Error(`Invalid "startTime": ${input.startTime}`);
-          }
-          startTime = `${parsed.date}T${String(parsed.hours).padStart(2, '0')}:${String(parsed.minutes).padStart(2, '0')}:00.000Z`;
+        const gymId = typeof input.gymId === 'string' ? input.gymId.trim() : '';
+        if (!gymId) {
+          throw new Error('log-workout requires "gymId" (string)');
         }
+        const gym = gyms.find((candidate) => candidate.id === gymId);
+        if (!gym) {
+          throw new Error(`Gym "${gymId}" not found`);
+        }
+        const startTime = parseWorkoutStartTime(input.startTime);
 
         const blocks: any[] = [];
         const exerciseSummary: any[] = [];
@@ -437,84 +747,14 @@ async function main() {
           if (!exerciseInput || typeof exerciseInput !== 'object') {
             throw new Error('Each exercise must be an object');
           }
-
-          if (typeof exerciseInput.name !== 'string' || exerciseInput.name.trim() === '') {
-            throw new Error('Each exercise requires "name" (string)');
-          }
-
-          if (!Array.isArray(exerciseInput.sets)) {
-            throw new Error(`Exercise "${exerciseInput.name}" requires "sets" (array)`);
-          }
-
-          for (const setInput of exerciseInput.sets) {
-            if (!setInput || typeof setInput !== 'object' || !Number.isFinite(Number(setInput.reps))) {
-              throw new Error(`Each set for "${exerciseInput.name}" requires numeric "reps"`);
-            }
-            if (setInput.type != null && !['standard', 'warmUp', 'failure'].includes(setInput.type)) {
-              throw new Error(`Invalid set type for "${exerciseInput.name}": ${setInput.type}`);
-            }
-            if (setInput.lbs != null && setInput.kg != null) {
-              throw new Error(`Set for "${exerciseInput.name}" cannot include both "lbs" and "kg"`);
-            }
-          }
-
-          const matches = searchExercises(exerciseInput.name);
-          if (matches.length === 0) {
-            throw new Error(`No exercise found for "${exerciseInput.name}"`);
-          }
-          const exercise = matches[0];
-
-          const normalizedSets = exerciseInput.sets.map((setInput: any) => {
-            if (setInput.kg != null || setInput.lbs != null) {
-              return { ...setInput, kg: resolveWeight(setInput), lbs: undefined };
-            }
-            return setInput;
-          });
-
-          const expanded = expandSets(normalizedSets);
-          blocks.push({
-            exercises: [
-              {
-                id: randomUUID(),
-                exerciseId: exercise.id,
-                note: typeof exerciseInput.note === 'string' ? exerciseInput.note : '',
-                baseWeight: null,
-                sets: expanded.map((set) => ({
-                  setType: set.setType,
-                  segments: [],
-                  log: {
-                    id: randomUUID(),
-                    runtimeType: 'single',
-                    target: null,
-                    value: {
-                      weight: set.weightKg,
-                      fullReps: set.fullReps,
-                      partialReps: null,
-                      rir: set.rir,
-                      distance: null,
-                      durationSeconds: null,
-                      restTimer: set.restMicros,
-                      isSkipped: false,
-                    },
-                  },
-                })),
-              },
-            ],
-          });
-
-          exerciseSummary.push({
-            name: exercise.name,
-            exerciseId: exercise.id,
-            sets: expanded.map((set) => ({
-              reps: set.fullReps,
-              kg: Math.round(set.weightKg * 1000) / 1000,
-              type: set.setType,
-            })),
-          });
+          const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
+          blocks.push({ exercises: [rawExercise] });
+          exerciseSummary.push(summary);
         }
 
         const workoutId = randomUUID();
         const workout = {
+          id: workoutId,
           name: input.name,
           startTime,
           duration: durationMinutes * 60 * 1_000_000, // microseconds
@@ -525,6 +765,7 @@ async function main() {
         };
 
         await client.updateRawWorkout(workoutId, workout, [
+          'id',
           'name',
           'startTime',
           'duration',
@@ -541,6 +782,7 @@ async function main() {
               workoutId,
               name: input.name,
               gym: gym?.name || 'Gym',
+              gymId: gym?.id || '',
               startTime,
               durationMinutes,
               exercises: exerciseSummary,
@@ -575,75 +817,9 @@ async function main() {
           if (!exerciseInput || typeof exerciseInput !== 'object') {
             throw new Error('Each exercise must be an object');
           }
-          if (typeof exerciseInput.name !== 'string' || exerciseInput.name.trim() === '') {
-            throw new Error('Each exercise requires "name" (string)');
-          }
-          if (!Array.isArray(exerciseInput.sets)) {
-            throw new Error(`Exercise "${exerciseInput.name}" requires "sets" (array)`);
-          }
-
-          for (const setInput of exerciseInput.sets) {
-            if (!setInput || typeof setInput !== 'object' || !Number.isFinite(Number(setInput.reps))) {
-              throw new Error(`Each set for "${exerciseInput.name}" requires numeric "reps"`);
-            }
-            if (setInput.type != null && !['standard', 'warmUp', 'failure'].includes(setInput.type)) {
-              throw new Error(`Invalid set type for "${exerciseInput.name}": ${setInput.type}`);
-            }
-            if (setInput.lbs != null && setInput.kg != null) {
-              throw new Error(`Set for "${exerciseInput.name}" cannot include both "lbs" and "kg"`);
-            }
-          }
-
-          const matches = searchExercises(exerciseInput.name);
-          if (matches.length === 0) {
-            throw new Error(`No exercise found for "${exerciseInput.name}"`);
-          }
-          const exercise = matches[0];
-          const normalizedSets = exerciseInput.sets.map((setInput: any) => {
-            if (setInput.kg != null || setInput.lbs != null) {
-              return { ...setInput, kg: resolveWeight(setInput), lbs: undefined };
-            }
-            return setInput;
-          });
-
-          const expanded = expandSets(normalizedSets);
-
-          const newExercise = {
-            id: randomUUID(),
-            exerciseId: exercise.id,
-            note: typeof exerciseInput.note === 'string' ? exerciseInput.note : '',
-            baseWeight: null,
-            sets: expanded.map((set) => ({
-              setType: set.setType,
-              segments: [],
-              log: {
-                id: randomUUID(),
-                runtimeType: 'single',
-                target: null,
-                value: {
-                  weight: set.weightKg,
-                  fullReps: set.fullReps,
-                  partialReps: null,
-                  rir: set.rir,
-                  distance: null,
-                  durationSeconds: null,
-                  restTimer: set.restMicros,
-                  isSkipped: false,
-                },
-              },
-            })),
-          };
-
-          blocks.push({ exercises: [newExercise] });
-          exerciseSummary.push({
-            name: exercise.name,
-            exerciseId: exercise.id,
-            sets: expanded.map((set) => ({
-              reps: set.fullReps,
-              kg: Math.round(set.weightKg * 1000) / 1000,
-              type: set.setType,
-            })),
-          });
+          const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
+          blocks.push({ exercises: [rawExercise] });
+          exerciseSummary.push(summary);
         }
 
         await client.updateRawWorkout(workoutId, { blocks }, ['blocks']);
@@ -662,6 +838,41 @@ async function main() {
         break;
       }
 
+      case 'update-workout': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts update-workout <json> or pipe JSON via stdin');
+        }
+        const workoutId = typeof input.id === 'string' ? input.id.trim() : '';
+        if (!workoutId) {
+          throw new Error('update-workout requires "id" (string)');
+        }
+        const fields = { ...input } as Record<string, unknown>;
+        delete fields.id;
+        if (Object.keys(fields).length === 0) {
+          throw new Error('update-workout requires at least one field to update');
+        }
+        const client = await getClient();
+        await client.updateWorkout(workoutId, fields);
+        console.log(JSON.stringify({ status: 'updated', id: workoutId, fields: Object.keys(fields) }, null, 2));
+        break;
+      }
+
+      case 'delete-workout': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts delete-workout <json> or pipe JSON via stdin');
+        }
+        const workoutId = typeof input.id === 'string' ? input.id.trim() : '';
+        if (!workoutId) {
+          throw new Error('delete-workout requires "id" (string)');
+        }
+        const client = await getClient();
+        await client.deleteWorkout(workoutId);
+        console.log(JSON.stringify({ status: 'deleted', id: workoutId }, null, 2));
+        break;
+      }
+
       // -----------------------------------------------------------------------
       // program — Show active training program with all days and exercises
       // -----------------------------------------------------------------------
@@ -670,7 +881,7 @@ async function main() {
         const programs = await client.getTrainingPrograms();
         const active = programs.find((p) => p.isActive) || programs[0];
         if (!active) {
-          console.log('No training programs found.');
+          console.log(JSON.stringify({ status: 'empty', program: null }, null, 2));
           break;
         }
 
@@ -709,7 +920,7 @@ async function main() {
         const client = await getClient();
         const next = await client.getNextWorkout();
         if (!next) {
-          console.log('No active program found.');
+          console.log(JSON.stringify({ status: 'empty', nextWorkout: null }, null, 2));
           break;
         }
 
@@ -729,6 +940,39 @@ async function main() {
               totalCycles: next.totalCycles,
               isRestDay: next.isRestDay,
               exercises: next.isRestDay ? [] : exercises,
+            },
+            null,
+            2
+          )
+        );
+        break;
+      }
+
+      case 'context': {
+        const client = await getClient();
+        const date = todayDate();
+        const [goals, foodLog, weightEntries, programs, nextWorkout] = await Promise.all([
+          client.getGoals(),
+          client.getFoodLog(date),
+          client.getWeightEntries(daysAgoDate(30), date),
+          client.getTrainingPrograms(),
+          client.getNextWorkout(),
+        ]);
+        const activeProgram = programs.find((program) => program.isActive) || programs[0] || null;
+        console.log(
+          JSON.stringify(
+            {
+              goals,
+              today: buildTodayContext(goals, foodLog, date),
+              recentWeight: buildRecentWeight(weightEntries),
+              program: activeProgram
+                ? {
+                    name: activeProgram.name,
+                    nextDay: nextWorkout?.dayName ?? null,
+                    cycle: nextWorkout ? nextWorkout.cycleIndex + 1 : null,
+                  }
+                : null,
+              lastMeal: summarizeLastMeal(foodLog),
             },
             null,
             2

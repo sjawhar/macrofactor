@@ -51,6 +51,25 @@ export async function searchFoods(query: string): Promise<SearchFoodResult[]> {
   return results;
 }
 
+export async function getFoodById(foodId: string): Promise<SearchFoodResult | null> {
+  const encodedId = encodeURIComponent(foodId);
+  for (const collection of ['common_foods', 'branded_foods']) {
+    const resp = await fetch(`${TYPESENSE_HOST}/collections/${collection}/documents/${encodedId}`, {
+      headers: {
+        'x-typesense-api-key': TYPESENSE_API_KEY,
+      },
+    });
+    if (resp.ok) {
+      const doc = await resp.json();
+      return parseHit(doc, collection === 'branded_foods');
+    }
+    if (resp.status !== 404) {
+      throw new Error(`Typesense get-by-id failed (${resp.status}): ${await resp.text()}`);
+    }
+  }
+  return null;
+}
+
 // ---------------------------------------------------------------------------
 // Hit parsing
 // ---------------------------------------------------------------------------

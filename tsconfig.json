@@ -4,6 +4,7 @@
     "rewriteRelativeImportExtensions": true,
     "allowJs": true,
     "checkJs": true,
+    "types": ["node"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,

@@ -72,6 +72,33 @@ export async function patchDocument(
   return resp.json();
 }
 
+export async function deleteDocument(path: string, idToken: string): Promise<void> {
+  const resp = await fetch(`${BASE_URL}/${path}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${idToken}` },
+  });
+  if (resp.status === 404) return;
+  if (!resp.ok) {
+    throw new Error(`Firestore DELETE ${path} failed (${resp.status}): ${await resp.text()}`);
+  }
+}
+
+export async function removeFields(path: string, fieldPaths: string[], idToken: string): Promise<void> {
+  const mask = fieldPaths.map((fp) => `updateMask.fieldPaths=${encodeURIComponent(fp)}`).join('&');
+  const url = `${BASE_URL}/${path}?${mask}`;
+  const resp = await fetch(url, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${idToken}`,
+    },
+    body: JSON.stringify({ fields: {} }),
+  });
+  if (!resp.ok) {
+    throw new Error(`Firestore removeFields ${path} failed (${resp.status}): ${await resp.text()}`);
+  }
+}
+
 export async function listCollectionIds(parentPath: string | null, idToken: string): Promise<string[]> {
   const parent = parentPath ? `${BASE_URL}/${parentPath}` : BASE_URL;
   const resp = await fetch(`${parent}:listCollectionIds`, {
