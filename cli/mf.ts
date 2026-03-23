@@ -98,6 +98,16 @@ function daysAgoDate(days: number): string {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
 
+function warnIfTimezone(value: string, fieldName: string) {
+  const tzPattern = /\d{2}:\d{2}(?::.*)?([+-]\d{2}:?\d{2}|Z)$/;
+  const match = value.match(tzPattern);
+  if (match && match[1] !== 'Z') {
+    console.error(
+      `Warning: timezone offset "${match[1]}" in "${fieldName}" is ignored — MacroFactor does not store timezones`
+    );
+  }
+}
+
 function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
   if (value == null) {
     const now = new Date();
@@ -110,6 +120,7 @@ function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
   if (typeof value !== 'string') {
     throw new Error(`"${fieldName}" must be an ISO 8601 string when provided`);
   }
+  warnIfTimezone(value, fieldName);
   const parsed = parseISO(value);
   if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
     throw new Error(`Invalid "${fieldName}": ${value}`);
@@ -118,15 +129,22 @@ function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
 }
 
 function parseWorkoutStartTime(value: unknown): string {
-  if (value == null) return new Date().toISOString();
+  if (value == null) {
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const s = String(now.getSeconds()).padStart(2, '0');
+    return `${todayDate()}T${h}:${m}:${s}.000Z`;
+  }
   if (typeof value !== 'string') {
     throw new Error('"startTime" must be an ISO 8601 string when provided');
   }
-  const parsed = new Date(value);
-  if (Number.isNaN(parsed.getTime())) {
+  warnIfTimezone(value, 'startTime');
+  const parsed = parseISO(value);
+  if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
     throw new Error(`Invalid "startTime": ${value}`);
   }
-  return parsed.toISOString();
+  return `${parsed.date}T${String(parsed.hours).padStart(2, '0')}:${String(parsed.minutes).padStart(2, '0')}:00.000Z`;
 }
 
 function weekdayIndex(date: string): number {
@@ -323,6 +341,7 @@ const ALL_COMMANDS = [
   'exercise',
   'gyms',
   'delete-workout',
+  'remove-exercise',
   'update-workout',
   'profile',
   'food-log',
@@ -723,11 +742,6 @@ async function main() {
 
         const durationMinutes = parseDurationMinutes(input.duration);
 
-        const exercisesInput = input.exercises == null ? [] : input.exercises;
-        if (!Array.isArray(exercisesInput)) {
-          throw new Error('"exercises" must be an array when provided');
-        }
-
         const client = await getClient();
         const gyms = await client.getGymProfiles();
         const gymId = typeof input.gymId === 'string' ? input.gymId.trim() : '';
@@ -740,16 +754,50 @@ async function main() {
         }
         const startTime = parseWorkoutStartTime(input.startTime);
 
+        // Support two input formats:
+        // 1. "exercises": [...] — each exercise gets its own block (no supersets)
+        // 2. "blocks": [[ex1, ex2], [ex3]] — exercises grouped into superset blocks
+        const blocksInput = input.blocks;
+        const exercisesInput = input.exercises;
+
+        if (blocksInput != null && exercisesInput != null) {
+          throw new Error('Provide either "exercises" (flat) or "blocks" (grouped), not both');
+        }
+
         const blocks: any[] = [];
         const exerciseSummary: any[] = [];
 
-        for (const exerciseInput of exercisesInput) {
-          if (!exerciseInput || typeof exerciseInput !== 'object') {
-            throw new Error('Each exercise must be an object');
+        if (Array.isArray(blocksInput)) {
+          for (const blockGroup of blocksInput) {
+            if (!Array.isArray(blockGroup)) {
+              throw new Error('Each element of "blocks" must be an array of exercises');
+            }
+            const blockExercises: any[] = [];
+            const blockSummaries: any[] = [];
+            for (const exerciseInput of blockGroup) {
+              if (!exerciseInput || typeof exerciseInput !== 'object') {
+                throw new Error('Each exercise must be an object');
+              }
+              const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
+              blockExercises.push(rawExercise);
+              blockSummaries.push(summary);
+            }
+            blocks.push({ exercises: blockExercises });
+            exerciseSummary.push(blockSummaries);
           }
-          const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
-          blocks.push({ exercises: [rawExercise] });
-          exerciseSummary.push(summary);
+        } else {
+          const exArray = exercisesInput == null ? [] : exercisesInput;
+          if (!Array.isArray(exArray)) {
+            throw new Error('"exercises" must be an array when provided');
+          }
+          for (const exerciseInput of exArray) {
+            if (!exerciseInput || typeof exerciseInput !== 'object') {
+              throw new Error('Each exercise must be an object');
+            }
+            const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
+            blocks.push({ exercises: [rawExercise] });
+            exerciseSummary.push(summary);
+          }
         }
 
         const workoutId = randomUUID();
@@ -870,6 +918,37 @@ async function main() {
         const client = await getClient();
         await client.deleteWorkout(workoutId);
         console.log(JSON.stringify({ status: 'deleted', id: workoutId }, null, 2));
+        break;
+      }
+
+      case 'remove-exercise': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts remove-exercise <json> or pipe JSON via stdin');
+        }
+        const workoutId = typeof input.workoutId === 'string' ? input.workoutId.trim() : '';
+        const exerciseId = typeof input.exerciseId === 'string' ? input.exerciseId.trim() : '';
+        if (!workoutId || !exerciseId) {
+          throw new Error('remove-exercise requires "workoutId" and "exerciseId"');
+        }
+        const client = await getClient();
+        const raw = await client.getRawWorkout(workoutId);
+        const blocks = (raw.blocks as any[]) || [];
+        const newBlocks = blocks.filter((block: any) => {
+          const exs = (block.exercises as any[]) || [];
+          return !exs.some((e: any) => e.exerciseId === exerciseId);
+        });
+        if (newBlocks.length === blocks.length) {
+          throw new Error(`Exercise "${exerciseId}" not found in workout "${workoutId}"`);
+        }
+        await client.updateRawWorkout(workoutId, { blocks: newBlocks }, ['blocks']);
+        console.log(
+          JSON.stringify(
+            { status: 'removed', workoutId, exerciseId, blocksRemoved: blocks.length - newBlocks.length },
+            null,
+            2
+          )
+        );
         break;
       }
 
