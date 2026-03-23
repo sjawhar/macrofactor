@@ -257,6 +257,13 @@ registerCliTool(
 registerCliTool(server, 'macrofactor.deleteWorkout', 'Delete a workout by id.', { id: z.string() }, 'delete-workout');
 registerCliTool(
   server,
+  'macrofactor.removeExerciseFromWorkout',
+  'Remove an exercise (by exerciseId) from a workout, deleting the entire block that contains it.',
+  { workoutId: z.string(), exerciseId: z.string() },
+  'remove-exercise'
+);
+registerCliTool(
+  server,
   'macrofactor.addExerciseToWorkout',
   'Append one or more exercise blocks to an existing workout.',
   {

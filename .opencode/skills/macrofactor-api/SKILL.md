@@ -29,30 +29,31 @@ This skill guides you in using the reverse-engineered MacroFactor (Stronger By S
 
 The fastest way to explore data is the CLI tool. Output is JSON, perfect for piping to `jq`.
 
-| Action                  | Command                                                                                                                                                            |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Current context         | `npx tsx cli/mf.ts context`                                                                                                                                        |
-| List recent workouts    | `npx tsx cli/mf.ts workouts`                                                                                                                                       |
-| Specific workout detail | `npx tsx cli/mf.ts workout <uuid>`                                                                                                                                 |
-| Search exercise DB      | `npx tsx cli/mf.ts exercises search "bench press"`                                                                                                                 |
-| Resolve hex ID          | `npx tsx cli/mf.ts exercise <hex-id>`                                                                                                                              |
-| Get today's food log    | `npx tsx cli/mf.ts food-log [YYYY-MM-DD]`                                                                                                                          |
-| Nutrition range         | `npx tsx cli/mf.ts nutrition --from 2026-03-01 --to 2026-03-22`                                                                                                    |
-| Weight history          | `npx tsx cli/mf.ts weight-history --from 2026-03-01 --to 2026-03-22`                                                                                               |
-| Daily goals             | `npx tsx cli/mf.ts goals`                                                                                                                                          |
-| List gym profiles       | `npx tsx cli/mf.ts gyms`                                                                                                                                           |
-| Search foods            | `npx tsx cli/mf.ts search-food "nutritional yeast"`                                                                                                                |
-| Log a searched food     | `npx tsx cli/mf.ts log-food '{"foodId":"<food-id>","servingIndex":0,"quantity":1.5,"loggedAt":"2026-03-20T19:00:00-05:00"}'`                                       |
-| Log a manual food       | `npx tsx cli/mf.ts log-manual-food '{"name":"Protein Shake","calories":220,"protein":35,"carbs":12,"fat":4}'`                                                      |
-| Copy food entries       | `npx tsx cli/mf.ts copy-food '{"sourceDate":"2026-03-20","targetDate":"2026-03-21","entryIds":["..."]}'`                                                           |
-| Create a workout        | `npx tsx cli/mf.ts log-workout '{"name":"PM Session","gymId":"<gym-id>","startTime":"2026-03-20T17:00:00-05:00","exercises":[{"exerciseId":"...","sets":[...]}]}'` |
-| Add exercise to workout | `npx tsx cli/mf.ts log-exercise '{"workoutId":"<uuid>","exercises":[{"exerciseId":"...","sets":[{"reps":10,"lbs":135,"sets":3}]}]}'`                               |
-| Update workout          | `npx tsx cli/mf.ts update-workout '{"id":"<uuid>","name":"Renamed Session"}'`                                                                                      |
-| Delete workout          | `npx tsx cli/mf.ts delete-workout '{"id":"<uuid>"}'`                                                                                                               |
-| Log weight              | `npx tsx cli/mf.ts log-weight '{"lbs":180,"date":"2026-03-20"}'`                                                                                                   |
-| Delete weight           | `npx tsx cli/mf.ts delete-weight '{"date":"2026-03-20"}'`                                                                                                          |
-| Delete food entry       | `npx tsx cli/mf.ts delete-food '{"date":"2026-03-20","entryId":"..."}'`                                                                                            |
-| Update food quantity    | `npx tsx cli/mf.ts update-food '{"date":"2026-03-20","entryId":"...","quantity":200}'`                                                                             |
+| Action                       | Command                                                                                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current context              | `npx tsx cli/mf.ts context`                                                                                                                                        |
+| List recent workouts         | `npx tsx cli/mf.ts workouts`                                                                                                                                       |
+| Specific workout detail      | `npx tsx cli/mf.ts workout <uuid>`                                                                                                                                 |
+| Search exercise DB           | `npx tsx cli/mf.ts exercises search "bench press"`                                                                                                                 |
+| Resolve hex ID               | `npx tsx cli/mf.ts exercise <hex-id>`                                                                                                                              |
+| Get today's food log         | `npx tsx cli/mf.ts food-log [YYYY-MM-DD]`                                                                                                                          |
+| Nutrition range              | `npx tsx cli/mf.ts nutrition --from 2026-03-01 --to 2026-03-22`                                                                                                    |
+| Weight history               | `npx tsx cli/mf.ts weight-history --from 2026-03-01 --to 2026-03-22`                                                                                               |
+| Daily goals                  | `npx tsx cli/mf.ts goals`                                                                                                                                          |
+| List gym profiles            | `npx tsx cli/mf.ts gyms`                                                                                                                                           |
+| Search foods                 | `npx tsx cli/mf.ts search-food "nutritional yeast"`                                                                                                                |
+| Log a searched food          | `npx tsx cli/mf.ts log-food '{"foodId":"<food-id>","servingIndex":0,"quantity":1.5,"loggedAt":"2026-03-20T19:00:00-05:00"}'`                                       |
+| Log a manual food            | `npx tsx cli/mf.ts log-manual-food '{"name":"Protein Shake","calories":220,"protein":35,"carbs":12,"fat":4}'`                                                      |
+| Copy food entries            | `npx tsx cli/mf.ts copy-food '{"sourceDate":"2026-03-20","targetDate":"2026-03-21","entryIds":["..."]}'`                                                           |
+| Create a workout             | `npx tsx cli/mf.ts log-workout '{"name":"PM Session","gymId":"<gym-id>","startTime":"2026-03-20T17:00:00-05:00","exercises":[{"exerciseId":"...","sets":[...]}]}'` |
+| Add exercise to workout      | `npx tsx cli/mf.ts log-exercise '{"workoutId":"<uuid>","exercises":[{"exerciseId":"...","sets":[{"reps":10,"lbs":135,"sets":3}]}]}'`                               |
+| Update workout               | `npx tsx cli/mf.ts update-workout '{"id":"<uuid>","name":"Renamed Session"}'`                                                                                      |
+| Delete workout               | `npx tsx cli/mf.ts delete-workout '{"id":"<uuid>"}'`                                                                                                               |
+| Remove exercise from workout | `npx tsx cli/mf.ts remove-exercise '{"workoutId":"<uuid>","exerciseId":"<hex-id>"}'`                                                                               |
+| Log weight                   | `npx tsx cli/mf.ts log-weight '{"lbs":180,"date":"2026-03-20"}'`                                                                                                   |
+| Delete weight                | `npx tsx cli/mf.ts delete-weight '{"date":"2026-03-20"}'`                                                                                                          |
+| Delete food entry            | `npx tsx cli/mf.ts delete-food '{"date":"2026-03-20","entryId":"..."}'`                                                                                            |
+| Update food quantity         | `npx tsx cli/mf.ts update-food '{"date":"2026-03-20","entryId":"...","quantity":200}'`                                                                             |
 
 _Auth note:_ The CLI has a built-in `.env` parser. Do **NOT** use `source .env` — the password contains backticks and special characters that break bash sourcing. Just run commands directly; the CLI loads credentials automatically.
 
@@ -115,7 +116,7 @@ Required fields and their `fieldPaths` for a new workout:
 ```typescript
 const workout = {
   name: 'Session Name',
-  startTime: '2026-03-18T23:00:00.000Z', // ISO 8601 UTC
+  startTime: '2026-03-18T17:00:00.000Z', // timezones are not stored — offsets in CLI input are ignored
   duration: 2_700_000_000, // MICROSECONDS (45 min)
   gymId: 'uuid-of-gym', // from client.getGymProfiles()
   gymName: 'Gym',
@@ -195,7 +196,7 @@ const logTime: LogTime = { date: '2026-03-21', hour: 13, minute: 30 };
 await client.logSearchedFood(logTime, food, serving, quantity, gramMode);
 ```
 
-The `h` and `mi` fields in Firestore represent the user's **local wall-clock time** (no timezone). Never round-trip through a JS `Date` object — `Date.getHours()` converts to the system's timezone, silently shifting the hour.
+The `h` and `mi` fields in Firestore are plain hours/minutes — **timezones are not stored**. Never round-trip through a JS `Date` object — `Date.getHours()` converts to the system's timezone, silently shifting the hour.
 
 ### Firestore Type Safety (CRITICAL)
 
@@ -298,7 +299,10 @@ console.log(next.dayName, next.isRestDay ? 'REST' : next.exercises.length + ' ex
 | `deleteFoodEntry` wipes entry data   | Use `updateFoodEntryFields()` (per-subfield masks), not `patchFoodDocument()` (whole-entry replace). The latter replaces the entire entry with just `{d: true, ua: "..."}`, creating ghost stubs that crash the app.            |
 | `w` and `q` field values wrong       | For gram tracking: `w=1, q=1, y=grams`. For unit tracking: `w=servingGrams, q=1, y=count`. Getting this wrong makes calorie/macro totals display incorrectly in the app.                                                        |
 | Can't find program/schedule data     | Program definitions are in `users/{uid}/trainingProgram/{id}`, NOT under `programs/` or `activeProgram/`. The active program ID is in `users/{uid}/profiles/workout` → `activeProgramId`. Rest days have empty `blocks` arrays. |
-| Food logged at wrong hour            | `logFood`/`logSearchedFood` accept `LogTime` (`{ date, hour, minute }`) — NOT a JS `Date`. The `h`/`mi` fields are local wall-clock time. Never pass a `Date` object and call `getHours()` — that converts to system timezone.  |
+| Food logged at wrong hour            | `logFood`/`logSearchedFood` accept `LogTime` (`{ date, hour, minute }`) — NOT a JS `Date`. The `h`/`mi` fields are plain hours/minutes; timezones are not stored.                                                               |
+| Workout shows wrong time             | `startTime` stores hours/minutes without timezone. The CLI extracts hours/minutes from your input and ignores timezone offsets. For a 9 AM workout, pass `T09:00:00` — the `-05:00` part is stripped.                           |
+| Need to log supersets/circuits       | Use `"blocks": [[ex1, ex2], [ex3]]` in `log-workout` instead of `"exercises": [...]`. Each inner array becomes one superset block. The flat `exercises` format puts each exercise in its own block.                             |
+| Need to remove an exercise           | Use `remove-exercise` with `workoutId` and `exerciseId`. It removes the entire block containing that exercise. To move an exercise between workouts: `remove-exercise` from source, then `log-exercise` to target.              |
 
 ## Key Client Methods
 
