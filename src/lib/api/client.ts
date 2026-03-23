@@ -2,8 +2,11 @@ import type { Goals, ScaleEntry, NutritionSummary, StepEntry, SearchFoodResult, 
 import { FoodEntry } from './types';
 import { signIn, refreshIdToken, getUserIdFromToken } from './auth';
 import {
+  type FoodFieldValue,
   getDocument,
   patchDocument,
+  deleteDocument,
+  removeFields,
   patchFoodDocument,
   updateFoodEntryFields,
   parseDocument,
@@ -107,6 +110,11 @@ function toNumberArray(val: unknown): number[] {
   if (Array.isArray(val)) return val.map(Number);
   if (typeof val === 'number') return [val];
   return [];
+}
+
+function documentId(name: string | undefined, parsed: Record<string, any>): string | undefined {
+  if (typeof parsed.id === 'string' && parsed.id !== '') return parsed.id;
+  return name?.split('/').pop();
 }
 
 // ---------------------------------------------------------------------------
@@ -311,24 +319,33 @@ export class MacroFactorClient {
   ): Promise<void> {
     const token = await this.ensureToken();
     const dateStr = loggedAt.date;
-    // Use current wall-clock time for unique IDs (not meal time — that goes in h/mi)
-    const entryId = String(Date.now() * 1000);
-    const entry = {
-      t: name,
-      c: calories,
-      p: protein,
-      e: carbs,
-      f: fat,
-      g: 1,
-      w: 1,
-      y: 1,
-      h: String(loggedAt.hour).padStart(2, '0'),
-      mi: String(loggedAt.minute).padStart(2, '0'),
-      k: 'manual',
-      ca: Date.now(),
-      ua: Date.now(),
+    const nowMicros = String(Date.now() * 1000);
+    const entryId = nowMicros;
+    const defaultServing = { description: 'serving', gramWeight: 1, amount: 1 };
+    const fields: Record<string, FoodFieldValue> = {
+      t: sfv(name),
+      b: sfv(name),
+      c: sfv(calories),
+      p: sfv(protein),
+      e: sfv(carbs),
+      f: sfv(fat),
+      g: sfv(1),
+      w: sfv(1),
+      y: sfv(1),
+      q: sfv(1),
+      s: sfv(defaultServing.description),
+      u: sfv(defaultServing.description),
+      h: sfv(String(loggedAt.hour)),
+      mi: sfv(String(loggedAt.minute)),
+      k: sfv('manual'),
+      ca: sfv(nowMicros),
+      ua: sfv(nowMicros),
+      o: bfv(false),
+      fav: bfv(false),
+      ef: nfv(),
+      m: servingsArray([defaultServing]),
     };
-    await patchDocument(`users/${this.uid}/food/${dateStr}`, { [entryId]: entry }, [esc(entryId)], token);
+    await patchFoodDocument(`users/${this.uid}/food/${dateStr}`, entryId, fields, token);
   }
 
   /**
@@ -407,6 +424,11 @@ export class MacroFactorClient {
     await updateFoodEntryFields(`users/${this.uid}/food/${date}`, entryId, { d: bfv(true), ua: sfv(nowMicros) }, token);
   }
 
+  async hardDeleteFoodEntry(date: string, entryId: string): Promise<void> {
+    const token = await this.ensureToken();
+    await removeFields(`users/${this.uid}/food/${date}`, [esc(entryId)], token);
+  }
+
   async updateFoodEntry(date: string, entryId: string, qty: number): Promise<void> {
     const token = await this.ensureToken();
     const nowMicros = String(Date.now() * 1000);
@@ -424,33 +446,20 @@ export class MacroFactorClient {
     const token = await this.ensureToken();
     const sourceDate = entries[0].date;
 
-    // Read the raw Firestore document to preserve all original fields
     const doc = await getDocument(`users/${this.uid}/food/${sourceDate}`, token);
-    const rawData = parseDocument(doc);
-
-    const now = Date.now();
-    const fields: Record<string, Record<string, string | number | boolean>> = {};
-    const fieldPaths: string[] = [];
+    const docFields = doc.fields ?? {};
+    const baseMicros = Date.now() * 1000;
 
     for (let i = 0; i < entries.length; i++) {
       const entry = entries[i];
-      const rawEntry = rawData[entry.entryId];
-      if (!rawEntry || typeof rawEntry !== 'object') continue;
+      const rawEntryFields = docFields[entry.entryId]?.mapValue?.fields as Record<string, FoodFieldValue> | undefined;
+      if (!rawEntryFields) continue;
 
-      // Generate a unique entry ID for the target date
-      const newId = String(now + i);
-
-      // Copy raw data, update timestamps, remove deleted flag
-      const copied = { ...rawEntry, ca: now, ua: now };
+      const newMicros = String(baseMicros + i);
+      const copied: Record<string, FoodFieldValue> = { ...rawEntryFields, ca: sfv(newMicros), ua: sfv(newMicros) };
       delete copied.d;
-
-      fields[newId] = copied;
-      fieldPaths.push(esc(newId));
+      await patchFoodDocument(`users/${this.uid}/food/${targetDate}`, newMicros, copied, token);
     }
-
-    if (fieldPaths.length === 0) return;
-
-    await patchDocument(`users/${this.uid}/food/${targetDate}`, fields, fieldPaths, token);
   }
 
   // -------------------------------------------------------------------------
@@ -626,12 +635,34 @@ export class MacroFactorClient {
   async getRawWorkout(id: string): Promise<Record<string, any>> {
     const token = await this.ensureToken();
     const doc = await getDocument(`users/${this.uid}/workoutHistory/${id}`, token);
-    return parseDocument(doc);
+    if (!doc.fields) {
+      throw new Error(`Workout ${id} not found`);
+    }
+    const parsed = parseDocument(doc);
+    const derivedId = documentId(doc.name, parsed);
+    if (derivedId && parsed.id == null) parsed.id = derivedId;
+    return parsed;
   }
 
   async updateRawWorkout(id: string, fields: Record<string, any>, fieldPaths: string[]): Promise<void> {
     const token = await this.ensureToken();
     await patchDocument(`users/${this.uid}/workoutHistory/${id}`, fields, fieldPaths, token);
+  }
+
+  async updateWorkout(id: string, fields: Record<string, any>): Promise<void> {
+    const patchFields = { ...fields };
+    if (patchFields.durationMinutes != null) {
+      patchFields.duration = Number(patchFields.durationMinutes) * 60 * 1_000_000;
+      delete patchFields.durationMinutes;
+    }
+    const fieldPaths = Object.keys(patchFields);
+    if (fieldPaths.length === 0) return;
+    await this.updateRawWorkout(id, patchFields, fieldPaths);
+  }
+
+  async deleteWorkout(id: string): Promise<void> {
+    const token = await this.ensureToken();
+    await deleteDocument(`users/${this.uid}/workoutHistory/${id}`, token);
   }
 
   async getWorkoutHistory(): Promise<WorkoutSummary[]> {
@@ -640,6 +671,7 @@ export class MacroFactorClient {
     return docs
       .map((doc) => {
         const d = parseDocument(doc);
+        const derivedId = documentId(doc.name, d);
         const blocks = (d.blocks ?? []) as any[];
         let exerciseCount = 0;
         let setCount = 0;
@@ -651,7 +683,7 @@ export class MacroFactorClient {
           }
         }
         return {
-          id: d.id as string,
+          id: derivedId as string,
           name: d.name as string,
           startTime: d.startTime as string,
           durationSeconds: (d.duration as number) / 1_000_000,
@@ -669,7 +701,12 @@ export class MacroFactorClient {
   async getWorkout(id: string): Promise<WorkoutDetail> {
     const token = await this.ensureToken();
     const doc = await getDocument(`users/${this.uid}/workoutHistory/${id}`, token);
+    if (!doc.fields) {
+      throw new Error(`Workout ${id} not found`);
+    }
     const d = parseDocument(doc);
+    const derivedId = documentId(doc.name, d);
+    if (derivedId && d.id == null) d.id = derivedId;
     return this.parseWorkoutDetail(d);
   }
 

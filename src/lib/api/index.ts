@@ -1,7 +1,7 @@
 export { MacroFactorClient, type LogTime } from './client';
 export * from './types';
 export * from './workout-types';
-export { searchFoods } from './typesense';
+export { searchFoods, getFoodById } from './typesense';
 export {
   lookupEntity,
   lookupExercise,

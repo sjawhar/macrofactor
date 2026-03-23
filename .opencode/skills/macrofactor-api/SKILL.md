@@ -19,28 +19,52 @@ This skill guides you in using the reverse-engineered MacroFactor (Stronger By S
 - You encounter a 32-character hex ID (e.g., `1a35c6f1...`) that needs to be translated to a human-readable exercise or muscle name
 - You get a `403 Forbidden` error trying to access `/exercises` or `/equipment` on Firestore
 
+## Agent Context
+
+- Read `data/agent-context.md` before doing open-ended nutrition or training analysis
+- Update `data/agent-context.md` when you learn stable user preferences or recurring patterns
+- Use `npx tsx cli/mf.ts context` first when you need a current snapshot of goals, today's intake, weight trend, and next workout
+
 ## Quick Reference CLI Commands
 
 The fastest way to explore data is the CLI tool. Output is JSON, perfect for piping to `jq`.
 
-| Action                  | Command                                                                                                                                |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| List recent workouts    | `npx tsx cli/mf.ts workouts`                                                                                                           |
-| Specific workout detail | `npx tsx cli/mf.ts workout <uuid>`                                                                                                     |
-| Search exercise DB      | `npx tsx cli/mf.ts exercises search "bench press"`                                                                                     |
-| Resolve hex ID          | `npx tsx cli/mf.ts exercise <hex-id>`                                                                                                  |
-| Get today's food log    | `npx tsx cli/mf.ts food-log [YYYY-MM-DD]`                                                                                              |
-| List gym profiles       | `npx tsx cli/mf.ts gyms`                                                                                                               |
-| Search foods            | `npx tsx cli/mf.ts search-food "nutritional yeast"`                                                                                    |
-| Log a food              | `npx tsx cli/mf.ts log-food '{"query":"kale raw","grams":150,"loggedAt":"2026-03-20T19:00:00-05:00"}'`                                 |
-| Create a workout        | `npx tsx cli/mf.ts log-workout '{"name":"PM Session","startTime":"2026-03-20T17:00:00-05:00","exercises":[...]}'`                      |
-| Add exercise to workout | `npx tsx cli/mf.ts log-exercise '{"workoutId":"<uuid>","exercises":[{"name":"bench press","sets":[{"reps":10,"lbs":135,"sets":3}]}]}'` |
-| Log a food (stdin)      | `echo '{"query":"kale raw","grams":150}' \| npx tsx cli/mf.ts log-food`                                                                |
-| Log weight              | `npx tsx cli/mf.ts log-weight '{"lbs":180,"date":"2026-03-20"}'`                                                                       |
-| Delete food entry       | `npx tsx cli/mf.ts delete-food '{"date":"2026-03-20","entryId":"..."}'`                                                                |
-| Update food quantity    | `npx tsx cli/mf.ts update-food '{"date":"2026-03-20","entryId":"...","quantity":200}'`                                                 |
+| Action                  | Command                                                                                                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current context         | `npx tsx cli/mf.ts context`                                                                                                                                        |
+| List recent workouts    | `npx tsx cli/mf.ts workouts`                                                                                                                                       |
+| Specific workout detail | `npx tsx cli/mf.ts workout <uuid>`                                                                                                                                 |
+| Search exercise DB      | `npx tsx cli/mf.ts exercises search "bench press"`                                                                                                                 |
+| Resolve hex ID          | `npx tsx cli/mf.ts exercise <hex-id>`                                                                                                                              |
+| Get today's food log    | `npx tsx cli/mf.ts food-log [YYYY-MM-DD]`                                                                                                                          |
+| Nutrition range         | `npx tsx cli/mf.ts nutrition --from 2026-03-01 --to 2026-03-22`                                                                                                    |
+| Weight history          | `npx tsx cli/mf.ts weight-history --from 2026-03-01 --to 2026-03-22`                                                                                               |
+| Daily goals             | `npx tsx cli/mf.ts goals`                                                                                                                                          |
+| List gym profiles       | `npx tsx cli/mf.ts gyms`                                                                                                                                           |
+| Search foods            | `npx tsx cli/mf.ts search-food "nutritional yeast"`                                                                                                                |
+| Log a searched food     | `npx tsx cli/mf.ts log-food '{"foodId":"<food-id>","servingIndex":0,"quantity":1.5,"loggedAt":"2026-03-20T19:00:00-05:00"}'`                                       |
+| Log a manual food       | `npx tsx cli/mf.ts log-manual-food '{"name":"Protein Shake","calories":220,"protein":35,"carbs":12,"fat":4}'`                                                      |
+| Copy food entries       | `npx tsx cli/mf.ts copy-food '{"sourceDate":"2026-03-20","targetDate":"2026-03-21","entryIds":["..."]}'`                                                           |
+| Create a workout        | `npx tsx cli/mf.ts log-workout '{"name":"PM Session","gymId":"<gym-id>","startTime":"2026-03-20T17:00:00-05:00","exercises":[{"exerciseId":"...","sets":[...]}]}'` |
+| Add exercise to workout | `npx tsx cli/mf.ts log-exercise '{"workoutId":"<uuid>","exercises":[{"exerciseId":"...","sets":[{"reps":10,"lbs":135,"sets":3}]}]}'`                               |
+| Update workout          | `npx tsx cli/mf.ts update-workout '{"id":"<uuid>","name":"Renamed Session"}'`                                                                                      |
+| Delete workout          | `npx tsx cli/mf.ts delete-workout '{"id":"<uuid>"}'`                                                                                                               |
+| Log weight              | `npx tsx cli/mf.ts log-weight '{"lbs":180,"date":"2026-03-20"}'`                                                                                                   |
+| Delete weight           | `npx tsx cli/mf.ts delete-weight '{"date":"2026-03-20"}'`                                                                                                          |
+| Delete food entry       | `npx tsx cli/mf.ts delete-food '{"date":"2026-03-20","entryId":"..."}'`                                                                                            |
+| Update food quantity    | `npx tsx cli/mf.ts update-food '{"date":"2026-03-20","entryId":"...","quantity":200}'`                                                                             |
 
 _Auth note:_ The CLI has a built-in `.env` parser. Do **NOT** use `source .env` — the password contains backticks and special characters that break bash sourcing. Just run commands directly; the CLI loads credentials automatically.
+
+### Logging Food via CLI
+
+The `log-food` command is atomic: provide `foodId`, `servingIndex`, and `quantity`. Gram-mode is detected automatically when the serving's `gramWeight` is 1 (e.g., a "gram" serving). You do NOT need to set gram-mode manually.
+
+**Workflow for correcting a food entry mistake:**
+
+1. Use `update-food` to change the quantity — never delete and re-log
+2. `delete-food` is a **soft delete** (`d: true`) — the ghost entry persists in Firestore and may still appear in the app
+3. If you need to change the food entirely (wrong item), you must delete the old AND log the new — but understand the ghost will remain
 
 ## Implementation: TypeScript Client
 
@@ -205,7 +229,9 @@ The `gramMode` parameter on `logSearchedFood()` controls this distinction.
 
 - **Creating**: `patchFoodDocument()` — replaces the entire entry map (correct for new entries)
 - **Updating fields**: `updateFoodEntryFields()` — per-subfield update masks, preserves all other fields
-- **Deleting**: `deleteFoodEntry()` — adds `d: true` flag via `updateFoodEntryFields()` (preserves entry data)
+- **Deleting**: `deleteFoodEntry()` — **soft delete only** — sets `d: true` flag. The entry remains in Firestore and **may still appear in the app**. There is no hard delete.
+
+**If you logged food incorrectly, use `update-food` to fix it — do NOT delete and re-log.** Delete + re-log creates a soft-deleted ghost entry alongside the new one, which can show up as a duplicate in the app.
 
 **Never use `patchFoodDocument()` for partial updates** — it replaces the entire entry, wiping all fields not included in the patch.
 
@@ -305,3 +331,43 @@ console.log(next.dayName, next.isRestDay ? 'REST' : next.exercises.length + ' ex
 ## Heavy Reference
 
 For the complete schema of all collections, field mappings, and type definitions, read `docs/api-reference.md`.
+
+## MCP Server
+
+If `.opencode/mcp.json` is registered, prefer the MCP tools over bash-wrapping the CLI.
+
+- Server entry: `mcp-server/index.ts`
+- Tool namespace: `macrofactor.*`
+- Context resource: `macrofactor://context`
+- Capability resource: `macrofactor://capabilities`
+
+Use MCP when you want typed inputs, structured errors, and tool discovery. Use the CLI when you are outside an MCP-aware environment.
+
+## Analytical Patterns
+
+- To compare training-day vs rest-day nutrition: call `program` to get the schedule, `nutrition` for the range, then group days by whether they map to training or rest
+- To estimate TDEE from recent history: call `weight-history` and `nutrition` for the same 30-day window, compare intake against weight trend
+- To identify protein gaps: call `goals`, `nutrition`, and compute daily protein attainment against the matching weekday target
+
+## Worked Examples
+
+### Weekly Nutrition Report
+
+1. Call `context` for the current snapshot
+2. Call `nutrition --from ... --to ...` for the last 7 days
+3. Call `goals` and compare each day to the matching weekday target
+4. Summarize calorie adherence, protein consistency, and over/under days
+
+### Training Volume Analysis
+
+1. Call `program` to inspect the active split
+2. Call `workouts` to list recent sessions
+3. Call `workout <id>` for the last 3-5 relevant sessions
+4. Group sets/reps by exercise and compare against the planned day structure
+
+### Progress Check
+
+1. Call `weight-history --from ... --to ...` for the last 30 days
+2. Call `nutrition --from ... --to ...` for the same window
+3. Call `goals` and `context`
+4. Explain whether intake, weight trend, and training cadence agree with the user's stated goal
