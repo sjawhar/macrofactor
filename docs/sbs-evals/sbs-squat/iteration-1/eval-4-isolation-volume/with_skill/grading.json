@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States there is no universal cap on isolation volume (depends on individual factors)",
+      "passed": true,
+      "evidence": "Found matching content: ...swer is that the right amount is highly individual, but there are useful principles to anc..."
+    },
+    {
+      "text": "Mentions that optimal volume depends on goals, recovery capacity, and/or time constraints",
+      "passed": true,
+      "evidence": "Found matching content: ...olation work should serve your training goals, not just fill time.\n\nFinally, individu..."
+    },
+    {
+      "text": "Provides a concrete baseline suggestion (roughly 2-4 challenging sets per muscle group, 1-2x/week)",
+      "passed": true,
+      "evidence": "Found matching content: ...g range for most isolation targets is **2-4 sets per muscle per week on top of compound..."
+    },
+    {
+      "text": "Warns that global/systemic recovery can become limiting even when local muscle stress seems modest",
+      "passed": true,
+      "evidence": "Found matching content: ...the compound work that drives the most overall progress...."
+    },
+    {
+      "text": "Recommends starting conservative and scaling up based on outcomes/recovery",
+      "passed": true,
+      "evidence": "Found matching content: ...extra work accumulates fatigue quickly. Start conservatively - 2-3 sets per muscle per week for ea..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

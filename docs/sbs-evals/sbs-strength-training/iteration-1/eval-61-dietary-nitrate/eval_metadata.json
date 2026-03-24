@@ -1,0 +1,15 @@
+{
+  "eval_id": 61,
+  "eval_name": "eval-61-dietary-nitrate",
+  "prompt": "Can nitrate-rich foods (like beets and leafy greens) work as well as nitrate supplements for performance?",
+  "expected_output": "Eric said yes, food-based nitrate intake can absolutely produce ergogenic benefits and may be preferable in some cases. He mentioned quality-control variability in some commercial beet supplements and argued whole-food/juice strategies can reliably raise intake. He also referenced studies where beetroot preparations performed at least as well as nitrate-matched sodium nitrate, suggesting possible synergy from other compounds in the food matrix. Practical recommendation was to keep nitrate-rich produce in the diet rather than relying solely on pills/powders.",
+  "topic": "dietary nitrate",
+  "episode": 46,
+  "assertions": [
+    "Answer captures the core SBS position on dietary nitrate",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

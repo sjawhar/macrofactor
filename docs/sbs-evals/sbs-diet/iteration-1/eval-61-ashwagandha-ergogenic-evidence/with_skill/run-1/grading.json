@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states the underlying evidence base for ashwagandha is not consistent enough for strong recommendation",
+      "passed": false,
+      "evidence": "Missing any of: ['not consistent', 'not strong', 'insufficient']"
+    },
+    {
+      "text": "Answer highlights hard-to-generalize effect sizes in some studies",
+      "passed": true,
+      "evidence": "Found 'effect size' in: ...## What the Meta-Analysis Likely Shows\n\n- Small to moderate effect sizes in some studies\n- Heterogeneous outcomes (some studies sho..."
+    },
+    {
+      "text": "Answer mentions weak mechanistic coherence across studies",
+      "passed": false,
+      "evidence": "Missing any of: ['mechanism', 'mechanistic', 'coherence']"
+    },
+    {
+      "text": "Answer recommends cautious use with modest expectations if someone is interested",
+      "passed": true,
+      "evidence": "Found 'modest' in: ...with baseline stress/fatigue/sleep issues\n- Typical effect: modest improvements in strength, recovery markers, or stress perce..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

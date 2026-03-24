@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer declines a full point-by-point debate as low-value",
+      "passed": false,
+      "evidence": "Missing any of: ['decline', 'point-by-point', 'low value']"
+    },
+    {
+      "text": "Answer states well-designed omnivorous and vegan diets can both support performance",
+      "passed": true,
+      "evidence": "Found 'omnivorous' in: ...t inherently superior. Well-planned plant-based diets work; omnivorous diets also work. The evidence shows performance depends on..."
+    },
+    {
+      "text": "Answer criticizes the documentary's use of tiny demonstrations over robust evidence",
+      "passed": true,
+      "evidence": "Found 'documentary' in: ...rview\n\nThe \"Game Changers\" rebuttal video (and the original documentary) makes several claims about diet, athletic performance, and..."
+    },
+    {
+      "text": "Answer recommends evaluating claims via higher-quality research methods",
+      "passed": true,
+      "evidence": "Found 'research' in: ...at is highly bioavailable and supports muscle recovery. The research on this is mixed and context-dependent (meal timing, type,..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

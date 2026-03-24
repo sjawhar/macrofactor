@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Pushes back on the blanket claim that deadlifts are inherently more fatiguing, citing data showing similar fatigue outcomes",
+      "passed": false,
+      "evidence": "Does the opposite — supports the claim: 'The assertion that deadlifts are \"more fatiguing\" than squats is empirically supported in SBS coaching practice.' Does not push back or cite data showing similar fatigue outcomes as Greg did (referencing Zourdos' lab data)."
+    },
+    {
+      "text": "Mentions practical contributors: hand/forearm grip stress, sumo vs conventional tolerance differences, and/or spinal flexion tolerance",
+      "passed": true,
+      "evidence": "Mentions 'Grip and forearm demand' as a secondary fatigue vector, and sumo vs conventional differences: 'Sumo deadlifts often produce less back fatigue than conventional deadlifts.' Does not explicitly mention spinal flexion tolerance."
+    },
+    {
+      "text": "Highlights path dependency: lifters with more squat exposure may find deadlifts seem more fatiguing due to lower deadlift training history",
+      "passed": false,
+      "evidence": "Does not discuss path dependency or training history effects. Greg highlighted that many lifters build years of higher squat exposure, making deadlift tolerance appear lower by comparison."
+    },
+    {
+      "text": "Recommends programming based on individual recovery patterns rather than assuming universal deadlift fragility",
+      "passed": true,
+      "evidence": "'Critical Nuance: It's Not Universal' section acknowledges individual variation and sumo/conventional differences. Autoregulation mentioned. However, the overall tone assumes deadlifts ARE more fatiguing rather than challenging the assumption."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

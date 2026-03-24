@@ -1,0 +1,15 @@
+{
+  "eval_id": 81,
+  "eval_name": "eval-81-conditioning-for-lifting-work-capacity",
+  "prompt": "What signs suggest I need extra conditioning to keep progressing in strength or hypertrophy? What type of conditioning should I do?",
+  "expected_output": "Greg said the key sign is when required training volume for progress outpaces your ability to complete sessions or recover from them. Instead of defaulting to separate cardio blocks, he now prefers specific conditioning by stepping down the intensity ladder within your lifting. For strength-focused lifters struggling with triples, he suggested spending time in higher-rep sets (roughly 5-8) to build work capacity, then returning to lower reps. For hypertrophy work (e.g., 8-12), he suggested phases with higher reps (12-15 or even 20-25) to raise metabolic tolerance and session capacity. He still likes low-intensity cardio like walking for general health, but not as the first lever for this specific problem. Core recommendation: keep the movement patterns similar and condition yourself via higher-rep versions of your main training.",
+  "topic": "conditioning for lifting work capacity",
+  "episode": 57,
+  "assertions": [
+    "Answer captures the core SBS position on conditioning for lifting work capacity",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

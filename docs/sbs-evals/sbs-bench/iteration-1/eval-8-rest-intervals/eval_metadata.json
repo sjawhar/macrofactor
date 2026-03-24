@@ -1,0 +1,12 @@
+{
+  "eval_id": 8,
+  "eval_name": "rest-intervals",
+  "prompt": "As my lifts get stronger, my rest periods keep getting longer. What causes that, and what does the literature say about rest intervals for hypertrophy vs strength?",
+  "assertions": [
+    "Explains that heavier loads increase fatigue per set, so stronger lifters naturally need longer recovery",
+    "States hypertrophy research findings are mixed (some favor longer, some shorter, some no difference)",
+    "For strength, leans toward longer rests especially for strong lifters on compounds",
+    "Provides concrete rest period guidelines (roughly 90s-2min for upper/isolation, ~3min commonly, ~5min+ for heavy compounds)",
+    "Mentions supersets as a time-saving strategy that doesn't sacrifice key lift performance"
+  ]
+}

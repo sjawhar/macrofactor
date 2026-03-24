@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer pushes back on blanket claims that plant-based diets are categorically healthier",
+      "passed": true,
+      "evidence": "Found 'not' in: ...Composition\n\n## Short Answer\n\n**No.** Plant-based diets do not inherently lead to better gains or fat loss than omnivorous..."
+    },
+    {
+      "text": "Answer notes observational comparisons are heavily confounded by broader health behaviors",
+      "passed": false,
+      "evidence": "Missing any of: ['confound', 'health behavior']"
+    },
+    {
+      "text": "Answer states calories and macronutrient setup drive body composition more than dietary label",
+      "passed": true,
+      "evidence": "Found 'calorie' in: ...ng)\n4. **Consistency** (adherence over time)\n\nThe source of calories and protein\u2014animal or plant-based\u2014is secondary to these fu..."
+    },
+    {
+      "text": "Answer says both vegan and omnivorous diets can work well when thoughtfully structured",
+      "passed": true,
+      "evidence": "Found 'both' in: ...and training stimulus\u2014not by the source of those nutrients. Both diet types can support excellent muscle gain or fat loss wh..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

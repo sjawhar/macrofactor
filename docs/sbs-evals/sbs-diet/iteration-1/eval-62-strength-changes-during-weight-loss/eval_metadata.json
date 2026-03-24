@@ -1,0 +1,14 @@
+{
+  "eval_id": 62,
+  "eval_name": "eval-62-strength-changes-during-weight-loss",
+  "prompt": "How have your lifts changed during your cut, and what helped you maintain strength while losing weight?",
+  "expected_output": "Greg said he did get weaker over the cut, but he attributed much of that to disrupted training rather than fat loss itself. He started cutting around February and, in April/May, injured his wrist/elbow, which limited gripping, squatting setups, and pressing and led to a few months of minimal training. He said this break helped him psychologically accept temporary strength loss so the diet could continue. Once he resumed consistent lifting, strength rebounded quickly (for example, returning to a hard 315 single, then a relatively comfortable 315 triple on low incline within a few sessions). His framing was that consistency and acceptance mattered more than chasing perfect in-cut peak numbers, and that retraining restored performance rapidly.",
+  "topic": "strength changes during weight loss",
+  "episode": 73,
+  "assertions": [
+    "Answer mentions Greg got weaker during the cut but attributes much to disrupted training from injury",
+    "Answer discusses wrist/elbow injury limiting training for months",
+    "Answer states strength rebounded quickly once consistent lifting resumed",
+    "Answer frames consistency and acceptance as more important than chasing perfect in-cut numbers"
+  ]
+}

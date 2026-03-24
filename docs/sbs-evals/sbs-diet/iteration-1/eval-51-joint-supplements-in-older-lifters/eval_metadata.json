@@ -1,0 +1,14 @@
+{
+  "eval_id": 51,
+  "eval_name": "eval-51-joint-supplements-in-older-lifters",
+  "prompt": "For older lifters, are glucosamine and chondroitin useful for preventing or repairing joint wear and tear?",
+  "expected_output": "Greg said older evidence (2010 meta-analysis) was largely negative, but newer evidence (2018 meta-analysis covering 26 articles/30 trials) suggested small benefits in osteoarthritis populations. Specifically, he summarized that glucosamine showed a small effect on stiffness, while chondroitin showed small effects on pain and physical function. He emphasized these are modest effects, not dramatic improvements, and combination evidence is less clear. He also highlighted that the better evidence is mostly in osteoarthritis patients, so generalizing to everyone without OA is shaky. Safety looked generally acceptable with mostly mild GI side effects at higher doses. Practical advice: manage expectations and coordinate with a clinician/PT if pain and function are the main concern.",
+  "topic": "joint supplements in older lifters",
+  "episode": 57,
+  "assertions": [
+    "Answer distinguishes older negative evidence from newer (2018 meta-analysis) showing small benefits",
+    "Answer states glucosamine showed a small effect on stiffness, chondroitin on pain and function",
+    "Answer emphasizes these are modest effects, not dramatic improvements",
+    "Answer notes the evidence is mostly in osteoarthritis populations, not generalizable to everyone"
+  ]
+}

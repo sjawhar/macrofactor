@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states concerns about high-protein harms are overstated in healthy people",
+      "passed": true,
+      "evidence": "Found 'healthy' in: ...While protein is essential and higher intakes are safe for healthy kidneys, excessive protein creates practical and performanc..."
+    },
+    {
+      "text": "Answer gives a recommended target range of roughly 1.6-2.2 g/kg/day",
+      "passed": true,
+      "evidence": "Found '1.6' in: ...nce-based range for lifters aiming to build muscle is:\n\n- **1.6\u20132.2 g/kg/day** (total body mass)\n\n1 g/lb (2.2 g/kg) sits at..."
+    },
+    {
+      "text": "Answer notes going far beyond that range gives little added hypertrophy benefit",
+      "passed": true,
+      "evidence": "Found 'beyond' in: ...lories + training + adequate protein**\u2014not protein quantity beyond the sufficient range.\n\n---\n\n## Are There Downsides to Eatin..."
+    },
+    {
+      "text": "Answer emphasizes consistent sufficient intake over extreme protein dosing",
+      "passed": true,
+      "evidence": "Found 'sufficient' in: ...gets, and Optimization\n\n## TL;DR\n\n- **~1 g/lb (2.2 g/kg) is sufficient** for muscle building in lifters; it sits at the upper end..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

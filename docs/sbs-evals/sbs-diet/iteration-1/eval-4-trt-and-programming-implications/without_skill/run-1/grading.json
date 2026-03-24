@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer frames TRT as a medical decision requiring physician oversight",
+      "passed": false,
+      "evidence": "Missing any of: ['physician', 'medical', 'doctor', 'oversight']"
+    },
+    {
+      "text": "Answer mentions that normalizing testosterone from very low levels can increase hypertrophy potential",
+      "passed": true,
+      "evidence": "Found 'hypertrophy' in: ...h gains accelerate, allowing for more frequent heavy work\n- Hypertrophy-focused training (8-12 reps) can be done with higher freque..."
+    },
+    {
+      "text": "Answer suggests higher training volume/frequency may be tolerated with TRT",
+      "passed": true,
+      "evidence": "Found 'volume' in: ...Recovery Support\n\n**Increased demands:**\n\n- Higher training volume and intensity (enabled by TRT) increases micronutrient dema..."
+    },
+    {
+      "text": "Answer emphasizes individual variability based on baseline status",
+      "passed": true,
+      "evidence": "Found 'individual' in: ...ardiovascular health becomes more important to monitor\n\n### Individual Variation\n\n- Response to TRT varies significantly between i..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

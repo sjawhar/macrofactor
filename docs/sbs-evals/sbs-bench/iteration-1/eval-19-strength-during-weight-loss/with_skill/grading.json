@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Acknowledges getting weaker during the cut",
+      "passed": false,
+      "evidence": "Provides general advice about strength loss during cuts but doesn't relay personal experience of getting weaker."
+    },
+    {
+      "text": "Attributes much of the strength loss to disrupted training (injury) rather than fat loss alone",
+      "passed": false,
+      "evidence": "Does not mention any specific injury disrupting training. Discusses general principles."
+    },
+    {
+      "text": "Mentions a specific injury (wrist/elbow) that limited training",
+      "passed": false,
+      "evidence": "No mention of wrist/elbow injury."
+    },
+    {
+      "text": "Notes that strength rebounded quickly once consistent lifting resumed",
+      "passed": false,
+      "evidence": "Discusses general rebound but not from personal injury experience."
+    },
+    {
+      "text": "Frames consistency and acceptance as more important than chasing perfect in-cut numbers",
+      "passed": true,
+      "evidence": "States psychological component matters and maintaining mindset. 'Lifters who expect to lose strength often unconsciously reduce effort.'"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 4,
+    "total": 5,
+    "pass_rate": 0.2
+  }
+}

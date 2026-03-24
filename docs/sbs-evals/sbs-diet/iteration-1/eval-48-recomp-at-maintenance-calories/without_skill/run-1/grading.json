@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says yes, recomposition at maintenance calories is possible in the right context",
+      "passed": true,
+      "evidence": "Found 'yes' in: ...cle While Eating at Maintenance Calories?\n\n## Short Answer\n\nYes, you can gain muscle while eating at maintenance calories i..."
+    },
+    {
+      "text": "Answer mentions training status, current body composition, training stimulus quality, and protein as key factors",
+      "passed": true,
+      "evidence": "Found 'protein' in: ...gain muscle while eating at maintenance calories if:\n\n1. **Protein intake is high** (typically 0.7-1g per pound of body weight..."
+    },
+    {
+      "text": "Answer states people with more body fat are generally better candidates",
+      "passed": true,
+      "evidence": "Found 'body fat' in: ...0.7-1g per pound of body weight)\n2. **You have significant body fat to spare** (generally 20%+ body fat)\n3. **You're doing prog..."
+    },
+    {
+      "text": "Answer notes a large caloric surplus is not always required to add muscle",
+      "passed": true,
+      "evidence": "Found 'not' in: ...eline\n\n- **First 3-6 months**: Most dramatic recomposition; noticeable strength gains and visual changes\n- **6-12 months**:..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

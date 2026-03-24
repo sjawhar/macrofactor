@@ -1,0 +1,12 @@
+{
+  "eval_id": 11,
+  "eval_name": "program-troubleshooting-and-plateaus",
+  "prompt": "How should I tweak a program that mostly works before deciding to switch programs entirely?",
+  "assertions": [
+    "Advises not changing things while progress is still happening",
+    "When plateau appears, determine whether more stress or less stress is needed",
+    "Recommends small targeted changes (volume, intensity, frequency, or exercise selection) rather than overhauling everything",
+    "Suggests evaluating each change for a few weeks before making another",
+    "States that switching to a completely new program is reasonable only after serial tweaks fail"
+  ]
+}

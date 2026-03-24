@@ -1,0 +1,181 @@
+{
+  "skill_name": "sbs-squat",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The same listener asked for a hypothetical ‘SBS combine’: what tests should a generally strong/fit/athletic person repeat every ~12 weeks to track progress?",
+      "expected_output": "They proposed covering multiple capacities instead of only barbell strength. Suggested tests included an aerobic event (2-mile run, possibly 5K or 5-mile), anaerobic running (400–800 m), and short sprint speed (40 m or 100 m). For explosiveness they suggested vertical jump or broad jump, plus max-distance medicine ball throws (chest pass and overhead). For strength they suggested something like a 3RM squat/bench/deadlift, and for strength endurance max-rep pull-ups or even a 20RM squat. They also mentioned adding flexibility screening, and said this full battery is probably better as a longer periodic check (e.g., annual) than trying to run all of it every 12 weeks.",
+      "topic": "fitness testing battery",
+      "episode": 106,
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "For basketball athletes in the offseason, how should plyometrics be integrated with hypertrophy and strength training?",
+      "expected_output": "Greg said context drives programming: current sport workload, conditioning priorities, and athlete needs all matter. His default setup is to place plyometrics early in training sessions while athletes are fresh, typically 1-2 focused plyo exposures per week for most realistic schedules. He warned against a common mistake of putting hard plyo sessions on 'off days,' because that can overload joints/tendons and reduce recovery quality. He also distinguished true high-quality plyometrics from fatigue cardio-jumping; once reps get very high and intent drops, it’s no longer quality plyometric work. Practical recommendation: keep plyos high-quality, low-to-moderate volume, and integrated before main lifting in sessions.",
+      "topic": "plyometric programming",
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Is there evidence that long-term bracing/Val Salva in lifting damages blood vessels because of repeated blood pressure spikes?",
+      "expected_output": "Greg said direct long-term causal data in lifters is very limited and no ideal decades-long controlled dataset exists. He distinguished two issues: maneuvers that can acutely worsen pre-existing vascular conditions versus maneuvers that cause those conditions in healthy people. He noted there is indirect occupational lifting epidemiology, but it differs substantially from strength training in dose, context, and confounding factors, so transfer is uncertain. Bottom line: the strongest direct evidence specifically linking normal lifting-related bracing to long-term vascular damage is currently sparse. Practical implication is individualized caution for people with known medical risk, rather than broad claims from weak analogies.",
+      "topic": "bracing and vascular risk",
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "After compounds, how much isolation work is enough for areas like forearms, calves, delts, biceps, and core without overdoing it?",
+      "expected_output": "Greg said there isn’t a universal cap because optimal isolation volume depends on goals, recovery capacity, and time constraints. He emphasized many muscles are only partially covered by compounds, so some targeted work is often useful. As a broad practical baseline, he suggested roughly 2-4 challenging sets once or twice per week per under-targeted muscle group for many lifters. He also cautioned that global recovery can become limiting even when local muscle stress seems modest, so outcomes and fatigue trends should guide progression. Recommendation: start conservative, monitor performance/recovery, and scale up only if adaptation justifies it.",
+      "topic": "isolation volume",
+      "episode": 126,
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "For hypertrophy, are very short rests best even for powerlifters doing hard squat volume? If someone rests 6-7 minutes between squat sets, are they leaving gains on the table versus strict 2-minute rests?",
+      "expected_output": "The hosts said context matters more than a simplistic universal rest rule. They argued that long, taxing compound sets (especially squats/deadlifts in stronger lifters) likely require more recovery than small-muscle isolation work, and preserving set quality can justify longer rests. Greg said that for powerlifters, performance on main lifts should usually come first; hypertrophy-focused accessories can use shorter rests if desired. Milo added that existing evidence suggests 1-2 minute rests can be close to optimal for many hypertrophy contexts, but it does not prove that all advanced squat work should be capped at 2 minutes. They also noted practical constraints: with limited session time, very long rests reduce total work opportunities. Net take: 6-7 minutes is not automatically wrong for heavy volume squat sets, especially when sport performance quality is a priority.",
+      "topic": "Hypertrophy vs rest-interval tradeoffs",
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "What should a 15-year-old do to gain muscle and strength: exercise selection, weekly volume, reps/intensity/failure, and calories/macros?",
+      "expected_output": "Pack recommended building around major compound patterns (squat/press/hinge/row variants), optionally with machines, and generally using 2-3 exercises per major muscle group. He suggested starting around 8-12 fractional sets per muscle per week and mostly training in about the 5-12 rep range. Effort guidance was to keep most work close to failure (roughly 0-2 RIR), with many sets around 1-2 RIR and some sets to failure to calibrate effort. For nutrition, he suggested a slow gain target around 1% body weight per month and protein roughly 1.5-2.0 g/kg/day, without overcomplicating supplements (creatine aside, whole-food habits first). Frequency guidance was about 3-5 sessions/week (with even 2 able to work for beginners). Greg added that beginners benefit from substantial bodyweight/calisthenic practice first (e.g., competent push-ups/lunges/step-ups) to build control and movement awareness before aggressively loading barbells.",
+      "topic": "Teen training and nutrition fundamentals",
+      "episode": 144,
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "In a good powerlifting program, how much training time should be hypertrophy-focused, and how should that change with training age and in-season vs off-season? Also, when is someone strong enough to start bodybuilding-style accessory work?",
+      "expected_output": "Greg said newer lifters generally need more hypertrophy work, not less. Early on, he recommended learning the lifts for the first few months, then spending the next couple of years building muscle and filling out a weight class while keeping some heavier work in. As lifters get more advanced and hypertrophy slows, the tradeoff shifts toward more specific strength work. Near meets, hypertrophy emphasis should drop, and he specifically noted that high-rep bodybuilding-style work (e.g., 10-15 rep focus) is usually a poor fit close to competition (around the last ~4 weeks). In true off-seasons, especially when moving up or filling out a class, hypertrophy blocks make more sense. They also emphasized adherence: a slightly suboptimal but enjoyable approach done consistently for years still works very well.",
+      "topic": "hypertrophy vs strength periodization",
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "As my lifts get stronger, my rest periods keep getting longer. What causes that, and what does the literature say about rest intervals for hypertrophy vs strength?",
+      "expected_output": "Greg explained that heavier loads increase total work and oxygen/anaerobic cost per set, so stronger lifters naturally need longer recovery between sets. He used examples showing a very heavy set of 10 squats can create enormous fatigue, making short rests unrealistic for maintaining performance. On research, he said hypertrophy findings are mixed: some studies favor longer rests, some shorter, and some show no difference. For strength development, he leaned clearly toward longer rests, especially for strong lifters on compound lifts. His practical guidance was roughly 90 seconds to 2 minutes minimum for upper-body/single-joint work, around 3 minutes commonly, and about 5 minutes (or more) for heavy lower-body compounds. They also suggested non-interfering supersets to save time without sacrificing key lift performance.",
+      "topic": "rest intervals for strength and hypertrophy",
+      "episode": 25,
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Any advice on easing into a high-volume hypertrophy-focused mesocycle after a powerlifting meet without losing my strength gains?",
+      "expected_output": "They recommend keeping the competition lifts in moderate strength-relevant ranges instead of shifting entirely to high reps. A practical template is three weeks mostly in the 5-10 rep range, then one week including heavier triples to keep top-end strength exposure. They also suggest an over-warm single around RPE 8 before volume work to preserve neural readiness with limited fatigue. The core point is to keep at least some heavy practice while accumulating hypertrophy volume.",
+      "topic": "post-meet hypertrophy without strength loss",
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "What do you personally do right after a meet—jump into the next block immediately or take time off?",
+      "expected_output": "The answer is context-dependent. If an athlete is motivated and recovered, they can return quickly; if beat up, use an easier first week with roughly 70-80% loading and reduced volume. They frame complete time off as acceptable when needed, since one week in a year is trivial. Their preference is usually to keep intensity present while temporarily pulling back volume.",
+      "topic": "post-competition transition week",
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "How should I tweak a program that mostly works before deciding to switch programs entirely?",
+      "expected_output": "They advise not changing things while progress is still happening, because the optimal plan is a moving target. Once a plateau appears, first decide whether the relevant lift likely needs more stress or less stress. Then make small, targeted changes—like volume, intensity, frequency, or exercise selection—and evaluate each change for a few weeks instead of overhauling everything at once. If serial tweaks fail, then moving to a new program is reasonable.",
+      "topic": "program troubleshooting and plateaus",
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "What do you think about bands and chains for building absolute strength? The logic sounds good—do they actually work?",
+      "expected_output": "They explain the rationale: accommodating resistance can better match the lift’s force curve by increasing load where leverage improves. A concrete example discussed is bar weight plus chain load that is lighter near the bottom and heavier near lockout. Despite plausible theory, they cite research (including meta-analytic evidence) showing little to no clear strength advantage versus conventional loading for most lifters. Their bottom line is that bands/chains can be fine as variation tools, but not a reliably superior method for maximal strength gains.",
+      "topic": "accommodating resistance effectiveness",
+      "episode": 27,
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "Instead of doing many sets of the same exercise, could rotating through multiple exercises for the same muscle reduce diminishing returns and improve hypertrophy?",
+      "expected_output": "Greg said he does not see strong downside to exercise variation when total hard sets are matched, and it may be modestly beneficial. They discussed the Fonseca-style finding where total quad growth was similar across conditions, but the varied-exercise groups showed more balanced growth across different quad regions. The practical takeaway was that variety can help distribute stimulus and may improve regional hypertrophy without necessarily changing overall growth dramatically. Eric added that variation can also improve enjoyment and adherence, which matters for long-term outcomes. They did not present this as a magic trick, but as a reasonable programming option.",
+      "topic": "exercise variety and hypertrophy",
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "For hypertrophy, are machines better than free weights, and which one lets you do more useful volume and make better gains?",
+      "expected_output": "Eric's answer was that neither modality is universally superior for hypertrophy. He emphasized that machines can be very useful for adding variation, reducing some technical constraints, and accumulating targeted volume. He still favored keeping a base of compound free-weight work when skill and injury status allow, while using machines to complement that base. Both hosts stressed specificity: if performance in a lift matters, include that lift; if the goal is hypertrophy, a mixed approach is usually strong. Net recommendation: use both, and pick the tool that best fits the muscle, movement, and fatigue profile.",
+      "topic": "machines vs free weights",
+      "episode": 29,
+      "files": []
+    },
+    {
+      "id": 15,
+      "prompt": "You previously discussed chains and bands for strength. What about using accommodating resistance for hypertrophy specifically?",
+      "expected_output": "Greg said the likely effect is neutral-to-positive if used intelligently, but potentially negative if overdone. His main warning was not to add so much band/chain tension that lockout becomes the limiter, because that can reduce meaningful loading in stretched positions where hypertrophy may be especially stimulated. He gave examples showing how matching a resistance curve can be sensible (e.g., bottom challenge still high while top load rises), but \"crazy\" tension setups can undermine training quality. He noted direct hypertrophy data are sparse, and available isotonic-vs-isokinetic comparisons don't clearly show superior growth from perfectly matched resistance. He also discussed a possible constant-tension/deoxygenation benefit, but treated that as speculative and secondary to existing direct evidence. Bottom line: use moderate accommodating resistance, keep full-ROM challenge meaningful, and don't expect magic.",
+      "topic": "bands and chains for hypertrophy",
+      "episode": 31,
+      "files": []
+    },
+    {
+      "id": 16,
+      "prompt": "If I’ve been squatting 2-3 times per week, can I still progress on just 1 squat day per week, and how should I set it up?",
+      "expected_output": "Greg said progressing on once-weekly squatting is absolutely possible; the main tradeoff is usually slower rate of progress, not zero progress. He described the evidence trend as: >1 session/week tends to beat exactly 1 session/week on average, but very high frequencies are not magic by default. For setup, he advised against collapsing all prior weekly squat volume into one huge session (for example, don’t blindly turn 15 weekly sets into 15 sets in one day). Instead, make that single session larger than your old per-session average, then titrate up gradually based on recovery and performance. As a rough starting heuristic, he suggested avoiding a drop of more than about 50% in total weekly squat volume when switching structures. Practical implementation: start with your previous per-session dose plus ~1-2 sets, then adjust upward only if progress stalls and recovery allows.",
+      "topic": "squat frequency reduction",
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 17,
+      "prompt": "What’s the current take on isometric training for maintaining strength on squat, bench, and deadlift when equipment is limited?",
+      "expected_output": "Greg said isometrics can work, but the most effective style appears to be high-intent, ballistic maximal contractions (trying to hit max force as fast as possible), which can be hard to set up in lockdown conditions. A gym example he gave was pulling maximally into safety pins at a chosen deadlift height. He noted strong angle specificity: gains transfer most to roughly the trained joint position, about 15-30 degrees in either direction. That means isometric quarter-squat work won’t strongly improve bottom-position squat strength, while isometrics near a sticking point are more likely to help there. He also mentioned isometrics can be a useful complement since they avoid eccentric loading and can carry a different fatigue profile. But he cautioned that practical programming prescriptions (optimal set duration, frequency, and weekly dose) are still less standardized than conventional training.",
+      "topic": "isometric strength training",
+      "episode": 39,
+      "files": []
+    },
+    {
+      "id": 18,
+      "prompt": "How should kids and adolescents train with weights? Is there a growth-plate risk, and should heavy singles be avoided?",
+      "expected_output": "Greg’s take was that current evidence does not show lifting stunts growth, but truly definitive long-term trials are scarce. Mechanistically, he viewed typical resistance-training loads as less concerning for growth plates than everyday running/jumping exposures in kids. He recommended close supervision, strict technique emphasis, and minimizing preventable gym-floor injuries from inattention. Before/during early puberty, priority should be movement skill development rather than chasing failure or maximal loads. As puberty progresses, training stress can be scaled up because strength and hypertrophy responsiveness generally improves.",
+      "topic": "youth resistance training",
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 19,
+      "prompt": "It’s been years since the Belt Bible. Has the powerlifting belt evidence changed enough to require a rewrite?",
+      "expected_output": "Greg said the core belt conclusions are largely unchanged and he did not think a full rewrite was urgently needed. He cited limited major new evidence, but noted at least one mechanistic study supporting the idea that higher intra-abdominal pressure can increase hip extension torque. That mechanism is consistent with belts helping force output in practice. Bottom line: belts still make sense for many lifters, and the old guidance is mostly still intact.",
+      "topic": "powerlifting belt evidence",
+      "episode": 46,
+      "files": []
+    },
+    {
+      "id": 20,
+      "prompt": "Why are deadlifts considered more fatiguing than squats, and should deadlift volume usually be lower?",
+      "expected_output": "Greg pushed back on the blanket claim that deadlifts are inherently more fatiguing, noting data (including work from Zourdos' lab context) showing similar fatigue outcomes after squat vs deadlift sessions. He proposed several practical contributors: hand/forearm stress from heavy pulling, greater tolerance in sumo versus conventional for some lifters, and the ability to complete deadlifts with more spinal flexion than squats, which may create deeper low-back fatigue. He also highlighted path dependency: many lifters build years of higher squat exposure and lower deadlift exposure, so deadlift tolerance starts lower and appears more fatiguing by history rather than biology. He compared Olympic pulling variants too, where athletes often tolerate relatively high pulling frequency/volume. Recommendation was not to assume universal deadlift fragility, but to program based on individual recovery patterns and technical style.",
+      "topic": "deadlift vs squat fatigue",
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 21,
+      "prompt": "What do you think about minimalist warm-ups (mostly just barbell warm-up sets) instead of long activation/mobility routines?",
+      "expected_output": "Greg's answer was conditional: minimalist warm-ups are fine if they reliably prepare you for the session. He framed it as a cost-benefit issue, especially for people with limited gym time, where cutting warm-up from ~30 minutes to ~5-10 minutes can materially increase productive training time. But he warned against making minimalism the goal itself; under-warming can reduce readiness and potentially increase risk if needed mobility/positioning work is removed. His practical method was iterative troubleshooting: remove one warm-up element at a time and keep only what clearly helps session quality. That approach preserves performance while trimming wasted time. So the best warm-up is the minimum effective warm-up for your body and your session demands.",
+      "topic": "minimalist warm-up strategy",
+      "episode": 50,
+      "files": []
+    },
+    {
+      "id": 22,
+      "prompt": "How should I respond when a doctor tells me to stop squatting because it’s bad for my knees?",
+      "expected_output": "They recommended starting from empathy for the clinician’s context: general practitioners usually prioritize reducing symptoms and preserving activities of daily living, not maximizing squat performance. In that framework, conservative advice to stop a painful non-essential activity can be expected. But they also said lifters should seek second opinions from sports medicine professionals or PTs who understand training goals. They framed this as a cost-benefit decision where your risk tolerance and priorities matter. The practical message was: don’t automatically dismiss medical advice, but get context-specific guidance from providers experienced with athletes.",
+      "topic": "medical advice vs lifting goals",
+      "episode": 58,
+      "files": []
+    }
+  ]
+}

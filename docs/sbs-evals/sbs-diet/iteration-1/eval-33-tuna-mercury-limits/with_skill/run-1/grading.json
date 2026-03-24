@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer references FDA fish guidance with serving-based categories",
+      "passed": true,
+      "evidence": "Found 'FDA' in: ...6 oz max)** due to higher mercury content. This aligns with FDA and EPA guidance and allows you to keep tuna as a cheap, co..."
+    },
+    {
+      "text": "Answer distinguishes canned light tuna (lower mercury) from albacore/white and yellowfin",
+      "passed": true,
+      "evidence": "Found 'light tuna' in: ...una\n\n- **Mercury level:** ~0.32 ppm (roughly 3\u00d7 higher than light tuna)\n- **Safe intake:** 1 serving per week maximum (6 oz)\n- **W..."
+    },
+    {
+      "text": "Answer recommends limiting to a few servings per week, not multiple cans per day",
+      "passed": true,
+      "evidence": "Found 'per week' in: ...e Bottom Line\n\n**Light canned tuna is safe to eat 2\u20133 times per week (roughly 6\u20139 oz/week).** Albacore (white) tuna should be li..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

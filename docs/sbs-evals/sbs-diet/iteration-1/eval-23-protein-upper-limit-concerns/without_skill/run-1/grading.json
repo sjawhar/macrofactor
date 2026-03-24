@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states concerns about high-protein harms are overstated in healthy people",
+      "passed": true,
+      "evidence": "Found 'healthy' in: ...of Protein?\n\nHigh protein intake is generally safe for most healthy individuals, but there are some practical and physiological..."
+    },
+    {
+      "text": "Answer gives a recommended target range of roughly 1.6-2.2 g/kg/day",
+      "passed": true,
+      "evidence": "Found '1.6' in: ...us\n\n- **Optimal range**: Research suggests 0.7\u20131.0 g/lb (or 1.6\u20132.2 g/kg) of body weight is optimal for muscle protein synt..."
+    },
+    {
+      "text": "Answer notes going far beyond that range gives little added hypertrophy benefit",
+      "passed": true,
+      "evidence": "Found 'beyond' in: ...mal for muscle protein synthesis\n- **Diminishing returns**: Beyond 1 g/lb, additional protein provides minimal additional bene..."
+    },
+    {
+      "text": "Answer emphasizes consistent sufficient intake over extreme protein dosing",
+      "passed": true,
+      "evidence": "Found 'consistent' in: ...** Here's the evidence:\n\n### Diminishing Returns\n\n- Studies consistently show that muscle protein synthesis plateaus around 0.8\u20131...."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

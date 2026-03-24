@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states very low body fat makes performance and hypertrophy progress much harder",
+      "passed": true,
+      "evidence": "Found 'harder' in: ...r hormones (ghrelin) and reduced satiety signals, making it harder to eat enough to support muscle growth.\n\n## Practical Perfo..."
+    },
+    {
+      "text": "Answer mentions practical signs: worse training quality, slower recovery, higher hunger, system slowdown",
+      "passed": true,
+      "evidence": "Found 'recovery' in: ...taining very low body fat can impair central nervous system recovery, reducing the quality of heavy lifting sessions.\n- **Reduce..."
+    },
+    {
+      "text": "Answer notes lean-mass gains are uncommon below roughly 8% body fat in men",
+      "passed": true,
+      "evidence": "Found '8%' in: ...ance\n\nVery low body fat (typically below 8-10% for men, 15-18% for women) can negatively impact strength performance throu..."
+    },
+    {
+      "text": "Answer recommends symptom-based and performance-based monitoring over chasing exact body-fat numbers",
+      "passed": true,
+      "evidence": "Found 'performance' in: ...cts of Very Low Body Fat on Training Outcomes\n\n### Strength Performance\n\nVery low body fat (typically below 8-10% for men, 15-18% f..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

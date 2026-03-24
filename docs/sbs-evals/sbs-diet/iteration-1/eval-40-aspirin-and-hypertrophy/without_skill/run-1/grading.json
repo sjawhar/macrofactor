@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states direct aspirin-specific hypertrophy evidence is limited",
+      "passed": true,
+      "evidence": "Found 'limited' in: ...ll activation and myonuclei addition\n\n**Human Studies:**\n\n- Limited direct evidence in trained populations\n- Some studies sugge..."
+    },
+    {
+      "text": "Answer considers blunting effects plausible via anti-inflammatory pathways at higher doses",
+      "passed": false,
+      "evidence": "Missing any of: ['plausible', 'anti-inflammatory']"
+    },
+    {
+      "text": "Answer discusses context-dependent findings (older vs younger populations)",
+      "passed": true,
+      "evidence": "Found 'population' in: ...n\n\n**Human Studies:**\n\n- Limited direct evidence in trained populations\n- Some studies suggest NSAIDs (including aspirin) may mode..."
+    },
+    {
+      "text": "Answer advises against assuming chronic high-dose aspirin is adaptation-neutral",
+      "passed": true,
+      "evidence": "Found 'not' in: ...tude of effect is likely modest (10-20% reduction in gains, not complete blockade)\n- Individual variation is substantial\n-..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

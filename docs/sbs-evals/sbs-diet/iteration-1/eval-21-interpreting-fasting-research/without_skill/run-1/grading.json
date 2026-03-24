@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer emphasizes evaluating broader literature rather than anchoring to a single older review",
+      "passed": true,
+      "evidence": "Found 'literature' in: ...Conflict-of-interest statements\n\n**Why it matters**: Older literature has high publication bias; studies showing no difference of..."
+    },
+    {
+      "text": "Answer notes research definitions of intermittent fasting vary significantly",
+      "passed": false,
+      "evidence": "Missing any of: ['definition', 'vary', 'alternate', '5:2', 'time-restricted']"
+    },
+    {
+      "text": "Answer states total energy intake is generally the dominant driver for fat loss",
+      "passed": true,
+      "evidence": "Found 'total energy' in: ...tes **fasting protocol** with **adherence, food choice, and total energy deficit**. These studies frequently fail to isolate the eff..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 1,
+    "total": 3,
+    "pass_rate": 0.6667
+  }
+}

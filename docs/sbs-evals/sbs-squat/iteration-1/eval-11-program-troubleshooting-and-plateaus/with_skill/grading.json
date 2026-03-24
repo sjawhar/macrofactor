@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Advises not changing things while progress is still happening",
+      "passed": true,
+      "evidence": "Found matching content: ...The most important principle here is: **don't change what's working.** If your squat is prog..."
+    },
+    {
+      "text": "When plateau appears, determine whether more stress or less stress is needed",
+      "passed": true,
+      "evidence": "Found matching content: ...ensity is too conservative, run a short overreaching block. If your accessories aren't match..."
+    },
+    {
+      "text": "Recommends small targeted changes (volume, intensity, frequency, or exercise selection) rather than overhauling everything",
+      "passed": true,
+      "evidence": "Found matching content: ...ve identified the weak link, adjust the minimum number of variables needed to address it. If v..."
+    },
+    {
+      "text": "Suggests evaluating each change for a few weeks before making another",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "States that switching to a completely new program is reasonable only after serial tweaks fail",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states non-nutritive sweeteners generally look fine in the evidence",
+      "passed": true,
+      "evidence": "Found 'sweetener' in: ...# Caffeine, Diet Soda, and Artificial Sweeteners During a Cut or Offseason\n\n## The Short Answer\n\n**No, you..."
+    },
+    {
+      "text": "Answer gives a caffeine practical range of roughly 400-600 mg/day",
+      "passed": true,
+      "evidence": "Found 'caffeine' in: ...# Caffeine, Diet Soda, and Artificial Sweeteners During a Cut or Offse..."
+    },
+    {
+      "text": "Answer recommends symptom-based caffeine management (jitters, sleep, headaches)",
+      "passed": true,
+      "evidence": "Found 'sleep' in: ...njoy it and it helps your training. Avoid it if it disrupts sleep or causes anxiety. The amount is irrelevant to your goals...."
+    },
+    {
+      "text": "Answer advises not burning every easy strategy in the offseason for use during hard prep",
+      "passed": true,
+      "evidence": "Found 'offseason' in: ...feine, Diet Soda, and Artificial Sweeteners During a Cut or Offseason\n\n## The Short Answer\n\n**No, you do not need to limit caffei..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

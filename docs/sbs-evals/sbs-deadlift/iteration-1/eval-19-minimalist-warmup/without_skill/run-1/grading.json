@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer is conditional: minimalist warm-ups are fine IF they reliably prepare you for the session",
+      "passed": true,
+      "evidence": "'Minimalist warm-ups using mostly barbell warm-up sets work well for many lifters, especially experienced ones... That said, context matters.' Lists conditions where it works and where it doesn't."
+    },
+    {
+      "text": "Frames as cost-benefit, especially for time-limited lifters (cutting 30min to 5-10min adds productive training time)",
+      "passed": false,
+      "evidence": "Mentions 'Efficiency: You're not doing extra work' but does not frame the comparison as a cost-benefit for time-limited lifters or mention the specific time savings that Greg emphasized."
+    },
+    {
+      "text": "Warns against making minimalism the goal itself — under-warming can reduce readiness or increase risk",
+      "passed": true,
+      "evidence": "'When You Might Need More' section covers mobility restrictions, injury return, cold conditions, beginners, and chronic pain. 'You need some warm-up: Cold muscles are more injury-prone.'"
+    },
+    {
+      "text": "Recommends iterative troubleshooting: remove elements one at a time, keep only what clearly helps session quality",
+      "passed": false,
+      "evidence": "Recommends 'Start minimalist and add as needed' which is the opposite direction from Greg's approach of removing elements one at a time from a full routine and keeping only what helps."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

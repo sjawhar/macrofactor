@@ -1,0 +1,11 @@
+{
+  "eval_id": 4,
+  "eval_name": "pump-vs-strength",
+  "prompt": "If bigger muscles can improve leverage through internal moment arms, could getting a big pump acutely boost strength the same way?",
+  "assertions": [
+    "Acknowledges the mechanism is plausible in principle (pump increases muscle size, could alter leverage)",
+    "Explains that fatigue from pump work typically masks or outweighs any leverage benefit",
+    "Notes the effect would vary by muscle architecture and joint angle",
+    "Concludes don't count on pumps as a reliable strategy for immediate strength expression"
+  ]
+}

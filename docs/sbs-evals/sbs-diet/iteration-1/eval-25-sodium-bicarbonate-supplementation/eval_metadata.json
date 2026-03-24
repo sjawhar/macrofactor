@@ -1,0 +1,15 @@
+{
+  "eval_id": 25,
+  "eval_name": "eval-25-sodium-bicarbonate-supplementation",
+  "prompt": "Sodium bicarbonate has gotten a lot of attention for reducing fatigue in high-intensity interval work. Do you think it's useful for HIIT and lactate-threshold style workouts?",
+  "expected_output": "Eric said sodium bicarbonate is one of the better-supported ergogenic supplements for sprint-like high-intensity performance, though evidence is much weaker for resistance training. The mechanism is extracellular buffering: it raises blood bicarbonate and helps manage exercise-induced acidosis, often allowing slightly more acute work output. He cautioned that chronic use may not improve long-term training adaptations, citing a 2018 study by Siegler et al. where repeated use did not clearly enhance adaptation outcomes. Main downside is GI distress at higher doses. He highlighted a newer staged-loading protocol beginning about 19.5 hours pre-test (progressing around 110, 130, 160, and 200 mg/kg doses) to reduce GI issues while still elevating bicarbonate. He also mentioned pairing with beta-alanine may help somewhat, but returns are diminishing and logistics are cumbersome.",
+  "topic": "sodium bicarbonate supplementation",
+  "episode": 31,
+  "assertions": [
+    "Answer describes sodium bicarbonate as one of the better-supported ergogenic supplements for high-intensity work",
+    "Answer mentions extracellular buffering mechanism",
+    "Answer warns about GI distress as the main downside",
+    "Answer mentions a staged-loading protocol to reduce GI issues",
+    "Answer cautions that chronic use may not improve long-term training adaptations"
+  ]
+}

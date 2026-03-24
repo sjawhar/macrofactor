@@ -1,0 +1,15 @@
+{
+  "eval_id": 12,
+  "eval_name": "eval-12-progressive-overload-body-weight-and-weight-loss-friction",
+  "prompt": "I have deadlifted with a trainer for years and often test very heavy/1RM work. My body weight tends to stay close to my deadlift max, and I developed binge-eating/body-image struggles. Could weekly near-max lifting be defending my body weight and making intentional weight loss much harder?",
+  "expected_output": "The hosts said heavy lifting itself is unlikely to directly prevent fat loss; energy intake and total expenditure are the main drivers. They noted that switching from higher-volume work to frequent 1RM attempts might only change calorie burn modestly (not enough to explain major weight trends). Greg was blunt that the coaching setup sounded poor and suggested considering a better trainer, especially given years of training with limited progress. They acknowledged psychological friction during weight loss for strength-focused lifters: absolute gym numbers may stall or drop in a deficit even when relative strength improves. A practical strategy they offered was using more bodyweight performance targets (push-ups, pull-ups, dips, step-ups), which often improve as body weight drops and can preserve motivation. For binge-eating concerns specifically, they advised involving a qualified dietitian/clinical support rather than trying to solve that part with programming tweaks alone.",
+  "topic": "Progressive overload, body weight, and weight-loss friction",
+  "episode": 144,
+  "assertions": [
+    "Answer states heavy lifting itself is unlikely to directly prevent fat loss",
+    "Answer mentions energy intake and total expenditure as the main drivers",
+    "Answer suggests bodyweight performance targets (push-ups, pull-ups, dips) as motivation during weight loss",
+    "Answer recommends involving qualified dietitian/clinical support for binge-eating concerns",
+    "Answer is critical of the described coaching setup with limited progress over years"
+  ]
+}

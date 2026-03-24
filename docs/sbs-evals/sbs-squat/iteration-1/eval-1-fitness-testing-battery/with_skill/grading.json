@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "Mentions aerobic testing (e.g., 2-mile run, 5K, or similar endurance event)",
+      "passed": true,
+      "evidence": "Found matching content: ...meaningful across testing windows.\n\n## Aerobic Capacity\n\nFor aerobic fitness, the most..."
+    },
+    {
+      "text": "Mentions anaerobic or sprint testing (e.g., 400-800m or 40-100m distances)",
+      "passed": true,
+      "evidence": "Found matching content: ...er multiple cycles is what matters.\n\n## Anaerobic Capacity and Work Capacity\n\nThis is the..."
+    },
+    {
+      "text": "Mentions explosive power tests (e.g., vertical jump, broad jump, or medicine ball throws)",
+      "passed": true,
+      "evidence": "Found matching content: ...lot in the battery. The countermovement vertical jump (CMJ) is the gold standard here: it's h..."
+    },
+    {
+      "text": "Mentions strength testing (e.g., 3RM or submaximal squat/bench/deadlift)",
+      "passed": true,
+      "evidence": "Found matching content: ...hen plug those numbers into a standard e1RM formula. The key is consistency - same..."
+    },
+    {
+      "text": "Suggests the full battery may be better suited as a longer periodic check (e.g., annual) rather than every 12 weeks",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Covers multiple fitness capacities rather than only barbell strength",
+      "passed": true,
+      "evidence": "Found matching content: ...hows modest improvement; the trend over multiple cycles is what matters.\n\n## Anaerobic C..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333
+  }
+}

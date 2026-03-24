@@ -1,0 +1,10 @@
+{
+  "eval_id": 13,
+  "eval_name": "accommodating-resistance",
+  "prompt": "What do you think about bands and chains for building absolute strength? The logic sounds good\u2014do they actually work?",
+  "assertions": [
+    "Explains the theoretical rationale: accommodating resistance matches the lift's force curve (lighter at bottom, heavier at lockout)",
+    "Cites research evidence (including meta-analytic or review-level) showing little to no clear strength advantage over conventional loading",
+    "Concludes they are fine as variation tools but not reliably superior for maximal strength"
+  ]
+}

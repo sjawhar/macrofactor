@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Explains the force-curve matching rationale (increasing load where leverage improves)",
+      "passed": true,
+      "evidence": "Found matching content: ...l. The core logic is elegant: a barbell loaded with only plates provides constant re..."
+    },
+    {
+      "text": "Cites or references research/meta-analysis showing little to no clear strength advantage over conventional loading",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "States bands/chains are acceptable as variation tools",
+      "passed": true,
+      "evidence": "Found matching content: ...oads moved with maximal intent) or as a variation on max effort work. The loading is tric..."
+    },
+    {
+      "text": "Concludes they are not a reliably superior method for maximal strength gains",
+      "passed": true,
+      "evidence": "Found matching content: ...e a legitimate tool. That said, they're not magic - a well-structured straight-weight pro..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

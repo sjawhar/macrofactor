@@ -1,0 +1,15 @@
+{
+  "eval_id": 88,
+  "eval_name": "eval-88-bodybuilding-periodization",
+  "prompt": "How should bodybuilders periodize compound lifts to improve hypertrophy? Do they need sophisticated periodization blocks?",
+  "expected_output": "They said bodybuilding generally does not require elaborate multi-capacity periodization because the main objective is hypertrophy almost year-round. Instead, they favored simple block management: control RIR, accumulate enough volume, deload when fatigue warrants, and rotate emphasis as weak points change. Eric said some variation is still useful for enjoyment, staleness management, and practical recovery. He also highlighted that prep phases can justify shifts toward somewhat higher intensity/lower volume as cardio increases and glycogen/energy availability drops. Bottom line: use practical autoregulated programming adjustments rather than forcing overly complex periodization models.",
+  "topic": "bodybuilding periodization",
+  "episode": 58,
+  "assertions": [
+    "Answer captures the core SBS position on bodybuilding periodization",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer distinguishes older negative evidence from newer (2018 meta-analysis) showing small benefits",
+      "passed": true,
+      "evidence": "Found 'older' in: ...# Glucosamine and Chondroitin for Joint Health in Older Lifters\n\n## Summary\n\nGlucosamine and chondroitin are popula..."
+    },
+    {
+      "text": "Answer states glucosamine showed a small effect on stiffness, chondroitin on pain and function",
+      "passed": true,
+      "evidence": "Found 'glucosamine' in: ...# Glucosamine and Chondroitin for Joint Health in Older Lifters\n\n## Summa..."
+    },
+    {
+      "text": "Answer emphasizes these are modest effects, not dramatic improvements",
+      "passed": true,
+      "evidence": "Found 'modest' in: ...preventing or repairing joint wear and tear is **mixed and modest at best**. While some studies show minor benefits for osteo..."
+    },
+    {
+      "text": "Answer notes the evidence is mostly in osteoarthritis populations, not generalizable to everyone",
+      "passed": true,
+      "evidence": "Found 'osteoarthritis' in: ...odest at best**. While some studies show minor benefits for osteoarthritis symptoms, the overall evidence does not strongly support th..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

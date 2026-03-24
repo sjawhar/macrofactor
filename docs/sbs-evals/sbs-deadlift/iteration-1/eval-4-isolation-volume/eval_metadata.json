@@ -1,0 +1,11 @@
+{
+  "eval_id": 4,
+  "eval_name": "isolation-volume",
+  "prompt": "After compounds, how much isolation work is enough for areas like forearms, calves, delts, biceps, and core without overdoing it?",
+  "assertions": [
+    "States there is no universal cap \u2014 optimal volume depends on goals, recovery, and time",
+    "Provides a practical baseline range (approximately 2-4 sets per muscle group, 1-2x/week or similar concrete guidance)",
+    "Notes that global/systemic recovery can become limiting even when local muscle stress seems modest",
+    "Recommends starting conservative and scaling up based on outcomes/adaptation"
+  ]
+}

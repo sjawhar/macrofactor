@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states direct aspirin-specific hypertrophy evidence is limited",
+      "passed": true,
+      "evidence": "Found 'evidence' in: ...ertrophy or strength gains in most training contexts.** The evidence does not support a strong suppressive effect on muscle grow..."
+    },
+    {
+      "text": "Answer considers blunting effects plausible via anti-inflammatory pathways at higher doses",
+      "passed": true,
+      "evidence": "Found 'anti-inflammatory' in: ...pirin might reduce DOMS (delayed-onset muscle soreness) via anti-inflammatory action.\n- **Implication**: Could allow slightly better trai..."
+    },
+    {
+      "text": "Answer discusses context-dependent findings (older vs younger populations)",
+      "passed": true,
+      "evidence": "Found 'population' in: ..., context matters: very high doses, chronic use in specific populations, or interactions with training recovery could theoreticall..."
+    },
+    {
+      "text": "Answer advises against assuming chronic high-dose aspirin is adaptation-neutral",
+      "passed": true,
+      "evidence": "Found 'not' in: ...rength gains in most training contexts.** The evidence does not support a strong suppressive effect on muscle growth or str..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

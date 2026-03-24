@@ -1,0 +1,15 @@
+{
+  "eval_id": 36,
+  "eval_name": "eval-36-science-writing-and-publication-strategy",
+  "prompt": "How can students improve writing skills for science-based fitness articles, and how do you get published on larger websites?",
+  "expected_output": "Greg recommended deliberate repetition (he used a past target of writing ~1,000 words daily) plus strong editorial feedback. He advised getting an editor if possible, or at least reliable critique from capable peers in your target audience. He also emphasized publishing publicly to get real-world feedback while still maintaining quality standards and purposeful improvement. For getting published, he said to proactively pitch editors (don't wait to be discovered), match the site's audience and style, and read the site's style guidelines first. He specifically advised having drafts ready before pitching and making every step easier for the editor to increase acceptance odds.",
+  "topic": "science writing and publication strategy",
+  "episode": 25,
+  "assertions": [
+    "Answer captures the core SBS position on science writing and publication strategy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

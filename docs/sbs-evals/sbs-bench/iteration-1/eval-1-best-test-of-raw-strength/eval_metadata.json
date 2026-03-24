@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "best-test-of-raw-strength",
+  "prompt": "Is the bench press the best measure of raw physical strength? If not, what is?",
+  "assertions": [
+    "States that bench press is NOT the best measure of overall raw/physical strength",
+    "Mentions odd-object lifting or strongman-style activities (e.g., stone carries, Husafell stone, irregular objects) as a better test",
+    "Explains that odd objects are harder to game with technique compared to standardized barbell lifts",
+    "Acknowledges bench press is useful for upper-body strength tracking specifically"
+  ]
+}

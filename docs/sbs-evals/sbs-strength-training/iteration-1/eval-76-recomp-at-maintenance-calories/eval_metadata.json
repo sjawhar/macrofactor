@@ -1,0 +1,15 @@
+{
+  "eval_id": 76,
+  "eval_name": "eval-76-recomp-at-maintenance-calories",
+  "prompt": "Can you gain muscle while eating around maintenance calories if protein is high and you still have body fat to spare?",
+  "expected_output": "They said yes, this can happen via body recomposition in the right context. The key qualifiers were training status, current body composition, the quality of training stimulus, and adequate protein intake. People with more fat mass to spare are generally better candidates for gaining lean mass without a clear surplus. They framed this as possible rather than guaranteed, and highly individual. The practical takeaway was that a large caloric surplus is not always required to add muscle, especially early in training or when retraining.",
+  "topic": "Recomp at maintenance calories",
+  "episode": 54,
+  "assertions": [
+    "Answer captures the core SBS position on Recomp at maintenance calories",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

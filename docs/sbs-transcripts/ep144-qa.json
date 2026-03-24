@@ -1,0 +1,47 @@
+{
+  "episode": 144,
+  "pairs": [
+    {
+      "question": "Strength seems to predict lifespan better than muscle size, but most studies use grip strength. Is there a better way to assess real-world strength for longevity (for example lower-body and pushing strength percentiles), and should people chase higher strength percentiles to live longer?",
+      "answer_summary": "The hosts said additional strength metrics (like knee extension or pressing) could improve population-level prediction a bit, but individual-level prediction would still be too noisy to be very actionable. They emphasized that grip strength is practical partly because most people do not train it directly, so it captures general physical robustness rather than a highly trained sport-specific metric. Their practical recommendation was simple: resistance train consistently (roughly 90-120 minutes/week, around 2-3 sessions) instead of chasing a specific percentile score. They argued the strength-longevity link is likely not purely causal from training volume alone, and there are diminishing returns once you are already clearly above average. They also discussed that resilience after major health setbacks (illness/hospitalization) may explain part of the association, not just maximizing gym performance forever. Net guidance: keep lifting and stay active, but do not obsess over moving from, say, 80th to 99th percentile on a single lift.",
+      "skills": ["sbs-strength-training"],
+      "topic": "Strength metrics and longevity"
+    },
+    {
+      "question": "I have deadlifted with a trainer for years and often test very heavy/1RM work. My body weight tends to stay close to my deadlift max, and I developed binge-eating/body-image struggles. Could weekly near-max lifting be defending my body weight and making intentional weight loss much harder?",
+      "answer_summary": "The hosts said heavy lifting itself is unlikely to directly prevent fat loss; energy intake and total expenditure are the main drivers. They noted that switching from higher-volume work to frequent 1RM attempts might only change calorie burn modestly (not enough to explain major weight trends). Greg was blunt that the coaching setup sounded poor and suggested considering a better trainer, especially given years of training with limited progress. They acknowledged psychological friction during weight loss for strength-focused lifters: absolute gym numbers may stall or drop in a deficit even when relative strength improves. A practical strategy they offered was using more bodyweight performance targets (push-ups, pull-ups, dips, step-ups), which often improve as body weight drops and can preserve motivation. For binge-eating concerns specifically, they advised involving a qualified dietitian/clinical support rather than trying to solve that part with programming tweaks alone.",
+      "skills": ["sbs-diet", "sbs-strength-training", "sbs-deadlift"],
+      "topic": "Progressive overload, body weight, and weight-loss friction"
+    },
+    {
+      "question": "For hypertrophy, what matters more: resistance curve or range of motion? Do lengthened partials/full-ROM results depend on whether an exercise truly loads the long-muscle-length position enough?",
+      "answer_summary": "The hosts said evidence is still limited and mixed, so strong one-size-fits-all claims are premature. They reviewed examples where studies point in different directions (some favoring more stretch-position loading, some not), and highlighted that multi-variable exercise comparisons are hard to interpret cleanly. Their current view was that both factors likely matter: training at meaningful long muscle lengths seems useful, and having at least some substantial tension there is probably important. They doubted that you must perfectly maximize long-length tension in every movement, but also doubted extreme setups with almost no challenge in stretched positions would be ideal for growth. Practically, they recommended not overfitting to social-media certainty and instead training hard with exercises that provide solid tension through useful ranges. Bottom line: the field is promising but not settled enough to justify dogmatic prescriptions.",
+      "skills": ["sbs-strength-training"],
+      "topic": "Resistance curve vs ROM for hypertrophy"
+    },
+    {
+      "question": "I want to bulk, but I worry that repeated yo-yo dieting and incomplete metabolic recovery have left me regaining fat faster, with old deficits no longer working. Should I hold my current weight until metabolism catches up, or is there a direct fix?",
+      "answer_summary": "Greg explained that after weight regain, many metabolic adaptations from dieting tend to reverse as fat mass, lean mass, leptin, and organ/muscle mass come back up. He also noted a plausible (but not fully settled) yo-yo mechanism: repeated cycles may restore fat faster than lean tissue, potentially leaving lower metabolic rate relative to body mass over time. He suspected part of the issue is often behavioral/NEAT-related (less spontaneous movement, greater movement efficiency, lingering fatigue after very lean phases), not just resting metabolism. Their practical recommendation was to avoid another aggressive cut immediately, spend time maintaining, and let maintenance become easier before dieting again. If dieting again, go slower and/or avoid pushing as lean as before. They stressed broad principles over rigid \"maintenance phase formulas\": energy state over time and adherence matter most.",
+      "skills": ["sbs-diet"],
+      "topic": "Bulking after dieting and metabolic adaptation concerns"
+    },
+    {
+      "question": "For hypertrophy, are very short rests best even for powerlifters doing hard squat volume? If someone rests 6-7 minutes between squat sets, are they leaving gains on the table versus strict 2-minute rests?",
+      "answer_summary": "The hosts said context matters more than a simplistic universal rest rule. They argued that long, taxing compound sets (especially squats/deadlifts in stronger lifters) likely require more recovery than small-muscle isolation work, and preserving set quality can justify longer rests. Greg said that for powerlifters, performance on main lifts should usually come first; hypertrophy-focused accessories can use shorter rests if desired. Milo added that existing evidence suggests 1-2 minute rests can be close to optimal for many hypertrophy contexts, but it does not prove that all advanced squat work should be capped at 2 minutes. They also noted practical constraints: with limited session time, very long rests reduce total work opportunities. Net take: 6-7 minutes is not automatically wrong for heavy volume squat sets, especially when sport performance quality is a priority.",
+      "skills": ["sbs-strength-training", "sbs-squat"],
+      "topic": "Hypertrophy vs rest-interval tradeoffs"
+    },
+    {
+      "question": "In pro sports, are there likely hidden super-drugs that athletes use, or is the claim that \"everyone is on PEDs\" overstated?",
+      "answer_summary": "The hosts said blanket claims that all pros are on PEDs are usually too broad. Greg emphasized that modern, well-funded anti-doping (random unannounced testing, strong assays, isotope-ratio methods, sample storage for retesting, and strict whereabouts rules) can be very effective. In his view, successful cheating is often more about exploiting testing gaps/logistics and lax league protocols than using mysterious undetectable compounds. They discussed how rules differ by sport/league (offseason windows, test-frequency caps, and enforcement quality), which changes risk-reward and likely prevalence. Their estimate was that use is probably a sizable minority in some contexts, not universal 100%. Practical takeaway: evaluate each sport’s testing architecture before making sweeping conclusions about \"super drugs\" or universal doping.",
+      "skills": ["sbs-strength-training"],
+      "topic": "PED plausibility and testing systems"
+    },
+    {
+      "question": "What should a 15-year-old do to gain muscle and strength: exercise selection, weekly volume, reps/intensity/failure, and calories/macros?",
+      "answer_summary": "Pack recommended building around major compound patterns (squat/press/hinge/row variants), optionally with machines, and generally using 2-3 exercises per major muscle group. He suggested starting around 8-12 fractional sets per muscle per week and mostly training in about the 5-12 rep range. Effort guidance was to keep most work close to failure (roughly 0-2 RIR), with many sets around 1-2 RIR and some sets to failure to calibrate effort. For nutrition, he suggested a slow gain target around 1% body weight per month and protein roughly 1.5-2.0 g/kg/day, without overcomplicating supplements (creatine aside, whole-food habits first). Frequency guidance was about 3-5 sessions/week (with even 2 able to work for beginners). Greg added that beginners benefit from substantial bodyweight/calisthenic practice first (e.g., competent push-ups/lunges/step-ups) to build control and movement awareness before aggressively loading barbells.",
+      "skills": ["sbs-diet", "sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "Teen training and nutrition fundamentals"
+    }
+  ]
+}

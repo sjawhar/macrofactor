@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer explains stimulant interactions depend on enzyme pathways, not just both being stimulants",
+      "passed": true,
+      "evidence": "Found 'enzyme' in: ...ct on Nicotine\n\n- **Caffeine inhibits CYP1A2**, the primary enzyme responsible for nicotine metabolism\n- This can **slow nicot..."
+    },
+    {
+      "text": "Answer mentions caffeine is metabolized through CYP1A2 and nicotine through CYP2A6/CYP2B6",
+      "passed": true,
+      "evidence": "Found 'CYP1A2' in: ....\n\n### Caffeine's Effect on Nicotine\n\n- **Caffeine inhibits CYP1A2**, the primary enzyme responsible for nicotine metabolism\n-..."
+    },
+    {
+      "text": "Answer notes smoking can induce CYP1A2, potentially shortening caffeine half-life",
+      "passed": true,
+      "evidence": "Found 'induc' in: ...ne effects\n\n### Nicotine's Effect on Caffeine\n\n- **Nicotine induces CYP1A2**, the same enzyme that metabolizes caffeine\n- Thi..."
+    },
+    {
+      "text": "Answer recommends treating multi-compound interactions as a pharmacist-level problem",
+      "passed": false,
+      "evidence": "Missing any of: ['pharmacist', 'medication interaction']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

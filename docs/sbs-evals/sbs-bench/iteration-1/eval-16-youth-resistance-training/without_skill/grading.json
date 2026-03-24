@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States current evidence does not show lifting stunts growth",
+      "passed": true,
+      "evidence": "States: 'fear of resistance training damaging growth plates is largely a myth.'"
+    },
+    {
+      "text": "Notes typical training loads are less concerning for growth plates than everyday running/jumping",
+      "passed": true,
+      "evidence": "States growth plate injuries from 'acute trauma' and 'overuse', not from resistance training itself."
+    },
+    {
+      "text": "Emphasizes close supervision and strict technique",
+      "passed": true,
+      "evidence": "Emphasizes 'properly supervised' and 'proper form.'"
+    },
+    {
+      "text": "Before/during early puberty: prioritize movement skill development over maximal loading",
+      "passed": true,
+      "evidence": "Pre-pubescent: 'bodyweight exercises, light resistance, and movement quality.'"
+    },
+    {
+      "text": "As puberty progresses, training stress can be scaled up",
+      "passed": true,
+      "evidence": "Adolescents: 'Can progress to moderate loads with excellent form.'"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

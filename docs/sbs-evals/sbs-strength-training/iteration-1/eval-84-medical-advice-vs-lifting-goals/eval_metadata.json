@@ -1,0 +1,15 @@
+{
+  "eval_id": 84,
+  "eval_name": "eval-84-medical-advice-vs-lifting-goals",
+  "prompt": "How should I respond when a doctor tells me to stop squatting because it\u2019s bad for my knees?",
+  "expected_output": "They recommended starting from empathy for the clinician\u2019s context: general practitioners usually prioritize reducing symptoms and preserving activities of daily living, not maximizing squat performance. In that framework, conservative advice to stop a painful non-essential activity can be expected. But they also said lifters should seek second opinions from sports medicine professionals or PTs who understand training goals. They framed this as a cost-benefit decision where your risk tolerance and priorities matter. The practical message was: don\u2019t automatically dismiss medical advice, but get context-specific guidance from providers experienced with athletes.",
+  "topic": "medical advice vs lifting goals",
+  "episode": 58,
+  "assertions": [
+    "Answer captures the core SBS position on medical advice vs lifting goals",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

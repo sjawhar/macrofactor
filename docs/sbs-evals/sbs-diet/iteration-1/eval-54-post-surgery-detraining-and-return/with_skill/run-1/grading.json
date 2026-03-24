@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states nutrition alone is usually weak for preventing detraining losses compared with loading",
+      "passed": false,
+      "evidence": "Missing any of: ['nutrition alone', 'weak', 'loading']"
+    },
+    {
+      "text": "Answer mentions very high leucine intakes (15-19 g/day) sometimes show partial benefit",
+      "passed": true,
+      "evidence": "Found 'leucine' in: ...protein feedings/day**, each with \u22650.3 g/kg protein (~2\u20133 g leucine per meal).\n\n#### Fat Target\n\n- **20\u201335% of total calories**..."
+    },
+    {
+      "text": "Answer recommends working closely with surgeon/clinical team for return-to-training timing",
+      "passed": true,
+      "evidence": "Found 'surgeon' in: ...6\u20138 weeks before full lifting.\n- **Always confirm with your surgeon before resuming any loaded movements.**\n\n### Training Progr..."
+    },
+    {
+      "text": "Answer notes regaining lost strength is typically faster than building it the first time",
+      "passed": true,
+      "evidence": "Found 'regain' in: ...ering.\n\n**Key principle:** Detraining is reversible. You'll regain strength and muscle faster than you built it initially (neu..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

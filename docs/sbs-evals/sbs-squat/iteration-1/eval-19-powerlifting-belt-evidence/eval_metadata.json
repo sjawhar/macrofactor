@@ -1,0 +1,11 @@
+{
+  "eval_id": 19,
+  "eval_name": "powerlifting-belt-evidence",
+  "prompt": "It's been years since the Belt Bible. Has the powerlifting belt evidence changed enough to require a rewrite?",
+  "assertions": [
+    "States core belt conclusions are largely unchanged",
+    "Does not recommend an urgent full rewrite",
+    "Mentions at least one mechanistic study supporting intra-abdominal pressure increasing hip extension torque",
+    "Concludes belts still make sense for many lifters"
+  ]
+}

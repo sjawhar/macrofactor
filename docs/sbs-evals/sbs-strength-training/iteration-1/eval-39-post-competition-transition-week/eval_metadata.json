@@ -1,0 +1,14 @@
+{
+  "eval_id": 39,
+  "eval_name": "eval-39-post-competition-transition-week",
+  "prompt": "What do you personally do right after a meet\u2014jump into the next block immediately or take time off?",
+  "expected_output": "The answer is context-dependent. If an athlete is motivated and recovered, they can return quickly; if beat up, use an easier first week with roughly 70-80% loading and reduced volume. They frame complete time off as acceptable when needed, since one week in a year is trivial. Their preference is usually to keep intensity present while temporarily pulling back volume.",
+  "topic": "post-competition transition week",
+  "episode": 27,
+  "assertions": [
+    "Answer captures the core SBS position on post-competition transition week",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

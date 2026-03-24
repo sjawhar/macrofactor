@@ -1,0 +1,15 @@
+{
+  "eval_id": 47,
+  "eval_name": "eval-47-bone-muscle-crosstalk",
+  "prompt": "Since lifting can increase bone mineral density, could improving bone mass also feed back to improve strength or muscle gain? If so, how would you try to prioritize bone gains?",
+  "expected_output": "Eric said the two-way relationship is plausible, while also noting the evidence is still emerging. He referenced mechanistic ideas like bone-derived signaling factors and acknowledged this area is active research rather than settled doctrine. For practical bone-focused strategies, he highlighted continued heavy resistance training as the foundation. He also suggested carefully introducing high-load partials to increase skeletal loading and considering impact-oriented work where appropriate and tolerated. The tone was cautiously optimistic: likely real, but not yet pinned down with definitive prescriptions.",
+  "topic": "bone-muscle crosstalk",
+  "episode": 29,
+  "assertions": [
+    "Answer captures the core SBS position on bone-muscle crosstalk",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

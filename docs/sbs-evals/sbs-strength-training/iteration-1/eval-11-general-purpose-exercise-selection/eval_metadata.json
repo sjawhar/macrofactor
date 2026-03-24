@@ -1,0 +1,15 @@
+{
+  "eval_id": 11,
+  "eval_name": "eval-11-general-purpose-exercise-selection",
+  "prompt": "A listener asked: if someone wants to get bigger and stronger for general health/recreation (not powerlifting or bodybuilding competition), what specific core exercises should they prioritize?",
+  "expected_output": "Greg recommended a 6-pattern base: weighted (optionally hand-elevated) push-ups, single-arm dumbbell overhead press (or push press), neutral-grip pull-ups/pulldowns, single-arm dumbbell rows, trap-bar deadlifts, and rear-foot-elevated split squats. He emphasized these as practical defaults for most people because they are easier to learn, joint-friendly, and broadly effective. Eric largely agreed, and added alternatives like low-incline dumbbell press, chin-ups, walking lunges, and single-leg RDLs. Both stressed using movement categories first (horizontal/vertical push-pull, knee/hip dominant lower body), then customizing. They also noted overhead pressing is optional for some trainees and shouldn\u2019t be included just out of obligation.",
+  "topic": "general-purpose exercise selection",
+  "episode": 106,
+  "assertions": [
+    "Answer captures the core SBS position on general-purpose exercise selection",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

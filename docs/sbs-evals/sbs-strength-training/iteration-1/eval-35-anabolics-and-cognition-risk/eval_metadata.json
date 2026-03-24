@@ -1,0 +1,15 @@
+{
+  "eval_id": 35,
+  "eval_name": "eval-35-anabolics-and-cognition-risk",
+  "prompt": "Greg mentioned avoiding anabolic steroids partly due to possible cognitive effects. What evidence is there for that?",
+  "expected_output": "Greg cited a 2017 structural brain imaging paper on long-term anabolic-androgenic steroid users versus non-users reporting smaller values in some brain-structure measures and lower verbal IQ in users. He repeatedly emphasized the key caveat: the human evidence is largely cross-sectional, so causality cannot be confirmed. He also mentioned mechanistic evidence suggesting neurotoxicity at high androgen exposure, with trenbolone called out as particularly concerning in preclinical contexts. His take was that evidence is less definitive than classic side effects (e.g., lipid changes), but concerning enough to influence personal risk decisions. He also suggested dose likely matters, with higher exposures plausibly carrying greater risk.",
+  "topic": "anabolics and cognition risk",
+  "episode": 25,
+  "assertions": [
+    "Answer captures the core SBS position on anabolics and cognition risk",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

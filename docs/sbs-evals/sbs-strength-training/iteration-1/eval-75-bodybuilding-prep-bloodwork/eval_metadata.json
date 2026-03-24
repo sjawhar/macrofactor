@@ -1,0 +1,14 @@
+{
+  "eval_id": 75,
+  "eval_name": "eval-75-bodybuilding-prep-bloodwork",
+  "prompt": "Are abnormal blood markers expected in natural bodybuilders, especially during overreaching blocks or contest prep (RBC/WBC/testosterone/iron, etc.)?",
+  "expected_output": "Eric said yes\u2014contextual abnormalities are common and often expected in trained lifters and especially in prep. He noted lifters can show elevated creatinine (muscle mass, diet, creatine use), elevated creatine kinase and related muscle-damage enzymes after hard training, and altered endocrine markers during aggressive phases. In overreaching contexts, cortisol:testosterone ratio shifts and inflammatory markers can move, while contest prep often shows low testosterone/thyroid and additional immune-related changes. He referenced physique-athlete literature showing hormonal suppression during prep with substantial recovery over following months post-show. He also noted that prep's low calories, food monotony, and heavy training can create short-term insufficiency patterns in some nutrients. Main takeaway: interpret labs through the lens of training phase, diet, and body composition status rather than isolated reference ranges alone.",
+  "topic": "bodybuilding prep bloodwork",
+  "episode": 50,
+  "assertions": [
+    "Answer captures the core SBS position on bodybuilding prep bloodwork",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer advises not treating bulking as a simple on/off category or scheduling by calendar",
+      "passed": true,
+      "evidence": "Found 'not' in: ...- **Caloric surplus**: 300-500 calories above maintenance (not 1000+)\n- **Weight gain rate**: 0.5-1 lb per week for most p..."
+    },
+    {
+      "text": "Answer recommends setting specific endpoints (lean mass goal, fat gain limit, timeline)",
+      "passed": true,
+      "evidence": "Found 'goal' in: ...cles depends on several factors including experience level, goals, and individual response to caloric manipulation.\n\n### Beg..."
+    },
+    {
+      "text": "Answer states larger surpluses should be shorter and used less often",
+      "passed": true,
+      "evidence": "Found 'surplus' in: ...es\n- **Research suggests**: After 12-16 weeks of continuous surplus, the ratio of muscle to fat gained becomes increasingly unf..."
+    },
+    {
+      "text": "Answer gives a practical minimum bulk duration of about one month",
+      "passed": true,
+      "evidence": "Found 'minimum' in: ...ks between longer bulks.\n\n### Practical Considerations\n\n- **Minimum phase length**: 6-8 weeks (shorter phases don't allow suffi..."
+    },
+    {
+      "text": "Answer notes that if surplus isn't producing muscle/strength gains, the bulk may no longer be effective",
+      "passed": true,
+      "evidence": "Found 'not' in: ...- **Caloric surplus**: 300-500 calories above maintenance (not 1000+)\n- **Weight gain rate**: 0.5-1 lb per week for most p..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

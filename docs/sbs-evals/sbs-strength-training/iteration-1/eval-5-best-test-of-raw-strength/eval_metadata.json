@@ -1,0 +1,14 @@
+{
+  "eval_id": 5,
+  "eval_name": "eval-5-best-test-of-raw-strength",
+  "prompt": "Is the bench press the best measure of raw physical strength? If not, what is?",
+  "expected_output": "They said bench is not the best gauge of raw strength. Both favored strongman-style odd-object lifting/carrying (for example Husafell-style stone carry or irregular stone lifting) as a better test of broad physical strength. Their reasoning was that odd objects are awkward and hard to game with technique compared with highly standardized barbell lifts. That makes the task feel closer to general real-world force application rather than a specific trained movement skill. So while bench is useful for upper-body strength tracking, they did not treat it as the top global strength proxy.",
+  "topic": "best test of raw strength",
+  "episode": 104,
+  "assertions": [
+    "Answer captures the core SBS position on best test of raw strength",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

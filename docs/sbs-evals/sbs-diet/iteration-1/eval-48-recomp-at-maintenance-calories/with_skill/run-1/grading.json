@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says yes, recomposition at maintenance calories is possible in the right context",
+      "passed": true,
+      "evidence": "Found 'yes' in: ...s with High Protein and Spare Body Fat?\n\n## Short Answer\n\n**Yes, but with important caveats.** This is called \"body recompo..."
+    },
+    {
+      "text": "Answer mentions training status, current body composition, training stimulus quality, and protein as key factors",
+      "passed": true,
+      "evidence": "Found 'training status' in: ...ity is highest when **all three conditions are met**:\n\n1. **Training status is newer** \u2014 beginners and intermediate lifters (first 1\u20133..."
+    },
+    {
+      "text": "Answer states people with more body fat are generally better candidates",
+      "passed": true,
+      "evidence": "Found 'body fat' in: ...Eating at Maintenance Calories with High Protein and Spare Body Fat?\n\n## Short Answer\n\n**Yes, but with important caveats.** Thi..."
+    },
+    {
+      "text": "Answer notes a large caloric surplus is not always required to add muscle",
+      "passed": true,
+      "evidence": "Found 'not' in: ...e** (muscle gain \u2248 fat loss).\n- **Body composition improves noticeably** over weeks/months (clothes fit better, mirror chan..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

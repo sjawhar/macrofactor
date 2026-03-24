@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Gives a clear affirmative — deadlifts can be fully removed for bodybuilding purposes",
+      "passed": true,
+      "evidence": "Short answer: 'Yes, you can build an excellent physique without conventional deadlifts or deadlift variations.' Verdict: 'Yes, you can completely remove deadlifts and build an excellent physique.'"
+    },
+    {
+      "text": "Lists specific alternative exercises covering the same muscle groups (e.g., hamstring curls, hip thrusts, rows, pull-ups, shrugs)",
+      "passed": true,
+      "evidence": "Detailed replacement strategy: RDLs, stiff-leg deadlifts, leg curls, Nordic curls for hamstrings; hip thrusts, pull-throughs for glutes; back raises, good mornings, rows for erectors. Sample workout provided."
+    },
+    {
+      "text": "Acknowledges deadlifts are time-efficient for loading multiple posterior muscles simultaneously",
+      "passed": true,
+      "evidence": "'The challenge isn't that deadlifts are irreplaceable—it's that they're efficient at delivering all three simultaneously. Removing them means you need multiple exercises to cover the same ground.'"
+    },
+    {
+      "text": "Notes replacement is especially viable when lifters have injuries, poor tolerance, or strong preference against deadlifts",
+      "passed": true,
+      "evidence": "Final line: 'If you enjoy deadlifting, keep it. If you don't, or if it causes problems, you can absolutely build a great physique without it.' Also notes 'Reduced injury risk (if deadlifts have caused issues).'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

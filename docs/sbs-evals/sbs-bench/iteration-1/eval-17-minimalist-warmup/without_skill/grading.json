@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States minimalist warm-ups are fine IF they reliably prepare you for the session",
+      "passed": true,
+      "evidence": "States: 'For many lifters, a 5-10 minute progression from empty bar to working weight is sufficient.'"
+    },
+    {
+      "text": "Frames it as a cost-benefit issue (especially for time-limited lifters)",
+      "passed": true,
+      "evidence": "Discusses time efficiency and when minimalism works best."
+    },
+    {
+      "text": "Warns against under-warming if needed mobility/positioning work is removed",
+      "passed": true,
+      "evidence": "Lists 'Hidden Costs' including individual variation and genuine mobility restrictions."
+    },
+    {
+      "text": "Recommends iterative troubleshooting: remove one element at a time, keep only what helps",
+      "passed": false,
+      "evidence": "Does not explicitly recommend iterative removal approach. Gives general guidelines instead."
+    },
+    {
+      "text": "Concludes the best warm-up is the minimum effective warm-up for your body and session",
+      "passed": true,
+      "evidence": "Discusses matching warm-up to individual needs and limitations."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

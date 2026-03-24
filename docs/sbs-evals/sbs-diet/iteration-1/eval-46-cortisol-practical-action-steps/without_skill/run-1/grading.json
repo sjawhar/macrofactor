@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer draws a three-part distinction: normal fluctuations, severe chronic stress, and true endocrine pathology",
+      "passed": true,
+      "evidence": "Found 'normal' in: ...at gain is modest:**\n\n1. **Cortisol is necessary** \u2014 It's a normal, essential hormone that helps regulate metabolism, blood su..."
+    },
+    {
+      "text": "Answer states intervention target for persistent high stress is stress management, not cortisol supplements",
+      "passed": true,
+      "evidence": "Found 'stress management' in: ...ce? Cortisol doesn't matter if calories are controlled.\n- **Stress management helps, but it's not magic:** Better sleep, exercise, and st..."
+    },
+    {
+      "text": "Answer notes cortisol follows diurnal rhythms so single snapshots can be misleading",
+      "passed": false,
+      "evidence": "Missing any of: ['diurnal', 'rhythm', 'snapshot']"
+    },
+    {
+      "text": "Answer provides a practical decision tree: don't panic about ordinary fluctuations, address persistent symptoms",
+      "passed": true,
+      "evidence": "Found 'practical' in: ...# Cortisol and Fat Gain: Current Practical Takeaway\n\n## The Core Issue\n\nMany people believe they're \"h..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

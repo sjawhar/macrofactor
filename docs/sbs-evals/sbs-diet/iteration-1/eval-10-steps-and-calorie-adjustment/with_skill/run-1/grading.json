@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says calorie reduction needed may be smaller than expected due to constrained energy expenditure",
+      "passed": true,
+      "evidence": "Found 'not' in: ...le/high** (1.6\u20132.2 g/kg/day if lifting; 1.2\u20131.8 g/kg/day if not).\n- **Reduce fat and carbs together** until you hit your fa..."
+    },
+    {
+      "text": "Answer mentions appetite tends to downshift alongside activity reduction",
+      "passed": false,
+      "evidence": "Missing any of: ['appetite', 'downshift', 'decrease']"
+    },
+    {
+      "text": "Answer recommends gradual step reduction with monitoring rather than one huge calorie cut",
+      "passed": true,
+      "evidence": "Found 'monitor' in: ...our new expenditure and your goal (cut/maintain/gain). Then monitor your weight trend and iterate if needed...."
+    },
+    {
+      "text": "Answer warns that dropping to fully sedentary can create worse appetite-expenditure mismatch",
+      "passed": false,
+      "evidence": "Missing any of: ['sedentary', 'mismatch']"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

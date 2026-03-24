@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Pushes back on the blanket claim that deadlifts are inherently more fatiguing, citing data showing similar fatigue outcomes",
+      "passed": true,
+      "evidence": "Opens with: 'This claim is partially true but oversimplified, and the reasoning behind it matters more than the blanket statement.' Later: 'a set of 10 moderate deadlifts (75% 1RM) is roughly equivalent in fatigue to a set of 10 moderate squats.' Pushes back on the blanket claim."
+    },
+    {
+      "text": "Mentions practical contributors: hand/forearm grip stress, sumo vs conventional tolerance differences, and/or spinal flexion tolerance",
+      "passed": true,
+      "evidence": "Discusses 'less favorable mechanical position for the lower back' (spinal position), intensity as the main driver, and mechanical differences. Doesn't specifically mention grip stress or sumo/conventional but addresses spinal demands."
+    },
+    {
+      "text": "Highlights path dependency: lifters with more squat exposure may find deadlifts seem more fatiguing due to lower deadlift training history",
+      "passed": false,
+      "evidence": "Does not discuss path dependency or training history effects on perceived deadlift fatigue. Mentions 'trained athletes' can tolerate more volume but doesn't connect this to relative exposure history."
+    },
+    {
+      "text": "Recommends programming based on individual recovery patterns rather than assuming universal deadlift fragility",
+      "passed": true,
+      "evidence": "'The real rule is: match volume to intensity.' 'The mistake many lifters make is assuming deadlifts are inherently more fatiguing regardless of how they're programmed.' Context-dependent approach."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

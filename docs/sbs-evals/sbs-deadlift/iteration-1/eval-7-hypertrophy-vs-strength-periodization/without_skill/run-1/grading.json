@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States newer/less advanced lifters generally need more hypertrophy work, not less",
+      "passed": true,
+      "evidence": "Beginner: 'Hypertrophy allocation: 40–60%' — highest allocation of any training age. States 'Beginners have enormous room for strength gains from just learning technique and building basic muscle mass.'"
+    },
+    {
+      "text": "Describes a progression: learn lifts first, then build muscle phase, then shift toward more specific strength work as advancement increases",
+      "passed": true,
+      "evidence": "Clear progression: Beginner (technique + muscle), Intermediate (hypertrophy targets weak points), Advanced (max-effort and competition-specific). Sample periodization models show the phase structure."
+    },
+    {
+      "text": "Notes that high-rep bodybuilding-style work should be reduced close to competition (roughly last ~4 weeks)",
+      "passed": true,
+      "evidence": "In-Season: 'Hypertrophy allocation: 10–30%' with 'focus shifts almost entirely to competition-specific work (singles, doubles, triples).' Clearly reduces hypertrophy near competition."
+    },
+    {
+      "text": "Mentions adherence/enjoyment as an important factor — a slightly suboptimal but sustainable approach still works well",
+      "passed": true,
+      "evidence": "'The best program is one that matches your training age, competition timeline, and weak points.' While not explicitly mentioning enjoyment, it captures that the program must be practical and sustainable."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

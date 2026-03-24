@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States current evidence does not show that resistance training stunts growth",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Notes that typical training loads are likely less concerning for growth plates than everyday running/jumping",
+      "passed": true,
+      "evidence": "Found matching content: ...f anything, the mechanical loading from running, jumping, and contact sports places mor..."
+    },
+    {
+      "text": "Emphasizes close supervision and strict technique focus",
+      "passed": true,
+      "evidence": "Found matching content: ...reports involving acute injuries from unsupervised, poorly programmed training, not from..."
+    },
+    {
+      "text": "Recommends movement skill development as priority before/during early puberty rather than chasing maximal loads",
+      "passed": true,
+      "evidence": "Found matching content: ...unger trainees who are still developing body awareness and motor patterns. A youth athlete who..."
+    },
+    {
+      "text": "Notes that training stress can be scaled up as puberty progresses",
+      "passed": true,
+      "evidence": "Found matching content: ...tes, Heavy Singles, and Age-Appropriate Progression\n\n**Question:** \"How should kids and..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

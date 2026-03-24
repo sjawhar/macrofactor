@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States current evidence does not show that lifting stunts growth",
+      "passed": true,
+      "evidence": "'Properly supervised resistance training is safe for children and adolescents and does not damage growth plates.' 'Resistance training does not prematurely close growth plates or stunt growth.'"
+    },
+    {
+      "text": "Notes that typical training loads are likely less concerning for growth plates than everyday running/jumping impact forces",
+      "passed": true,
+      "evidence": "'Most growth plate injuries in youth come from sports-specific trauma (collision, falling, sudden impact), not from controlled resistance training.' This comparison shows training is less concerning than sport-related forces."
+    },
+    {
+      "text": "Emphasizes close supervision, strict technique, and minimizing preventable injuries",
+      "passed": true,
+      "evidence": "'Supervision and coaching are critical, especially for barbell movements.' 'Technique first, always: Perfect form at lighter weights beats sloppy form at heavy weights.'"
+    },
+    {
+      "text": "Recommends movement skill development before/during early puberty rather than chasing failure or maximal loads",
+      "passed": true,
+      "evidence": "Pre-Pubescent (6-11): 'Focus: Movement quality, body awareness, and fun.' Early Adolescence (12-14): 'Perfect technique before adding load; compound movements.' 'Avoid: Heavy loads, maximal efforts.'"
+    },
+    {
+      "text": "Notes training stress can be scaled up as puberty progresses",
+      "passed": true,
+      "evidence": "Clear age progression: Pre-Pubescent (bodyweight, light), Early Adolescence (light to moderate), Mid-to-Late Adolescence (moderate to heavy). 'More structured progression schemes' for older teens."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

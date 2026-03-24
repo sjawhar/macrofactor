@@ -1,0 +1,1555 @@
+{
+  "metadata": {
+    "skill_name": "sbs-deadlift",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-03-27T16:38:28Z",
+    "evals_run": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.4,
+        "passed": 2,
+        "failed": 3,
+        "total": 5,
+        "time_seconds": 47,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Mentions aerobic capacity testing (e.g., 2-mile run, 5K, or similar endurance event)",
+          "passed": false,
+          "evidence": "The answer focuses on deadlift-centric testing (deadlift 1RM, 5RM, deficit pull) and general fitness tests (vertical jump, grip strength, plank). No aerobic running tests (2-mile, 5K, etc.) are mentioned anywhere."
+        },
+        {
+          "text": "Mentions anaerobic or sprint testing (e.g., 400m, 800m, 40m dash, or 100m)",
+          "passed": false,
+          "evidence": "No sprint or anaerobic running tests are mentioned. The battery is entirely strength/power focused with no running component."
+        },
+        {
+          "text": "Mentions explosive power testing (e.g., vertical jump, broad jump, or medicine ball throws)",
+          "passed": true,
+          "evidence": "Section 5 covers 'Vertical Jump (Power Assessment)' and Section 7 covers 'Broad Jump (Horizontal Power)' in the extended battery."
+        },
+        {
+          "text": "Mentions strength testing (e.g., squat/bench/deadlift max or rep max)",
+          "passed": true,
+          "evidence": "Sections 1-4 cover Deadlift 1RM, Back Squat 1RM, Bench Press 1RM, and Deadlift 5RM."
+        },
+        {
+          "text": "Acknowledges this full battery may be better suited to longer intervals (e.g., annual) rather than every 12 weeks",
+          "passed": false,
+          "evidence": "The answer endorses 12-week testing throughout: 'Testing every 12 weeks allows sufficient training stimulus to produce measurable changes.' No mention that a full battery might be better as an annual check."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 10,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 41,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Recommends keeping competition lifts in moderate strength-relevant rep ranges rather than going entirely high-rep",
+          "passed": true,
+          "evidence": "Phase 2 includes '2\u20133 singles at 80\u201385% 1RM' and '3\u20134 sets of 3\u20135 reps at 70\u201375% 1RM.' Phase 3 maintains '2 singles at 80% 1RM (technical anchor).' Competition lifts stay in strength-relevant ranges throughout."
+        },
+        {
+          "text": "Suggests a specific structure (e.g., mostly 5-10 rep range with periodic heavier work like triples)",
+          "passed": true,
+          "evidence": "Clear progression: Phase 2 uses 3-5 rep and 6-8 rep work. Phase 3 shifts to 5-6 and 6-8 rep ranges. Periodic heavy singles maintained throughout. Detailed 12-week progression table provided."
+        },
+        {
+          "text": "Mentions an over-warm or heavy single strategy (e.g., RPE 8 single) before volume work to maintain neural readiness",
+          "passed": true,
+          "evidence": "Phase 3: '2 singles at 80% 1RM (technical anchor)' placed before volume work. 'Technical anchor singles maintain CNS efficiency and prevent strength loss.' This matches the over-warm single concept."
+        },
+        {
+          "text": "Core message: maintain some heavy practice while accumulating hypertrophy volume",
+          "passed": true,
+          "evidence": "'This approach preserves your meet-prep strength gains while building hypertrophy sustainably.' Strength Preservation Tactics section explicitly addresses keeping heavy work alongside volume."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 11,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 30,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Frames the answer as context-dependent based on athlete motivation and recovery state",
+          "passed": true,
+          "evidence": "Opening: 'The answer depends on fatigue state, technical quality, and what you're trying to accomplish next.' Autoregulation section: 'If you feel recovered (rare): You can resume sooner. If you feel fatigued (common): Delay.'"
+        },
+        {
+          "text": "If beat up, suggests an easier first week with reduced loading (roughly 70-80% range) and reduced volume",
+          "passed": true,
+          "evidence": "Days 1-3: 'Light hinge accessories if they feel good (RDLs at 50\u201360%).' Days 4-7: 'technique-first, lower-load work: paused pulls, controlled eccentrics, speed work at 60\u201370% of your meet max.' Reduced frequency to 1x/week."
+        },
+        {
+          "text": "Notes that complete time off is acceptable and one week off per year is trivial in the long run",
+          "passed": false,
+          "evidence": "Says 'Don't take 2+ weeks completely off. You'll lose strength and motor patterning.' Does not state that complete time off is acceptable or that one week off per year is trivial, which is what the hosts actually said."
+        },
+        {
+          "text": "General preference: keep intensity present while temporarily reducing volume",
+          "passed": true,
+          "evidence": "Maintains technical work throughout: 'Light hinge accessories,' 'technique-first work,' and transition block at '85\u201390% of your pre-meet baseline.' Volume is reduced while some intensity is preserved."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 12,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 37,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Advises against changing things while progress is still occurring",
+          "passed": true,
+          "evidence": "'If a program is working\u2014meaning you're making progress, staying healthy, and recovering adequately\u2014the default move is to iterate and refine, not abandon it.' Lists 'Green flags that suggest tweaking will work.'"
+        },
+        {
+          "text": "When plateau appears, recommends deciding whether the lift needs more stress or less stress",
+          "passed": true,
+          "evidence": "Step 2 'Diagnose the Limiting Factor' covers both directions: Volume/Frequency Mismatch (possibly too much stress) vs Weak Link in the Chain (possibly too little targeted stress). Section B suggests reducing deadlift volume/frequency when overtrained."
+        },
+        {
+          "text": "Recommends small, targeted changes (volume, intensity, frequency, or exercise selection) evaluated individually over weeks",
+          "passed": true,
+          "evidence": "Step 3: 'Make ONE Change at a Time. Critical rule: Change one variable, measure for 4\u20136 weeks, then decide.' Priority order: technique \u2192 volume/frequency \u2192 accessories \u2192 program structure."
+        },
+        {
+          "text": "Only switch programs entirely after serial targeted tweaks have failed",
+          "passed": true,
+          "evidence": "Step 5: 'Only switch if: You've diagnosed the limiting factor, You've made targeted tweaks and given them 6\u201312 weeks, You're still not progressing.' Don't switch after just one tweak."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 13,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.67,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 26,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Explains the theoretical rationale: accommodating resistance matches the lift's force curve (lighter at bottom, heavier at lockout)",
+          "passed": true,
+          "evidence": "'Bands and chains increase load toward lockout, where you're mechanically strongest and can handle more force. This allows overload exposure in the range where you're most capable of producing force.'"
+        },
+        {
+          "text": "Cites research evidence (including meta-analytic or review-level) showing little to no clear strength advantage over conventional loading",
+          "passed": false,
+          "evidence": "States 'Transfer to raw deadlift strength is modest and indirect' and 'They don't build absolute strength as efficiently as heavy barbell work' but does not cite specific research, meta-analyses, or review-level evidence. The expected output referenced meta-analytic evidence specifically."
+        },
+        {
+          "text": "Concludes they are fine as variation tools but not reliably superior for maximal strength",
+          "passed": true,
+          "evidence": "'They're a specialized accessory for specific problems, not a replacement for heavy barbell training.' Hierarchy places accommodating resistance 4th behind barbell deadlifts, hinge accessories, and lockout-specific work."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 14,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 33,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States isometrics can work but the most effective style is high-intent ballistic maximal contractions (max force as fast as possible)",
+          "passed": false,
+          "evidence": "Discusses isometrics as maintenance tools with 'high-tension holds' but does not specifically describe the most effective style as high-intent ballistic maximal contractions (trying to hit max force as fast as possible). Greg specifically emphasized this distinction."
+        },
+        {
+          "text": "Mentions strong angle specificity: gains transfer mostly to the trained joint angle, roughly 15-30 degrees in either direction",
+          "passed": true,
+          "evidence": "'Angle-specific adaptation: Isometric strength gains are strongest within ~15\u00b0 of the training angle.' Matches the expected ~15-30 degree transfer range."
+        },
+        {
+          "text": "Provides a practical example (e.g., pulling into safety pins at a chosen deadlift height)",
+          "passed": true,
+          "evidence": "Deadlift section: 'Can be performed with a barbell in a rack, against pins.' Mentions 'Off-floor position (1\u20132 inches)' and 'Mid-shin (mid-range)' as specific positions for pin work."
+        },
+        {
+          "text": "Notes that programming prescriptions (duration, frequency, weekly dose) are less standardized than conventional training",
+          "passed": false,
+          "evidence": "Actually provides specific programming as if well-established: '20\u201360 seconds at high tension, 3\u20135 sets per session, 2\u20133x per week.' Does not note that these prescriptions are less standardized than conventional training, which is what Greg emphasized."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 15,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 32,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States current evidence does not show that lifting stunts growth",
+          "passed": true,
+          "evidence": "'Growth plate injuries from resistance training are rare when programming is sensible. The risk is not zero, but it's dramatically overstated in popular fitness culture.' Addresses the myth directly."
+        },
+        {
+          "text": "Notes that typical training loads are likely less concerning for growth plates than everyday running/jumping impact forces",
+          "passed": false,
+          "evidence": "Does not compare resistance training loads to running/jumping impact forces. Greg specifically made this comparison, noting everyday activities expose growth plates to similar or greater forces."
+        },
+        {
+          "text": "Emphasizes close supervision, strict technique, and minimizing preventable injuries",
+          "passed": true,
+          "evidence": "'Supervision and coaching: A coach or experienced lifter should monitor form.' 'Technique quality under load \u2014 This is the primary safety factor.' Red Flags section addresses form breakdown, pain, and fatigue."
+        },
+        {
+          "text": "Recommends movement skill development before/during early puberty rather than chasing failure or maximal loads",
+          "passed": true,
+          "evidence": "Ages 12-14 Foundation Phase: 'Movement quality, work capacity, basic strength, habit formation.' 'Focus on 8\u201315 rep ranges. Avoid heavy singles; max out at ~80% perceived effort. No maxing out attempts.'"
+        },
+        {
+          "text": "Notes training stress can be scaled up as puberty progresses",
+          "passed": true,
+          "evidence": "Clear progression: Ages 12-14 (foundation, light loads) \u2192 Ages 15-17 (progressive strength, 60-85% 1RM, occasional heavy singles) \u2192 Ages 18+ (full range of intensities)."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 16,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 39,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States core belt conclusions are largely unchanged and a full rewrite is not urgently needed",
+          "passed": true,
+          "evidence": "'The Belt Bible's core conclusions hold up well for deadlifts. The mechanistic understanding remains sound, and the practical recommendations haven't fundamentally shifted.'"
+        },
+        {
+          "text": "Mentions at least one mechanism: higher intra-abdominal pressure can increase hip extension torque",
+          "passed": true,
+          "evidence": "'Elevated IAP does two critical things: 1. Stiffens the spine against compressive and shear forces. 2. Generates passive hip extension torque \u2014 the belt gives your trunk something to push against, allowing you to produce more force through the hips.'"
+        },
+        {
+          "text": "Concludes belts still make sense for many lifters and old guidance is mostly intact",
+          "passed": true,
+          "evidence": "'The practical recommendations from the Belt Bible remain solid.' Lists unchanged guidance: belts don't weaken core, use for heavy sets, train some beltless, belt fit matters."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 17,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Notes that by late teens, most lifters should be capable of solid strength gains (age is not the main limiter)",
+          "passed": true,
+          "evidence": "'Being a teenager doesn't hurt your strength progress.' 'The hormonal environment during late adolescence is quite favorable for building muscle and getting stronger. You're not fighting your biology here.'"
+        },
+        {
+          "text": "Emphasizes huge individual variability in where linear progression stalls",
+          "passed": true,
+          "evidence": "'Where linear progression stalls is enormously variable across individuals.' Discusses body size, limb proportions, and training history as sources of variation."
+        },
+        {
+          "text": "States a specific benchmark (like 405) is not a reliable readiness cutoff",
+          "passed": true,
+          "evidence": "'405 Is an Arbitrary Internet Benchmark.' 'It's a number that circulates online because it's a round number (four plates) that sounds impressive, and people pattern-match their experience to it.' 'Stalling at 315, 365, or 455 are all equally valid outcomes.'"
+        },
+        {
+          "text": "Recommends using progression timescale (weekly, monthly, etc.) rather than absolute load to classify training stage",
+          "passed": true,
+          "evidence": "'SBS methodology uses progression timescale to classify where a lifter is: Novice: Adding weight session-to-session. Intermediate: Adding weight week-to-week. Advanced: Adding weight month-to-month.' Explicit recommendation."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 18,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 33,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Pushes back on the blanket claim that deadlifts are inherently more fatiguing, citing data showing similar fatigue outcomes",
+          "passed": false,
+          "evidence": "Does the opposite \u2014 supports the claim: 'The assertion that deadlifts are \"more fatiguing\" than squats is empirically supported in SBS coaching practice.' Does not push back or cite data showing similar fatigue outcomes as Greg did (referencing Zourdos' lab data)."
+        },
+        {
+          "text": "Mentions practical contributors: hand/forearm grip stress, sumo vs conventional tolerance differences, and/or spinal flexion tolerance",
+          "passed": true,
+          "evidence": "Mentions 'Grip and forearm demand' as a secondary fatigue vector, and sumo vs conventional differences: 'Sumo deadlifts often produce less back fatigue than conventional deadlifts.' Does not explicitly mention spinal flexion tolerance."
+        },
+        {
+          "text": "Highlights path dependency: lifters with more squat exposure may find deadlifts seem more fatiguing due to lower deadlift training history",
+          "passed": false,
+          "evidence": "Does not discuss path dependency or training history effects. Greg highlighted that many lifters build years of higher squat exposure, making deadlift tolerance appear lower by comparison."
+        },
+        {
+          "text": "Recommends programming based on individual recovery patterns rather than assuming universal deadlift fragility",
+          "passed": true,
+          "evidence": "'Critical Nuance: It's Not Universal' section acknowledges individual variation and sumo/conventional differences. Autoregulation mentioned. However, the overall tone assumes deadlifts ARE more fatiguing rather than challenging the assumption."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 19,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 34,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Answer is conditional: minimalist warm-ups are fine IF they reliably prepare you for the session",
+          "passed": true,
+          "evidence": "'Minimalist warm-ups can absolutely work for deadlifting, especially if you're technically sound and have good movement quality. However...' Clear conditional framing with situations where more is needed."
+        },
+        {
+          "text": "Frames as cost-benefit, especially for time-limited lifters (cutting 30min to 5-10min adds productive training time)",
+          "passed": false,
+          "evidence": "Does not frame as a cost-benefit analysis for time-limited lifters. Does not mention the time savings (30min to 5-10min) or that shorter warm-ups free up productive training time, which was Greg's specific framing."
+        },
+        {
+          "text": "Warns against making minimalism the goal itself \u2014 under-warming can reduce readiness or increase risk",
+          "passed": true,
+          "evidence": "'Don't confuse \"minimalist\" with \"thoughtless.\"' Lists scenarios where minimalist warm-ups fall short: learning technique, fatigued/stiff, addressing specific weaknesses."
+        },
+        {
+          "text": "Recommends iterative troubleshooting: remove elements one at a time, keep only what clearly helps session quality",
+          "passed": false,
+          "evidence": "Does not recommend the iterative approach of removing warm-up elements one at a time. Greg's specific method was: remove one element at a time, keep only what clearly helps. The answer takes a different approach (categorize by lifter type)."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 32,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Acknowledges the incline could genuinely affect performance (not just 'in your head')",
+          "passed": true,
+          "evidence": "Opening states: 'Yes, a 5% incline will meaningfully hurt deadlift performance and create technical problems... This is not a minor issue\u2014it's worth fixing.'"
+        },
+        {
+          "text": "Mentions confounding variables like plate calibration differences or temperature effects",
+          "passed": false,
+          "evidence": "No mention of plate calibration differences or garage temperature effects anywhere in the answer. The expected output notes Greg said to 'check confounders: plate calibration differences and training temperature (especially cold garages).'"
+        },
+        {
+          "text": "Explains how the slope changes mechanics depending on bar/lifter orientation relative to slope (e.g., effective heel elevation, deficit-like effect, or block-pull-like effect)",
+          "passed": true,
+          "evidence": "Section 'Effective Range of Motion Changes' explains: 'Heels-high setup (incline slopes down toward toes): Your effective starting position is higher, reducing ROM' and 'Toes-high setup (incline slopes down toward heels): Your effective starting position is lower, increasing ROM.' Also discusses perpendicular vs parallel slope orientation."
+        },
+        {
+          "text": "Suggests testing or experimenting with orientation/setup to isolate the variable",
+          "passed": false,
+          "evidence": "The answer recommends fixing the platform ('Shim the low side', 'Use a Different Space') rather than experimenting with different orientations to isolate the variable. Greg recommended 'testing these setups deliberately on a flat platform to see whether they reproduce the same performance feel.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 32,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Distinguishes between acute risk in people with pre-existing vascular conditions vs. long-term causation in healthy lifters",
+          "passed": true,
+          "evidence": "'What Could Be Problematic' section addresses pre-existing hypertension and cardiovascular disease. The rest of the answer is clear that healthy lifters face no evidence of harm. The distinction is well-drawn."
+        },
+        {
+          "text": "States that direct long-term causal evidence specifically linking normal lifting bracing to vascular damage is sparse or limited",
+          "passed": true,
+          "evidence": "States: 'There is no evidence that long-term bracing and Valsalva in healthy lifters causes vascular damage.' While stronger than 'sparse,' it addresses the same point \u2014 no direct evidence exists."
+        },
+        {
+          "text": "Mentions occupational lifting epidemiology but notes it differs substantially from strength training",
+          "passed": false,
+          "evidence": "No mention of occupational lifting epidemiology anywhere. Greg specifically noted 'indirect occupational lifting epidemiology, but it differs substantially from strength training in dose, context, and confounding factors.'"
+        },
+        {
+          "text": "Recommends individualized caution for those with known medical risk rather than broad fear-based avoidance",
+          "passed": true,
+          "evidence": "Dedicated section 'For Lifters with Hypertension or Cardiovascular Risk' recommends medical clearance and modified approach for at-risk individuals, while 'For Healthy Lifters' section says 'Bracing is safe and necessary.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 43,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States there is no universal cap \u2014 optimal volume depends on goals, recovery, and time",
+          "passed": true,
+          "evidence": "Opening principle: 'The question isn't \"how much is optimal?\" but rather \"how much do I need to stay healthy and progress?\"' Framework varies by goal (strength vs balanced vs hypertrophy)."
+        },
+        {
+          "text": "Provides a practical baseline range (approximately 2-4 sets per muscle group, 1-2x/week or similar concrete guidance)",
+          "passed": true,
+          "evidence": "Explicitly states: '2\u20134 sets per muscle group per week of isolation work is sufficient for most lifters after compounds.' Muscle-by-muscle breakdown provides 2-4 set ranges."
+        },
+        {
+          "text": "Notes that global/systemic recovery can become limiting even when local muscle stress seems modest",
+          "passed": true,
+          "evidence": "'The Fatigue Budget' section notes 'Isolation work is low-fatigue relative to compounds, but it still accumulates' and provides total weekly set calculations showing how isolation adds up systemically."
+        },
+        {
+          "text": "Recommends starting conservative and scaling up based on outcomes/adaptation",
+          "passed": true,
+          "evidence": "Final section: 'Start with 2\u20133 sets per muscle group per week of isolation work. Add more only if:' followed by specific conditions. Also: 'If you're unsure, start low and add gradually.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.4,
+        "passed": 2,
+        "failed": 3,
+        "total": 5,
+        "time_seconds": 33,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Clarifies that heavy lifting itself is unlikely to directly prevent fat loss \u2014 energy balance is the main driver",
+          "passed": false,
+          "evidence": "The answer argues the opposite direction: 'frequent heavy deadlifting could be defending your body weight' through fatigue, hunger signals, and recovery demands. While it mentions energy intake matters, it doesn't clearly state that heavy lifting is 'unlikely to directly prevent fat loss' as the SBS hosts said."
+        },
+        {
+          "text": "Notes that switching from volume work to frequent 1RM attempts doesn't substantially change calorie expenditure",
+          "passed": false,
+          "evidence": "No discussion of calorie expenditure differences between volume work and 1RM testing. The expected output specifically noted this point from the hosts."
+        },
+        {
+          "text": "Suggests or implies the coaching setup may be suboptimal (years of training with limited progress)",
+          "passed": true,
+          "evidence": "'The Trainer's Role' section states: 'If your trainer has emphasized \"you need to stay heavy to stay strong,\" that's reinforcing the body-weight defense. This is not malicious, but it's potentially harmful.' Implicitly questions the coaching quality."
+        },
+        {
+          "text": "Mentions bodyweight performance targets (push-ups, pull-ups, dips) as a motivational strategy during weight loss",
+          "passed": false,
+          "evidence": "No mention of bodyweight performance targets (push-ups, pull-ups, dips) as motivational tools. The hosts specifically suggested these as targets that improve as body weight drops."
+        },
+        {
+          "text": "Recommends professional clinical support (dietitian or similar) for binge-eating concerns rather than just programming changes",
+          "passed": true,
+          "evidence": "'Talk to a therapist or eating disorder specialist who understands strength athletes. This is not optional if you're binge eating regularly.' Also recommends a 'sports nutritionist.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 59,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Recommends building around major compound movement patterns (squat, press, hinge, row or similar)",
+          "passed": true,
+          "evidence": "Section 1 lists 'The Big Three Patterns': Squat Pattern, Horizontal Press Pattern, Hinge Pattern. Secondary patterns include Vertical Press, Horizontal Pull (rows), and Vertical Pull."
+        },
+        {
+          "text": "Provides a starting volume recommendation (roughly 8-12 sets per muscle per week or similar concrete range)",
+          "passed": true,
+          "evidence": "Volume table shows MEV ranges of 8-12 sets for major muscle groups. Text states: 'For a 15-year-old beginner: Start at the MEV (Minimum Effective Volume) end.' Sample week totals ~8-12 sets per muscle group."
+        },
+        {
+          "text": "Addresses proximity to failure with specific guidance (e.g., 0-2 RIR, most sets near but not at failure)",
+          "passed": true,
+          "evidence": "Main lifts: '2-3 RIR' (2-3 reps short of failure). Accessories: '0-2 RIR'. Table shows RIR ranges for each goal. States 'Training to failure is not necessary for muscle growth.'"
+        },
+        {
+          "text": "Provides protein guidance (approximately 1.5-2.0 g/kg/day or equivalent range)",
+          "passed": true,
+          "evidence": "States: 'Target: 1.6-2.2 g of protein per kg of body weight per day' which encompasses the expected 1.5-2.0 g/kg range."
+        },
+        {
+          "text": "Mentions that beginners benefit from bodyweight/calisthenic practice for movement quality before heavy loading",
+          "passed": false,
+          "evidence": "Recommends 'Prioritize movement quality over load' and light weight for first 2-4 weeks, but does not specifically recommend bodyweight/calisthenic exercises (push-ups, lunges, step-ups) before barbell loading as Greg specifically suggested."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 7,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 40,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States newer/less advanced lifters generally need more hypertrophy work, not less",
+          "passed": true,
+          "evidence": "Beginner section: 'Hypertrophy allocation: 60\u201370% of training time' with clear rationale. Intermediate: 50-60%. Advanced: 40-50%. Clear progression showing beginners need most hypertrophy."
+        },
+        {
+          "text": "Describes a progression: learn lifts first, then build muscle phase, then shift toward more specific strength work as advancement increases",
+          "passed": true,
+          "evidence": "Beginner: 'Focus: compound movement proficiency, building a base.' Intermediate: 'Shift toward more specific strength work.' Advanced: 'Heavy, specific strength work dominates.' Clear progression."
+        },
+        {
+          "text": "Notes that high-rep bodybuilding-style work should be reduced close to competition (roughly last ~4 weeks)",
+          "passed": true,
+          "evidence": "In-Season section (4-8 weeks before competition): 'Hypertrophy allocation: 30\u201345%' with 'Accessory work becomes minimal and strategic.' Peaking block (weeks 13-16): 'Hypertrophy allocation: ~35%.' Consistent with reducing high-rep work near competition."
+        },
+        {
+          "text": "Mentions adherence/enjoyment as an important factor \u2014 a slightly suboptimal but sustainable approach still works well",
+          "passed": true,
+          "evidence": "Final Note: 'The best program is the one you'll execute consistently with good form. Periodization is a framework, not a law.' Captures the adherence principle."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 8,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 26,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Explains that heavier loads increase metabolic/oxygen cost per set, requiring longer recovery \u2014 this is a normal progression",
+          "passed": true,
+          "evidence": "Section 1 explains 'Higher force production \u2192 greater motor unit recruitment,' 'Greater metabolic demand \u2192 faster depletion of phosphocreatine,' and 'More CNS fatigue.' States this is 'a normal and expected phenomenon.'"
+        },
+        {
+          "text": "Notes research on rest intervals for hypertrophy is mixed (some favor longer, some shorter, some no difference)",
+          "passed": false,
+          "evidence": "The answer presents shorter rest as clearly advantageous for hypertrophy: 'Shorter rest periods are actually advantageous for hypertrophy.' Does not present the research as mixed \u2014 Greg said findings are mixed with some studies favoring longer, shorter, or no difference."
+        },
+        {
+          "text": "For strength, leans toward longer rest periods, especially for strong lifters on compound lifts",
+          "passed": true,
+          "evidence": "'Strength Training: Optimal rest: 3\u20135 minutes. The research is clear: for maximal strength development, longer rest periods are superior.' Cites multiple studies."
+        },
+        {
+          "text": "Provides concrete rest period ranges (e.g., ~90s-2min for isolation/upper, ~3min common, ~5min+ for heavy compounds)",
+          "passed": true,
+          "evidence": "Specific ranges: '60\u201370% 1RM: 60\u201390 seconds,' '80\u201390% 1RM: 2\u20133 minutes,' '90%+ 1RM: 3\u20135+ minutes.' Practical section: 'Expect 3\u20135 minutes between heavy deadlift sets.'"
+        },
+        {
+          "text": "Suggests non-interfering supersets as a time-saving strategy",
+          "passed": false,
+          "evidence": "No mention of supersets anywhere in the answer. Greg specifically suggested non-interfering supersets to save time without sacrificing performance."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 31,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives a clear affirmative \u2014 deadlifts can be fully removed for bodybuilding purposes",
+          "passed": true,
+          "evidence": "Short answer: 'Yes, you can build an excellent physique without conventional deadlifts or deadlift variations.' Verdict: 'Yes, you can completely remove deadlifts and build an excellent physique.'"
+        },
+        {
+          "text": "Lists specific alternative exercises covering the same muscle groups (e.g., hamstring curls, hip thrusts, rows, pull-ups, shrugs)",
+          "passed": true,
+          "evidence": "Detailed replacement strategy: RDLs, stiff-leg deadlifts, leg curls, Nordic curls for hamstrings; hip thrusts, pull-throughs for glutes; back raises, good mornings, rows for erectors. Sample workout provided."
+        },
+        {
+          "text": "Acknowledges deadlifts are time-efficient for loading multiple posterior muscles simultaneously",
+          "passed": true,
+          "evidence": "'The challenge isn't that deadlifts are irreplaceable\u2014it's that they're efficient at delivering all three simultaneously. Removing them means you need multiple exercises to cover the same ground.'"
+        },
+        {
+          "text": "Notes replacement is especially viable when lifters have injuries, poor tolerance, or strong preference against deadlifts",
+          "passed": true,
+          "evidence": "Final line: 'If you enjoy deadlifting, keep it. If you don't, or if it causes problems, you can absolutely build a great physique without it.' Also notes 'Reduced injury risk (if deadlifts have caused issues).'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 36,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Mentions aerobic capacity testing (e.g., 2-mile run, 5K, or similar endurance event)",
+          "passed": true,
+          "evidence": "Section 4.1 covers '5K Run Time' and Section 4.2 covers '1-Mile Run Time' as cardiovascular endurance tests."
+        },
+        {
+          "text": "Mentions anaerobic or sprint testing (e.g., 400m, 800m, 40m dash, or 100m)",
+          "passed": false,
+          "evidence": "No specific sprint running tests (400m, 800m, 40m, 100m) are mentioned. Section 6.1 covers 'Assault Bike \u2014 1-Minute Max Effort' which is anaerobic but not sprint running. The expected output specifically mentions running-based anaerobic tests."
+        },
+        {
+          "text": "Mentions explosive power testing (e.g., vertical jump, broad jump, or medicine ball throws)",
+          "passed": true,
+          "evidence": "Section 2.1 covers 'Vertical Jump', Section 2.2 covers 'Broad Jump', and Section 2.3 covers 'Medicine Ball Chest Pass (or Overhead Throw)' \u2014 all three expected tests."
+        },
+        {
+          "text": "Mentions strength testing (e.g., squat/bench/deadlift max or rep max)",
+          "passed": true,
+          "evidence": "Sections 1.1-1.4 cover Barbell Back Squat 1RM/3RM, Barbell Deadlift 1RM/3RM, Barbell Bench Press 1RM/3RM, and Weighted Pull-Up 1RM/3RM."
+        },
+        {
+          "text": "Acknowledges this full battery may be better suited to longer intervals (e.g., annual) rather than every 12 weeks",
+          "passed": false,
+          "evidence": "The answer recommends repeating tests every 12 weeks throughout. No mention that the full battery might be better as an annual or longer-interval assessment."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 10,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 31,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Recommends keeping competition lifts in moderate strength-relevant rep ranges rather than going entirely high-rep",
+          "passed": true,
+          "evidence": "'Start each session with a compound lift at moderate-to-high intensity (80-85% of max) for lower reps: Deadlifts: 3-4 sets \u00d7 3-5 reps.' Competition lifts stay in strength-relevant ranges."
+        },
+        {
+          "text": "Suggests a specific structure (e.g., mostly 5-10 rep range with periodic heavier work like triples)",
+          "passed": true,
+          "evidence": "Example session: 'Deadlifts: 4 \u00d7 4 @ 82% (strength)' followed by '4 \u00d7 6-8 (hypertrophy variation)' and '3 \u00d7 8-10.' Volume progression strategy from 12-15 to 18-24 sets over weeks."
+        },
+        {
+          "text": "Mentions an over-warm or heavy single strategy (e.g., RPE 8 single) before volume work to maintain neural readiness",
+          "passed": false,
+          "evidence": "Uses '4 \u00d7 4 @ 82%' as opening strength work, not singles. Does not mention an over-warm single or RPE 8 single before volume work. The expected output specifically mentioned an over-warm single around RPE 8."
+        },
+        {
+          "text": "Core message: maintain some heavy practice while accumulating hypertrophy volume",
+          "passed": true,
+          "evidence": "'The key is patience\u2014don't rush the volume increase, keep your compound lifts heavy, and prioritize recovery.' 'Keep Compound Lifts Heavy: Never let your main lifts drop below 80% intensity.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 11,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 16,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Frames the answer as context-dependent based on athlete motivation and recovery state",
+          "passed": true,
+          "evidence": "'The best approach depends on your competition performance, accumulated fatigue, and goals.' 'When to Skip the Deload' section addresses cases where the athlete is well-rested and motivated."
+        },
+        {
+          "text": "If beat up, suggests an easier first week with reduced loading (roughly 70-80% range) and reduced volume",
+          "passed": true,
+          "evidence": "Week 1: 'Training intensity: 50-65% of your competition maxes' with 'Volume: Moderate (8-12 sets per lift, not 15-20).' Week 2: 'increase intensity to 70-75% of max.'"
+        },
+        {
+          "text": "Notes that complete time off is acceptable and one week off per year is trivial in the long run",
+          "passed": false,
+          "evidence": "Does not state that complete time off is acceptable or that one week per year is trivial. The answer assumes continued training with reduced intensity rather than acknowledging time off as a valid option."
+        },
+        {
+          "text": "General preference: keep intensity present while temporarily reducing volume",
+          "passed": true,
+          "evidence": "Recommends maintaining training frequency at reduced intensity: 'Stick to main lifts but with lighter loads.' Volume is moderate (8-12 sets) rather than the full 15-20. Some intensity preserved."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 12,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 21,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Advises against changing things while progress is still occurring",
+          "passed": true,
+          "evidence": "'When you have a program that's working reasonably well, the instinct to switch is often premature.' 'Don't switch because of vague dissatisfaction.' 'Most programs work for 6-12 months if you tweak them intelligently.'"
+        },
+        {
+          "text": "When plateau appears, recommends deciding whether the lift needs more stress or less stress",
+          "passed": true,
+          "evidence": "Section 3 covers both adding stimulus (add sets, increase frequency, add supplemental exercises) and reducing stress (reduce intensity temporarily, add rest days, deload strategically)."
+        },
+        {
+          "text": "Recommends small, targeted changes (volume, intensity, frequency, or exercise selection) evaluated individually over weeks",
+          "passed": true,
+          "evidence": "'Make one or two changes at a time, not five. Give each tweak 3-4 weeks to show results.' Covers volume, exercise selection, intensity, frequency, and progression as individual levers."
+        },
+        {
+          "text": "Only switch programs entirely after serial targeted tweaks have failed",
+          "passed": true,
+          "evidence": "'Switch programs only if: You've made 2-3 targeted tweaks over 8-12 weeks with no progress.' Multiple other conditions listed, all requiring exhausting tweaks first."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 13,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 20,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Explains the theoretical rationale: accommodating resistance matches the lift's force curve (lighter at bottom, heavier at lockout)",
+          "passed": true,
+          "evidence": "'The theory is that this matches the strength curve\u2014you're weakest at the bottom and strongest at the top, so accommodating resistance lets you overload the top position where you can handle more weight.'"
+        },
+        {
+          "text": "Cites research evidence (including meta-analytic or review-level) showing little to no clear strength advantage over conventional loading",
+          "passed": true,
+          "evidence": "'Not superior to traditional loading: The critical finding is that bands/chains don't consistently outperform straight-weight training for overall strength development. When compared head-to-head, traditional heavy barbell work produces similar or sometimes better results.'"
+        },
+        {
+          "text": "Concludes they are fine as variation tools but not reliably superior for maximal strength",
+          "passed": true,
+          "evidence": "'Bands and chains work best as supplemental tools, not primary strength builders.' 'They're a tool for variation and addressing specific weaknesses.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 14,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 28,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States isometrics can work but the most effective style is high-intent ballistic maximal contractions (max force as fast as possible)",
+          "passed": false,
+          "evidence": "Discusses motor unit recruitment and high intensity but does not describe the most effective style as high-intent ballistic maximal contractions. Uses 'hold' language (5-10 seconds) rather than the explosive/ballistic intent Greg emphasized."
+        },
+        {
+          "text": "Mentions strong angle specificity: gains transfer mostly to the trained joint angle, roughly 15-30 degrees in either direction",
+          "passed": true,
+          "evidence": "'Angle-Specific Adaptation: Isometric strength gains are most pronounced at the specific joint angle trained.' While it doesn't give the exact 15-30 degree range, it clearly states the angle specificity principle."
+        },
+        {
+          "text": "Provides a practical example (e.g., pulling into safety pins at a chosen deadlift height)",
+          "passed": true,
+          "evidence": "'Rack pulls: Set pins at knee height or mid-shin and pull maximally into them for 5\u20138 seconds.' Direct example of pulling into pins at a chosen height."
+        },
+        {
+          "text": "Notes that programming prescriptions (duration, frequency, weekly dose) are less standardized than conventional training",
+          "passed": false,
+          "evidence": "Provides specific prescriptions (5-10 second holds, 3-5 sets, 1-2x/week) as established recommendations rather than noting they are less standardized than conventional training."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 15,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 19,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States current evidence does not show that lifting stunts growth",
+          "passed": true,
+          "evidence": "'Properly supervised resistance training is safe for children and adolescents and does not damage growth plates.' 'Resistance training does not prematurely close growth plates or stunt growth.'"
+        },
+        {
+          "text": "Notes that typical training loads are likely less concerning for growth plates than everyday running/jumping impact forces",
+          "passed": true,
+          "evidence": "'Most growth plate injuries in youth come from sports-specific trauma (collision, falling, sudden impact), not from controlled resistance training.' This comparison shows training is less concerning than sport-related forces."
+        },
+        {
+          "text": "Emphasizes close supervision, strict technique, and minimizing preventable injuries",
+          "passed": true,
+          "evidence": "'Supervision and coaching are critical, especially for barbell movements.' 'Technique first, always: Perfect form at lighter weights beats sloppy form at heavy weights.'"
+        },
+        {
+          "text": "Recommends movement skill development before/during early puberty rather than chasing failure or maximal loads",
+          "passed": true,
+          "evidence": "Pre-Pubescent (6-11): 'Focus: Movement quality, body awareness, and fun.' Early Adolescence (12-14): 'Perfect technique before adding load; compound movements.' 'Avoid: Heavy loads, maximal efforts.'"
+        },
+        {
+          "text": "Notes training stress can be scaled up as puberty progresses",
+          "passed": true,
+          "evidence": "Clear age progression: Pre-Pubescent (bodyweight, light), Early Adolescence (light to moderate), Mid-to-Late Adolescence (moderate to heavy). 'More structured progression schemes' for older teens."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 16,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.67,
+        "passed": 2,
+        "failed": 1,
+        "total": 3,
+        "time_seconds": 17,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States core belt conclusions are largely unchanged and a full rewrite is not urgently needed",
+          "passed": true,
+          "evidence": "'The fundamental conclusions about powerlifting belts have not changed significantly enough to require a rewrite.' 'Newer research has largely reinforced rather than contradicted the original findings.'"
+        },
+        {
+          "text": "Mentions at least one mechanism: higher intra-abdominal pressure can increase hip extension torque",
+          "passed": false,
+          "evidence": "Mentions 'Belts increase intra-abdominal pressure (IAP)' and 'reduce spinal compression' but does not specifically mention the hip extension torque mechanism. Greg highlighted a mechanistic study showing IAP increases hip extension torque \u2014 this specific connection is absent."
+        },
+        {
+          "text": "Concludes belts still make sense for many lifters and old guidance is mostly intact",
+          "passed": true,
+          "evidence": "'The evidence supporting belt use for heavy compound lifts is stronger now than ever.' 'The recommendation: Belts are useful for heavy compound lifts and should be part of most strength training programs.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 17,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 18,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Notes that by late teens, most lifters should be capable of solid strength gains (age is not the main limiter)",
+          "passed": true,
+          "evidence": "'Being 16-19 does not hurt strength progress. In fact, teenagers typically have advantages for building strength.' Lists hormonal advantages, neural adaptability, and recovery capacity."
+        },
+        {
+          "text": "Emphasizes huge individual variability in where linear progression stalls",
+          "passed": true,
+          "evidence": "'Individual variation is huge: Starting strength, body weight, limb length, and training history all matter. Two 17-year-olds can have very different strength ceilings.'"
+        },
+        {
+          "text": "States a specific benchmark (like 405) is not a reliable readiness cutoff",
+          "passed": true,
+          "evidence": "'Missing a 405 lb deadlift on linear progression is not unusual' and '405 lbs is a legitimate strength milestone that takes time to reach.' Frames it as normal, not a readiness marker."
+        },
+        {
+          "text": "Recommends using progression timescale (weekly, monthly, etc.) rather than absolute load to classify training stage",
+          "passed": false,
+          "evidence": "Mentions 'Linear progression stops working after 3-6 months' and suggests switching to periodized programming, but does not introduce the concept of using progression timescale (session-to-session vs weekly vs monthly) to classify training stage as Greg specifically recommended."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 18,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 20,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Pushes back on the blanket claim that deadlifts are inherently more fatiguing, citing data showing similar fatigue outcomes",
+          "passed": true,
+          "evidence": "Opens with: 'This claim is partially true but oversimplified, and the reasoning behind it matters more than the blanket statement.' Later: 'a set of 10 moderate deadlifts (75% 1RM) is roughly equivalent in fatigue to a set of 10 moderate squats.' Pushes back on the blanket claim."
+        },
+        {
+          "text": "Mentions practical contributors: hand/forearm grip stress, sumo vs conventional tolerance differences, and/or spinal flexion tolerance",
+          "passed": true,
+          "evidence": "Discusses 'less favorable mechanical position for the lower back' (spinal position), intensity as the main driver, and mechanical differences. Doesn't specifically mention grip stress or sumo/conventional but addresses spinal demands."
+        },
+        {
+          "text": "Highlights path dependency: lifters with more squat exposure may find deadlifts seem more fatiguing due to lower deadlift training history",
+          "passed": false,
+          "evidence": "Does not discuss path dependency or training history effects on perceived deadlift fatigue. Mentions 'trained athletes' can tolerate more volume but doesn't connect this to relative exposure history."
+        },
+        {
+          "text": "Recommends programming based on individual recovery patterns rather than assuming universal deadlift fragility",
+          "passed": true,
+          "evidence": "'The real rule is: match volume to intensity.' 'The mistake many lifters make is assuming deadlifts are inherently more fatiguing regardless of how they're programmed.' Context-dependent approach."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 19,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 19,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Answer is conditional: minimalist warm-ups are fine IF they reliably prepare you for the session",
+          "passed": true,
+          "evidence": "'Minimalist warm-ups using mostly barbell warm-up sets work well for many lifters, especially experienced ones... That said, context matters.' Lists conditions where it works and where it doesn't."
+        },
+        {
+          "text": "Frames as cost-benefit, especially for time-limited lifters (cutting 30min to 5-10min adds productive training time)",
+          "passed": false,
+          "evidence": "Mentions 'Efficiency: You're not doing extra work' but does not frame the comparison as a cost-benefit for time-limited lifters or mention the specific time savings that Greg emphasized."
+        },
+        {
+          "text": "Warns against making minimalism the goal itself \u2014 under-warming can reduce readiness or increase risk",
+          "passed": true,
+          "evidence": "'When You Might Need More' section covers mobility restrictions, injury return, cold conditions, beginners, and chronic pain. 'You need some warm-up: Cold muscles are more injury-prone.'"
+        },
+        {
+          "text": "Recommends iterative troubleshooting: remove elements one at a time, keep only what clearly helps session quality",
+          "passed": false,
+          "evidence": "Recommends 'Start minimalist and add as needed' which is the opposite direction from Greg's approach of removing elements one at a time from a full routine and keeping only what helps."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 2,
+        "failed": 2,
+        "total": 4,
+        "time_seconds": 18,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Acknowledges the incline could genuinely affect performance (not just 'in your head')",
+          "passed": true,
+          "evidence": "Opening states: 'Yes, a 5% incline will meaningfully hurt deadlift performance. You'll likely lose 5\u201315% of your pulling strength.'"
+        },
+        {
+          "text": "Mentions confounding variables like plate calibration differences or temperature effects",
+          "passed": false,
+          "evidence": "No mention of plate calibration or temperature effects. The answer focuses solely on the mechanical effects of the slope itself."
+        },
+        {
+          "text": "Explains how the slope changes mechanics depending on bar/lifter orientation relative to slope (e.g., effective heel elevation, deficit-like effect, or block-pull-like effect)",
+          "passed": true,
+          "evidence": "'Direction Matters' section explains: 'Uphill slope (bar higher): Slightly better. You lose ~5\u20138%' vs 'Downhill slope (bar lower): Significantly worse. You lose ~10\u201315%' vs 'Side-to-side slope: Worst case.' Covers different orientations."
+        },
+        {
+          "text": "Suggests testing or experimenting with orientation/setup to isolate the variable",
+          "passed": false,
+          "evidence": "Suggests adjusting stance and fixing the platform, not experimenting with different orientations on a flat surface to isolate the variable as Greg recommended."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 25,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Distinguishes between acute risk in people with pre-existing vascular conditions vs. long-term causation in healthy lifters",
+          "passed": true,
+          "evidence": "'Special Populations: When Caution Is Warranted' section clearly separates pre-existing hypertension, retinal issues, and aneurysm risk from the general conclusion that 'healthy individuals tolerate Valsalva well.'"
+        },
+        {
+          "text": "States that direct long-term causal evidence specifically linking normal lifting bracing to vascular damage is sparse or limited",
+          "passed": true,
+          "evidence": "States: 'Long-term bracing and Valsalva maneuvers do not cause chronic vascular damage in healthy individuals' and 'no mechanism for cumulative damage.' Directly addresses the evidence gap."
+        },
+        {
+          "text": "Mentions occupational lifting epidemiology but notes it differs substantially from strength training",
+          "passed": false,
+          "evidence": "No mention of occupational lifting epidemiology. The answer cites powerlifter cardiovascular health data but doesn't reference the occupational lifting studies Greg discussed."
+        },
+        {
+          "text": "Recommends individualized caution for those with known medical risk rather than broad fear-based avoidance",
+          "passed": true,
+          "evidence": "Special Populations section recommends specific caution (hypertension, retinal issues, aneurysms, pregnancy) while concluding 'For healthy individuals without these conditions, there is no evidence that normal bracing causes vascular damage.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 27,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States there is no universal cap \u2014 optimal volume depends on goals, recovery, and time",
+          "passed": true,
+          "evidence": "Overview mentions 'balancing sufficient volume for growth without creating excessive fatigue or interfering with recovery.' Different ranges given per muscle group based on compound stimulus received."
+        },
+        {
+          "text": "Provides a practical baseline range (approximately 2-4 sets per muscle group, 1-2x/week or similar concrete guidance)",
+          "passed": false,
+          "evidence": "Recommends 6-12 sets per muscle group per week, much higher than the ~2-4 sets the SBS hosts actually recommended. For example: forearms 6-10 sets, calves 8-12 sets, delts 6-12 sets. This substantially overprescribes compared to the expected output."
+        },
+        {
+          "text": "Notes that global/systemic recovery can become limiting even when local muscle stress seems modest",
+          "passed": true,
+          "evidence": "'Monitor Fatigue and Recovery' section: 'If you're consistently sore, struggling with compound lifts, or feeling systemically fatigued, reduce isolation volume.' Acknowledges systemic recovery as a constraint."
+        },
+        {
+          "text": "Recommends starting conservative and scaling up based on outcomes/adaptation",
+          "passed": true,
+          "evidence": "'Start at the lower end of the recommended ranges and increase gradually' and 'If progress stalls or you feel beat up, reduce volume by 20-30%.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.2,
+        "passed": 1,
+        "failed": 4,
+        "total": 5,
+        "time_seconds": 31,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Clarifies that heavy lifting itself is unlikely to directly prevent fat loss \u2014 energy balance is the main driver",
+          "passed": false,
+          "evidence": "The answer argues heavy lifting creates conditions that defend body weight through 'Elevated Metabolic Demand & Adaptive Thermogenesis,' elevated hunger hormones, and cortisol. Does not clearly state the hosts' position that heavy lifting itself is unlikely to directly prevent fat loss."
+        },
+        {
+          "text": "Notes that switching from volume work to frequent 1RM attempts doesn't substantially change calorie expenditure",
+          "passed": false,
+          "evidence": "No discussion of calorie expenditure differences between volume and 1RM training approaches."
+        },
+        {
+          "text": "Suggests or implies the coaching setup may be suboptimal (years of training with limited progress)",
+          "passed": false,
+          "evidence": "Does not question the coaching setup or suggest the trainer may be poor. The answer addresses the listener's situation without critiquing the coaching arrangement."
+        },
+        {
+          "text": "Mentions bodyweight performance targets (push-ups, pull-ups, dips) as a motivational strategy during weight loss",
+          "passed": false,
+          "evidence": "No mention of bodyweight performance targets as motivational tools during weight loss."
+        },
+        {
+          "text": "Recommends professional clinical support (dietitian or similar) for binge-eating concerns rather than just programming changes",
+          "passed": true,
+          "evidence": "'Consider working with a therapist or eating disorder specialist' under point 4 of the recommendations."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 6,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 24,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Recommends building around major compound movement patterns (squat, press, hinge, row or similar)",
+          "passed": true,
+          "evidence": "Primary Compounds listed: Squats, Deadlifts, Bench Press, Rows, Overhead Press \u2014 covering squat, hinge, press, and pull patterns."
+        },
+        {
+          "text": "Provides a starting volume recommendation (roughly 8-12 sets per muscle per week or similar concrete range)",
+          "passed": true,
+          "evidence": "'Volume per Muscle Group: Legs: 12-16 sets per week, Chest: 8-12 sets, Back: 10-14 sets, Shoulders: 8-12, Arms: 6-10.' These ranges overlap with the expected 8-12 range."
+        },
+        {
+          "text": "Addresses proximity to failure with specific guidance (e.g., 0-2 RIR, most sets near but not at failure)",
+          "passed": true,
+          "evidence": "'Stay 1-3 reps from failure (RIR 1-3)' for general training. 'Occasional sets near failure (RIR 0-1) are fine on isolation exercises.' Clear RIR-based guidance."
+        },
+        {
+          "text": "Provides protein guidance (approximately 1.5-2.0 g/kg/day or equivalent range)",
+          "passed": true,
+          "evidence": "'Target: 0.7-1.0 grams per pound of body weight per day' which converts to approximately 1.5-2.2 g/kg/day, matching the expected range."
+        },
+        {
+          "text": "Mentions that beginners benefit from bodyweight/calisthenic practice for movement quality before heavy loading",
+          "passed": false,
+          "evidence": "States 'Form Priority: learning proper movement patterns is more important than lifting heavy' and mentions light weights, but does not specifically recommend bodyweight/calisthenic exercises (push-ups, lunges, step-ups) as a precursor to barbell loading."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 7,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 27,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "States newer/less advanced lifters generally need more hypertrophy work, not less",
+          "passed": true,
+          "evidence": "Beginner: 'Hypertrophy allocation: 40\u201360%' \u2014 highest allocation of any training age. States 'Beginners have enormous room for strength gains from just learning technique and building basic muscle mass.'"
+        },
+        {
+          "text": "Describes a progression: learn lifts first, then build muscle phase, then shift toward more specific strength work as advancement increases",
+          "passed": true,
+          "evidence": "Clear progression: Beginner (technique + muscle), Intermediate (hypertrophy targets weak points), Advanced (max-effort and competition-specific). Sample periodization models show the phase structure."
+        },
+        {
+          "text": "Notes that high-rep bodybuilding-style work should be reduced close to competition (roughly last ~4 weeks)",
+          "passed": true,
+          "evidence": "In-Season: 'Hypertrophy allocation: 10\u201330%' with 'focus shifts almost entirely to competition-specific work (singles, doubles, triples).' Clearly reduces hypertrophy near competition."
+        },
+        {
+          "text": "Mentions adherence/enjoyment as an important factor \u2014 a slightly suboptimal but sustainable approach still works well",
+          "passed": true,
+          "evidence": "'The best program is one that matches your training age, competition timeline, and weak points.' While not explicitly mentioning enjoyment, it captures that the program must be practical and sustainable."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 8,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 24,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Explains that heavier loads increase metabolic/oxygen cost per set, requiring longer recovery \u2014 this is a normal progression",
+          "passed": true,
+          "evidence": "Section 1 explains 'Increased Metabolic Demand and ATP-PC System Recovery' and 'CNS Fatigue.' Concludes: 'As your lifts increase in absolute weight, your rest periods naturally extend.'"
+        },
+        {
+          "text": "Notes research on rest intervals for hypertrophy is mixed (some favor longer, some shorter, some no difference)",
+          "passed": true,
+          "evidence": "'The literature is more nuanced' for hypertrophy. Notes '1.5\u20132 minutes is often sufficient' but also 'longer rest (2\u20133 min) still produces slightly better hypertrophy outcomes.' Schoenfeld's meta-analyses show 'rest period length has a smaller effect on hypertrophy than on strength when volume is equated.' Captures the mixed nature."
+        },
+        {
+          "text": "For strength, leans toward longer rest periods, especially for strong lifters on compound lifts",
+          "passed": true,
+          "evidence": "'3\u20135 minutes is optimal for maintaining performance and strength gains.' Cites studies showing shorter rest reduces performance by 10-20%."
+        },
+        {
+          "text": "Provides concrete rest period ranges (e.g., ~90s-2min for isolation/upper, ~3min common, ~5min+ for heavy compounds)",
+          "passed": true,
+          "evidence": "Practical recommendations: 'Strength: 3\u20135 minutes,' 'Hypertrophy: 2\u20133 minutes,' 'Mixed: 2\u20133 minutes for compounds, 1.5-2 min for isolation,' 'Accessory Work: 1\u20132 minutes.'"
+        },
+        {
+          "text": "Suggests non-interfering supersets as a time-saving strategy",
+          "passed": false,
+          "evidence": "No mention of supersets. The answer focuses solely on rest period recommendations without suggesting supersets as a time-saving alternative."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 9,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 22,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Gives a clear affirmative \u2014 deadlifts can be fully removed for bodybuilding purposes",
+          "passed": true,
+          "evidence": "'Yes, you can completely remove deadlifts and build an excellent physique using other posterior-chain exercises.'"
+        },
+        {
+          "text": "Lists specific alternative exercises covering the same muscle groups (e.g., hamstring curls, hip thrusts, rows, pull-ups, shrugs)",
+          "passed": true,
+          "evidence": "Detailed by muscle group: hip thrusts, RDLs, leg curls, Nordic curls, rows, pull-ups, shrugs, face pulls, hyperextensions. Weekly routine example provided."
+        },
+        {
+          "text": "Acknowledges deadlifts are time-efficient for loading multiple posterior muscles simultaneously",
+          "passed": true,
+          "evidence": "'Deadlifts are exceptionally efficient at stimulating multiple muscle groups simultaneously' and 'Less time-efficient \u2014 Deadlifts are a \"bang for buck\" exercise' listed as disadvantage of removing them."
+        },
+        {
+          "text": "Notes replacement is especially viable when lifters have injuries, poor tolerance, or strong preference against deadlifts",
+          "passed": true,
+          "evidence": "'Lower injury risk \u2014 Especially for those with lower back issues' listed as advantage. 'The deadlift is efficient, not essential. For bodybuilding, efficiency is a convenience, not a requirement.'"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.7458,
+        "stddev": 0.2317,
+        "min": 0.4,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 34.1053,
+        "stddev": 11.3475,
+        "min": 0.0,
+        "max": 59
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.7405,
+        "stddev": 0.2153,
+        "min": 0.2,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 23.3158,
+        "stddev": 5.5182,
+        "min": 16,
+        "max": 36
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.01",
+      "time_seconds": "+10.8",
+      "tokens": "+0"
+    }
+  },
+  "notes": []
+}

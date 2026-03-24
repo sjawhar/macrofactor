@@ -1,0 +1,15 @@
+{
+  "eval_id": 13,
+  "eval_name": "eval-13-bulking-after-dieting-and-metabolic-adaptation-concerns",
+  "prompt": "I want to bulk, but I worry that repeated yo-yo dieting and incomplete metabolic recovery have left me regaining fat faster, with old deficits no longer working. Should I hold my current weight until metabolism catches up, or is there a direct fix?",
+  "expected_output": "Greg explained that after weight regain, many metabolic adaptations from dieting tend to reverse as fat mass, lean mass, leptin, and organ/muscle mass come back up. He also noted a plausible (but not fully settled) yo-yo mechanism: repeated cycles may restore fat faster than lean tissue, potentially leaving lower metabolic rate relative to body mass over time. He suspected part of the issue is often behavioral/NEAT-related (less spontaneous movement, greater movement efficiency, lingering fatigue after very lean phases), not just resting metabolism. Their practical recommendation was to avoid another aggressive cut immediately, spend time maintaining, and let maintenance become easier before dieting again. If dieting again, go slower and/or avoid pushing as lean as before. They stressed broad principles over rigid \"maintenance phase formulas\": energy state over time and adherence matter most.",
+  "topic": "Bulking after dieting and metabolic adaptation concerns",
+  "episode": 144,
+  "assertions": [
+    "Answer explains metabolic adaptations from dieting tend to reverse as body mass comes back",
+    "Answer mentions a plausible yo-yo mechanism: repeated cycles may restore fat faster than lean tissue",
+    "Answer discusses behavioral/NEAT-related factors (less spontaneous movement, efficiency)",
+    "Answer recommends spending time at maintenance before dieting again",
+    "Answer advises going slower and/or not pushing as lean in subsequent diets"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 26,
+  "eval_name": "eval-26-game-changers-follow-up",
+  "prompt": "A listener said the \"Game Changers\" rebuttal video is back and asked if you could break down the main claims they call scientific consensus. Can you revisit your take?",
+  "expected_output": "Eric declined a full point-by-point debate format, saying it is high time-cost and low value compared with reading primary literature. He reiterated his practical stance: well-designed omnivorous and vegan diets can both support performance and gains, and switching between well-constructed versions is usually not a dramatic \"game changer.\" For deeper rebuttals he pointed listeners to external detailed writeups (e.g., Lane Norton and Menno Henselmans). He criticized the documentary's use of tiny demonstrations and rhetorical framing versus robust controlled evidence. His recommendation was to evaluate claims via higher-quality research methods and transparent conflicts of interest, not cinematic anecdotes.",
+  "topic": "game changers follow-up",
+  "episode": 31,
+  "assertions": [
+    "Answer declines a full point-by-point debate as low-value",
+    "Answer states well-designed omnivorous and vegan diets can both support performance",
+    "Answer criticizes the documentary's use of tiny demonstrations over robust evidence",
+    "Answer recommends evaluating claims via higher-quality research methods"
+  ]
+}

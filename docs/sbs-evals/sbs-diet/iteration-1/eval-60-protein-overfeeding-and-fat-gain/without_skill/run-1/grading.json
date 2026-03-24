@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states yes, excess protein calories CAN contribute to fat storage",
+      "passed": true,
+      "evidence": "Found 'yes' in: ...in Doesn't Always Lead to Fat Storage\n\n## The Short Answer\n\nYes, amino acids can absolutely be converted to body fat throug..."
+    },
+    {
+      "text": "Answer mentions thermic effect differs by macro (protein highest) but doesn't make protein calories free",
+      "passed": true,
+      "evidence": "Found 'thermic effect' in: ...t reliably cause fat gain because:\n\n1. **Protein has a high thermic effect** \u2014 your body burns significant calories just digesting and..."
+    },
+    {
+      "text": "Answer is skeptical of self-reported intake in free-living overfeeding papers",
+      "passed": false,
+      "evidence": "Missing any of: ['self-reported', 'skeptic']"
+    },
+    {
+      "text": "Answer references controlled metabolic-ward trials (like Bray et al.) showing overfeeding behaves as expected",
+      "passed": false,
+      "evidence": "Missing any of: ['Bray', 'metabolic ward', 'controlled']"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

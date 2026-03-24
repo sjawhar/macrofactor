@@ -1,0 +1,13 @@
+{
+  "eval_id": 7,
+  "eval_name": "hypertrophy-vs-strength-periodization",
+  "prompt": "In a good powerlifting program, how much training time should be hypertrophy-focused, and how should that change with training age and in-season vs off-season? Also, when is someone strong enough to start bodybuilding-style accessory work?",
+  "assertions": [
+    "States newer lifters generally need more hypertrophy work, not less",
+    "Recommends learning the lifts first, then building muscle while maintaining heavier work",
+    "Describes shift toward more specific strength work as lifters advance and hypertrophy slows",
+    "Notes high-rep bodybuilding work is a poor fit close to competition (within ~4 weeks)",
+    "Recommends hypertrophy blocks in off-season, especially when moving up or filling out a weight class",
+    "Mentions adherence/enjoyment as important factor"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends compound movement patterns (squat, press, hinge, row variants)",
+      "passed": true,
+      "evidence": "Lists squats, deadlifts, bench press, rows, overhead press, pull-ups."
+    },
+    {
+      "text": "Provides a starting volume recommendation (approximately 8-12 sets per muscle per week)",
+      "passed": true,
+      "evidence": "States '8-12 sets per muscle group per week.'"
+    },
+    {
+      "text": "Recommends training mostly in the 5-12 rep range",
+      "passed": true,
+      "evidence": "Covers 3-5 reps for strength, 6-12 for hypertrophy, 12-15 for endurance."
+    },
+    {
+      "text": "Addresses proximity to failure (most work at 0-2 RIR or close to failure)",
+      "passed": true,
+      "evidence": "States 'Most sets should stop 1-3 reps short of failure (RIR 1-3).'"
+    },
+    {
+      "text": "Provides nutrition guidance: slow gain target and protein target",
+      "passed": true,
+      "evidence": "Protein 1.6-2.2g/kg, surplus 300-500cal. Does not mention 1% BW/month gain rate."
+    },
+    {
+      "text": "Recommends 3-5 training sessions per week",
+      "passed": true,
+      "evidence": "States '3-4 days per week.'"
+    },
+    {
+      "text": "Mentions importance of bodyweight/movement competency before heavy barbell loading",
+      "passed": false,
+      "evidence": "Does not mention bodyweight proficiency before barbell work."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 1,
+    "total": 7,
+    "pass_rate": 0.86
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer reframes the issue as mostly a hardgainer problem, not a protein problem",
+      "passed": true,
+      "evidence": "Found 'hardgainer' in: ...# Hardgainers and Protein Dosing: Evidence and Considerations\n\n## Do Har..."
+    },
+    {
+      "text": "Answer states pushing protein higher beyond sufficiency won't fix poor gain rates",
+      "passed": false,
+      "evidence": "Missing any of: ['beyond', 'sufficiency', \"won't fix\"]"
+    },
+    {
+      "text": "Answer identifies higher total calories as the main solution for hardgainers",
+      "passed": true,
+      "evidence": "Found 'calorie' in: ...ake increases satiety, which could help them eat more total calories\n- Protein has a higher thermic effect, so excess protein c..."
+    },
+    {
+      "text": "Answer mentions the 1.6-2.2 g/kg/day range as sufficient",
+      "passed": true,
+      "evidence": "Found '1.6' in: ...dose-response relationship with protein up to approximately 1.6 g/kg, but the gains plateau significantly after 1.0\u20131.2 g/k..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

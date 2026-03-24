@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on individualizing training programs",
+      "passed": true,
+      "evidence": "Answer contains 34/38 key concepts from the expected core position. Key matches: where, supportive, strength, coaching, tends."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": true,
+      "evidence": "No specific numbers/details to check in expected output."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 4 caveat/limitation markers in the answer. Examples: limitation, but, individual, limited."
+    },
+    {
+      "text": "Answer includes actionable practical recommendations consistent with the hosts' advice",
+      "passed": true,
+      "evidence": "Found 8 actionable recommendation markers. Examples: recommend, suggest, try, start with."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": true,
+      "evidence": "No obvious contradictions detected with the expected position."
+    }
+  ]
+}

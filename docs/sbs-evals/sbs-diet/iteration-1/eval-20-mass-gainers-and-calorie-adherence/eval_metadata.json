@@ -1,0 +1,13 @@
+{
+  "eval_id": 20,
+  "eval_name": "eval-20-mass-gainers-and-calorie-adherence",
+  "prompt": "What\u2019s your take on mass gainers for people who travel a lot and need easy calories?",
+  "expected_output": "They consider mass gainers acceptable as a convenience tool, not a uniquely superior product. Most are basically protein plus simple carbohydrate sources, so they can be replicated with regular whey and food choices. If the product helps someone consistently hit calorie targets, it can be useful in practice. The key criterion is adherence and total intake, not marketing claims.",
+  "topic": "mass gainers and calorie adherence",
+  "episode": 27,
+  "assertions": [
+    "Answer frames mass gainers as a convenience tool, not uniquely superior",
+    "Answer notes most are basically protein plus simple carbohydrates",
+    "Answer states the key criterion is adherence and total intake, not marketing claims"
+  ]
+}

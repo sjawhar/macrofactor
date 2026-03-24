@@ -1,0 +1,14 @@
+{
+  "eval_id": 59,
+  "eval_name": "eval-59-fasted-morning-training-performance",
+  "prompt": "If I train in the morning (often fasted) and perform a bit worse, how much does that matter for non-competitive goals like health or hypertrophy?",
+  "expected_output": "They said the impact depends on goal hierarchy: for health-focused training, there is lots of wiggle room, while performance-specific goals require tighter optimization. For hypertrophy, they still view session performance as meaningful because mechanical tension and productive reps matter, even if perfection is unnecessary. On fasted training specifically, they highlighted mixed evidence and said hunger itself may hurt performance even when meal energy content differences are less clear. Their conservative recommendation was a small pre-workout feeding if tolerated (for example at least ~20 g carbohydrate, optionally with protein, and usually low fat). If food before training causes GI distress, they advised adapting timing/form (including liquid options) rather than forcing a strategy that worsens the session.",
+  "topic": "fasted morning training performance",
+  "episode": 58,
+  "assertions": [
+    "Answer says impact depends on goal hierarchy (health vs performance)",
+    "Answer acknowledges session performance still matters for hypertrophy via mechanical tension",
+    "Answer recommends a small pre-workout feeding if tolerated (at least ~20g carbohydrate)",
+    "Answer suggests adapting timing/form rather than forcing a strategy that causes GI distress"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Argues the claim is overstated or a measurement artifact",
+      "passed": true,
+      "evidence": "States it's 'partly a measurement artifact rather than a complete shift in muscle roles.'"
+    },
+    {
+      "text": "Explains the long head triceps biarticular mechanism",
+      "passed": true,
+      "evidence": "States: 'The triceps are a biarticular muscle (crossing both the shoulder and elbow)' \u2014 correctly identifies triceps as biarticular."
+    },
+    {
+      "text": "Cites evidence that benching grows lateral triceps more than long head",
+      "passed": false,
+      "evidence": "Does not distinguish between lateral and long head triceps growth from benching."
+    },
+    {
+      "text": "References data (e.g., Duffy's dissertation) showing pecs/delts/lateral triceps increase activation similarly",
+      "passed": false,
+      "evidence": "Does not reference Duffy's dissertation or specific research data."
+    },
+    {
+      "text": "Practical takeaway: don't abandon pec work; train bench-relevant musculature broadly",
+      "passed": true,
+      "evidence": "States: 'Don't abandon pec work' and 'both muscle groups remain critical.'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer prioritizes lean protein first with strategic micronutrient-contributing sources",
+      "passed": true,
+      "evidence": "Found 'lean protein' in: ...Implementation\n\n### Food Categories to Include Daily\n\n1. **Lean protein** (poultry, fish, eggs, Greek yogurt): 4\u20135 servings\n2. **Ve..."
+    },
+    {
+      "text": "Answer recommends broad rotation of fibrous vegetables for satiety and micronutrients",
+      "passed": true,
+      "evidence": "Found 'vegetable' in: ...- Prioritize foods with high nutrient-to-calorie ratios\n- Vegetables, especially leafy greens and cruciferous varieties, are no..."
+    },
+    {
+      "text": "Answer mentions a basic multivitamin as insurance",
+      "passed": true,
+      "evidence": "Found 'multivitamin' in: ...At 1,500 calories, supplementation may be necessary:\n\n- **Multivitamin**: Insurance against gaps\n- **Vitamin D**: 1,000\u20132,000 IU d..."
+    },
+    {
+      "text": "Answer suggests fish oil or omega-3 source when fats are very low",
+      "passed": true,
+      "evidence": "Found 'omega-3' in: ...(~450 calories)\n\n- 150g baked salmon (280 cal, 35g protein, omega-3s)\n- 1.5 cups steamed broccoli with 1 tsp olive oil (80 cal,..."
+    },
+    {
+      "text": "Answer gives a concrete practical meal example (like lentil soup)",
+      "passed": true,
+      "evidence": "Found 'practical' in: ...fruits, fish\n- **Magnesium**: Leafy greens, nuts, seeds\n\n## Practical Implementation\n\n### Food Categories to Include Daily\n\n1. **..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

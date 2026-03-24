@@ -1,0 +1,41 @@
+{
+  "episode": 31,
+  "pairs": [
+    {
+      "question": "What's your updated take on the myonuclear domain theory for hypertrophy, and does your 2015 \"Grow Like a New Lifter\" advice still hold up? It seems like newer evidence suggests myonuclear accretion may not always come before hypertrophy.",
+      "answer_summary": "Greg said he still views the original article as a hypothesis-driven piece, but his confidence dropped from about 80% in 2015 to roughly 60% now. He still thinks the central idea is plausible: early growth is helped by adding myonuclei from satellite cells, while advanced lifters may hit slower progress when that process plateaus. He emphasized newer studies have made the picture more equivocal, especially in untrained models, so certainty is lower than before. He also noted this newer work may not directly answer his original advanced-lifter plateau question. Practically, his old recommendations are now \"possibly useful but less certain,\" not a guaranteed workaround.",
+      "skills": ["sbs-strength-training"],
+      "topic": "myonuclear domain theory"
+    },
+    {
+      "question": "Sodium bicarbonate has gotten a lot of attention for reducing fatigue in high-intensity interval work. Do you think it's useful for HIIT and lactate-threshold style workouts?",
+      "answer_summary": "Eric said sodium bicarbonate is one of the better-supported ergogenic supplements for sprint-like high-intensity performance, though evidence is much weaker for resistance training. The mechanism is extracellular buffering: it raises blood bicarbonate and helps manage exercise-induced acidosis, often allowing slightly more acute work output. He cautioned that chronic use may not improve long-term training adaptations, citing a 2018 study by Siegler et al. where repeated use did not clearly enhance adaptation outcomes. Main downside is GI distress at higher doses. He highlighted a newer staged-loading protocol beginning about 19.5 hours pre-test (progressing around 110, 130, 160, and 200 mg/kg doses) to reduce GI issues while still elevating bicarbonate. He also mentioned pairing with beta-alanine may help somewhat, but returns are diminishing and logistics are cumbersome.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "sodium bicarbonate supplementation"
+    },
+    {
+      "question": "You previously discussed chains and bands for strength. What about using accommodating resistance for hypertrophy specifically?",
+      "answer_summary": "Greg said the likely effect is neutral-to-positive if used intelligently, but potentially negative if overdone. His main warning was not to add so much band/chain tension that lockout becomes the limiter, because that can reduce meaningful loading in stretched positions where hypertrophy may be especially stimulated. He gave examples showing how matching a resistance curve can be sensible (e.g., bottom challenge still high while top load rises), but \"crazy\" tension setups can undermine training quality. He noted direct hypertrophy data are sparse, and available isotonic-vs-isokinetic comparisons don't clearly show superior growth from perfectly matched resistance. He also discussed a possible constant-tension/deoxygenation benefit, but treated that as speculative and secondary to existing direct evidence. Bottom line: use moderate accommodating resistance, keep full-ROM challenge meaningful, and don't expect magic.",
+      "skills": ["sbs-strength-training", "sbs-bench", "sbs-squat"],
+      "topic": "bands and chains for hypertrophy"
+    },
+    {
+      "question": "A listener said the \"Game Changers\" rebuttal video is back and asked if you could break down the main claims they call scientific consensus. Can you revisit your take?",
+      "answer_summary": "Eric declined a full point-by-point debate format, saying it is high time-cost and low value compared with reading primary literature. He reiterated his practical stance: well-designed omnivorous and vegan diets can both support performance and gains, and switching between well-constructed versions is usually not a dramatic \"game changer.\" For deeper rebuttals he pointed listeners to external detailed writeups (e.g., Lane Norton and Menno Henselmans). He criticized the documentary's use of tiny demonstrations and rhetorical framing versus robust controlled evidence. His recommendation was to evaluate claims via higher-quality research methods and transparent conflicts of interest, not cinematic anecdotes.",
+      "skills": ["sbs-diet"],
+      "topic": "game changers follow-up"
+    },
+    {
+      "question": "After watching \"Game Changers,\" I thought your earlier review misrepresented it—especially claims about meat hurting fighting performance and the cows-vs-humans muscularity argument. Did you misremember or intentionally distort the film?",
+      "answer_summary": "Eric strongly rejected intentional misrepresentation and then defended his interpretation with specific film examples and quotes. He argued the movie repeatedly implies plant-based eating improves fighting outcomes via narrative sequencing (including the McGregor/Diaz framing), mentioning timestamps around ~9 and ~20 minutes and the \"two steaks a day\" line. He also highlighted quote-level rhetoric like comparisons involving gorillas and the statement about men losing \"manly manhood\" with more meat, which he said reflects weak logic rather than robust scientific argumentation. Greg generally agreed those implications were a fair read, while both acknowledged interpretation can differ. Net answer: he stood by the core critique but welcomed correction attempts and listener scrutiny.",
+      "skills": ["sbs-diet"],
+      "topic": "game changers criticism response"
+    },
+    {
+      "question": "Can low VO2 max or poor aerobic conditioning hold back strength progress? I'm stuck, my VO2 max is around 25, and I also have mild asthma.",
+      "answer_summary": "Greg said yes, poor conditioning can limit lifting progress in some cases, and this sounds like one of them. He advised medical clearance first for asthma, then noted that a VO2 max around 25 ml/kg/min is low relative to typical sedentary averages (~35 women, ~40 men), with many trained athletes around 45-50+ and elite endurance athletes often 70-90+. He explained that hard resistance training still carries substantial systemic energy demand, especially with large compound movements and heavier loads. His practical recommendations were to add dedicated aerobic work, consider longer rest periods, and temporarily bias lower-body work toward machine/single-joint exercises to keep local muscle stimulus high while reducing systemic fatigue burden. He added that very strong lifters can also run into conditioning bottlenecks due to sheer workload, where longer rests and some cardio may help manage performance capacity.",
+      "skills": ["sbs-strength-training", "sbs-diet"],
+      "topic": "aerobic conditioning and strength plateaus"
+    }
+  ]
+}

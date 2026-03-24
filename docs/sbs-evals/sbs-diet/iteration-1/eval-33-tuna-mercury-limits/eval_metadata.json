@@ -1,0 +1,13 @@
+{
+  "eval_id": 33,
+  "eval_name": "eval-33-tuna-mercury-limits",
+  "prompt": "I eat a lot of canned tuna because it\u2019s cheap and convenient. How much tuna is safe to eat weekly given mercury concerns?",
+  "expected_output": "Eric leaned on FDA fish guidance rather than trying to improvise toxicity advice. He noted the FDA uses serving-based categories (4 oz per serving for adults): \"best choices\" at 2-3 servings/week, \"good choices\" at ~1 serving/week, and \"choices to avoid\" for highest-mercury fish. In their examples, canned light tuna was framed as a lower-mercury option, while albacore/white and yellowfin were more limited, and bigeye was in the avoid tier. The practical SBS takeaway was that many lifters likely overdo tuna by a wide margin, and a few servings per week is a much safer target than multiple cans per day.",
+  "topic": "tuna mercury limits",
+  "episode": 46,
+  "assertions": [
+    "Answer references FDA fish guidance with serving-based categories",
+    "Answer distinguishes canned light tuna (lower mercury) from albacore/white and yellowfin",
+    "Answer recommends limiting to a few servings per week, not multiple cans per day"
+  ]
+}

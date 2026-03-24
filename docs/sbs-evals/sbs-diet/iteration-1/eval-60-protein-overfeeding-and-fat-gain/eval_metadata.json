@@ -1,0 +1,14 @@
+{
+  "eval_id": 60,
+  "eval_name": "eval-60-protein-overfeeding-and-fat-gain",
+  "prompt": "I saw protein overfeeding studies where people ate around 800 extra calories but didn\u2019t gain fat. Can amino acids actually be converted and stored as body fat, or are those calories somehow not usable?",
+  "expected_output": "Eric said the mechanistic answer is yes: excess protein calories can be oxidized for energy and can ultimately contribute to fat storage. He emphasized that thermic effect differs by macro (protein highest, fat lowest), so storage efficiency differs, but that does not make protein calories 'free.' He was skeptical of interpreting the Antonio-style free-living overfeeding papers literally because they rely on self-reported intake. He cited overfeeding work (including Han et al.) showing people often fail to truly hit prescribed protein surpluses, and a controlled metabolic-ward trial by Bray et al. where intake was supervised and overfeeding behaved as expected. In that ward study, protein ranged roughly from ~0.7-0.8 g/kg to ~3 g/kg and participants still gained fat mass under sustained caloric surplus. Practical takeaway: high protein can make overfeeding harder because of satiety, but it does not bypass energy balance.",
+  "topic": "protein overfeeding and fat gain",
+  "episode": 73,
+  "assertions": [
+    "Answer states yes, excess protein calories CAN contribute to fat storage",
+    "Answer mentions thermic effect differs by macro (protein highest) but doesn't make protein calories free",
+    "Answer is skeptical of self-reported intake in free-living overfeeding papers",
+    "Answer references controlled metabolic-ward trials (like Bray et al.) showing overfeeding behaves as expected"
+  ]
+}

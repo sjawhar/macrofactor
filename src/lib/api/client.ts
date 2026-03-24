@@ -25,37 +25,18 @@ import type {
   WorkoutSet,
   GymProfile,
   CustomExercise,
+  TrainingProgram,
+  TrainingProgramExercise,
+  PeriodizedTargets,
 } from './workout-types';
 import { resolveName } from './exercises';
-
-// Training Program types
-interface TrainingProgramDay {
-  id: string;
-  name: string;
-  gymId: string;
-  isRestDay: boolean;
-  exercises: { exerciseId: string; id: string }[];
-}
-
-interface TrainingProgram {
-  id: string;
-  name: string;
-  color: string;
-  icon: string;
-  numCycles: number;
-  runIndefinitely: boolean;
-  isPeriodized: boolean;
-  deload: string;
-  isActive: boolean;
-  days: TrainingProgramDay[];
-}
 
 interface NextWorkoutDay {
   program: TrainingProgram;
   dayIndex: number;
   dayName: string;
   isRestDay: boolean;
-  exercises: { exerciseId: string; id: string }[];
+  exercises: TrainingProgramExercise[];
   cycleIndex: number;
   totalCycles: number;
 }
@@ -569,6 +550,7 @@ export class MacroFactorClient {
             (b.exercises || []).map((e: any) => ({
               exerciseId: e.exerciseId as string,
               id: e.id as string,
+              periodizedTargets: e.periodizedTargets as PeriodizedTargets | undefined,
             }))
           ),
         })),
@@ -842,5 +824,63 @@ export class MacroFactorClient {
 
   async searchFoods(query: string): Promise<SearchFoodResult[]> {
     return typesenseSearch(query);
+  }
+
+  /**
+   * Mark a program day as completed in workoutCycleCompletions.
+   * This is required for the MacroFactor app to show the day as checked off
+   * in the program view. The app writes this field on the program document
+   * when logging a workout from the program.
+   */
+  async markProgramDayCompleted(
+    programId: string,
+    cycleIndex: number,
+    dayId: string,
+    workoutId: string
+  ): Promise<void> {
+    const token = await this.ensureToken();
+    const programPath = `users/${this.uid}/trainingProgram/${programId}`;
+    const fieldPath = `workoutCycleCompletions.\`${cycleIndex}\`.completionById.\`${dayId}\``;
+    const url = `https://firestore.googleapis.com/v1/projects/sbs-diet-app/databases/(default)/documents/${programPath}?updateMask.fieldPaths=${encodeURIComponent(fieldPath)}`;
+    const body = {
+      fields: {
+        workoutCycleCompletions: {
+          mapValue: {
+            fields: {
+              [String(cycleIndex)]: {
+                mapValue: {
+                  fields: {
+                    completionById: {
+                      mapValue: {
+                        fields: {
+                          [dayId]: {
+                            mapValue: {
+                              fields: {
+                                runtimeType: { stringValue: 'completed' },
+                                workoutHistoryIds: {
+                                  arrayValue: { values: [{ stringValue: workoutId }] },
+                                },
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    };
+    const resp = await fetch(url, {
+      method: 'PATCH',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!resp.ok) {
+      throw new Error(`Failed to mark program day completed: ${resp.status} ${await resp.text()}`);
+    }
   }
 }

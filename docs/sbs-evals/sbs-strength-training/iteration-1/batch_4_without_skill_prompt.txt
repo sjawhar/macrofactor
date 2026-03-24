@@ -1,0 +1,68 @@
+TASK: Answer 15 listener questions about strength training and fitness using ONLY your general knowledge. Do NOT read any special skill files.
+
+EXPECTED OUTCOME: 15 individual answer.md files, each 200-500 words, evidence-based and practical.
+
+REQUIRED TOOLS: Write
+
+MUST DO:
+1. For each question below, write a thorough answer (200-500 words) to the specified file path
+2. Use your general training and fitness knowledge — answer as an informed fitness enthusiast/coach would
+3. Be evidence-based, nuanced, and practical
+4. Include specific numbers, mechanisms, and caveats where appropriate
+5. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT read any skill files, training guides, or reference documents
+- Do NOT use the Read tool to read anything in .opencode/skills/
+- Do NOT give generic/vague answers — be specific
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions about fitness and training. Answer from your general knowledge of exercise science.
+
+QUESTIONS:
+61. Question: "Can nitrate-rich foods (like beets and leafy greens) work as well as nitrate supplements for performance?"
+   Topic: dietary nitrate
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-61-dietary-nitrate/without_skill/outputs/answer.md
+62. Question: "Should I take L-citrulline, how much should I use, and when should I take it?"
+   Topic: citrulline dosing
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-62-citrulline-dosing/without_skill/outputs/answer.md
+63. Question: "It’s been years since the Belt Bible. Has the powerlifting belt evidence changed enough to require a rewrite?"
+   Topic: powerlifting belt evidence
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-63-powerlifting-belt-evidence/without_skill/outputs/answer.md
+64. Question: "Could aspirin blunt hypertrophy or strength gains?"
+   Topic: aspirin and hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-64-aspirin-and-hypertrophy/without_skill/outputs/answer.md
+65. Question: "I’m 16-19 and couldn’t reach a 405 deadlift on linear progression. Does being younger hurt strength progress?"
+   Topic: teen strength expectations
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-65-teen-strength-expectations/without_skill/outputs/answer.md
+66. Question: "When are you ready to start taking clients as a personal trainer?"
+   Topic: trainer readiness
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-66-trainer-readiness/without_skill/outputs/answer.md
+67. Question: "What’s the best way to read and interpret research papers, and why can one paper take 5-6 hours?"
+   Topic: reading research
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-67-reading-research/without_skill/outputs/answer.md
+68. Question: "If I've been training hypertrophy for months, should I re-sensitize my muscles by taking 1-2 weeks off or by doing a 4-5 week strength-focused block?"
+   Topic: hypertrophy re-sensitization
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-68-hypertrophy-re-sensitization/without_skill/outputs/answer.md
+69. Question: "I started drinking a gallon of water per day and now I'm peeing constantly. How much water do I actually need?"
+   Topic: daily hydration targets
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-69-daily-hydration-targets/without_skill/outputs/answer.md
+70. Question: "Is it better to sip water all day versus chugging, and can reducing fluids before bed help me stop waking up to pee?"
+   Topic: hydration timing and nocturia
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-70-hydration-timing-and-nocturia/without_skill/outputs/answer.md
+71. Question: "Why are deadlifts considered more fatiguing than squats, and should deadlift volume usually be lower?"
+   Topic: deadlift vs squat fatigue
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-71-deadlift-vs-squat-fatigue/without_skill/outputs/answer.md
+72. Question: "Do gym altitude masks actually work, and do any gains fade if you're not living at altitude?"
+   Topic: altitude mask evidence
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-72-altitude-mask-evidence/without_skill/outputs/answer.md
+73. Question: "Bodybuilders use nicotine gum in prep for appetite and energy. What are the benefits and risks?"
+   Topic: nicotine use in contest prep
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-73-nicotine-use-in-contest-prep/without_skill/outputs/answer.md
+74. Question: "What do you think about minimalist warm-ups (mostly just barbell warm-up sets) instead of long activation/mobility routines?"
+   Topic: minimalist warm-up strategy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-74-minimalist-warm-up-strategy/without_skill/outputs/answer.md
+75. Question: "Are abnormal blood markers expected in natural bodybuilders, especially during overreaching blocks or contest prep (RBC/WBC/testosterone/iron, etc.)?"
+   Topic: bodybuilding prep bloodwork
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-75-bodybuilding-prep-bloodwork/without_skill/outputs/answer.md

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states hydration timing matters, not magical differences between sipping and chugging",
+      "passed": true,
+      "evidence": "Found 'timing' in: ...# Hydration Timing and Nocturia: Sipping vs. Chugging and Fluid Restriction Be..."
+    },
+    {
+      "text": "Answer recommends starting hydration early and maintaining steadily",
+      "passed": true,
+      "evidence": "Found 'steady' in: ...ss waking hours\n- Allows your kidneys to process water at a steady rate\n- Maintains more consistent hydration status\n- Reduces..."
+    },
+    {
+      "text": "Answer suggests tapering fluids 2-3 hours before bed if nocturia is an issue",
+      "passed": true,
+      "evidence": "Found 'taper' in: ...\u2014 drink most of your daily fluid intake before 2-3 PM\n2. **Taper evening intake** \u2014 reduce but don't eliminate fluids after..."
+    },
+    {
+      "text": "Answer mentions urine color as a simple day-to-day hydration heuristic",
+      "passed": false,
+      "evidence": "Missing any of: ['urine color']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

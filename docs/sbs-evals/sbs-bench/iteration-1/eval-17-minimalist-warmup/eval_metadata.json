@@ -1,0 +1,12 @@
+{
+  "eval_id": 17,
+  "eval_name": "minimalist-warmup",
+  "prompt": "What do you think about minimalist warm-ups (mostly just barbell warm-up sets) instead of long activation/mobility routines?",
+  "assertions": [
+    "States minimalist warm-ups are fine IF they reliably prepare you for the session",
+    "Frames it as a cost-benefit issue (especially for time-limited lifters)",
+    "Warns against under-warming if needed mobility/positioning work is removed",
+    "Recommends iterative troubleshooting: remove one element at a time, keep only what helps",
+    "Concludes the best warm-up is the minimum effective warm-up for your body and session"
+  ]
+}

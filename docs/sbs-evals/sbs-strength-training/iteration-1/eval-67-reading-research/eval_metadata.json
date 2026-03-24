@@ -1,0 +1,15 @@
+{
+  "eval_id": 67,
+  "eval_name": "eval-67-reading-research",
+  "prompt": "What\u2019s the best way to read and interpret research papers, and why can one paper take 5-6 hours?",
+  "expected_output": "They said 5-6 hours can be normal when aiming for deep, critical understanding, especially in unfamiliar domains. In familiar domains, review time can drop substantially because methods, stats, and prior literature are already in your working set. Their workflow included: skim abstract for orientation, identify actual hypotheses, scrutinize methods/statistics, and then contextualize findings against prior studies. A strong practical recommendation was to form your own interpretation first, then compare with higher-experience analysts to calibrate mistakes. Over time, accumulated error-correction is what makes reading both faster and better.",
+  "topic": "reading research",
+  "episode": 46,
+  "assertions": [
+    "Answer captures the core SBS position on reading research",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

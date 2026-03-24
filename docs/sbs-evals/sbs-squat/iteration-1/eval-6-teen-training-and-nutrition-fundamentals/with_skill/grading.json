@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends building around major compound patterns (squat/press/hinge/row variants)",
+      "passed": true,
+      "evidence": "Found matching content: ...ent Patterns Over Ego Lifts\n\nPrioritize compound movements that train multiple muscle gr..."
+    },
+    {
+      "text": "Suggests a starting volume around 8-12 sets per muscle per week",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Recommends training mostly in approximately the 5-12 rep range",
+      "passed": true,
+      "evidence": "Found matching content: ...main compound lifts, and **2-3 sets of 8-12 reps** on accessories. That puts your weekl..."
+    },
+    {
+      "text": "Addresses effort/proximity to failure (e.g., 0-2 RIR or close to failure)",
+      "passed": true,
+      "evidence": "Found matching content: ...appen. Keep about **3+ reps in reserve (RIR)** on your main lifts - meaning you sto..."
+    },
+    {
+      "text": "Provides protein recommendation around 1.5-2.0 g/kg/day or equivalent",
+      "passed": true,
+      "evidence": "Found matching content: ...our highest-priority macro.** Aim for **1.6-2.2 grams of protein per kilogram of bo..."
+    },
+    {
+      "text": "Suggests a moderate weight gain target (around 1% bodyweight/month or slow surplus)",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Emphasizes bodyweight/calisthenic movement skill development before heavy barbell loading",
+      "passed": true,
+      "evidence": "Found matching content: ...plus** - roughly **17 kcal per pound of bodyweight per day** (about 37 kcal/kg) is a reaso..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 2,
+    "total": 7,
+    "pass_rate": 0.7143
+  }
+}

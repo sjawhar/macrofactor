@@ -1,0 +1,15 @@
+{
+  "eval_id": 34,
+  "eval_name": "eval-34-sleep-extension-and-recovery",
+  "prompt": "I usually get 7-8 hours of sleep, but when I try to force 8-9+ hours my sleep quality gets worse. Should I stop trying to force extra sleep?",
+  "expected_output": "Greg said yes, avoid forcing sleep if it is creating stress and fragmented sleep. He noted sleep-extension studies in high-level athletes often increased sleep from roughly 6-8 hours to 9-10+ hours and showed performance benefits, but that may not generalize perfectly to older or less heavily trained populations. He recommended a practical trial: shift bedtime earlier by about 30-60 minutes and see what your body does naturally. A useful marker is waking without an alarm; if that happens consistently, you are likely near your current sleep need. For many adults, especially past their 30s, very long nightly sleep durations may simply be harder to sustain. In that case, modest extension may be realistic while forced extension is counterproductive.",
+  "topic": "sleep extension and recovery",
+  "episode": 25,
+  "assertions": [
+    "Answer captures the core SBS position on sleep extension and recovery",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

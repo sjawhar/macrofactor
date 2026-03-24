@@ -1,0 +1,74 @@
+TASK: Answer 15 listener questions about strength training and fitness, using the SBS strength training skill for guidance.
+
+EXPECTED OUTCOME: 15 individual answer.md files, each 200-500 words, evidence-based and practical, drawing on the skill content.
+
+REQUIRED TOOLS: Read, Write
+
+MUST DO:
+1. FIRST: Read the SKILL.md at /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/SKILL.md — read it completely
+2. THEN: Read ALL 5 reference files in /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/ — read each one completely:
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/01-progressive-overload-and-phase-progression.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/02-volume-landmarks-and-weekly-set-targets.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/03-frequency-splits-and-weekly-structure.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/04-intensity-reps-and-exercise-selection.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/05-fatigue-deloads-and-level-specific-decisions.md
+3. For each question below, write a thorough answer (200-500 words) to the specified file path
+4. When a question is directly relevant to the skill content, draw on specific recommendations, numbers, and frameworks from the skill
+5. When a question is outside the skill's scope (e.g., supplements, lifestyle), still answer using general evidence-based knowledge
+6. Be nuanced — include caveats, individual variability, and practical recommendations
+7. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT answer from memory/training data alone for topics the skill covers — USE the skill content
+- Do NOT give generic/vague answers — be specific with numbers and mechanisms
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions from the Stronger By Science podcast. The SBS skill encodes evidence-based strength training knowledge from Greg Nuckols' guides. Your answers should reflect the SBS approach: evidence-based, nuanced, practical, with appropriate caveats.
+
+QUESTIONS:
+76. Question: "Can you gain muscle while eating around maintenance calories if protein is high and you still have body fat to spare?"
+   Topic: Recomp at maintenance calories
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-76-recomp-at-maintenance-calories/with_skill/outputs/answer.md
+77. Question: "For new lifters, is there any case for starting less evidence-based with things like bro splits, dreamer bulks, and even some ego lifting because they might build useful physical or psychological adaptations?"
+   Topic: Beginner training philosophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-77-beginner-training-philosophy/with_skill/outputs/answer.md
+78. Question: "Is trying to train for strength and hypertrophy at the same time basically useless for recreational intermediate lifters? Does it make sense to mix goals by body part or day?"
+   Topic: concurrent strength and hypertrophy training
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-78-concurrent-strength-and-hypertrophy-training/with_skill/outputs/answer.md
+79. Question: "Do triceps become the prime mover near max bench loads, and does that mean I should prioritize triceps accessories over pec-focused work?"
+   Topic: bench prime mover interpretation
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-79-bench-prime-mover-interpretation/with_skill/outputs/answer.md
+80. Question: "Are some muscles resistant to hypertrophy? Could you actually build a bigger tongue with enough loading, and are calves somehow different?"
+   Topic: muscle-specific hypertrophy skepticism
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-80-muscle-specific-hypertrophy-skepticism/with_skill/outputs/answer.md
+81. Question: "What signs suggest I need extra conditioning to keep progressing in strength or hypertrophy? What type of conditioning should I do?"
+   Topic: conditioning for lifting work capacity
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-81-conditioning-for-lifting-work-capacity/with_skill/outputs/answer.md
+82. Question: "How much does food quality really matter for strength and hypertrophy if calories and protein are already decent? Am I losing meaningful gains by eating more fun foods?"
+   Topic: diet quality vs performance outcomes
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-82-diet-quality-vs-performance-outcomes/with_skill/outputs/answer.md
+83. Question: "How much does protein feeding increase muscle protein synthesis compared with resistance training itself? Are we over-focusing on protein source and timing details?"
+   Topic: lifting stimulus vs protein optimization
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-83-lifting-stimulus-vs-protein-optimization/with_skill/outputs/answer.md
+84. Question: "How should I respond when a doctor tells me to stop squatting because it’s bad for my knees?"
+   Topic: medical advice vs lifting goals
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-84-medical-advice-vs-lifting-goals/with_skill/outputs/answer.md
+85. Question: "After hernia surgery with temporary lifting restrictions, how can I minimize muscle loss and when should I return to training?"
+   Topic: post-surgery detraining and return
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-85-post-surgery-detraining-and-return/with_skill/outputs/answer.md
+86. Question: "If my sleep schedule is sporadic, what should I do for body composition, recovery, and training? Are naps useful, and should I ever train sleep deprived?"
+   Topic: training with chronic sleep disruption
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-86-training-with-chronic-sleep-disruption/with_skill/outputs/answer.md
+87. Question: "How do we define training hard enough for typical lifters trying to get stronger or improve physique?"
+   Topic: how hard to train
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-87-how-hard-to-train/with_skill/outputs/answer.md
+88. Question: "How should bodybuilders periodize compound lifts to improve hypertrophy? Do they need sophisticated periodization blocks?"
+   Topic: bodybuilding periodization
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-88-bodybuilding-periodization/with_skill/outputs/answer.md
+89. Question: "If ethics and money were no concern, what study would you most want to run?"
+   Topic: dream research studies
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-89-dream-research-studies/with_skill/outputs/answer.md
+90. Question: "How does very low body fat affect strength and hypertrophy progress, and how can someone know if they’re too lean given poor body-fat measurement tools?"
+   Topic: very low body fat and training outcomes
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-90-very-low-body-fat-and-training-outcomes/with_skill/outputs/answer.md

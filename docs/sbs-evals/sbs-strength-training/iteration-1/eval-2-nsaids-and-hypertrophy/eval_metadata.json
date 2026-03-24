@@ -1,0 +1,15 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-2-nsaids-and-hypertrophy",
+  "prompt": "How should I think about NSAID use (like ibuprofen) around training, especially if I\u2019m younger versus older?",
+  "expected_output": "They highlighted two major modifiers: age and dose. Their summary of the literature was that higher-dose ibuprofen may blunt hypertrophy in younger adults, while in older adults with higher background inflammation there are cases where NSAID use could be neutral or even helpful. They emphasized that much of the concern comes from repeated high-dose use after every workout across weeks, not occasional use for illness or headaches. Occasional lower-dose use was described as unlikely to create a large practical hypertrophy penalty. They also said that if someone feels they need NSAIDs after every session, the bigger problem is probably training design or unresolved pain and should be addressed directly (for example adjusting programming and/or consulting a clinician).",
+  "topic": "NSAIDs and hypertrophy",
+  "episode": 104,
+  "assertions": [
+    "Answer captures the core SBS position on NSAIDs and hypertrophy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

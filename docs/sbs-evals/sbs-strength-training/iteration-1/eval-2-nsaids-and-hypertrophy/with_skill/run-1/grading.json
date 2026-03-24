@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on NSAIDs and hypertrophy",
+      "passed": true,
+      "evidence": "Answer contains 19/34 key concepts from the expected core position. Key matches: where, occasional, every, hypertrophy, adults."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": true,
+      "evidence": "Found 1/1 specific details from expected output. Matched: NSAID."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 4 caveat/limitation markers in the answer. Examples: but, individual, mixed, plausible."
+    },
+    {
+      "text": "Answer includes actionable practical recommendations consistent with the hosts' advice",
+      "passed": true,
+      "evidence": "Found 5 actionable recommendation markers. Examples: suggest, use, practical, bottom line."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": true,
+      "evidence": "No obvious contradictions detected with the expected position."
+    }
+  ]
+}

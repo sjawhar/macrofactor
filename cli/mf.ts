@@ -9,6 +9,8 @@ import {
   type FoodEntry,
   type Goals,
   type SearchFoodResult,
+  type SetTarget,
+  type WorkoutSource,
 } from '../src/lib/api/index';
 import { searchExercises, resolveExercise, lookupExercise } from '../src/lib/api/exercises';
 import { readInput, parseISO, expandSets, resolveWeight, type SetInput } from './helpers';
@@ -213,7 +215,7 @@ function normalizeSetInputs(exerciseId: string, setsValue: unknown) {
   return expandSets(normalizedSets);
 }
 
-function buildWorkoutExercise(exerciseInput: Record<string, unknown>) {
+function buildWorkoutExercise(exerciseInput: Record<string, unknown>, setTargets?: SetTarget[]) {
   if (typeof exerciseInput.exerciseId !== 'string' || exerciseInput.exerciseId.trim() === '') {
     throw new Error('Each exercise requires "exerciseId" (string)');
   }
@@ -230,13 +232,13 @@ function buildWorkoutExercise(exerciseInput: Record<string, unknown>) {
     exerciseId: resolvedId,
     note: typeof exerciseInput.note === 'string' ? exerciseInput.note : '',
     baseWeight: null,
-    sets: expanded.map((set) => ({
+    sets: expanded.map((set, setIndex) => ({
       setType: set.setType,
       segments: [],
       log: {
         id: randomUUID(),
         runtimeType: 'single',
-        target: null,
+        target: setTargets?.[setIndex] ?? null,
         value: {
           weight: set.weightKg,
           fullReps: set.fullReps,
@@ -260,6 +262,54 @@ function buildWorkoutExercise(exerciseInput: Record<string, unknown>) {
     })),
   };
   return { rawExercise, summary };
+}
+
+function coerceWorkoutSource(input: unknown): WorkoutSource | undefined {
+  if (!input || typeof input !== 'object') return undefined;
+  const source = input as Record<string, unknown>;
+  const runtimeType = typeof source.runtimeType === 'string' ? source.runtimeType : 'trainingProgram';
+  const cycleIndex = source.cycleIndex == null ? undefined : Number(source.cycleIndex);
+  return {
+    runtimeType,
+    programId: typeof source.programId === 'string' ? source.programId : undefined,
+    programName: typeof source.programName === 'string' ? source.programName : undefined,
+    dayId: typeof source.dayId === 'string' ? source.dayId : undefined,
+    cycleIndex: Number.isFinite(cycleIndex) ? cycleIndex : undefined,
+    programColor: typeof source.programColor === 'string' ? source.programColor : undefined,
+    programIcon: typeof source.programIcon === 'string' ? source.programIcon : undefined,
+  };
+}
+
+async function getProgramDayTargets(client: MacroFactorClient, workoutSource?: WorkoutSource) {
+  const result: { byExerciseId: Map<string, SetTarget[]>; byPosition: SetTarget[][] } = {
+    byExerciseId: new Map(),
+    byPosition: [],
+  };
+  if (!workoutSource?.dayId || workoutSource.cycleIndex == null) {
+    return result;
+  }
+
+  const programs = await client.getTrainingPrograms();
+  const program =
+    programs.find((candidate) => candidate.id === workoutSource.programId) ||
+    programs.find((candidate) => candidate.isActive) ||
+    programs[0];
+  if (!program) return result;
+
+  const day = program.days.find((candidate) => candidate.id === workoutSource.dayId);
+  if (!day) return result;
+
+  const cycleTargetsIndex = workoutSource.cycleIndex;
+  for (const exercise of day.exercises) {
+    const programSets = exercise.periodizedTargets?.values?.[cycleTargetsIndex]?.sets ?? [];
+    const targets = programSets.map((programSet) => ({ ...programSet.log }));
+    result.byPosition.push(targets);
+    if (targets.length > 0) {
+      result.byExerciseId.set(exercise.exerciseId, targets);
+    }
+  }
+
+  return result;
 }
 
 function summarizeLastMeal(entries: FoodEntry[]) {
@@ -794,6 +844,8 @@ async function main() {
 
         const client = await getClient();
         const gyms = await client.getGymProfiles();
+        const workoutSource = coerceWorkoutSource(input.workoutSource);
+        const programTargets = await getProgramDayTargets(client, workoutSource);
         const gymId = typeof input.gymId === 'string' ? input.gymId.trim() : '';
         if (!gymId) {
           throw new Error('log-workout requires "gymId" (string)');
@@ -817,6 +869,7 @@ async function main() {
         const blocks: any[] = [];
         const exerciseSummary: any[] = [];
 
+        let exerciseIndex = 0;
         if (Array.isArray(blocksInput)) {
           for (const blockGroup of blocksInput) {
             if (!Array.isArray(blockGroup)) {
@@ -828,9 +881,14 @@ async function main() {
               if (!exerciseInput || typeof exerciseInput !== 'object') {
                 throw new Error('Each exercise must be an object');
               }
-              const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
+              const inputExercise = exerciseInput as Record<string, unknown>;
+              const exerciseId = typeof inputExercise.exerciseId === 'string' ? inputExercise.exerciseId.trim() : '';
+              const setTargets =
+                programTargets.byExerciseId.get(exerciseId) ?? programTargets.byPosition[exerciseIndex];
+              const { rawExercise, summary } = buildWorkoutExercise(inputExercise, setTargets);
               blockExercises.push(rawExercise);
               blockSummaries.push(summary);
+              exerciseIndex++;
             }
             blocks.push({ exercises: blockExercises });
             exerciseSummary.push(blockSummaries);
@@ -844,9 +902,13 @@ async function main() {
             if (!exerciseInput || typeof exerciseInput !== 'object') {
               throw new Error('Each exercise must be an object');
             }
-            const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
+            const inputExercise = exerciseInput as Record<string, unknown>;
+            const exerciseId = typeof inputExercise.exerciseId === 'string' ? inputExercise.exerciseId.trim() : '';
+            const setTargets = programTargets.byExerciseId.get(exerciseId) ?? programTargets.byPosition[exerciseIndex];
+            const { rawExercise, summary } = buildWorkoutExercise(inputExercise, setTargets);
             blocks.push({ exercises: [rawExercise] });
             exerciseSummary.push(summary);
+            exerciseIndex++;
           }
         }
 
@@ -859,6 +921,7 @@ async function main() {
           gymId: gym?.id || '',
           gymName: gym?.name || 'Gym',
           gymIcon: gym?.icon || 'house',
+          ...(workoutSource ? { workoutSource } : {}),
           blocks,
         };
 
@@ -870,8 +933,19 @@ async function main() {
           'gymId',
           'gymName',
           'gymIcon',
+          ...(workoutSource ? ['workoutSource'] : []),
           'blocks',
         ]);
+
+        // Mark program day as completed so it shows checked in the app
+        if (workoutSource?.programId && workoutSource.dayId && workoutSource.cycleIndex != null) {
+          await client.markProgramDayCompleted(
+            workoutSource.programId,
+            workoutSource.cycleIndex,
+            workoutSource.dayId,
+            workoutId
+          );
+        }
 
         console.log(
           JSON.stringify(

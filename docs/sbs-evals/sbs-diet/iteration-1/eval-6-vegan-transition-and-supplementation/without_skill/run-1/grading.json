@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states Eric noticed no meaningful performance or recovery change after going vegan",
+      "passed": true,
+      "evidence": "Found 'no' in: ...ed, though the transition period may show temporary dips\n\n**No inherent limitation**: Vegan athletes compete successfully..."
+    },
+    {
+      "text": "Answer mentions protein-source diversity (pea, rice, soy) for amino acid coverage",
+      "passed": true,
+      "evidence": "Found 'rice' in: ...er portions or combination of complementary proteins (e.g., rice + beans) to achieve complete amino acid profiles\n- **Micron..."
+    },
+    {
+      "text": "Answer includes algae oil for EPA/DHA and B12 as important supplements",
+      "passed": true,
+      "evidence": "Found 'algae' in: ...ern climates or low sun exposure)\n3. **Omega-3 (EPA/DHA)**: Algae-based supplement recommended; ALA conversion from flax/chia..."
+    },
+    {
+      "text": "Answer does NOT claim vegan diet is superior or inferior for performance",
+      "passed": false,
+      "evidence": "Missing any of: ['not', 'superior', 'inferior']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

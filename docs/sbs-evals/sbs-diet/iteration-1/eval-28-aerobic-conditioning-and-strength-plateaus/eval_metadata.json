@@ -1,0 +1,14 @@
+{
+  "eval_id": 28,
+  "eval_name": "eval-28-aerobic-conditioning-and-strength-plateaus",
+  "prompt": "Can low VO2 max or poor aerobic conditioning hold back strength progress? I'm stuck, my VO2 max is around 25, and I also have mild asthma.",
+  "expected_output": "Greg said yes, poor conditioning can limit lifting progress in some cases, and this sounds like one of them. He advised medical clearance first for asthma, then noted that a VO2 max around 25 ml/kg/min is low relative to typical sedentary averages (~35 women, ~40 men), with many trained athletes around 45-50+ and elite endurance athletes often 70-90+. He explained that hard resistance training still carries substantial systemic energy demand, especially with large compound movements and heavier loads. His practical recommendations were to add dedicated aerobic work, consider longer rest periods, and temporarily bias lower-body work toward machine/single-joint exercises to keep local muscle stimulus high while reducing systemic fatigue burden. He added that very strong lifters can also run into conditioning bottlenecks due to sheer workload, where longer rests and some cardio may help manage performance capacity.",
+  "topic": "aerobic conditioning and strength plateaus",
+  "episode": 31,
+  "assertions": [
+    "Answer says poor conditioning can limit lifting progress",
+    "Answer notes a VO2 max around 25 ml/kg/min is low relative to typical sedentary averages (~35-40)",
+    "Answer recommends adding dedicated aerobic work",
+    "Answer suggests longer rest periods and possibly machine/single-joint exercises to manage systemic fatigue"
+  ]
+}

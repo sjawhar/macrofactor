@@ -1,0 +1,15 @@
+{
+  "eval_id": 60,
+  "eval_name": "eval-60-youth-resistance-training",
+  "prompt": "How should kids and adolescents train with weights? Is there a growth-plate risk, and should heavy singles be avoided?",
+  "expected_output": "Greg\u2019s take was that current evidence does not show lifting stunts growth, but truly definitive long-term trials are scarce. Mechanistically, he viewed typical resistance-training loads as less concerning for growth plates than everyday running/jumping exposures in kids. He recommended close supervision, strict technique emphasis, and minimizing preventable gym-floor injuries from inattention. Before/during early puberty, priority should be movement skill development rather than chasing failure or maximal loads. As puberty progresses, training stress can be scaled up because strength and hypertrophy responsiveness generally improves.",
+  "topic": "youth resistance training",
+  "episode": 46,
+  "assertions": [
+    "Answer captures the core SBS position on youth resistance training",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

@@ -1,0 +1,50 @@
+TASK: Answer 7 listener questions about strength training and fitness, using the SBS strength training skill for guidance.
+
+EXPECTED OUTCOME: 7 individual answer.md files, each 200-500 words, evidence-based and practical, drawing on the skill content.
+
+REQUIRED TOOLS: Read, Write
+
+MUST DO:
+1. FIRST: Read the SKILL.md at /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/SKILL.md — read it completely
+2. THEN: Read ALL 5 reference files in /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/ — read each one completely:
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/01-progressive-overload-and-phase-progression.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/02-volume-landmarks-and-weekly-set-targets.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/03-frequency-splits-and-weekly-structure.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/04-intensity-reps-and-exercise-selection.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/05-fatigue-deloads-and-level-specific-decisions.md
+3. For each question below, write a thorough answer (200-500 words) to the specified file path
+4. When a question is directly relevant to the skill content, draw on specific recommendations, numbers, and frameworks from the skill
+5. When a question is outside the skill's scope (e.g., supplements, lifestyle), still answer using general evidence-based knowledge
+6. Be nuanced — include caveats, individual variability, and practical recommendations
+7. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT answer from memory/training data alone for topics the skill covers — USE the skill content
+- Do NOT give generic/vague answers — be specific with numbers and mechanisms
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions from the Stronger By Science podcast. The SBS skill encodes evidence-based strength training knowledge from Greg Nuckols' guides. Your answers should reflect the SBS approach: evidence-based, nuanced, practical, with appropriate caveats.
+
+QUESTIONS:
+91. Question: "What fitness beliefs are you most against, relative to common wisdom?"
+   Topic: contrarian fitness views
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-91-contrarian-fitness-views/with_skill/outputs/answer.md
+92. Question: "If I train in the morning (often fasted) and perform a bit worse, how much does that matter for non-competitive goals like health or hypertrophy?"
+   Topic: fasted morning training performance
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-92-fasted-morning-training-performance/with_skill/outputs/answer.md
+93. Question: "Why do I sometimes ache more during a deload week than during hard training weeks?"
+   Topic: deload soreness and pain perception
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-93-deload-soreness-and-pain-perception/with_skill/outputs/answer.md
+94. Question: "What do you think about ashwagandha for performance and strength? A meta-analysis says it helps."
+   Topic: ashwagandha ergogenic evidence
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-94-ashwagandha-ergogenic-evidence/with_skill/outputs/answer.md
+95. Question: "How have your lifts changed during your cut, and what helped you maintain strength while losing weight?"
+   Topic: strength changes during weight loss
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-95-strength-changes-during-weight-loss/with_skill/outputs/answer.md
+96. Question: "For body composition, is HIIT better than moderate steady-state cardio? And what interval setups do you recommend?"
+   Topic: HIIT vs steady-state for fat loss
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-96-hiit-vs-steady-state-for-fat-loss/with_skill/outputs/answer.md
+97. Question: "How much benefit do you get from individualized training or coaching versus a general program, and when does personalization matter most?"
+   Topic: individualizing training programs
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-97-individualizing-training-programs/with_skill/outputs/answer.md

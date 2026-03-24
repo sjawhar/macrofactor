@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says poor conditioning can limit lifting progress",
+      "passed": true,
+      "evidence": "Found 'conditioning' in: ...# Can Low VO2 Max or Poor Aerobic Conditioning Hold Back Strength Progress?\n\n## Short Answer\n\nLow VO2 max..."
+    },
+    {
+      "text": "Answer notes a VO2 max around 25 ml/kg/min is low relative to typical sedentary averages (~35-40)",
+      "passed": true,
+      "evidence": "Found '25' in: ...mically fatigued?\n\n## Mild Asthma and VO2 Max\n\nA VO2 max of 25 ml/kg/min is:\n\n- **Below average** for most populations (av..."
+    },
+    {
+      "text": "Answer recommends adding dedicated aerobic work",
+      "passed": true,
+      "evidence": "Found 'aerobic' in: ...# Can Low VO2 Max or Poor Aerobic Conditioning Hold Back Strength Progress?\n\n## Short Answer..."
+    },
+    {
+      "text": "Answer suggests longer rest periods and possibly machine/single-joint exercises to manage systemic fatigue",
+      "passed": true,
+      "evidence": "Found 'rest' in: ...rk\n\n**3. Systemic Stress**\n\n- Poor conditioning may elevate resting cortisol and systemic inflammation\n- This can blunt reco..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "episode": 29,
+  "pairs": [
+    {
+      "question": "Are there downsides to eating a lot of protein, and is the common target of about 1 gram per pound enough for building muscle? Should someone aiming to maximize gains go even higher?",
+      "answer_summary": "Eric said concerns about high-protein harms are often overstated in healthy people, noting that common internet claims about kidney or bone damage are not well-supported in lifters without pre-existing disease. He framed practical intake around evidence-based ranges rather than extreme intakes. His recommended target for most people was roughly 1.6-2.2 g/kg/day, which already covers most muscle-building needs. He noted that going far beyond that range usually gives little added hypertrophy benefit unless total diet context requires it. The key was hitting a sufficient intake consistently, then focusing on total calories and training quality.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "protein upper-limit concerns"
+    },
+    {
+      "question": "Instead of doing many sets of the same exercise, could rotating through multiple exercises for the same muscle reduce diminishing returns and improve hypertrophy?",
+      "answer_summary": "Greg said he does not see strong downside to exercise variation when total hard sets are matched, and it may be modestly beneficial. They discussed the Fonseca-style finding where total quad growth was similar across conditions, but the varied-exercise groups showed more balanced growth across different quad regions. The practical takeaway was that variety can help distribute stimulus and may improve regional hypertrophy without necessarily changing overall growth dramatically. Eric added that variation can also improve enjoyment and adherence, which matters for long-term outcomes. They did not present this as a magic trick, but as a reasonable programming option.",
+      "skills": ["sbs-strength-training", "sbs-squat"],
+      "topic": "exercise variety and hypertrophy"
+    },
+    {
+      "question": "For hypertrophy, are machines better than free weights, and which one lets you do more useful volume and make better gains?",
+      "answer_summary": "Eric's answer was that neither modality is universally superior for hypertrophy. He emphasized that machines can be very useful for adding variation, reducing some technical constraints, and accumulating targeted volume. He still favored keeping a base of compound free-weight work when skill and injury status allow, while using machines to complement that base. Both hosts stressed specificity: if performance in a lift matters, include that lift; if the goal is hypertrophy, a mixed approach is usually strong. Net recommendation: use both, and pick the tool that best fits the muscle, movement, and fatigue profile.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench"],
+      "topic": "machines vs free weights"
+    },
+    {
+      "question": "Since lifting can increase bone mineral density, could improving bone mass also feed back to improve strength or muscle gain? If so, how would you try to prioritize bone gains?",
+      "answer_summary": "Eric said the two-way relationship is plausible, while also noting the evidence is still emerging. He referenced mechanistic ideas like bone-derived signaling factors and acknowledged this area is active research rather than settled doctrine. For practical bone-focused strategies, he highlighted continued heavy resistance training as the foundation. He also suggested carefully introducing high-load partials to increase skeletal loading and considering impact-oriented work where appropriate and tolerated. The tone was cautiously optimistic: likely real, but not yet pinned down with definitive prescriptions.",
+      "skills": ["sbs-strength-training"],
+      "topic": "bone-muscle crosstalk"
+    },
+    {
+      "question": "Do hardgainers benefit from exceeding typical protein targets (the listener phrased it as over 1 g/kg), and is there meaningful evidence about hardgainers who are female?",
+      "answer_summary": "Eric reframed this as mostly a hardgainer problem, not a protein problem. He said that if someone is already in a sufficient intake range (about 1.6-2.2 g/kg/day), simply pushing protein higher usually won't fix poor gain rates. If the issue is adaptive increases in energy expenditure, the main solution is higher total calories, not just more protein. They also discussed that perceived sex differences in hardgainer reports may partly reflect who talks about it online rather than a clear biological split. Greg and Eric agreed that if intake is truly low, raising protein helps, but beyond sufficiency, energy balance and training response dominate.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "hardgainers and protein dosing"
+    },
+    {
+      "question": "Could the diminishing returns from very high session volume be partly explained by increased muscle protein breakdown from accumulating damage?",
+      "answer_summary": "Eric said yes, muscle protein breakdown can contribute, but likely does not fully explain the whole diminishing-returns story except at very high, often unrealistic, volumes. He described the issue as multi-factorial, with systemic stress signals also becoming important as volume climbs. They mentioned broader overreaching/overtraining markers (e.g., inflammatory and hormonal shifts) as additional plausible mechanisms reducing net adaptation. So MPB is part of the picture, but not the only bottleneck. Practical implication: more volume is not always better once recovery costs start outpacing adaptive benefit.",
+      "skills": ["sbs-strength-training"],
+      "topic": "volume ceilings and MPB"
+    },
+    {
+      "question": "If you're several years removed from undergrad and need academic references for a master's application, how can you request letters without being rude, and what can you do if those relationships are stale?",
+      "answer_summary": "Eric recommended two routes: re-activate prior professor relationships or build new ones through nearby labs. For old contacts, he suggested a concise email that quickly refreshes who you are, includes concrete context (course, performance, resume), and asks whether they can provide a strong letter. He advised checking each program's letter requirements first, since some specify exactly which referee types they accept. If prior contacts are weak, volunteering in a research lab is a practical way to build credible new references while gaining research experience. Greg added that most letters are not make-or-break unless they are exceptionally negative, so a clear and professional request is usually sufficient.",
+      "skills": [],
+      "topic": "graduate application references"
+    }
+  ]
+}

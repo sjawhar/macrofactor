@@ -1,0 +1,41 @@
+{
+  "episode": 73,
+  "pairs": [
+    {
+      "question": "I saw protein overfeeding studies where people ate around 800 extra calories but didn’t gain fat. Can amino acids actually be converted and stored as body fat, or are those calories somehow not usable?",
+      "answer_summary": "Eric said the mechanistic answer is yes: excess protein calories can be oxidized for energy and can ultimately contribute to fat storage. He emphasized that thermic effect differs by macro (protein highest, fat lowest), so storage efficiency differs, but that does not make protein calories 'free.' He was skeptical of interpreting the Antonio-style free-living overfeeding papers literally because they rely on self-reported intake. He cited overfeeding work (including Han et al.) showing people often fail to truly hit prescribed protein surpluses, and a controlled metabolic-ward trial by Bray et al. where intake was supervised and overfeeding behaved as expected. In that ward study, protein ranged roughly from ~0.7-0.8 g/kg to ~3 g/kg and participants still gained fat mass under sustained caloric surplus. Practical takeaway: high protein can make overfeeding harder because of satiety, but it does not bypass energy balance.",
+      "skills": ["sbs-diet"],
+      "topic": "protein overfeeding and fat gain"
+    },
+    {
+      "question": "Why do I sometimes ache more during a deload week than during hard training weeks?",
+      "answer_summary": "Eric said there is not solid direct human evidence here, so explanations are tentative rather than definitive. One possibility is that hard training acutely elevates sympathetic output/catecholamines (adrenaline-related) that can transiently blunt pain perception. Another is that general movement itself has an analgesic effect, so when total activity drops during deloads, discomfort can feel more noticeable. A third possibility is attentional: during hard training you are focused on performance, while during deloads you may notice background aches more. His bottom line was that several mechanisms are plausible, none are proven, and high-confidence single-cause explanations are overstated.",
+      "skills": ["sbs-strength-training"],
+      "topic": "deload soreness and pain perception"
+    },
+    {
+      "question": "What do you think about ashwagandha for performance and strength? A meta-analysis says it helps.",
+      "answer_summary": "Greg said the meta-analysis itself looked competently done, but he does not think the underlying evidence base is consistent enough to strongly recommend ashwagandha as an ergogenic aid. He highlighted very large, hard-to-generalize effect sizes in some studies (for example, an ~8-week trial reporting about +46 kg bench gain in the ashwagandha group, with very large placebo gains too), which suggests high noise and limited external validity rather than a reliable expected effect. He also noted weak mechanistic coherence across studies. His practical recommendation was cautious: if someone is very interested, uses a reputable product, and stays within labeled dosing, trying it is reasonable, but expectations should be modest. He does not view current evidence as strong enough for confident performance claims.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "ashwagandha ergogenic evidence"
+    },
+    {
+      "question": "How have your lifts changed during your cut, and what helped you maintain strength while losing weight?",
+      "answer_summary": "Greg said he did get weaker over the cut, but he attributed much of that to disrupted training rather than fat loss itself. He started cutting around February and, in April/May, injured his wrist/elbow, which limited gripping, squatting setups, and pressing and led to a few months of minimal training. He said this break helped him psychologically accept temporary strength loss so the diet could continue. Once he resumed consistent lifting, strength rebounded quickly (for example, returning to a hard 315 single, then a relatively comfortable 315 triple on low incline within a few sessions). His framing was that consistency and acceptance mattered more than chasing perfect in-cut peak numbers, and that retraining restored performance rapidly.",
+      "skills": ["sbs-diet", "sbs-strength-training", "sbs-bench"],
+      "topic": "strength changes during weight loss"
+    },
+    {
+      "question": "For body composition, is HIIT better than moderate steady-state cardio? And what interval setups do you recommend?",
+      "answer_summary": "Eric summarized a meta-analysis (Steele et al.) finding no meaningful body-composition advantage of interval vs steady-state cardio: both produced small average changes (about -0.25 kg fat and +0.1 kg fat-free mass). He noted cardio is great for health and can help, but as a standalone fat-loss tool it is usually modest, so pairing with diet is more effective. For intervals, he gave concrete options: 30 s all-out (RPE 10) + 90 s easy recovery for 10-15 rounds; or 1 min hard / 1 min easy around RPE 9-10; or 2 min hard / 2 min easy at slightly lower intensity (about RPE 8-9.5) for fewer rounds. He also said interference with lifting is usually small if total stress is managed and sessions are programmed sensibly. Practical takeaway: choose the modality/protocol you can perform safely and adhere to.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "HIIT vs steady-state for fat loss"
+    },
+    {
+      "question": "How much benefit do you get from individualized training or coaching versus a general program, and when does personalization matter most?",
+      "answer_summary": "Greg said direct resistance-training evidence is limited, but conceptually supportive findings exist. He cited a force-velocity-profile jump study where individualized programming outperformed a generalized approach for jump outcomes, while acknowledging this is proof-of-concept rather than direct maximal-strength evidence. He also pointed out supervision research showing that even on the same program, more direct coaching tends to improve strength outcomes. From within-subject unilateral studies, he suggested individual differences appear most meaningful for volume/frequency tolerance; in one frequency-volume design (e.g., 2x vs 3x vs 5x), higher frequency won on average but some individuals did better at lower frequencies. His applied recommendation was to individualize volume and frequency first, since other variables likely matter less for most people.",
+      "skills": ["sbs-strength-training"],
+      "topic": "individualizing training programs"
+    }
+  ]
+}

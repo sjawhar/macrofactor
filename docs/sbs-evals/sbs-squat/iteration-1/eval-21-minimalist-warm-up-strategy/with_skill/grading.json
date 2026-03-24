@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States minimalist warm-ups are fine if they reliably prepare you for the session",
+      "passed": true,
+      "evidence": "Found matching content: ...just ramp up through barbell sets - are completely defensible for a lot of lifters, and honestly, the..."
+    },
+    {
+      "text": "Frames the decision as a cost-benefit issue, especially for people with limited gym time",
+      "passed": true,
+      "evidence": "Found matching content: ...specific warm-up possible.\n\nThe honest cost-benefit framing here is: every minute spent on..."
+    },
+    {
+      "text": "Warns against making minimalism the goal itself (under-warming can reduce readiness)",
+      "passed": true,
+      "evidence": "Found matching content: ...he warning worth issuing is: don't make minimalism the goal itself. The goal is to squat w..."
+    },
+    {
+      "text": "Recommends an iterative approach: remove warm-up elements one at a time and keep only what clearly helps",
+      "passed": true,
+      "evidence": "Found matching content: ...dd something back. The right process is iterative removal: start with what you're current..."
+    },
+    {
+      "text": "Defines the goal as the minimum effective warm-up for your body and session demands",
+      "passed": true,
+      "evidence": "Found matching content: ...ve removal approach to find your actual minimum effective dose rather than assuming either extrem..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

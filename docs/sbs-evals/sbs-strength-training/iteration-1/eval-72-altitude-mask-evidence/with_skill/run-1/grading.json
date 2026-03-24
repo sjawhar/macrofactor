@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 4,
+    "failed": 0,
+    "total": 4
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on altitude mask evidence",
+      "passed": true,
+      "evidence": "Answer contains 32/43 key concepts from the expected core position. Key matches: controlled, power, feel, driven, partial."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": true,
+      "evidence": "Found 1/1 specific details from expected output. Matched: VO2max."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 3 caveat/limitation markers in the answer. Examples: but, mixed, context."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": true,
+      "evidence": "No obvious contradictions detected with the expected position."
+    }
+  ]
+}

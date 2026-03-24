@@ -1,0 +1,14 @@
+{
+  "eval_id": 48,
+  "eval_name": "eval-48-hardgainers-and-protein-dosing",
+  "prompt": "Do hardgainers benefit from exceeding typical protein targets (the listener phrased it as over 1 g/kg), and is there meaningful evidence about hardgainers who are female?",
+  "expected_output": "Eric reframed this as mostly a hardgainer problem, not a protein problem. He said that if someone is already in a sufficient intake range (about 1.6-2.2 g/kg/day), simply pushing protein higher usually won't fix poor gain rates. If the issue is adaptive increases in energy expenditure, the main solution is higher total calories, not just more protein. They also discussed that perceived sex differences in hardgainer reports may partly reflect who talks about it online rather than a clear biological split. Greg and Eric agreed that if intake is truly low, raising protein helps, but beyond sufficiency, energy balance and training response dominate.",
+  "topic": "hardgainers and protein dosing",
+  "episode": 29,
+  "assertions": [
+    "Answer captures the core SBS position on hardgainers and protein dosing",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

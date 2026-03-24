@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states hypertrophy IS possible with type 2 diabetes, not 'off the table'",
+      "passed": true,
+      "evidence": "Found 'still' in: ...ng type 2 diabetes or insulin resistance, the SBS framework still applies to the **nutrition mechanics**:\n\n1. **Set your calo..."
+    },
+    {
+      "text": "Answer mentions reduced but not zero growth rate compared to non-diabetic populations",
+      "passed": true,
+      "evidence": "Found 'reduced' in: ...ling\n2. **Quantitative impact on hypertrophy** \u2014 no data on reduced muscle growth rates in diabetic or insulin-resistant popula..."
+    },
+    {
+      "text": "Answer discusses metformin's possible small negative hypertrophy effect via AMPK/MTOR",
+      "passed": true,
+      "evidence": "Found 'metformin' in: ...tance and Type 2 Diabetes Affect Muscle Growth, and Whether Metformin Worsens Hypertrophy\n\n## Summary\n\nThe SBS Diet skill and its..."
+    },
+    {
+      "text": "Answer acknowledges confounding factors (age, training volume) in diabetic study populations",
+      "passed": true,
+      "evidence": "Found 'age' in: ...onutrient, fiber, and hydration** baselines for health coverage\n- **Adjustment protocols** when progress stalls\n\n## What th..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

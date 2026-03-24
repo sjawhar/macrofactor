@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Notes that by late teens, most lifters should be capable of solid strength gains (age is not the main limiter)",
+      "passed": true,
+      "evidence": "'Being a teenager doesn't hurt your strength progress.' 'The hormonal environment during late adolescence is quite favorable for building muscle and getting stronger. You're not fighting your biology here.'"
+    },
+    {
+      "text": "Emphasizes huge individual variability in where linear progression stalls",
+      "passed": true,
+      "evidence": "'Where linear progression stalls is enormously variable across individuals.' Discusses body size, limb proportions, and training history as sources of variation."
+    },
+    {
+      "text": "States a specific benchmark (like 405) is not a reliable readiness cutoff",
+      "passed": true,
+      "evidence": "'405 Is an Arbitrary Internet Benchmark.' 'It's a number that circulates online because it's a round number (four plates) that sounds impressive, and people pattern-match their experience to it.' 'Stalling at 315, 365, or 455 are all equally valid outcomes.'"
+    },
+    {
+      "text": "Recommends using progression timescale (weekly, monthly, etc.) rather than absolute load to classify training stage",
+      "passed": true,
+      "evidence": "'SBS methodology uses progression timescale to classify where a lifter is: Novice: Adding weight session-to-session. Intermediate: Adding weight week-to-week. Advanced: Adding weight month-to-month.' Explicit recommendation."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

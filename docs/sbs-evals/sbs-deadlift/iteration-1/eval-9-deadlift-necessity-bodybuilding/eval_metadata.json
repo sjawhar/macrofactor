@@ -1,0 +1,11 @@
+{
+  "eval_id": 9,
+  "eval_name": "deadlift-necessity-bodybuilding",
+  "prompt": "From a bodybuilding standpoint, can I completely remove deadlifts and all deadlift variations? Can other posterior-chain exercises fully replace them?",
+  "assertions": [
+    "Gives a clear affirmative \u2014 deadlifts can be fully removed for bodybuilding purposes",
+    "Lists specific alternative exercises covering the same muscle groups (e.g., hamstring curls, hip thrusts, rows, pull-ups, shrugs)",
+    "Acknowledges deadlifts are time-efficient for loading multiple posterior muscles simultaneously",
+    "Notes replacement is especially viable when lifters have injuries, poor tolerance, or strong preference against deadlifts"
+  ]
+}

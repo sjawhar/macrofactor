@@ -1,0 +1,14 @@
+{
+  "eval_id": 85,
+  "eval_name": "eval-85-post-surgery-detraining-and-return",
+  "prompt": "After hernia surgery with temporary lifting restrictions, how can I minimize muscle loss and when should I return to training?",
+  "expected_output": "They said nutrition alone is usually weak for preventing detraining losses compared with actual loading. Eric noted that studies using very high leucine intakes (about 15-19 g/day extra) sometimes show partial benefit, while lower doses (around 10 g/day or less extra) are often not very effective. Even then, he emphasized that safe tissue loading is still the key if medically allowed. For return-to-training timing, they refused to give a universal timeline and said to work closely with your surgeon/clinical team, even if that means asking very specific follow-up questions. They also stressed that regaining lost strength is typically faster than building it the first time, so being conservative short-term is usually the better long-term play.",
+  "topic": "post-surgery detraining and return",
+  "episode": 58,
+  "assertions": [
+    "Answer captures the core SBS position on post-surgery detraining and return",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

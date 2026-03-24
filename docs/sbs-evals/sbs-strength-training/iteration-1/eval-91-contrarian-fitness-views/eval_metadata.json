@@ -1,0 +1,14 @@
+{
+  "eval_id": 91,
+  "eval_name": "eval-91-contrarian-fitness-views",
+  "prompt": "What fitness beliefs are you most against, relative to common wisdom?",
+  "expected_output": "Greg pushed back on the premise that one unified 'common wisdom' exists across all fitness subcultures. His main concrete example was stretching: he argued static stretching is often unfairly maligned in lifting circles, despite strong evidence that chronic stretching can improve flexibility. He acknowledged acute pre-performance reductions can occur with very long/intense stretching immediately before maximal tests, but said those effects often dissipate after normal warm-up. He also used training frequency as an example of shifting consensus over time, showing how 'common wisdom' can reverse within a decade. So their broader answer was that context and subcommunity matter more than any single universal orthodoxy.",
+  "topic": "contrarian fitness views",
+  "episode": 58,
+  "assertions": [
+    "Answer captures the core SBS position on contrarian fitness views",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

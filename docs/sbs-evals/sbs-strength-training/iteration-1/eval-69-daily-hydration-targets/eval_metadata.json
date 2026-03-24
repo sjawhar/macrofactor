@@ -1,0 +1,15 @@
+{
+  "eval_id": 69,
+  "eval_name": "eval-69-daily-hydration-targets",
+  "prompt": "I started drinking a gallon of water per day and now I'm peeing constantly. How much water do I actually need?",
+  "expected_output": "Eric cited DRI targets of about 3.7 L/day for men and 2.7 L/day for women, and noted these totals include water from beverages plus food (roughly ~80% beverages, ~20% food on typical diets). He said being slightly over target is usually low-risk for healthy people because excess water is excreted, while being meaningfully under-hydrated can impair performance as dehydration approaches ~2%+ body mass loss. He cautioned against extreme water-chugging challenges because hyponatremia is a real risk in extreme scenarios. For most lifters, a rough target around three-quarters to one gallon can be reasonable, adjusted upward if sweat losses are high. Core recommendation: hydrate across the day rather than trying to backload intake late.",
+  "topic": "daily hydration targets",
+  "episode": 50,
+  "assertions": [
+    "Answer captures the core SBS position on daily hydration targets",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

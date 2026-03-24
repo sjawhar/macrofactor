@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer explains low energy availability disrupts multiple hormones (estrogen, testosterone, thyroid, IGF-1)",
+      "passed": true,
+      "evidence": "Found 'energy availability' in: ...l or unintentional)\n2. **High training volume** relative to energy availability\n3. **Psychological stress** compounding metabolic stress\n\nE..."
+    },
+    {
+      "text": "Answer states hypertrophy and performance are likely impaired in that state",
+      "passed": true,
+      "evidence": "Found 'impaired' in: ...rogen reduces aerobic efficiency\n- Lactate clearance may be impaired\n- Perceived exertion increases for the same absolute worklo..."
+    },
+    {
+      "text": "Answer notes recovery is not all-or-none and can improve before full cycle restoration",
+      "passed": false,
+      "evidence": "Missing any of: ['not all-or-none', 'gradual', 'partial']"
+    },
+    {
+      "text": "Answer recommends addressing energy availability and training stress first",
+      "passed": true,
+      "evidence": "Found 'energy availability' in: ...l or unintentional)\n2. **High training volume** relative to energy availability\n3. **Psychological stress** compounding metabolic stress\n\nE..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

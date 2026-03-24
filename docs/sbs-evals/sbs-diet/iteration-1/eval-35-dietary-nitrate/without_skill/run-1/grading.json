@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says yes, food-based nitrate intake can produce ergogenic benefits",
+      "passed": true,
+      "evidence": "Found 'yes' in: ...l as Nitrate Supplements for Performance?\n\n## Short Answer\n\nYes, nitrate-rich foods can work as well as or better than nitr..."
+    },
+    {
+      "text": "Answer mentions quality-control variability in some commercial beet supplements",
+      "passed": true,
+      "evidence": "Found 'quality' in: ...able and cost-effective long-term\n- Better for overall diet quality\n\n**Advantages of Supplements:**\n\n- Precise dosing (easier t..."
+    },
+    {
+      "text": "Answer suggests possible synergy from other compounds in the food matrix",
+      "passed": true,
+      "evidence": "Found 'compound' in: ...Whole foods may actually have advantages due to additional compounds (polyphenols, antioxidants) that support nitric oxide prod..."
+    },
+    {
+      "text": "Answer recommends keeping nitrate-rich produce in the diet rather than relying solely on pills",
+      "passed": true,
+      "evidence": "Found 'produce' in: ...s:**\n\n- Research shows that whole foods containing nitrates produce similar performance benefits to isolated nitrate supplement..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

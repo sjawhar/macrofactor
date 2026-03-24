@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 0.8,
+    "passed": 4,
+    "failed": 1,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on low incline vs flat bench hypertrophy",
+      "passed": true,
+      "evidence": "Answer contains 18/42 key concepts from the expected core position. Key matches: magic, longer, safer, hypertrophy, plausible."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": true,
+      "evidence": "Found 1/1 specific details from expected output. Matched: ROM."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 2 caveat/limitation markers in the answer. Examples: but, plausible."
+    },
+    {
+      "text": "Answer includes actionable practical recommendations consistent with the hosts' advice",
+      "passed": true,
+      "evidence": "Found 8 actionable recommendation markers. Examples: should, try, start with, use."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": false,
+      "evidence": "Answer contains strong positive claim 'universally' that may contradict the expected skeptical position."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 16,
+  "eval_name": "eval-16-work-life-balance-in-fitness-careers",
+  "prompt": "A listener asked how Greg and Eric manage work-life balance across research, coaching, podcasting, MacroFactor, and other responsibilities.",
+  "expected_output": "Eric separated the problem into coping and proactive structure. For coping, he emphasized passion, curiosity, and focus on impact; for proactive balance, he emphasized trimming low-quality \u2018wasted\u2019 time, protecting genuinely restorative rest, scheduling family/social time deliberately, and saying no more often. Greg reframed his answer using self-determination theory: autonomy, competence, and relatedness are all strongly present in his current work, which is why high work hours feel sustainable and meaningful. Both acknowledged they are unusually fortunate in their setup, and that this context matters. Greg also distinguished legitimate attempts to improve one\u2019s work situation from shallow hustle-culture messaging.",
+  "topic": "work-life balance in fitness careers",
+  "episode": 106,
+  "assertions": [
+    "Answer captures the core SBS position on work-life balance in fitness careers",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

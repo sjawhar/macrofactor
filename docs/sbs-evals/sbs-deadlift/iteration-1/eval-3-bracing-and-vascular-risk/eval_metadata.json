@@ -1,0 +1,11 @@
+{
+  "eval_id": 3,
+  "eval_name": "bracing-and-vascular-risk",
+  "prompt": "Is there evidence that long-term bracing/Val Salva in lifting damages blood vessels because of repeated blood pressure spikes?",
+  "assertions": [
+    "Distinguishes between acute risk in people with pre-existing vascular conditions vs. long-term causation in healthy lifters",
+    "States that direct long-term causal evidence specifically linking normal lifting bracing to vascular damage is sparse or limited",
+    "Mentions occupational lifting epidemiology but notes it differs substantially from strength training",
+    "Recommends individualized caution for those with known medical risk rather than broad fear-based avoidance"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer gives concrete high-volume low-calorie food examples (cauliflower rice, shredded chicken, egg whites, etc.)",
+      "passed": true,
+      "evidence": "Found 'cauliflower' in: ...n ground turkey** (150g, ~240 cal) + **roasted broccoli and cauliflower** (400g, ~100 cal) + **brown rice** (100g cooked, ~110 cal)..."
+    },
+    {
+      "text": "Answer recommends maximizing fiber/water volume and protein density",
+      "passed": true,
+      "evidence": "Found 'fiber' in: ...s (high volume, low calories)\n- Whole grains in moderation (fiber = fullness)\n- Minimal added fats and oils\n\n---\n\n## Practica..."
+    },
+    {
+      "text": "Answer mentions bulking up ground-beef meals with shredded cabbage (~1:1 ratio)",
+      "passed": true,
+      "evidence": "Found 'beef' in: ...tion of peppers and onions** (200g, ~50 cal)\n\n### 3. **Lean Beef Options**\n\n- **Extra-lean ground beef** (93/7, 150g, ~200 c..."
+    },
+    {
+      "text": "Answer is practical and meal-prep oriented for deep cutting phases",
+      "passed": true,
+      "evidence": "Found 'practical' in: ...n (fiber = fullness)\n- Minimal added fats and oils\n\n---\n\n## Practical Meal Combinations\n\n### 1. **Protein + Vegetable Base**\n\n- *..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

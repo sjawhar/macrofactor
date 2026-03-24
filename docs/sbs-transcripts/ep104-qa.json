@@ -1,0 +1,79 @@
+{
+  "episode": 104,
+  "pairs": [
+    {
+      "question": "If someone uses insulin for diabetes treatment, does that also help with muscle growth or strength? And what about bodybuilders using high-dose insulin for size?",
+      "answer_summary": "They distinguished medical insulin replacement from bodybuilding-style supraphysiological insulin use. Greg and Eric said very high insulin doses can increase hypertrophy in untested bodybuilding contexts, but they emphasized this is extremely dangerous and easy to misuse. They gave cautionary examples of severe hypoglycemia and even death risk from small dosing or fueling mistakes. For diabetes treatment, they said doses are meant to restore normal physiology (or compensate for insulin resistance), not create an anabolic edge, so they would not expect meaningful strength or hypertrophy benefits beyond normal function. They also compared this with TRT and argued insulin is more tightly coupled to food intake, so it does not create the same ergogenic loophole people sometimes assume. Their practical recommendation was to follow medical guidance strictly and never experiment with insulin for performance.",
+      "skills": [],
+      "topic": "insulin and performance enhancement"
+    },
+    {
+      "question": "Do I need a maintenance phase after a bulk or cut, or can I go straight from bulking to cutting and back again?",
+      "answer_summary": "They said there is no clear physiological requirement to insert maintenance phases between bulking and cutting. In their view, you can alternate bulk and cut phases directly if that fits your goals. They framed maintenance phases as mainly practical or preference-based rather than biologically mandatory. For example, maintenance can help with adherence, comfort at a body weight, or reducing misleading scale swings before starting an aggressive cut. But they did not present a physiological downside to skipping maintenance if transitions are well managed. The key point was that maintenance is optional strategy, not a required step.",
+      "skills": [
+        "sbs-diet"
+      ],
+      "topic": "maintenance phases between bulk and cut"
+    },
+    {
+      "question": "What are your most controversial evidence-based fitness takes right now?",
+      "answer_summary": "Their responses were a set of personal hot takes rather than one prescriptive recommendation. Eric said protein targets are often treated too rigidly in evidence-based circles, mindful eating has helped his intake more than literature averages would suggest, sauna seems to suppress his appetite acutely without rebound, and he personally grows well with higher-volume push-pull-legs phases. Greg argued that saying BCAAs are categorically useless is too strong because placebo-controlled meta-analyses suggest some recovery benefits in specific contexts, especially when protein timing is poor (for example fasted morning training). He also said failure training may be less catastrophically unrecoverable than some claim and that people may over-interpret acute recovery studies. Finally, he cautioned against tension reductionism in hypertrophy theory (treating mechanical tension as the only meaningful variable with a simple linear dose-response).",
+      "skills": [],
+      "topic": "controversial fitness opinions"
+    },
+    {
+      "question": "If I’m just a casual lifter cutting body fat, how hard do I really need to fight to preserve every bit of muscle?",
+      "answer_summary": "They framed this as mostly a preference question, not a single objective rule. Eric said muscle retention matters to the extent that maintaining muscularity matters to you at that time. He still recommended doing the basics to avoid unnecessary loss: avoid extreme deficits, keep protein reasonable, and continue resistance training (even with reduced volume/effort). He also noted many lifters overestimate muscle loss during cuts because they underestimate starting fat mass and catastrophize scale changes. In practice, some fat-free mass drops during weight loss are expected, but lifters often interpret normal visual/scale changes as dramatic muscle wasting. So optimize if you care, but don’t panic.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "muscle retention during cutting"
+    },
+    {
+      "question": "How should I think about NSAID use (like ibuprofen) around training, especially if I’m younger versus older?",
+      "answer_summary": "They highlighted two major modifiers: age and dose. Their summary of the literature was that higher-dose ibuprofen may blunt hypertrophy in younger adults, while in older adults with higher background inflammation there are cases where NSAID use could be neutral or even helpful. They emphasized that much of the concern comes from repeated high-dose use after every workout across weeks, not occasional use for illness or headaches. Occasional lower-dose use was described as unlikely to create a large practical hypertrophy penalty. They also said that if someone feels they need NSAIDs after every session, the bigger problem is probably training design or unresolved pain and should be addressed directly (for example adjusting programming and/or consulting a clinician).",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "NSAIDs and hypertrophy"
+    },
+    {
+      "question": "Are lateral raises alone enough to build side delts, or do I need overhead pressing/upright rows too?",
+      "answer_summary": "Their practical answer was that lateral raises plus other pressing/rowing work can be sufficient, and overhead pressing is not mandatory for everyone. Eric said he currently gets good shoulder development without relying on overhead press or upright rows, prioritizing varied presses/rows and lots of lateral raise variants while avoiding accessory movements that irritate joints. Greg said his front delts tend to dominate overhead pressing, so he also leans heavily on delt raises and rows for shoulder hypertrophy. They treated exercise selection as individual and comfort-driven when multiple viable hypertrophy options exist. The main recommendation was to use movements you can load and recover from consistently rather than forcing one required shoulder exercise.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "side delt exercise selection"
+    },
+    {
+      "question": "Is ashwagandha actually useful for strength and muscle gain, or is it overhyped?",
+      "answer_summary": "Their answer for hypertrophy/strength was mostly nay. They said discussion often hinges on one famous study with very large effects that they found implausible and in need of strong replication before taking at face value. They did not find the mechanistic case for major strength/hypertrophy effects very compelling. However, they noted ashwagandha may still have other potential uses, including mild anxiety support, sleep-related outcomes, and modest testosterone changes in some studies. They emphasized that any testosterone increase from supplements is small in magnitude versus TRT and unlikely to create dramatic muscle or strength changes. So it might be useful in some non-hypertrophy contexts, but not a reliable mass/strength ergogenic.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "ashwagandha for strength and hypertrophy"
+    },
+    {
+      "question": "Do you cringe at your old content, and does that make you worry your current content will look bad in a few years too?",
+      "answer_summary": "Both answered yes to both parts. They said looking back at old work is a reminder that everyone updates beliefs over time as evidence and understanding improve. Greg emphasized that he now tries to communicate uncertainty more explicitly rather than sounding overly certain from limited evidence. Eric said even when old claims are directionally true, framing and contextualization can improve a lot with better methods knowledge and new data. They discussed the tension between nuanced communication and audience incentives for oversimplified certainty. Overall, their recommendation was to treat current conclusions as provisional and keep updating.",
+      "skills": [],
+      "topic": "updating beliefs over time"
+    },
+    {
+      "question": "How do you manage social media time without letting it take over your work and life?",
+      "answer_summary": "Greg described intentionally reducing DM/reply volume after years of trying to answer everyone, because it became incompatible with sleep, training, relationships, and higher-leverage work. He now responds far less often and focuses effort where content can help more people at once. Eric described a different strategy: monitor how each platform affects mood and attention, then curate toward channels/interactions that stay neutral-to-positive. Both emphasized being strategic rather than reactive, and accepting limits on one-to-one interaction. The practical takeaway was to align social media behavior with long-term priorities instead of letting platform dynamics dictate your day.",
+      "skills": [],
+      "topic": "social media workload management"
+    },
+    {
+      "question": "Is the bench press the best measure of raw physical strength? If not, what is?",
+      "answer_summary": "They said bench is not the best gauge of raw strength. Both favored strongman-style odd-object lifting/carrying (for example Husafell-style stone carry or irregular stone lifting) as a better test of broad physical strength. Their reasoning was that odd objects are awkward and hard to game with technique compared with highly standardized barbell lifts. That makes the task feel closer to general real-world force application rather than a specific trained movement skill. So while bench is useful for upper-body strength tracking, they did not treat it as the top global strength proxy.",
+      "skills": [
+        "sbs-strength-training",
+        "sbs-bench"
+      ],
+      "topic": "best test of raw strength"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "eval_id": 50,
+  "eval_name": "eval-50-myonuclear-domain-theory",
+  "prompt": "What's your updated take on the myonuclear domain theory for hypertrophy, and does your 2015 \"Grow Like a New Lifter\" advice still hold up? It seems like newer evidence suggests myonuclear accretion may not always come before hypertrophy.",
+  "expected_output": "Greg said he still views the original article as a hypothesis-driven piece, but his confidence dropped from about 80% in 2015 to roughly 60% now. He still thinks the central idea is plausible: early growth is helped by adding myonuclei from satellite cells, while advanced lifters may hit slower progress when that process plateaus. He emphasized newer studies have made the picture more equivocal, especially in untrained models, so certainty is lower than before. He also noted this newer work may not directly answer his original advanced-lifter plateau question. Practically, his old recommendations are now \"possibly useful but less certain,\" not a guaranteed workaround.",
+  "topic": "myonuclear domain theory",
+  "episode": 31,
+  "assertions": [
+    "Answer captures the core SBS position on myonuclear domain theory",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer explains low energy availability disrupts multiple hormones (estrogen, testosterone, thyroid, IGF-1)",
+      "passed": true,
+      "evidence": "Found 'energy availability' in: ...suppressed due to the underlying trigger (overtraining, low energy availability relative to exercise, stress, or low body fat percentage)...."
+    },
+    {
+      "text": "Answer states hypertrophy and performance are likely impaired in that state",
+      "passed": true,
+      "evidence": "Found 'impaired' in: ...r low body fat percentage).\n\n## Effects on Hypertrophy\n\n### Impaired Muscle Protein Synthesis\n\nEstrogen plays a direct role in m..."
+    },
+    {
+      "text": "Answer notes recovery is not all-or-none and can improve before full cycle restoration",
+      "passed": false,
+      "evidence": "Missing any of: ['not all-or-none', 'gradual', 'partial']"
+    },
+    {
+      "text": "Answer recommends addressing energy availability and training stress first",
+      "passed": true,
+      "evidence": "Found 'energy availability' in: ...suppressed due to the underlying trigger (overtraining, low energy availability relative to exercise, stress, or low body fat percentage)...."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

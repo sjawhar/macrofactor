@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states Eric noticed no meaningful performance or recovery change after going vegan",
+      "passed": true,
+      "evidence": "Found 'no' in: ...o SBS diet principles, switching to a fully vegan diet does not inherently require changes to training, performance expect..."
+    },
+    {
+      "text": "Answer mentions protein-source diversity (pea, rice, soy) for amino acid coverage",
+      "passed": true,
+      "evidence": "Found 'pea' in: ...on (Optional but Practical)\n\n- Plant-based protein powders (pea, rice, hemp, soy blends) can simplify hitting protein targe..."
+    },
+    {
+      "text": "Answer includes algae oil for EPA/DHA and B12 as important supplements",
+      "passed": true,
+      "evidence": "Found 'B12' in: ...### Critical Supplements for Vegan Athletes\n\n1. **Vitamin B12** (mandatory)\n   - Plant foods do not reliably provide bioa..."
+    },
+    {
+      "text": "Answer does NOT claim vegan diet is superior or inferior for performance",
+      "passed": true,
+      "evidence": "Found 'not' in: ...o SBS diet principles, switching to a fully vegan diet does not inherently require changes to training, performance expecta..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

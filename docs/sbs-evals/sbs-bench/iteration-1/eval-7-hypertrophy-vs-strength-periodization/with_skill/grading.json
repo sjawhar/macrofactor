@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "States newer lifters generally need more hypertrophy work, not less",
+      "passed": true,
+      "evidence": "States intermediates should allocate '60-70% of total training focus' to hypertrophy."
+    },
+    {
+      "text": "Recommends learning the lifts first, then building muscle while maintaining heavier work",
+      "passed": true,
+      "evidence": "Beginners: 'focus on motor learning', then intermediates shift to hypertrophy as primary driver."
+    },
+    {
+      "text": "Describes shift toward more specific strength work as lifters advance",
+      "passed": true,
+      "evidence": "Advanced: 'hypertrophy allocation: ~20-30%' with focus on heavy-load specificity."
+    },
+    {
+      "text": "Notes high-rep bodybuilding work is a poor fit close to competition (within ~4 weeks)",
+      "passed": true,
+      "evidence": "Final taper: 'Minimal accessory work: only what prevents injury or addresses acute weak links.'"
+    },
+    {
+      "text": "Recommends hypertrophy blocks in off-season",
+      "passed": true,
+      "evidence": "Off-season intermediate: '60-70%' hypertrophy allocation with higher volume."
+    },
+    {
+      "text": "Mentions adherence/enjoyment as important factor",
+      "passed": false,
+      "evidence": "Does not explicitly discuss adherence or enjoyment as factors."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  }
+}

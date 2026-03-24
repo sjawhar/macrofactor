@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends keeping competition lifts in moderate strength-relevant rep ranges rather than going entirely high-rep",
+      "passed": true,
+      "evidence": "'Start each session with a compound lift at moderate-to-high intensity (80-85% of max) for lower reps: Deadlifts: 3-4 sets × 3-5 reps.' Competition lifts stay in strength-relevant ranges."
+    },
+    {
+      "text": "Suggests a specific structure (e.g., mostly 5-10 rep range with periodic heavier work like triples)",
+      "passed": true,
+      "evidence": "Example session: 'Deadlifts: 4 × 4 @ 82% (strength)' followed by '4 × 6-8 (hypertrophy variation)' and '3 × 8-10.' Volume progression strategy from 12-15 to 18-24 sets over weeks."
+    },
+    {
+      "text": "Mentions an over-warm or heavy single strategy (e.g., RPE 8 single) before volume work to maintain neural readiness",
+      "passed": false,
+      "evidence": "Uses '4 × 4 @ 82%' as opening strength work, not singles. Does not mention an over-warm single or RPE 8 single before volume work. The expected output specifically mentioned an over-warm single around RPE 8."
+    },
+    {
+      "text": "Core message: maintain some heavy practice while accumulating hypertrophy volume",
+      "passed": true,
+      "evidence": "'The key is patience—don't rush the volume increase, keep your compound lifts heavy, and prioritize recovery.' 'Keep Compound Lifts Heavy: Never let your main lifts drop below 80% intensity.'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

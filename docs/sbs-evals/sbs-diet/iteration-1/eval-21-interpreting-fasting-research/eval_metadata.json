@@ -1,0 +1,13 @@
+{
+  "eval_id": 21,
+  "eval_name": "eval-21-interpreting-fasting-research",
+  "prompt": "How should we interpret older intermittent-vs-daily calorie restriction research, and what makes a study useful today?",
+  "expected_output": "They emphasize that older papers are not automatically invalid, but should be interpreted in the context of newer evidence. They recommend evaluating the broader body of literature rather than anchoring conclusions to a single 2011-era review. They also point out that research definitions of intermittent fasting vary (alternate-day fasting, 5:2, and time-restricted eating), which affects applicability. Their practical takeaway remains that total energy intake is generally the dominant driver for fat loss outcomes.",
+  "topic": "interpreting fasting research",
+  "episode": 27,
+  "assertions": [
+    "Answer emphasizes evaluating broader literature rather than anchoring to a single older review",
+    "Answer notes research definitions of intermittent fasting vary significantly",
+    "Answer states total energy intake is generally the dominant driver for fat loss"
+  ]
+}

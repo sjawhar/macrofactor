@@ -1,0 +1,15 @@
+{
+  "eval_id": 41,
+  "eval_name": "eval-41-pull-up-range-of-motion-standards",
+  "prompt": "For pull-ups, do I need to get my chin over the bar for strength or hypertrophy benefits?",
+  "expected_output": "They note pull-ups have a different strength curve from many barbell lifts: the top range is often the weakest position. Because of that, they do not treat strict chin-over-bar as a hard requirement for productive training adaptations in all contexts. Full range can still be useful when available, but partial ranges can produce meaningful strength and hypertrophy stimulus. So the recommendation is pragmatic rather than dogmatic.",
+  "topic": "pull-up range of motion standards",
+  "episode": 27,
+  "assertions": [
+    "Answer captures the core SBS position on pull-up range of motion standards",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

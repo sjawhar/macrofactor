@@ -95,6 +95,14 @@ Firestore stores microseconds. `getWorkout()` returns seconds (parsed). `getRawW
 
 **Custom exercises** (user-created, UUID IDs in `users/{uid}/customExercises/{uuid}`): Use `client.getCustomExercises()` / `client.createCustomExercise()`. Custom exercises are NOT in the bundled DB — any code that resolves exercise names must check both sources. The MCP `log_workout`/`log_exercise` tools and CLI `log-workout` already handle this fallback. When displaying workout details, `getWorkout()` fetches custom exercises for name resolution automatically.
 
+### Program-Linked Workouts
+
+When logging a workout that belongs to a training program (i.e. has `workoutSource` with `programId`, `dayId`, `cycleIndex`), two things must happen:
+
+1. **Set targets**: Each exercise's sets should have `target` objects from the program's `periodizedTargets.values[cycleIndex]`. These are attached positionally — exercise N in the workout gets targets from exercise N in the program day. The CLI and MCP `log_workout` handle this automatically when `workoutSource` is provided.
+
+2. **Completion tracking**: The program document (`users/{uid}/trainingProgram/{programId}`) has a `workoutCycleCompletions` map that tracks which days have been completed per cycle. Structure: `workoutCycleCompletions[cycleIndex].completionById[dayId] = { runtimeType: 'completed', workoutHistoryIds: [workoutId] }`. Without this, the app won't show the day as checked off in the program view. Use `client.markProgramDayCompleted()` — the CLI and MCP do this automatically.
+
 ### `.env` Parsing
 
 Password may contain backticks/special chars. Never `source .env` in bash. CLI has its own `.env` parser.

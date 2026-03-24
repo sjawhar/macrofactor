@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer references FDA fish guidance with serving-based categories",
+      "passed": true,
+      "evidence": "Found 'FDA' in: ...una is generally preferred due to lower mercury levels.\n\n## FDA and EPA Guidelines\n\nThe FDA and EPA provide guidance on fis..."
+    },
+    {
+      "text": "Answer distinguishes canned light tuna (lower mercury) from albacore/white and yellowfin",
+      "passed": true,
+      "evidence": "Found 'light tuna' in: ...una** (yellowfin): ~0.35 mcg/g of mercury (higher mercury)\n\nLight tuna is generally preferred due to lower mercury levels.\n\n## FDA..."
+    },
+    {
+      "text": "Answer recommends limiting to a few servings per week, not multiple cans per day",
+      "passed": true,
+      "evidence": "Found 'per week' in: ...neral population**: Can safely consume 2-3 servings of fish per week (a serving is ~3-4 oz or ~85-113g)\n- **For canned tuna spec..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

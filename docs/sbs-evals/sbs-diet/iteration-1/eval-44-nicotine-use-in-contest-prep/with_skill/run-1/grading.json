@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms nicotine can suppress appetite but the effect habituates",
+      "passed": true,
+      "evidence": "Found 'appetite' in: ...ne gum is used by some bodybuilders during contest prep for appetite suppression and perceived energy/focus benefits. While nico..."
+    },
+    {
+      "text": "Answer states caffeine is usually the better pre-workout stimulant for performance",
+      "passed": true,
+      "evidence": "Found 'caffeine' in: ...l low, the deficit is too aggressive\u2014adjust.\n\n5. **Consider caffeine (if appropriate):**\n   - Caffeine has a better safety profi..."
+    },
+    {
+      "text": "Answer distinguishes harms of tobacco products from isolated nicotine gum/patch use",
+      "passed": true,
+      "evidence": "Found 'gum' in: ...ding Contest Prep: Benefits and Risks\n\n## Summary\n\nNicotine gum is used by some bodybuilders during contest prep for appeti..."
+    },
+    {
+      "text": "Answer mentions nicotine's shorter half-life versus caffeine",
+      "passed": false,
+      "evidence": "Missing any of: ['half-life', 'shorter']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}
