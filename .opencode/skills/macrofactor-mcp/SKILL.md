@@ -1,0 +1,140 @@
+---
+name: macrofactor-mcp
+description: Use when reading or writing MacroFactor nutrition, food logs, weight, workout, or training program data. Triggers on meal tracking, macro counting, calorie logging, body weight, exercise logging, food search, or any MacroFactor interaction.
+mcp:
+  macrofactor:
+    command: secrets
+    args: ['MACROFACTOR_USERNAME', 'MACROFACTOR_PASSWORD', '--', 'npx', '@sjawhar/macrofactor-mcp']
+    env:
+      SOPS_AGE_KEY: '${SOPS_AGE_KEY}'
+---
+
+# MacroFactor
+
+Read and write nutrition, workout, and weight data via the MacroFactor MCP server. Use `skill_mcp(mcp_name="macrofactor", ...)` to invoke tools.
+
+For Firestore schema details, field encodings, and common gotchas, see `references/api-reference.md`.
+
+## MCP Tools
+
+### Read
+
+| Tool                   | Purpose                                                                                    |
+| ---------------------- | ------------------------------------------------------------------------------------------ |
+| `get_context`          | Today's snapshot: food log, macro targets + remaining, weight trend, program, next workout |
+| `get_food_log`         | Food entries for a date (default today)                                                    |
+| `get_nutrition`        | Daily macro totals for a date range                                                        |
+| `get_weight_entries`   | Scale entries for a date range                                                             |
+| `get_steps`            | Step counts for a date range                                                               |
+| `get_profile`          | User profile and preferences                                                               |
+| `get_goals`            | Current macro targets (cal, protein, carbs, fat, TDEE)                                     |
+| `get_workouts`         | Workout history (optional date filter)                                                     |
+| `get_workout`          | Full workout detail by ID                                                                  |
+| `get_gym_profiles`     | Gym profiles (id, name, equipment)                                                         |
+| `get_custom_exercises` | User-created exercises                                                                     |
+| `get_training_program` | Active training program days and exercises                                                 |
+| `get_next_workout`     | Next workout in the program cycle                                                          |
+| `search_foods`         | Search MacroFactor food database (USDA + branded)                                          |
+| `search_exercises`     | Search bundled exercise database by name                                                   |
+
+### Write
+
+| Tool                | Purpose                                                        | Destructive |
+| ------------------- | -------------------------------------------------------------- | ----------- |
+| `log_food`          | Search + log a food (`query` + `grams` or `amount`/`unit`)     | No          |
+| `log_manual_food`   | Log food with explicit macros (name, cal, protein, carbs, fat) | No          |
+| `log_weight`        | Log scale entry (accepts `lbs` or `kg`)                        | No          |
+| `log_workout`       | Create workout with exercises and sets                         | No          |
+| `log_exercise`      | Append exercises to existing workout                           | No          |
+| `update_food`       | Update food entry quantity                                     | No          |
+| `update_workout`    | Update workout metadata (name, time, etc.)                     | No          |
+| `copy_food_entries` | Copy food entries between dates                                | No          |
+| `delete_food`       | Soft-delete food entry                                         | Yes         |
+| `hard_delete_food`  | Permanently delete food entry                                  | Yes         |
+| `delete_weight`     | Delete weight entry                                            | Yes         |
+| `delete_workout`    | Delete entire workout                                          | Yes         |
+| `remove_exercise`   | Remove exercise from workout                                   | Yes         |
+
+## Usage Examples
+
+```
+# What's my status today?
+skill_mcp(mcp_name="macrofactor", tool_name="get_context")
+
+# Log 150g of kale
+skill_mcp(mcp_name="macrofactor", tool_name="log_food", arguments='{"query": "kale raw", "grams": 150}')
+
+# Log food with specific macros
+skill_mcp(mcp_name="macrofactor", tool_name="log_manual_food", arguments='{"name": "Protein Shake", "calories": 250, "protein": 40, "carbs": 10, "fat": 5}')
+
+# Log weight
+skill_mcp(mcp_name="macrofactor", tool_name="log_weight", arguments='{"lbs": 180}')
+
+# Week of nutrition data
+skill_mcp(mcp_name="macrofactor", tool_name="get_nutrition", arguments='{"startDate": "2026-03-17", "endDate": "2026-03-23"}')
+
+# Log a workout
+skill_mcp(mcp_name="macrofactor", tool_name="log_workout", arguments='{"name": "Push Day", "gym": "Home", "exercises": [{"name": "bench press", "sets": [{"reps": 10, "lbs": 135, "sets": 3}]}]}')
+
+# What's next in my program?
+skill_mcp(mcp_name="macrofactor", tool_name="get_next_workout")
+```
+
+## CLI (Alternative)
+
+The CLI is available when MCP is not. Output is JSON. Auth reads from `.env` automatically (do NOT `source .env` — password has special chars).
+
+| Action           | Command                                                                                             |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Context snapshot | `npx tsx cli/mf.ts context`                                                                         |
+| Food log         | `npx tsx cli/mf.ts food-log [YYYY-MM-DD]`                                                           |
+| Search foods     | `npx tsx cli/mf.ts search-food "query"`                                                             |
+| Log food         | `npx tsx cli/mf.ts log-food '{"query":"kale","grams":150}'`                                         |
+| Log manual food  | `npx tsx cli/mf.ts log-manual-food '{"name":"...","calories":200,"protein":30,"carbs":20,"fat":5}'` |
+| Log weight       | `npx tsx cli/mf.ts log-weight '{"lbs":180}'`                                                        |
+| Workouts         | `npx tsx cli/mf.ts workouts`                                                                        |
+| Workout detail   | `npx tsx cli/mf.ts workout <uuid>`                                                                  |
+| Log workout      | `npx tsx cli/mf.ts log-workout '{"name":"...","exercises":[...]}'`                                  |
+| Training program | `npx tsx cli/mf.ts program`                                                                         |
+| Next workout     | `npx tsx cli/mf.ts next-workout`                                                                    |
+| Nutrition range  | `npx tsx cli/mf.ts nutrition --from YYYY-MM-DD --to YYYY-MM-DD`                                     |
+| Weight history   | `npx tsx cli/mf.ts weight-history --from YYYY-MM-DD --to YYYY-MM-DD`                                |
+| Goals            | `npx tsx cli/mf.ts goals`                                                                           |
+| Search exercises | `npx tsx cli/mf.ts exercises search "bench press"`                                                  |
+| Gyms             | `npx tsx cli/mf.ts gyms`                                                                            |
+
+## Key Behaviors
+
+- **Start with `get_context`** — goals, today's intake vs remaining, weight trend, next workout in one call.
+- **Dates** are `YYYY-MM-DD`. Most default to today when omitted.
+- **Weight** stored as kg internally. `log_weight` accepts `lbs` or `kg`, converts automatically.
+- **`log_food`** searches by name and logs top result. Use `search_foods` first to pick a specific match.
+- **`log_workout`** takes exercise names (not IDs) and resolves them. `sets: 3` expands to 3 individual sets.
+- **Food times** default to now. Pass `hour`/`minute` for override (24h wall-clock, no timezone).
+- **Entry IDs** for `update_food`/`delete_food` come from `get_food_log`.
+- **Food corrections**: Use `update_food` to fix quantity — don't delete and re-log (creates ghost entries).
+- **Supersets**: In `log_workout`, use `blocks: [[ex1, ex2]]` instead of `exercises: [...]` for superset grouping.
+
+## Analytical Patterns
+
+| Analysis                           | Tools to combine                                                                            |
+| ---------------------------------- | ------------------------------------------------------------------------------------------- |
+| Weekly nutrition report            | `get_context` → `get_nutrition` (7d range) → `get_goals` → compare daily intake vs targets  |
+| Training-day vs rest-day nutrition | `get_training_program` → `get_nutrition` (range) → group by training/rest days              |
+| TDEE estimation                    | `get_weight_entries` (30d) + `get_nutrition` (30d) → compare intake vs weight trend         |
+| Protein consistency                | `get_goals` + `get_nutrition` (range) → daily protein attainment                            |
+| Training volume analysis           | `get_training_program` → `get_workouts` → `get_workout` per session → sets/reps by exercise |
+
+## Setup
+
+The default frontmatter uses `secrets` for SOPS-encrypted credential injection. If you don't use SOPS, replace the MCP section in the frontmatter with direct env vars:
+
+```yaml
+mcp:
+  macrofactor:
+    command: npx
+    args: ['@sjawhar/macrofactor-mcp']
+    env:
+      MACROFACTOR_USERNAME: '${MACROFACTOR_USERNAME}'
+      MACROFACTOR_PASSWORD: '${MACROFACTOR_PASSWORD}'
+```

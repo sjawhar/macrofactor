@@ -2,7 +2,7 @@
   "mcpServers": {
     "macrofactor": {
       "command": "npx",
-      "args": ["tsx", "mcp-server/index.ts"]
+      "args": ["tsx", "src/mcp/stdio.ts"]
     }
   }
 }
