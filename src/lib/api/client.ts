@@ -325,6 +325,8 @@ export class MacroFactorClient {
       fav: bfv(false),
       ef: nfv(),
       m: servingsArray([defaultServing]),
+      id: sfv(entryId),
+      x: sfv('229'), // default food icon
     };
     await patchFoodDocument(`users/${this.uid}/food/${dateStr}`, entryId, fields, token);
   }
