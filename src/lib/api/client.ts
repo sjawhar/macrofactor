@@ -318,13 +318,15 @@ export class MacroFactorClient {
       u: sfv(defaultServing.description),
       h: sfv(String(loggedAt.hour)),
       mi: sfv(String(loggedAt.minute)),
-      k: sfv('manual'),
+      k: sfv('n'), // 'manual' crashes the Android app; 'n' (nutrition) works
       ca: sfv(nowMicros),
       ua: sfv(nowMicros),
       o: bfv(false),
       fav: bfv(false),
       ef: nfv(),
       m: servingsArray([defaultServing]),
+      id: sfv(entryId),
+      x: sfv('229'), // default food icon
     };
     await patchFoodDocument(`users/${this.uid}/food/${dateStr}`, entryId, fields, token);
   }

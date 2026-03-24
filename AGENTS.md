@@ -72,6 +72,7 @@ All food entry numeric values **MUST** be Firestore `stringValue` — NEVER `int
 - Use `sfv()`, `bfv()`, `nfv()` from `firestore.ts`
 - Use `logSearchedFood()` / `logFood()` — never `patchDocument()` directly for food entries
 - Use `updateFoodEntryFields()` for partial updates — `patchFoodDocument()` replaces the entire entry
+- The `k` (source type) field **MUST NOT** be `"manual"` — this value crashes the Android app, blanking the entire day. Use `"n"` instead. Confirmed via binary search: `k: "manual"` is the sole crash trigger.
 
 ### Meal Time
 
