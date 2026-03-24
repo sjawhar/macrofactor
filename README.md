@@ -115,6 +115,90 @@ All numeric food entry values are stored as Firestore `stringValue` (not `intege
 
 See [`docs/api-reference.md`](docs/api-reference.md) for the full Firestore schema.
 
+## MCP server
+
+This project includes an MCP (Model Context Protocol) server that exposes the MacroFactor API as tools for AI agents like Claude, Cursor, and Windsurf. Use it to integrate MacroFactor data and operations into your AI workflows.
+
+### Installation
+
+```bash
+npm install -g @sjawhar/macrofactor-mcp
+```
+
+### Configuration for Claude Code
+
+Add to your Claude Code config file (`~/.claude/config.json` or project `.claude/config.json`):
+
+```json
+{
+  "mcpServers": {
+    "macrofactor": {
+      "command": "npx",
+      "args": ["@sjawhar/macrofactor-mcp"],
+      "env": {
+        "MACROFACTOR_USERNAME": "you@email.com",
+        "MACROFACTOR_PASSWORD": "yourpass"
+      }
+    }
+  }
+}
+```
+
+Other agents (Cursor, Windsurf) use the same pattern with their own config files.
+
+### Remote usage (Claude.ai / other remote clients)
+
+For remote clients that support HTTP-based MCP servers:
+
+```bash
+MACROFACTOR_USERNAME=you@email.com \
+MACROFACTOR_PASSWORD=yourpass \
+MCP_AUTH_TOKEN=$(openssl rand -hex 32) \
+node dist/mcp/http.js
+```
+
+### Available tools
+
+The MCP server exposes 28 tools for reading and writing MacroFactor data:
+
+#### Read tools
+
+| Tool                | Description                                   |
+| ------------------- | --------------------------------------------- |
+| `get_workouts`      | List recent workouts with exercise/set counts |
+| `get_workout`       | Full detail for a specific workout (UUID)     |
+| `get_food_log`      | Show food log for a date (default: today)     |
+| `search_foods`      | Search the food database without logging      |
+| `get_nutrition`     | Get nutrition summary for a date              |
+| `get_weight_log`    | List weight entries for a date range          |
+| `get_profile`       | Show user profile and preferences             |
+| `get_gyms`          | List gym profiles                             |
+| `search_exercises`  | Search the bundled exercise database          |
+| `resolve_exercise`  | Resolve a hex ID to exercise name + muscles   |
+| `resolve_muscle`    | Resolve a hex ID to muscle name               |
+| `resolve_equipment` | Resolve a hex ID to equipment name            |
+
+#### Write tools
+
+| Tool                      | Description                                     |
+| ------------------------- | ----------------------------------------------- |
+| `log_food`                | Search and log a food entry                     |
+| `log_food_by_id`          | Log a food entry by ID (skip search)            |
+| `update_food_entry`       | Update a food entry quantity                    |
+| `delete_food_entry`       | Delete a food entry                             |
+| `log_weight`              | Log a scale entry                               |
+| `log_workout`             | Create a workout with exercises                 |
+| `log_exercise`            | Add exercises to an existing workout            |
+| `update_workout_set`      | Update a workout set (reps, weight, rest)       |
+| `delete_workout_set`      | Delete a workout set                            |
+| `create_custom_exercise`  | Create a custom exercise in a gym profile       |
+| `update_custom_exercise`  | Update a custom exercise                        |
+| `delete_custom_exercise`  | Delete a custom exercise                        |
+| `create_gym_profile`      | Create a new gym profile                        |
+| `update_gym_profile`      | Update a gym profile                            |
+| `delete_gym_profile`      | Delete a gym profile                            |
+| `update_user_preferences` | Update user preferences (targets, macros, etc.) |
+
 ## Project structure
 
 ```

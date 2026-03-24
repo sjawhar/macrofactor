@@ -1,11 +1,19 @@
 {
-  "name": "macro-factor",
-  "private": true,
+  "name": "@sjawhar/macrofactor-mcp",
   "version": "0.0.1",
   "type": "module",
-  "files": ["dist/", "data/exercises.json"],
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist/",
+    "data/exercises.json"
+  ],
   "bin": {
     "macrofactor-mcp": "./dist/mcp/stdio.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "dev": "vite dev",
