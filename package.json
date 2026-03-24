@@ -39,6 +39,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@semantic-release/exec": "^7.1.0",
     "@sveltejs/adapter-auto": "^7.0.0",
     "@sveltejs/kit": "^2.50.2",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
