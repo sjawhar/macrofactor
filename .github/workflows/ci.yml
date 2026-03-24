@@ -67,8 +67,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: https://registry.npmjs.org
-      - run: npm ci
+      - run: echo "npm $(npm --version)" && npm ci
       - name: Release
         run: npx semantic-release@24
         env:
