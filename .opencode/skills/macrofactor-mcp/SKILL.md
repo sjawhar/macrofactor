@@ -39,21 +39,22 @@ For Firestore schema details, field encodings, and common gotchas, see `referenc
 
 ### Write
 
-| Tool                | Purpose                                                        | Destructive |
-| ------------------- | -------------------------------------------------------------- | ----------- |
-| `log_food`          | Search + log a food (`query` + `grams` or `amount`/`unit`)     | No          |
-| `log_manual_food`   | Log food with explicit macros (name, cal, protein, carbs, fat) | No          |
-| `log_weight`        | Log scale entry (accepts `lbs` or `kg`)                        | No          |
-| `log_workout`       | Create workout with exercises and sets                         | No          |
-| `log_exercise`      | Append exercises to existing workout                           | No          |
-| `update_food`       | Update food entry quantity                                     | No          |
-| `update_workout`    | Update workout metadata (name, time, etc.)                     | No          |
-| `copy_food_entries` | Copy food entries between dates                                | No          |
-| `delete_food`       | Soft-delete food entry                                         | Yes         |
-| `hard_delete_food`  | Permanently delete food entry                                  | Yes         |
-| `delete_weight`     | Delete weight entry                                            | Yes         |
-| `delete_workout`    | Delete entire workout                                          | Yes         |
-| `remove_exercise`   | Remove exercise from workout                                   | Yes         |
+| Tool                     | Purpose                                                        | Destructive |
+| ------------------------ | -------------------------------------------------------------- | ----------- |
+| `log_food`               | Search + log a food (`query` + `grams` or `amount`/`unit`)     | No          |
+| `log_manual_food`        | Log food with explicit macros (name, cal, protein, carbs, fat) | No          |
+| `log_weight`             | Log scale entry (accepts `lbs` or `kg`)                        | No          |
+| `log_workout`            | Create workout with exercises and sets                         | No          |
+| `log_exercise`           | Append exercises to existing workout                           | No          |
+| `update_food`            | Update food entry quantity                                     | No          |
+| `update_workout`         | Update workout metadata (name, time, etc.)                     | No          |
+| `copy_food_entries`      | Copy food entries between dates                                | No          |
+| `delete_food`            | Soft-delete food entry                                         | Yes         |
+| `hard_delete_food`       | Permanently delete food entry                                  | Yes         |
+| `delete_weight`          | Delete weight entry                                            | Yes         |
+| `delete_workout`         | Delete entire workout                                          | Yes         |
+| `remove_exercise`        | Remove exercise from workout                                   | Yes         |
+| `create_custom_exercise` | Create custom exercise with muscle/joint metadata              | No          |
 
 ## Usage Examples
 
@@ -78,6 +79,9 @@ skill_mcp(mcp_name="macrofactor", tool_name="log_workout", arguments='{"name": "
 
 # What's next in my program?
 skill_mcp(mcp_name="macrofactor", tool_name="get_next_workout")
+
+# Create a custom exercise (reference a similar bundled exercise for metadata)
+skill_mcp(mcp_name="macrofactor", tool_name="create_custom_exercise", arguments='{"name": "Cable goblet squat", "primaryFeatureMuscle": ["2545c6f170d8804bb1fbdfc4471debe5"], "exerciseMetrics": ["2555c6f170d8805cafa6d16d3fdddbaa", "2555c6f170d88072bbf6d9ad3f16ea86"], "resistanceEquipmentGroups": [{"equipmentIds": ["19e5c6f170d880d28b46e9ccddcfba1a"]}]}')
 ```
 
 ## CLI (Alternative)
@@ -102,6 +106,8 @@ The CLI is available when MCP is not. Output is JSON. Auth reads from `.env` aut
 | Goals            | `npx tsx cli/mf.ts goals`                                                                           |
 | Search exercises | `npx tsx cli/mf.ts exercises search "bench press"`                                                  |
 | Gyms             | `npx tsx cli/mf.ts gyms`                                                                            |
+| Custom exercises | `npx tsx cli/mf.ts custom-exercises`                                                                |
+| Create exercise  | `npx tsx cli/mf.ts create-exercise '{"name":"...","primaryFeatureMuscle":[...],...}'`               |
 
 ## Key Behaviors
 
@@ -109,10 +115,11 @@ The CLI is available when MCP is not. Output is JSON. Auth reads from `.env` aut
 - **Dates** are `YYYY-MM-DD`. Most default to today when omitted.
 - **Weight** stored as kg internally. `log_weight` accepts `lbs` or `kg`, converts automatically.
 - **`log_food`** searches by name and logs top result. Use `search_foods` first to pick a specific match.
-- **`log_workout`** takes exercise names (not IDs) and resolves them. `sets: 3` expands to 3 individual sets.
+- **`log_workout`** takes exercise names (not IDs) and resolves them against both bundled and custom exercises. `sets: 3` expands to 3 individual sets.
 - **Food times** default to now. Pass `hour`/`minute` for override (24h wall-clock, no timezone).
 - **Entry IDs** for `update_food`/`delete_food` come from `get_food_log`.
 - **Food corrections**: Use `update_food` to fix quantity — don't delete and re-log (creates ghost entries).
+- **Custom exercises**: Use `create_custom_exercise` when an exercise isn't in the bundled DB. Reference a similar bundled exercise (via `search_exercises`) to populate muscle/joint metadata. Once created, use the exercise by name in `log_workout`/`log_exercise`.
 - **Supersets**: In `log_workout`, use `blocks: [[ex1, ex2]]` instead of `exercises: [...]` for superset grouping.
 
 ## Analytical Patterns

@@ -219,13 +219,15 @@ function buildWorkoutExercise(exerciseInput: Record<string, unknown>) {
   }
   const exerciseId = exerciseInput.exerciseId.trim();
   const exercise = lookupExercise(exerciseId);
-  if (!exercise) {
-    throw new Error(`Exercise "${exerciseId}" not found`);
+  const exerciseName = exercise?.name ?? (typeof exerciseInput.name === 'string' ? exerciseInput.name.trim() : null);
+  if (!exerciseName) {
+    throw new Error(`Exercise "${exerciseId}" not found and no "name" provided for custom exercise`);
   }
-  const expanded = normalizeSetInputs(exerciseId, exerciseInput.sets);
+  const resolvedId = exercise?.id ?? exerciseId;
+  const expanded = normalizeSetInputs(resolvedId, exerciseInput.sets);
   const rawExercise = {
     id: randomUUID(),
-    exerciseId: exercise.id,
+    exerciseId: resolvedId,
     note: typeof exerciseInput.note === 'string' ? exerciseInput.note : '',
     baseWeight: null,
     sets: expanded.map((set) => ({
@@ -249,8 +251,8 @@ function buildWorkoutExercise(exerciseInput: Record<string, unknown>) {
     })),
   };
   const summary = {
-    name: exercise.name,
-    exerciseId: exercise.id,
+    name: exerciseName,
+    exerciseId: resolvedId,
     sets: expanded.map((set) => ({
       reps: set.fullReps,
       kg: Math.round(set.weightKg * 1000) / 1000,
@@ -331,6 +333,7 @@ const ALL_COMMANDS = [
   'context',
   'copy-food',
   'custom-exercises',
+  'create-exercise',
   'delete-weight',
   'hard-delete-food',
   'login',
@@ -465,6 +468,53 @@ async function main() {
       case 'custom-exercises': {
         const client = await getClient();
         console.log(JSON.stringify(await client.getCustomExercises(), null, 2));
+        break;
+      }
+
+      case 'create-exercise': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts create-exercise <json> or pipe JSON via stdin');
+        }
+        const name = typeof input.name === 'string' ? input.name.trim() : '';
+        if (!name) {
+          throw new Error('create-exercise requires "name"');
+        }
+
+        const exerciseDef: Record<string, any> = {
+          name,
+          archived: false,
+          bodyweight: Number(input.bodyweight) || 0,
+          exerciseType: input.exerciseType ?? null,
+          primaryMuscle: input.primaryMuscle ?? [],
+          secondaryMuscle: input.secondaryMuscle ?? [],
+          primaryFeatureMuscle: input.primaryFeatureMuscle ?? [],
+          secondaryFeatureMuscle: input.secondaryFeatureMuscle ?? [],
+          emphasizedAgonist: input.emphasizedAgonist ?? [],
+          deemphasizedAgonist: input.deemphasizedAgonist ?? [],
+          primaryJointAction: input.primaryJointAction ?? [],
+          secondaryJointAction: input.secondaryJointAction ?? [],
+          regionTrained: input.regionTrained ?? null,
+          laterality: input.laterality ?? [],
+          movementPattern: input.movementPattern ?? [],
+          exerciseGroup: input.exerciseGroup ?? [],
+          exclusionGroupings: input.exclusionGroupings ?? [],
+          exerciseMetrics: input.exerciseMetrics ?? [],
+          resistanceEquipmentGroups: input.resistanceEquipmentGroups ?? [],
+          supportEquipmentGroups: input.supportEquipmentGroups ?? [],
+          preconditions: input.preconditions ?? [],
+          recommendationLevelStrength: input.recommendationLevelStrength ?? null,
+          recommendationLevelHypertrophy: input.recommendationLevelHypertrophy ?? null,
+          exerciseClassificationStrength: input.exerciseClassificationStrength ?? null,
+          exerciseClassificationHypertrophy: input.exerciseClassificationHypertrophy ?? null,
+          rom: input.rom ?? null,
+          stability: input.stability ?? null,
+          alternativeNames: input.alternativeNames ?? [],
+        };
+
+        const client = await getClient();
+        const created = await client.createCustomExercise(exerciseDef as any);
+        console.log(JSON.stringify({ status: 'created', id: created.id, name: created.name }, null, 2));
         break;
       }
 

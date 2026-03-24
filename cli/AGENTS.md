@@ -21,6 +21,8 @@ cli/
 | `workout`          | `<uuid>` or `{id}`            | Full workout detail          |
 | `exercises search` | `<query>`                     | Search bundled exercise DB   |
 | `exercise`         | `<hex-id>`                    | Resolve exercise ID          |
+| `custom-exercises` | —                             | List custom exercises        |
+| `create-exercise`  | `{name, ...metadata}`         | Create custom exercise       |
 | `gyms`             | —                             | List gym profiles            |
 | `profile`          | —                             | User profile                 |
 | `food-log`         | `[YYYY-MM-DD]`                | Day's food log               |
