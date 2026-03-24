@@ -616,6 +616,7 @@ async function main() {
         }
 
         const hasGrams = input.grams != null;
+        const hasAmount = input.amount != null;
         let servingIndex: number;
         let quantity: number;
 
@@ -625,10 +626,8 @@ async function main() {
           if (!Number.isFinite(gramsValue) || gramsValue <= 0) {
             throw new Error('log-food "grams" must be a positive number');
           }
-          const client2 = await getClient();
           const food2 = await getFoodById(foodId);
           if (!food2) throw new Error(`Food "${foodId}" not found`);
-          // Prefer '100 g' serving, then any gram-based serving
           const hundredGIdx = food2.servings.findIndex((s) => s.gramWeight === 100 && /100\s*g/i.test(s.description));
           const anyGramIdx = food2.servings.findIndex((s) => isGramServing(s));
           const gramIdx = hundredGIdx >= 0 ? hundredGIdx : anyGramIdx;
@@ -637,10 +636,43 @@ async function main() {
           }
           servingIndex = gramIdx;
           quantity = gramsValue / food2.servings[gramIdx].gramWeight;
+        } else if (hasAmount) {
+          // amount + unit mode: find matching serving by unit name
+          const amountValue = Number(input.amount);
+          if (!Number.isFinite(amountValue) || amountValue <= 0) {
+            throw new Error('log-food "amount" must be a positive number');
+          }
+          const unit = typeof input.unit === 'string' ? input.unit.trim() : 'serving';
+          const food2 = await getFoodById(foodId);
+          if (!food2) throw new Error(`Food "${foodId}" not found`);
+          const aliases: Record<string, string[]> = {
+            tbsp: ['tbsp', 'tablespoon'],
+            tsp: ['tsp', 'teaspoon'],
+            cup: ['cup'],
+            oz: ['oz'],
+            lb: ['lb'],
+            ml: ['ml'],
+            serving: ['serving'],
+            piece: ['piece', 'each'],
+            slice: ['slice'],
+            medium: ['medium'],
+            large: ['large'],
+            small: ['small'],
+          };
+          const targets = aliases[unit.toLowerCase()] || [unit.toLowerCase()];
+          const matchIdx = food2.servings.findIndex((s) =>
+            targets.some((t) => s.description.toLowerCase().includes(t))
+          );
+          if (matchIdx < 0) {
+            const available = food2.servings.map((s) => s.description).join(', ');
+            throw new Error(`No serving matching "${unit}" for "${foodId}". Available: ${available}`);
+          }
+          servingIndex = matchIdx;
+          quantity = amountValue;
         } else {
           servingIndex = Number(input.servingIndex);
           if (!Number.isInteger(servingIndex) || servingIndex < 0) {
-            throw new Error('log-food requires non-negative integer "servingIndex" or "grams"');
+            throw new Error('log-food requires "servingIndex", "grams", or "amount"+"unit"');
           }
           quantity = Number(input.quantity);
           if (!Number.isFinite(quantity) || quantity <= 0) {
