@@ -5,6 +5,10 @@
   "engines": {
     "node": ">=22"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjawhar/macrofactor.git"
+  },
   "files": [
     "dist/",
     "data/exercises.json"
@@ -13,7 +17,8 @@
     "macrofactor-mcp": "./dist/mcp/stdio.js"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "vite dev",
