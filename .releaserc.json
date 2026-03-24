@@ -4,10 +4,6 @@
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     ["@semantic-release/npm", { "npmPublish": false }],
-    [
-      "@semantic-release/exec",
-      { "publishCmd": "npm run build:mcp && npm publish --access public --provenance" }
-    ],
     "@semantic-release/github"
   ]
 }
