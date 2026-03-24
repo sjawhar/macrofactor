@@ -67,8 +67,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: echo "npm $(npm --version)" && npm ci
-      - name: Release
+          registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
+      - run: npm ci
+      - name: Semantic Release
         run: npx semantic-release@24
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish to npm
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "@sjawhar/macrofactor-mcp@${VERSION}" version 2>/dev/null; then
+            echo "v${VERSION} already published, skipping"
+          else
+            echo "Publishing v${VERSION}"
+            npm run build:mcp
+            npm publish --provenance --access public
+          fi
