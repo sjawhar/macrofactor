@@ -91,7 +91,9 @@ Firestore stores microseconds. `getWorkout()` returns seconds (parsed). `getRawW
 
 ### Exercise Resolution
 
-`/exercises` Firestore collection returns 403 (App Check). Use `resolveExercise()` / `resolveName()` from local `exercises.ts`.
+**Bundled exercises** (4,170 hex IDs in `data/exercises.json`): Use `resolveExercise()` / `resolveName()` / `lookupExercise()` from local `exercises.ts`. The `/exercises` Firestore collection returns 403 (App Check).
+
+**Custom exercises** (user-created, UUID IDs in `users/{uid}/customExercises/{uuid}`): Use `client.getCustomExercises()` / `client.createCustomExercise()`. Custom exercises are NOT in the bundled DB — any code that resolves exercise names must check both sources. The MCP `log_workout`/`log_exercise` tools and CLI `log-workout` already handle this fallback. When displaying workout details, `getWorkout()` fetches custom exercises for name resolution automatically.
 
 ### `.env` Parsing
 
@@ -125,7 +127,7 @@ GitHub Actions on push/PR to `main`: format:check → typecheck → build. Tests
 ## Notes
 
 - `data/exercises.json` is 2.6MB bundled — contains 4,170 hex IDs mapping exercises, muscles, equipment
-- Workout IDs are UUIDs; exercise/muscle/equipment IDs are 32-char hex containing `c6f170d880`
+- Workout IDs are UUIDs; bundled exercise/muscle/equipment IDs are 32-char hex containing `c6f170d880`; custom exercise IDs are UUIDs
 - Food entries use single-char field names (`t`=title, `c`=cal, `p`=protein, `e`=carbs, `f`=fat, `g`=serving grams, etc.)
 - Nutrition summaries may not exist in Firestore — `getNutrition()` computes from food log
 - Both `package-lock.json` and `pnpm-lock.yaml` exist; pnpm is primary

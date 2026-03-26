@@ -50,6 +50,7 @@ client.ensureToken() → fetch(Firestore REST) → parseDocument() → typed ret
 - **Food log**: `users/{uid}/food/{YYYY-MM-DD}` — entries keyed by microsecond timestamp
 - **Scale/Steps/Nutrition**: `users/{uid}/{collection}/{YYYY}` — fields keyed by `MMDD`
 - **Workouts**: `users/{uid}/workoutHistory/{uuid}` — individual documents
+- **Custom exercises**: `users/{uid}/customExercises/{uuid}` — user-created exercise definitions
 
 ### FoodEntry Class
 
@@ -63,7 +64,8 @@ client.ensureToken() → fetch(Firestore REST) → parseDocument() → typed ret
 
 - **NEVER** use `patchDocument()` for food entries → use `patchFoodDocument()` (creation) or `updateFoodEntryFields()` (partial update)
 - **NEVER** use `patchFoodDocument()` for partial updates → it replaces the entire entry; use `updateFoodEntryFields()`
-- **NEVER** read `/exercises` from Firestore → 403 App Check; use local `exercises.ts`
+- **NEVER** read `/exercises` from Firestore → 403 App Check; use local `exercises.ts` for bundled exercises
+- **NEVER** assume exercise IDs are hex — custom exercises use UUIDs. `resolveName()` only handles bundled hex IDs; for custom exercises, use `getCustomExercises()` or the `customNameMap` in `getWorkout()`
 - **NEVER** pass JS `Date` for meal time → use `LogTime { date, hour, minute }`
 - **NEVER** use meal time as entry ID → use `Date.now() * 1000` for unique IDs
 - `getRawWorkout()` for writes; `getWorkout()` for reads (parsed types differ from raw)
