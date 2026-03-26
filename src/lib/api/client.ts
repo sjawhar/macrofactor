@@ -700,23 +700,29 @@ export class MacroFactorClient {
 
   async getWorkout(id: string): Promise<WorkoutDetail> {
     const token = await this.ensureToken();
-    const doc = await getDocument(`users/${this.uid}/workoutHistory/${id}`, token);
+    const [doc, customExercises] = await Promise.all([
+      getDocument(`users/${this.uid}/workoutHistory/${id}`, token),
+      this.getCustomExercises(),
+    ]);
     if (!doc.fields) {
       throw new Error(`Workout ${id} not found`);
     }
     const d = parseDocument(doc);
     const derivedId = documentId(doc.name, d);
     if (derivedId && d.id == null) d.id = derivedId;
-    return this.parseWorkoutDetail(d);
+    const customNameMap = new Map(customExercises.map((e) => [e.id, e.name]));
+    return this.parseWorkoutDetail(d, customNameMap);
   }
 
-  private parseWorkoutDetail(d: Record<string, any>): WorkoutDetail {
+  private parseWorkoutDetail(d: Record<string, any>, customNameMap?: Map<string, string>): WorkoutDetail {
     const blocks: WorkoutBlock[] = ((d.blocks ?? []) as any[]).map((block: any) => ({
-      exercises: ((block.exercises ?? []) as any[]).map(
-        (ex: any): WorkoutExercise => ({
+      exercises: ((block.exercises ?? []) as any[]).map((ex: any): WorkoutExercise => {
+        const bundledName = resolveName(ex.exerciseId);
+        const name = bundledName !== ex.exerciseId ? bundledName : (customNameMap?.get(ex.exerciseId) ?? ex.exerciseId);
+        return {
           id: ex.id,
           exerciseId: ex.exerciseId,
-          exerciseName: resolveName(ex.exerciseId),
+          exerciseName: name,
           baseWeight: ex.baseWeight ?? null,
           note: ex.note ?? '',
           sets: ((ex.sets ?? []) as any[]).map(
@@ -745,8 +751,8 @@ export class MacroFactorClient {
               },
             })
           ),
-        })
-      ),
+        };
+      }),
     }));
 
     let exerciseCount = 0;
@@ -815,6 +821,20 @@ export class MacroFactorClient {
       const d = parseDocument(doc);
       return d as unknown as CustomExercise;
     });
+  }
+
+  async createCustomExercise(exercise: Omit<CustomExercise, 'id'>): Promise<CustomExercise> {
+    const token = await this.ensureToken();
+    const id = crypto.randomUUID();
+    const fields: Record<string, any> = {
+      ...exercise,
+      id,
+      archived: exercise.archived ?? false,
+      description: '',
+    };
+    const fieldPaths = Object.keys(fields);
+    await patchDocument(`users/${this.uid}/customExercises/${id}`, fields, fieldPaths, token);
+    return { ...exercise, id } as CustomExercise;
   }
   // -------------------------------------------------------------------------
   // Search

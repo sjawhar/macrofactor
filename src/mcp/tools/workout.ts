@@ -103,18 +103,31 @@ function normalizeSetInputs(sets: unknown, exerciseName: string): ExpandedSet[] 
   return expandSets(normalized);
 }
 
-function buildWorkoutExercise(exerciseName: string, setsValue: unknown) {
+function buildWorkoutExercise(
+  exerciseName: string,
+  setsValue: unknown,
+  customExercises?: Array<{ id: string; name: string }>
+) {
   const matches = searchExercises(exerciseName);
-  const match = matches[0];
-  if (!match) {
-    throw new Error(`Exercise "${exerciseName}" not found`);
+  let exerciseId: string;
+  let resolvedName: string;
+  if (matches.length > 0) {
+    exerciseId = matches[0].id;
+    resolvedName = matches[0].name;
+  } else {
+    const custom = customExercises?.find((e) => e.name.toLowerCase() === exerciseName.toLowerCase());
+    if (!custom) {
+      throw new Error(`Exercise "${exerciseName}" not found in bundled or custom exercises`);
+    }
+    exerciseId = custom.id;
+    resolvedName = custom.name;
   }
 
   const expanded = normalizeSetInputs(setsValue, exerciseName);
   return {
     rawExercise: {
       id: randomUUID(),
-      exerciseId: match.id,
+      exerciseId,
       note: '',
       baseWeight: null,
       sets: expanded.map((set) => ({
@@ -138,8 +151,8 @@ function buildWorkoutExercise(exerciseName: string, setsValue: unknown) {
       })),
     },
     summary: {
-      name: match.name,
-      exerciseId: match.id,
+      name: resolvedName,
+      exerciseId,
       setCount: expanded.length,
     },
   };
@@ -223,7 +236,7 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
     },
     { destructiveHint: false },
     async ({ name, gym, startTime, durationMinutes, exercises }) => {
-      const gyms = await client.getGymProfiles();
+      const [gyms, customExercises] = await Promise.all([client.getGymProfiles(), client.getCustomExercises()]);
       const selectedGym = gym ? gyms.find((candidate) => candidate.name.toLowerCase() === gym.toLowerCase()) : gyms[0];
 
       const workoutId = randomUUID();
@@ -231,7 +244,11 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
       const summary: unknown[] = [];
 
       for (const exercise of exercises) {
-        const { rawExercise, summary: exerciseSummary } = buildWorkoutExercise(exercise.name, exercise.sets);
+        const { rawExercise, summary: exerciseSummary } = buildWorkoutExercise(
+          exercise.name,
+          exercise.sets,
+          customExercises
+        );
         blocks.push({ exercises: [rawExercise] });
         summary.push(exerciseSummary);
       }
@@ -297,12 +314,16 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
     },
     { destructiveHint: false },
     async ({ workoutId, exercises }) => {
-      const raw = await client.getRawWorkout(workoutId);
+      const [raw, customExercises] = await Promise.all([client.getRawWorkout(workoutId), client.getCustomExercises()]);
       const blocks = Array.isArray(raw.blocks) ? raw.blocks : [];
       const summary: unknown[] = [];
 
       for (const exercise of exercises) {
-        const { rawExercise, summary: exerciseSummary } = buildWorkoutExercise(exercise.name, exercise.sets);
+        const { rawExercise, summary: exerciseSummary } = buildWorkoutExercise(
+          exercise.name,
+          exercise.sets,
+          customExercises
+        );
         blocks.push({ exercises: [rawExercise] });
         summary.push(exerciseSummary);
       }
