@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Distinguishes between acute risk in people with pre-existing vascular conditions vs. long-term causation in healthy lifters",
+      "passed": true,
+      "evidence": "'Special Populations: When Caution Is Warranted' section clearly separates pre-existing hypertension, retinal issues, and aneurysm risk from the general conclusion that 'healthy individuals tolerate Valsalva well.'"
+    },
+    {
+      "text": "States that direct long-term causal evidence specifically linking normal lifting bracing to vascular damage is sparse or limited",
+      "passed": true,
+      "evidence": "States: 'Long-term bracing and Valsalva maneuvers do not cause chronic vascular damage in healthy individuals' and 'no mechanism for cumulative damage.' Directly addresses the evidence gap."
+    },
+    {
+      "text": "Mentions occupational lifting epidemiology but notes it differs substantially from strength training",
+      "passed": false,
+      "evidence": "No mention of occupational lifting epidemiology. The answer cites powerlifter cardiovascular health data but doesn't reference the occupational lifting studies Greg discussed."
+    },
+    {
+      "text": "Recommends individualized caution for those with known medical risk rather than broad fear-based avoidance",
+      "passed": true,
+      "evidence": "Special Populations section recommends specific caution (hypertension, retinal issues, aneurysms, pregnancy) while concluding 'For healthy individuals without these conditions, there is no evidence that normal bracing causes vascular damage.'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

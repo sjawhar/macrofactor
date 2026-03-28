@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states no compelling evidence that calorie cycling is superior when weekly intake is equated",
+      "passed": true,
+      "evidence": "Found 'no' in: ...Fat Gain Compared to Flat Daily Calories?\n\n## Short Answer\n\nNo. Calorie cycling does not meaningfully reduce fat gain comp..."
+    },
+    {
+      "text": "Answer frames energy balance as a longer-game variable",
+      "passed": true,
+      "evidence": "Found 'energy balance' in: ...intake is equal. Fat gain is primarily determined by total energy balance over time, not the distribution pattern of calories across..."
+    },
+    {
+      "text": "Answer says not to feel forced to cut intake on rest days for small calorie differences",
+      "passed": true,
+      "evidence": "Found 'not' in: ...Daily Calories?\n\n## Short Answer\n\nNo. Calorie cycling does not meaningfully reduce fat gain compared to flat daily calorie..."
+    },
+    {
+      "text": "Answer acknowledges nonlinear intake can be useful for adherence or workout quality",
+      "passed": true,
+      "evidence": "Found 'adherence' in: ...metabolic effects as cycling between 1,500 and 2,500.\n\n3. **Adherence matters more**: The real benefit of calorie cycling is psyc..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

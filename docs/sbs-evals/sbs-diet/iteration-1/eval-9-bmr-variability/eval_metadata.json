@@ -1,0 +1,14 @@
+{
+  "eval_id": 9,
+  "eval_name": "eval-9-bmr-variability",
+  "prompt": "Can 'fast metabolism' actually be real between people of the same size and activity level, or is that a myth?",
+  "expected_output": "Greg gave a clear yes: meaningful between-person BMR differences are real even after accounting for common predictors. He described prediction error ranges where people with similar body size/composition/activity can still differ by large amounts, with rough spreads on the order of hundreds of kcal/day (he discussed ranges around ~800 kcal across typical confidence intervals). He highlighted organ-size variability (liver, kidneys, heart, etc.) as a major reason, since those tissues are metabolically expensive relative to their mass. So while not everyone is an extreme outlier, 'fast' and 'slow' metabolism are legitimate phenomena at the individual level. The key point is that this variability is biological, not just tracking error or character flaws.",
+  "topic": "bmr variability",
+  "episode": 126,
+  "assertions": [
+    "Answer gives a clear yes: meaningful BMR differences between same-size people are real",
+    "Answer mentions a spread on the order of hundreds of kcal/day between individuals",
+    "Answer cites organ-size variability (liver, kidneys, heart) as a major reason",
+    "Answer frames fast/slow metabolism as legitimate biological phenomena, not just tracking error"
+  ]
+}

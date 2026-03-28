@@ -121,6 +121,13 @@ The CLI is available when MCP is not. Output is JSON. Auth reads from `.env` aut
 - **Food corrections**: Use `update_food` to fix quantity — don't delete and re-log (creates ghost entries).
 - **Custom exercises**: Use `create_custom_exercise` when an exercise isn't in the bundled DB. Reference a similar bundled exercise (via `search_exercises`) to populate muscle/joint metadata. Once created, use the exercise by name in `log_workout`/`log_exercise`.
 - **Supersets**: In `log_workout`, use `blocks: [[ex1, ex2]]` instead of `exercises: [...]` for superset grouping.
+- **Program-linked workouts**: When logging a workout for a training program, pass `workoutSource` with `programId`, `dayId`, and `cycleIndex`. The tool will automatically (1) attach set targets from `periodizedTargets.values[cycleIndex]` and (2) update `workoutCycleCompletions` on the program document so the day shows as checked off. Use `get_training_program` to find dayIds and `get_next_workout` for the current cycle position.
+
+## User Preferences
+
+On first use, check for a user preferences file at `~/.config/macrofactor/preferences.md` (or `$XDG_CONFIG_HOME/macrofactor/preferences.md` if set). If it exists, read it and follow the instructions — it contains personal context like preferred units, equipment details, workout naming conventions, etc.
+
+If the file doesn't exist, use sensible defaults and offer to create one when you learn user-specific preferences (e.g. "You mentioned you prefer kg — want me to save that to your preferences?").
 
 ## Analytical Patterns
 

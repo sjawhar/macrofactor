@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "deadlift-on-sloped-platform",
+  "prompt": "A listener asked whether deadlifting on a garage platform with about a 5% incline could meaningfully hurt performance compared to deadlifting on a flat gym floor.",
+  "assertions": [
+    "Acknowledges the incline could genuinely affect performance (not just 'in your head')",
+    "Mentions confounding variables like plate calibration differences or temperature effects",
+    "Explains how the slope changes mechanics depending on bar/lifter orientation relative to slope (e.g., effective heel elevation, deficit-like effect, or block-pull-like effect)",
+    "Suggests testing or experimenting with orientation/setup to isolate the variable"
+  ]
+}

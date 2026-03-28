@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states drinking speed of protein shakes is not a key lever in mixed-meal contexts",
+      "passed": true,
+      "evidence": "Found 'not' in: ...BS Diet Answer)\n\n## Short Answer\n\n**No, drinking speed does not meaningfully affect protein absorption or muscle-building o..."
+    },
+    {
+      "text": "Answer mentions fiber, fat, meal composition affect amino acid appearance more than sip speed",
+      "passed": true,
+      "evidence": "Found 'fat' in: ...*Non-lifters:** 1.2\u20131.8 g/kg/day\n- **Very lean or high body-fat:** Consider FFM-based scaling (2.0\u20132.75 g/kg FFM/day)\n\n###..."
+    },
+    {
+      "text": "Answer recommends focusing on daily distribution of roughly 3-5 protein feedings",
+      "passed": true,
+      "evidence": "Found '3' in: ...; 1.2\u20131.8 g/kg/day for non-lifters)\n- **Distribution across 3\u20136 feedings/day** (each \u22650.3 g/kg protein, ~2\u20133 g leucine pe..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

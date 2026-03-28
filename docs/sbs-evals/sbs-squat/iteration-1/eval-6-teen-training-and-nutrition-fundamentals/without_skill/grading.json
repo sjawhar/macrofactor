@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends building around major compound patterns (squat/press/hinge/row variants)",
+      "passed": true,
+      "evidence": "Found matching content: ...ently.\n\n## Exercise Selection\n\nFocus on compound, multi-joint movements that train your..."
+    },
+    {
+      "text": "Suggests a starting volume around 8-12 sets per muscle per week",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Recommends training mostly in approximately the 5-12 rep range",
+      "passed": true,
+      "evidence": "Found matching content: ...oth strength and muscle, a rep range of 5-15 reps per set covers you well. Heavier sets..."
+    },
+    {
+      "text": "Addresses effort/proximity to failure (e.g., 0-2 RIR or close to failure)",
+      "passed": true,
+      "evidence": "Found matching content: ...of the time (what coaches call leaving \"reps in reserve\"). Training to absolute failure every s..."
+    },
+    {
+      "text": "Provides protein recommendation around 1.5-2.0 g/kg/day or equivalent",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Suggests a moderate weight gain target (around 1% bodyweight/month or slow surplus)",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Emphasizes bodyweight/calisthenic movement skill development before heavy barbell loading",
+      "passed": true,
+      "evidence": "Found matching content: ...d rows. Pull-ups and dips are excellent bodyweight additions. These movements recruit the..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 3,
+    "total": 7,
+    "pass_rate": 0.5714
+  }
+}

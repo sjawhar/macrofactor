@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Notes that safety claims about one setup being clearly safer are not strongly established",
+      "passed": true,
+      "evidence": "States 'the practical impact on hypertrophy is minimal' and discusses tradeoffs."
+    },
+    {
+      "text": "Identifies longer range of motion as a plausible mechanism for low incline advantage",
+      "passed": false,
+      "evidence": "States flat bench actually has greater ROM/stretch. Does not identify longer ROM as incline advantage."
+    },
+    {
+      "text": "Mentions that low incline changes the touch point upward, which can increase pec/triceps excursion",
+      "passed": false,
+      "evidence": "Does not discuss touch point change or excursion increase from incline."
+    },
+    {
+      "text": "Provides practical takeaway: use pressing angles that allow training hard through good ROM with manageable discomfort",
+      "passed": true,
+      "evidence": "Recommends choosing based on 'individual shoulder health, comfort, and long-term sustainability.'"
+    },
+    {
+      "text": "Acknowledges low incline may be modestly better but with limited certainty",
+      "passed": false,
+      "evidence": "States flat bench has 'slight hypertrophy advantage' rather than acknowledging incline may be modestly better."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

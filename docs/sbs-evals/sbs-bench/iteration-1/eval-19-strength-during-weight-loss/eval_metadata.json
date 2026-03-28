@@ -1,0 +1,12 @@
+{
+  "eval_id": 19,
+  "eval_name": "strength-during-weight-loss",
+  "prompt": "How have your lifts changed during your cut, and what helped you maintain strength while losing weight?",
+  "assertions": [
+    "Acknowledges getting weaker during the cut",
+    "Attributes much of the strength loss to disrupted training (injury) rather than fat loss alone",
+    "Mentions a specific injury (wrist/elbow) that limited training",
+    "Notes that strength rebounded quickly once consistent lifting resumed",
+    "Frames consistency and acceptance as more important than chasing perfect in-cut numbers"
+  ]
+}

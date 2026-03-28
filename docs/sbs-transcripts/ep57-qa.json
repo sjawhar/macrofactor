@@ -1,0 +1,55 @@
+{
+  "episode": 57,
+  "pairs": [
+    {
+      "question": "Is trying to train for strength and hypertrophy at the same time basically useless for recreational intermediate lifters? Does it make sense to mix goals by body part or day?",
+      "answer_summary": "Greg said that framing is wrong: concurrent strength and hypertrophy work is usually effective for most non-elite lifters. He suggested two practical templates: (1) mostly hypertrophy work while sprinkling in occasional heavy singles around ~90-92% to keep high-load skill sharp, or (2) block-style programming with about 75% of blocks focused on hypertrophy and every fourth block more strength-specific. He noted that near-max, low-volume peaking work can temporarily limit hypertrophy if done constantly, but you only need short doses of it (e.g., a few weeks every 4-6 months for many lifters). For long-term strength, he emphasized that adding muscle is foundational, so hypertrophy training should be a major part of the year. Bottom line: build size most of the time, keep some heavy practice in, and both outcomes can improve together.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "concurrent strength and hypertrophy training"
+    },
+    {
+      "question": "Do triceps become the prime mover near max bench loads, and does that mean I should prioritize triceps accessories over pec-focused work?",
+      "answer_summary": "Greg argued the claim is overstated and mostly a measurement artifact from looking at the long head of the triceps. He explained that long-head triceps is biarticular and can be de-emphasized at lower loads because one of its joint actions conflicts with the bench movement, then appears to ramp up disproportionately at max loads. He contrasted this with evidence showing benching tends to grow lateral triceps more than long-head triceps, citing a study where long-head growth was minimal. He also referenced Duffy's dissertation data suggesting pecs, delts, and lateral triceps all increase activation similarly as load rises. So he rejected the idea that triceps suddenly become the prime mover at max loads. Practical takeaway: don’t abandon pec work based on that interpretation; train bench-relevant musculature broadly.",
+      "skills": [
+        "sbs-bench",
+        "sbs-strength-training"
+      ],
+      "topic": "bench prime mover interpretation"
+    },
+    {
+      "question": "Are some muscles resistant to hypertrophy? Could you actually build a bigger tongue with enough loading, and are calves somehow different?",
+      "answer_summary": "Greg’s answer was that tongues are normal skeletal muscle and likely not uniquely resistant to growth. He discussed sleep-apnea literature showing tongue size varies and can increase with fat deposition, which supports that tongues are modifiable tissue rather than fixed-size structures. He speculated that if a muscle responds to anabolic stimuli (including steroid exposure), it is plausible it would also respond to mechanical loading, though he noted direct progressive-overload tongue studies are lacking. He repeatedly framed parts of this as informed speculation, not clinical advice. His practical conclusion was that calves are not made of some fundamentally different non-growable tissue. In short: no strong evidence for a special hypertrophy-resistant class here, just a weird example with limited direct training data.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "muscle-specific hypertrophy skepticism"
+    },
+    {
+      "question": "For older lifters, are glucosamine and chondroitin useful for preventing or repairing joint wear and tear?",
+      "answer_summary": "Greg said older evidence (2010 meta-analysis) was largely negative, but newer evidence (2018 meta-analysis covering 26 articles/30 trials) suggested small benefits in osteoarthritis populations. Specifically, he summarized that glucosamine showed a small effect on stiffness, while chondroitin showed small effects on pain and physical function. He emphasized these are modest effects, not dramatic improvements, and combination evidence is less clear. He also highlighted that the better evidence is mostly in osteoarthritis patients, so generalizing to everyone without OA is shaky. Safety looked generally acceptable with mostly mild GI side effects at higher doses. Practical advice: manage expectations and coordinate with a clinician/PT if pain and function are the main concern.",
+      "skills": [
+        "sbs-diet"
+      ],
+      "topic": "joint supplements in older lifters"
+    },
+    {
+      "question": "What signs suggest I need extra conditioning to keep progressing in strength or hypertrophy? What type of conditioning should I do?",
+      "answer_summary": "Greg said the key sign is when required training volume for progress outpaces your ability to complete sessions or recover from them. Instead of defaulting to separate cardio blocks, he now prefers specific conditioning by stepping down the intensity ladder within your lifting. For strength-focused lifters struggling with triples, he suggested spending time in higher-rep sets (roughly 5-8) to build work capacity, then returning to lower reps. For hypertrophy work (e.g., 8-12), he suggested phases with higher reps (12-15 or even 20-25) to raise metabolic tolerance and session capacity. He still likes low-intensity cardio like walking for general health, but not as the first lever for this specific problem. Core recommendation: keep the movement patterns similar and condition yourself via higher-rep versions of your main training.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "conditioning for lifting work capacity"
+    },
+    {
+      "question": "How much does food quality really matter for strength and hypertrophy if calories and protein are already decent? Am I losing meaningful gains by eating more fun foods?",
+      "answer_summary": "Their answer was that it depends, with big modifiers: overall health status, age/body composition, and whether your diet creates real nutrient deficiencies. Greg said if someone is young, generally healthy, active, meeting calories/protein, and not deficient, the direct strength/hypertrophy penalty from imperfect food quality is probably small. He thought improving diet quality in that case may matter more for feeling better and long-term health than for huge short-term gains differences. They both emphasized that many concerns are about missing beneficial foods/nutrients rather than the mere presence of enjoyable calorie-dense foods. They also noted context where less nutrient-dense additions can be useful, like helping athletes meet high energy demands. Practical takeaway: secure essentials (energy, protein, micronutrient adequacy), then treat food-quality upgrades as an important but context-dependent performance and health lever.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "diet quality vs performance outcomes"
+    }
+  ]
+}

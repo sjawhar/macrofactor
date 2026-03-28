@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says yes, BMI can misclassify very tall people",
+      "passed": true,
+      "evidence": "Found 'yes' in: ...ght. Is BMI biased for very tall people?\n\n**Short Answer:** Yes, BMI has a systematic bias for very tall people. At your he..."
+    },
+    {
+      "text": "Answer explains the traditional formula uses height squared which is an imperfect scaling exponent",
+      "passed": false,
+      "evidence": "Missing any of: ['height squared', 'height^2', 'exponent']"
+    },
+    {
+      "text": "Answer mentions height^2.5 as a more appropriate scaling alternative",
+      "passed": true,
+      "evidence": "Found 'height' in: ...es, BMI has a systematic bias for very tall people. At your height and weight, BMI is a poor predictor of body composition and..."
+    },
+    {
+      "text": "Answer provides a concrete example showing how extreme height distorts BMI interpretation",
+      "passed": true,
+      "evidence": "Found 'example' in: ...muscle and bone mass scale roughly linearly with height.\n\n**Example:** If you scale a person up proportionally (same body compo..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

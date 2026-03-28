@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states no meaningful body-composition advantage of interval vs steady-state cardio",
+      "passed": true,
+      "evidence": "Found 'no' in: ...Balance Trumps Cardio Type\n\n**For body composition, HIIT is not inherently superior to moderate steady-state cardio.** Bot..."
+    },
+    {
+      "text": "Answer cites or references a meta-analysis showing both produced small similar changes",
+      "passed": true,
+      "evidence": "Found 'both' in: ...not inherently superior to moderate steady-state cardio.** Both can drive fat loss effectively when they create a calorie d..."
+    },
+    {
+      "text": "Answer gives concrete interval options (30s hard/90s easy, 1min/1min, 2min/2min)",
+      "passed": true,
+      "evidence": "Found '30' in: ...Best):\n\nCombine both\u2014e.g., **2\u20133 sessions of steady-state (30\u201345 min) + 1 session of HIIT (15\u201320 min) per week**. This ba..."
+    },
+    {
+      "text": "Answer recommends choosing the modality you can adhere to safely",
+      "passed": true,
+      "evidence": "Found 'adhere' in: ...fits your deficit, preserves training quality, and improves adherence.\n\n---\n\n## Why the HIIT Hype Doesn't Hold Up\n\n### The Myt..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states the direct strength/hypertrophy penalty from imperfect food quality is probably small if basics are met",
+      "passed": true,
+      "evidence": "Found 'probably' in: ...lity and enjoyment. But even this is conservative\u2014you could probably go 70/30 or 60/40 without issues if you're intentional abou..."
+    },
+    {
+      "text": "Answer notes many concerns are about missing beneficial foods, not the mere presence of fun foods",
+      "passed": true,
+      "evidence": "Found 'nutrient' in: ...important)\n2. **Protein** (second most important)\n3. **Micronutrients & fiber** (important for health, modest impact on performa..."
+    },
+    {
+      "text": "Answer recommends securing essentials (energy, protein, micronutrient adequacy) first",
+      "passed": true,
+      "evidence": "Found 'energy' in: ...s.\n\n---\n\n## Why Calories & Protein Dominate\n\n### Calories = Energy for Growth\n\nMuscle growth requires a caloric surplus (or at..."
+    },
+    {
+      "text": "Answer frames food-quality upgrades as context-dependent health and performance lever",
+      "passed": false,
+      "evidence": "Missing any of: ['context', 'dependent', 'lever']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

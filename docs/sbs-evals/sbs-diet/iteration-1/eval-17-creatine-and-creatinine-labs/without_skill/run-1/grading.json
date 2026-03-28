@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer identifies elevated creatinine (not creatine) as the likely lab marker",
+      "passed": true,
+      "evidence": "Found 'creatinine' in: ...# Elevated Creatinine in Creatine Users: Should You Be Concerned?\n\n## The Short A..."
+    },
+    {
+      "text": "Answer explains creatine supplementation commonly raises creatinine since it's a breakdown product",
+      "passed": true,
+      "evidence": "Found 'product' in: ...This means:\n\n- **Higher creatine intake \u2192 higher creatinine production** is a direct, predictable consequence\n- Creatinine leve..."
+    },
+    {
+      "text": "Answer recommends discussing context with physician and requesting follow-up kidney function tests",
+      "passed": true,
+      "evidence": "Found 'doctor' in: ...** and is an expected physiological response. However, your doctor's recommendation should be taken seriously\u2014they have access..."
+    },
+    {
+      "text": "Answer does NOT recommend simply stopping creatine based on creatinine alone",
+      "passed": true,
+      "evidence": "Found 'not' in: ...atinine in someone taking creatine supplements is **usually not a cause for concern** and is an expected physiological resp..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

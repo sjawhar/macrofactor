@@ -1,0 +1,15 @@
+{
+  "eval_id": 3,
+  "eval_name": "eval-3-side-delt-exercise-selection",
+  "prompt": "Are lateral raises alone enough to build side delts, or do I need overhead pressing/upright rows too?",
+  "expected_output": "Their practical answer was that lateral raises plus other pressing/rowing work can be sufficient, and overhead pressing is not mandatory for everyone. Eric said he currently gets good shoulder development without relying on overhead press or upright rows, prioritizing varied presses/rows and lots of lateral raise variants while avoiding accessory movements that irritate joints. Greg said his front delts tend to dominate overhead pressing, so he also leans heavily on delt raises and rows for shoulder hypertrophy. They treated exercise selection as individual and comfort-driven when multiple viable hypertrophy options exist. The main recommendation was to use movements you can load and recover from consistently rather than forcing one required shoulder exercise.",
+  "topic": "side delt exercise selection",
+  "episode": 104,
+  "assertions": [
+    "Answer captures the core SBS position on side delt exercise selection",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

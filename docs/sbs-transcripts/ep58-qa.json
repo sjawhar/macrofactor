@@ -1,0 +1,118 @@
+{
+  "episode": 58,
+  "pairs": [
+    {
+      "question": "How much does protein feeding increase muscle protein synthesis compared with resistance training itself? Are we over-focusing on protein source and timing details?",
+      "answer_summary": "They said lifting is the dominant driver of muscle protein synthesis, while protein strategy is more of a permissive support factor. Eric used examples from androgen-deprivation and immobilization research to show how large the training effect can be relative to nutrition tweaks. During layoffs, they noted that even very reduced training volume (roughly 10-15% of normal, i.e., an 85-90% cut) can still help preserve muscle and strength. By contrast, protein-only interventions during immobilization are usually underwhelming, with mixed small benefits in some higher-dose amino acid/leucine studies. Their practical hierarchy was to keep some safe muscle loading whenever possible, then optimize protein amount/distribution/timing on top of that.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "lifting stimulus vs protein optimization"
+    },
+    {
+      "question": "Why don’t exercise studies routinely track and report participant sleep? Even imperfect app data seems better than nothing.",
+      "answer_summary": "They argued the main issue is evidence and feasibility, not ignorance. Eric said there is surprisingly limited long-duration resistance-training evidence directly showing that chronic short sleep changes hypertrophy/strength outcomes, so sleep is not always treated as a must-control covariate yet. He also emphasized measurement quality: self-report and many consumer trackers are noisy versus gold-standard sleep methods. With small sample sizes common in exercise science, adding many weak covariates can worsen analyses rather than improve them. So their view was that better longitudinal data and better measurement pipelines are needed before sleep can be consistently modeled in these trials.",
+      "skills": [],
+      "topic": "sleep variables in exercise research"
+    },
+    {
+      "question": "How should I respond when a doctor tells me to stop squatting because it’s bad for my knees?",
+      "answer_summary": "They recommended starting from empathy for the clinician’s context: general practitioners usually prioritize reducing symptoms and preserving activities of daily living, not maximizing squat performance. In that framework, conservative advice to stop a painful non-essential activity can be expected. But they also said lifters should seek second opinions from sports medicine professionals or PTs who understand training goals. They framed this as a cost-benefit decision where your risk tolerance and priorities matter. The practical message was: don’t automatically dismiss medical advice, but get context-specific guidance from providers experienced with athletes.",
+      "skills": [
+        "sbs-squat",
+        "sbs-strength-training"
+      ],
+      "topic": "medical advice vs lifting goals"
+    },
+    {
+      "question": "After hernia surgery with temporary lifting restrictions, how can I minimize muscle loss and when should I return to training?",
+      "answer_summary": "They said nutrition alone is usually weak for preventing detraining losses compared with actual loading. Eric noted that studies using very high leucine intakes (about 15-19 g/day extra) sometimes show partial benefit, while lower doses (around 10 g/day or less extra) are often not very effective. Even then, he emphasized that safe tissue loading is still the key if medically allowed. For return-to-training timing, they refused to give a universal timeline and said to work closely with your surgeon/clinical team, even if that means asking very specific follow-up questions. They also stressed that regaining lost strength is typically faster than building it the first time, so being conservative short-term is usually the better long-term play.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "post-surgery detraining and return"
+    },
+    {
+      "question": "If my sleep schedule is sporadic, what should I do for body composition, recovery, and training? Are naps useful, and should I ever train sleep deprived?",
+      "answer_summary": "They said poor sleep often worsens body composition via appetite/self-control effects, so controlling food environment becomes extra important when sleep deprived. For training, they advised keeping resistance training in place but biasing toward safer options (machines, dumbbells, controlled bodybuilding-style work) when motor control is compromised. They cautioned against high-risk sessions like max free-weight attempts or hard heat-exposed conditioning when severely sleep deprived. On naps, they said short naps around 20-30 minutes are often useful, while some people tolerate longer ~90-minute naps if nighttime sleep is not disrupted. Overall guidance: keep training, prioritize safety, and manage sleep-driven behavior drift rather than abandoning training.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "training with chronic sleep disruption"
+    },
+    {
+      "question": "How do we define training hard enough for typical lifters trying to get stronger or improve physique?",
+      "answer_summary": "They framed this around progressive overload and recoverability, not constant all-out effort. Eric said many productive sets can live around 0-4 reps in reserve (RIR), often starting farther from failure and moving closer across a block. They also discussed volume as a lever: if progress stalls and deloads are almost never needed, you may be under-dosing training stress. Greg added practical heuristics that repeatedly needing deloads every ~4-8 weeks can indicate productive difficulty, whereas crashing every 1-2 weeks suggests too much. Their short version was 'harder than last time,' while still preserving safety and long-term consistency.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "how hard to train"
+    },
+    {
+      "question": "If I hit my calorie target but I’m under my protein target, should I go over calories to hit protein? What if this happens often?",
+      "answer_summary": "They agreed the first fix is upstream: if this is frequent, adjust calorie targets, protein targets, meal planning, or food environment so targets are realistically compatible. Eric gave a common baseline of about 1.6 g/kg/day protein as a practical middle target (with higher needs in some deficits) and suggested lowering unrealistic protein goals when needed. For rare misses, both said the difference is usually negligible either way. In deficits, Eric leaned toward prioritizing protein and accepting a small calorie overshoot (for example +200 kcal once in a while), while Greg often prioritizes preserving the planned deficit depending on phase priority. For recomp/lean-bulk contexts they suggested splitting the difference (e.g., hit ~85-90% of protein target without overshooting calories as much).",
+      "skills": [
+        "sbs-diet"
+      ],
+      "topic": "calorie vs protein priority tradeoff"
+    },
+    {
+      "question": "How should bodybuilders periodize compound lifts to improve hypertrophy? Do they need sophisticated periodization blocks?",
+      "answer_summary": "They said bodybuilding generally does not require elaborate multi-capacity periodization because the main objective is hypertrophy almost year-round. Instead, they favored simple block management: control RIR, accumulate enough volume, deload when fatigue warrants, and rotate emphasis as weak points change. Eric said some variation is still useful for enjoyment, staleness management, and practical recovery. He also highlighted that prep phases can justify shifts toward somewhat higher intensity/lower volume as cardio increases and glycogen/energy availability drops. Bottom line: use practical autoregulated programming adjustments rather than forcing overly complex periodization models.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "bodybuilding periodization"
+    },
+    {
+      "question": "If ethics and money were no concern, what study would you most want to run?",
+      "answer_summary": "Greg's provocative example was a definitive human hyperplasia study, since counting muscle fibers directly is ethically infeasible in normal research. His realistic preference was a massive mechanistic and responder-variability project with very large samples, rich omics data, and multiple training programs to map why individuals respond differently. Eric added several high-priority practical trials: a properly powered creatine-caffeine interaction trial, well-designed nitrate plus citrulline hypertrophy studies with adequate doses, and better protein-dose scaling studies across body compositions and energy states. They also called out a major gap on how to train during caloric deficits (maintain volume vs maintain intensity), noting there is strong opinion but little direct data.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "dream research studies"
+    },
+    {
+      "question": "How does very low body fat affect strength and hypertrophy progress, and how can someone know if they’re too lean given poor body-fat measurement tools?",
+      "answer_summary": "They said very low body fat generally makes both performance and hypertrophy progress much harder due to reduced energy availability and impaired recovery. Eric described practical signs during contest-level leanness: worse training quality, slower recovery, colder body temperature, higher hunger, and broad 'system slowdown' effects. He also noted that in their p-ratio review, substantial lean-mass gains were uncommon below roughly 8% body fat in men. For monitoring, they advised against over-relying on imperfect body-fat devices and instead emphasized symptom-based and performance-based feedback. In other words, individual functional signs of low energy availability are more actionable than chasing one exact body-fat number.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "very low body fat and training outcomes"
+    },
+    {
+      "question": "What fitness beliefs are you most against, relative to common wisdom?",
+      "answer_summary": "Greg pushed back on the premise that one unified 'common wisdom' exists across all fitness subcultures. His main concrete example was stretching: he argued static stretching is often unfairly maligned in lifting circles, despite strong evidence that chronic stretching can improve flexibility. He acknowledged acute pre-performance reductions can occur with very long/intense stretching immediately before maximal tests, but said those effects often dissipate after normal warm-up. He also used training frequency as an example of shifting consensus over time, showing how 'common wisdom' can reverse within a decade. So their broader answer was that context and subcommunity matter more than any single universal orthodoxy.",
+      "skills": [
+        "sbs-strength-training"
+      ],
+      "topic": "contrarian fitness views"
+    },
+    {
+      "question": "If I train in the morning (often fasted) and perform a bit worse, how much does that matter for non-competitive goals like health or hypertrophy?",
+      "answer_summary": "They said the impact depends on goal hierarchy: for health-focused training, there is lots of wiggle room, while performance-specific goals require tighter optimization. For hypertrophy, they still view session performance as meaningful because mechanical tension and productive reps matter, even if perfection is unnecessary. On fasted training specifically, they highlighted mixed evidence and said hunger itself may hurt performance even when meal energy content differences are less clear. Their conservative recommendation was a small pre-workout feeding if tolerated (for example at least ~20 g carbohydrate, optionally with protein, and usually low fat). If food before training causes GI distress, they advised adapting timing/form (including liquid options) rather than forcing a strategy that worsens the session.",
+      "skills": [
+        "sbs-diet",
+        "sbs-strength-training"
+      ],
+      "topic": "fasted morning training performance"
+    },
+    {
+      "question": "From a statistics perspective, what actually supports causal claims? Which analyses imply causation?",
+      "answer_summary": "They said causation comes primarily from study design, not from picking a 'causal' statistical test. Eric emphasized that observational correlations alone usually cannot establish cause, while well-controlled randomized trials can support causal inference because of randomization and control, not because of t-tests/ANOVA themselves. He also warned that advanced modeling (like SEM) does not magically convert weak observational data into definitive causal proof. They referenced Bradford Hill criteria as one framework for weighing causal evidence in epidemiology. Greg added that in human in-vivo work, causal claims are usually partial/probabilistic causes rather than strict one-to-one deterministic causation.",
+      "skills": [],
+      "topic": "causation vs correlation"
+    },
+    {
+      "question": "Is cereal a soup?",
+      "answer_summary": "Both hosts said yes, with surprising conviction. Their argument was that soup does not need to be hot and can include sweet forms, including cold dessert soups in multiple cuisines. They treated cereal-plus-milk as fitting the broad structure of solids in a liquid base. They also joked that broad soup taxonomy supports other contentious food classifications. Net conclusion: cereal qualifies as soup in their framework.",
+      "skills": [],
+      "topic": "cereal soup debate"
+    }
+  ]
+}

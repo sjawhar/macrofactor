@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer distinguishes healthy people from those with pre-existing kidney disease",
+      "passed": false,
+      "evidence": "Missing any of: ['healthy', 'pre-existing']"
+    },
+    {
+      "text": "Answer states current evidence does not strongly support high protein causing kidney disease in healthy people",
+      "passed": true,
+      "evidence": "Found 'not' in: .... **Balanced Diet**: Including adequate calcium (from food, not supplements), magnesium, and citrate-rich foods (citrus fru..."
+    },
+    {
+      "text": "Answer recommends individualizing for those with kidney stone history",
+      "passed": false,
+      "evidence": "Missing any of: ['individualize', 'kidney stone history']"
+    },
+    {
+      "text": "Answer does NOT assume high protein is inherently dangerous for everyone",
+      "passed": true,
+      "evidence": "Found 'not' in: .... **Balanced Diet**: Including adequate calcium (from food, not supplements), magnesium, and citrate-rich foods (citrus fru..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

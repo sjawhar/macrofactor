@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "States newer lifters generally need more hypertrophy work, not less",
+      "passed": true,
+      "evidence": "States beginners should dedicate '50-70% of training volume to hypertrophy-focused work.'"
+    },
+    {
+      "text": "Recommends learning the lifts first, then building muscle while maintaining heavier work",
+      "passed": true,
+      "evidence": "Discusses building foundation of muscle mass with compounds at moderate loads."
+    },
+    {
+      "text": "Describes shift toward more specific strength work as lifters advance",
+      "passed": true,
+      "evidence": "Advanced lifters 'reduce hypertrophy emphasis to 30-50%' with more specific work."
+    },
+    {
+      "text": "Notes high-rep bodybuilding work is a poor fit close to competition (within ~4 weeks)",
+      "passed": true,
+      "evidence": "In-season: hypertrophy drops to 20-40%, focus shifts to maximal strength work."
+    },
+    {
+      "text": "Recommends hypertrophy blocks in off-season",
+      "passed": true,
+      "evidence": "Off-season: '50-70%' hypertrophy volume."
+    },
+    {
+      "text": "Mentions adherence/enjoyment as important factor",
+      "passed": false,
+      "evidence": "Does not discuss adherence or enjoyment."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  }
+}

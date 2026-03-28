@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer rejects intentional misrepresentation of the film",
+      "passed": true,
+      "evidence": "Found 'misrepresent' in: ...onse to \"Game Changers\" Review Criticism\n\n## Addressing the Misrepresentation Claim\n\nI appreciate the direct challenge. Let me be cl..."
+    },
+    {
+      "text": "Answer provides specific film examples supporting the critique",
+      "passed": true,
+      "evidence": "Found 'specific' in: ...out human performance.\n\n## Bottom Line\n\nIf I misrepresented specific claims from the film, I'm open to correction with the exact..."
+    },
+    {
+      "text": "Answer mentions narrative sequencing implying plant-based eating improves fighting outcomes",
+      "passed": true,
+      "evidence": "Found 'fighting' in: ...and where legitimate disagreement exists.\n\n### On Meat and Fighting Performance\n\n**What \"Game Changers\" claims:** Meat consumpt..."
+    },
+    {
+      "text": "Answer discusses weak logic like gorilla comparisons",
+      "passed": false,
+      "evidence": "Missing any of: ['gorilla', 'weak logic']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

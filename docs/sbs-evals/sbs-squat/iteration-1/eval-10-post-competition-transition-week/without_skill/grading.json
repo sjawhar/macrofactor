@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States the approach is context-dependent (motivation, recovery status)",
+      "passed": true,
+      "evidence": "Found matching content: ...er a Competition?\n\nHonestly, the answer depends heavily on how the meet went and how yo..."
+    },
+    {
+      "text": "If athlete is motivated and recovered, returning quickly is fine",
+      "passed": true,
+      "evidence": "Found matching content: ...weeks three and four, most lifters are ready to begin a proper transition block. Thi..."
+    },
+    {
+      "text": "If beat up, suggests an easier first week with reduced loading (~70-80%) and volume",
+      "passed": true,
+      "evidence": "Found matching content: ...ll do some light activity: a walk, some easy bodyweight work, maybe a casual gym ses..."
+    },
+    {
+      "text": "States complete time off is acceptable when needed",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Preference to keep some intensity present while pulling back volume",
+      "passed": true,
+      "evidence": "Found matching content: ...sheet. The lifters who stay healthy and keep progressing year over year are the ones..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

@@ -12,12 +12,56 @@ export interface WorkoutSource {
 
 export interface SetTarget {
   id: string;
-  minFullReps?: number | null;
-  maxFullReps?: number | null;
-  rir?: number | null;
-  distance?: number | null;
-  durationSeconds?: number | null;
-  restTimer?: number | null;
+  minFullReps: number | null;
+  maxFullReps: number | null;
+  rir: number | null;
+  restTimer: number | null;
+  distance: number | null;
+  durationSeconds: number | null;
+}
+
+export interface ProgramSet {
+  log: SetTarget;
+  setType: string;
+  segments: any[];
+}
+
+export interface CycleTargets {
+  sets: ProgramSet[];
+  overrideRestTimers: boolean;
+}
+
+export interface PeriodizedTargets {
+  runtimeType: 'periodized';
+  values: CycleTargets[];
+  deload: CycleTargets | null;
+}
+
+export interface TrainingProgramExercise {
+  exerciseId: string;
+  id: string;
+  periodizedTargets?: PeriodizedTargets;
+}
+
+export interface TrainingProgramDay {
+  id: string;
+  name: string;
+  gymId: string;
+  isRestDay: boolean;
+  exercises: TrainingProgramExercise[];
+}
+
+export interface TrainingProgram {
+  id: string;
+  name: string;
+  color: string;
+  icon: string;
+  numCycles: number;
+  runIndefinitely: boolean;
+  isPeriodized: boolean;
+  deload: string;
+  isActive: boolean;
+  days: TrainingProgramDay[];
 }
 
 export interface SetValue {

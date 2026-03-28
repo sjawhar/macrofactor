@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms nicotine can suppress appetite but the effect habituates",
+      "passed": true,
+      "evidence": "Found 'appetite' in: ...bodybuilders during contest preparation, primarily for its appetite-suppressing and stimulant effects. While it may offer short..."
+    },
+    {
+      "text": "Answer states caffeine is usually the better pre-workout stimulant for performance",
+      "passed": true,
+      "evidence": "Found 'caffeine' in: ...ent meals can stabilize appetite\n\n### Energy and Focus\n\n- **Caffeine**: Provides stimulant effects with a better safety profile..."
+    },
+    {
+      "text": "Answer distinguishes harms of tobacco products from isolated nicotine gum/patch use",
+      "passed": true,
+      "evidence": "Found 'gum' in: ...ing Contest Prep: Benefits and Risks\n\n## Overview\n\nNicotine gum is sometimes used by bodybuilders during contest preparatio..."
+    },
+    {
+      "text": "Answer mentions nicotine's shorter half-life versus caffeine",
+      "passed": false,
+      "evidence": "Missing any of: ['half-life', 'shorter']"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

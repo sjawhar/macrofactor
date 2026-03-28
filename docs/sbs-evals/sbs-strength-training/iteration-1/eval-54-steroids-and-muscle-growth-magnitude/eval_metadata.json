@@ -1,0 +1,15 @@
+{
+  "eval_id": 54,
+  "eval_name": "eval-54-steroids-and-muscle-growth-magnitude",
+  "prompt": "How much of a difference do steroids make for muscle growth?",
+  "expected_output": "Greg framed the answer as highly dependent on what is used (for example, a mild protocol versus a full bodybuilding stack), so any number is only a ballpark. Using FFMI examples, he described untrained men around FFMI ~20, recreational trained natural lifters around ~23, and enhanced lifters around ~26, implying roughly +3 points natural versus +6 enhanced from a similar starting point. At the extreme end, he cited roughly FFMI ~30 for the largest drug-free physiques versus ~40 for top enhanced physiques, again suggesting about a twofold difference in gain magnitude. His headline takeaway was not that enhanced lifters end up exactly twice as big, but that the additional muscle accrued over a career can be around 2x in broad terms. He also noted that this larger muscle gain should materially affect strength outcomes, which he covered in his related strength-model article.",
+  "topic": "steroids and muscle growth magnitude",
+  "episode": 39,
+  "assertions": [
+    "Answer captures the core SBS position on steroids and muscle growth magnitude",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

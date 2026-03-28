@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Pushes back on or questions the blanket claim that deadlifts are inherently more fatiguing",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "References data showing similar fatigue outcomes after squat vs deadlift sessions",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Identifies practical contributors to perceived deadlift fatigue (e.g., grip/forearm stress, spinal flexion tolerance)",
+      "passed": true,
+      "evidence": "Found matching content: ...s, glutes, hamstrings, traps, lats, and grip - all working hard simultaneously, ofte..."
+    },
+    {
+      "text": "Notes path dependency: lifters often build more squat exposure historically, making deadlift tolerance appear lower",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Recommends programming based on individual recovery patterns rather than assuming universal deadlift fragility",
+      "passed": true,
+      "evidence": "Found matching content: ...sets for deadlifts compared to squats, monitor recovery, and adjust from there. Priori..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 0.6,
+    "passed": 3,
+    "failed": 2,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on daily hydration targets",
+      "passed": true,
+      "evidence": "Answer contains 16/40 key concepts from the expected core position. Key matches: these, dehydration, body, targets, extreme."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": false,
+      "evidence": "Found 0/3 specific details from expected output."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 4 caveat/limitation markers in the answer. Examples: but, though, individual, vary."
+    },
+    {
+      "text": "Answer includes actionable practical recommendations consistent with the hosts' advice",
+      "passed": true,
+      "evidence": "Found 7 actionable recommendation markers. Examples: recommend, suggest, aim for, practical."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": false,
+      "evidence": "Answer contains strong positive claim 'universally' that may contradict the expected skeptical position."
+    }
+  ]
+}

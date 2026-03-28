@@ -1,5 +1,6 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { MacroFactorClient } from '../../lib/api/index.js';
+import type { SetTarget, WorkoutSource } from '../../lib/api/workout-types.js';
 import { searchExercises } from '../../lib/api/exercises.js';
 import { randomUUID } from 'crypto';
 import { z } from 'zod';
@@ -106,7 +107,8 @@ function normalizeSetInputs(sets: unknown, exerciseName: string): ExpandedSet[] 
 function buildWorkoutExercise(
   exerciseName: string,
   setsValue: unknown,
-  customExercises?: Array<{ id: string; name: string }>
+  customExercises?: Array<{ id: string; name: string }>,
+  targetsByExerciseId?: Map<string, SetTarget[]>
 ) {
   const matches = searchExercises(exerciseName);
   let exerciseId: string;
@@ -124,19 +126,20 @@ function buildWorkoutExercise(
   }
 
   const expanded = normalizeSetInputs(setsValue, exerciseName);
+  const setTargets = targetsByExerciseId?.get(exerciseId);
   return {
     rawExercise: {
       id: randomUUID(),
       exerciseId,
       note: '',
       baseWeight: null,
-      sets: expanded.map((set) => ({
+      sets: expanded.map((set, setIndex) => ({
         setType: set.setType,
         segments: [],
         log: {
           id: randomUUID(),
           runtimeType: 'single',
-          target: null,
+          target: setTargets?.[setIndex] ?? null,
           value: {
             weight: set.weightKg,
             fullReps: set.fullReps,
@@ -156,6 +159,51 @@ function buildWorkoutExercise(
       setCount: expanded.length,
     },
   };
+}
+
+function coerceWorkoutSource(input: unknown): WorkoutSource | undefined {
+  if (!input || typeof input !== 'object') return undefined;
+  const source = input as Record<string, unknown>;
+  const runtimeType = typeof source.runtimeType === 'string' ? source.runtimeType : 'trainingProgram';
+  const cycleIndex = source.cycleIndex == null ? undefined : Number(source.cycleIndex);
+  return {
+    runtimeType,
+    programId: typeof source.programId === 'string' ? source.programId : undefined,
+    programName: typeof source.programName === 'string' ? source.programName : undefined,
+    dayId: typeof source.dayId === 'string' ? source.dayId : undefined,
+    cycleIndex: Number.isFinite(cycleIndex) ? cycleIndex : undefined,
+    programColor: typeof source.programColor === 'string' ? source.programColor : undefined,
+    programIcon: typeof source.programIcon === 'string' ? source.programIcon : undefined,
+  };
+}
+
+async function getProgramTargetsByExerciseId(client: MacroFactorClient, workoutSource?: WorkoutSource) {
+  const targetsByExerciseId = new Map<string, SetTarget[]>();
+  if (!workoutSource?.dayId || workoutSource.cycleIndex == null) {
+    return targetsByExerciseId;
+  }
+
+  const programs = await client.getTrainingPrograms();
+  const program =
+    programs.find((candidate) => candidate.id === workoutSource.programId) ||
+    programs.find((candidate) => candidate.isActive) ||
+    programs[0];
+  if (!program) return targetsByExerciseId;
+
+  const day = program.days.find((candidate) => candidate.id === workoutSource.dayId);
+  if (!day) return targetsByExerciseId;
+
+  const cycleTargetsIndex = workoutSource.cycleIndex;
+  for (const exercise of day.exercises) {
+    const programSets = exercise.periodizedTargets?.values?.[cycleTargetsIndex]?.sets ?? [];
+    if (programSets.length === 0) continue;
+    targetsByExerciseId.set(
+      exercise.exerciseId,
+      programSets.map((programSet) => ({ ...programSet.log }))
+    );
+  }
+
+  return targetsByExerciseId;
 }
 
 export function registerWorkoutTools(server: McpServer, client: MacroFactorClient): void {
@@ -217,6 +265,17 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
       gym: z.string().optional(),
       startTime: z.string().optional(),
       durationMinutes: z.number().positive().optional(),
+      workoutSource: z
+        .object({
+          runtimeType: z.string().optional(),
+          programId: z.string().optional(),
+          programName: z.string().optional(),
+          dayId: z.string().optional(),
+          cycleIndex: z.number().optional(),
+          programColor: z.string().optional(),
+          programIcon: z.string().optional(),
+        })
+        .optional(),
       exercises: z.array(
         z.object({
           name: z.string().min(1),
@@ -235,9 +294,11 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
       ),
     },
     { destructiveHint: false },
-    async ({ name, gym, startTime, durationMinutes, exercises }) => {
+    async ({ name, gym, startTime, durationMinutes, workoutSource, exercises }) => {
       const [gyms, customExercises] = await Promise.all([client.getGymProfiles(), client.getCustomExercises()]);
       const selectedGym = gym ? gyms.find((candidate) => candidate.name.toLowerCase() === gym.toLowerCase()) : gyms[0];
+      const resolvedWorkoutSource = coerceWorkoutSource(workoutSource);
+      const targetsByExerciseId = await getProgramTargetsByExerciseId(client, resolvedWorkoutSource);
 
       const workoutId = randomUUID();
       const blocks: Array<{ exercises: unknown[] }> = [];
@@ -247,7 +308,8 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
         const { rawExercise, summary: exerciseSummary } = buildWorkoutExercise(
           exercise.name,
           exercise.sets,
-          customExercises
+          customExercises,
+          targetsByExerciseId
         );
         blocks.push({ exercises: [rawExercise] });
         summary.push(exerciseSummary);
@@ -261,6 +323,7 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
         gymId: selectedGym?.id || '',
         gymName: selectedGym?.name || 'Gym',
         gymIcon: selectedGym?.icon || 'house',
+        ...(resolvedWorkoutSource ? { workoutSource: resolvedWorkoutSource } : {}),
         blocks,
       };
 
@@ -272,8 +335,19 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
         'gymId',
         'gymName',
         'gymIcon',
+        ...(resolvedWorkoutSource ? ['workoutSource'] : []),
         'blocks',
       ]);
+
+      // Mark program day as completed so it shows checked in the app
+      if (resolvedWorkoutSource?.programId && resolvedWorkoutSource.dayId && resolvedWorkoutSource.cycleIndex != null) {
+        await client.markProgramDayCompleted(
+          resolvedWorkoutSource.programId,
+          resolvedWorkoutSource.cycleIndex,
+          resolvedWorkoutSource.dayId,
+          workoutId
+        );
+      }
 
       return {
         content: [

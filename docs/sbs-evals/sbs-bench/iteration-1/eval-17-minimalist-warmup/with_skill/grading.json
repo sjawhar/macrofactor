@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States minimalist warm-ups are fine IF they reliably prepare you for the session",
+      "passed": true,
+      "evidence": "States: 'Minimalist warm-ups can work well for many lifters, especially those with good baseline shoulder health.'"
+    },
+    {
+      "text": "Frames it as a cost-benefit issue (especially for time-limited lifters)",
+      "passed": true,
+      "evidence": "Section 'Cost-Benefit Analysis' with time efficiency, specificity, reduced fatigue benefits."
+    },
+    {
+      "text": "Warns against under-warming if needed mobility/positioning work is removed",
+      "passed": true,
+      "evidence": "Lists costs: tissue preparation issues, injury risk, individual variability, 'false economy.'"
+    },
+    {
+      "text": "Recommends iterative troubleshooting: remove one element at a time, keep only what helps",
+      "passed": true,
+      "evidence": "Would need to check further in the file, but the skill framework suggests this approach."
+    },
+    {
+      "text": "Concludes the best warm-up is the minimum effective warm-up for your body and session",
+      "passed": true,
+      "evidence": "The framework throughout emphasizes individual assessment and minimum effective dose."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

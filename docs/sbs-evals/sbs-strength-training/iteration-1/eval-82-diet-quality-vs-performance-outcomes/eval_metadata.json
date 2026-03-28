@@ -1,0 +1,15 @@
+{
+  "eval_id": 82,
+  "eval_name": "eval-82-diet-quality-vs-performance-outcomes",
+  "prompt": "How much does food quality really matter for strength and hypertrophy if calories and protein are already decent? Am I losing meaningful gains by eating more fun foods?",
+  "expected_output": "Their answer was that it depends, with big modifiers: overall health status, age/body composition, and whether your diet creates real nutrient deficiencies. Greg said if someone is young, generally healthy, active, meeting calories/protein, and not deficient, the direct strength/hypertrophy penalty from imperfect food quality is probably small. He thought improving diet quality in that case may matter more for feeling better and long-term health than for huge short-term gains differences. They both emphasized that many concerns are about missing beneficial foods/nutrients rather than the mere presence of enjoyable calorie-dense foods. They also noted context where less nutrient-dense additions can be useful, like helping athletes meet high energy demands. Practical takeaway: secure essentials (energy, protein, micronutrient adequacy), then treat food-quality upgrades as an important but context-dependent performance and health lever.",
+  "topic": "diet quality vs performance outcomes",
+  "episode": 57,
+  "assertions": [
+    "Answer captures the core SBS position on diet quality vs performance outcomes",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

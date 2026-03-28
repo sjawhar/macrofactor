@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer frames muscle retention priority as preference-dependent, not a universal rule",
+      "passed": false,
+      "evidence": "Missing any of: ['preference', 'depends', 'personal', 'individual']"
+    },
+    {
+      "text": "Answer recommends basics: avoid extreme deficits, keep protein reasonable, continue resistance training",
+      "passed": true,
+      "evidence": "Found 'deficit' in: ...s\n- This signals your body to keep muscle\n\n### 3. **Calorie Deficit Size**\n\n- Moderate deficit (300-500 cal/day) preserves more...; Found 'protein' in: ...s.\n\n## What Actually Matters for Muscle Retention\n\n### 1. **Protein Intake** (Most Important)\n\n- Aim for **0.7-1.0g per lb of b..."
+    },
+    {
+      "text": "Answer mentions that lifters often overestimate muscle loss during cuts",
+      "passed": false,
+      "evidence": "Missing any of: ['overestimate', 'exaggerate', 'catastrophi']"
+    },
+    {
+      "text": "Answer does NOT present muscle loss during cutting as catastrophic or inevitable",
+      "passed": true,
+      "evidence": "Found 'not' in: ...approach\n- Can afford to lose 5-10% of muscle mass without noticeable performance drops\n\n## The Realistic Muscle Loss Duri..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

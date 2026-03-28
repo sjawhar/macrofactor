@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends keeping competition lifts in moderate strength-relevant rep ranges rather than going entirely high-rep",
+      "passed": true,
+      "evidence": "Phase 2 includes '2–3 singles at 80–85% 1RM' and '3–4 sets of 3–5 reps at 70–75% 1RM.' Phase 3 maintains '2 singles at 80% 1RM (technical anchor).' Competition lifts stay in strength-relevant ranges throughout."
+    },
+    {
+      "text": "Suggests a specific structure (e.g., mostly 5-10 rep range with periodic heavier work like triples)",
+      "passed": true,
+      "evidence": "Clear progression: Phase 2 uses 3-5 rep and 6-8 rep work. Phase 3 shifts to 5-6 and 6-8 rep ranges. Periodic heavy singles maintained throughout. Detailed 12-week progression table provided."
+    },
+    {
+      "text": "Mentions an over-warm or heavy single strategy (e.g., RPE 8 single) before volume work to maintain neural readiness",
+      "passed": true,
+      "evidence": "Phase 3: '2 singles at 80% 1RM (technical anchor)' placed before volume work. 'Technical anchor singles maintain CNS efficiency and prevent strength loss.' This matches the over-warm single concept."
+    },
+    {
+      "text": "Core message: maintain some heavy practice while accumulating hypertrophy volume",
+      "passed": true,
+      "evidence": "'This approach preserves your meet-prep strength gains while building hypertrophy sustainably.' Strength Preservation Tactics section explicitly addresses keeping heavy work alongside volume."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

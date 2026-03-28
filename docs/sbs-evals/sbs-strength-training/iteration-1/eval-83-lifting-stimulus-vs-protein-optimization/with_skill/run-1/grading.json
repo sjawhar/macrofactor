@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on lifting stimulus vs protein optimization",
+      "passed": true,
+      "evidence": "Answer contains 21/33 key concepts from the expected core position. Key matches: roughly, strategy, support, strength, volume."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": true,
+      "evidence": "Found 1/2 specific details from expected output. Matched: 15%."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 5 caveat/limitation markers in the answer. Examples: but, though, limited, mixed."
+    },
+    {
+      "text": "Answer includes actionable practical recommendations consistent with the hosts' advice",
+      "passed": true,
+      "evidence": "Found 6 actionable recommendation markers. Examples: use, keep, practical, bottom line."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": true,
+      "evidence": "No obvious contradictions detected with the expected position."
+    }
+  ]
+}

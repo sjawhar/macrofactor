@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says weekly averaging for fat intake is generally fine",
+      "passed": true,
+      "evidence": "Found 'weekly' in: ...# Is It Okay to Treat Minimum Fat Intake as a Weekly Target Instead of Daily?\n\n## Short Answer\n\n**No.** The SBS..."
+    },
+    {
+      "text": "Answer mentions covering essential fatty acids and fat-soluble vitamin absorption",
+      "passed": true,
+      "evidence": "Found 'fat-soluble' in: ...tosterone, estrogen, cortisol all require adequate fat)\n- **Fat-soluble vitamin absorption** (vitamins A, D, E, K)\n- **Cell membran..."
+    },
+    {
+      "text": "Answer does NOT insist on identical daily fat intake as mandatory",
+      "passed": true,
+      "evidence": "Found 'not' in: ...SBS framework treats the fat floor as a **daily minimum**, not a weekly average. Hitting it daily is the standard approach..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

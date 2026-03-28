@@ -1,0 +1,14 @@
+{
+  "eval_id": 17,
+  "eval_name": "eval-17-creatine-and-creatinine-labs",
+  "prompt": "My doctor said my levels were high and told me to stop creatine. Should elevated creatinine in a creatine user be a concern?",
+  "expected_output": "Eric interpreted this as elevated creatinine (not creatine) and said creatine supplementation commonly raises creatinine because creatinine is a breakdown product. He contrasted typical dietary creatine (~1-2 g/day) with common supplemental intake (often ~5 g/day), which can make the standard creatinine marker less informative on its own. His practical recommendation was not to panic but to discuss context with the physician and request follow-up kidney-function assessment using additional tests. In other words, elevated creatinine in a creatine user can be expected, but kidney health should still be checked with appropriate interpretation rather than ignored.",
+  "topic": "creatine and creatinine labs",
+  "episode": 25,
+  "assertions": [
+    "Answer identifies elevated creatinine (not creatine) as the likely lab marker",
+    "Answer explains creatine supplementation commonly raises creatinine since it's a breakdown product",
+    "Answer recommends discussing context with physician and requesting follow-up kidney function tests",
+    "Answer does NOT recommend simply stopping creatine based on creatinine alone"
+  ]
+}

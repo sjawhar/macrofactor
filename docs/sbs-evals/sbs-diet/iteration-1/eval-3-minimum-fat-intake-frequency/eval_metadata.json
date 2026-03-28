@@ -1,0 +1,13 @@
+{
+  "eval_id": 3,
+  "eval_name": "eval-3-minimum-fat-intake-frequency",
+  "prompt": "Is it okay to treat minimum fat intake as a weekly target instead of hitting a minimum every single day?",
+  "expected_output": "They said weekly averaging is generally fine. The practical goal is still to cover essential fatty acids, hormone support, and absorption of fat-soluble vitamins. So if one day is lower fat, you can make that up across the rest of the week. They noted this is less concerning than missing day-to-day intake for nutrients that are not stored the same way. In short: keep weekly intake adequate rather than obsessing over identical daily fat numbers.",
+  "topic": "minimum fat intake frequency",
+  "episode": 105,
+  "assertions": [
+    "Answer says weekly averaging for fat intake is generally fine",
+    "Answer mentions covering essential fatty acids and fat-soluble vitamin absorption",
+    "Answer does NOT insist on identical daily fat intake as mandatory"
+  ]
+}

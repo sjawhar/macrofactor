@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states hypertrophy IS possible with type 2 diabetes, not 'off the table'",
+      "passed": true,
+      "evidence": "Found 'possible' in: ...ectations\n\n- **Insulin resistance alone**: Muscle growth is possible but 20-40% less efficient. A person might build 0.6-0.8 lbs..."
+    },
+    {
+      "text": "Answer mentions reduced but not zero growth rate compared to non-diabetic populations",
+      "passed": true,
+      "evidence": "Found 'reduced' in: ...nce impairs muscle growth through several mechanisms:\n\n1. **Reduced Protein Synthesis Signaling**\n   - Insulin normally activat..."
+    },
+    {
+      "text": "Answer discusses metformin's possible small negative hypertrophy effect via AMPK/MTOR",
+      "passed": true,
+      "evidence": "Found 'metformin' in: ...chievable with proper training and nutrition.\n\n---\n\n## Does Metformin Make Hypertrophy Worse?\n\n### Direct Effects on Muscle Growt..."
+    },
+    {
+      "text": "Answer acknowledges confounding factors (age, training volume) in diabetic study populations",
+      "passed": true,
+      "evidence": "Found 'age' in: ...hifts nutrient partitioning away from muscle toward fat storage\n   - This means a greater proportion of calories consumed p..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

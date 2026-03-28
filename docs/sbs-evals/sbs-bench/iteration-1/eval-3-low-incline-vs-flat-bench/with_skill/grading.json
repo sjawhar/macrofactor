@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Notes that safety claims about one setup being clearly safer are not strongly established",
+      "passed": true,
+      "evidence": "States low incline 'shifts emphasis' but notes safety claims are about tradeoffs not established superiority."
+    },
+    {
+      "text": "Identifies longer range of motion as a plausible mechanism for low incline advantage",
+      "passed": false,
+      "evidence": "Actually argues the opposite - says low incline has SHORTER ROM than flat bench, reducing total stimulus. This contradicts the expected SBS answer which says low incline may have longer ROM due to changed touch point."
+    },
+    {
+      "text": "Mentions that low incline changes the touch point upward, which can increase pec/triceps excursion",
+      "passed": false,
+      "evidence": "Discusses touch point but frames incline as reducing ROM and stimulus, not increasing excursion. States 'roughly 10-15% shorter than flat bench.'"
+    },
+    {
+      "text": "Provides practical takeaway: use pressing angles that allow training hard through good ROM with manageable discomfort",
+      "passed": true,
+      "evidence": "Concludes with practical guidance to use angles based on goals, pain management, and ROM."
+    },
+    {
+      "text": "Acknowledges low incline may be modestly better but with limited certainty",
+      "passed": false,
+      "evidence": "Actually argues flat bench is superior for hypertrophy, positioning low incline only as secondary/rehab tool."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

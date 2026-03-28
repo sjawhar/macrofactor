@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States there is no universal cap — optimal volume depends on goals, recovery, and time",
+      "passed": true,
+      "evidence": "Overview mentions 'balancing sufficient volume for growth without creating excessive fatigue or interfering with recovery.' Different ranges given per muscle group based on compound stimulus received."
+    },
+    {
+      "text": "Provides a practical baseline range (approximately 2-4 sets per muscle group, 1-2x/week or similar concrete guidance)",
+      "passed": false,
+      "evidence": "Recommends 6-12 sets per muscle group per week, much higher than the ~2-4 sets the SBS hosts actually recommended. For example: forearms 6-10 sets, calves 8-12 sets, delts 6-12 sets. This substantially overprescribes compared to the expected output."
+    },
+    {
+      "text": "Notes that global/systemic recovery can become limiting even when local muscle stress seems modest",
+      "passed": true,
+      "evidence": "'Monitor Fatigue and Recovery' section: 'If you're consistently sore, struggling with compound lifts, or feeling systemically fatigued, reduce isolation volume.' Acknowledges systemic recovery as a constraint."
+    },
+    {
+      "text": "Recommends starting conservative and scaling up based on outcomes/adaptation",
+      "passed": true,
+      "evidence": "'Start at the lower end of the recommended ranges and increase gradually' and 'If progress stalls or you feel beat up, reduce volume by 20-30%.'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

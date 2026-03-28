@@ -1,0 +1,15 @@
+{
+  "eval_id": 79,
+  "eval_name": "eval-79-bench-prime-mover-interpretation",
+  "prompt": "Do triceps become the prime mover near max bench loads, and does that mean I should prioritize triceps accessories over pec-focused work?",
+  "expected_output": "Greg argued the claim is overstated and mostly a measurement artifact from looking at the long head of the triceps. He explained that long-head triceps is biarticular and can be de-emphasized at lower loads because one of its joint actions conflicts with the bench movement, then appears to ramp up disproportionately at max loads. He contrasted this with evidence showing benching tends to grow lateral triceps more than long-head triceps, citing a study where long-head growth was minimal. He also referenced Duffy's dissertation data suggesting pecs, delts, and lateral triceps all increase activation similarly as load rises. So he rejected the idea that triceps suddenly become the prime mover at max loads. Practical takeaway: don\u2019t abandon pec work based on that interpretation; train bench-relevant musculature broadly.",
+  "topic": "bench prime mover interpretation",
+  "episode": 57,
+  "assertions": [
+    "Answer captures the core SBS position on bench prime mover interpretation",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

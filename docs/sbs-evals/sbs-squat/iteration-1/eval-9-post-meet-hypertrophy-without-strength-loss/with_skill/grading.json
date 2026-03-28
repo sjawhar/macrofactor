@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends keeping competition lifts in moderate strength-relevant rep ranges (not shifting entirely to high reps)",
+      "passed": true,
+      "evidence": "Found matching content: ...into bodybuilding mode and abandon the competition lifts for weeks. Neither extreme serves you..."
+    },
+    {
+      "text": "Suggests mostly working in approximately the 5-10 rep range",
+      "passed": true,
+      "evidence": "Found matching content: ...press, hack squat, split squats) in the 6-12 rep range with controlled ROM and genuine d..."
+    },
+    {
+      "text": "Recommends periodic heavier exposure (e.g., triples or heavy singles) to maintain top-end strength",
+      "passed": true,
+      "evidence": "Found matching content: ...sity is moderate.\n\nFor **rep ranges and heavy exposure**, the practical structure looks like t..."
+    },
+    {
+      "text": "Mentions an over-warm or heavy single around RPE 8 before volume work as a practical strategy",
+      "passed": true,
+      "evidence": "Found matching content: ...at least one session per week where you work up to something in the 3-5 rep range at a mod..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

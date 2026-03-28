@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer presents creatine as the strongest general-purpose supplement for performance",
+      "passed": true,
+      "evidence": "Found 'creatine' in: ...levels should be 30-50 ng/mL; many people are deficient\n\n**Creatine Monohydrate**\n\n- Evidence: Hundreds of peer-reviewed studie..."
+    },
+    {
+      "text": "Answer mentions conditional value for vitamin D (when deficient), fish oil, magnesium",
+      "passed": true,
+      "evidence": "Found 'vitamin D' in: ...vidence\n\n### Tier 1: Essential & Universally Recommended\n\n**Vitamin D**\n\n- Evidence: Extensive RCTs show deficiency is common and..."
+    },
+    {
+      "text": "Answer frames supplement value as incremental compared with training and nutrition fundamentals",
+      "passed": true,
+      "evidence": "Found 'training' in: ...plements\n- Effect: 5-15% strength/power gains in resistance training; improves muscle mass over time\n- Dosage: 5g daily (no load..."
+    },
+    {
+      "text": "Answer recommends prioritizing proven basics over proprietary blends",
+      "passed": true,
+      "evidence": "Found 'basic' in: ...oven cognitive enhancers\n- Verdict: Hype for most; stick to basics\n\n---\n\n## Practical Supplement Strategy\n\n### For Most Peopl..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

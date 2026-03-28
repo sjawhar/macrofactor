@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Advises against changing things while progress is still occurring",
+      "passed": true,
+      "evidence": "'If a program is working—meaning you're making progress, staying healthy, and recovering adequately—the default move is to iterate and refine, not abandon it.' Lists 'Green flags that suggest tweaking will work.'"
+    },
+    {
+      "text": "When plateau appears, recommends deciding whether the lift needs more stress or less stress",
+      "passed": true,
+      "evidence": "Step 2 'Diagnose the Limiting Factor' covers both directions: Volume/Frequency Mismatch (possibly too much stress) vs Weak Link in the Chain (possibly too little targeted stress). Section B suggests reducing deadlift volume/frequency when overtrained."
+    },
+    {
+      "text": "Recommends small, targeted changes (volume, intensity, frequency, or exercise selection) evaluated individually over weeks",
+      "passed": true,
+      "evidence": "Step 3: 'Make ONE Change at a Time. Critical rule: Change one variable, measure for 4–6 weeks, then decide.' Priority order: technique → volume/frequency → accessories → program structure."
+    },
+    {
+      "text": "Only switch programs entirely after serial targeted tweaks have failed",
+      "passed": true,
+      "evidence": "Step 5: 'Only switch if: You've diagnosed the limiting factor, You've made targeted tweaks and given them 6–12 weeks, You're still not progressing.' Don't switch after just one tweak."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

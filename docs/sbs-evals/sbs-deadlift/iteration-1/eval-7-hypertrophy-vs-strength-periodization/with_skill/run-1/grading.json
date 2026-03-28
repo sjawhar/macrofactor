@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States newer/less advanced lifters generally need more hypertrophy work, not less",
+      "passed": true,
+      "evidence": "Beginner section: 'Hypertrophy allocation: 60–70% of training time' with clear rationale. Intermediate: 50-60%. Advanced: 40-50%. Clear progression showing beginners need most hypertrophy."
+    },
+    {
+      "text": "Describes a progression: learn lifts first, then build muscle phase, then shift toward more specific strength work as advancement increases",
+      "passed": true,
+      "evidence": "Beginner: 'Focus: compound movement proficiency, building a base.' Intermediate: 'Shift toward more specific strength work.' Advanced: 'Heavy, specific strength work dominates.' Clear progression."
+    },
+    {
+      "text": "Notes that high-rep bodybuilding-style work should be reduced close to competition (roughly last ~4 weeks)",
+      "passed": true,
+      "evidence": "In-Season section (4-8 weeks before competition): 'Hypertrophy allocation: 30–45%' with 'Accessory work becomes minimal and strategic.' Peaking block (weeks 13-16): 'Hypertrophy allocation: ~35%.' Consistent with reducing high-rep work near competition."
+    },
+    {
+      "text": "Mentions adherence/enjoyment as an important factor — a slightly suboptimal but sustainable approach still works well",
+      "passed": true,
+      "evidence": "Final Note: 'The best program is the one you'll execute consistently with good form. Periodization is a framework, not a law.' Captures the adherence principle."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

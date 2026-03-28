@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Explains that heavier loads increase metabolic/oxygen cost per set, requiring longer recovery — this is a normal progression",
+      "passed": true,
+      "evidence": "Section 1 explains 'Higher force production → greater motor unit recruitment,' 'Greater metabolic demand → faster depletion of phosphocreatine,' and 'More CNS fatigue.' States this is 'a normal and expected phenomenon.'"
+    },
+    {
+      "text": "Notes research on rest intervals for hypertrophy is mixed (some favor longer, some shorter, some no difference)",
+      "passed": false,
+      "evidence": "The answer presents shorter rest as clearly advantageous for hypertrophy: 'Shorter rest periods are actually advantageous for hypertrophy.' Does not present the research as mixed — Greg said findings are mixed with some studies favoring longer, shorter, or no difference."
+    },
+    {
+      "text": "For strength, leans toward longer rest periods, especially for strong lifters on compound lifts",
+      "passed": true,
+      "evidence": "'Strength Training: Optimal rest: 3–5 minutes. The research is clear: for maximal strength development, longer rest periods are superior.' Cites multiple studies."
+    },
+    {
+      "text": "Provides concrete rest period ranges (e.g., ~90s-2min for isolation/upper, ~3min common, ~5min+ for heavy compounds)",
+      "passed": true,
+      "evidence": "Specific ranges: '60–70% 1RM: 60–90 seconds,' '80–90% 1RM: 2–3 minutes,' '90%+ 1RM: 3–5+ minutes.' Practical section: 'Expect 3–5 minutes between heavy deadlift sets.'"
+    },
+    {
+      "text": "Suggests non-interfering supersets as a time-saving strategy",
+      "passed": false,
+      "evidence": "No mention of supersets anywhere in the answer. Greg specifically suggested non-interfering supersets to save time without sacrificing performance."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

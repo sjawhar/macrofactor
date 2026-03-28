@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer reframes the issue as mostly a hardgainer problem, not a protein problem",
+      "passed": true,
+      "evidence": "Found 'hardgainer' in: ...# Do Hardgainers Benefit from Exceeding Typical Protein Targets? Evidence o..."
+    },
+    {
+      "text": "Answer states pushing protein higher beyond sufficiency won't fix poor gain rates",
+      "passed": true,
+      "evidence": "Found 'beyond' in: ...round **1.6\u20132.2 g/kg/day** in lifters\n2. Additional protein beyond this range does not further increase hypertrophy\n3. The lim..."
+    },
+    {
+      "text": "Answer identifies higher total calories as the main solution for hardgainers",
+      "passed": true,
+      "evidence": "Found 'calorie' in: ...e typically **not protein**, but:\n   - **Insufficient total calories** (energy deficit or inadequate surplus)\n   - **Poor train..."
+    },
+    {
+      "text": "Answer mentions the 1.6-2.2 g/kg/day range as sufficient",
+      "passed": true,
+      "evidence": "Found '1.6' in: ...hardgainers specifically.** The SBS framework recommends **1.6\u20132.2 g/kg/day for lifters**, which already covers the upper..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

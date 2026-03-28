@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer explains metabolic adaptations from dieting tend to reverse as body mass comes back",
+      "passed": true,
+      "evidence": "Found 'recover' in: ...erstated\n\nYou're right that repeated dieting and incomplete recovery create metabolic adaptation\u2014your expenditure genuinely dec..."
+    },
+    {
+      "text": "Answer mentions a plausible yo-yo mechanism: repeated cycles may restore fat faster than lean tissue",
+      "passed": true,
+      "evidence": "Found 'yo-yo' in: ...# Bulking After Yo-Yo Dieting: Metabolic Adaptation and the Direct Fix\n\n## The Co..."
+    },
+    {
+      "text": "Answer discusses behavioral/NEAT-related factors (less spontaneous movement, efficiency)",
+      "passed": true,
+      "evidence": "Found 'NEAT' in: ...recovery/surplus:**\n\n- Expenditure can rise in some people (NEAT increases, appetite changes, compensatory thermogenesis)\n-..."
+    },
+    {
+      "text": "Answer recommends spending time at maintenance before dieting again",
+      "passed": false,
+      "evidence": "Missing any of: ['maintenance', 'maintain']"
+    },
+    {
+      "text": "Answer advises going slower and/or not pushing as lean in subsequent diets",
+      "passed": true,
+      "evidence": "Found 'slower' in: ...) or >0.45 lbs/week (aggressive)\n\n### What to Do If Gain Is Slower Than Target\n\n**This is where metabolic adaptation shows up..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

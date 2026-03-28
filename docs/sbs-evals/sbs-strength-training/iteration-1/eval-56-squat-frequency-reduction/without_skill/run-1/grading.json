@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on squat frequency reduction",
+      "passed": true,
+      "evidence": "Answer contains 13/38 key concepts from the expected core position. Key matches: volume, week, high, progress, sets."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": true,
+      "evidence": "Found 1/6 specific details from expected output. Matched: 50%."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 3 caveat/limitation markers in the answer. Examples: but, though, limited."
+    },
+    {
+      "text": "Answer includes actionable practical recommendations consistent with the hosts' advice",
+      "passed": true,
+      "evidence": "Found 6 actionable recommendation markers. Examples: use, maintain, prioritize, practical."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": true,
+      "evidence": "No obvious contradictions detected with the expected position."
+    }
+  ]
+}

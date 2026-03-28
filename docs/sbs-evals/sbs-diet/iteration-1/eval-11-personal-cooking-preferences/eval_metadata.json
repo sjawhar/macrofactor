@@ -1,0 +1,13 @@
+{
+  "eval_id": 11,
+  "eval_name": "eval-11-personal-cooking-preferences",
+  "prompt": "What are your favorite and least favorite things Greg has cooked?",
+  "expected_output": "Lindsay said many of Greg\u2019s meals were excellent, with favorites including simple but well-executed dishes (pizza, breads, biryani/chicken-and-rice, and other staples). Greg highlighted chicken shawarma as one of his own favorite dishes Lindsay makes or requests as well, and both agreed most outcomes are consistently good when following solid recipes. Neither identified a major recurring failure, just occasional underbaked or texture-mismatch one-offs. This segment was more personal/fun than technical coaching. It closed Lindsay\u2019s final co-host episode before the incoming host transition.",
+  "topic": "personal cooking preferences",
+  "episode": 126,
+  "assertions": [
+    "Answer acknowledges this is a personal/fun question about cooking preferences",
+    "Answer mentions favorites like pizza, breads, biryani/chicken-and-rice, chicken shawarma",
+    "Answer does NOT try to give heavy technical nutrition coaching for this question"
+  ]
+}

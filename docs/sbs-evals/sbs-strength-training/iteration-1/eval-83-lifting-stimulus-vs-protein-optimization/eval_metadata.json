@@ -1,0 +1,15 @@
+{
+  "eval_id": 83,
+  "eval_name": "eval-83-lifting-stimulus-vs-protein-optimization",
+  "prompt": "How much does protein feeding increase muscle protein synthesis compared with resistance training itself? Are we over-focusing on protein source and timing details?",
+  "expected_output": "They said lifting is the dominant driver of muscle protein synthesis, while protein strategy is more of a permissive support factor. Eric used examples from androgen-deprivation and immobilization research to show how large the training effect can be relative to nutrition tweaks. During layoffs, they noted that even very reduced training volume (roughly 10-15% of normal, i.e., an 85-90% cut) can still help preserve muscle and strength. By contrast, protein-only interventions during immobilization are usually underwhelming, with mixed small benefits in some higher-dose amino acid/leucine studies. Their practical hierarchy was to keep some safe muscle loading whenever possible, then optimize protein amount/distribution/timing on top of that.",
+  "topic": "lifting stimulus vs protein optimization",
+  "episode": 58,
+  "assertions": [
+    "Answer captures the core SBS position on lifting stimulus vs protein optimization",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

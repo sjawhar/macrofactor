@@ -1,0 +1,14 @@
+{
+  "eval_id": 38,
+  "eval_name": "eval-38-protein-and-kidney-stones",
+  "prompt": "Do high-protein diets increase kidney stone risk?",
+  "expected_output": "Eric distinguished healthy people from those with pre-existing kidney disease or stone predisposition. For healthy kidneys, he said current evidence does not strongly support the idea that high-protein diets cause kidney disease or clearly elevate stones by themselves. He acknowledged plausible mechanisms exist for some stone pathways, but emphasized that population risk appears most relevant for people already predisposed. Practical advice was to individualize if someone has kidney-stone history, but not to assume high protein is inherently dangerous for everyone.",
+  "topic": "protein and kidney stones",
+  "episode": 46,
+  "assertions": [
+    "Answer distinguishes healthy people from those with pre-existing kidney disease",
+    "Answer states current evidence does not strongly support high protein causing kidney disease in healthy people",
+    "Answer recommends individualizing for those with kidney stone history",
+    "Answer does NOT assume high protein is inherently dangerous for everyone"
+  ]
+}

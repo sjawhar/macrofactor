@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Acknowledges the incline could genuinely affect performance (not just 'in your head')",
+      "passed": true,
+      "evidence": "Opening states: 'Yes, a 5% incline will meaningfully hurt deadlift performance. You'll likely lose 5–15% of your pulling strength.'"
+    },
+    {
+      "text": "Mentions confounding variables like plate calibration differences or temperature effects",
+      "passed": false,
+      "evidence": "No mention of plate calibration or temperature effects. The answer focuses solely on the mechanical effects of the slope itself."
+    },
+    {
+      "text": "Explains how the slope changes mechanics depending on bar/lifter orientation relative to slope (e.g., effective heel elevation, deficit-like effect, or block-pull-like effect)",
+      "passed": true,
+      "evidence": "'Direction Matters' section explains: 'Uphill slope (bar higher): Slightly better. You lose ~5–8%' vs 'Downhill slope (bar lower): Significantly worse. You lose ~10–15%' vs 'Side-to-side slope: Worst case.' Covers different orientations."
+    },
+    {
+      "text": "Suggests testing or experimenting with orientation/setup to isolate the variable",
+      "passed": false,
+      "evidence": "Suggests adjusting stance and fixing the platform, not experimenting with different orientations on a flat surface to isolate the variable as Greg recommended."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

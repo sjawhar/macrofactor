@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states non-nutritive sweeteners generally look fine in the evidence",
+      "passed": true,
+      "evidence": "Found 'sweetener' in: ...# Caffeine, Diet Soda, and Artificial Sweeteners During a Cut or Offseason\n\n## Short Answer\n\n**No, you don'..."
+    },
+    {
+      "text": "Answer gives a caffeine practical range of roughly 400-600 mg/day",
+      "passed": true,
+      "evidence": "Found '400' in: ...body composition outcomes\n- Moderate caffeine intake (up to 400 mg/day) is safe for most people\n\n**The only relevant consid..."
+    },
+    {
+      "text": "Answer recommends symptom-based caffeine management (jitters, sleep, headaches)",
+      "passed": true,
+      "evidence": "Found 'sleep' in: ...he only relevant consideration:** If caffeine disrupts your sleep, and poor sleep impairs recovery or increases hunger, then..."
+    },
+    {
+      "text": "Answer advises not burning every easy strategy in the offseason for use during hard prep",
+      "passed": true,
+      "evidence": "Found 'offseason' in: ...feine, Diet Soda, and Artificial Sweeteners During a Cut or Offseason\n\n## Short Answer\n\n**No, you don't need to limit caffeine, d..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

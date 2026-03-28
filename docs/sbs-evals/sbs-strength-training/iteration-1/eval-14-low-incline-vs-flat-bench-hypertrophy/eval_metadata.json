@@ -1,0 +1,15 @@
+{
+  "eval_id": 14,
+  "eval_name": "eval-14-low-incline-vs-flat-bench-hypertrophy",
+  "prompt": "A listener asked whether using a low incline instead of flat bench might improve hypertrophy, especially considering arching/retraction and shoulder comfort.",
+  "expected_output": "Greg said shoulder-safety claims about one setup being clearly safer are not strongly established, but low incline is a plausible hypertrophy option. He suggested any advantage may come less from \u2018angle magic\u2019 and more from slightly longer range of motion, since low incline typically changes touch point upward and can increase pec/triceps excursion. He personally prefers low incline and suspects it may be modestly better than flat for many lifters, though not with high certainty. Eric agreed and reported that low incline often feels better for his shoulder than repeated flat pressing, especially with his injury history. Practical takeaway: use the pressing angle(s) that let you train hard through good ROM with manageable discomfort.",
+  "topic": "low incline vs flat bench hypertrophy",
+  "episode": 106,
+  "assertions": [
+    "Answer captures the core SBS position on low incline vs flat bench hypertrophy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

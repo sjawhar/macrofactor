@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "pass_rate": 0.75,
+    "passed": 3,
+    "failed": 1,
+    "total": 4
+  },
+  "expectations": [
+    {
+      "text": "Answer captures the core SBS position on ashwagandha for strength and hypertrophy",
+      "passed": true,
+      "evidence": "Answer contains 6/23 key concepts from the expected core position. Key matches: large, strength, need, taking, before."
+    },
+    {
+      "text": "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+      "passed": false,
+      "evidence": "Found 0/1 specific details from expected output."
+    },
+    {
+      "text": "Answer acknowledges important caveats or limitations discussed by the hosts",
+      "passed": true,
+      "evidence": "Found 2 caveat/limitation markers in the answer. Examples: but, context."
+    },
+    {
+      "text": "Answer does not contradict the hosts' stated position",
+      "passed": true,
+      "evidence": "No obvious contradictions detected with the expected position."
+    }
+  ]
+}

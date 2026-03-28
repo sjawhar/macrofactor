@@ -1,0 +1,14 @@
+{
+  "eval_id": 23,
+  "eval_name": "eval-23-protein-upper-limit-concerns",
+  "prompt": "Are there downsides to eating a lot of protein, and is the common target of about 1 gram per pound enough for building muscle? Should someone aiming to maximize gains go even higher?",
+  "expected_output": "Eric said concerns about high-protein harms are often overstated in healthy people, noting that common internet claims about kidney or bone damage are not well-supported in lifters without pre-existing disease. He framed practical intake around evidence-based ranges rather than extreme intakes. His recommended target for most people was roughly 1.6-2.2 g/kg/day, which already covers most muscle-building needs. He noted that going far beyond that range usually gives little added hypertrophy benefit unless total diet context requires it. The key was hitting a sufficient intake consistently, then focusing on total calories and training quality.",
+  "topic": "protein upper-limit concerns",
+  "episode": 29,
+  "assertions": [
+    "Answer states concerns about high-protein harms are overstated in healthy people",
+    "Answer gives a recommended target range of roughly 1.6-2.2 g/kg/day",
+    "Answer notes going far beyond that range gives little added hypertrophy benefit",
+    "Answer emphasizes consistent sufficient intake over extreme protein dosing"
+  ]
+}

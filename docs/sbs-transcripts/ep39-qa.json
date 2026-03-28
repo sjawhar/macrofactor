@@ -1,0 +1,47 @@
+{
+  "episode": 39,
+  "pairs": [
+    {
+      "question": "Do I need to limit caffeine, diet soda, or artificial sweeteners during a cut or in the offseason? I’m worried I might be over-focusing on things that don’t matter.",
+      "answer_summary": "Eric said common non-nutritive sweeteners generally look fine in the evidence, even at fairly liberal intakes, and he isn’t strongly concerned about them for health or physique outcomes. For caffeine, he noted common review-paper ranges of roughly 400-600 mg/day as a practical default, while acknowledging that exact cutoffs are somewhat fuzzy. His practical test is symptom-based: if you’re jittery, sleeping worse, getting headaches, or no longer getting useful effects, you’re likely pushing too high. He emphasized that caffeine tolerance/metabolism varies a lot between people, so personalization matters more than a single universal cap. In dieting specifically, he recommends not burning every easy strategy in the offseason; heavy caffeine/sweetener use year-round can reduce their usefulness later in a hard prep. So the key is less fear of sweeteners and more strategic use plus symptom-guided caffeine management.",
+      "skills": ["sbs-diet"],
+      "topic": "caffeine and sweeteners while dieting"
+    },
+    {
+      "question": "How much of a difference do steroids make for muscle growth?",
+      "answer_summary": "Greg framed the answer as highly dependent on what is used (for example, a mild protocol versus a full bodybuilding stack), so any number is only a ballpark. Using FFMI examples, he described untrained men around FFMI ~20, recreational trained natural lifters around ~23, and enhanced lifters around ~26, implying roughly +3 points natural versus +6 enhanced from a similar starting point. At the extreme end, he cited roughly FFMI ~30 for the largest drug-free physiques versus ~40 for top enhanced physiques, again suggesting about a twofold difference in gain magnitude. His headline takeaway was not that enhanced lifters end up exactly twice as big, but that the additional muscle accrued over a career can be around 2x in broad terms. He also noted that this larger muscle gain should materially affect strength outcomes, which he covered in his related strength-model article.",
+      "skills": ["sbs-strength-training"],
+      "topic": "steroids and muscle growth magnitude"
+    },
+    {
+      "question": "When strength drops during a cut, how can I tell whether it’s normal from the deficit or a sign I’m overreaching?",
+      "answer_summary": "Eric said some strength loss during aggressive leanness phases can be normal, especially deep in prep, but overreaching can mask performance and make losses look worse. His diagnostic move is to actually deload instead of pushing through: if bodyweight drops rapidly and strength rebounds after deloading, fatigue/overreaching was likely a major contributor. If nothing improves across a normal deload window, the drop may be more expected from the cut itself or from broader programming/nutrition issues that need adjustment. Greg added that strength athletes often catastrophize small losses while cutting to a lower class; relative metrics can give better context. One practical check he gave was tracking bodyweight pull-up/dip rep maxes over time: if bodyweight falls and reps are stable or rising, losses are likely proportionate; if both bodyweight and reps are dropping, losses may be disproportionately large. Overall, they recommended using deload response and relative-performance context before assuming the cut is failing.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "strength loss vs overreaching in a cut"
+    },
+    {
+      "question": "If I’ve been squatting 2-3 times per week, can I still progress on just 1 squat day per week, and how should I set it up?",
+      "answer_summary": "Greg said progressing on once-weekly squatting is absolutely possible; the main tradeoff is usually slower rate of progress, not zero progress. He described the evidence trend as: >1 session/week tends to beat exactly 1 session/week on average, but very high frequencies are not magic by default. For setup, he advised against collapsing all prior weekly squat volume into one huge session (for example, don’t blindly turn 15 weekly sets into 15 sets in one day). Instead, make that single session larger than your old per-session average, then titrate up gradually based on recovery and performance. As a rough starting heuristic, he suggested avoiding a drop of more than about 50% in total weekly squat volume when switching structures. Practical implementation: start with your previous per-session dose plus ~1-2 sets, then adjust upward only if progress stalls and recovery allows.",
+      "skills": ["sbs-strength-training", "sbs-squat"],
+      "topic": "squat frequency reduction"
+    },
+    {
+      "question": "Does calorie cycling (higher calories on training days, lower on rest days) meaningfully reduce fat gain compared to flat daily calories?",
+      "answer_summary": "Eric said he hasn’t seen compelling direct evidence that matching calories to training/rest days is inherently superior for body-composition outcomes when weekly intake is equated. His main point was that energy balance is a longer-game variable; micromanaging hour-by-hour or day-by-day intake/expenditure matching is usually unnecessary. He referenced related literature and argued that total intake/adherence across the dieting window (for example, over many weeks) is the dominant driver. He specifically said not to feel forced to cut intake on rest days just because you burned ~200 fewer calories that day. Nonlinear intake can still be useful for preference, adherence, or workout-quality targeting (for example, placing higher carbs before key sessions). He also said refeed/diet-break strategies are promising but not yet conclusive, including uncertainty about whether 2-day, 3-day, or multi-week structures are best.",
+      "skills": ["sbs-diet"],
+      "topic": "calorie cycling and fat accumulation"
+    },
+    {
+      "question": "What’s the current take on isometric training for maintaining strength on squat, bench, and deadlift when equipment is limited?",
+      "answer_summary": "Greg said isometrics can work, but the most effective style appears to be high-intent, ballistic maximal contractions (trying to hit max force as fast as possible), which can be hard to set up in lockdown conditions. A gym example he gave was pulling maximally into safety pins at a chosen deadlift height. He noted strong angle specificity: gains transfer most to roughly the trained joint position, about 15-30 degrees in either direction. That means isometric quarter-squat work won’t strongly improve bottom-position squat strength, while isometrics near a sticking point are more likely to help there. He also mentioned isometrics can be a useful complement since they avoid eccentric loading and can carry a different fatigue profile. But he cautioned that practical programming prescriptions (optimal set duration, frequency, and weekly dose) are still less standardized than conventional training.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "isometric strength training"
+    },
+    {
+      "question": "If calories are very low (around 1,500), what should a nutritionally complete approach look like besides just eating shredded chicken?",
+      "answer_summary": "Eric’s framework was to prioritize lean protein first, but choose sources strategically so they also contribute micronutrients where possible. He emphasized a broad rotation of fibrous vegetables (not just a couple defaults) to improve vitamin/mineral coverage and satiety under tight calorie constraints. He recommended treating a basic multivitamin as insurance, not as a replacement for food quality. He also said that when fats get very low, adding fish oil or another high-quality omega-3 source can help cover essential fatty acid needs. For practical adherence, he highlighted low-effort, high-shelf-life options that are easy to keep available. His concrete example was a simple lentil soup build (lentils, canned tomatoes, vegetable stock, and frozen soup vegetables), which he described as convenient, macro-friendly, and sustainable during hard low-calorie phases.",
+      "skills": ["sbs-diet"],
+      "topic": "nutritionally complete very-low-calorie dieting"
+    }
+  ]
+}

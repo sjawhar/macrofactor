@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Confirms progression on once-weekly squatting is absolutely possible",
+      "passed": true,
+      "evidence": "Found matching content: ...Progress Squatting Only Once Per Week?\n\nYes - you can absolutely still make progres..."
+    },
+    {
+      "text": "Notes the main tradeoff is usually slower rate of progress, not zero progress",
+      "passed": true,
+      "evidence": "Found matching content: ...## Progression Is Still Possible, Just Slower\n\nFrequency matters for skill acquisitio..."
+    },
+    {
+      "text": "Warns against collapsing all prior weekly volume into one massive session",
+      "passed": true,
+      "evidence": "Found matching content: ...and and a smart way to set it up so you don't leave gains on the table.\n\n## Progressi..."
+    },
+    {
+      "text": "Suggests avoiding a drop of more than about 50% in total weekly squat volume",
+      "passed": true,
+      "evidence": "Found matching content: ...ant to avoid dropping more than roughly 50% of your total weekly volume. That thres..."
+    },
+    {
+      "text": "Provides a practical starting heuristic (previous per-session dose plus ~1-2 sets, then adjust)",
+      "passed": true,
+      "evidence": "Found matching content: ...The goal is to consolidate most of your previous weekly volume into that single session,..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

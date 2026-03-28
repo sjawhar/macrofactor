@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Acknowledges the incline could genuinely affect performance (not just 'in your head')",
+      "passed": true,
+      "evidence": "Opening states: 'Yes, a 5% incline will meaningfully hurt deadlift performance and create technical problems... This is not a minor issue—it's worth fixing.'"
+    },
+    {
+      "text": "Mentions confounding variables like plate calibration differences or temperature effects",
+      "passed": false,
+      "evidence": "No mention of plate calibration differences or garage temperature effects anywhere in the answer. The expected output notes Greg said to 'check confounders: plate calibration differences and training temperature (especially cold garages).'"
+    },
+    {
+      "text": "Explains how the slope changes mechanics depending on bar/lifter orientation relative to slope (e.g., effective heel elevation, deficit-like effect, or block-pull-like effect)",
+      "passed": true,
+      "evidence": "Section 'Effective Range of Motion Changes' explains: 'Heels-high setup (incline slopes down toward toes): Your effective starting position is higher, reducing ROM' and 'Toes-high setup (incline slopes down toward heels): Your effective starting position is lower, increasing ROM.' Also discusses perpendicular vs parallel slope orientation."
+    },
+    {
+      "text": "Suggests testing or experimenting with orientation/setup to isolate the variable",
+      "passed": false,
+      "evidence": "The answer recommends fixing the platform ('Shim the low side', 'Use a Different Space') rather than experimenting with different orientations to isolate the variable. Greg recommended 'testing these setups deliberately on a flat platform to see whether they reproduce the same performance feel.'"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

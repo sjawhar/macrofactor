@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Explains the theoretical rationale: accommodating resistance matches the lift's force curve (lighter at bottom, heavier at lockout)",
+      "passed": true,
+      "evidence": "'The theory is that this matches the strength curve—you're weakest at the bottom and strongest at the top, so accommodating resistance lets you overload the top position where you can handle more weight.'"
+    },
+    {
+      "text": "Cites research evidence (including meta-analytic or review-level) showing little to no clear strength advantage over conventional loading",
+      "passed": true,
+      "evidence": "'Not superior to traditional loading: The critical finding is that bands/chains don't consistently outperform straight-weight training for overall strength development. When compared head-to-head, traditional heavy barbell work produces similar or sometimes better results.'"
+    },
+    {
+      "text": "Concludes they are fine as variation tools but not reliably superior for maximal strength",
+      "passed": true,
+      "evidence": "'Bands and chains work best as supplemental tools, not primary strength builders.' 'They're a tool for variation and addressing specific weaknesses.'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer declines a full point-by-point debate as low-value",
+      "passed": false,
+      "evidence": "Missing any of: ['decline', 'point-by-point', 'low value']"
+    },
+    {
+      "text": "Answer states well-designed omnivorous and vegan diets can both support performance",
+      "passed": true,
+      "evidence": "Found 'both' in: ...n _what you eat within the pattern_, not the pattern label. Both plant-based and omnivorous diets can be optimized or sabota..."
+    },
+    {
+      "text": "Answer criticizes the documentary's use of tiny demonstrations over robust evidence",
+      "passed": true,
+      "evidence": "Found 'documentary' in: ...\"Game Changers\" rebuttal video (released after the original documentary) attempts to defend plant-based diet claims by invoking \"sc..."
+    },
+    {
+      "text": "Answer recommends evaluating claims via higher-quality research methods",
+      "passed": true,
+      "evidence": "Found 'research' in: ...nger By Science) framework, which prioritizes peer-reviewed research, effect sizes, and practical applicability over ideological..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

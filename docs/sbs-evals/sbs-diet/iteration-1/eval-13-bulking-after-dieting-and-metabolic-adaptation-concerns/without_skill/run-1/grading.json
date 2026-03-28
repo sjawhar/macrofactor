@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer explains metabolic adaptations from dieting tend to reverse as body mass comes back",
+      "passed": true,
+      "evidence": "Found 'reverse' in: ...n and body composition.\n\n## What NOT to Do\n\n- **Don't do a \"reverse diet\" for months.** Reverse dieting (slowly increasing calo..."
+    },
+    {
+      "text": "Answer mentions a plausible yo-yo mechanism: repeated cycles may restore fat faster than lean tissue",
+      "passed": true,
+      "evidence": "Found 'yo-yo' in: ...# Bulking After Yo-Yo Dieting: Metabolic Adaptation and the Path Forward\n\n## The..."
+    },
+    {
+      "text": "Answer discusses behavioral/NEAT-related factors (less spontaneous movement, efficiency)",
+      "passed": true,
+      "evidence": "Found 'NEAT' in: ...from food\n4. **Reduces non-exercise activity thermogenesis (NEAT)** \u2014 you move less without noticing\n\nThis is why the last 1..."
+    },
+    {
+      "text": "Answer recommends spending time at maintenance before dieting again",
+      "passed": true,
+      "evidence": "Found 'maintenance' in: ...daptation typically recovers within 4\u201312 weeks of eating at maintenance or surplus\n- Repeated dieting does _not_ permanently lower..."
+    },
+    {
+      "text": "Answer advises going slower and/or not pushing as lean in subsequent diets",
+      "passed": false,
+      "evidence": "Missing any of: ['slower', 'not push', 'as lean']"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

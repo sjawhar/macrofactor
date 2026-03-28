@@ -1,0 +1,14 @@
+{
+  "eval_id": 43,
+  "eval_name": "eval-43-evidence-based-supplement-priorities",
+  "prompt": "Which supplements are actually useful in an evidence-based sense, and which are mostly hype?",
+  "expected_output": "Creatine is presented as the strongest general-purpose option for performance and muscle outcomes, with especially strong relevance for people with low dietary creatine intake (for example many vegetarians/vegans). They also discuss conditional value for supplements like vitamin D (particularly when deficient), fish oil, magnesium, and ashwagandha depending on context and goals. The consistent theme is to prioritize proven basics over proprietary blends or kitchen-sink formulas. Supplement value is framed as incremental compared with training and nutrition fundamentals.",
+  "topic": "evidence-based supplement priorities",
+  "episode": 27,
+  "assertions": [
+    "Answer captures the core SBS position on evidence-based supplement priorities",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

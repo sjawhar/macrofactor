@@ -1,0 +1,77 @@
+{
+  "episode": 25,
+  "pairs": [
+    {
+      "question": "In a good powerlifting program, how much training time should be hypertrophy-focused, and how should that change with training age and in-season vs off-season? Also, when is someone strong enough to start bodybuilding-style accessory work?",
+      "answer_summary": "Greg said newer lifters generally need more hypertrophy work, not less. Early on, he recommended learning the lifts for the first few months, then spending the next couple of years building muscle and filling out a weight class while keeping some heavier work in. As lifters get more advanced and hypertrophy slows, the tradeoff shifts toward more specific strength work. Near meets, hypertrophy emphasis should drop, and he specifically noted that high-rep bodybuilding-style work (e.g., 10-15 rep focus) is usually a poor fit close to competition (around the last ~4 weeks). In true off-seasons, especially when moving up or filling out a class, hypertrophy blocks make more sense. They also emphasized adherence: a slightly suboptimal but enjoyable approach done consistently for years still works very well.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "hypertrophy vs strength periodization"
+    },
+    {
+      "question": "How often should someone bulk and cut in practice? Is there a point where bulking stops helping strength or muscle and becomes harmful?",
+      "answer_summary": "Eric said not to treat bulking as a simple on/off category and not to schedule it by calendar alone. Instead, set a specific endpoint: how much lean mass you want, how much fat gain you accept, and by what date. Larger surpluses should be shorter and used less often; smaller surpluses can run longer. He gave a practical minimum of about one month for a bulk, noting that two-week bulks are usually not productive for real tissue gain. If you are in surplus but not gaining muscle or strength, the bulk may no longer be effective and training structure should be reassessed. He also noted there can be health downsides if surplus continues without productive outcomes.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "bulk and cut frequency"
+    },
+    {
+      "question": "As my lifts get stronger, my rest periods keep getting longer. What causes that, and what does the literature say about rest intervals for hypertrophy vs strength?",
+      "answer_summary": "Greg explained that heavier loads increase total work and oxygen/anaerobic cost per set, so stronger lifters naturally need longer recovery between sets. He used examples showing a very heavy set of 10 squats can create enormous fatigue, making short rests unrealistic for maintaining performance. On research, he said hypertrophy findings are mixed: some studies favor longer rests, some shorter, and some show no difference. For strength development, he leaned clearly toward longer rests, especially for strong lifters on compound lifts. His practical guidance was roughly 90 seconds to 2 minutes minimum for upper-body/single-joint work, around 3 minutes commonly, and about 5 minutes (or more) for heavy lower-body compounds. They also suggested non-interfering supersets to save time without sacrificing key lift performance.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "rest intervals for strength and hypertrophy"
+    },
+    {
+      "question": "Can you rank these sports by difficulty/competitiveness: natural bodybuilding, natural classic physique, baseball, basketball, and football?",
+      "answer_summary": "Eric gave a direct ranking: baseball #5, basketball #4, football #3, classic physique #2, and natural bodybuilding #1. His rationale centered on competitive depth, physical demands, and how hard final prep is in physique sport. He argued natural bodybuilding edges classic physique because achieving the final stage-lean condition (including glute conditioning) is especially punishing. The response was partly humorous but still gave a clear ordered answer.",
+      "skills": ["sbs-strength-training"],
+      "topic": "sport competitiveness ranking"
+    },
+    {
+      "question": "At 6'7\" and 250 lb, BMI puts me near overweight. Is BMI biased for very tall people?",
+      "answer_summary": "Greg said yes: BMI can misclassify very tall people because the traditional formula uses height squared, which is an imperfect scaling exponent. He noted this was a historical simplification from the 1800s and suggested scaling closer to height^2.5 is often more appropriate. Using the asker's approximate stats (2.0 m and 115 kg), standard BMI gives about 28.75, but with a 2.5 exponent it drops near 20.3. That illustrates how extreme height can distort interpretation. He also noted similar edge-case distortion can happen on the very short end.",
+      "skills": ["sbs-diet"],
+      "topic": "BMI interpretation in tall lifters"
+    },
+    {
+      "question": "From a bodybuilding standpoint, can I completely remove deadlifts and all deadlift variations? Can other posterior-chain exercises fully replace them?",
+      "answer_summary": "Eric's answer was an unequivocal yes for bodybuilding: you can build a great physique without deadlifts. He listed alternatives across target areas: hamstring curls and glute-ham raises for hamstrings, hip thrusts and squat/lunge/back-extension variants for glutes and posterior chain, rows/pull-ups for back thickness, and shrugs/farmer's walks for traps. He added that forearm isolation is optional for bodybuilding judging, though it can be trained if desired. He still likes deadlifts in many programs because they are highly time-efficient for loading many posterior muscles at once. But when lifters have injuries, poor tolerance, or strong preference against deadlifts, replacing them is fully viable.",
+      "skills": ["sbs-deadlift", "sbs-strength-training"],
+      "topic": "deadlift necessity for bodybuilding"
+    },
+    {
+      "question": "I usually get 7-8 hours of sleep, but when I try to force 8-9+ hours my sleep quality gets worse. Should I stop trying to force extra sleep?",
+      "answer_summary": "Greg said yes, avoid forcing sleep if it is creating stress and fragmented sleep. He noted sleep-extension studies in high-level athletes often increased sleep from roughly 6-8 hours to 9-10+ hours and showed performance benefits, but that may not generalize perfectly to older or less heavily trained populations. He recommended a practical trial: shift bedtime earlier by about 30-60 minutes and see what your body does naturally. A useful marker is waking without an alarm; if that happens consistently, you are likely near your current sleep need. For many adults, especially past their 30s, very long nightly sleep durations may simply be harder to sustain. In that case, modest extension may be realistic while forced extension is counterproductive.",
+      "skills": ["sbs-strength-training"],
+      "topic": "sleep extension and recovery"
+    },
+    {
+      "question": "My doctor said my levels were high and told me to stop creatine. Should elevated creatinine in a creatine user be a concern?",
+      "answer_summary": "Eric interpreted this as elevated creatinine (not creatine) and said creatine supplementation commonly raises creatinine because creatinine is a breakdown product. He contrasted typical dietary creatine (~1-2 g/day) with common supplemental intake (often ~5 g/day), which can make the standard creatinine marker less informative on its own. His practical recommendation was not to panic but to discuss context with the physician and request follow-up kidney-function assessment using additional tests. In other words, elevated creatinine in a creatine user can be expected, but kidney health should still be checked with appropriate interpretation rather than ignored.",
+      "skills": ["sbs-diet"],
+      "topic": "creatine and creatinine labs"
+    },
+    {
+      "question": "Greg mentioned avoiding anabolic steroids partly due to possible cognitive effects. What evidence is there for that?",
+      "answer_summary": "Greg cited a 2017 structural brain imaging paper on long-term anabolic-androgenic steroid users versus non-users reporting smaller values in some brain-structure measures and lower verbal IQ in users. He repeatedly emphasized the key caveat: the human evidence is largely cross-sectional, so causality cannot be confirmed. He also mentioned mechanistic evidence suggesting neurotoxicity at high androgen exposure, with trenbolone called out as particularly concerning in preclinical contexts. His take was that evidence is less definitive than classic side effects (e.g., lipid changes), but concerning enough to influence personal risk decisions. He also suggested dose likely matters, with higher exposures plausibly carrying greater risk.",
+      "skills": ["sbs-strength-training"],
+      "topic": "anabolics and cognition risk"
+    },
+    {
+      "question": "Do plant-based diets lead to better gains or fat loss than diets that include animal products?",
+      "answer_summary": "Eric pushed back on a blanket claim that plant-based diets are categorically healthier, noting observational comparisons are heavily confounded by broader health behaviors. For physique outcomes, he said calories and macronutrient setup drive weight gain/loss outcomes more than dietary label. With matched protein and macros, performance/body-composition outcomes should be similar or only slightly favor omnivorous diets due to protein-quality differences. He added that good planning of essential amino acid intake can neutralize much of that gap in vegan diets. His bottom line: both vegan and omnivorous diets can work very well when thoughtfully structured.",
+      "skills": ["sbs-diet"],
+      "topic": "plant-based vs omnivorous for body composition"
+    },
+    {
+      "question": "How can students improve writing skills for science-based fitness articles, and how do you get published on larger websites?",
+      "answer_summary": "Greg recommended deliberate repetition (he used a past target of writing ~1,000 words daily) plus strong editorial feedback. He advised getting an editor if possible, or at least reliable critique from capable peers in your target audience. He also emphasized publishing publicly to get real-world feedback while still maintaining quality standards and purposeful improvement. For getting published, he said to proactively pitch editors (don't wait to be discovered), match the site's audience and style, and read the site's style guidelines first. He specifically advised having drafts ready before pitching and making every step easier for the editor to increase acceptance odds.",
+      "skills": ["sbs-strength-training"],
+      "topic": "science writing and publication strategy"
+    },
+    {
+      "question": "When will Greg become a permanent host of the show?",
+      "answer_summary": "Eric said they were not committing to Greg as a permanent host. He did announce Greg was invited back as special guest co-host for episode 26, airing one week later. So the answer was no to permanence, yes to near-term continuation.",
+      "skills": ["sbs-strength-training"],
+      "topic": "podcast host status"
+    }
+  ]
+}

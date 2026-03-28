@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer acknowledges this is a personal/fun question about cooking preferences",
+      "passed": true,
+      "evidence": "Found 'personal' in: ...orite and least favorite things Greg has cooked?\n\nThis is a personal/fun question about cooking preferences rather than a techni..."
+    },
+    {
+      "text": "Answer mentions favorites like pizza, breads, biryani/chicken-and-rice, chicken shawarma",
+      "passed": true,
+      "evidence": "Found 'pizza' in: ...Cooked\n\nLindsay highlighted several dishes she loves:\n\n- **Pizza** \u2014 A simple pepperoni and basil pizza that \"reminded me wh..."
+    },
+    {
+      "text": "Answer does NOT try to give heavy technical nutrition coaching for this question",
+      "passed": true,
+      "evidence": "Found 'not' in: ...igned for calorie targets, macros, and adherence strategies\u2014not for subjective food opinions.\n\n## Lindsay's Favorite Things..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

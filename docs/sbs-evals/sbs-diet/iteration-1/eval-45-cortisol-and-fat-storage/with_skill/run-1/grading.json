@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms cortisol is real and can influence body composition in extreme chronic elevations",
+      "passed": true,
+      "evidence": "Found 'real' in: ...idence vs. Internet Myth\n\n## The Short Answer\n\n**There is a real biological link between cortisol and fat storage, but it's..."
+    },
+    {
+      "text": "Answer mentions Cushing's syndrome as an example of pathological cortisol-driven fat patterns",
+      "passed": false,
+      "evidence": "Missing any of: ['Cushing', 'central', 'adiposity']"
+    },
+    {
+      "text": "Answer states common fitness-level cortisol fluctuations are usually overinterpreted",
+      "passed": true,
+      "evidence": "Found 'fitness' in: ...torage, but it's much weaker and more nuanced than internet fitness culture claims.** Elevated cortisol does influence fat dist..."
+    },
+    {
+      "text": "Answer distinguishes clinical extremes from normal daily stress/training variability",
+      "passed": true,
+      "evidence": "Found 'normal' in: ...balance, cortisol elevation does not create fat tissue\n- **Normal cortisol rhythm**: Cortisol naturally peaks in the morning..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

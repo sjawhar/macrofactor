@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Proposes covering multiple fitness capacities, not just barbell strength",
+      "passed": true,
+      "evidence": "Includes sections for Core Strength, Accessory Strength, Power, Work Capacity, and Movement Quality."
+    },
+    {
+      "text": "Includes an aerobic capacity test",
+      "passed": true,
+      "evidence": "Includes '5-Minute Row Erg (Distance)' as aerobic capacity test."
+    },
+    {
+      "text": "Includes an anaerobic/short running test",
+      "passed": false,
+      "evidence": "No 400m, 800m, sprint, or anaerobic running test included. Uses barbell complex instead for work capacity."
+    },
+    {
+      "text": "Includes an explosive power test",
+      "passed": true,
+      "evidence": "Includes Vertical Jump and Broad Jump tests."
+    },
+    {
+      "text": "Includes a barbell strength test",
+      "passed": true,
+      "evidence": "Includes Bench 1RM, Squat 1RM, Deadlift 1RM."
+    },
+    {
+      "text": "Mentions flexibility or mobility screening",
+      "passed": true,
+      "evidence": "Includes Shoulder Mobility Screen, Scapular Retraction test, and Hip Mobility Screen."
+    },
+    {
+      "text": "Suggests this full battery may be better as a less frequent check rather than every 12 weeks",
+      "passed": false,
+      "evidence": "Recommends testing every 12 weeks throughout. Does not suggest annual or less frequent testing."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 2,
+    "total": 7,
+    "pass_rate": 0.71
+  }
+}

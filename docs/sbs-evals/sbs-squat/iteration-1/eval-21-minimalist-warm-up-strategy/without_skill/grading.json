@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States minimalist warm-ups are fine if they reliably prepare you for the session",
+      "passed": true,
+      "evidence": "Found matching content: ...leading up to your working weight - are genuinely effective for most trained lifters most of the ti..."
+    },
+    {
+      "text": "Frames the decision as a cost-benefit issue, especially for people with limited gym time",
+      "passed": true,
+      "evidence": "Found matching content: ...ve for most trained lifters most of the time. The primary purpose of any warm-up is..."
+    },
+    {
+      "text": "Warns against making minimalism the goal itself (under-warming can reduce readiness)",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Recommends an iterative approach: remove warm-up elements one at a time and keep only what clearly helps",
+      "passed": true,
+      "evidence": "Found matching content: ...e the ones who treat their warm-up as a diagnostic tool - checking in with how their body..."
+    },
+    {
+      "text": "Defines the goal as the minimum effective warm-up for your body and session demands",
+      "passed": true,
+      "evidence": "Found matching content: ...ith the minimalist version and add only what you demonstrably need. Do your barbell warm-up sets, pay atte..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

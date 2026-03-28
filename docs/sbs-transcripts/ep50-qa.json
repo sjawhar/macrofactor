@@ -1,0 +1,71 @@
+{
+  "episode": 50,
+  "pairs": [
+    {
+      "question": "I've seen carnivore/keto/paleo people say vegan and plant-heavy diets are full of anti-nutrients. Is that actually true, and if so how worried should people be?",
+      "answer_summary": "Eric said anti-nutrients are real (for example phytates, tannins, lectins, and oxalates), and they can reduce absorption of some nutrients in some meal contexts. But he emphasized that this risk is often overstated because many objectively healthy foods contain anti-nutrients, and regular cooking/processing methods reduce many of their effects. He advised against avoiding plant foods wholesale, since that would throw away a lot of high-quality micronutrient sources. Practical guidance was to eat a varied diet with diverse food sources and preparation methods, and if someone is fully plant-based, aim above bare-minimum micronutrient targets as a buffer. He also noted that population data in vegetarians/vegans does not show catastrophic anti-nutrient-driven deficiency patterns. Bottom line: anti-nutrients exist, but for most people they are not something to lose sleep over.",
+      "skills": ["sbs-diet"],
+      "topic": "anti-nutrients in plant diets"
+    },
+    {
+      "question": "If I've been training hypertrophy for months, should I re-sensitize my muscles by taking 1-2 weeks off or by doing a 4-5 week strength-focused block?",
+      "answer_summary": "Greg said the best direct evidence comes from Aguiar/Ogasawara-style periodic detraining studies in untrained lifters, where continuous training and repeated 6-weeks-on/3-weeks-off approaches ended up in roughly similar places over the study window. He emphasized that these data are limited, somewhat equivocal, and not strong enough to justify broad long-term prescriptions for trained lifters. His practical recommendation was to periodize within the hypertrophy-relevant rep range instead of full layoffs: for example, move from roughly 12-15 reps toward ~5-6 reps across months, then cycle back up. That creates a novel stimulus shift without abandoning training. He also pointed out that soreness after a layoff does not prove superior long-term hypertrophy. Net takeaway: don't assume you must fully de-train to keep gaining.",
+      "skills": ["sbs-strength-training"],
+      "topic": "hypertrophy re-sensitization"
+    },
+    {
+      "question": "I started drinking a gallon of water per day and now I'm peeing constantly. How much water do I actually need?",
+      "answer_summary": "Eric cited DRI targets of about 3.7 L/day for men and 2.7 L/day for women, and noted these totals include water from beverages plus food (roughly ~80% beverages, ~20% food on typical diets). He said being slightly over target is usually low-risk for healthy people because excess water is excreted, while being meaningfully under-hydrated can impair performance as dehydration approaches ~2%+ body mass loss. He cautioned against extreme water-chugging challenges because hyponatremia is a real risk in extreme scenarios. For most lifters, a rough target around three-quarters to one gallon can be reasonable, adjusted upward if sweat losses are high. Core recommendation: hydrate across the day rather than trying to backload intake late.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "daily hydration targets"
+    },
+    {
+      "question": "Is it better to sip water all day versus chugging, and can reducing fluids before bed help me stop waking up to pee?",
+      "answer_summary": "Eric said the key issue is hydration timing, not magical differences in absorption from sipping versus chugging. Chugging large amounts in a short window tends to produce rapid clear-urine losses and can leave you under-hydrated for much of the day. His practical rule was to get hydrated and stay hydrated by starting early and maintaining intake steadily. For nighttime urination, he recommended tapering fluids in the final 2-3 hours before bed if nocturia is disrupting sleep, while still avoiding going to bed dehydrated. He also suggested monitoring urine color as a simple day-to-day hydration heuristic (with caveats, since things like vitamins or beets can alter color). This frames hydration as a balance between daytime status and sleep quality.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "hydration timing and nocturia"
+    },
+    {
+      "question": "Why are deadlifts considered more fatiguing than squats, and should deadlift volume usually be lower?",
+      "answer_summary": "Greg pushed back on the blanket claim that deadlifts are inherently more fatiguing, noting data (including work from Zourdos' lab context) showing similar fatigue outcomes after squat vs deadlift sessions. He proposed several practical contributors: hand/forearm stress from heavy pulling, greater tolerance in sumo versus conventional for some lifters, and the ability to complete deadlifts with more spinal flexion than squats, which may create deeper low-back fatigue. He also highlighted path dependency: many lifters build years of higher squat exposure and lower deadlift exposure, so deadlift tolerance starts lower and appears more fatiguing by history rather than biology. He compared Olympic pulling variants too, where athletes often tolerate relatively high pulling frequency/volume. Recommendation was not to assume universal deadlift fragility, but to program based on individual recovery patterns and technical style.",
+      "skills": ["sbs-deadlift", "sbs-squat", "sbs-strength-training"],
+      "topic": "deadlift vs squat fatigue"
+    },
+    {
+      "question": "Do gym altitude masks actually work, and do any gains fade if you're not living at altitude?",
+      "answer_summary": "Eric explained true altitude adaptation is driven by lower oxygen partial pressure over long exposures, often best approached as live high, train low in endurance contexts. He said marketed altitude masks do not replicate altitude physiology because they do not change oxygen partial pressure; they mainly make breathing feel harder. He summarized that controlled studies generally do not show meaningful improvements in VO2max, peak power, or broad aerobic/anaerobic performance outcomes from those masks. A recurring effect is higher perceived exertion/discomfort at the same workload. He noted a narrow possible use case for respiratory muscle training (for specific contexts like high-altitude mountaineering), but that's different from claiming generalized performance benefits. For most lifters and general trainees, these masks are unnecessary.",
+      "skills": ["sbs-strength-training"],
+      "topic": "altitude mask evidence"
+    },
+    {
+      "question": "Bodybuilders use nicotine gum in prep for appetite and energy. What are the benefits and risks?",
+      "answer_summary": "Greg confirmed nicotine can suppress appetite, but warned this effect habituates, so it is better viewed as a short-term tool rather than a months-long fix. He discussed that evidence in nicotine-naive performance studies does not show robust ergogenic effects, especially compared with caffeine, which does reliably improve strength/power outcomes. He suggested caffeine is usually the better pre-workout stimulant when performance is the goal. On safety, he said data are much stronger for harms of tobacco products than isolated nicotine gum/patch use, though nicotine still behaves as a stimulant and can worsen concerns like hypertension in susceptible people. He also mentioned nicotine's shorter half-life versus caffeine, which can matter for late-day focus with less sleep disruption in some users. Practical framing: non-essential stimulant use carries dependence tradeoffs, and nicotine is not a magic contest-prep performance enhancer.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "nicotine use in contest prep"
+    },
+    {
+      "question": "Is there really an evidence-based link between cortisol and fat storage (especially belly fat), or is that mostly internet myth?",
+      "answer_summary": "Eric said cortisol is a real and important hormone, and in extreme chronic elevations it can strongly influence body composition (for example Cushing's syndrome patterns like central adiposity with relatively thinner extremities). He explained cortisol can be catabolic in many tissues and has context-dependent effects on fat metabolism, so the mechanism is plausible and real. However, he stressed that common fitness-level fluctuations from normal daily stress or hard training are usually overinterpreted. Most acute within-range changes do not require direct intervention. The practical mistake is treating normal cortisol variability like a pathology. So the relationship exists, but cortisol-belly-fat claims are often oversimplified outside clinical extremes.",
+      "skills": ["sbs-diet"],
+      "topic": "cortisol and fat storage"
+    },
+    {
+      "question": "What's the current practical takeaway on cortisol and fat gain if people think they're high-cortisol all the time?",
+      "answer_summary": "Eric drew a three-part distinction: normal acute fluctuations (no action needed), severe chronic psychological stress (address the stressor and recovery environment), and true endocrine pathology (medical management). He said if someone lives in persistent high stress, the intervention target is stress management/life stress reduction, not random cortisol-lowering supplements. If cortisol appears chronically outside reference ranges, that is doctor/endocrinologist territory. He also noted cortisol follows diurnal rhythms, so single snapshots can be misleading without context. This gives a practical decision tree: don't panic about ordinary fluctuations, but don't ignore persistent severe symptoms either. In short, solve the cause, not just the label.",
+      "skills": ["sbs-diet"],
+      "topic": "cortisol practical action steps"
+    },
+    {
+      "question": "What do you think about minimalist warm-ups (mostly just barbell warm-up sets) instead of long activation/mobility routines?",
+      "answer_summary": "Greg's answer was conditional: minimalist warm-ups are fine if they reliably prepare you for the session. He framed it as a cost-benefit issue, especially for people with limited gym time, where cutting warm-up from ~30 minutes to ~5-10 minutes can materially increase productive training time. But he warned against making minimalism the goal itself; under-warming can reduce readiness and potentially increase risk if needed mobility/positioning work is removed. His practical method was iterative troubleshooting: remove one warm-up element at a time and keep only what clearly helps session quality. That approach preserves performance while trimming wasted time. So the best warm-up is the minimum effective warm-up for your body and your session demands.",
+      "skills": ["sbs-strength-training", "sbs-squat", "sbs-bench", "sbs-deadlift"],
+      "topic": "minimalist warm-up strategy"
+    },
+    {
+      "question": "Are abnormal blood markers expected in natural bodybuilders, especially during overreaching blocks or contest prep (RBC/WBC/testosterone/iron, etc.)?",
+      "answer_summary": "Eric said yes—contextual abnormalities are common and often expected in trained lifters and especially in prep. He noted lifters can show elevated creatinine (muscle mass, diet, creatine use), elevated creatine kinase and related muscle-damage enzymes after hard training, and altered endocrine markers during aggressive phases. In overreaching contexts, cortisol:testosterone ratio shifts and inflammatory markers can move, while contest prep often shows low testosterone/thyroid and additional immune-related changes. He referenced physique-athlete literature showing hormonal suppression during prep with substantial recovery over following months post-show. He also noted that prep's low calories, food monotony, and heavy training can create short-term insufficiency patterns in some nutrients. Main takeaway: interpret labs through the lens of training phase, diet, and body composition status rather than isolated reference ranges alone.",
+      "skills": ["sbs-diet", "sbs-strength-training"],
+      "topic": "bodybuilding prep bloodwork"
+    }
+  ]
+}

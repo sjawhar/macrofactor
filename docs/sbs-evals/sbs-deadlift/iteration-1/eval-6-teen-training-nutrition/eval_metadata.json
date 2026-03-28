@@ -1,0 +1,12 @@
+{
+  "eval_id": 6,
+  "eval_name": "teen-training-nutrition",
+  "prompt": "What should a 15-year-old do to gain muscle and strength: exercise selection, weekly volume, reps/intensity/failure, and calories/macros?",
+  "assertions": [
+    "Recommends building around major compound movement patterns (squat, press, hinge, row or similar)",
+    "Provides a starting volume recommendation (roughly 8-12 sets per muscle per week or similar concrete range)",
+    "Addresses proximity to failure with specific guidance (e.g., 0-2 RIR, most sets near but not at failure)",
+    "Provides protein guidance (approximately 1.5-2.0 g/kg/day or equivalent range)",
+    "Mentions that beginners benefit from bodyweight/calisthenic practice for movement quality before heavy loading"
+  ]
+}

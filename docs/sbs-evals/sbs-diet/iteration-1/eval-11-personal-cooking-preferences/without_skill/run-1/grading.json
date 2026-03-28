@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer acknowledges this is a personal/fun question about cooking preferences",
+      "passed": true,
+      "evidence": "Found 'personal' in: ...d\n\n## Favorite Things\n\nWithout specific knowledge of Greg's personal cooking history, I cannot identify particular dishes he has..."
+    },
+    {
+      "text": "Answer mentions favorites like pizza, breads, biryani/chicken-and-rice, chicken shawarma",
+      "passed": false,
+      "evidence": "Missing any of: ['pizza', 'bread', 'biryani', 'shawarma', 'chicken']"
+    },
+    {
+      "text": "Answer does NOT try to give heavy technical nutrition coaching for this question",
+      "passed": true,
+      "evidence": "Found 'not' in: ...specific knowledge of Greg's personal cooking history, I cannot identify particular dishes he has prepared. To answer this..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 1,
+    "total": 3,
+    "pass_rate": 0.6667
+  }
+}

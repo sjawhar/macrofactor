@@ -1,0 +1,14 @@
+{
+  "eval_id": 43,
+  "eval_name": "eval-43-hydration-timing-and-nocturia",
+  "prompt": "Is it better to sip water all day versus chugging, and can reducing fluids before bed help me stop waking up to pee?",
+  "expected_output": "Eric said the key issue is hydration timing, not magical differences in absorption from sipping versus chugging. Chugging large amounts in a short window tends to produce rapid clear-urine losses and can leave you under-hydrated for much of the day. His practical rule was to get hydrated and stay hydrated by starting early and maintaining intake steadily. For nighttime urination, he recommended tapering fluids in the final 2-3 hours before bed if nocturia is disrupting sleep, while still avoiding going to bed dehydrated. He also suggested monitoring urine color as a simple day-to-day hydration heuristic (with caveats, since things like vitamins or beets can alter color). This frames hydration as a balance between daytime status and sleep quality.",
+  "topic": "hydration timing and nocturia",
+  "episode": 50,
+  "assertions": [
+    "Answer states hydration timing matters, not magical differences between sipping and chugging",
+    "Answer recommends starting hydration early and maintaining steadily",
+    "Answer suggests tapering fluids 2-3 hours before bed if nocturia is an issue",
+    "Answer mentions urine color as a simple day-to-day hydration heuristic"
+  ]
+}

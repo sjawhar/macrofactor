@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States that context matters more than a one-size-fits-all rest interval rule",
+      "passed": true,
+      "evidence": "Found matching content: ...solation exercises.\n\n## The Powerlifter Context Changes the Calculus\n\nFor a powerlifter..."
+    },
+    {
+      "text": "Notes that heavy compound sets (especially squats/deadlifts) may need longer recovery than isolation work",
+      "passed": true,
+      "evidence": "Found matching content: ...t does with strict 2-minute rests under heavy loads - rep quality degrades: depth get..."
+    },
+    {
+      "text": "Acknowledges that for powerlifters, performance on main lifts should come first",
+      "passed": true,
+      "evidence": "Found matching content: ...ort answer is: probably not - and for a powerlifter doing hard squat volume, long rests may..."
+    },
+    {
+      "text": "States or implies that 6-7 minutes is not automatically wrong for heavy squat sets",
+      "passed": true,
+      "evidence": "Found matching content: ...st Intervals for Squat Hypertrophy: Are 6-7 Minute Rests Leaving Gains on the Table?\n\nThe..."
+    },
+    {
+      "text": "Notes that 1-2 minute rest research does not prove all advanced squat work should be capped at 2 minutes",
+      "passed": true,
+      "evidence": "Found matching content: ...ay actually be the smarter choice. The \"short rests are best for hypertrophy\" idea has bee..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

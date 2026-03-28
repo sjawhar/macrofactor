@@ -1,0 +1,14 @@
+{
+  "eval_id": 7,
+  "eval_name": "eval-7-diabetes-and-hypertrophy",
+  "prompt": "How much do insulin resistance and type 2 diabetes reduce muscle growth, and does metformin make hypertrophy worse?",
+  "expected_output": "Greg reviewed diabetes-specific resistance training data and noted hypertrophy is clearly still possible, not 'off the table.' In one 2020 diabetes-focused synthesis, lean mass increased about 0.71 kg; a separate male non-diabetic meta-analysis showed about 1.5 kg over ~10 weeks, suggesting at most a moderate reduction rather than zero growth. He emphasized those comparisons are imperfect because diabetic cohorts were often older and used lower-volume/lower-intensity training, which can depress gains independently. On metformin, he said current evidence (including the MASTERS trial) suggests a possible small negative hypertrophy effect, potentially via AMPK/MTOR-related signaling, but the evidence base is still small. Practical takeaway: type 2 diabetes may reduce growth rate somewhat, but it does not make hypertrophy impossible.",
+  "topic": "diabetes and hypertrophy",
+  "episode": 126,
+  "assertions": [
+    "Answer states hypertrophy IS possible with type 2 diabetes, not 'off the table'",
+    "Answer mentions reduced but not zero growth rate compared to non-diabetic populations",
+    "Answer discusses metformin's possible small negative hypertrophy effect via AMPK/MTOR",
+    "Answer acknowledges confounding factors (age, training volume) in diabetic study populations"
+  ]
+}

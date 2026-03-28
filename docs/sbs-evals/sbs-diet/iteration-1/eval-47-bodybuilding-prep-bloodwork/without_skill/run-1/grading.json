@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms contextual lab abnormalities are common and expected in trained lifters and contest prep",
+      "passed": true,
+      "evidence": "Found 'common' in: ...ep\n\n## Overview\n\nYes, abnormal blood markers are relatively common in natural bodybuilders, particularly during intense traini..."
+    },
+    {
+      "text": "Answer mentions elevated creatinine from muscle mass/diet/creatine use",
+      "passed": true,
+      "evidence": "Found 'creatinine' in: ...ase\n- Returns to normal with recovery\n\n### Kidney Function (Creatinine, BUN)\n\n- **Elevated creatinine** from high protein intake a..."
+    },
+    {
+      "text": "Answer discusses hormonal suppression during prep with recovery post-show",
+      "passed": true,
+      "evidence": "Found 'suppression' in: ...ote:**\n\n- Natural athletes rarely see dramatic testosterone suppression like exogenous users\n- Levels typically remain >300 ng/dL e..."
+    },
+    {
+      "text": "Answer recommends interpreting labs through the lens of training phase and body composition status",
+      "passed": true,
+      "evidence": "Found 'training phase' in: ...common in natural bodybuilders, particularly during intense training phases and contest preparation. These changes reflect the physiol..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

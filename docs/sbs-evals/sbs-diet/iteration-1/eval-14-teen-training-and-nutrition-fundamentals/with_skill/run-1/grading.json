@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Answer recommends major compound movements (squat/press/hinge/row variants)",
+      "passed": true,
+      "evidence": "Found 'compound' in: ...able habits.\n\n---\n\n## 1. Exercise Selection\n\n### Prioritize Compound Movements\n\nFocus on multi-joint exercises that recruit larg..."
+    },
+    {
+      "text": "Answer suggests starting around 8-12 sets per muscle per week",
+      "passed": true,
+      "evidence": "Found '8' in: ...amstrings**: 12\u201316 sets/week\n- **Shoulders, arms, calves**: 8\u201312 sets/week\n- **Core**: 6\u201310 sets/week\n\nThis is moderate v..."
+    },
+    {
+      "text": "Answer recommends protein roughly 1.5-2.0 g/kg/day for a 15-year-old",
+      "passed": true,
+      "evidence": "Found '1.5' in: ..., 3g fat\n\n**Lunch** (1 PM)\n\n- 6 oz grilled chicken breast\n- 1.5 cups white rice\n- Broccoli (1 cup)\n- 1 tbsp olive oil\n- **M..."
+    },
+    {
+      "text": "Answer suggests a slow gain target around 1% body weight per month",
+      "passed": true,
+      "evidence": "Found '1%' in: ...Adjustment Triggers\n\n**If gaining too slowly** (less than 0.1% bodyweight/week):\n\n- Increase calories by 200\u2013300 kcal/day..."
+    },
+    {
+      "text": "Answer mentions building bodyweight/calisthenic competence before heavy barbell loading",
+      "passed": true,
+      "evidence": "Found 'bodyweight' in: ...intenance\n\n### Target Weight Gain Rate\n\nAim for **0.1\u20130.25% bodyweight per week**:\n\n- **150 lb teen**: 0.15\u20130.375 lbs/week (0.07\u20130..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

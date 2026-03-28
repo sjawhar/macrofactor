@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States isometrics can work but the most effective style is high-intent ballistic maximal contractions (max force as fast as possible)",
+      "passed": false,
+      "evidence": "Discusses motor unit recruitment and high intensity but does not describe the most effective style as high-intent ballistic maximal contractions. Uses 'hold' language (5-10 seconds) rather than the explosive/ballistic intent Greg emphasized."
+    },
+    {
+      "text": "Mentions strong angle specificity: gains transfer mostly to the trained joint angle, roughly 15-30 degrees in either direction",
+      "passed": true,
+      "evidence": "'Angle-Specific Adaptation: Isometric strength gains are most pronounced at the specific joint angle trained.' While it doesn't give the exact 15-30 degree range, it clearly states the angle specificity principle."
+    },
+    {
+      "text": "Provides a practical example (e.g., pulling into safety pins at a chosen deadlift height)",
+      "passed": true,
+      "evidence": "'Rack pulls: Set pins at knee height or mid-shin and pull maximally into them for 5–8 seconds.' Direct example of pulling into pins at a chosen height."
+    },
+    {
+      "text": "Notes that programming prescriptions (duration, frequency, weekly dose) are less standardized than conventional training",
+      "passed": false,
+      "evidence": "Provides specific prescriptions (5-10 second holds, 3-5 sets, 1-2x/week) as established recommendations rather than noting they are less standardized than conventional training."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

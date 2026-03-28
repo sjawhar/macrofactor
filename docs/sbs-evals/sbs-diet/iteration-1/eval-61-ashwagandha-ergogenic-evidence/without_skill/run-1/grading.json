@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states the underlying evidence base for ashwagandha is not consistent enough for strong recommendation",
+      "passed": false,
+      "evidence": "Missing any of: ['not consistent', 'not strong', 'insufficient']"
+    },
+    {
+      "text": "Answer highlights hard-to-generalize effect sizes in some studies",
+      "passed": true,
+      "evidence": "Found 'effect size' in: ...indirectly support performance\n\n## Important Caveats\n\n1. **Effect sizes are modest**: Most improvements are small to moderate, not..."
+    },
+    {
+      "text": "Answer mentions weak mechanistic coherence across studies",
+      "passed": false,
+      "evidence": "Missing any of: ['mechanism', 'mechanistic', 'coherence']"
+    },
+    {
+      "text": "Answer recommends cautious use with modest expectations if someone is interested",
+      "passed": true,
+      "evidence": "Found 'modest' in: ...nalyses examining ashwagandha supplementation have reported modest positive effects on:\n\n- **Strength gains**: Some studies sh..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

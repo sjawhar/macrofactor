@@ -1,0 +1,14 @@
+{
+  "eval_id": 42,
+  "eval_name": "eval-42-accommodating-resistance-effectiveness",
+  "prompt": "What do you think about bands and chains for building absolute strength? The logic sounds good\u2014do they actually work?",
+  "expected_output": "They explain the rationale: accommodating resistance can better match the lift\u2019s force curve by increasing load where leverage improves. A concrete example discussed is bar weight plus chain load that is lighter near the bottom and heavier near lockout. Despite plausible theory, they cite research (including meta-analytic evidence) showing little to no clear strength advantage versus conventional loading for most lifters. Their bottom line is that bands/chains can be fine as variation tools, but not a reliably superior method for maximal strength gains.",
+  "topic": "accommodating resistance effectiveness",
+  "episode": 27,
+  "assertions": [
+    "Answer captures the core SBS position on accommodating resistance effectiveness",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

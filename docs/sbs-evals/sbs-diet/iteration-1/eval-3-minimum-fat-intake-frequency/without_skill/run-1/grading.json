@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says weekly averaging for fat intake is generally fine",
+      "passed": true,
+      "evidence": "Found 'weekly' in: ...# Is It Okay to Treat Minimum Fat Intake as a Weekly Target?\n\n## Short Answer\n\nYes, treating minimum fat intake..."
+    },
+    {
+      "text": "Answer mentions covering essential fatty acids and fat-soluble vitamin absorption",
+      "passed": true,
+      "evidence": "Found 'essential fatty acid' in: ...-hour nutrient cycle. Fat-soluble vitamins (A, D, E, K) and essential fatty acids are stored and utilized over days and weeks, not just with..."
+    },
+    {
+      "text": "Answer does NOT insist on identical daily fat intake as mandatory",
+      "passed": true,
+      "evidence": "Found 'not' in: ...al fatty acids are stored and utilized over days and weeks, not just within a single day. A day with slightly lower fat int..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "States isometrics can work for strength maintenance",
+      "passed": true,
+      "evidence": "States: 'isometric training can maintain strength levels when dynamic training isn't possible.'"
+    },
+    {
+      "text": "Notes high-intent ballistic maximal contractions are most effective style",
+      "passed": false,
+      "evidence": "Recommends '60-80% of 1RM' and 20-60 second holds. Does not mention high-intent ballistic contractions; suggests longer moderate holds."
+    },
+    {
+      "text": "Explains strong angle specificity (~15-30 degrees transfer range)",
+      "passed": true,
+      "evidence": "States: 'isometric training is angle-specific' and explains the limitation per lift."
+    },
+    {
+      "text": "Provides a practical example",
+      "passed": true,
+      "evidence": "Discusses specific positions for squat, bench, and deadlift isometric holds."
+    },
+    {
+      "text": "Notes different fatigue profile due to lack of eccentric loading",
+      "passed": false,
+      "evidence": "Does not discuss the different fatigue profile or lack of eccentric loading."
+    },
+    {
+      "text": "Cautions that programming prescriptions are less standardized",
+      "passed": true,
+      "evidence": "Notes protocols are practical recommendations, discusses limitations."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 2,
+    "total": 6,
+    "pass_rate": 0.67
+  }
+}

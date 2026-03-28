@@ -1,0 +1,12 @@
+{
+  "eval_id": 22,
+  "eval_name": "medical-advice-vs-lifting-goals",
+  "prompt": "How should I respond when a doctor tells me to stop squatting because it's bad for my knees?",
+  "assertions": [
+    "Starts from or recommends empathy for the clinician's context and perspective",
+    "Notes that GPs typically prioritize reducing symptoms and preserving daily living, not maximizing athletic performance",
+    "Recommends seeking second opinions from sports medicine professionals or PTs experienced with athletes",
+    "Frames the situation as a cost-benefit decision where personal risk tolerance and priorities matter",
+    "Advises not automatically dismissing medical advice"
+  ]
+}

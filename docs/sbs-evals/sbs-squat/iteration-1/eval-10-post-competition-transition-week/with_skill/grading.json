@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States the approach is context-dependent (motivation, recovery status)",
+      "passed": true,
+      "evidence": "Found matching content: ...g Time Off\n\nHonestly, the answer is \"it depends\" - but not in a hand-wavy way. There ar..."
+    },
+    {
+      "text": "If athlete is motivated and recovered, returning quickly is fine",
+      "passed": true,
+      "evidence": "Found matching content: ...ck into your next training phase fresh, motivated, and with a clear read on what needs to..."
+    },
+    {
+      "text": "If beat up, suggests an easier first week with reduced loading (~70-80%) and volume",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "States complete time off is acceptable when needed",
+      "passed": true,
+      "evidence": "Found matching content: ...Transition: Jumping Back In vs. Taking Time Off\n\nHonestly, the answer is \"it depends\" -..."
+    },
+    {
+      "text": "Preference to keep some intensity present while pulling back volume",
+      "passed": true,
+      "evidence": "Found matching content: ...g the transition serves double duty: it keeps you moving, exposes any weak links tha..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

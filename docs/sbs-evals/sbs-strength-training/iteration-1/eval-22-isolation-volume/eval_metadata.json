@@ -1,0 +1,15 @@
+{
+  "eval_id": 22,
+  "eval_name": "eval-22-isolation-volume",
+  "prompt": "After compounds, how much isolation work is enough for areas like forearms, calves, delts, biceps, and core without overdoing it?",
+  "expected_output": "Greg said there isn\u2019t a universal cap because optimal isolation volume depends on goals, recovery capacity, and time constraints. He emphasized many muscles are only partially covered by compounds, so some targeted work is often useful. As a broad practical baseline, he suggested roughly 2-4 challenging sets once or twice per week per under-targeted muscle group for many lifters. He also cautioned that global recovery can become limiting even when local muscle stress seems modest, so outcomes and fatigue trends should guide progression. Recommendation: start conservative, monitor performance/recovery, and scale up only if adaptation justifies it.",
+  "topic": "isolation volume",
+  "episode": 126,
+  "assertions": [
+    "Answer captures the core SBS position on isolation volume",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

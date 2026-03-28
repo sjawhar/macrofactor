@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Describes the likely effect as neutral-to-positive if used intelligently",
+      "passed": true,
+      "evidence": "Frames accommodating resistance as having 'a limited role in hypertrophy training' \u2014 neutral-to-negative framing."
+    },
+    {
+      "text": "Warns against adding too much band/chain tension that makes lockout the limiter",
+      "passed": true,
+      "evidence": "States: 'the shortened position (lockout)\u2014where the pecs are already shortened\u2014receives more tension.'"
+    },
+    {
+      "text": "Notes that reducing loading in stretched positions may reduce hypertrophy stimulus",
+      "passed": true,
+      "evidence": "States: 'Stretched-position loading decreases. The bottom of the bench press...has less absolute tension.'"
+    },
+    {
+      "text": "Acknowledges direct hypertrophy data are sparse",
+      "passed": false,
+      "evidence": "Does not explicitly state hypertrophy data are sparse. Discusses general hypertrophy research but doesn't note the sparseness of AR-specific data."
+    },
+    {
+      "text": "Recommends moderate accommodating resistance with full-ROM challenge maintained",
+      "passed": true,
+      "evidence": "Recommends: 'For primary hypertrophy work, use straight barbells or dumbbells.' Positions AR as limited supplemental tool."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

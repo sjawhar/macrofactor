@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States there is no universal cap — optimal volume depends on goals, recovery, and time",
+      "passed": true,
+      "evidence": "Opening principle: 'The question isn't \"how much is optimal?\" but rather \"how much do I need to stay healthy and progress?\"' Framework varies by goal (strength vs balanced vs hypertrophy)."
+    },
+    {
+      "text": "Provides a practical baseline range (approximately 2-4 sets per muscle group, 1-2x/week or similar concrete guidance)",
+      "passed": true,
+      "evidence": "Explicitly states: '2–4 sets per muscle group per week of isolation work is sufficient for most lifters after compounds.' Muscle-by-muscle breakdown provides 2-4 set ranges."
+    },
+    {
+      "text": "Notes that global/systemic recovery can become limiting even when local muscle stress seems modest",
+      "passed": true,
+      "evidence": "'The Fatigue Budget' section notes 'Isolation work is low-fatigue relative to compounds, but it still accumulates' and provides total weekly set calculations showing how isolation adds up systemically."
+    },
+    {
+      "text": "Recommends starting conservative and scaling up based on outcomes/adaptation",
+      "passed": true,
+      "evidence": "Final section: 'Start with 2–3 sets per muscle group per week of isolation work. Add more only if:' followed by specific conditions. Also: 'If you're unsure, start low and add gradually.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

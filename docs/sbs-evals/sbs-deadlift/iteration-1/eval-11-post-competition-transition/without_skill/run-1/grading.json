@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Frames the answer as context-dependent based on athlete motivation and recovery state",
+      "passed": true,
+      "evidence": "'The best approach depends on your competition performance, accumulated fatigue, and goals.' 'When to Skip the Deload' section addresses cases where the athlete is well-rested and motivated."
+    },
+    {
+      "text": "If beat up, suggests an easier first week with reduced loading (roughly 70-80% range) and reduced volume",
+      "passed": true,
+      "evidence": "Week 1: 'Training intensity: 50-65% of your competition maxes' with 'Volume: Moderate (8-12 sets per lift, not 15-20).' Week 2: 'increase intensity to 70-75% of max.'"
+    },
+    {
+      "text": "Notes that complete time off is acceptable and one week off per year is trivial in the long run",
+      "passed": false,
+      "evidence": "Does not state that complete time off is acceptable or that one week per year is trivial. The answer assumes continued training with reduced intensity rather than acknowledging time off as a valid option."
+    },
+    {
+      "text": "General preference: keep intensity present while temporarily reducing volume",
+      "passed": true,
+      "evidence": "Recommends maintaining training frequency at reduced intensity: 'Stick to main lifts but with lighter loads.' Volume is moderate (8-12 sets) rather than the full 15-20. Some intensity preserved."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

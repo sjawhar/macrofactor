@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends keeping competition lifts in moderate strength-relevant rep ranges",
+      "passed": true,
+      "evidence": "Session A includes '2-3 sets x 3-5 reps at 85-90% 1RM' and '3-4 sets x 6-8 reps at 75-80%.'"
+    },
+    {
+      "text": "Suggests a structure with mostly 5-10 rep range work plus periodic heavier work",
+      "passed": true,
+      "evidence": "Session A is strength-hypertrophy blend; Session B is 8-12 rep hypertrophy; periodic heavy exposure maintained."
+    },
+    {
+      "text": "Mentions an over-warm single or heavy exposure to preserve neural readiness",
+      "passed": true,
+      "evidence": "Session A includes heavy 3-5 rep work. States: 'heavy 3-5 rep work maintains neural drive and maximal force production.'"
+    },
+    {
+      "text": "Core message: maintain some heavy practice while accumulating hypertrophy volume",
+      "passed": true,
+      "evidence": "Explicit: 'Technique is a force multiplier, not a substitute for muscle... use that proven pattern to build the muscle mass.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

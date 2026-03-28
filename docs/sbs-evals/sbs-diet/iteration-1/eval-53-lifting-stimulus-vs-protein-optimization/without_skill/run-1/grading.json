@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states lifting is the dominant driver of muscle protein synthesis, protein is permissive support",
+      "passed": true,
+      "evidence": "Found 'dominant' in: ...raining as the Primary Driver\n\nResistance training is the **dominant stimulus** for muscle protein synthesis. A single bout of r..."
+    },
+    {
+      "text": "Answer mentions even very reduced training volume (10-15% of normal) can help preserve muscle",
+      "passed": true,
+      "evidence": "Found '10' in: ...of resistance exercise increases MPS by approximately **50-100%** above baseline, with the effect lasting 24-48 hours pos..."
+    },
+    {
+      "text": "Answer notes protein-only interventions during immobilization are usually underwhelming",
+      "passed": true,
+      "evidence": "Found 'protein' in: ...# Protein Feeding vs. Resistance Training: Muscle Protein Synthesis I..."
+    },
+    {
+      "text": "Answer recommends keeping some safe muscle loading whenever possible, then optimizing protein on top",
+      "passed": true,
+      "evidence": "Found 'muscle' in: ...# Protein Feeding vs. Resistance Training: Muscle Protein Synthesis Impact\n\n## The Core Question\n\nHow much do..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

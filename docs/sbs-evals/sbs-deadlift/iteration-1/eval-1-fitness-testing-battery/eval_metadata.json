@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "fitness-testing-battery",
+  "prompt": "The same listener asked for a hypothetical 'SBS combine': what tests should a generally strong/fit/athletic person repeat every ~12 weeks to track progress?",
+  "assertions": [
+    "Mentions aerobic capacity testing (e.g., 2-mile run, 5K, or similar endurance event)",
+    "Mentions anaerobic or sprint testing (e.g., 400m, 800m, 40m dash, or 100m)",
+    "Mentions explosive power testing (e.g., vertical jump, broad jump, or medicine ball throws)",
+    "Mentions strength testing (e.g., squat/bench/deadlift max or rep max)",
+    "Acknowledges this full battery may be better suited to longer intervals (e.g., annual) rather than every 12 weeks"
+  ]
+}

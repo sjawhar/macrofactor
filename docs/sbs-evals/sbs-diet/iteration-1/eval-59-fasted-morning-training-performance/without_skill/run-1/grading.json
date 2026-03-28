@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer says impact depends on goal hierarchy (health vs performance)",
+      "passed": true,
+      "evidence": "Found 'goal' in: ...# Fasted Morning Training Performance and Non-Competitive Goals\n\n## The Short Answer\n\nA modest performance dip from fasted..."
+    },
+    {
+      "text": "Answer acknowledges session performance still matters for hypertrophy via mechanical tension",
+      "passed": true,
+      "evidence": "Found 'performance' in: ...# Fasted Morning Training Performance and Non-Competitive Goals\n\n## The Short Answer\n\nA modest pe..."
+    },
+    {
+      "text": "Answer recommends a small pre-workout feeding if tolerated (at least ~20g carbohydrate)",
+      "passed": false,
+      "evidence": "Missing any of: ['pre-workout', '20', 'carbohydrate']"
+    },
+    {
+      "text": "Answer suggests adapting timing/form rather than forcing a strategy that causes GI distress",
+      "passed": true,
+      "evidence": "Found 'GI' in: ...sion\n- A 5\u201310% performance reduction in one session is negligible when spread across weeks and months of training\n- The st..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

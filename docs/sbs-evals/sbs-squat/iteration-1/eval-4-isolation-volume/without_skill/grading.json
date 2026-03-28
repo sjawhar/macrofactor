@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States there is no universal cap on isolation volume (depends on individual factors)",
+      "passed": true,
+      "evidence": "Found matching content: ...g adaptation after 4-6 weeks.\n\nFinally, individualization matters a lot. Someone with natu..."
+    },
+    {
+      "text": "Mentions that optimal volume depends on goals, recovery capacity, and/or time constraints",
+      "passed": true,
+      "evidence": "Found matching content: ...y pile on so much accessory volume that recovery tanks. The short answer is: after your..."
+    },
+    {
+      "text": "Provides a concrete baseline suggestion (roughly 2-4 challenging sets per muscle group, 1-2x/week)",
+      "passed": true,
+      "evidence": "Found matching content: ...tubborn muscle groups respond well to **2-4 sets per session**, 2-3 times per week, for..."
+    },
+    {
+      "text": "Warns that global/systemic recovery can become limiting even when local muscle stress seems modest",
+      "passed": true,
+      "evidence": "Found matching content: ...ecovery capacity, sleep, nutrition, and overall training stress all influence how much..."
+    },
+    {
+      "text": "Recommends starting conservative and scaling up based on outcomes/recovery",
+      "passed": true,
+      "evidence": "Found matching content: ...und performance, you're doing too much. Start conservative (2-3 sets per muscle per session), trac..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

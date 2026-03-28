@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Acknowledges the mechanism is plausible in principle",
+      "passed": true,
+      "evidence": "Title addresses the question directly. Discusses the mechanism difference between chronic hypertrophy and acute pump."
+    },
+    {
+      "text": "Explains that fatigue from pump work typically masks or outweighs any leverage benefit",
+      "passed": true,
+      "evidence": "States: 'The metabolic state that creates a pump...is the same state that impairs strength performance.'"
+    },
+    {
+      "text": "Notes the effect would vary by muscle architecture and joint angle",
+      "passed": false,
+      "evidence": "Does not discuss variation by muscle architecture or joint angle. Focuses on general fatigue mechanism."
+    },
+    {
+      "text": "Concludes don't count on pumps as a reliable strategy for immediate strength expression",
+      "passed": true,
+      "evidence": "Concludes: 'An acute pump cannot boost strength the way chronic hypertrophy does'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

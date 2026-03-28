@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States core belt conclusions are largely unchanged",
+      "passed": true,
+      "evidence": "Found matching content: ...ons that came out of the Belt Bible era still hold: use a lever or prong belt (not a taper..."
+    },
+    {
+      "text": "Does not recommend an urgent full rewrite",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Mentions at least one mechanistic study supporting intra-abdominal pressure increasing hip extension torque",
+      "passed": true,
+      "evidence": "Found matching content: ...om the Belt Bible - that belts increase intra-abdominal pressure (IAP), allow heavier loads, and are mos..."
+    },
+    {
+      "text": "Concludes belts still make sense for many lifters",
+      "passed": true,
+      "evidence": "Found matching content: ...conclusions from the Belt Bible - that belts increase intra-abdominal pressure (IAP)..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

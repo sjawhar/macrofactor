@@ -1,0 +1,15 @@
+{
+  "eval_id": 46,
+  "eval_name": "eval-46-machines-vs-free-weights",
+  "prompt": "For hypertrophy, are machines better than free weights, and which one lets you do more useful volume and make better gains?",
+  "expected_output": "Eric's answer was that neither modality is universally superior for hypertrophy. He emphasized that machines can be very useful for adding variation, reducing some technical constraints, and accumulating targeted volume. He still favored keeping a base of compound free-weight work when skill and injury status allow, while using machines to complement that base. Both hosts stressed specificity: if performance in a lift matters, include that lift; if the goal is hypertrophy, a mixed approach is usually strong. Net recommendation: use both, and pick the tool that best fits the muscle, movement, and fatigue profile.",
+  "topic": "machines vs free weights",
+  "episode": 29,
+  "assertions": [
+    "Answer captures the core SBS position on machines vs free weights",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

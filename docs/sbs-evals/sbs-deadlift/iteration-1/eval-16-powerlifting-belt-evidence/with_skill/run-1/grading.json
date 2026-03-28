@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "States core belt conclusions are largely unchanged and a full rewrite is not urgently needed",
+      "passed": true,
+      "evidence": "'The Belt Bible's core conclusions hold up well for deadlifts. The mechanistic understanding remains sound, and the practical recommendations haven't fundamentally shifted.'"
+    },
+    {
+      "text": "Mentions at least one mechanism: higher intra-abdominal pressure can increase hip extension torque",
+      "passed": true,
+      "evidence": "'Elevated IAP does two critical things: 1. Stiffens the spine against compressive and shear forces. 2. Generates passive hip extension torque — the belt gives your trunk something to push against, allowing you to produce more force through the hips.'"
+    },
+    {
+      "text": "Concludes belts still make sense for many lifters and old guidance is mostly intact",
+      "passed": true,
+      "evidence": "'The practical recommendations from the Belt Bible remain solid.' Lists unchanged guidance: belts don't weaken core, use for heavy sets, train some beltless, belt fit matters."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

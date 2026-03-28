@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states maintenance phases are NOT physiologically required between bulk and cut",
+      "passed": true,
+      "evidence": "Found 'not' in: ...body composition change is the caloric surplus or deficit, not the presence of a maintenance phase.\n\n**Advantages of direc...; Found 'not' in: ...body composition change is the caloric surplus or deficit, not the presence of a maintenance phase.\n\n**Advantages of direc..."
+    },
+    {
+      "text": "Answer frames maintenance as optional/preference-based rather than biologically mandatory",
+      "passed": true,
+      "evidence": "Found 'optional' in: ...es if needed.\n\n## The Bottom Line\n\n**Maintenance phases are optional, not mandatory.** The decision depends on:\n\n- **Your goals:..."
+    },
+    {
+      "text": "Answer acknowledges practical benefits of maintenance (adherence, comfort, scale stability)",
+      "passed": true,
+      "evidence": "Found 'adherence' in: ...y improve energy, mood, and training performance.\n\n### 3. **Adherence and Sustainability**\n\nMaintenance phases provide psychologi..."
+    },
+    {
+      "text": "Answer does NOT claim maintenance is always necessary or always recommended",
+      "passed": true,
+      "evidence": "Found 'not' in: ...body composition change is the caloric surplus or deficit, not the presence of a maintenance phase.\n\n**Advantages of direc..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

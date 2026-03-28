@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer confirms cortisol is real and can influence body composition in extreme chronic elevations",
+      "passed": true,
+      "evidence": "Found 'real' in: ...age: Evidence vs. Myth\n\n## The Short Answer\n\nThere **is** a real physiological link between cortisol and fat storage, but it..."
+    },
+    {
+      "text": "Answer mentions Cushing's syndrome as an example of pathological cortisol-driven fat patterns",
+      "passed": true,
+      "evidence": "Found 'Cushing' in: ...e and exercise\n\n**Real-World Observations:**\n\n- People with Cushing's syndrome (extreme cortisol excess) do develop central obe..."
+    },
+    {
+      "text": "Answer states common fitness-level cortisol fluctuations are usually overinterpreted",
+      "passed": false,
+      "evidence": "Missing any of: ['overinterpreted', 'common', 'fitness']"
+    },
+    {
+      "text": "Answer distinguishes clinical extremes from normal daily stress/training variability",
+      "passed": true,
+      "evidence": "Found 'extreme' in: ...al-World Observations:**\n\n- People with Cushing's syndrome (extreme cortisol excess) do develop central obesity and metabolic d..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

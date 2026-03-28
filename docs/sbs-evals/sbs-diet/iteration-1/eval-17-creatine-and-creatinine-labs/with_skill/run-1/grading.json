@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer identifies elevated creatinine (not creatine) as the likely lab marker",
+      "passed": true,
+      "evidence": "Found 'creatinine' in: ...# Elevated Creatinine in Creatine Users: Should You Be Concerned?\n\n## Short Answe..."
+    },
+    {
+      "text": "Answer explains creatine supplementation commonly raises creatinine since it's a breakdown product",
+      "passed": true,
+      "evidence": "Found 'product' in: ...This is normal metabolism.\n\n**Key fact:** Creatinine is a byproduct of creatine metabolism, not a marker of kidney damage itsel..."
+    },
+    {
+      "text": "Answer recommends discussing context with physician and requesting follow-up kidney function tests",
+      "passed": true,
+      "evidence": "Found 'doctor' in: ...ne user is not inherently a sign of kidney damage, but your doctor's recommendation to stop deserves respect.** Here's why:\n\n-..."
+    },
+    {
+      "text": "Answer does NOT recommend simply stopping creatine based on creatinine alone",
+      "passed": true,
+      "evidence": "Found 'not' in: ...# Short Answer\n\n**Elevated creatinine in a creatine user is not inherently a sign of kidney damage, but your doctor's recom..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

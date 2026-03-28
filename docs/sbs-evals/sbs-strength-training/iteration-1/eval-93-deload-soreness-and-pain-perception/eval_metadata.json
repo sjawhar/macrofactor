@@ -1,0 +1,14 @@
+{
+  "eval_id": 93,
+  "eval_name": "eval-93-deload-soreness-and-pain-perception",
+  "prompt": "Why do I sometimes ache more during a deload week than during hard training weeks?",
+  "expected_output": "Eric said there is not solid direct human evidence here, so explanations are tentative rather than definitive. One possibility is that hard training acutely elevates sympathetic output/catecholamines (adrenaline-related) that can transiently blunt pain perception. Another is that general movement itself has an analgesic effect, so when total activity drops during deloads, discomfort can feel more noticeable. A third possibility is attentional: during hard training you are focused on performance, while during deloads you may notice background aches more. His bottom line was that several mechanisms are plausible, none are proven, and high-confidence single-cause explanations are overstated.",
+  "topic": "deload soreness and pain perception",
+  "episode": 73,
+  "assertions": [
+    "Answer captures the core SBS position on deload soreness and pain perception",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

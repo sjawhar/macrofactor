@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states the direct strength/hypertrophy penalty from imperfect food quality is probably small if basics are met",
+      "passed": false,
+      "evidence": "Missing any of: ['small', 'penalty', 'probably']"
+    },
+    {
+      "text": "Answer notes many concerns are about missing beneficial foods, not the mere presence of fun foods",
+      "passed": true,
+      "evidence": "Found 'nutrient' in: ...becomes relevant in these specific contexts:\n\n### 1. **Micronutrient Sufficiency**\n\n- Highly processed, hyperpalatable foods oft..."
+    },
+    {
+      "text": "Answer recommends securing essentials (energy, protein, micronutrient adequacy) first",
+      "passed": true,
+      "evidence": "Found 'energy' in: ...rs of hypertrophy and strength are:\n\n1. **Total calories** (energy availability)\n2. **Protein intake** (muscle protein synthes..."
+    },
+    {
+      "text": "Answer frames food-quality upgrades as context-dependent health and performance lever",
+      "passed": true,
+      "evidence": "Found 'context' in: ...ly Matters\n\nFood quality becomes relevant in these specific contexts:\n\n### 1. **Micronutrient Sufficiency**\n\n- Highly processed..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

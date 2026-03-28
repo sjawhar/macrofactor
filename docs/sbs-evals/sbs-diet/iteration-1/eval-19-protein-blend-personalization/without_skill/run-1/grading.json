@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer describes most personalization claims as low-impact for typical lifters",
+      "passed": true,
+      "evidence": "Found 'not' in: ...s, but the marketing often overstates their impact. They're not a scam, but they're also not a magic solution\u2014and yes, pers..."
+    },
+    {
+      "text": "Answer states standard whey or a basic blend is already effective and practical",
+      "passed": true,
+      "evidence": "Found 'standard' in: ...*: The difference is measurable but modest. A well-designed standard blend is often 90% as effective as a \"personalized\" one.\n\n#..."
+    },
+    {
+      "text": "Answer mentions personalized blends may matter for specific constraints (vegan, lactose intolerance)",
+      "passed": true,
+      "evidence": "Found 'lactose' in: ...e people digest certain protein sources better than others (lactose sensitivity, plant protein bloating, etc.).\n- A personalize..."
+    },
+    {
+      "text": "Answer recommends against overcomplicating protein powder selection",
+      "passed": true,
+      "evidence": "Found 'not' in: ...s, but the marketing often overstates their impact. They're not a scam, but they're also not a magic solution\u2014and yes, pers..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

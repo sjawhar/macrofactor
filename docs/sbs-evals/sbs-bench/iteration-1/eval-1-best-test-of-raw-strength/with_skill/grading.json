@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States that bench press is NOT the best measure of overall raw/physical strength",
+      "passed": true,
+      "evidence": "Opening states: 'No. The bench press is a sport-specific measure of upper-body pressing strength, not a comprehensive test of raw physical strength.'"
+    },
+    {
+      "text": "Mentions odd-object lifting or strongman-style activities as a better test",
+      "passed": false,
+      "evidence": "Does not mention odd-object lifting, Husafell stone, or strongman activities. Instead recommends deadlift and multi-lift totals."
+    },
+    {
+      "text": "Explains that odd objects are harder to game with technique compared to standardized barbell lifts",
+      "passed": false,
+      "evidence": "No mention of odd objects or the technique-gaming argument. Does discuss technique dependency of bench press but in the context of barbell lifts."
+    },
+    {
+      "text": "Acknowledges bench press is useful for upper-body strength tracking specifically",
+      "passed": true,
+      "evidence": "States: 'The bench press is excellent for: Measuring upper-body horizontal pressing strength in a standardized, repeatable way.'"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

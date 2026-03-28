@@ -1,0 +1,14 @@
+{
+  "eval_id": 58,
+  "eval_name": "eval-58-very-low-body-fat-and-training-outcomes",
+  "prompt": "How does very low body fat affect strength and hypertrophy progress, and how can someone know if they\u2019re too lean given poor body-fat measurement tools?",
+  "expected_output": "They said very low body fat generally makes both performance and hypertrophy progress much harder due to reduced energy availability and impaired recovery. Eric described practical signs during contest-level leanness: worse training quality, slower recovery, colder body temperature, higher hunger, and broad 'system slowdown' effects. He also noted that in their p-ratio review, substantial lean-mass gains were uncommon below roughly 8% body fat in men. For monitoring, they advised against over-relying on imperfect body-fat devices and instead emphasized symptom-based and performance-based feedback. In other words, individual functional signs of low energy availability are more actionable than chasing one exact body-fat number.",
+  "topic": "very low body fat and training outcomes",
+  "episode": 58,
+  "assertions": [
+    "Answer states very low body fat makes performance and hypertrophy progress much harder",
+    "Answer mentions practical signs: worse training quality, slower recovery, higher hunger, system slowdown",
+    "Answer notes lean-mass gains are uncommon below roughly 8% body fat in men",
+    "Answer recommends symptom-based and performance-based monitoring over chasing exact body-fat numbers"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "eval_id": 13,
+  "eval_name": "eval-13-exercise-optimization-claims",
+  "prompt": "A listener asked about the trend of \u2018optimizing\u2019 exercises based on anatomy and whether these highly specific modifications are actually better.",
+  "expected_output": "Greg said the basic concept is reasonable as hypothesis-generation, but criticized overconfident claims that tiny tweaks are universally superior. He noted there is often little or no longitudinal hypertrophy evidence for many of these specific comparisons, and warned that absolutist messaging can create anxiety/nocebo effects for people without specialized equipment. Eric agreed that anatomy should guide training in broad categories first, then individualization should come from practical feedback (comfort, soreness pattern, pump, and performance over time). Both emphasized meaningful inter-individual differences, so one \u2018optimal\u2019 setup is unlikely to generalize perfectly to everyone. Their practical recommendation was to use evidence-informed defaults, then personalize based on outcomes and tolerability.",
+  "topic": "exercise optimization claims",
+  "episode": 106,
+  "assertions": [
+    "Answer captures the core SBS position on exercise optimization claims",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

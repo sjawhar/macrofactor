@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states evidence-based training does NOT mean overcomplicated or joyless training",
+      "passed": true,
+      "evidence": "Found 'not' in: ...Starting with bro splits, dreamer bulks, and ego lifting is not justified by any evidence-based argument about useful adapt..."
+    },
+    {
+      "text": "Answer acknowledges bro splits can still work well",
+      "passed": true,
+      "evidence": "Found 'bro split' in: ...ng Less Evidence-Based\n\n**Short answer:** No. Starting with bro splits, dreamer bulks, and ego lifting is not justified by any ev..."
+    },
+    {
+      "text": "Answer says aggressive eating phases can help some lifters stop under-eating",
+      "passed": false,
+      "evidence": "Missing any of: ['under-eating', 'unlock', 'afraid']"
+    },
+    {
+      "text": "Answer pushes back on the idea that beginner gains are only tied to a short timeline",
+      "passed": true,
+      "evidence": "Found 'beginner' in: ...ay, leg day) are not inherently worse than other splits for beginners. What matters is:\n\n- Adequate volume per muscle group per..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

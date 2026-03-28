@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Describes the likely effect as neutral-to-positive if used intelligently",
+      "passed": true,
+      "evidence": "States it's a 'useful supplementary tool' but less efficient than conventional loading."
+    },
+    {
+      "text": "Warns against adding too much band/chain tension that makes lockout the limiter",
+      "passed": true,
+      "evidence": "Notes increased lockout load while reduced bottom load."
+    },
+    {
+      "text": "Notes that reducing loading in stretched positions may reduce hypertrophy stimulus",
+      "passed": true,
+      "evidence": "States: 'stretched position contributes disproportionately to muscle damage and growth signaling.'"
+    },
+    {
+      "text": "Acknowledges direct hypertrophy data are sparse",
+      "passed": false,
+      "evidence": "Does not explicitly note sparseness of direct AR hypertrophy data."
+    },
+    {
+      "text": "Recommends moderate accommodating resistance with full-ROM challenge maintained",
+      "passed": true,
+      "evidence": "States: 'maintaining full, controlled range of motion' is key."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

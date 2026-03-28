@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Starts from or recommends empathy for the clinician's context and perspective",
+      "passed": true,
+      "evidence": "Found matching content: ...ry broad recommendation, and it's worth understanding _why_ they said it before deciding h..."
+    },
+    {
+      "text": "Notes that GPs typically prioritize reducing symptoms and preserving daily living, not maximizing athletic performance",
+      "passed": true,
+      "evidence": "Found matching content: ...dic specialist who works with athletes. General practitioners are excellent at many things, but they..."
+    },
+    {
+      "text": "Recommends seeking second opinions from sports medicine professionals or PTs experienced with athletes",
+      "passed": true,
+      "evidence": "Found matching content: ...onsider seeking a second opinion from a sports medicine physician or an orthopedic specialist w..."
+    },
+    {
+      "text": "Frames the situation as a cost-benefit decision where personal risk tolerance and priorities matter",
+      "passed": true,
+      "evidence": "Found matching content: ...your technique, your pain patterns, and your goals - and to give you a more tailored recom..."
+    },
+    {
+      "text": "Advises not automatically dismissing medical advice",
+      "passed": true,
+      "evidence": "Found matching content: ...your athletic goals.\n\nThe bottom line: don't dismiss your doctor's concern, but don't treat..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

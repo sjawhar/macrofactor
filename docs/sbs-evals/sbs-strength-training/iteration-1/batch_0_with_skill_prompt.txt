@@ -1,0 +1,74 @@
+TASK: Answer 15 listener questions about strength training and fitness, using the SBS strength training skill for guidance.
+
+EXPECTED OUTCOME: 15 individual answer.md files, each 200-500 words, evidence-based and practical, drawing on the skill content.
+
+REQUIRED TOOLS: Read, Write
+
+MUST DO:
+1. FIRST: Read the SKILL.md at /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/SKILL.md — read it completely
+2. THEN: Read ALL 5 reference files in /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/ — read each one completely:
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/01-progressive-overload-and-phase-progression.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/02-volume-landmarks-and-weekly-set-targets.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/03-frequency-splits-and-weekly-structure.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/04-intensity-reps-and-exercise-selection.md
+   - /home/sami/Code/macrofactor/.opencode/skills/sbs-strength-training/references/05-fatigue-deloads-and-level-specific-decisions.md
+3. For each question below, write a thorough answer (200-500 words) to the specified file path
+4. When a question is directly relevant to the skill content, draw on specific recommendations, numbers, and frameworks from the skill
+5. When a question is outside the skill's scope (e.g., supplements, lifestyle), still answer using general evidence-based knowledge
+6. Be nuanced — include caveats, individual variability, and practical recommendations
+7. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT answer from memory/training data alone for topics the skill covers — USE the skill content
+- Do NOT give generic/vague answers — be specific with numbers and mechanisms
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions from the Stronger By Science podcast. The SBS skill encodes evidence-based strength training knowledge from Greg Nuckols' guides. Your answers should reflect the SBS approach: evidence-based, nuanced, practical, with appropriate caveats.
+
+QUESTIONS:
+1. Question: "If I’m just a casual lifter cutting body fat, how hard do I really need to fight to preserve every bit of muscle?"
+   Topic: muscle retention during cutting
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-1-muscle-retention-during-cutting/with_skill/outputs/answer.md
+2. Question: "How should I think about NSAID use (like ibuprofen) around training, especially if I’m younger versus older?"
+   Topic: NSAIDs and hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-2-nsaids-and-hypertrophy/with_skill/outputs/answer.md
+3. Question: "Are lateral raises alone enough to build side delts, or do I need overhead pressing/upright rows too?"
+   Topic: side delt exercise selection
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-3-side-delt-exercise-selection/with_skill/outputs/answer.md
+4. Question: "Is ashwagandha actually useful for strength and muscle gain, or is it overhyped?"
+   Topic: ashwagandha for strength and hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-4-ashwagandha-for-strength-and-hypertrophy/with_skill/outputs/answer.md
+5. Question: "Is the bench press the best measure of raw physical strength? If not, what is?"
+   Topic: best test of raw strength
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-5-best-test-of-raw-strength/with_skill/outputs/answer.md
+6. Question: "Do you plan to compete again (powerlifting, bodybuilding, marathon, etc.), and how are you approaching that right now?"
+   Topic: future competition planning
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-6-future-competition-planning/with_skill/outputs/answer.md
+7. Question: "Does listening to music actually improve training performance, and what kind of music works best?"
+   Topic: music and performance
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-7-music-and-performance/with_skill/outputs/answer.md
+8. Question: "How might TRT change nutrition and training recommendations for someone focused on physique progress?"
+   Topic: TRT and programming implications
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-8-trt-and-programming-implications/with_skill/outputs/answer.md
+9. Question: "Have you considered writing a book or long-form resource on stats, methods, and research interpretation?"
+   Topic: science communication project scope
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-9-science-communication-project-scope/with_skill/outputs/answer.md
+10. Question: "What bad or outdated advice do fitness experts still spread, and is that problem getting better or worse?"
+   Topic: fitness misinformation trends
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-10-fitness-misinformation-trends/with_skill/outputs/answer.md
+11. Question: "A listener asked: if someone wants to get bigger and stronger for general health/recreation (not powerlifting or bodybuilding competition), what specific core exercises should they prioritize?"
+   Topic: general-purpose exercise selection
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-11-general-purpose-exercise-selection/with_skill/outputs/answer.md
+12. Question: "The same listener asked for a hypothetical ‘SBS combine’: what tests should a generally strong/fit/athletic person repeat every ~12 weeks to track progress?"
+   Topic: fitness testing battery
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-12-fitness-testing-battery/with_skill/outputs/answer.md
+13. Question: "A listener asked about the trend of ‘optimizing’ exercises based on anatomy and whether these highly specific modifications are actually better."
+   Topic: exercise optimization claims
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-13-exercise-optimization-claims/with_skill/outputs/answer.md
+14. Question: "A listener asked whether using a low incline instead of flat bench might improve hypertrophy, especially considering arching/retraction and shoulder comfort."
+   Topic: low incline vs flat bench hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-14-low-incline-vs-flat-bench-hypertrophy/with_skill/outputs/answer.md
+15. Question: "A listener asked whether deadlifting on a garage platform with about a 5% incline could meaningfully hurt performance compared to deadlifting on a flat gym floor."
+   Topic: deadlift on sloped platform
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-15-deadlift-on-sloped-platform/with_skill/outputs/answer.md

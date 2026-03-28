@@ -1,0 +1,15 @@
+{
+  "eval_id": 31,
+  "eval_name": "eval-31-rest-intervals-for-strength-and-hypertrophy",
+  "prompt": "As my lifts get stronger, my rest periods keep getting longer. What causes that, and what does the literature say about rest intervals for hypertrophy vs strength?",
+  "expected_output": "Greg explained that heavier loads increase total work and oxygen/anaerobic cost per set, so stronger lifters naturally need longer recovery between sets. He used examples showing a very heavy set of 10 squats can create enormous fatigue, making short rests unrealistic for maintaining performance. On research, he said hypertrophy findings are mixed: some studies favor longer rests, some shorter, and some show no difference. For strength development, he leaned clearly toward longer rests, especially for strong lifters on compound lifts. His practical guidance was roughly 90 seconds to 2 minutes minimum for upper-body/single-joint work, around 3 minutes commonly, and about 5 minutes (or more) for heavy lower-body compounds. They also suggested non-interfering supersets to save time without sacrificing key lift performance.",
+  "topic": "rest intervals for strength and hypertrophy",
+  "episode": 25,
+  "assertions": [
+    "Answer captures the core SBS position on rest intervals for strength and hypertrophy",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer includes actionable practical recommendations consistent with the hosts' advice",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

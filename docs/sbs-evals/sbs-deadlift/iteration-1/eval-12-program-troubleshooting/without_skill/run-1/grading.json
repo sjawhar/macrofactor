@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Advises against changing things while progress is still occurring",
+      "passed": true,
+      "evidence": "'When you have a program that's working reasonably well, the instinct to switch is often premature.' 'Don't switch because of vague dissatisfaction.' 'Most programs work for 6-12 months if you tweak them intelligently.'"
+    },
+    {
+      "text": "When plateau appears, recommends deciding whether the lift needs more stress or less stress",
+      "passed": true,
+      "evidence": "Section 3 covers both adding stimulus (add sets, increase frequency, add supplemental exercises) and reducing stress (reduce intensity temporarily, add rest days, deload strategically)."
+    },
+    {
+      "text": "Recommends small, targeted changes (volume, intensity, frequency, or exercise selection) evaluated individually over weeks",
+      "passed": true,
+      "evidence": "'Make one or two changes at a time, not five. Give each tweak 3-4 weeks to show results.' Covers volume, exercise selection, intensity, frequency, and progression as individual levers."
+    },
+    {
+      "text": "Only switch programs entirely after serial targeted tweaks have failed",
+      "passed": true,
+      "evidence": "'Switch programs only if: You've made 2-3 targeted tweaks over 8-12 weeks with no progress.' Multiple other conditions listed, all requiring exhausting tweaks first."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

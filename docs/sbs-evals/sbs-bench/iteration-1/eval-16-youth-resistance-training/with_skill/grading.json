@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States current evidence does not show lifting stunts growth",
+      "passed": true,
+      "evidence": "States: 'Growth plates are NOT uniquely vulnerable to resistance training' with research citations."
+    },
+    {
+      "text": "Notes typical training loads are less concerning for growth plates than everyday running/jumping",
+      "passed": true,
+      "evidence": "States real risks are 'acute high-impact trauma' and 'repetitive overuse in sport-specific patterns.'"
+    },
+    {
+      "text": "Emphasizes close supervision and strict technique",
+      "passed": true,
+      "evidence": "Supervision mentioned throughout; progression model based on maturity and skill."
+    },
+    {
+      "text": "Before/during early puberty: prioritize movement skill development over maximal loading",
+      "passed": true,
+      "evidence": "Ages 6-8: 'Movement quality, body awareness, fun' with bodyweight and light resistance."
+    },
+    {
+      "text": "As puberty progresses, training stress can be scaled up",
+      "passed": true,
+      "evidence": "Age progression model from bodyweight to moderate loads to barbell training."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 45,
+  "eval_name": "eval-45-cortisol-and-fat-storage",
+  "prompt": "Is there really an evidence-based link between cortisol and fat storage (especially belly fat), or is that mostly internet myth?",
+  "expected_output": "Eric said cortisol is a real and important hormone, and in extreme chronic elevations it can strongly influence body composition (for example Cushing's syndrome patterns like central adiposity with relatively thinner extremities). He explained cortisol can be catabolic in many tissues and has context-dependent effects on fat metabolism, so the mechanism is plausible and real. However, he stressed that common fitness-level fluctuations from normal daily stress or hard training are usually overinterpreted. Most acute within-range changes do not require direct intervention. The practical mistake is treating normal cortisol variability like a pathology. So the relationship exists, but cortisol-belly-fat claims are often oversimplified outside clinical extremes.",
+  "topic": "cortisol and fat storage",
+  "episode": 50,
+  "assertions": [
+    "Answer confirms cortisol is real and can influence body composition in extreme chronic elevations",
+    "Answer mentions Cushing's syndrome as an example of pathological cortisol-driven fat patterns",
+    "Answer states common fitness-level cortisol fluctuations are usually overinterpreted",
+    "Answer distinguishes clinical extremes from normal daily stress/training variability"
+  ]
+}

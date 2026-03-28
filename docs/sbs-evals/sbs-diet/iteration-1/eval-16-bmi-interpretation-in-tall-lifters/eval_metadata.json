@@ -1,0 +1,14 @@
+{
+  "eval_id": 16,
+  "eval_name": "eval-16-bmi-interpretation-in-tall-lifters",
+  "prompt": "At 6'7\" and 250 lb, BMI puts me near overweight. Is BMI biased for very tall people?",
+  "expected_output": "Greg said yes: BMI can misclassify very tall people because the traditional formula uses height squared, which is an imperfect scaling exponent. He noted this was a historical simplification from the 1800s and suggested scaling closer to height^2.5 is often more appropriate. Using the asker's approximate stats (2.0 m and 115 kg), standard BMI gives about 28.75, but with a 2.5 exponent it drops near 20.3. That illustrates how extreme height can distort interpretation. He also noted similar edge-case distortion can happen on the very short end.",
+  "topic": "BMI interpretation in tall lifters",
+  "episode": 25,
+  "assertions": [
+    "Answer says yes, BMI can misclassify very tall people",
+    "Answer explains the traditional formula uses height squared which is an imperfect scaling exponent",
+    "Answer mentions height^2.5 as a more appropriate scaling alternative",
+    "Answer provides a concrete example showing how extreme height distorts BMI interpretation"
+  ]
+}

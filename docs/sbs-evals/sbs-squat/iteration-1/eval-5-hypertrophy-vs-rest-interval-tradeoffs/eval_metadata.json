@@ -1,0 +1,12 @@
+{
+  "eval_id": 5,
+  "eval_name": "hypertrophy-vs-rest-interval-tradeoffs",
+  "prompt": "For hypertrophy, are very short rests best even for powerlifters doing hard squat volume? If someone rests 6-7 minutes between squat sets, are they leaving gains on the table versus strict 2-minute rests?",
+  "assertions": [
+    "States that context matters more than a one-size-fits-all rest interval rule",
+    "Notes that heavy compound sets (especially squats/deadlifts) may need longer recovery than isolation work",
+    "Acknowledges that for powerlifters, performance on main lifts should come first",
+    "States or implies that 6-7 minutes is not automatically wrong for heavy squat sets",
+    "Notes that 1-2 minute rest research does not prove all advanced squat work should be capped at 2 minutes"
+  ]
+}

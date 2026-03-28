@@ -1,0 +1,14 @@
+{
+  "eval_id": 55,
+  "eval_name": "eval-55-training-with-chronic-sleep-disruption",
+  "prompt": "If my sleep schedule is sporadic, what should I do for body composition, recovery, and training? Are naps useful, and should I ever train sleep deprived?",
+  "expected_output": "They said poor sleep often worsens body composition via appetite/self-control effects, so controlling food environment becomes extra important when sleep deprived. For training, they advised keeping resistance training in place but biasing toward safer options (machines, dumbbells, controlled bodybuilding-style work) when motor control is compromised. They cautioned against high-risk sessions like max free-weight attempts or hard heat-exposed conditioning when severely sleep deprived. On naps, they said short naps around 20-30 minutes are often useful, while some people tolerate longer ~90-minute naps if nighttime sleep is not disrupted. Overall guidance: keep training, prioritize safety, and manage sleep-driven behavior drift rather than abandoning training.",
+  "topic": "training with chronic sleep disruption",
+  "episode": 58,
+  "assertions": [
+    "Answer recommends controlling food environment when sleep deprived due to appetite effects",
+    "Answer suggests biasing toward safer training options (machines, controlled movements) when fatigued",
+    "Answer mentions short naps of 20-30 minutes as useful",
+    "Answer advises keeping resistance training in place but with safety adjustments"
+  ]
+}

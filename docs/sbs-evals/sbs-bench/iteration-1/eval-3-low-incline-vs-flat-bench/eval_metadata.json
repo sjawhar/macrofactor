@@ -1,0 +1,12 @@
+{
+  "eval_id": 3,
+  "eval_name": "low-incline-vs-flat-bench",
+  "prompt": "A listener asked whether using a low incline instead of flat bench might improve hypertrophy, especially considering arching/retraction and shoulder comfort.",
+  "assertions": [
+    "Notes that safety claims about one setup being clearly safer are not strongly established",
+    "Identifies longer range of motion as a plausible mechanism for low incline advantage",
+    "Mentions that low incline changes the touch point upward, which can increase pec/triceps excursion",
+    "Provides practical takeaway: use pressing angle(s) that allow training hard through good ROM with manageable discomfort",
+    "Acknowledges low incline may be modestly better but with limited certainty"
+  ]
+}

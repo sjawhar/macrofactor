@@ -1,0 +1,14 @@
+{
+  "eval_id": 39,
+  "eval_name": "eval-39-theanine-with-caffeine",
+  "prompt": "How should I use L-theanine with caffeine?",
+  "expected_output": "Eric framed L-theanine as useful for reducing caffeine jitters/anxiety without strong sedative effects. He suggested a common practical range of about 100-200 mg with caffeine. Individual response still matters, and some people may subjectively feel too relaxed or sleepy. The recommendation was to test tolerance and keep it as an optional complement rather than a mandatory stack.",
+  "topic": "theanine with caffeine",
+  "episode": 46,
+  "assertions": [
+    "Answer frames L-theanine as useful for reducing caffeine jitters/anxiety",
+    "Answer suggests a common range of about 100-200 mg with caffeine",
+    "Answer notes individual response varies",
+    "Answer recommends it as an optional complement rather than mandatory"
+  ]
+}

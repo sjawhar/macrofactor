@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "States isometrics can work but the most effective style is high-intent ballistic maximal contractions (max force as fast as possible)",
+      "passed": false,
+      "evidence": "Discusses isometrics as maintenance tools with 'high-tension holds' but does not specifically describe the most effective style as high-intent ballistic maximal contractions (trying to hit max force as fast as possible). Greg specifically emphasized this distinction."
+    },
+    {
+      "text": "Mentions strong angle specificity: gains transfer mostly to the trained joint angle, roughly 15-30 degrees in either direction",
+      "passed": true,
+      "evidence": "'Angle-specific adaptation: Isometric strength gains are strongest within ~15° of the training angle.' Matches the expected ~15-30 degree transfer range."
+    },
+    {
+      "text": "Provides a practical example (e.g., pulling into safety pins at a chosen deadlift height)",
+      "passed": true,
+      "evidence": "Deadlift section: 'Can be performed with a barbell in a rack, against pins.' Mentions 'Off-floor position (1–2 inches)' and 'Mid-shin (mid-range)' as specific positions for pin work."
+    },
+    {
+      "text": "Notes that programming prescriptions (duration, frequency, weekly dose) are less standardized than conventional training",
+      "passed": false,
+      "evidence": "Actually provides specific programming as if well-established: '20–60 seconds at high tension, 3–5 sets per session, 2–3x per week.' Does not note that these prescriptions are less standardized than conventional training, which is what Greg emphasized."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

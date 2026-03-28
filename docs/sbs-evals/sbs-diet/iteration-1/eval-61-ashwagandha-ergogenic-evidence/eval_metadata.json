@@ -1,0 +1,14 @@
+{
+  "eval_id": 61,
+  "eval_name": "eval-61-ashwagandha-ergogenic-evidence",
+  "prompt": "What do you think about ashwagandha for performance and strength? A meta-analysis says it helps.",
+  "expected_output": "Greg said the meta-analysis itself looked competently done, but he does not think the underlying evidence base is consistent enough to strongly recommend ashwagandha as an ergogenic aid. He highlighted very large, hard-to-generalize effect sizes in some studies (for example, an ~8-week trial reporting about +46 kg bench gain in the ashwagandha group, with very large placebo gains too), which suggests high noise and limited external validity rather than a reliable expected effect. He also noted weak mechanistic coherence across studies. His practical recommendation was cautious: if someone is very interested, uses a reputable product, and stays within labeled dosing, trying it is reasonable, but expectations should be modest. He does not view current evidence as strong enough for confident performance claims.",
+  "topic": "ashwagandha ergogenic evidence",
+  "episode": 73,
+  "assertions": [
+    "Answer states the underlying evidence base for ashwagandha is not consistent enough for strong recommendation",
+    "Answer highlights hard-to-generalize effect sizes in some studies",
+    "Answer mentions weak mechanistic coherence across studies",
+    "Answer recommends cautious use with modest expectations if someone is interested"
+  ]
+}

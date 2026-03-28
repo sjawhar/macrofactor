@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "Answer states drinking speed of protein shakes is not a key lever in mixed-meal contexts",
+      "passed": true,
+      "evidence": "Found 'not' in: ...pe and amount\n- Stomach emptying is the rate-limiting step, not how fast you drink\n- Your digestive system processes the sh..."
+    },
+    {
+      "text": "Answer mentions fiber, fat, meal composition affect amino acid appearance more than sip speed",
+      "passed": true,
+      "evidence": "Found 'meal' in: ...tters is total daily protein intake and distribution across meals\n- A single shake's consumption speed doesn't meaningfully..."
+    },
+    {
+      "text": "Answer recommends focusing on daily distribution of roughly 3-5 protein feedings",
+      "passed": true,
+      "evidence": "Found '3' in: ...otein Digestion is Slow Anyway\n\n- Protein digestion takes 1-3+ hours depending on the type and amount\n- Stomach emptying..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  }
+}

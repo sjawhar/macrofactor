@@ -1,0 +1,12 @@
+{
+  "eval_id": 17,
+  "eval_name": "isometric-strength-training",
+  "prompt": "What's the current take on isometric training for maintaining strength on squat, bench, and deadlift when equipment is limited?",
+  "assertions": [
+    "States the most effective isometric style is high-intent/ballistic maximal contractions",
+    "Notes strong angle specificity (gains transfer roughly 15-30 degrees from trained position)",
+    "Points out that isometric quarter-squat work won't strongly improve bottom-position squat strength",
+    "Mentions isometrics have a different fatigue profile (useful complement, avoids eccentric loading)",
+    "Notes that practical programming prescriptions for isometrics are less standardized"
+  ]
+}

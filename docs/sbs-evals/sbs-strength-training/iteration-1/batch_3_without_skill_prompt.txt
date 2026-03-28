@@ -1,0 +1,68 @@
+TASK: Answer 15 listener questions about strength training and fitness using ONLY your general knowledge. Do NOT read any special skill files.
+
+EXPECTED OUTCOME: 15 individual answer.md files, each 200-500 words, evidence-based and practical.
+
+REQUIRED TOOLS: Write
+
+MUST DO:
+1. For each question below, write a thorough answer (200-500 words) to the specified file path
+2. Use your general training and fitness knowledge — answer as an informed fitness enthusiast/coach would
+3. Be evidence-based, nuanced, and practical
+4. Include specific numbers, mechanisms, and caveats where appropriate
+5. Write answers as plain markdown without frontmatter
+
+MUST NOT DO:
+- Do NOT read any skill files, training guides, or reference documents
+- Do NOT use the Read tool to read anything in .opencode/skills/
+- Do NOT give generic/vague answers — be specific
+- Do NOT skip any questions
+- Do NOT write to any paths other than those specified
+
+CONTEXT: These are real listener questions about fitness and training. Answer from your general knowledge of exercise science.
+
+QUESTIONS:
+46. Question: "For hypertrophy, are machines better than free weights, and which one lets you do more useful volume and make better gains?"
+   Topic: machines vs free weights
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-46-machines-vs-free-weights/without_skill/outputs/answer.md
+47. Question: "Since lifting can increase bone mineral density, could improving bone mass also feed back to improve strength or muscle gain? If so, how would you try to prioritize bone gains?"
+   Topic: bone-muscle crosstalk
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-47-bone-muscle-crosstalk/without_skill/outputs/answer.md
+48. Question: "Do hardgainers benefit from exceeding typical protein targets (the listener phrased it as over 1 g/kg), and is there meaningful evidence about hardgainers who are female?"
+   Topic: hardgainers and protein dosing
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-48-hardgainers-and-protein-dosing/without_skill/outputs/answer.md
+49. Question: "Could the diminishing returns from very high session volume be partly explained by increased muscle protein breakdown from accumulating damage?"
+   Topic: volume ceilings and MPB
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-49-volume-ceilings-and-mpb/without_skill/outputs/answer.md
+50. Question: "What's your updated take on the myonuclear domain theory for hypertrophy, and does your 2015 "Grow Like a New Lifter" advice still hold up? It seems like newer evidence suggests myonuclear accretion may not always come before hypertrophy."
+   Topic: myonuclear domain theory
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-50-myonuclear-domain-theory/without_skill/outputs/answer.md
+51. Question: "Sodium bicarbonate has gotten a lot of attention for reducing fatigue in high-intensity interval work. Do you think it's useful for HIIT and lactate-threshold style workouts?"
+   Topic: sodium bicarbonate supplementation
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-51-sodium-bicarbonate-supplementation/without_skill/outputs/answer.md
+52. Question: "You previously discussed chains and bands for strength. What about using accommodating resistance for hypertrophy specifically?"
+   Topic: bands and chains for hypertrophy
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-52-bands-and-chains-for-hypertrophy/without_skill/outputs/answer.md
+53. Question: "Can low VO2 max or poor aerobic conditioning hold back strength progress? I'm stuck, my VO2 max is around 25, and I also have mild asthma."
+   Topic: aerobic conditioning and strength plateaus
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-53-aerobic-conditioning-and-strength-plateaus/without_skill/outputs/answer.md
+54. Question: "How much of a difference do steroids make for muscle growth?"
+   Topic: steroids and muscle growth magnitude
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-54-steroids-and-muscle-growth-magnitude/without_skill/outputs/answer.md
+55. Question: "When strength drops during a cut, how can I tell whether it’s normal from the deficit or a sign I’m overreaching?"
+   Topic: strength loss vs overreaching in a cut
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-55-strength-loss-vs-overreaching-in-a-cut/without_skill/outputs/answer.md
+56. Question: "If I’ve been squatting 2-3 times per week, can I still progress on just 1 squat day per week, and how should I set it up?"
+   Topic: squat frequency reduction
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-56-squat-frequency-reduction/without_skill/outputs/answer.md
+57. Question: "What’s the current take on isometric training for maintaining strength on squat, bench, and deadlift when equipment is limited?"
+   Topic: isometric strength training
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-57-isometric-strength-training/without_skill/outputs/answer.md
+58. Question: "Can I split my workout across the day (like a set every 30 minutes) instead of doing one continuous session?"
+   Topic: split sessions
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-58-split-sessions/without_skill/outputs/answer.md
+59. Question: "How does hypothalamic amenorrhea affect hypertrophy and performance, especially if someone is eating at maintenance or surplus?"
+   Topic: hypothalamic amenorrhea
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-59-hypothalamic-amenorrhea/without_skill/outputs/answer.md
+60. Question: "How should kids and adolescents train with weights? Is there a growth-plate risk, and should heavy singles be avoided?"
+   Topic: youth resistance training
+   Save answer to: /home/sami/Code/macrofactor/docs/sbs-evals/sbs-strength-training/iteration-1/eval-60-youth-resistance-training/without_skill/outputs/answer.md

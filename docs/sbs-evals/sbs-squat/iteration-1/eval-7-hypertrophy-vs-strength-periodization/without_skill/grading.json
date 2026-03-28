@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States newer/less advanced lifters generally need more hypertrophy-focused training",
+      "passed": true,
+      "evidence": "Found matching content: ...# How It Changes With Training Age\n\nFor beginners and early intermediates, almost everyt..."
+    },
+    {
+      "text": "Recommends learning the lifts first, then building muscle to fill out a weight class",
+      "passed": true,
+      "evidence": "Found matching content: ...trength gains because they're primarily learning motor patterns and their nervous sys..."
+    },
+    {
+      "text": "Notes the shift toward more specific strength work as lifters advance",
+      "passed": true,
+      "evidence": "Found matching content: ...cumulation. This means intermediate and advanced lifters need to invest more deliberate..."
+    },
+    {
+      "text": "States hypertrophy emphasis should drop near meets (roughly last 4 weeks)",
+      "passed": true,
+      "evidence": "Found matching content: ...city that will be expressed later. As a meet approaches - moving into a specific pre..."
+    },
+    {
+      "text": "Mentions that adherence/enjoyment of training matters for long-term outcomes",
+      "passed": true,
+      "evidence": "Found matching content: ...ression take priority. Think of it as a funnel: wide at the base (off-season, lots..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Recommends keeping competition lifts in moderate strength-relevant rep ranges (not shifting entirely to high reps)",
+      "passed": true,
+      "evidence": "Found matching content: ...overwhelming your recovery.\n\n**Keep the competition lifts in the program, just in a different ro..."
+    },
+    {
+      "text": "Suggests mostly working in approximately the 5-10 rep range",
+      "passed": true,
+      "evidence": "Found matching content: ...ionally.** Hypertrophy responds well to moderate rep ranges (6-15 reps) with moderate rest (..."
+    },
+    {
+      "text": "Recommends periodic heavier exposure (e.g., triples or heavy singles) to maintain top-end strength",
+      "passed": true,
+      "evidence": "Found matching content: ...ch is a meaningful shift from the heavy triples and long rests of meet prep. This chan..."
+    },
+    {
+      "text": "Mentions an over-warm or heavy single around RPE 8 before volume work as a practical strategy",
+      "passed": true,
+      "evidence": "Found matching content: ...of reduced volume and intensity before ramping into your hypertrophy block. When yo..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

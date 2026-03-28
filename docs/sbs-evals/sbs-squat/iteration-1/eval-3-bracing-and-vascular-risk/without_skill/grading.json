@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Notes that direct long-term causal data specifically in lifters is limited or sparse",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Distinguishes between acute effects on pre-existing vascular conditions versus causing new conditions in healthy people",
+      "passed": true,
+      "evidence": "Found matching content: ...ting, but these are rare, often involve pre-existing vascular pathology (like undiagnosed an..."
+    },
+    {
+      "text": "Notes that occupational lifting epidemiology differs substantially from strength training context",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Recommends individualized caution for people with known medical risk rather than broad fear-based claims",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Avoids making strong causal claims from weak or indirect evidence",
+      "passed": true,
+      "evidence": "Found matching content: ...m vascular damage in healthy lifters is weak to nonexistent. Let me break down what..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

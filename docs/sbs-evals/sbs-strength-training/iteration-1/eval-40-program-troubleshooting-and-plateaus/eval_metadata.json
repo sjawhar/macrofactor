@@ -1,0 +1,14 @@
+{
+  "eval_id": 40,
+  "eval_name": "eval-40-program-troubleshooting-and-plateaus",
+  "prompt": "How should I tweak a program that mostly works before deciding to switch programs entirely?",
+  "expected_output": "They advise not changing things while progress is still happening, because the optimal plan is a moving target. Once a plateau appears, first decide whether the relevant lift likely needs more stress or less stress. Then make small, targeted changes\u2014like volume, intensity, frequency, or exercise selection\u2014and evaluate each change for a few weeks instead of overhauling everything at once. If serial tweaks fail, then moving to a new program is reasonable.",
+  "topic": "program troubleshooting and plateaus",
+  "episode": 27,
+  "assertions": [
+    "Answer captures the core SBS position on program troubleshooting and plateaus",
+    "Answer includes key specific details, numbers, or mechanisms mentioned by the hosts",
+    "Answer acknowledges important caveats or limitations discussed by the hosts",
+    "Answer does not contradict the hosts' stated position"
+  ]
+}

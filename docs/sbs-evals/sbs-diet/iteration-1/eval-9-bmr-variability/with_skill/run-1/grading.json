@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer gives a clear yes: meaningful BMR differences between same-size people are real",
+      "passed": true,
+      "evidence": "Found 'yes' in: ...of the Same Size and Activity Level?\n\n## The Short Answer\n\nYes, real metabolic variability exists between people of the sa..."
+    },
+    {
+      "text": "Answer mentions a spread on the order of hundreds of kcal/day between individuals",
+      "passed": true,
+      "evidence": "Found 'kcal' in: ...the other is constantly moving\n- This can account for 100+ kcal/day differences\n\n**In adaptive thermogenesis:**\n\n- During c..."
+    },
+    {
+      "text": "Answer cites organ-size variability (liver, kidneys, heart) as a major reason",
+      "passed": false,
+      "evidence": "Missing any of: ['organ', 'liver', 'kidney']"
+    },
+    {
+      "text": "Answer frames fast/slow metabolism as legitimate biological phenomena, not just tracking error",
+      "passed": true,
+      "evidence": "Found 'not' in: ...f suggests**. The differences are real but typically modest\u2014not the dramatic 20-30% swings that \"fast metabolism\" mythology..."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

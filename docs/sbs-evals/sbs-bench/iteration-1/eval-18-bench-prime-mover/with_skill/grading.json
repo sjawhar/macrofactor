@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Argues the claim is overstated or a measurement artifact",
+      "passed": true,
+      "evidence": "States: 'triceps do not become the prime mover near max loads' and calls it 'a measurement artifact.'"
+    },
+    {
+      "text": "Explains the long head triceps biarticular mechanism",
+      "passed": false,
+      "evidence": "INCORRECTLY states pecs are biarticular and triceps are monoarticular. The expected answer notes the long head triceps is biarticular."
+    },
+    {
+      "text": "Cites evidence that benching grows lateral triceps more than long head",
+      "passed": false,
+      "evidence": "Does not cite any study showing lateral vs long head growth differences from benching."
+    },
+    {
+      "text": "References data (e.g., Duffy's dissertation) showing pecs/delts/lateral triceps increase activation similarly",
+      "passed": false,
+      "evidence": "Does not reference Duffy's dissertation or any specific study data."
+    },
+    {
+      "text": "Practical takeaway: don't abandon pec work; train bench-relevant musculature broadly",
+      "passed": true,
+      "evidence": "States: 'prioritizing triceps accessories over pec-focused work is a strategic mistake.'"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

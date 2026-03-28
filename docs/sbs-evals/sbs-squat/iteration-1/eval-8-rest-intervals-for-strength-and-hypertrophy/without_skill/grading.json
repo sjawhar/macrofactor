@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Explains that heavier loads increase total work and metabolic cost per set, requiring longer recovery",
+      "passed": true,
+      "evidence": "Found matching content: ...training is working. As your lifts get heavier, your rest periods naturally need to ex..."
+    },
+    {
+      "text": "Notes that hypertrophy rest interval findings in research are mixed",
+      "passed": false,
+      "evidence": "No matching content found in the answer text"
+    },
+    {
+      "text": "Leans clearly toward longer rests for strength development, especially on compound lifts",
+      "passed": true,
+      "evidence": "Found matching content: ...tions), the literature is fairly clear: longer rest is better. Studies consistently show th..."
+    },
+    {
+      "text": "Provides specific practical rest period ranges (e.g., ~90s-2min for upper/isolation, ~3min common, ~5min+ for heavy lower compounds)",
+      "passed": true,
+      "evidence": "Found matching content: ...% restored in about 30 seconds, ~85% by 90 seconds, and near-complete restoration takes 3..."
+    },
+    {
+      "text": "Mentions supersets as a time-saving strategy without sacrificing key lift performance",
+      "passed": true,
+      "evidence": "Found matching content: ...d for time, you can use techniques like supersets of non-competing muscle groups to main..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "States that context matters more than a one-size-fits-all rest interval rule",
+      "passed": true,
+      "evidence": "Found matching content: ...or heavy squat volume in a powerlifting context, they may actually be _better_ for musc..."
+    },
+    {
+      "text": "Notes that heavy compound sets (especially squats/deadlifts) may need longer recovery than isolation work",
+      "passed": true,
+      "evidence": "Found matching content: ...ypertrophy gains on the table - and for heavy squat volume in a powerlifting context,..."
+    },
+    {
+      "text": "Acknowledges that for powerlifters, performance on main lifts should come first",
+      "passed": true,
+      "evidence": "Found matching content: ...rtrophy vs. Rest Interval Tradeoffs for Powerlifters\n\nGreat question, and it gets at a real..."
+    },
+    {
+      "text": "States or implies that 6-7 minutes is not automatically wrong for heavy squat sets",
+      "passed": true,
+      "evidence": "Found matching content: ...he literature. The short answer is: no, 6-7 minute rests are not leaving hypertrophy gains..."
+    },
+    {
+      "text": "Notes that 1-2 minute rest research does not prove all advanced squat work should be capped at 2 minutes",
+      "passed": true,
+      "evidence": "Found matching content: ...ct 2-minute rests.\n\nThe older view that short rests (60-90 seconds) were superior for hype..."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

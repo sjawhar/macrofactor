@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Acknowledges getting weaker during the cut",
+      "passed": false,
+      "evidence": "Provides general advice, not personal experience of getting weaker."
+    },
+    {
+      "text": "Attributes much of the strength loss to disrupted training (injury) rather than fat loss alone",
+      "passed": false,
+      "evidence": "No mention of injury disrupting training."
+    },
+    {
+      "text": "Mentions a specific injury (wrist/elbow) that limited training",
+      "passed": false,
+      "evidence": "No mention of specific injury."
+    },
+    {
+      "text": "Notes that strength rebounded quickly once consistent lifting resumed",
+      "passed": false,
+      "evidence": "No discussion of personal strength rebound."
+    },
+    {
+      "text": "Frames consistency and acceptance as more important than chasing perfect in-cut numbers",
+      "passed": true,
+      "evidence": "Recommends maintaining training consistency and moderate deficits."
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 4,
+    "total": 5,
+    "pass_rate": 0.2
+  }
+}

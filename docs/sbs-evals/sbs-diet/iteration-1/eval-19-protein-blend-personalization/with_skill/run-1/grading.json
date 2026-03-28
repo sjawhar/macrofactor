@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer describes most personalization claims as low-impact for typical lifters",
+      "passed": true,
+      "evidence": "Found 'not' in: ...n blends are primarily a pricing strategy. The science does not support meaningful advantages over standard protein sources..."
+    },
+    {
+      "text": "Answer states standard whey or a basic blend is already effective and practical",
+      "passed": true,
+      "evidence": "Found 'standard' in: ...gy. The science does not support meaningful advantages over standard protein sources when total daily protein, amino acid distri..."
+    },
+    {
+      "text": "Answer mentions personalized blends may matter for specific constraints (vegan, lactose intolerance)",
+      "passed": true,
+      "evidence": "Found 'vegan' in: ...trients: higher-risk contexts (low calories, high training, vegan diets) need deliberate planning, but this is solved by **fo..."
+    },
+    {
+      "text": "Answer recommends against overcomplicating protein powder selection",
+      "passed": true,
+      "evidence": "Found 'not' in: ...n blends are primarily a pricing strategy. The science does not support meaningful advantages over standard protein sources..."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

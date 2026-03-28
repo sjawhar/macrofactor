@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "Answer explains stimulant interactions depend on enzyme pathways, not just both being stimulants",
+      "passed": true,
+      "evidence": "Found 'enzyme' in: ...mulant drug metabolism or clearance rates\n- Cytochrome P450 enzyme interactions\n- Pharmacokinetic interactions between caffein..."
+    },
+    {
+      "text": "Answer mentions caffeine is metabolized through CYP1A2 and nicotine through CYP2A6/CYP2B6",
+      "passed": false,
+      "evidence": "Missing any of: ['CYP1A2', 'CYP2A6', 'CYP2B6']"
+    },
+    {
+      "text": "Answer notes smoking can induce CYP1A2, potentially shortening caffeine half-life",
+      "passed": false,
+      "evidence": "Missing any of: ['smoking', 'induc', 'CYP1A2']"
+    },
+    {
+      "text": "Answer recommends treating multi-compound interactions as a pharmacist-level problem",
+      "passed": true,
+      "evidence": "Found 'pharmacist' in: ...(e.g., DrugBank, FDA resources)\n- A healthcare provider or pharmacist familiar with stimulant metabolism\n\nThe SBS Diet skill is n..."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}
