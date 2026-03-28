@@ -114,11 +114,12 @@ The CLI is available when MCP is not. Output is JSON. Auth reads from `.env` aut
 - **Start with `get_context`** — goals, today's intake vs remaining, weight trend, next workout in one call.
 - **Dates** are `YYYY-MM-DD`. Most default to today when omitted.
 - **Weight** stored as kg internally. `log_weight` accepts `lbs` or `kg`, converts automatically.
-- **`log_food`** searches by name and logs top result. Use `search_foods` first to pick a specific match.
+- **`log_food`** searches by name and logs top result. Use `search_foods` first to pick a specific match. CLI also accepts `grams` for direct gram input (e.g. `grams: 80` instead of `servingIndex` + fractional `quantity`).
 - **`log_workout`** takes exercise names (not IDs) and resolves them against both bundled and custom exercises. `sets: 3` expands to 3 individual sets.
 - **Food times** default to now. Pass `hour`/`minute` for override (24h wall-clock, no timezone).
 - **Entry IDs** for `update_food`/`delete_food` come from `get_food_log`.
 - **Food corrections**: Use `update_food` to fix quantity — don't delete and re-log (creates ghost entries).
+- **`log_manual_food`** works for custom-macro entries (e.g. restaurant meals). NEVER set the source type field `k` to `"manual"` — this crashes the Android app, blanking the entire day. The CLI/API already handles this correctly (uses `"n"`).
 - **Custom exercises**: Use `create_custom_exercise` when an exercise isn't in the bundled DB. Reference a similar bundled exercise (via `search_exercises`) to populate muscle/joint metadata. Once created, use the exercise by name in `log_workout`/`log_exercise`.
 - **Supersets**: In `log_workout`, use `blocks: [[ex1, ex2]]` instead of `exercises: [...]` for superset grouping.
 - **Program-linked workouts**: When logging a workout for a training program, pass `workoutSource` with `programId`, `dayId`, and `cycleIndex`. The tool will automatically (1) attach set targets from `periodizedTargets.values[cycleIndex]` and (2) update `workoutCycleCompletions` on the program document so the day shows as checked off. Use `get_training_program` to find dayIds and `get_next_workout` for the current cycle position.
