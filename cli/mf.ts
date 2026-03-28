@@ -615,14 +615,37 @@ async function main() {
           throw new Error('log-food requires "foodId"');
         }
 
-        const servingIndex = Number(input.servingIndex);
-        if (!Number.isInteger(servingIndex) || servingIndex < 0) {
-          throw new Error('log-food requires non-negative integer "servingIndex"');
-        }
+        const hasGrams = input.grams != null;
+        let servingIndex: number;
+        let quantity: number;
 
-        const quantity = Number(input.quantity);
-        if (!Number.isFinite(quantity) || quantity <= 0) {
-          throw new Error('log-food requires positive numeric "quantity"');
+        if (hasGrams) {
+          // grams mode: find the 100g (or gram) serving automatically
+          const gramsValue = Number(input.grams);
+          if (!Number.isFinite(gramsValue) || gramsValue <= 0) {
+            throw new Error('log-food "grams" must be a positive number');
+          }
+          const client2 = await getClient();
+          const food2 = await getFoodById(foodId);
+          if (!food2) throw new Error(`Food "${foodId}" not found`);
+          // Prefer '100 g' serving, then any gram-based serving
+          const hundredGIdx = food2.servings.findIndex((s) => s.gramWeight === 100 && /100\s*g/i.test(s.description));
+          const anyGramIdx = food2.servings.findIndex((s) => isGramServing(s));
+          const gramIdx = hundredGIdx >= 0 ? hundredGIdx : anyGramIdx;
+          if (gramIdx < 0) {
+            throw new Error(`Food "${foodId}" has no gram-based serving; use servingIndex + quantity instead`);
+          }
+          servingIndex = gramIdx;
+          quantity = gramsValue / food2.servings[gramIdx].gramWeight;
+        } else {
+          servingIndex = Number(input.servingIndex);
+          if (!Number.isInteger(servingIndex) || servingIndex < 0) {
+            throw new Error('log-food requires non-negative integer "servingIndex" or "grams"');
+          }
+          quantity = Number(input.quantity);
+          if (!Number.isFinite(quantity) || quantity <= 0) {
+            throw new Error('log-food requires positive numeric "quantity"');
+          }
         }
 
         const client = await getClient();
