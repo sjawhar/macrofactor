@@ -49,8 +49,14 @@ function parseArgs() {
 
   for (let i = 1; i < args.length; i++) {
     if (args[i].startsWith('--')) {
-      opts[args[i].substring(2)] = args[i + 1];
-      i++;
+      const key = args[i].substring(2);
+      const next = args[i + 1];
+      if (next == null || next.startsWith('--')) {
+        opts[key] = 'true';
+      } else {
+        opts[key] = next;
+        i++;
+      }
     } else {
       positional.push(args[i]);
     }
@@ -135,14 +141,15 @@ function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
 /**
  * Nudge the MacroFactor app to recompute a day's dashboard totals.
  * The app's dashboard reads from a local cache that only refreshes when
- * the food document changes. Adding and hard-deleting a dummy entry
- * triggers the Firestore listener → dashboard recomputation.
+ * the food document changes. Adding a dummy entry triggers the Firestore
+ * listener; we wait 3s for the app to process it, then hard-delete.
  * This works when the app is running; if the app is closed, the user
  * may need to add/delete any food on that day from within the app.
  */
 async function syncDayDashboard(client: MacroFactorClient, date: string): Promise<void> {
   const logTime = { date, hour: 0, minute: 0 };
   await client.logFood(logTime, '_sync', 0, 0, 0, 0);
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const entries = await client.getFoodLog(date);
   const dummy = entries.find((e) => !e.deleted && e.name === '_sync');
   if (dummy) {
@@ -394,6 +401,131 @@ function buildRecentWeight(entries: Awaited<ReturnType<MacroFactorClient['getWei
   };
 }
 
+type CliTrainingProgram = Awaited<ReturnType<MacroFactorClient['getTrainingPrograms']>>[number];
+type CliTrainingDay = CliTrainingProgram['days'][number];
+
+function workoutDays(program: CliTrainingProgram): CliTrainingDay[] {
+  return program.days.filter((day) => !day.isRestDay);
+}
+
+function configuredCycleCount(program: CliTrainingProgram): number {
+  const maxFromTargets = Math.max(
+    0,
+    ...program.days.flatMap((day) => day.exercises.map((exercise) => exercise.periodizedTargets?.values?.length ?? 0))
+  );
+  return Math.max(program.numCycles || 0, maxFromTargets);
+}
+
+function completedDayIdsForCycle(program: CliTrainingProgram, cycleIndex: number): Set<string> {
+  const cycle = program.workoutCycleCompletions?.[String(cycleIndex)];
+  const completionById = cycle?.completionById ?? {};
+  return new Set(Object.keys(completionById));
+}
+
+function inferActiveCycleIndex(
+  program: CliTrainingProgram,
+  cycleHint: number | null,
+  totalCycles: number
+): { cycleIndex: number; allCyclesComplete: boolean } {
+  if (totalCycles <= 0) {
+    return { cycleIndex: Math.max(0, cycleHint ?? 0), allCyclesComplete: false };
+  }
+
+  const days = workoutDays(program);
+  if (days.length === 0) {
+    return { cycleIndex: Math.max(0, cycleHint ?? 0), allCyclesComplete: false };
+  }
+
+  const hasCompletions = Object.keys(program.workoutCycleCompletions ?? {}).length > 0;
+  if (!hasCompletions) {
+    const hinted = Math.max(0, cycleHint ?? 0);
+    return { cycleIndex: hinted, allCyclesComplete: hinted >= totalCycles };
+  }
+
+  for (let cycleIndex = 0; cycleIndex < totalCycles; cycleIndex++) {
+    const completed = completedDayIdsForCycle(program, cycleIndex);
+    const isComplete = days.every((day) => completed.has(day.id));
+    if (!isComplete) {
+      return { cycleIndex, allCyclesComplete: false };
+    }
+  }
+
+  return { cycleIndex: totalCycles, allCyclesComplete: true };
+}
+
+function targetSetsForCycle(
+  exercise: CliTrainingDay['exercises'][number],
+  cycleIndex: number,
+  deloadStrategy?: string
+): SetTarget[] {
+  const targets = exercise.periodizedTargets;
+  if (!targets) return [];
+  if (cycleIndex < targets.values.length) {
+    return targets.values[cycleIndex]?.sets?.map((set) => set.log) ?? [];
+  }
+  // Deload: check periodizedTargets.deload first, then fall back based on strategy
+  if (targets.deload?.sets?.length) {
+    return targets.deload.sets.map((set) => set.log);
+  }
+  // Strategy: 'lastCycle' = use last cycle targets, 'firstCycle' = use first
+  if (deloadStrategy === 'firstCycle' && targets.values.length > 0) {
+    return targets.values[0]?.sets?.map((set) => set.log) ?? [];
+  }
+  if (targets.values.length > 0) {
+    return targets.values[targets.values.length - 1]?.sets?.map((set) => set.log) ?? [];
+  }
+  return [];
+}
+
+function parseOutputFormat(opts: Record<string, string>): 'json' | 'text' {
+  const requested = opts.format?.toLowerCase();
+  if (requested && requested !== 'json' && requested !== 'text') {
+    throw new Error('Invalid --format value. Use "text" or "json".');
+  }
+  if (requested === 'json') return 'json';
+  if (requested === 'text') return 'text';
+  if (Object.prototype.hasOwnProperty.call(opts, 'json')) return 'json';
+  return process.stdout.isTTY ? 'text' : 'json';
+}
+
+function formatWorkoutPlanText(payload: {
+  programName: string;
+  dayName: string;
+  phaseLabel: string;
+  exercises: {
+    name: string;
+    sets: { set: number; minReps: number | null; maxReps: number | null; rir: number | null }[];
+  }[];
+}): string {
+  const lines: string[] = [`${payload.programName} — ${payload.dayName} (${payload.phaseLabel})`, ''];
+  if (payload.exercises.length === 0) {
+    lines.push('No exercises for this day.');
+    return lines.join('\n');
+  }
+
+  for (const [exerciseIndex, exercise] of payload.exercises.entries()) {
+    lines.push(`${exerciseIndex + 1}. ${exercise.name}`);
+    if (exercise.sets.length === 0) {
+      lines.push('   No targets available for this phase.');
+      lines.push('');
+      continue;
+    }
+    for (const set of exercise.sets) {
+      const reps =
+        set.minReps == null && set.maxReps == null
+          ? '? reps'
+          : set.minReps === set.maxReps
+            ? `${set.minReps ?? set.maxReps} reps`
+            : `${set.minReps ?? '?'}-${set.maxReps ?? '?'} reps`;
+      const rir = set.rir == null ? 'RIR ?' : `RIR ${set.rir}`;
+      lines.push(`   Set ${set.set}: ${reps} @ ${rir}`);
+    }
+    lines.push('');
+  }
+
+  return lines.join('\n').trimEnd();
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
@@ -428,6 +560,7 @@ const ALL_COMMANDS = [
   'nutrition',
   'program',
   'next-workout',
+  'workout-plan',
   'steps',
   'weight-history',
 ];
@@ -1224,6 +1357,111 @@ async function main() {
             2
           )
         );
+        break;
+      }
+
+      // -----------------------------------------------------------------------
+      // workout-plan — Show next workout with set targets for current cycle
+      // -----------------------------------------------------------------------
+      case 'workout-plan': {
+        const dayName = positional[0] || null;
+        const outputFormat = parseOutputFormat(opts);
+        const client = await getClient();
+        const programs = await client.getTrainingPrograms();
+        const active = programs.find((p) => p.isActive) || programs[0];
+        if (!active) {
+          console.log(JSON.stringify({ status: 'empty', workout: null }, null, 2));
+          break;
+        }
+        if (active.days.length === 0) {
+          console.log(JSON.stringify({ status: 'empty', workout: null }, null, 2));
+          break;
+        }
+
+        const next = await client.getNextWorkout();
+        const totalCycles = configuredCycleCount(active);
+        const inferred = inferActiveCycleIndex(active, next?.cycleIndex ?? null, totalCycles);
+
+        let targetDay: CliTrainingDay;
+        let cycleIndex = inferred.cycleIndex;
+        let allCyclesComplete = inferred.allCyclesComplete;
+
+        if (dayName) {
+          const resolvedDay =
+            active.days.find((d) => d.name === dayName) ||
+            active.days.find((d) => d.name.toLowerCase() === dayName.toLowerCase());
+          if (!resolvedDay) {
+            throw new Error(`Day "${dayName}" not found in program "${active.name}"`);
+          }
+          targetDay = resolvedDay;
+        } else {
+          if (!next) {
+            console.log(JSON.stringify({ status: 'empty', workout: null }, null, 2));
+            break;
+          }
+          const fallbackDay = active.days[0];
+          const nextDay = active.days[next.dayIndex];
+          if (!fallbackDay) {
+            console.log(JSON.stringify({ status: 'empty', workout: null }, null, 2));
+            break;
+          }
+          targetDay = nextDay ?? fallbackDay;
+          cycleIndex = next.cycleIndex;
+          allCyclesComplete = cycleIndex >= totalCycles;
+
+          if (next.isRestDay && allCyclesComplete) {
+            targetDay = workoutDays(active)[0] ?? targetDay;
+            cycleIndex = totalCycles;
+            allCyclesComplete = true;
+          }
+        }
+
+        // Build exercise list with targets
+        const customExercises = await client.getCustomExercises();
+        const customNameMap = new Map(customExercises.map((e) => [e.id, e.name]));
+
+        const exercises = targetDay.exercises.map((ex) => {
+          const targets = targetSetsForCycle(ex, cycleIndex, active.deload);
+          const bundledName = resolveExercise(ex.exerciseId)?.name;
+          const name = bundledName || customNameMap.get(ex.exerciseId) || ex.exerciseId;
+
+          return {
+            name,
+            exerciseId: ex.exerciseId,
+            sets: targets.map((target, setIndex) => ({
+              set: setIndex + 1,
+              minReps: target.minFullReps ?? null,
+              maxReps: target.maxFullReps ?? null,
+              rir: target.rir ?? null,
+            })),
+          };
+        });
+
+        const usingDeloadTargets = allCyclesComplete || cycleIndex >= totalCycles;
+        const payload = {
+          name: targetDay.name,
+          dayId: targetDay.id,
+          cycleIndex,
+          cycle: cycleIndex + 1,
+          totalCycles,
+          phase: usingDeloadTargets ? 'deload' : 'cycle',
+          programName: active.name,
+          programId: active.id,
+          exercises,
+        };
+
+        if (outputFormat === 'json') {
+          console.log(JSON.stringify(payload, null, 2));
+        } else {
+          console.log(
+            formatWorkoutPlanText({
+              programName: active.name,
+              dayName: targetDay.name,
+              phaseLabel: usingDeloadTargets ? 'Deload' : `Cycle ${cycleIndex + 1}`,
+              exercises,
+            })
+          );
+        }
         break;
       }
 
