@@ -542,6 +542,7 @@ export class MacroFactorClient {
         isPeriodized: (p.isPeriodized as boolean) || false,
         deload: (p.deload as string) || 'none',
         isActive: p.id === activeProgramId,
+        workoutCycleCompletions: p.workoutCycleCompletions as TrainingProgram['workoutCycleCompletions'],
         days: days.map((d: any) => ({
           id: d.id as string,
           name: d.name as string,

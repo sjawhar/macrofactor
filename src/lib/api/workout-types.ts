@@ -51,6 +51,15 @@ export interface TrainingProgramDay {
   exercises: TrainingProgramExercise[];
 }
 
+export interface WorkoutCycleCompletion {
+  runtimeType?: string;
+  workoutHistoryIds?: string[];
+}
+
+export interface WorkoutCycleCompletionCycle {
+  completionById?: Record<string, WorkoutCycleCompletion>;
+}
+
 export interface TrainingProgram {
   id: string;
   name: string;
@@ -62,6 +71,7 @@ export interface TrainingProgram {
   deload: string;
   isActive: boolean;
   days: TrainingProgramDay[];
+  workoutCycleCompletions?: Record<string, WorkoutCycleCompletionCycle>;
 }
 
 export interface SetValue {
