@@ -52,13 +52,14 @@ function isGramServing(serving: FoodServing): boolean {
 
 /**
  * Nudge the MacroFactor app to recompute a day's dashboard totals.
- * Adding a dummy entry triggers the Firestore listener; wait 3s for
+ * Adding a dummy entry triggers the Firestore listener; wait 15s for
  * the app to process it, then hard-delete.
  */
 async function syncDayDashboard(client: MacroFactorClient, date: string): Promise<void> {
   const logTime = { date, hour: 0, minute: 0 };
   await client.logFood(logTime, '_sync', 0, 0, 0, 0);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  const delay = process.env.NODE_ENV === 'test' ? 0 : 15000;
+  await new Promise((resolve) => setTimeout(resolve, delay));
   const entries = await client.getFoodLog(date);
   const dummy = entries.find((e) => !e.deleted && e.name === '_sync');
   if (dummy) {

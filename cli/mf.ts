@@ -142,14 +142,14 @@ function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
  * Nudge the MacroFactor app to recompute a day's dashboard totals.
  * The app's dashboard reads from a local cache that only refreshes when
  * the food document changes. Adding a dummy entry triggers the Firestore
- * listener; we wait 3s for the app to process it, then hard-delete.
+ * listener; we wait 15s for the app to process it, then hard-delete.
  * This works when the app is running; if the app is closed, the user
  * may need to add/delete any food on that day from within the app.
  */
 async function syncDayDashboard(client: MacroFactorClient, date: string): Promise<void> {
   const logTime = { date, hour: 0, minute: 0 };
   await client.logFood(logTime, '_sync', 0, 0, 0, 0);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 15000));
   const entries = await client.getFoodLog(date);
   const dummy = entries.find((e) => !e.deleted && e.name === '_sync');
   if (dummy) {
@@ -293,7 +293,8 @@ function buildWorkoutExercise(exerciseInput: Record<string, unknown>, setTargets
 function coerceWorkoutSource(input: unknown): WorkoutSource | undefined {
   if (!input || typeof input !== 'object') return undefined;
   const source = input as Record<string, unknown>;
-  const runtimeType = typeof source.runtimeType === 'string' ? source.runtimeType : 'trainingProgram';
+  // MUST be 'program' — 'trainingProgram' crashes the app
+  const runtimeType = 'program';
   const cycleIndex = source.cycleIndex == null ? undefined : Number(source.cycleIndex);
   return {
     runtimeType,
@@ -1409,10 +1410,11 @@ async function main() {
           cycleIndex = next.cycleIndex;
           allCyclesComplete = cycleIndex >= totalCycles;
 
-          if (next.isRestDay && allCyclesComplete) {
-            targetDay = workoutDays(active)[0] ?? targetDay;
-            cycleIndex = totalCycles;
-            allCyclesComplete = true;
+          if (next.isRestDay || allCyclesComplete) {
+            const completions = active.workoutCycleCompletions?.[String(cycleIndex)]?.completionById || {};
+            const nextIncomplete = workoutDays(active).find((d) => !completions[d.id]);
+            targetDay = nextIncomplete ?? workoutDays(active)[0] ?? targetDay;
+            if (allCyclesComplete) cycleIndex = totalCycles;
           }
         }
 

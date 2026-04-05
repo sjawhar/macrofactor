@@ -164,7 +164,8 @@ function buildWorkoutExercise(
 function coerceWorkoutSource(input: unknown): WorkoutSource | undefined {
   if (!input || typeof input !== 'object') return undefined;
   const source = input as Record<string, unknown>;
-  const runtimeType = typeof source.runtimeType === 'string' ? source.runtimeType : 'trainingProgram';
+  // MUST be 'program' — 'trainingProgram' crashes the app
+  const runtimeType = 'program';
   const cycleIndex = source.cycleIndex == null ? undefined : Number(source.cycleIndex);
   return {
     runtimeType,

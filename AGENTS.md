@@ -104,6 +104,8 @@ When logging a workout that belongs to a training program (i.e. has `workoutSour
 
 2. **Completion tracking**: The program document (`users/{uid}/trainingProgram/{programId}`) has a `workoutCycleCompletions` map that tracks which days have been completed per cycle. Structure: `workoutCycleCompletions[cycleIndex].completionById[dayId] = { runtimeType: 'completed', workoutHistoryIds: [workoutId] }`. Without this, the app won't show the day as checked off in the program view. Use `client.markProgramDayCompleted()` — the CLI and MCP do this automatically.
 
+3. **workoutSource.runtimeType**: **MUST** be `"program"` — the value `"trainingProgram"` crashes the app. The CLI and MCP enforce this automatically.
+
 ### `.env` Parsing
 
 Password may contain backticks/special chars. Never `source .env` in bash. CLI has its own `.env` parser.
