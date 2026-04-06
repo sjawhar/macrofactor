@@ -300,6 +300,14 @@ export function registerWorkoutTools(server: McpServer, client: MacroFactorClien
       const selectedGym = gym ? gyms.find((candidate) => candidate.name.toLowerCase() === gym.toLowerCase()) : gyms[0];
       const resolvedWorkoutSource = coerceWorkoutSource(workoutSource);
       const targetsByExerciseId = await getProgramTargetsByExerciseId(client, resolvedWorkoutSource);
+      // Clamp cycleIndex to 999 for post-program (deload) workouts
+      if (resolvedWorkoutSource?.cycleIndex != null && resolvedWorkoutSource.programId) {
+        const programs = await client.getTrainingPrograms();
+        const prog = programs.find((p) => p.id === resolvedWorkoutSource.programId);
+        if (prog && resolvedWorkoutSource.cycleIndex >= (prog as any).numCycles) {
+          resolvedWorkoutSource.cycleIndex = 999;
+        }
+      }
 
       const workoutId = randomUUID();
       const blocks: Array<{ exercises: unknown[] }> = [];
