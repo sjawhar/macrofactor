@@ -1056,6 +1056,16 @@ async function main() {
         const gyms = await client.getGymProfiles();
         const workoutSource = coerceWorkoutSource(input.workoutSource);
         const programTargets = await getProgramDayTargets(client, workoutSource);
+
+        // Clamp cycleIndex to 999 for post-program (deload) workouts
+        // The app uses 999 as sentinel for 'beyond defined cycles'
+        if (workoutSource?.cycleIndex != null && workoutSource.programId) {
+          const programs = await client.getTrainingPrograms();
+          const prog = programs.find((p) => p.id === workoutSource.programId);
+          if (prog && workoutSource.cycleIndex >= (prog as any).numCycles) {
+            workoutSource.cycleIndex = 999;
+          }
+        }
         const gymId = typeof input.gymId === 'string' ? input.gymId.trim() : '';
         if (!gymId) {
           throw new Error('log-workout requires "gymId" (string)');

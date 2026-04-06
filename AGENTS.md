@@ -106,6 +106,8 @@ When logging a workout that belongs to a training program (i.e. has `workoutSour
 
 3. **workoutSource.runtimeType**: **MUST** be `"program"` — the value `"trainingProgram"` crashes the app. The CLI and MCP enforce this automatically.
 
+4. **cycleIndex 999 for deload**: When `cycleIndex >= numCycles` (the program's defined cycle count), the app uses `999` as a sentinel value meaning "post-program / deload." Never use the actual incremented cycle number (5, 6, 7...) — the app won't recognize it. The CLI and MCP clamp automatically.
+
 ### `.env` Parsing
 
 Password may contain backticks/special chars. Never `source .env` in bash. CLI has its own `.env` parser.
