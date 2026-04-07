@@ -4,9 +4,14 @@ import type { MacroFactorClient } from '../../lib/api/index.js';
 import { createServer } from '../server.js';
 import { describe, expect, it, vi } from 'vitest';
 import { searchExercises } from '../../lib/api/exercises.js';
+import { syncDayDashboard } from '../../lib/api/sync.js';
 
 vi.mock('../../lib/api/exercises.js', () => ({
   searchExercises: vi.fn(),
+}));
+
+vi.mock('../../lib/api/sync.js', () => ({
+  syncDayDashboard: vi.fn().mockResolvedValue(undefined),
 }));
 
 type MockClient = {
@@ -89,6 +94,74 @@ async function callToolAndParse(mockClient: MockClient, name: string, args: Reco
 }
 
 describe('MCP tools', () => {
+  it('log_food searches food, logs the result, and triggers dashboard sync', async () => {
+    vi.mocked(syncDayDashboard).mockResolvedValue(undefined);
+    const food = {
+      foodId: 'f1',
+      name: 'Milk',
+      servings: [
+        { description: 'cup', gramWeight: 244, amount: 1 },
+        { description: 'gram', gramWeight: 1, amount: 1 },
+      ],
+      caloriesPer100g: 60,
+      proteinPer100g: 3.4,
+      carbsPer100g: 5,
+      fatPer100g: 3,
+      nutrientsPer100g: {},
+      brand: 'Brand',
+      imageId: '',
+    };
+    const mockClient = createMockClient({
+      searchFoods: vi.fn().mockResolvedValue([food]),
+      logSearchedFood: vi.fn().mockResolvedValue(undefined),
+    });
+
+    await callToolAndParse(mockClient, 'log_food', {
+      query: 'milk',
+      amount: 2,
+      unit: 'cup',
+      date: '2026-03-20',
+      hour: 9,
+      minute: 45,
+    });
+
+    expect(mockClient.searchFoods).toHaveBeenCalledWith('milk');
+    expect(mockClient.logSearchedFood).toHaveBeenCalledWith(
+      { date: '2026-03-20', hour: 9, minute: 45 },
+      food,
+      food.servings[0],
+      2,
+      false
+    );
+    expect(syncDayDashboard).toHaveBeenCalledWith(mockClient, '2026-03-20');
+  });
+
+  it('log_manual_food calls client.logFood with LogTime and triggers dashboard sync', async () => {
+    vi.mocked(syncDayDashboard).mockResolvedValue(undefined);
+    const mockClient = createMockClient();
+
+    await callToolAndParse(mockClient, 'log_manual_food', {
+      name: 'Protein Shake',
+      calories: 220,
+      protein: 35,
+      carbs: 12,
+      fat: 4,
+      date: '2026-03-20',
+      hour: 7,
+      minute: 5,
+    });
+
+    expect(mockClient.logFood).toHaveBeenCalledWith(
+      { date: '2026-03-20', hour: 7, minute: 5 },
+      'Protein Shake',
+      220,
+      35,
+      12,
+      4
+    );
+    expect(syncDayDashboard).toHaveBeenCalledWith(mockClient, '2026-03-20');
+  });
+
   it('get_profile calls client.getProfile and returns JSON', async () => {
     const mockClient = createMockClient({
       getProfile: vi.fn().mockResolvedValue({ units: 'imperial', weightUnit: 'lbs' }),
@@ -214,70 +287,6 @@ describe('MCP tools', () => {
 
     expect(mockClient.searchFoods).toHaveBeenCalledWith('yogurt');
     expect(parsed[0].foodId).toBe('f1');
-  });
-
-  it('log_food searches food and logs first result using selected serving', async () => {
-    const food = {
-      foodId: 'f1',
-      name: 'Milk',
-      servings: [
-        { description: 'cup', gramWeight: 244, amount: 1 },
-        { description: 'gram', gramWeight: 1, amount: 1 },
-      ],
-      caloriesPer100g: 60,
-      proteinPer100g: 3.4,
-      carbsPer100g: 5,
-      fatPer100g: 3,
-      nutrientsPer100g: {},
-      brand: 'Brand',
-      imageId: '',
-    };
-    const mockClient = createMockClient({
-      searchFoods: vi.fn().mockResolvedValue([food]),
-      logSearchedFood: vi.fn().mockResolvedValue(undefined),
-    });
-
-    await callToolAndParse(mockClient, 'log_food', {
-      query: 'milk',
-      amount: 2,
-      unit: 'cup',
-      date: '2026-03-20',
-      hour: 9,
-      minute: 45,
-    });
-
-    expect(mockClient.searchFoods).toHaveBeenCalledWith('milk');
-    expect(mockClient.logSearchedFood).toHaveBeenCalledWith(
-      { date: '2026-03-20', hour: 9, minute: 45 },
-      food,
-      food.servings[0],
-      2,
-      false
-    );
-  });
-
-  it('log_manual_food calls client.logFood with LogTime', async () => {
-    const mockClient = createMockClient();
-
-    await callToolAndParse(mockClient, 'log_manual_food', {
-      name: 'Protein Shake',
-      calories: 220,
-      protein: 35,
-      carbs: 12,
-      fat: 4,
-      date: '2026-03-20',
-      hour: 7,
-      minute: 5,
-    });
-
-    expect(mockClient.logFood).toHaveBeenCalledWith(
-      { date: '2026-03-20', hour: 7, minute: 5 },
-      'Protein Shake',
-      220,
-      35,
-      12,
-      4
-    );
   });
 
   it('update_food calls client.updateFoodEntry', async () => {

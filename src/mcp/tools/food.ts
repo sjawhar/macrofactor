@@ -1,5 +1,6 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { LogTime, MacroFactorClient } from '../../lib/api/index.js';
+import { syncDayDashboard } from '../../lib/api/sync.js';
 import { z } from 'zod';
 
 function todayDate(): string {
@@ -50,22 +51,6 @@ function isGramServing(serving: FoodServing): boolean {
   );
 }
 
-/**
- * Nudge the MacroFactor app to recompute a day's dashboard totals.
- * Adding a dummy entry triggers the Firestore listener; wait 15s for
- * the app to process it, then hard-delete.
- */
-async function syncDayDashboard(client: MacroFactorClient, date: string): Promise<void> {
-  const logTime = { date, hour: 0, minute: 0 };
-  await client.logFood(logTime, '_sync', 0, 0, 0, 0);
-  const delay = process.env.NODE_ENV === 'test' ? 0 : 15000;
-  await new Promise((resolve) => setTimeout(resolve, delay));
-  const entries = await client.getFoodLog(date);
-  const dummy = entries.find((e) => !e.deleted && e.name === '_sync');
-  if (dummy) {
-    await client.hardDeleteFoodEntry(date, dummy.entryId);
-  }
-}
 export function registerFoodTools(server: McpServer, client: MacroFactorClient): void {
   server.tool(
     'get_food_log',
