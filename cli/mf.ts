@@ -8,14 +8,15 @@ import {
   getFoodById,
   type FoodEntry,
   type Goals,
-  type SearchFoodResult,
   type SetTarget,
   type WorkoutSource,
 } from '../src/lib/api/index';
+import { syncDayDashboard } from '../src/lib/api/sync';
 import { searchExercises, resolveExercise, lookupExercise } from '../src/lib/api/exercises';
-import { readInput, parseISO, expandSets, resolveWeight, type SetInput } from './helpers';
+import { readInput, parseISO, expandSets, resolveWeight, warnIfSuspiciousDate, type SetInput } from './helpers';
 import { readFileSync } from 'fs';
 import { randomUUID } from 'crypto';
+import { pathToFileURL } from 'url';
 
 // Polyfill env vars if .env exists
 try {
@@ -62,29 +63,6 @@ function parseArgs() {
     }
   }
   return { command, opts, positional };
-}
-
-/** Match a serving by unit alias (e.g., "g" → "gram", "tbsp" → "tbsp"). */
-function findServing(servings: { description: string; gramWeight: number; amount: number }[], unit: string) {
-  // For gram-based amounts, prefer the 1g serving so qty = grams directly
-  if (['g', 'gram', 'grams'].includes(unit.toLowerCase())) {
-    return (
-      servings.find((s) => s.gramWeight === 1 && s.description.toLowerCase().includes('gram')) ||
-      servings.find((s) => s.gramWeight === 1) ||
-      servings.find((s) => s.description === '100 g')
-    );
-  }
-  const aliases: Record<string, string[]> = {
-    tbsp: ['tbsp', 'tablespoon'],
-    tsp: ['tsp', 'teaspoon'],
-    cup: ['cup'],
-    oz: ['oz'],
-    lb: ['lb'],
-    ml: ['ml'],
-    serving: ['serving'],
-  };
-  const targets = aliases[unit.toLowerCase()] || [unit.toLowerCase()];
-  return servings.find((s) => targets.some((t) => s.description.toLowerCase().includes(t)));
 }
 
 function isGramServing(serving: { description: string; gramWeight: number; amount: number }) {
@@ -135,27 +113,12 @@ function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
   if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
     throw new Error(`Invalid "${fieldName}": ${value}`);
   }
-  return { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+  const logTime = { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+  const force = process.argv.includes('--force');
+  warnIfSuspiciousDate(logTime.date, force);
+  return logTime;
 }
 
-/**
- * Nudge the MacroFactor app to recompute a day's dashboard totals.
- * The app's dashboard reads from a local cache that only refreshes when
- * the food document changes. Adding a dummy entry triggers the Firestore
- * listener; we wait 15s for the app to process it, then hard-delete.
- * This works when the app is running; if the app is closed, the user
- * may need to add/delete any food on that day from within the app.
- */
-async function syncDayDashboard(client: MacroFactorClient, date: string): Promise<void> {
-  const logTime = { date, hour: 0, minute: 0 };
-  await client.logFood(logTime, '_sync', 0, 0, 0, 0);
-  await new Promise((resolve) => setTimeout(resolve, 15000));
-  const entries = await client.getFoodLog(date);
-  const dummy = entries.find((e) => !e.deleted && e.name === '_sync');
-  if (dummy) {
-    await client.hardDeleteFoodEntry(date, dummy.entryId);
-  }
-}
 function parseWorkoutStartTime(value: unknown): string {
   if (value == null) {
     const now = new Date();
@@ -241,17 +204,63 @@ function normalizeSetInputs(exerciseId: string, setsValue: unknown) {
   return expandSets(normalizedSets);
 }
 
-function buildWorkoutExercise(exerciseInput: Record<string, unknown>, setTargets?: SetTarget[]) {
-  if (typeof exerciseInput.exerciseId !== 'string' || exerciseInput.exerciseId.trim() === '') {
-    throw new Error('Each exercise requires "exerciseId" (string)');
+export async function resolveExerciseByName(
+  exerciseName: string,
+  client: Pick<MacroFactorClient, 'getCustomExercises'>
+) {
+  const matches = searchExercises(exerciseName);
+  if (matches.length === 1) {
+    return { exerciseId: matches[0].id, exerciseName: matches[0].name };
   }
-  const exerciseId = exerciseInput.exerciseId.trim();
-  const exercise = lookupExercise(exerciseId);
-  const exerciseName = exercise?.name ?? (typeof exerciseInput.name === 'string' ? exerciseInput.name.trim() : null);
-  if (!exerciseName) {
-    throw new Error(`Exercise "${exerciseId}" not found and no "name" provided for custom exercise`);
+
+  if (matches.length > 1) {
+    const exactMatch = matches.find((match) => match.name.toLowerCase() === exerciseName.toLowerCase());
+    if (exactMatch) {
+      return { exerciseId: exactMatch.id, exerciseName: exactMatch.name };
+    }
+
+    throw new Error(
+      `Exercise name is ambiguous: ${exerciseName}. Candidates: ${matches.map((match) => match.name).join(', ')}`
+    );
   }
-  const resolvedId = exercise?.id ?? exerciseId;
+
+  const customExercises = await client.getCustomExercises();
+  const customMatch = customExercises.find((exercise) => exercise.name.toLowerCase() === exerciseName.toLowerCase());
+  if (customMatch) {
+    return { exerciseId: customMatch.id, exerciseName: customMatch.name };
+  }
+
+  throw new Error(`Exercise not found: ${exerciseName}`);
+}
+
+export async function buildWorkoutExercise(
+  client: Pick<MacroFactorClient, 'getCustomExercises'>,
+  exerciseInput: Record<string, unknown>,
+  setTargets?: SetTarget[]
+) {
+  const providedExerciseId = typeof exerciseInput.exerciseId === 'string' ? exerciseInput.exerciseId.trim() : '';
+  const providedName = typeof exerciseInput.name === 'string' ? exerciseInput.name.trim() : '';
+
+  let resolvedId: string;
+  let exerciseName: string | null;
+
+  if (providedExerciseId) {
+    const exercise = lookupExercise(providedExerciseId);
+    exerciseName = (exercise?.name ?? providedName) || null;
+    if (!exerciseName) {
+      throw new Error(`Exercise "${providedExerciseId}" not found and no "name" provided for custom exercise`);
+    }
+    resolvedId = exercise?.id ?? providedExerciseId;
+  } else {
+    if (!providedName) {
+      throw new Error('Each exercise requires "exerciseId" or "name" (string)');
+    }
+
+    const resolved = await resolveExerciseByName(providedName, client);
+    resolvedId = resolved.exerciseId;
+    exerciseName = resolved.exerciseName;
+  }
+
   const expanded = normalizeSetInputs(resolvedId, exerciseInput.sets);
   const rawExercise = {
     id: randomUUID(),
@@ -486,10 +495,10 @@ function parseOutputFormat(opts: Record<string, string>): 'json' | 'text' {
   if (requested === 'json') return 'json';
   if (requested === 'text') return 'text';
   if (Object.prototype.hasOwnProperty.call(opts, 'json')) return 'json';
-  return process.stdout.isTTY ? 'text' : 'json';
+  return 'text';
 }
 
-function formatWorkoutPlanText(payload: {
+export function formatWorkoutPlanText(payload: {
   programName: string;
   dayName: string;
   phaseLabel: string;
@@ -526,7 +535,6 @@ function formatWorkoutPlanText(payload: {
 
   return lines.join('\n').trimEnd();
 }
-
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
@@ -566,7 +574,7 @@ const ALL_COMMANDS = [
   'weight-history',
 ];
 
-async function main() {
+export async function main() {
   const { command, opts, positional } = parseArgs();
 
   try {
@@ -1105,7 +1113,7 @@ async function main() {
               const exerciseId = typeof inputExercise.exerciseId === 'string' ? inputExercise.exerciseId.trim() : '';
               const setTargets =
                 programTargets.byExerciseId.get(exerciseId) ?? programTargets.byPosition[exerciseIndex];
-              const { rawExercise, summary } = buildWorkoutExercise(inputExercise, setTargets);
+              const { rawExercise, summary } = await buildWorkoutExercise(client, inputExercise, setTargets);
               blockExercises.push(rawExercise);
               blockSummaries.push(summary);
               exerciseIndex++;
@@ -1125,7 +1133,7 @@ async function main() {
             const inputExercise = exerciseInput as Record<string, unknown>;
             const exerciseId = typeof inputExercise.exerciseId === 'string' ? inputExercise.exerciseId.trim() : '';
             const setTargets = programTargets.byExerciseId.get(exerciseId) ?? programTargets.byPosition[exerciseIndex];
-            const { rawExercise, summary } = buildWorkoutExercise(inputExercise, setTargets);
+            const { rawExercise, summary } = await buildWorkoutExercise(client, inputExercise, setTargets);
             blocks.push({ exercises: [rawExercise] });
             exerciseSummary.push(summary);
             exerciseIndex++;
@@ -1209,7 +1217,7 @@ async function main() {
           if (!exerciseInput || typeof exerciseInput !== 'object') {
             throw new Error('Each exercise must be an object');
           }
-          const { rawExercise, summary } = buildWorkoutExercise(exerciseInput as Record<string, unknown>);
+          const { rawExercise, summary } = await buildWorkoutExercise(client, exerciseInput as Record<string, unknown>);
           blocks.push({ exercises: [rawExercise] });
           exerciseSummary.push(summary);
         }
@@ -1529,4 +1537,11 @@ async function main() {
   }
 }
 
-main();
+const isVitestRuntime =
+  Boolean(process.env.VITEST) ||
+  Boolean(process.env.VITEST_WORKER_ID) ||
+  process.argv.some((arg) => arg.includes('vitest'));
+
+if (!isVitestRuntime && process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  void main();
+}

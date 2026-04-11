@@ -297,7 +297,7 @@ export class MacroFactorClient {
     protein: number,
     carbs: number,
     fat: number
-  ): Promise<void> {
+  ): Promise<string> {
     const token = await this.ensureToken();
     const dateStr = loggedAt.date;
     const nowMicros = String(Date.now() * 1000);
@@ -329,6 +329,7 @@ export class MacroFactorClient {
       x: sfv('229'), // default food icon
     };
     await patchFoodDocument(`users/${this.uid}/food/${dateStr}`, entryId, fields, token);
+    return entryId;
   }
 
   /**
@@ -571,7 +572,6 @@ export class MacroFactorClient {
     if (!active) return null;
 
     // Find the most recent workout to determine position in cycle
-    const token = await this.ensureToken();
     const history = await this.getWorkoutHistory();
     const lastProgramWorkout = history.find((w) => w.programName === active.name);
 

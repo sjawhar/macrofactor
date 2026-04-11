@@ -154,3 +154,19 @@ mcp:
       MACROFACTOR_USERNAME: '${MACROFACTOR_USERNAME}'
       MACROFACTOR_PASSWORD: '${MACROFACTOR_PASSWORD}'
 ```
+
+## Common Agent Mistakes (avoid these)
+
+1. **Wrong date.** Always check the system date before logging. The user often reports food/workouts that span midnight boundaries. Ask "is this for today (Apr 11) or yesterday?" when ambiguous.
+
+2. **Asking the user what the app shows.** You have the CLI and API. Check `food-log`, `workouts`, `workout`, `workout-plan`, `next-workout` yourself before asking the user to read their screen.
+
+3. **Guessing exercise IDs.** Don't construct hex IDs from memory. Always use `exercises search` to find the correct ID. The CLI should eventually support name-based lookup in `log-workout` (currently MCP-only).
+
+4. **Wrong cycleIndex for deload.** When `cycleIndex >= numCycles`, use 999 (the app's sentinel). The CLI/MCP now handle this automatically, but if manually constructing `workoutSource`, remember this.
+
+5. **runtimeType must be "program".** Never use "trainingProgram" — it crashes the app. The CLI/MCP enforce this.
+
+6. **Piping CLI output through Python.** The CLI outputs JSON. Read it directly or use `workout-plan` which has human-readable output. Don't write ad-hoc Python parsers.
+
+7. **Giving up on problems.** When something doesn't work, compare raw Firestore data between app-created and CLI-created entries field by field. The answer is always in the data diff.
