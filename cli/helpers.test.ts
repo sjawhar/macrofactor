@@ -204,7 +204,7 @@ describe('warnIfSuspiciousDate', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  it('does not warn for today\'s date', () => {
+  it("does not warn for today's date", () => {
     const today = new Date().toISOString().slice(0, 10);
     warnIfSuspiciousDate(today, false);
     expect(consoleErrorSpy).not.toHaveBeenCalled();
@@ -213,51 +213,31 @@ describe('warnIfSuspiciousDate', () => {
   it('warns for yesterday with specific message', () => {
     const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
     warnIfSuspiciousDate(yesterday, false);
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('Warning: logging to yesterday')
-    );
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('--force')
-    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('Warning: logging to yesterday'));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('--force'));
   });
 
   it('warns for 2-7 days ago with day count', () => {
     const fiveDaysAgo = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
     warnIfSuspiciousDate(fiveDaysAgo, false);
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('Warning: logging to')
-    );
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('5 days ago')
-    );
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('--force')
-    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('Warning: logging to'));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('5 days ago'));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('--force'));
   });
 
   it('warns more strongly for >7 days ago', () => {
     const tenDaysAgo = new Date(Date.now() - 10 * 86400000).toISOString().slice(0, 10);
     warnIfSuspiciousDate(tenDaysAgo, false);
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('Warning: logging to')
-    );
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('10 days ago')
-    );
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('This seems unusual')
-    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('Warning: logging to'));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('10 days ago'));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('This seems unusual'));
   });
 
   it('warns for future dates', () => {
     const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
     warnIfSuspiciousDate(tomorrow, false);
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('Warning: logging to future date')
-    );
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
-      expect.stringContaining('--force')
-    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('Warning: logging to future date'));
+    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('--force'));
   });
 
   it('suppresses all warnings when force is true', () => {
