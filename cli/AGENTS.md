@@ -14,27 +14,39 @@ cli/
 
 ## Commands
 
-| Command            | Input                         | Description                  |
-| ------------------ | ----------------------------- | ---------------------------- |
-| `login`            | —                             | Verify credentials           |
-| `workouts`         | `{from?, to?}`                | List workout history         |
-| `workout`          | `<uuid>` or `{id}`            | Full workout detail          |
-| `exercises search` | `<query>`                     | Search bundled exercise DB   |
-| `exercise`         | `<hex-id>`                    | Resolve exercise ID          |
-| `custom-exercises` | —                             | List custom exercises        |
-| `create-exercise`  | `{name, ...metadata}`         | Create custom exercise       |
-| `gyms`             | —                             | List gym profiles            |
-| `profile`          | —                             | User profile                 |
-| `food-log`         | `[YYYY-MM-DD]`                | Day's food log               |
-| `search-food`      | `<query>`                     | Search food DB               |
-| `log-food`         | `{query, grams\|amount+unit}` | Search + log food            |
-| `log-weight`       | `{kg\|lbs, date?}`            | Log scale entry              |
-| `delete-food`      | `{date, entryId}`             | Soft-delete food entry       |
-| `update-food`      | `{date, entryId, quantity}`   | Update food qty              |
-| `log-workout`      | `{name, exercises[]}`         | Create workout               |
-| `log-exercise`     | `{workoutId, exercises[]}`    | Append to workout            |
-| `program`          | —                             | Show active training program |
-| `next-workout`     | —                             | Next day in training cycle   |
+| Command                 | Input                                | Description                                              |
+| ----------------------- | ------------------------------------ | -------------------------------------------------------- |
+| `login`                 | —                                    | Verify credentials                                       |
+| `workouts`              | `{from?, to?}`                       | List workout history                                     |
+| `workout`               | `<uuid>` or `{id}`                   | Full workout detail                                      |
+| `exercises search`      | `<query>`                            | Search bundled exercise DB                               |
+| `exercise`              | `<hex-id>`                           | Resolve exercise ID                                      |
+| `custom-exercises`      | —                                    | List custom exercises                                    |
+| `create-exercise`       | `{name, ...metadata}`                | Create custom exercise                                   |
+| `gyms`                  | —                                    | List gym profiles                                        |
+| `profile`               | —                                    | User profile                                             |
+| `food-log`              | `[YYYY-MM-DD]`                       | Day's food log                                           |
+| `search-food`           | `<query>`                            | Search food DB                                           |
+| `log-food`              | `{query, grams\|amount+unit}`        | Search + log food                                        |
+| `log-weight`            | `{kg\|lbs, date?}`                   | Log scale entry                                          |
+| `delete-food`           | `{date, entryId}`                    | Soft-delete food entry                                   |
+| `update-food`           | `{date, entryId, quantity}`          | Update food qty                                          |
+| `log-workout`           | `{name, exercises[]}`                | Create workout                                           |
+| `log-exercise`          | `{workoutId, exercises[]}`           | Append to workout                                        |
+| `program`               | —                                    | Show active training program                             |
+| `next-workout`          | —                                    | Next day in training cycle                               |
+| `workout-plan`          | `[day-name]`                         | Next program day with set targets and weight suggestions |
+| `custom-workouts`       | —                                    | List queued workout plans (app library)                  |
+| `custom-workout`        | `<uuid>` or `{id}`                   | Full custom workout plan detail                          |
+| `create-custom-workout` | `{name, gym, blocks\|exercises}`     | Queue a workout in the app library                       |
+| `update-custom-workout` | `{id, name, gym, blocks\|exercises}` | Replace an existing custom workout plan                  |
+| `delete-custom-workout` | `<uuid>` or `{id}`                   | Delete a queued workout plan                             |
+| `programs`              | —                                    | List all training programs                               |
+| `create-program`        | `{name, days, ...}`                  | Create multi-day multi-cycle program                     |
+| `update-program`        | `{id, name, days, ...}`              | Replace existing program                                 |
+| `delete-program`        | `<uuid>` or `{id}`                   | Delete program (clears active if needed)                 |
+| `activate-program`      | `<uuid>` or `{id}`                   | Set as the active program                                |
+| `deactivate-program`    | —                                    | Clear the active program                                 |
 
 ## Key Patterns
 

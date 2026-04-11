@@ -8,12 +8,30 @@ import {
   getFoodById,
   type FoodEntry,
   type Goals,
+  type PlanBlock,
+  type PlanExercise,
+  type PlanSet,
+  type ProgramBlockInput,
+  type ProgramDayInput,
+  type ProgramExerciseInput,
   type SetTarget,
+  type TrainingProgramInput,
+  type WorkoutPlan,
   type WorkoutSource,
 } from '../src/lib/api/index';
 import { syncDayDashboard } from '../src/lib/api/sync';
 import { searchExercises, resolveExercise, lookupExercise } from '../src/lib/api/exercises';
-import { readInput, parseISO, expandSets, resolveWeight, warnIfSuspiciousDate, type SetInput } from './helpers';
+import {
+  readInput,
+  parseISO,
+  expandSets,
+  expandPlanSets,
+  resolveWeight,
+  warnIfSuspiciousDate,
+  type ExpandedPlanSet,
+  type PlanSetInput,
+  type SetInput,
+} from './helpers';
 import { readFileSync } from 'fs';
 import { randomUUID } from 'crypto';
 import { pathToFileURL } from 'url';
@@ -299,6 +317,394 @@ export async function buildWorkoutExercise(
   return { rawExercise, summary };
 }
 
+function normalizePlanSetInputs(setsValue: unknown, exerciseLabel: string): ExpandedPlanSet[] {
+  if (!Array.isArray(setsValue)) {
+    throw new Error(`Exercise "${exerciseLabel}" requires "sets" (array)`);
+  }
+  const normalized = setsValue.map((set, idx): PlanSetInput => {
+    if (!set || typeof set !== 'object') {
+      throw new Error(`Exercise "${exerciseLabel}" set ${idx + 1} must be an object`);
+    }
+    const record = set as Record<string, unknown>;
+    return {
+      reps: typeof record.reps === 'number' || typeof record.reps === 'string' ? record.reps : undefined,
+      minReps: record.minReps != null ? Number(record.minReps) : undefined,
+      maxReps: record.maxReps != null ? Number(record.maxReps) : undefined,
+      sets: record.sets != null ? Number(record.sets) : undefined,
+      rir: record.rir != null ? Number(record.rir) : undefined,
+      rest: record.rest != null ? Number(record.rest) : undefined,
+      kg: record.kg != null ? Number(record.kg) : undefined,
+      lbs: record.lbs != null ? Number(record.lbs) : undefined,
+      type:
+        record.type === 'standard' || record.type === 'warmUp' || record.type === 'failure' ? record.type : undefined,
+    };
+  });
+  return expandPlanSets(normalized);
+}
+
+/**
+ * Build a PlanExercise (Firestore-ready) from a CLI input object.
+ * Accepts either { exerciseId } or { name } (resolved against bundled + custom).
+ */
+export async function buildPlanExercise(
+  client: Pick<MacroFactorClient, 'getCustomExercises'>,
+  exerciseInput: Record<string, unknown>
+): Promise<{ planExercise: PlanExercise; summary: Record<string, unknown> }> {
+  const providedExerciseId = typeof exerciseInput.exerciseId === 'string' ? exerciseInput.exerciseId.trim() : '';
+  const providedName = typeof exerciseInput.name === 'string' ? exerciseInput.name.trim() : '';
+
+  let resolvedId: string;
+  let exerciseName: string;
+  if (providedExerciseId) {
+    const exercise = lookupExercise(providedExerciseId);
+    exerciseName = exercise?.name ?? providedName ?? providedExerciseId;
+    resolvedId = exercise?.id ?? providedExerciseId;
+  } else {
+    if (!providedName) {
+      throw new Error('Each plan exercise requires "exerciseId" or "name" (string)');
+    }
+    const resolved = await resolveExerciseByName(providedName, client);
+    resolvedId = resolved.exerciseId;
+    exerciseName = resolved.exerciseName ?? providedName;
+  }
+
+  const expanded = normalizePlanSetInputs(exerciseInput.sets, exerciseName);
+  const overrideRestTimers = expanded.some((set) => set.restMicros != null);
+  const sets: PlanSet[] = expanded.map((set) => ({
+    setType: set.setType,
+    segments: [],
+    log: {
+      minFullReps: set.minFullReps,
+      maxFullReps: set.maxFullReps,
+      rir: set.rir,
+      restTimer: set.restMicros,
+      distance: null,
+      durationSeconds: null,
+      weight: set.weightKg,
+    },
+  }));
+
+  const planExercise: PlanExercise = {
+    id: randomUUID(),
+    exerciseId: resolvedId,
+    note: typeof exerciseInput.note === 'string' ? exerciseInput.note : undefined,
+    target: {
+      overrideRestTimers,
+      sets,
+    },
+  };
+
+  const summary = {
+    name: exerciseName,
+    exerciseId: resolvedId,
+    sets: sets.map((s) => ({
+      type: s.setType,
+      reps:
+        s.log.minFullReps != null && s.log.maxFullReps != null && s.log.minFullReps !== s.log.maxFullReps
+          ? `${s.log.minFullReps}-${s.log.maxFullReps}`
+          : (s.log.maxFullReps ?? s.log.minFullReps),
+      rir: s.log.rir,
+      restSeconds: s.log.restTimer != null ? s.log.restTimer / 1_000_000 : null,
+      kg: s.log.weight != null ? Math.round(s.log.weight * 1000) / 1000 : null,
+    })),
+  };
+
+  return { planExercise, summary };
+}
+
+/**
+ * Coerce a CLI input shape (blocks: [[ex1, ex2]] or exercises: [ex]) into a
+ * full WorkoutPlan ready for createCustomWorkout / updateCustomWorkout.
+ */
+export async function buildWorkoutPlan(
+  client: Pick<MacroFactorClient, 'getCustomExercises' | 'getGymProfiles'>,
+  input: Record<string, unknown>
+): Promise<{ plan: WorkoutPlan; summary: Record<string, unknown> }> {
+  const name = typeof input.name === 'string' ? input.name.trim() : '';
+  if (!name) throw new Error('Custom workout requires "name" (string)');
+
+  const gyms = await client.getGymProfiles();
+  const requestedGymId = typeof input.gymId === 'string' ? input.gymId.trim() : '';
+  const requestedGymName = typeof input.gym === 'string' ? input.gym.trim() : '';
+  const gym = requestedGymId
+    ? gyms.find((candidate) => candidate.id === requestedGymId)
+    : requestedGymName
+      ? gyms.find((candidate) => candidate.name.toLowerCase() === requestedGymName.toLowerCase())
+      : gyms[0];
+  if (!gym) {
+    const hint = requestedGymId || requestedGymName || '(none provided)';
+    throw new Error(`Gym "${hint}" not found. Available: ${gyms.map((g) => g.name).join(', ')}`);
+  }
+
+  const blocksInput = input.blocks;
+  const exercisesInput = input.exercises;
+  if (blocksInput != null && exercisesInput != null) {
+    throw new Error('Provide either "exercises" (flat) or "blocks" (grouped), not both');
+  }
+
+  const blocks: PlanBlock[] = [];
+  const blockSummaries: unknown[] = [];
+
+  if (Array.isArray(blocksInput)) {
+    for (const blockGroup of blocksInput) {
+      if (!Array.isArray(blockGroup)) {
+        throw new Error('Each element of "blocks" must be an array of exercises');
+      }
+      const blockExercises: PlanExercise[] = [];
+      const summaries: unknown[] = [];
+      for (const exerciseInput of blockGroup) {
+        if (!exerciseInput || typeof exerciseInput !== 'object') {
+          throw new Error('Each plan exercise must be an object');
+        }
+        const { planExercise, summary } = await buildPlanExercise(client, exerciseInput as Record<string, unknown>);
+        blockExercises.push(planExercise);
+        summaries.push(summary);
+      }
+      blocks.push({ id: randomUUID(), exercises: blockExercises });
+      blockSummaries.push(summaries);
+    }
+  } else {
+    const exArray = exercisesInput == null ? [] : exercisesInput;
+    if (!Array.isArray(exArray)) {
+      throw new Error('"exercises" must be an array when provided');
+    }
+    for (const exerciseInput of exArray) {
+      if (!exerciseInput || typeof exerciseInput !== 'object') {
+        throw new Error('Each plan exercise must be an object');
+      }
+      const { planExercise, summary } = await buildPlanExercise(client, exerciseInput as Record<string, unknown>);
+      blocks.push({ id: randomUUID(), exercises: [planExercise] });
+      blockSummaries.push(summary);
+    }
+  }
+
+  const plan: WorkoutPlan = { name, gymId: gym.id, blocks };
+  const summary = {
+    name,
+    gym: gym.name,
+    gymId: gym.id,
+    blocks: blockSummaries,
+  };
+  return { plan, summary };
+}
+
+/**
+ * Coerce a CLI input shape into a TrainingProgramInput suitable for
+ * client.createTrainingProgram / updateTrainingProgram.
+ *
+ * Input format:
+ *   {
+ *     name, color?, icon?, numCycles?, runIndefinitely?, isPeriodized?, deload?,
+ *     gym? | gymId?,           // default gym for non-rest days
+ *     days: [
+ *       { name, gym? | gymId?, blocks: [[exercise, exercise], ...] },
+ *       { name }                  // omit blocks for rest day
+ *     ]
+ *   }
+ *   exercise = { name | exerciseId, cycles: [<cycle>...] }
+ *   cycle    = [<setInput>...] OR { sets: [...], overrideRestTimers? }
+ *   setInput = { reps, minReps?, maxReps?, sets?, rir?, rest?, type? }
+ *
+ * Shorthand: if an exercise has `sets: [...]` instead of `cycles: [...]`, that
+ * single set scheme is repeated across all numCycles cycles.
+ */
+export async function buildTrainingProgram(
+  client: Pick<MacroFactorClient, 'getCustomExercises' | 'getGymProfiles'>,
+  input: Record<string, unknown>
+): Promise<{ program: TrainingProgramInput; summary: Record<string, unknown> }> {
+  const name = typeof input.name === 'string' ? input.name.trim() : '';
+  if (!name) throw new Error('Training program requires "name" (string)');
+  if (!Array.isArray(input.days) || input.days.length === 0) {
+    throw new Error('Training program requires non-empty "days" array');
+  }
+
+  const gyms = await client.getGymProfiles();
+  const resolveGym = (rawGymId: unknown, rawGymName: unknown): string | null => {
+    const gymId = typeof rawGymId === 'string' ? rawGymId.trim() : '';
+    const gymName = typeof rawGymName === 'string' ? rawGymName.trim() : '';
+    if (gymId) {
+      const found = gyms.find((g) => g.id === gymId);
+      if (!found) {
+        throw new Error(`Gym id "${gymId}" not found. Available: ${gyms.map((g) => g.name).join(', ')}`);
+      }
+      return found.id;
+    }
+    if (gymName) {
+      const found = gyms.find((g) => g.name.toLowerCase() === gymName.toLowerCase());
+      if (!found) {
+        throw new Error(`Gym "${gymName}" not found. Available: ${gyms.map((g) => g.name).join(', ')}`);
+      }
+      return found.id;
+    }
+    return null;
+  };
+
+  const defaultGymId = resolveGym(input.gymId, input.gym);
+
+  const numCyclesHint = typeof input.numCycles === 'number' && input.numCycles > 0 ? input.numCycles : null;
+
+  const days: ProgramDayInput[] = [];
+  const summaries: unknown[] = [];
+  for (const dayInput of input.days as Record<string, unknown>[]) {
+    if (!dayInput || typeof dayInput !== 'object') {
+      throw new Error('Each day must be an object');
+    }
+    const dayName = typeof dayInput.name === 'string' ? dayInput.name.trim() : '';
+    if (!dayName) throw new Error('Each day requires "name" (string)');
+
+    const dayGymId = resolveGym(dayInput.gymId, dayInput.gym);
+    const blocksRaw = dayInput.blocks;
+    const exercisesRaw = dayInput.exercises;
+    const isRest =
+      (blocksRaw == null && exercisesRaw == null) ||
+      (Array.isArray(blocksRaw) && blocksRaw.length === 0) ||
+      (Array.isArray(exercisesRaw) && exercisesRaw.length === 0);
+    if (isRest) {
+      days.push({ name: dayName, gymId: 'blankSlate' });
+      summaries.push({ name: dayName, restDay: true });
+      continue;
+    }
+    if (blocksRaw != null && exercisesRaw != null) {
+      throw new Error(`Day "${dayName}" — provide either blocks (grouped) or exercises (flat), not both`);
+    }
+
+    const programBlocks: ProgramBlockInput[] = [];
+    const blockSummaries: unknown[] = [];
+
+    const buildExercise = async (
+      exerciseInput: Record<string, unknown>
+    ): Promise<{ pe: ProgramExerciseInput; sum: Record<string, unknown> }> => {
+      const providedExerciseId = typeof exerciseInput.exerciseId === 'string' ? exerciseInput.exerciseId.trim() : '';
+      const providedName = typeof exerciseInput.name === 'string' ? exerciseInput.name.trim() : '';
+      let resolvedId: string;
+      let exerciseName: string;
+      if (providedExerciseId) {
+        const exercise = lookupExercise(providedExerciseId);
+        exerciseName = exercise?.name ?? providedName ?? providedExerciseId;
+        resolvedId = exercise?.id ?? providedExerciseId;
+      } else {
+        if (!providedName) throw new Error('Each exercise requires "exerciseId" or "name"');
+        const resolved = await resolveExerciseByName(providedName, client);
+        resolvedId = resolved.exerciseId;
+        exerciseName = resolved.exerciseName ?? providedName;
+      }
+
+      // cycles vs sets shorthand
+      const cyclesRaw = exerciseInput.cycles;
+      const setsRaw = exerciseInput.sets;
+      let cycles: { sets: PlanSet[]; overrideRestTimers: boolean }[];
+      if (Array.isArray(cyclesRaw) && cyclesRaw.length > 0) {
+        cycles = cyclesRaw.map((cycleInput, idx) => {
+          let setsArr: unknown;
+          let override = false;
+          if (Array.isArray(cycleInput)) {
+            setsArr = cycleInput;
+          } else if (cycleInput && typeof cycleInput === 'object') {
+            const obj = cycleInput as Record<string, unknown>;
+            setsArr = obj.sets;
+            override = obj.overrideRestTimers === true;
+          } else {
+            throw new Error(`Exercise "${exerciseName}" cycle ${idx + 1} must be an array or object with "sets"`);
+          }
+          const expanded = normalizePlanSetInputs(setsArr, `${exerciseName} cycle ${idx + 1}`);
+          if (!override) override = expanded.some((s) => s.restMicros != null);
+          const planSets: PlanSet[] = expanded.map((s) => ({
+            setType: s.setType,
+            segments: [],
+            log: {
+              minFullReps: s.minFullReps,
+              maxFullReps: s.maxFullReps,
+              rir: s.rir,
+              restTimer: s.restMicros,
+              distance: null,
+              durationSeconds: null,
+              weight: null,
+            },
+          }));
+          return { sets: planSets, overrideRestTimers: override };
+        });
+      } else if (Array.isArray(setsRaw) && setsRaw.length > 0) {
+        const cycleCount = numCyclesHint ?? 1;
+        const expanded = normalizePlanSetInputs(setsRaw, exerciseName);
+        const override = expanded.some((s) => s.restMicros != null);
+        const planSets: PlanSet[] = expanded.map((s) => ({
+          setType: s.setType,
+          segments: [],
+          log: {
+            minFullReps: s.minFullReps,
+            maxFullReps: s.maxFullReps,
+            rir: s.rir,
+            restTimer: s.restMicros,
+            distance: null,
+            durationSeconds: null,
+            weight: null,
+          },
+        }));
+        cycles = Array.from({ length: cycleCount }, () => ({ sets: planSets, overrideRestTimers: override }));
+      } else {
+        throw new Error(`Exercise "${exerciseName}" requires "cycles" or "sets"`);
+      }
+      return {
+        pe: { exerciseId: resolvedId, cycles },
+        sum: {
+          name: exerciseName,
+          exerciseId: resolvedId,
+          cycleCount: cycles.length,
+          setsPerCycle: cycles[0]?.sets.length ?? 0,
+        },
+      };
+    };
+
+    if (Array.isArray(blocksRaw)) {
+      for (const blockGroup of blocksRaw) {
+        if (!Array.isArray(blockGroup)) {
+          throw new Error(`Day "${dayName}" — each block must be an array of exercises`);
+        }
+        const blockExercises: ProgramExerciseInput[] = [];
+        const blockSum: unknown[] = [];
+        for (const ex of blockGroup) {
+          if (!ex || typeof ex !== 'object') throw new Error('Each exercise must be an object');
+          const built = await buildExercise(ex as Record<string, unknown>);
+          blockExercises.push(built.pe);
+          blockSum.push(built.sum);
+        }
+        programBlocks.push({ exercises: blockExercises });
+        blockSummaries.push(blockSum);
+      }
+    } else if (Array.isArray(exercisesRaw)) {
+      for (const ex of exercisesRaw) {
+        if (!ex || typeof ex !== 'object') throw new Error('Each exercise must be an object');
+        const built = await buildExercise(ex as Record<string, unknown>);
+        programBlocks.push({ exercises: [built.pe] });
+        blockSummaries.push(built.sum);
+      }
+    }
+
+    const resolvedDayGymId = dayGymId ?? defaultGymId;
+    if (!resolvedDayGymId) {
+      throw new Error(`Day "${dayName}" — no gym specified (provide gym/gymId on the day or on the program)`);
+    }
+    days.push({ name: dayName, gymId: resolvedDayGymId, blocks: programBlocks });
+    summaries.push({ name: dayName, gymId: resolvedDayGymId, blocks: blockSummaries });
+  }
+
+  const program: TrainingProgramInput = {
+    name,
+    color: typeof input.color === 'string' ? input.color : undefined,
+    icon: typeof input.icon === 'string' ? input.icon : undefined,
+    numCycles: numCyclesHint ?? undefined,
+    runIndefinitely: typeof input.runIndefinitely === 'boolean' ? input.runIndefinitely : undefined,
+    isPeriodized: typeof input.isPeriodized === 'boolean' ? input.isPeriodized : undefined,
+    deload: input.deload === 'lastCycle' || input.deload === 'none' ? input.deload : undefined,
+    expanded: typeof input.expanded === 'boolean' ? input.expanded : undefined,
+    gymId: defaultGymId ?? undefined,
+    days,
+  };
+
+  const summary = { name, days: summaries };
+  return { program, summary };
+}
+
 function coerceWorkoutSource(input: unknown): WorkoutSource | undefined {
   if (!input || typeof input !== 'object') return undefined;
   const source = input as Record<string, unknown>;
@@ -520,6 +926,8 @@ export function formatWorkoutPlanText(payload: {
       lines.push('');
       continue;
     }
+    lines.push('   Set   | Target    | Intensity');
+    lines.push('   ------+-----------+----------');
     for (const set of exercise.sets) {
       const reps =
         set.minReps == null && set.maxReps == null
@@ -528,7 +936,7 @@ export function formatWorkoutPlanText(payload: {
             ? `${set.minReps ?? set.maxReps} reps`
             : `${set.minReps ?? '?'}-${set.maxReps ?? '?'} reps`;
       const rir = set.rir == null ? 'RIR ?' : `RIR ${set.rir}`;
-      lines.push(`   Set ${set.set}: ${reps} @ ${rir}`);
+      lines.push(`   ${`Set ${set.set}`.padEnd(6)} | ${reps.padEnd(9)} | ${rir}`);
     }
     lines.push('');
   }
@@ -544,6 +952,17 @@ const ALL_COMMANDS = [
   'copy-food',
   'custom-exercises',
   'create-exercise',
+  'custom-workouts',
+  'custom-workout',
+  'create-custom-workout',
+  'update-custom-workout',
+  'delete-custom-workout',
+  'programs',
+  'create-program',
+  'update-program',
+  'delete-program',
+  'activate-program',
+  'deactivate-program',
   'delete-weight',
   'hard-delete-food',
   'login',
@@ -726,6 +1145,151 @@ export async function main() {
         const client = await getClient();
         const created = await client.createCustomExercise(exerciseDef as any);
         console.log(JSON.stringify({ status: 'created', id: created.id, name: created.name }, null, 2));
+        break;
+      }
+
+      case 'custom-workouts': {
+        const client = await getClient();
+        const customWorkouts = await client.getCustomWorkouts();
+        console.log(
+          JSON.stringify(
+            customWorkouts.map((cw) => ({
+              id: cw.id,
+              name: cw.workoutPlan.name,
+              gymId: cw.workoutPlan.gymId,
+              blockCount: cw.workoutPlan.blocks.length,
+              exerciseCount: cw.workoutPlan.blocks.reduce((sum, b) => sum + b.exercises.length, 0),
+            })),
+            null,
+            2
+          )
+        );
+        break;
+      }
+
+      case 'custom-workout': {
+        const input = await readInput(positional);
+        const id = (typeof input?.id === 'string' ? input.id.trim() : '') || positional[0] || '';
+        if (!id) throw new Error('Usage: mf.ts custom-workout <uuid> or {"id":"..."}');
+        const client = await getClient();
+        const customWorkout = await client.getCustomWorkout(id);
+        if (!customWorkout) {
+          console.log(JSON.stringify({ status: 'not_found', id }, null, 2));
+          break;
+        }
+        console.log(JSON.stringify(customWorkout, null, 2));
+        break;
+      }
+
+      case 'create-custom-workout': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts create-custom-workout <json> or pipe JSON via stdin');
+        }
+        const client = await getClient();
+        const { plan, summary } = await buildWorkoutPlan(client, input);
+        const idOverride = typeof input.id === 'string' ? input.id.trim() : undefined;
+        const created = await client.createCustomWorkout(plan, idOverride || undefined);
+        console.log(JSON.stringify({ status: 'created', id: created.id, ...summary }, null, 2));
+        break;
+      }
+
+      case 'update-custom-workout': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts update-custom-workout <json> or pipe JSON via stdin');
+        }
+        const id = typeof input.id === 'string' ? input.id.trim() : '';
+        if (!id) throw new Error('update-custom-workout requires "id" (string)');
+        const client = await getClient();
+        const { plan, summary } = await buildWorkoutPlan(client, input);
+        await client.updateCustomWorkout(id, plan);
+        console.log(JSON.stringify({ status: 'updated', id, ...summary }, null, 2));
+        break;
+      }
+
+      case 'delete-custom-workout': {
+        const input = await readInput(positional);
+        const id = (typeof input?.id === 'string' ? input.id.trim() : '') || positional[0] || '';
+        if (!id) throw new Error('Usage: mf.ts delete-custom-workout <uuid> or {"id":"..."}');
+        const client = await getClient();
+        await client.deleteCustomWorkout(id);
+        console.log(JSON.stringify({ status: 'deleted', id }, null, 2));
+        break;
+      }
+
+      case 'programs': {
+        const client = await getClient();
+        const programs = await client.getTrainingPrograms();
+        console.log(
+          JSON.stringify(
+            programs.map((p) => ({
+              id: p.id,
+              name: p.name,
+              numCycles: p.numCycles,
+              isPeriodized: p.isPeriodized,
+              deload: p.deload,
+              isActive: p.isActive,
+              dayCount: p.days.length,
+              workoutDays: p.days.filter((d) => !d.isRestDay).length,
+            })),
+            null,
+            2
+          )
+        );
+        break;
+      }
+
+      case 'create-program': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts create-program <json> or pipe JSON via stdin');
+        }
+        const client = await getClient();
+        const { program, summary } = await buildTrainingProgram(client, input);
+        const created = await client.createTrainingProgram(program);
+        console.log(JSON.stringify({ status: 'created', id: created.id, ...summary }, null, 2));
+        break;
+      }
+
+      case 'update-program': {
+        const input = await readInput(positional);
+        if (!input || typeof input !== 'object') {
+          throw new Error('Usage: mf.ts update-program <json> or pipe JSON via stdin');
+        }
+        const id = typeof input.id === 'string' ? input.id.trim() : '';
+        if (!id) throw new Error('update-program requires "id" (string)');
+        const client = await getClient();
+        const { program, summary } = await buildTrainingProgram(client, input);
+        const updated = await client.updateTrainingProgram(id, program);
+        console.log(JSON.stringify({ status: 'updated', id: updated.id, ...summary }, null, 2));
+        break;
+      }
+
+      case 'delete-program': {
+        const input = await readInput(positional);
+        const id = (typeof input?.id === 'string' ? input.id.trim() : '') || positional[0] || '';
+        if (!id) throw new Error('Usage: mf.ts delete-program <uuid> or {"id":"..."}');
+        const client = await getClient();
+        await client.deleteTrainingProgram(id);
+        console.log(JSON.stringify({ status: 'deleted', id }, null, 2));
+        break;
+      }
+
+      case 'activate-program': {
+        const input = await readInput(positional);
+        const id = (typeof input?.id === 'string' ? input.id.trim() : '') || positional[0] || '';
+        if (!id) throw new Error('Usage: mf.ts activate-program <uuid> or {"id":"..."}');
+        const client = await getClient();
+        await client.setActiveProgram(id);
+        console.log(JSON.stringify({ status: 'activated', id }, null, 2));
+        break;
+      }
+
+      case 'deactivate-program': {
+        const client = await getClient();
+        await client.setActiveProgram(null);
+        console.log(JSON.stringify({ status: 'deactivated' }, null, 2));
         break;
       }
 
@@ -1439,7 +2003,6 @@ export async function main() {
         // Build exercise list with targets
         const customExercises = await client.getCustomExercises();
         const customNameMap = new Map(customExercises.map((e) => [e.id, e.name]));
-
         const exercises = targetDay.exercises.map((ex) => {
           const targets = targetSetsForCycle(ex, cycleIndex, active.deload);
           const bundledName = resolveExercise(ex.exerciseId)?.name;

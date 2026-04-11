@@ -25,9 +25,16 @@ import type {
   WorkoutSet,
   GymProfile,
   CustomExercise,
+  CustomWorkout,
+  PlanExercise,
+  ProgramBlockInput,
+  ProgramDayInput,
+  ProgramExerciseInput,
   TrainingProgram,
   TrainingProgramExercise,
+  TrainingProgramInput,
   PeriodizedTargets,
+  WorkoutPlan,
 } from './workout-types';
 import { resolveName } from './exercises';
 
@@ -96,6 +103,184 @@ function toNumberArray(val: unknown): number[] {
 function documentId(name: string | undefined, parsed: Record<string, any>): string | undefined {
   if (typeof parsed.id === 'string' && parsed.id !== '') return parsed.id;
   return name?.split('/').pop();
+}
+
+/**
+ * Parse a Firestore-decoded customWorkouts document into a typed CustomWorkout.
+ * Resolves exercise names from the bundled DB and (provided) custom-exercise map.
+ */
+function parseCustomWorkout(
+  parsed: Record<string, any>, // eslint-disable-line @typescript-eslint/no-explicit-any
+  docName: string | undefined,
+  customNameMap: Map<string, string>
+): CustomWorkout {
+  const id = documentId(docName, parsed) || (parsed.id as string) || '';
+  const planRaw = (parsed.workoutPlan as Record<string, any>) || {}; // eslint-disable-line @typescript-eslint/no-explicit-any
+  return {
+    id,
+    workoutPlan: {
+      name: typeof planRaw.name === 'string' ? planRaw.name : '',
+      gymId: typeof planRaw.gymId === 'string' ? planRaw.gymId : '',
+      blocks: ((planRaw.blocks as any[]) || []).map((block: any) => ({
+        id: typeof block?.id === 'string' ? block.id : '',
+        exercises: ((block?.exercises as any[]) || []).map((ex: any) => ({
+          id: typeof ex?.id === 'string' ? ex.id : '',
+          exerciseId: typeof ex?.exerciseId === 'string' ? ex.exerciseId : '',
+          exerciseName: resolveName(ex?.exerciseId) ?? customNameMap.get(ex?.exerciseId) ?? undefined,
+          note: typeof ex?.note === 'string' ? ex.note : undefined,
+          target: {
+            overrideRestTimers: Boolean(ex?.target?.overrideRestTimers),
+            sets: ((ex?.target?.sets as any[]) || []).map((s: any) => ({
+              setType: (s?.setType as 'standard' | 'warmUp' | 'failure') ?? 'standard',
+              segments: Array.isArray(s?.segments) ? s.segments : [],
+              log: {
+                minFullReps: numericOrNull(s?.log?.minFullReps),
+                maxFullReps: numericOrNull(s?.log?.maxFullReps),
+                rir: numericOrNull(s?.log?.rir),
+                restTimer: numericOrNull(s?.log?.restTimer),
+                distance: numericOrNull(s?.log?.distance),
+                durationSeconds: numericOrNull(s?.log?.durationSeconds),
+                weight: numericOrNull(s?.log?.weight),
+              },
+            })),
+          },
+        })),
+      })),
+    },
+  };
+}
+
+function numericOrNull(v: unknown): number | null {
+  if (v == null) return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : null;
+}
+
+/**
+ * Build a Firestore-ready trainingProgram document from a friendly input shape.
+ * Generates UUIDs for any id fields that aren't provided.
+ *
+ * Validation:
+ *   - days array required and non-empty
+ *   - All exercises within a program must have the same number of cycles
+ *   - numCycles is inferred from cycle-array length when not given
+ */
+function buildProgramDocument(input: TrainingProgramInput): Record<string, unknown> {
+  if (!input.name || typeof input.name !== 'string') {
+    throw new Error('Training program requires a name');
+  }
+  if (!Array.isArray(input.days) || input.days.length === 0) {
+    throw new Error('Training program requires at least one day');
+  }
+
+  const programId = input.id ?? crypto.randomUUID();
+  const defaultGymId = input.gymId ?? null;
+
+  // Discover cycle count from first non-rest exercise to validate consistency
+  let inferredCycleCount: number | null = null;
+  for (const day of input.days) {
+    const blocks = day.blocks ?? [];
+    for (const block of blocks) {
+      for (const ex of block.exercises ?? []) {
+        if (ex.cycles && ex.cycles.length > 0) {
+          if (inferredCycleCount == null) inferredCycleCount = ex.cycles.length;
+          else if (ex.cycles.length !== inferredCycleCount) {
+            throw new Error(
+              `Cycle count mismatch: exercise ${ex.exerciseId} has ${ex.cycles.length} cycles, expected ${inferredCycleCount}. All exercises in a program must use the same numCycles.`
+            );
+          }
+        }
+      }
+    }
+  }
+
+  const numCycles = input.numCycles ?? inferredCycleCount ?? 1;
+  const isPeriodized = input.isPeriodized ?? false;
+  const deload = input.deload ?? 'none';
+
+  const days = input.days.map((day) => {
+    const blocks = day.blocks ?? [];
+    const isRest = blocks.length === 0 || blocks.every((b) => (b.exercises ?? []).length === 0);
+    return {
+      id: day.id ?? crypto.randomUUID(),
+      name: day.name,
+      gymId: day.gymId ?? (isRest ? 'blankSlate' : (defaultGymId ?? 'blankSlate')),
+      blocks: blocks.map((block) => ({
+        id: block.id ?? crypto.randomUUID(),
+        exercises: (block.exercises ?? []).map((ex) => {
+          if (!ex.exerciseId) {
+            throw new Error(`Program exercise requires exerciseId (got ${JSON.stringify(ex)})`);
+          }
+          if (!Array.isArray(ex.cycles) || ex.cycles.length === 0) {
+            throw new Error(`Program exercise ${ex.exerciseId} requires cycles[] (one entry per cycle)`);
+          }
+          return {
+            id: ex.id ?? crypto.randomUUID(),
+            exerciseId: ex.exerciseId,
+            periodizedTargets: {
+              runtimeType: 'periodized',
+              deload: null,
+              values: ex.cycles.map((cycle) => ({
+                sets: cycle.sets,
+                overrideRestTimers: cycle.overrideRestTimers ?? false,
+              })),
+            },
+          };
+        }),
+      })),
+    };
+  });
+
+  return {
+    id: programId,
+    name: input.name,
+    color: input.color ?? 'blue',
+    icon: input.icon ?? 'list',
+    numCycles,
+    runIndefinitely: input.runIndefinitely ?? false,
+    isPeriodized,
+    deload,
+    expanded: input.expanded ?? true,
+    workoutCycleCompletions: {},
+    programExerciseIdToNote: {},
+    days,
+  };
+}
+
+/**
+ * Build a TrainingProgram (typed) from a Firestore-ready program document.
+ * Used after createTrainingProgram / updateTrainingProgram to return a typed result.
+ */
+function parseTrainingProgramFromDocument(program: Record<string, unknown>): TrainingProgram {
+  const days = (program.days as Record<string, unknown>[]) || [];
+  return {
+    id: program.id as string,
+    name: program.name as string,
+    color: program.color as string,
+    icon: program.icon as string,
+    numCycles: (program.numCycles as number) ?? 1,
+    runIndefinitely: Boolean(program.runIndefinitely),
+    isPeriodized: Boolean(program.isPeriodized),
+    deload: program.deload as string,
+    isActive: false,
+    workoutCycleCompletions: program.workoutCycleCompletions as TrainingProgram['workoutCycleCompletions'],
+    days: days.map((d) => {
+      const blocks = (d.blocks as Record<string, unknown>[]) || [];
+      return {
+        id: d.id as string,
+        name: d.name as string,
+        gymId: d.gymId as string,
+        isRestDay: blocks.length === 0 || blocks.every((b) => !((b.exercises as unknown[]) ?? []).length),
+        exercises: blocks.flatMap((b) =>
+          ((b.exercises as Record<string, unknown>[]) ?? []).map((e) => ({
+            id: e.id as string,
+            exerciseId: e.exerciseId as string,
+            periodizedTargets: e.periodizedTargets as PeriodizedTargets | undefined,
+          }))
+        ),
+      };
+    }),
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -820,6 +1005,168 @@ export class MacroFactorClient {
     const fieldPaths = Object.keys(fields);
     await patchDocument(`users/${this.uid}/customExercises/${id}`, fields, fieldPaths, token);
     return { ...exercise, id } as CustomExercise;
+  }
+
+  // -------------------------------------------------------------------------
+  // Custom workouts (the in-app "workout plan" library)
+  //
+  // Path: users/{uid}/customWorkouts/{uuid}
+  // Each entry's UUID must also live in profiles/workout.workoutLibraryIds
+  // for it to surface in the app's library tab.
+  // -------------------------------------------------------------------------
+
+  /** List all custom workouts (planned/queued workouts) for this user. */
+  async getCustomWorkouts(): Promise<CustomWorkout[]> {
+    const token = await this.ensureToken();
+    const docs = await listDocuments(`users/${this.uid}/customWorkouts`, token);
+    const customExercises = await this.getCustomExercises();
+    const customNameMap = new Map(customExercises.map((e) => [e.id, e.name]));
+    return docs.map((doc) => parseCustomWorkout(parseDocument(doc), doc.name, customNameMap));
+  }
+
+  /** Fetch one custom workout by id. Returns null if it does not exist. */
+  async getCustomWorkout(id: string): Promise<CustomWorkout | null> {
+    const token = await this.ensureToken();
+    const doc = await getDocument(`users/${this.uid}/customWorkouts/${id}`, token);
+    const parsed = parseDocument(doc);
+    if (!parsed.id && !parsed.workoutPlan) return null;
+    const customExercises = await this.getCustomExercises();
+    const customNameMap = new Map(customExercises.map((e) => [e.id, e.name]));
+    return parseCustomWorkout(parsed, doc.name, customNameMap);
+  }
+
+  /**
+   * Create a new custom workout. Returns the created CustomWorkout (with its
+   * generated id). Also adds the new id to `profiles/workout.workoutLibraryIds`
+   * so the plan appears in the app's library tab.
+   */
+  async createCustomWorkout(plan: WorkoutPlan, idOverride?: string): Promise<CustomWorkout> {
+    const token = await this.ensureToken();
+    const id = idOverride ?? crypto.randomUUID();
+    const fields = { id, workoutPlan: plan };
+    await patchDocument(`users/${this.uid}/customWorkouts/${id}`, fields, ['id', 'workoutPlan'], token);
+    await this.addWorkoutLibraryId(id);
+    return { id, workoutPlan: plan };
+  }
+
+  /**
+   * Replace the workoutPlan of an existing custom workout. Pass the full
+   * WorkoutPlan — partial updates are not supported because the app stores
+   * the plan as a single mapValue.
+   */
+  async updateCustomWorkout(id: string, plan: WorkoutPlan): Promise<void> {
+    const token = await this.ensureToken();
+    const fields = { id, workoutPlan: plan };
+    await patchDocument(`users/${this.uid}/customWorkouts/${id}`, fields, ['workoutPlan'], token);
+  }
+
+  /**
+   * Delete a custom workout and remove its id from `workoutLibraryIds`.
+   * Idempotent: succeeds even if the document or library entry is already gone.
+   */
+  async deleteCustomWorkout(id: string): Promise<void> {
+    const token = await this.ensureToken();
+    await this.removeWorkoutLibraryId(id);
+    await deleteDocument(`users/${this.uid}/customWorkouts/${id}`, token);
+  }
+
+  /** Append an id to profiles/workout.workoutLibraryIds (no-op if already present). */
+  private async addWorkoutLibraryId(id: string): Promise<void> {
+    const profile = await this.getWorkoutProfile();
+    const existing = Array.isArray(profile.workoutLibraryIds) ? (profile.workoutLibraryIds as string[]) : [];
+    if (existing.includes(id)) return;
+    const next = [...existing, id];
+    const token = await this.ensureToken();
+    await patchDocument(
+      `users/${this.uid}/profiles/workout`,
+      { workoutLibraryIds: next },
+      ['workoutLibraryIds'],
+      token
+    );
+  }
+
+  /** Remove an id from profiles/workout.workoutLibraryIds (no-op if absent). */
+  private async removeWorkoutLibraryId(id: string): Promise<void> {
+    const profile = await this.getWorkoutProfile();
+    const existing = Array.isArray(profile.workoutLibraryIds) ? (profile.workoutLibraryIds as string[]) : [];
+    if (!existing.includes(id)) return;
+    const next = existing.filter((existingId) => existingId !== id);
+    const token = await this.ensureToken();
+    await patchDocument(
+      `users/${this.uid}/profiles/workout`,
+      { workoutLibraryIds: next },
+      ['workoutLibraryIds'],
+      token
+    );
+  }
+
+  // -------------------------------------------------------------------------
+  // Training programs (full multi-day, multi-cycle workout programs)
+  //
+  // Path: users/{uid}/trainingProgram/{uuid}
+  // Each entry's UUID must also live in profiles/workout.workoutLibraryIds.
+  // Active program is set via profiles/workout.activeProgramId.
+  // -------------------------------------------------------------------------
+
+  /** Fetch one training program by id. Returns null if not found. */
+  async getTrainingProgram(id: string): Promise<TrainingProgram | null> {
+    const programs = await this.getTrainingPrograms();
+    return programs.find((p) => p.id === id) ?? null;
+  }
+
+  /**
+   * Create a new training program. Auto-generates UUIDs for the program,
+   * each day, each block, and each exercise instance unless provided.
+   * Adds the new id to `workoutLibraryIds` so it appears in the app's library.
+   */
+  async createTrainingProgram(input: TrainingProgramInput): Promise<TrainingProgram> {
+    const token = await this.ensureToken();
+    const program = buildProgramDocument(input);
+    const fieldPaths = Object.keys(program);
+    await patchDocument(`users/${this.uid}/trainingProgram/${program.id}`, program, fieldPaths, token);
+    await this.addWorkoutLibraryId(program.id as string);
+    return parseTrainingProgramFromDocument(program);
+  }
+
+  /**
+   * Replace an existing training program. Pass the full program shape —
+   * partial updates aren't supported here because the app stores everything
+   * in a single document. workoutCycleCompletions and programExerciseIdToNote
+   * are PRESERVED unless explicitly overridden in the input.
+   */
+  async updateTrainingProgram(id: string, input: TrainingProgramInput): Promise<TrainingProgram> {
+    const token = await this.ensureToken();
+    const existing = await this.getTrainingProgram(id);
+    const program = buildProgramDocument({ ...input, id });
+    if (existing?.workoutCycleCompletions) {
+      program.workoutCycleCompletions = existing.workoutCycleCompletions as Record<string, unknown>;
+    }
+    const fieldPaths = Object.keys(program);
+    await patchDocument(`users/${this.uid}/trainingProgram/${id}`, program, fieldPaths, token);
+    return parseTrainingProgramFromDocument(program);
+  }
+
+  /**
+   * Delete a training program. Removes the document, removes id from
+   * `workoutLibraryIds`, and clears `activeProgramId` if this program was active.
+   */
+  async deleteTrainingProgram(id: string): Promise<void> {
+    const token = await this.ensureToken();
+    const profile = await this.getWorkoutProfile();
+    if (profile.activeProgramId === id) {
+      await patchDocument(`users/${this.uid}/profiles/workout`, { activeProgramId: null }, ['activeProgramId'], token);
+    }
+    await this.removeWorkoutLibraryId(id);
+    await deleteDocument(`users/${this.uid}/trainingProgram/${id}`, token);
+  }
+
+  /**
+   * Set (or clear) the active training program. Pass null to deactivate all.
+   * The active program is what `getNextWorkout` and the app's home screen use.
+   */
+  async setActiveProgram(id: string | null): Promise<void> {
+    const token = await this.ensureToken();
+    await patchDocument(`users/${this.uid}/profiles/workout`, { activeProgramId: id }, ['activeProgramId'], token);
   }
   // -------------------------------------------------------------------------
   // Search

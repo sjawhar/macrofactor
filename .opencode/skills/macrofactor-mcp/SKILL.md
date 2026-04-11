@@ -34,6 +34,9 @@ For Firestore schema details, field encodings, and common gotchas, see `referenc
 | `get_custom_exercises` | User-created exercises                                                                     |
 | `get_training_program` | Active training program days and exercises                                                 |
 | `get_next_workout`     | Next workout in the program cycle                                                          |
+| `get_custom_workouts`  | List queued workout plans (app library)                                                    |
+| `get_custom_workout`   | Full custom workout plan by id                                                             |
+| `get_training_programs` | List all training programs in the user's library                                          |
 | `search_foods`         | Search MacroFactor food database (USDA + branded)                                          |
 | `search_exercises`     | Search bundled exercise database by name                                                   |
 
@@ -55,6 +58,14 @@ For Firestore schema details, field encodings, and common gotchas, see `referenc
 | `delete_workout`         | Delete entire workout                                          | Yes         |
 | `remove_exercise`        | Remove exercise from workout                                   | Yes         |
 | `create_custom_exercise` | Create custom exercise with muscle/joint metadata              | No          |
+| `create_custom_workout`  | Queue a workout plan in the app library                        | No          |
+| `update_custom_workout`  | Replace an existing workout plan                               | No          |
+| `delete_custom_workout`  | Delete a queued workout plan                                   | Yes         |
+| `create_training_program` | Create multi-day multi-cycle training program                | No          |
+| `update_training_program` | Replace an existing training program                         | No          |
+| `delete_training_program` | Delete program (clears active if needed)                     | Yes         |
+| `activate_program`        | Set as the active program (drives next-workout)              | No          |
+| `deactivate_program`      | Clear the active program                                     | No          |
 
 ## Usage Examples
 
@@ -82,6 +93,15 @@ skill_mcp(mcp_name="macrofactor", tool_name="get_next_workout")
 
 # Create a custom exercise (reference a similar bundled exercise for metadata)
 skill_mcp(mcp_name="macrofactor", tool_name="create_custom_exercise", arguments='{"name": "Cable goblet squat", "primaryFeatureMuscle": ["2545c6f170d8804bb1fbdfc4471debe5"], "exerciseMetrics": ["2555c6f170d8805cafa6d16d3fdddbaa", "2555c6f170d88072bbf6d9ad3f16ea86"], "resistanceEquipmentGroups": [{"equipmentIds": ["19e5c6f170d880d28b46e9ccddcfba1a"]}]}')
+
+# Queue a workout for the user to do later ("workout plan" library)
+skill_mcp(mcp_name="macrofactor", tool_name="create_custom_workout", arguments='{"name": "Quad Focus + Bench", "gym": "Gym", "blocks": [[{"name": "barbell back squat", "sets": [{"reps": "6-8", "rir": 2, "sets": 4}]}, {"name": "standing barbell calf raise", "sets": [{"reps": "10-12", "sets": 4}]}], [{"name": "barbell bench press", "sets": [{"reps": "6-8", "rir": 2, "sets": 4}]}]]}')
+
+# Build a 4-week multi-day training program (cycles + deload)
+skill_mcp(mcp_name="macrofactor", tool_name="create_training_program", arguments='{"name":"Push/Pull/Legs 4-cycle","numCycles":4,"isPeriodized":true,"deload":"lastCycle","gym":"Gym","days":[{"name":"Push","blocks":[[{"name":"barbell bench press","cycles":[[{"reps":"4-6","rir":2}],[{"reps":"4-6","rir":1}],[{"reps":"4-6","rir":0}],[{"reps":"8-10","rir":3}]]}]]},{"name":"Rest"}]}')
+
+# Activate a program (set as current/next-up)
+skill_mcp(mcp_name="macrofactor", tool_name="activate_program", arguments='{"id":"<program-uuid>"}')
 ```
 
 ## CLI (Alternative)
@@ -108,6 +128,17 @@ The CLI is available when MCP is not. Output is JSON. Auth reads from `.env` aut
 | Gyms             | `npx tsx cli/mf.ts gyms`                                                                            |
 | Custom exercises | `npx tsx cli/mf.ts custom-exercises`                                                                |
 | Create exercise  | `npx tsx cli/mf.ts create-exercise '{"name":"...","primaryFeatureMuscle":[...],...}'`               |
+| Custom workouts (list)  | `npx tsx cli/mf.ts custom-workouts`                                                          |
+| Custom workout (read)   | `npx tsx cli/mf.ts custom-workout <uuid>`                                                    |
+| Create custom workout   | `npx tsx cli/mf.ts create-custom-workout '{"name":"...","gym":"Gym","blocks":[[...]]}'`       |
+| Update custom workout   | `npx tsx cli/mf.ts update-custom-workout '{"id":"...","name":"...",...}'`                    |
+| Delete custom workout   | `npx tsx cli/mf.ts delete-custom-workout <uuid>`                                             |
+| Programs (list)         | `npx tsx cli/mf.ts programs`                                                                 |
+| Create program          | `npx tsx cli/mf.ts create-program '{"name":"...","days":[...],...}'`                          |
+| Update program          | `npx tsx cli/mf.ts update-program '{"id":"...","name":"...",...}'`                            |
+| Delete program          | `npx tsx cli/mf.ts delete-program <uuid>`                                                    |
+| Activate program        | `npx tsx cli/mf.ts activate-program <uuid>`                                                  |
+| Deactivate program      | `npx tsx cli/mf.ts deactivate-program`                                                       |
 
 ## Key Behaviors
 
@@ -122,6 +153,8 @@ The CLI is available when MCP is not. Output is JSON. Auth reads from `.env` aut
 - **`log_manual_food`** works for custom-macro entries (e.g. restaurant meals). NEVER set the source type field `k` to `"manual"` — this crashes the Android app, blanking the entire day. The CLI/API already handles this correctly (uses `"n"`).
 - **Custom exercises**: Use `create_custom_exercise` when an exercise isn't in the bundled DB. Reference a similar bundled exercise (via `search_exercises`) to populate muscle/joint metadata. Once created, use the exercise by name in `log_workout`/`log_exercise`.
 - **Supersets**: In `log_workout`, use `blocks: [[ex1, ex2]]` instead of `exercises: [...]` for superset grouping.
+- **Custom workouts (workout plan library)**: Use `create_custom_workout` to queue a workout for the user to do later. The plan appears in the app's library tab. Sets in plans are TARGETS (rep ranges + optional RIR), not logged values. The user fills in actual reps/weight when they execute. The MCP tool automatically adds the new id to `workoutLibraryIds` so the plan surfaces in the library tab. Reps accept `"6-8"` range strings, single numbers, or `minReps`/`maxReps` explicit fields. **Two app-side gotchas (verified empirically)**: (1) Prescribed `kg`/`lbs` on plan sets is **silently ignored by the app** — the app's smart-progression algorithm overrides whatever you prescribe and tapers weight across multiple working sets at the same RIR target. Don't rely on per-set weights in plans; use `log_workout` for actual weight prescriptions. (2) Plan warmups **stack with** the user's `addSmartWarmUps: true` setting rather than replacing it. If smart warmups are on (check `get_profile` → workout profile), **omit warmups from plans entirely** to avoid double warmups.
+- **Training programs**: Use `create_training_program` to build a full multi-day, multi-cycle program in the app's library. Each exercise needs either explicit `cycles: [[set,set],[set,set],...]` (one entry per cycle, each containing its set scheme) OR a `sets: [...]` shorthand that gets repeated across all `numCycles` cycles. **Cross-exercise constraint**: every exercise in a program must use the same number of cycles. **Required field hygiene** (the client handles these automatically): `workoutCycleCompletions: {}` and `programExerciseIdToNote: {}` must exist on new programs; rest days must use `gymId: "blankSlate"` and an empty `blocks: []`; `runtimeType: "periodized"` must be set on every `periodizedTargets` even when isPeriodized=false. Use `activate_program` to make a program drive `get_next_workout` and the app's home screen.
 - **Program-linked workouts**: When logging a workout for a training program, pass `workoutSource` with `programId`, `dayId`, and `cycleIndex`. The tool will automatically (1) attach set targets from `periodizedTargets.values[cycleIndex]` and (2) update `workoutCycleCompletions` on the program document so the day shows as checked off. Use `get_training_program` to find dayIds and `get_next_workout` for the current cycle position.
 - **Dashboard sync**: After logging food, the CLI and MCP tools automatically trigger the app's dashboard to recompute by adding and hard-deleting a `_sync` entry. This works when the app is running. If the dashboard still shows stale totals, the user can force a refresh by adding and deleting any food on that day from within the app. This is a limitation of the app's local caching — the dashboard reads from a local cache updated by `FoodLogViewModel.updateNutrition`, which only fires reliably when food changes go through the app's own write pipeline.
 

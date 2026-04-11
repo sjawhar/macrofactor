@@ -64,6 +64,7 @@ data/samples/userProfile.json
 
 # Agent orchestration artifacts (session state, plans, evidence)
 .sisyphus/
+.omo/
 .opencode/
 
 # One-off generated content

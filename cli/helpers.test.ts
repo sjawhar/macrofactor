@@ -1,7 +1,17 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { LogTime } from '../src/lib/api/index';
 
-import { expandSets, parseISO, readInput, resolveWeight, warnIfSuspiciousDate, type SetInput } from './helpers';
+import {
+  expandPlanSets,
+  expandSets,
+  parseISO,
+  parseRepsTarget,
+  readInput,
+  resolveWeight,
+  warnIfSuspiciousDate,
+  type PlanSetInput,
+  type SetInput,
+} from './helpers';
 
 describe('parseISO', () => {
   it('reads offset-aware date/time directly from string', () => {
@@ -147,6 +157,100 @@ describe('expandSets', () => {
         setType: 'failure',
         rir: 1,
         restMicros: 90_000_000,
+      },
+    ]);
+  });
+});
+
+describe('parseRepsTarget', () => {
+  it('parses range strings like "6-8"', () => {
+    expect(parseRepsTarget('6-8')).toEqual({ min: 6, max: 8 });
+  });
+
+  it('handles whitespace around the range', () => {
+    expect(parseRepsTarget('  6 - 8 ')).toEqual({ min: 6, max: 8 });
+  });
+
+  it('treats a single numeric string as min == max', () => {
+    expect(parseRepsTarget('8')).toEqual({ min: 8, max: 8 });
+  });
+
+  it('treats a number input as min == max', () => {
+    expect(parseRepsTarget(8)).toEqual({ min: 8, max: 8 });
+  });
+
+  it('returns nulls when input is null or undefined', () => {
+    expect(parseRepsTarget(null)).toEqual({ min: null, max: null });
+    expect(parseRepsTarget(undefined)).toEqual({ min: null, max: null });
+  });
+
+  it('throws on malformed range strings', () => {
+    expect(() => parseRepsTarget('6-')).toThrow();
+    expect(() => parseRepsTarget('-8')).toThrow();
+    expect(() => parseRepsTarget('foo')).toThrow();
+    expect(() => parseRepsTarget('1-2-3')).toThrow();
+  });
+
+  it('throws when min > max', () => {
+    expect(() => parseRepsTarget('10-6')).toThrow(/min.*max/i);
+  });
+});
+
+describe('expandPlanSets', () => {
+  it('expands a single set with rep range and defaults', () => {
+    expect(expandPlanSets([{ reps: '6-8', rir: 2 }])).toEqual([
+      {
+        setType: 'standard',
+        minFullReps: 6,
+        maxFullReps: 8,
+        rir: 2,
+        restMicros: null,
+        weightKg: null,
+      },
+    ]);
+  });
+
+  it('expands based on the sets count', () => {
+    expect(expandPlanSets([{ reps: '6-8', sets: 4 }])).toHaveLength(4);
+  });
+
+  it('accepts explicit minReps / maxReps', () => {
+    expect(expandPlanSets([{ minReps: 12, maxReps: 15 }])[0]).toMatchObject({
+      minFullReps: 12,
+      maxFullReps: 15,
+    });
+  });
+
+  it('treats a single rep number as min == max', () => {
+    expect(expandPlanSets([{ reps: 8 }])[0]).toMatchObject({ minFullReps: 8, maxFullReps: 8 });
+  });
+
+  it('converts pounds to kilograms when prescribing weight', () => {
+    const [set] = expandPlanSets([{ reps: '5-5', lbs: 220.46226218 }]);
+    expect(set.weightKg).toBeCloseTo(100);
+  });
+
+  it('passes kg through when prescribed', () => {
+    expect(expandPlanSets([{ reps: '5-5', kg: 80 }])[0].weightKg).toBe(80);
+  });
+
+  it('converts rest seconds to microseconds when set explicitly', () => {
+    expect(expandPlanSets([{ reps: '6-8', rest: 90 }])[0].restMicros).toBe(90_000_000);
+  });
+
+  it('preserves set type', () => {
+    expect(expandPlanSets([{ reps: '5-5', type: 'warmUp' }])[0].setType).toBe('warmUp');
+  });
+
+  it('returns null reps when nothing is specified', () => {
+    expect(expandPlanSets([{}])).toEqual([
+      {
+        setType: 'standard',
+        minFullReps: null,
+        maxFullReps: null,
+        rir: null,
+        restMicros: null,
+        weightKg: null,
       },
     ]);
   });

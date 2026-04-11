@@ -231,6 +231,63 @@ Each document represents a complete training program with its full cycle structu
 
 **Rest days**: Identified by `blocks.length === 0` (or all blocks having no exercises). Typically named `"---"` with `gymId: "blankSlate"`.
 
+**Write requirements** (verified empirically by round-trip test):
+
+- The new program id must be added to `profiles/workout.workoutLibraryIds` for the program to appear in the library tab. The `createTrainingProgram` client method handles this automatically.
+- `programExerciseIdToNote` and `workoutCycleCompletions` must exist on the document (use `{}` for empty). Missing them silently breaks app rendering.
+- `runtimeType: "periodized"` is required on every `periodizedTargets` mapValue, even when `isPeriodized` is false at the program level.
+- All exercises in a program **must have the same number of cycles** (`periodizedTargets.values.length`). Mixed cycle counts cause undefined behavior.
+- Rest days are encoded as `{ id, name, gymId: "blankSlate", blocks: [] }` — do NOT include an `isRestDay` field (the app infers it from empty blocks).
+- Setting `profiles/workout.activeProgramId` to a program id makes that program drive `getNextWorkout` and the app's home screen. Pass `null` to deactivate.
+
+### Custom Workouts (Workout Plan Library)
+
+**Path:** `users/{uid}/customWorkouts/{uuid}`
+**Type:** Collection of queued/planned workouts (the app's "workout plan" feature)
+
+Each document represents a single planned workout that appears in the app's library tab. Sets are stored as **targets** (rep ranges + RIR + optional prescribed weight), not logged values — the user fills in actual numbers when they execute the plan, at which point a separate `workoutHistory` document is created.
+
+```typescript
+{
+  id: string,                    // UUID matching the document id
+  workoutPlan: {
+    name: string,                // Display name (e.g. "May 8, 2026" or "Quad Focus")
+    gymId: string,               // Gym profile UUID
+    blocks: Array<{
+      id: string,                // UUID for this block (multiple exercises = superset)
+      exercises: Array<{
+        id: string,              // UUID for this exercise instance
+        exerciseId: string,      // Bundled hex ID or custom UUID
+        note?: string,           // Optional per-exercise note
+        target: {
+          overrideRestTimers: boolean,  // True if any set has an explicit rest override
+          sets: Array<{
+            setType: 'standard' | 'warmUp' | 'failure',
+            segments: [],        // Reserved for set modifiers (drop sets etc.) — always empty currently
+            log: {
+              minFullReps: number | null,    // Lower bound of rep target
+              maxFullReps: number | null,    // Upper bound of rep target
+              rir: number | null,            // Reps-in-reserve target
+              restTimer: number | null,      // Microseconds; null = use app default
+              distance: number | null,       // Cardio target
+              durationSeconds: number | null,// Timed-exercise target
+              weight: number | null,         // Optional prescribed weight in kg
+            }
+          }>
+        }
+      }>
+    }>
+  }
+}
+```
+
+**Critical**: Creating a `customWorkouts` document is not enough on its own — the new id must also be appended to `profiles/workout.workoutLibraryIds` for the plan to appear in the app. The TypeScript client (`createCustomWorkout` / `deleteCustomWorkout`) handles this automatically.
+
+**Plan-set quirks (verified empirically against the app):**
+
+- `log.weight` on plan sets is **ignored by the app**. Even when prescribed, the app applies its own "smart progression" weight suggestions in-session, tapering subsequent working sets when they share an RIR target. The field round-trips through Firestore but has no effect on the app's behavior. To actually constrain weights, modify `profiles/workout.applySmartProgressionInSession` (global) or the per-exercise `userExerciseConfigs[id].adjustmentModeOverride` — not the plan itself.
+- Warmup sets in a plan **stack with** `profiles/workout.addSmartWarmUps: true` rather than replacing them. If the user has smart warmups enabled, including warmups in the plan produces double warmups. Either omit warmups from plans (let the app generate them) or disable smart warmups for the relevant exercises before queuing the plan.
+
 ### Workout Profile
 
 **Path:** `users/{uid}/profiles/workout`
@@ -240,7 +297,7 @@ Key fields:
 
 - `activeProgramId` — UUID of the currently active training program
 - `gymIds` — Array of gym UUIDs
-- `workoutLibraryIds` — Array of custom workout template IDs
+- `workoutLibraryIds` — Array of UUIDs that appear in the app's library tab. Includes both training programs (`users/{uid}/trainingProgram/{id}`) and queued custom workouts (`users/{uid}/customWorkouts/{id}`). Order in this array determines the display order in the app.
 - `userExerciseConfigs` — Per-exercise settings (weight unit, bar weight, notes)
 - `addSmartWarmUps`, `useDeload`, `rirTracking` — Program execution settings
 

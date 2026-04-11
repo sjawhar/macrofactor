@@ -38,19 +38,20 @@ macrofactor/
 
 ## Where to Look
 
-| Task                     | Location                            | Notes                                               |
-| ------------------------ | ----------------------------------- | --------------------------------------------------- |
-| Add/modify a page        | `src/routes/{feature}/+page.svelte` | Single file per route, no +server.ts                |
-| API calls (read/write)   | `src/lib/api/client.ts`             | `MacroFactorClient` class                           |
-| Firestore field encoding | `src/lib/api/firestore.ts`          | `sfv()`, `bfv()`, `nfv()` for food entries          |
-| Food search              | `src/lib/api/typesense.ts`          | Typesense multi-collection search                   |
-| Exercise ID resolution   | `src/lib/api/exercises.ts`          | Local lookup from `data/exercises.json`             |
-| Auth flow (web)          | `src/lib/stores/auth.svelte.ts`     | localStorage refresh token                          |
-| Auth flow (Firebase)     | `src/lib/api/auth.ts`               | `signIn()`, `refreshIdToken()`                      |
-| CLI commands             | `cli/mf.ts`                         | 15+ commands, JSON in/out                           |
-| Design tokens            | `src/app.css`                       | CSS custom properties (colors, spacing, typography) |
-| Firestore schema docs    | `docs/api-reference.md`             | Field names, types, collections                     |
-| Feature gaps             | `DISCREPANCIES.md`                  | Prioritized list vs native app                      |
+| Task                     | Location                            | Notes                                                  |
+| ------------------------ | ----------------------------------- | ------------------------------------------------------ |
+| Add/modify a page        | `src/routes/{feature}/+page.svelte` | Single file per route, no +server.ts                   |
+| API calls (read/write)   | `src/lib/api/client.ts`             | `MacroFactorClient` class                              |
+| Firestore field encoding | `src/lib/api/firestore.ts`          | `sfv()`, `bfv()`, `nfv()` for food entries             |
+| Food search              | `src/lib/api/typesense.ts`          | Typesense multi-collection search                      |
+| Exercise ID resolution   | `src/lib/api/exercises.ts`          | Local lookup from `data/exercises.json`                |
+| Auth flow (web)          | `src/lib/stores/auth.svelte.ts`     | localStorage refresh token                             |
+| Auth flow (Firebase)     | `src/lib/api/auth.ts`               | `signIn()`, `refreshIdToken()`                         |
+| CLI commands             | `cli/mf.ts`                         | 25+ commands, JSON in/out                              |
+| Design tokens            | `src/app.css`                       | CSS custom properties (colors, spacing, typography)    |
+| Firestore schema docs    | `docs/api-reference.md`             | Field names, types, collections                        |
+| Feature gaps             | `DISCREPANCIES.md`                  | Prioritized list vs native app                         |
+| Workout plans (queue)    | `users/{uid}/customWorkouts/{id}`   | App's "workout plan" library; sync `workoutLibraryIds` |
 
 ## Conventions
 
