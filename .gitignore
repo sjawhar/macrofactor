@@ -61,3 +61,14 @@ data/samples/userProfile.json
 /test-*.ts
 /trace_*.ts
 /verify_*.ts
+
+# Agent orchestration artifacts (session state, plans, evidence)
+.sisyphus/
+.opencode/
+
+# One-off generated content
+protein-showdown.html
+
+# Proprietary algorithm implementation (reverse-engineered, not for distribution)
+src/lib/api/weight-recommendation.ts
+src/lib/api/weight-recommendation.test.ts
