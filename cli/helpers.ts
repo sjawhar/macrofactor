@@ -84,3 +84,31 @@ export async function readInput(positional: string[]): Promise<Record<string, an
 
   return null;
 }
+
+export function warnIfSuspiciousDate(date: string, force: boolean): void {
+  if (force) return;
+
+  const today = new Date();
+  const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+  if (date === todayStr) return;
+
+  const dateObj = new Date(date);
+  const todayObj = new Date(todayStr);
+  const diffMs = todayObj.getTime() - dateObj.getTime();
+  const diffDays = Math.round(diffMs / 86400000);
+
+  if (diffDays < 0) {
+    // Future date
+    console.error(`Warning: logging to future date ${date}. Use --force to suppress.`);
+  } else if (diffDays === 1) {
+    // Yesterday
+    console.error(`Warning: logging to yesterday (${date}). Use --force to suppress.`);
+  } else if (diffDays > 1 && diffDays <= 7) {
+    // 2-7 days ago
+    console.error(`Warning: logging to ${date} (${diffDays} days ago). Use --force to suppress.`);
+  } else if (diffDays > 7) {
+    // >7 days ago
+    console.error(`Warning: logging to ${date} (${diffDays} days ago). This seems unusual. Use --force to suppress.`);
+  }
+}

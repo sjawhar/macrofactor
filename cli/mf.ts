@@ -13,7 +13,7 @@ import {
 } from '../src/lib/api/index';
 import { syncDayDashboard } from '../src/lib/api/sync';
 import { searchExercises, resolveExercise, lookupExercise } from '../src/lib/api/exercises';
-import { readInput, parseISO, expandSets, resolveWeight, type SetInput } from './helpers';
+import { readInput, parseISO, expandSets, resolveWeight, warnIfSuspiciousDate, type SetInput } from './helpers';
 import { readFileSync } from 'fs';
 import { randomUUID } from 'crypto';
 import { pathToFileURL } from 'url';
@@ -113,7 +113,10 @@ function parseLogTime(value: unknown, fieldName = 'loggedAt'): LogTime {
   if (parsed.date === '1970-01-01' && parsed.hours === 0 && parsed.minutes === 0) {
     throw new Error(`Invalid "${fieldName}": ${value}`);
   }
-  return { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+  const logTime = { date: parsed.date, hour: parsed.hours, minute: parsed.minutes };
+  const force = process.argv.includes('--force');
+  warnIfSuspiciousDate(logTime.date, force);
+  return logTime;
 }
 
 function parseWorkoutStartTime(value: unknown): string {

@@ -1,7 +1,7 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { LogTime } from '../src/lib/api/index';
 
-import { expandSets, parseISO, readInput, resolveWeight, type SetInput } from './helpers';
+import { expandSets, parseISO, readInput, resolveWeight, warnIfSuspiciousDate, type SetInput } from './helpers';
 
 describe('parseISO', () => {
   it('reads offset-aware date/time directly from string', () => {
@@ -190,5 +190,85 @@ describe('readInput', () => {
   it('returns null when positional arg is not JSON (TTY mode)', async () => {
     // In TTY mode, non-JSON positional args return null
     await expect(readInput(['not json'])).resolves.toBeNull();
+  });
+});
+
+describe('warnIfSuspiciousDate', () => {
+  let consoleErrorSpy: ReturnType<typeof vi.spyOn>;
+
+  beforeEach(() => {
+    consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    consoleErrorSpy.mockRestore();
+  });
+
+  it('does not warn for today\'s date', () => {
+    const today = new Date().toISOString().slice(0, 10);
+    warnIfSuspiciousDate(today, false);
+    expect(consoleErrorSpy).not.toHaveBeenCalled();
+  });
+
+  it('warns for yesterday with specific message', () => {
+    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    warnIfSuspiciousDate(yesterday, false);
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Warning: logging to yesterday')
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('--force')
+    );
+  });
+
+  it('warns for 2-7 days ago with day count', () => {
+    const fiveDaysAgo = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
+    warnIfSuspiciousDate(fiveDaysAgo, false);
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Warning: logging to')
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('5 days ago')
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('--force')
+    );
+  });
+
+  it('warns more strongly for >7 days ago', () => {
+    const tenDaysAgo = new Date(Date.now() - 10 * 86400000).toISOString().slice(0, 10);
+    warnIfSuspiciousDate(tenDaysAgo, false);
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Warning: logging to')
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('10 days ago')
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('This seems unusual')
+    );
+  });
+
+  it('warns for future dates', () => {
+    const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+    warnIfSuspiciousDate(tomorrow, false);
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Warning: logging to future date')
+    );
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('--force')
+    );
+  });
+
+  it('suppresses all warnings when force is true', () => {
+    const tenDaysAgo = new Date(Date.now() - 10 * 86400000).toISOString().slice(0, 10);
+    warnIfSuspiciousDate(tenDaysAgo, true);
+    expect(consoleErrorSpy).not.toHaveBeenCalled();
+  });
+
+  it('suppresses warnings for future dates when force is true', () => {
+    const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+    warnIfSuspiciousDate(tomorrow, true);
+    expect(consoleErrorSpy).not.toHaveBeenCalled();
   });
 });
