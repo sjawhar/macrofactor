@@ -6,6 +6,7 @@ import {
   MacroFactorClient,
   LogTime,
   getFoodById,
+  createClientFromEnv,
   type FoodEntry,
   type Goals,
   type SetTarget,
@@ -29,17 +30,8 @@ try {
   }
 } catch (e) {}
 
-const email = process.env.MACROFACTOR_USERNAME;
-const password = process.env.MACROFACTOR_PASSWORD;
-
 async function getClient() {
-  if (!email || !password) {
-    console.error(
-      JSON.stringify({ error: 'Set MACROFACTOR_USERNAME and MACROFACTOR_PASSWORD in .env or environment' })
-    );
-    process.exit(1);
-  }
-  return MacroFactorClient.login(email, password);
+  return createClientFromEnv();
 }
 
 function parseArgs() {
@@ -581,7 +573,17 @@ export async function main() {
     switch (command) {
       case 'login': {
         const client = await getClient();
-        console.log(JSON.stringify({ status: 'success', uid: await client.getUserId() }, null, 2));
+        console.log(
+          JSON.stringify(
+            {
+              status: 'success',
+              uid: await client.getUserId(),
+              refreshToken: client.getRefreshToken(),
+            },
+            null,
+            2
+          )
+        );
         break;
       }
 

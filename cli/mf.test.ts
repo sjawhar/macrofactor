@@ -6,6 +6,7 @@ const mocks = vi.hoisted(() => ({
   lookupExercise: vi.fn(),
   resolveExercise: vi.fn(),
   login: vi.fn(),
+  fromRefreshToken: vi.fn(),
   getFoodById: vi.fn(),
 }));
 
@@ -26,8 +27,19 @@ vi.mock('../src/lib/api/exercises', () => ({
 vi.mock('../src/lib/api/index', () => ({
   MacroFactorClient: {
     login: mocks.login,
+    fromRefreshToken: mocks.fromRefreshToken,
   },
   getFoodById: mocks.getFoodById,
+  createClientFromEnv: async () => {
+    const token = process.env.MACROFACTOR_AUTH_TOKEN;
+    if (token) return mocks.fromRefreshToken(token);
+    const username = process.env.MACROFACTOR_USERNAME;
+    const password = process.env.MACROFACTOR_PASSWORD;
+    if (username && password) return mocks.login(username, password);
+    throw new Error(
+      'Missing credentials. Set MACROFACTOR_AUTH_TOKEN, or MACROFACTOR_USERNAME and MACROFACTOR_PASSWORD.'
+    );
+  },
 }));
 
 async function loadCliModule(argv: string[] = ['node', 'vitest-runner', 'exercises', 'search', 'bench']) {
@@ -38,6 +50,7 @@ async function loadCliModule(argv: string[] = ['node', 'vitest-runner', 'exercis
   mocks.lookupExercise.mockReturnValue(null);
   mocks.resolveExercise.mockReturnValue(null);
   mocks.login.mockReset();
+  mocks.fromRefreshToken.mockReset();
   return import('./mf.ts');
 }
 
@@ -54,6 +67,7 @@ describe('cli log-workout exercise resolution', () => {
   const originalArgv = process.argv.slice();
   const originalUsername = process.env.MACROFACTOR_USERNAME;
   const originalPassword = process.env.MACROFACTOR_PASSWORD;
+  const originalAuthToken = process.env.MACROFACTOR_AUTH_TOKEN;
 
   beforeEach(() => {
     vi.restoreAllMocks();
@@ -63,6 +77,7 @@ describe('cli log-workout exercise resolution', () => {
     vi.spyOn(process, 'exit').mockImplementation(((code?: number) => code as never) as typeof process.exit);
     process.env.MACROFACTOR_USERNAME = 'user@example.com';
     process.env.MACROFACTOR_PASSWORD = 'secret';
+    delete process.env.MACROFACTOR_AUTH_TOKEN;
   });
 
   afterEach(() => {
@@ -71,6 +86,8 @@ describe('cli log-workout exercise resolution', () => {
     else process.env.MACROFACTOR_USERNAME = originalUsername;
     if (originalPassword == null) delete process.env.MACROFACTOR_PASSWORD;
     else process.env.MACROFACTOR_PASSWORD = originalPassword;
+    if (originalAuthToken == null) delete process.env.MACROFACTOR_AUTH_TOKEN;
+    else process.env.MACROFACTOR_AUTH_TOKEN = originalAuthToken;
   });
 
   it('resolves bundled exercise names to bundled IDs', async () => {
@@ -295,5 +312,121 @@ describe('formatWorkoutPlanText', () => {
 
     expect(result).toContain('10 reps');
     expect(result).not.toContain('10-10');
+  });
+});
+
+describe('cli auth bootstrap', () => {
+  const originalArgv = process.argv.slice();
+  const originalUsername = process.env.MACROFACTOR_USERNAME;
+  const originalPassword = process.env.MACROFACTOR_PASSWORD;
+  const originalAuthToken = process.env.MACROFACTOR_AUTH_TOKEN;
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    vi.clearAllMocks();
+    vi.spyOn(console, 'log').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(process, 'exit').mockImplementation(((code?: number) => code as never) as typeof process.exit);
+    delete process.env.MACROFACTOR_USERNAME;
+    delete process.env.MACROFACTOR_PASSWORD;
+    delete process.env.MACROFACTOR_AUTH_TOKEN;
+  });
+
+  afterEach(() => {
+    process.argv = originalArgv.slice();
+    if (originalUsername == null) delete process.env.MACROFACTOR_USERNAME;
+    else process.env.MACROFACTOR_USERNAME = originalUsername;
+    if (originalPassword == null) delete process.env.MACROFACTOR_PASSWORD;
+    else process.env.MACROFACTOR_PASSWORD = originalPassword;
+    if (originalAuthToken == null) delete process.env.MACROFACTOR_AUTH_TOKEN;
+    else process.env.MACROFACTOR_AUTH_TOKEN = originalAuthToken;
+  });
+
+  function mockClient(overrides: Record<string, unknown> = {}) {
+    return {
+      getUserId: vi.fn().mockResolvedValue('uid-123'),
+      getRefreshToken: vi.fn().mockReturnValue('refresh-token-xyz'),
+      ...overrides,
+    };
+  }
+
+  it('uses fromRefreshToken when MACROFACTOR_AUTH_TOKEN is set (token-only)', async () => {
+    process.env.MACROFACTOR_AUTH_TOKEN = 'token-abc';
+    const client = mockClient();
+
+    const cli = await loadCliModule(['node', 'cli/mf.ts', 'login']);
+    // Set up after loadCliModule because loadCliModule calls mocks.fromRefreshToken.mockReset()
+    mocks.fromRefreshToken.mockResolvedValue(client);
+    await (cli as any).main();
+
+    expect(mocks.fromRefreshToken).toHaveBeenCalledTimes(1);
+    expect(mocks.fromRefreshToken).toHaveBeenCalledWith('token-abc');
+    expect(mocks.login).not.toHaveBeenCalled();
+  });
+
+  it('prefers token when both MACROFACTOR_AUTH_TOKEN and username/password are set', async () => {
+    process.env.MACROFACTOR_AUTH_TOKEN = 'token-abc';
+    process.env.MACROFACTOR_USERNAME = 'user@example.com';
+    process.env.MACROFACTOR_PASSWORD = 'secret';
+    const client = mockClient();
+
+    const cli = await loadCliModule(['node', 'cli/mf.ts', 'login']);
+    // Set up after loadCliModule because loadCliModule calls mocks.fromRefreshToken.mockReset()
+    mocks.fromRefreshToken.mockResolvedValue(client);
+    await (cli as any).main();
+
+    expect(mocks.fromRefreshToken).toHaveBeenCalledWith('token-abc');
+    expect(mocks.login).not.toHaveBeenCalled();
+  });
+
+  it('falls back to login(username, password) when token is unset', async () => {
+    process.env.MACROFACTOR_USERNAME = 'user@example.com';
+    process.env.MACROFACTOR_PASSWORD = 'secret';
+    const client = mockClient();
+
+    const cli = await loadCliModule(['node', 'cli/mf.ts', 'login']);
+    // Set up after loadCliModule because loadCliModule calls mocks.login.mockReset()
+    mocks.login.mockResolvedValue(client);
+    await (cli as any).main();
+
+    expect(mocks.login).toHaveBeenCalledWith('user@example.com', 'secret');
+    expect(mocks.fromRefreshToken).not.toHaveBeenCalled();
+  });
+
+  it('emits combined error and exits 1 when no auth env is set', async () => {
+    const cli = await loadCliModule(['node', 'cli/mf.ts', 'login']);
+    await (cli as any).main();
+
+    expect(mocks.login).not.toHaveBeenCalled();
+    expect(mocks.fromRefreshToken).not.toHaveBeenCalled();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Missing credentials. Set MACROFACTOR_AUTH_TOKEN, or MACROFACTOR_USERNAME and MACROFACTOR_PASSWORD.'
+      )
+    );
+    expect(process.exit).toHaveBeenCalledWith(1);
+  });
+
+  it('mf login output includes uid and refreshToken', async () => {
+    process.env.MACROFACTOR_USERNAME = 'user@example.com';
+    process.env.MACROFACTOR_PASSWORD = 'secret';
+    const client = mockClient({
+      getUserId: vi.fn().mockResolvedValue('uid-abc'),
+      getRefreshToken: vi.fn().mockReturnValue('refresh-123'),
+    });
+
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const cli = await loadCliModule(['node', 'cli/mf.ts', 'login']);
+    // Set up after loadCliModule because loadCliModule calls mocks.login.mockReset()
+    mocks.login.mockResolvedValue(client);
+    await (cli as any).main();
+
+    expect(logSpy).toHaveBeenCalledWith(
+      JSON.stringify(
+        { status: 'success', uid: 'uid-abc', refreshToken: 'refresh-123' },
+        null,
+        2
+      )
+    );
   });
 });
