@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { createServer } from 'node:http';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
-import { MacroFactorClient } from '../lib/api/index.js';
+import { MacroFactorClient, createClientFromEnv } from '../lib/api/index.js';
 import { createServer as createMcpServer } from './server.js';
 
 const MCP_PATH = '/mcp';
@@ -61,21 +61,21 @@ async function readJsonBody(req: IncomingMessage): Promise<unknown> {
 }
 
 async function main() {
-  const username = process.env.MACROFACTOR_USERNAME;
-  const password = process.env.MACROFACTOR_PASSWORD;
   const authToken = process.env.MCP_AUTH_TOKEN;
   const port = Number(process.env.PORT ?? '3001');
-
-  if (!username || !password) {
-    console.error('Missing credentials. Set MACROFACTOR_USERNAME and MACROFACTOR_PASSWORD environment variables.');
-    process.exit(1);
-  }
 
   if (!authToken) {
     console.warn('Warning: MCP_AUTH_TOKEN is not set. HTTP MCP endpoint is running without authentication.');
   }
 
-  const client = await MacroFactorClient.login(username, password);
+  let client: MacroFactorClient;
+  try {
+    client = await createClientFromEnv();
+  } catch (err) {
+    console.error(err instanceof Error ? err.message : String(err));
+    process.exit(1);
+  }
+
   const transports = new Map<string, StreamableHTTPServerTransport>();
 
   const httpServer = createServer(async (req, res) => {
