@@ -281,7 +281,7 @@ export class MacroFactorClient {
           minute: val.mi as string | undefined,
           sourceType: val.k as string | undefined,
           foodId: val.id as string | undefined,
-          deleted: val.d === true,
+          deleted: false,
           imageId: val.x as string | undefined,
         })
       );
@@ -402,10 +402,7 @@ export class MacroFactorClient {
 
   async deleteFoodEntry(date: string, entryId: string): Promise<void> {
     const token = await this.ensureToken();
-    const nowMicros = String(Date.now() * 1000);
-    // Use updateFoodEntryFields (per-subfield mask) instead of patchFoodDocument
-    // (whole-entry replace) so we ADD the d flag without wiping the entry data.
-    await updateFoodEntryFields(`users/${this.uid}/food/${date}`, entryId, { d: bfv(true), ua: sfv(nowMicros) }, token);
+    await removeFields(`users/${this.uid}/food/${date}`, [esc(entryId)], token);
   }
 
   async hardDeleteFoodEntry(date: string, entryId: string): Promise<void> {
