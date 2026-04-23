@@ -775,7 +775,7 @@ Single-file CLI that imports from `src/lib/api/`. Uses raw Node.js arg parsing (
 //   profile                               Show user profile
 //
 // Auth: Set MACROFACTOR_USERNAME and MACROFACTOR_PASSWORD env vars,
-//       or MACROFACTOR_REFRESH_TOKEN for token-based auth.
+//       or MACROFACTOR_AUTH_TOKEN for token-based auth.
 //
 // Output: JSON to stdout. Use `| jq .` for pretty printing.
 ```

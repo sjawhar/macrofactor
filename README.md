@@ -18,10 +18,18 @@ A TypeScript client and CLI for interacting with [MacroFactor](https://macrofact
 pnpm install
 
 # Set up credentials
+# Option A — username + password:
 cat > .env << 'EOF'
 MACROFACTOR_USERNAME=your@email.com
 MACROFACTOR_PASSWORD=your-password
 EOF
+
+# Option B (recommended for servers) — refresh token:
+# 1. Run `npx tsx cli/mf.ts login` once with username+password above to print a refreshToken.
+# 2. Replace .env with:
+#    MACROFACTOR_AUTH_TOKEN=<copied refreshToken>
+# The token is long-lived, revocable via a MacroFactor password change, and keeps
+# plaintext passwords out of your deployment env.
 
 # Try it out
 npx tsx cli/mf.ts workouts          # List recent workouts
@@ -136,13 +144,17 @@ Add to your Claude Code config file (`~/.claude/config.json` or project `.claude
       "command": "npx",
       "args": ["@sjawhar/macrofactor-mcp"],
       "env": {
-        "MACROFACTOR_USERNAME": "you@email.com",
-        "MACROFACTOR_PASSWORD": "yourpass"
+        "MACROFACTOR_AUTH_TOKEN": "<your Firebase refresh token>"
       }
     }
   }
 }
 ```
+
+`MACROFACTOR_AUTH_TOKEN` is a Firebase refresh token — long-lived and revocable via a
+MacroFactor password change. Capture it by running `npx tsx cli/mf.ts login` once with
+`MACROFACTOR_USERNAME` + `MACROFACTOR_PASSWORD` set; the command prints `refreshToken`
+alongside `uid` on stdout. The username/password pair still works as a fallback.
 
 Other agents (Cursor, Windsurf) use the same pattern with their own config files.
 
@@ -151,8 +163,7 @@ Other agents (Cursor, Windsurf) use the same pattern with their own config files
 For remote clients that support HTTP-based MCP servers:
 
 ```bash
-MACROFACTOR_USERNAME=you@email.com \
-MACROFACTOR_PASSWORD=yourpass \
+MACROFACTOR_AUTH_TOKEN=<your Firebase refresh token> \
 MCP_AUTH_TOKEN=$(openssl rand -hex 32) \
 node dist/mcp/http.js
 ```
