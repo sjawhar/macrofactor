@@ -132,6 +132,7 @@ jobs:
           NODE
             fi
             echo "::endgroup::"
+            npm view "@sjawhar/macrofactor-mcp" name version dist-tags --registry=https://registry.npmjs.org/ --json
             npm run build:mcp
             npm publish --access public --provenance --loglevel verbose
           fi
