@@ -130,5 +130,5 @@ jobs:
             fi
             echo "::endgroup::"
             npm run build:mcp
-            env -u NODE_AUTH_TOKEN npm publish --provenance --access public --loglevel verbose
+            npm publish --access public --provenance --loglevel verbose
           fi
