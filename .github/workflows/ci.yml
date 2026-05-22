@@ -125,6 +125,10 @@ jobs:
                 console.log(`OIDC sub: ${payload.sub}`);
                 console.log(`OIDC repository: ${payload.repository}`);
                 console.log(`OIDC ref: ${payload.ref}`);
+                console.log(`OIDC workflow_ref: ${payload.workflow_ref}`);
+                console.log(`OIDC job_workflow_ref: ${payload.job_workflow_ref}`);
+                console.log(`OIDC workflow: ${payload.workflow}`);
+                console.log(`OIDC environment: ${payload.environment ?? '<none>'}`);
               }
           NODE
             fi
