@@ -68,6 +68,8 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
+      - name: Configure npm for OIDC publish
+        run: sed -i '/_authToken/d' "${NPM_CONFIG_USERCONFIG}"
       - run: npm ci
       - name: Semantic Release
         run: npx semantic-release@24
