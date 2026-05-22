@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sjawhar/macrofactor.git"
+    "url": "https://github.com/sjawhar/macrofactor"
   },
   "files": [
     "dist/",
     "data/exercises.json"
   ],
   "bin": {
-    "macrofactor-mcp": "./dist/mcp/stdio.js"
+    "macrofactor-mcp": "dist/mcp/stdio.js"
   },
   "publishConfig": {
     "access": "public",
