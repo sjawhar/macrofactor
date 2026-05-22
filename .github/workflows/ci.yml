@@ -67,9 +67,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          registry-url: https://registry.npmjs.org
-      - name: Configure npm for OIDC publish
-        run: sed -i '/_authToken/d' "${NPM_CONFIG_USERCONFIG}"
       - run: npm ci
       - name: Semantic Release
         run: npx semantic-release@24
@@ -83,5 +80,5 @@ jobs:
           else
             echo "Publishing v${VERSION}"
             npm run build:mcp
-            npm publish --provenance --access public
+            env -u NODE_AUTH_TOKEN npm publish --provenance --access public
           fi
