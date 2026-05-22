@@ -73,12 +73,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to npm
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          VERSION=$(node -p "require('./package.json').version")
+          VERSION=$(gh release view --json tagName --jq '.tagName' | sed 's/^v//')
+          if [ -z "${VERSION}" ]; then
+            echo "Could not determine release version from git tags"
+            exit 1
+          fi
           if npm view "@sjawhar/macrofactor-mcp@${VERSION}" version 2>/dev/null; then
             echo "v${VERSION} already published, skipping"
           else
             echo "Publishing v${VERSION}"
+            VERSION="${VERSION}" node -e "const fs = require('node:fs'); for (const file of ['package.json', 'package-lock.json']) { const data = JSON.parse(fs.readFileSync(file, 'utf8')); data.version = process.env.VERSION; if (data.packages?.['']) data.packages[''].version = process.env.VERSION; fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n'); }"
             echo "::group::npm trusted publishing diagnostics"
             node --version
             npm --version
