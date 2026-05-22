@@ -79,6 +79,55 @@ jobs:
             echo "v${VERSION} already published, skipping"
           else
             echo "Publishing v${VERSION}"
+            echo "::group::npm trusted publishing diagnostics"
+            node --version
+            npm --version
+            if [ -n "${ACTIONS_ID_TOKEN_REQUEST_URL:-}" ]; then
+              echo "ACTIONS_ID_TOKEN_REQUEST_URL is present"
+            else
+              echo "ACTIONS_ID_TOKEN_REQUEST_URL is missing"
+            fi
+            if [ -n "${ACTIONS_ID_TOKEN_REQUEST_TOKEN:-}" ]; then
+              echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN is present"
+            else
+              echo "ACTIONS_ID_TOKEN_REQUEST_TOKEN is missing"
+            fi
+            NPM_CONFIG_JSON="$(npm config list --json)" node --input-type=module <<'NODE'
+            const config = JSON.parse(process.env.NPM_CONFIG_JSON);
+            for (const key of Object.keys(config)) {
+              if (/auth|token|password|otp/i.test(key)) config[key] = '<redacted>';
+            }
+            console.log(JSON.stringify(config, null, 2));
+          NODE
+            if [ -n "${ACTIONS_ID_TOKEN_REQUEST_URL:-}" ] && [ -n "${ACTIONS_ID_TOKEN_REQUEST_TOKEN:-}" ]; then
+              node --input-type=module <<'NODE'
+              const requestUrl = new URL(process.env.ACTIONS_ID_TOKEN_REQUEST_URL);
+              requestUrl.searchParams.set('audience', 'npm:registry.npmjs.org');
+
+              const response = await fetch(requestUrl, {
+                headers: { Authorization: `Bearer ${process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN}` },
+              });
+
+              console.log(`OIDC request status: ${response.status}`);
+              const body = await response.json().catch(() => null);
+              if (!response.ok) {
+                console.log(`OIDC error keys: ${body ? Object.keys(body).join(',') : 'non-json'}`);
+                process.exit(1);
+              }
+
+              const token = body?.value;
+              const jwtParts = typeof token === 'string' ? token.split('.') : [];
+              console.log(`OIDC token received: ${jwtParts.length === 3 ? 'yes (jwt shaped)' : 'no'}`);
+              if (jwtParts.length === 3) {
+                const payload = JSON.parse(Buffer.from(jwtParts[1], 'base64url').toString('utf8'));
+                console.log(`OIDC aud: ${JSON.stringify(payload.aud)}`);
+                console.log(`OIDC sub: ${payload.sub}`);
+                console.log(`OIDC repository: ${payload.repository}`);
+                console.log(`OIDC ref: ${payload.ref}`);
+              }
+          NODE
+            fi
+            echo "::endgroup::"
             npm run build:mcp
-            env -u NODE_AUTH_TOKEN npm publish --provenance --access public
+            env -u NODE_AUTH_TOKEN npm publish --provenance --access public --loglevel verbose
           fi
