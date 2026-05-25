@@ -1,5 +1,12 @@
 # MacroFactor CLI & API Client
 
+> [!WARNING]
+> **This project is archived and no longer functional.**
+>
+> As of May 2026, Stronger By Science enabled Firebase App Check enforcement on the MacroFactor backend's Identity Platform sign-in endpoint. Every authentication request from this client now fails with `401 Firebase App Check token is invalid` — credentials are never even evaluated. App Check tokens can only be minted by the official iOS app (App Attest), Android app (Play Integrity), or a Firebase-registered web client (reCAPTCHA Enterprise); SBS has not registered a web client, so no third-party HTTPS client can authenticate.
+>
+> The repository is preserved for reference. If you find a way to mint a valid App Check token (or if enforcement is rolled back), PRs are welcome.
+
 A TypeScript client and CLI for interacting with [MacroFactor](https://macrofactorapp.com) programmatically — the nutrition and workout tracker by [Stronger By Science](https://www.strongerbyscience.com/).
 
 > **This is not a replacement for MacroFactor.** You need an active MacroFactor subscription to use this. We love MacroFactor and the team behind it. This project exists because sometimes you want to interact with your own data without opening an app — batch-log meals from a script, update workout weights from a spreadsheet, or build your own integrations on top of an already great product.
